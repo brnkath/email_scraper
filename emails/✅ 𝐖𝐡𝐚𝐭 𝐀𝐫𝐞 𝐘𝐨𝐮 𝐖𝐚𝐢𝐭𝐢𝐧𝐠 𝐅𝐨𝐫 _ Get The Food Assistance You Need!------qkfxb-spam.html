@@ -1,0 +1,288 @@
+Delivered-To: brnkath@gmail.com
+Received: by 2002:ac9:7a45:0:b0:50a:1d1:e0eb with SMTP id c5csp1068102ocq;
+        Fri, 1 Dec 2023 06:18:57 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGBHmTMk1vT3wz+G+FcsuU+2y0zfMoZJIV4K52NQD6YAoitECbRNZaBURzEEPsRiaPo697t
+X-Received: by 2002:a05:600c:3c85:b0:40b:5e22:2ec with SMTP id bg5-20020a05600c3c8500b0040b5e2202ecmr231251wmb.88.1701440337273;
+        Fri, 01 Dec 2023 06:18:57 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1701440337; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Kf11yjsDqeG0zW4MvFwtdUtwYJs2GSGueJyVBhedtjz6dsdEEOgeGkK6K7Auap62p1
+         Xe8QLiXKOzAICOx/wbI9bgTBkbyKlh1NlCr//9tGguy2/dNjMUVFtxSPxgFaNbztRKbp
+         j3eoqSRMgOwODf6aIdvPH3f6PHDI1LXcTPpl0cbPyR3mD0Lg5ojdr8xHSmqns79VxHas
+         e6/i63VpOgI9PcTyzx1wK1lYYEe2QBCMUOA+L20WcHE2njqPJglaCnVXdaUpHDxeDZUz
+         u9LaI4F3+OzqjFb8uzxtHZVGk8kcm/DkzHEgpGN4rPbfrexNtoIUxvgSzlCKA8E9E7du
+         ZSbw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:from:feedback-id:list-unsubscribe-post
+         :content-transfer-encoding:origin-messageid:message-id:subject:date
+         :to:dkim-signature;
+        bh=1NYo7BlyUBhv+pKusnOf7MhZDsMuMrA5PyWp6KLlI8g=;
+        fh=CGlBrXCyTI+W+ExFONWnkMN/0EYfjAHUmMugQ/kLf/c=;
+        b=p25bgx4Oyp2/qdT46gYnPfUuT0Nlh1hF2J3/6hYRNaofZsDT+XbMxftiwrAVOvCYjR
+         4Bhsh3RTmfZisww4pCEskvEWHuyn7EEydkPDbNQVc11yGBlBmrgAMYOqPDBoSh2cPX/c
+         6q/523aAVbMG7lxpL0r4OUUb5P+DOn8IEhD65wRIKlotWeKohoitauXKMuWjFYzqRT1n
+         c7nkVovjfXh4KQoujo73FVU+CYH5ogqqOPBBhAMxASOK6LtcFTMLr0gp2QgPX/P68Jk1
+         yKl/eVB+NURc3mvVjrWo42El4l9QPNJ2NkSmP4g9sKSKgsSf8EJhn/0qpLkKBMgfrM2R
+         +W+w==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@sendinblue.com header.s=mail header.b=AxNCUzK8;
+       spf=pass (google.com: domain of return@nanotech.us.com designates 212.129.39.118 as permitted sender) smtp.mailfrom=return@nanotech.us.com
+Return-Path: <return@nanotech.us.com>
+Received: from efianalytics.com (212-129-39-118.rev.poneytelecom.eu. [212.129.39.118])
+        by mx.google.com with ESMTPS id s20-20020adfa294000000b00333316cf0aesi772383wra.283.2023.12.01.06.18.56
+        for <brnkath@gmail.com>
+        (version=TLS1 cipher=ECDHE-ECDSA-AES128-SHA bits=128/128);
+        Fri, 01 Dec 2023 06:18:57 -0800 (PST)
+Received-SPF: pass (google.com: domain of return@nanotech.us.com designates 212.129.39.118 as permitted sender) client-ip=212.129.39.118;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@sendinblue.com header.s=mail header.b=AxNCUzK8;
+       spf=pass (google.com: domain of return@nanotech.us.com designates 212.129.39.118 as permitted sender) smtp.mailfrom=return@nanotech.us.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendinblue.com;
+ q=dns/txt; s=mail; bh=1NYo7BlyUBhv+pKusnOf7MhZDsMuMrA5PyWp6KLlI8g=;
+ h=from:subject:date:to:content-type:content-transfer-encoding:list-unsubscribe:x-csa-complaints:list-unsubscribe-post;
+        b=AxNCUzK8352uJkwB8/RVAWK4007xmQZioejn8lA7k7qQv789OjJWfflbzvFVU8DY9mdX94ezpDgb
+        KS57dbWZH+1W53sUU5dwAG6z+840a6GG0GOl3SppgudvFLNRX+dVX9nDeYU5iFT4WcosyoL7ytUf
+        z1VIxxMC9ezibWpgRpM=
+X-Mailin-EID: MTkxOTY1OTc4fmdvbmFkaWExMjVAZ21haWwuY29tfjwyMDIzMDYwMTE0NDYuMTY5OTMxOTAxMThAc210cC1yZWxheS5zZW5kaW5ibHVlLmNvbT5%2BZ3ouZC5zZW5kZXItc2liLmNvbQ%3D%3D
+To: <gonadia125@gmail.com>
+Date: Thu, 01 Jun 2023 14:46:14 +0000
+Subject: =?UTF-8?Q?=E2=9C=85_=F0=9D=90=96=F0=9D=90=A1=F0=9D=90=9A=F0=9D=90=AD_=F0=9D=90=80=F0=9D=90=AB=F0=9D=90=9E_=F0=9D=90=98=F0=9D=90=A8=F0=9D=90=AE_=F0=9D=90=96=F0=9D=90=9A=F0=9D=90=A2=F0=9D=90=AD=F0=9D=90=A2=F0=9D=90=A7=F0=9D=90=A0_=F0=9D=90=85=F0=9D=90=A8=F0=9D=90=AB_=3F_Get_The_Food_Assistance_You_Need!------qkfxb?=
+Message-ID: <V5IUPS0B4K72UPSSKS6H-V5IUPS0B4K72UPSSKS6H-V5IUPS0B4K72UPSSKS6H-V5IUPS0B4K72UPSSKS6H.5smtpin_added_missing@mx.google.com>
+Origin-messageId: <202306011446.16993190118@smtp-relay.sendinblue.com>
+Content-Type: text/html
+Content-Transfer-Encoding: quoted-printable
+X-sib-id: QczUnjQGunG9JVS4Ud-nYI2G7SZ1vY6HVVLCgvNR6x8Q8P2B7Rr1hjqOVt6FNp0nHBWb6T3gJ27Lm1qZqOh2QtMMOqEsp-V8xf4z6-1WW08e-ZLBcVqrfwMe4FDlhBq8pQcE9oBcg18_YCnJmD1GAIE9MfAyViONKdR2aXbPXsFN9Q
+X-CSA-Complaints: csa-complaints@eco.de
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Feedback-ID: 77.32.148.26:5435750_-1:5435750:Sendinblue
+From: "Food_Stamp_Support" <qfaxcfblsgwl@qfaxcfblsgwl.com>
+List-Unsubscribe: <mailto:unsubscribe-t@gz.d.sender-sib.com?subject=unsub-MTkxOTY1OTc4fmdvbmFkaWExMjVAZ21haWwuY29tfjwyMDIzMDYwMTE0NDYuMTY5OTMxOTAxMThAc210cC1yZWxheS5zZW5kaW5ibHVlLmNvbT5-Rm9vZF9TdGFtcF9TdXBwb3J0IDxxZmF4Y2ZibHNnd2xAcWZheGNmYmxzZ3dsLmNvbT5-M2Q3NTMwNGMtM2IyYy00NmQyLWE2ZjgtOWVjNzhmMzE0NzBh&body=MTkxOTY1OTc4fmdvbmFkaWExMjVAZ21haWwuY29tfjwyMDIzMDYwMTE0NDYuMTY5OTMxOTAxMThAc210cC1yZWxheS5zZW5kaW5ibHVlLmNvbT5-Rm9vZF9TdGFtcF9TdXBwb3J0IDxxZmF4Y2ZibHNnd2xAcWZheGNmYmxzZ3dsLmNvbT5-M2Q3NTMwNGMtM2IyYy00NmQyLWE2ZjgtOWVjNzhmMzE0NzBh>, <https://fedfhfa.r.af.d.sendibt2.com/tr/un/li/vx-sNVXkdhObLmtIdHgzgCWP9E4dpr6Sqn-5hS5loOgvvnfIKlczBLM1BTmeZq8H2Zxjzmx3aVXb1BrmMCWSb00R7QKh56AyFlHn-P-GzzXpMX4BrRKmyJ8jrsSZhvxbMIFgefONI22uQDdqHG-qtaJY3gu2faJtX0n08wByK2c3__3MTCXJcMAXGpxcovfRE9U6nQve1tVsC97LQxhR_EMRO_c4A5Fva1Fmlm_BU7JvhXt151kwEcSpF8YwzrUzmlJ29ZRPpIBD78fN>
+
+<center><body style=3D=22background-color:
+#104382;=22><br><br><br>
+<a href=3Dt.co/ePr0q1wFUf#jqscq20kbu.sUrCEIkIBkhoXrs=3FI5y7G2$FddFmRq213$f$=
+Ky65g$h4tL8$fG$h19$F0$KBG3Y$9y65$fDdFs1 target=3D=22=5Fblank=22 =
+style=3D=22text-decoration:none=22><br>
+<table style=3D=22background-color:
+#fff; width:600px; text-align:center;border-radius: 10px=22 >
+
+
+
+<table style=3D=22background-color:
+#fff; width:600px; text-align:center;border-radius: 10px=22 >
+<tr> <td align=3D=22center=22>
+<div style=3D=22font-size:50px;line-height:20px;color:#ca113e;padding-botto=
+m:0px;font-family: Georgia, serif;margin-right:150px;=22> <br> =
+<span>F<span>O<span>O<span>D<span> <span></div>
+
+
+  <div style=3D=22font-size:40px;font-family:Arial;color:#044588;=22> =
+<b><span style=3D=22font-size:30px;font-family:Arial =
+black;color:#ca113e;=22><span><span>S<span>T<span>A<span>M<span>P<span> =
+S<span>U<span>P<span>P<span>O<span>R<span>T<span></b><span =
+style=3D=22font-size:25px;=22>   </span></div>=20=20=20=20=20
+
+<br>
+
+
+<tr><td align=3D=22center=22><div style=3D=22background-color:#104382; =
+width:470px; font-size:25px; border-radius:0px;padding:10px; color:white; =
+letter-spacing:5px;=22><span>F<span>o<span>o<span>d<span> =
+<span>S<span>t<span>a<span>m<span>p<span> N<span>o<span>t<span>i<span>f<spa=
+n>i<span>c<span>a<span>t<span>i<span>o<span>n<span> =
+<span>F<span>o<span>r<span>:<span></div>
+</td></tr>
+
+
+
+<tr><td>
+<center><br>
+=20=20=20=20=20=20=20=20=20=20=20
+
+
+</p>
+<table border=3D=222=22 width=3D=2284%=22 style=3D=22font-family: Gotham, =
+=22Helvetica Neue=22, Helvetica, Arial, sans-serif; letter-spacing: normal;=
+ orphans: 2; text-transform: none; widows: 2; word-spacing: 0px; =
+-webkit-text-stroke-width: 0px; background-color: rgb(230, 230, 230); =
+text-decoration-thickness: initial; text-decoration-style: initial; =
+text-decoration-color: initial; border: 2px solid rgb(0, 0, 204);=22>
+<tr>
+<td align=3D=22left=22>
+<span style=3D=22font-family: 'Poppins', sans-serif;font-size:17px;color:bl=
+ack;=22>
+       DATE:  </span>
+</td>
+<td align=3D=22center=22>
+<span style=3D=22font-family: 'Poppins', sans-serif;font-size:17px;=22>
+=20=20=20=20
+<span style=3D=22font-family: 'Poppins', sans-serif;font-size:17px;color:re=
+d;=22>
+=20=20=20=20
+  Today
+   </span>
+</td>
+</tr>  <tr>
+<td height=3D=2229=22 align=3D=22left=22>
+<span style=3D=22font-family: 'Poppins', sans-serif;font-size:17px;color:bl=
+ack;=22>
+=20=20=20=20
+    NAME:</span>
+</td>
+<td height=3D=2229=22 align=3D=22center=22>
+<span style=3D=22font-family: 'Poppins', sans-serif;font-size:17px;color:bl=
+ack;color:red;=22>
+=20=20=20=20
+    *****</span>
+</td>
+</tr>
+<tr>
+<td height=3D=2229=22 align=3D=22left=22>
+<span style=3D=22font-family: 'Poppins', sans-serif;font-size:17px;color:bl=
+ack;=22>
+=20=20=20=20
+    EMAIL: </span>
+</td>
+<td height=3D=2229=22 align=3D=22center=22>
+<span style=3D=22font-family: 'Poppins', sans-serif;font-size:17px;color:re=
+d;=22>
+=20=20=20=20
+   *****@gmail.com</span>
+</td>
+</tr>
+
+
+</font>
+</td>
+</tr>
+</table><br>
+
+
+<tr>
+              <td style=3D=22padding:20px 0px 40px 0px; text-align: center;=
+ background-color: white;=22>
+=20=20=20=20=20=20=20=20=20=20=20=20=20=20
+=20=20=20=20=20=20=20=20=20=20=20=20=20=20
+=20=20=20=20=20=20=20=20=20=20=20=20=20=20
+                  <span style=3D=22font-size:30px; font-weight: 700; =
+padding: 0 10px; color: black;=22> <span>A<span>s<span>s<span>i<span>s<span=
+>t<span>a<span>n<span>c<span>e<span> I<span>n<span>c<span>l<span>u<span>d<s=
+pan>e<span>s<span>:<span>
+                  </span>
+
+
+                  <table align=3D=22center=22 border=3D=220=22 =
+cellpadding=3D=220=22 cellspacing=3D=220=22 style=3D=22color: black; =
+text-align: left; padding: 20px 30px 0 20px; line-height: 24px; font-size: =
+14px;=22>
+                    <tbody>
+                      <tr><td>&bull; <span>S<span>u<span>p<span>p<span>l<sp=
+an>e<span>m<span>e<span>n<span>t<span>a<span>l<span> =
+n<span>u<span>t<span>r<span>i<span>t<span>i<span>o<span>n<span> =
+a<span>s<span>s<span>i<span>s<span>t<span>a<span>n<span>c<span>e<span> =
+p<span>r<span>o<span>g<span>r<span>a<span>m<span>s<span></td></tr>
+                      <tr><td>&bull; <span>F<span>r<span>e<span>e<span> =
+S<span>c<span>h<span>o<span>o<span>l<span> <span>M<span>e<span>a<span>l<spa=
+n>s<span></td></tr>
+                      <tr><td>&bull; <span>S<span>e<span>n<span>i<span>o<sp=
+an>r<span> F<span>o<span>o<span>d<span> P<span>r<span>o<span>g<span>r<span>=
+a<span>m<span>s<span></td></tr>
+                      <tr><td>&bull; <span>D<span>i<span>s<span>a<span>s<sp=
+an>t<span>e<span>r<span> R<span>e<span>l<span>i<span>e<span>f<span></td></t=
+r>
+                      <tr><td>&bull; <span>A<span>n<span>d<span> =
+m<span>o<span>r<span>e<span></td></tr>
+                    </tbody>
+                  </table>
+
+
+              </td>
+            </tr>
+
+
+
+
+
+
+
+
+
+
+<b><span style=3D=22font-size: 18px; line-height: 24px;=22><strong>P<span>l=
+<span>e<span>a<span>s<span>e<span> C<span>o<span>n<span>f<span>i<span>r<spa=
+n>m<span> T<span>h<span>e<span> N<span>o<span>t<span>i<span>f<span>i<span>c=
+<span>a<span>t<span>i<span>o<span>n<span> <span>b<span>y<span> =
+<span>C<span>l<span>i<span>c<span>k<span>i<span>n<span>g<span> =
+B<span>e<span>l<span>o<span>w<span></strong></span></b><br><br>
+
+
+
+
+</td></tr>
+
+<tr><td align=3D=22center=22><h1 style=3D=22border:8px solid #104382; =
+padding:10px; width:470px; background-color: #104382; color: white ; =
+font-size:20px=22 ><span>C<span>l<span>i<span>c<span>k<span> =
+<span>H<span>e<span>r<span>e<span> t<span>o<span> <span>V<span>i<span>e<spa=
+n>w<span> A<span>v<span>a<span>i<span>l<span>a<span>b<span>l<span>e<span> =
+F<span>u<span>n<span>d<span>s<span></h1></td></tr>
+</table>
+</a>
+<br>
+<center> <p style=3D=22text-align:center;font-family: 'Open Sans','Arial',=
+'Helvetica',sans-serif;font-size:13px;=22><br><br>=20
+
+To unsubscribe, please click  <a href=3Dt.co/Gvg9HV6ej3#jqscq20kbu.=
+sUrCEIkIBkhoXrs=3FI5Y7G2$FdDFMRq213$g$KY65G$h4Tl8$FG$H19$F0$kbG3y$9Y65$fDdf=
+s1  >  here  </a>=20
+
+=20
+
+
+</center>
+
+     <center> <p style=3D=22text-align:center;font-family: 'Open Sans',=
+'Arial','Helvetica',sans-serif;font-size:13px;=22><br><br>=20
+ <br>The advertiser does not manage your subscription.<br>
+If you perfer not to receive further communication please unsubscribe <a =
+href=3Dt.co/Gvg9HV6ej3#jqscq20kbu.sUrCEIkIBkhoXrs=3Fi5Y7g2$fDdFMRq213$H$KY6=
+5G$h4TL8$fG$H19$F0$KbG3Y$9Y65$fDDFS1  >  here</a><br>Or write to: 6101 Long=
+ Prairie Rd, Ste 744 #511, Flower Mound, TX, 75028 <br>
+<br>
+ </p>
+<script>
+<tr>
+<td align=3D=22=22 valign=3D=22top=22 style=3D=22font-family:Arial, =
+Helvetica, sans-serif;
+ font-size:18px; line-height:22px; color:#000000; padding-bottom: =
+20px;=22>
+
+</td>
+</tr>
+ <tr>
+ <td colspan=3D=222=22 style=3D=22font-size:10px; color: #000;=22><br><br>
+ <div align=3D=22center=22>CASH APP..lS NOT AFFILIATED..WlTH, D0ES N0T =
+SP0NSOR,
+ <br>0r..otherwise..endorse..this.PROMOTlON.
+ <br><br>To UNSUBSCRlBE, pleasee <a
+ href=3D=22https://fedfhfa.r.af.d.sendibt2.com/tr/cl/cF1lSMln87yrAfdjspAFFH=
+OPFrbkt1P1cayWRJOUwLnQ8IbZ7AXnarAWkH3HYIp=5FcsDowslqZuZ8Jsk=5FqSIr-AJWZbb8V=
+787qGV9kngJ89gCqMeBG5oyPu78f-1tAb9o5yXUz8WGUDvHqt6bVZZewt4B9r6j=5FvkFHUT5I1=
+6=5F-gblE3Ii0EvfCzbaMTExWemCumXsKxJvzk6ZhsqA=22>VlSlT-HERE</a> 0r write =
+to:
+ <br><br>
+ </div>
+ </td>
+ </tr>
+ </tbody>
+ </table>
+
+</div><img width=3D'1' height=3D'1' src=3D'https://fedfhfa.r.af.d.sendibt2.=
+com/tr/op/HKD3wPVY9mICp6okFKhWakABAB0PH3Y83udndPbKZcXtSoJQLCczM40qBHtHDcsTH=
+YzsNgb8zUkD-cpuiOJwm8c=5F09eljhuCAMkbXQbtpSRy=5F=5Fm33eYowFRWca0-5g7KxZmkmk=
+hcP1H3dt8ftShgU9o9Rc-bnIGk6yaD8aMVJBSe' alt=3D'' /></body>
+</html>
+=20
+</body>
+</script>
+

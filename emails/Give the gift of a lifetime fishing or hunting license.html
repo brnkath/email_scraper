@@ -1,0 +1,728 @@
+Delivered-To: brnkath@gmail.com
+Received: by 2002:a8a:50e:0:b0:50c:ab77:6570 with SMTP id w14csp506636ocq;
+        Fri, 8 Dec 2023 11:20:21 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IHZgkYR6m7loeNmCy9cwGsyyDVM7T87Ljj4KGV96faH8+1yC8wm8XIy4Uj9JiQeErZ90W2U
+X-Received: by 2002:a17:90a:df82:b0:286:b8eb:d2b9 with SMTP id p2-20020a17090adf8200b00286b8ebd2b9mr533612pjv.26.1702063220944;
+        Fri, 08 Dec 2023 11:20:20 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1702063220; cv=none;
+        d=google.com; s=arc-20160816;
+        b=NLGAAHDrtyiupUhDDHRvnuKn5XULVDfEv7ZkzPS76vxd1Tt18Q+9D7Z02OIAbA8d1k
+         9YwPPdySctrr58YOuns/827V4FGLYcID2EURsAw+v4bBMhSf5MaqVrsuA6DmCTsZ+R+I
+         pgQfwBAqdQH0KQj3hpUwNNZySeXo1jNl7pxcVEATo3ec7BGcBkqHZEjyoqkTWtE5FZQW
+         /fv4GUQ1wxyCXnxaWAkNAj9EI+p527IDGDVREeAsq9dZoiI7IOELvnWgVvtNbDGMs5ot
+         /x0FT/DVfgcHEF4CRiiHbN82DHg5bDcF/OP3du9tm9Xs1XHV2zzQj8XkZdkQJratnkIC
+         CaIw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=subject:from:reply-to:mime-version:date:to:message-id
+         :list-unsubscribe:dkim-signature;
+        bh=8Dc6o+h/kpDfCOjD1gfOvEQ22LJuIKbSfBq/oEB3p2I=;
+        fh=klRu0xqzj5H1zWy0PpMcZJrySHX3lkozz7zsAp7ou8A=;
+        b=y7vw1gGLvJzXGIpftkgPiqTQHamHQWpA3qq81cr2BX+Ap8uYgty7CYER5Bpf2NLXx+
+         zN87j+BGQ3G9HsHWzff1kaWm2tuBYyJQspWF7iXRKQxtXqpef8foVf3tFxm/8Na0YMCt
+         OlVm893RcowahOQbq4kbxPvTuqgHbSgiQQYQSkx2rzXYt/WTtrWHSIMjxnJGbUiDIy5d
+         O+xRbkz/E3BL2lXjrGD4ahHbN33C9JGV9RthPSOlidjadAz/MG6q5nm8w5DAoCSdcsIf
+         JwvUTLF9j4VgMLZxT53mUT4DF3pAuYcFDcko3zs3GFUJSuez+mJVa5IqpGy4lKugGQDE
+         ynHg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@hf.aspiraconnect.com header.s=scph0823 header.b=EZuoNRH0;
+       spf=pass (google.com: domain of msprvs1=197069fiqr4hr=bounces-266693-370@hf.aspiraconnect.com designates 223.165.123.11 as permitted sender) smtp.mailfrom="msprvs1=197069fiqr4HR=bounces-266693-370@hf.aspiraconnect.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=aspiraconnect.com
+Return-Path: <msprvs1=197069fiqr4HR=bounces-266693-370@hf.aspiraconnect.com>
+Received: from 223.165.123.11.jfk.braze.com (223.165.123.11.jfk.braze.com. [223.165.123.11])
+        by mx.google.com with ESMTPS id b12-20020a17090a9bcc00b002865a80ceb3si3366507pjw.2.2023.12.08.11.20.20
+        for <brnkath@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 08 Dec 2023 11:20:20 -0800 (PST)
+Received-SPF: pass (google.com: domain of msprvs1=197069fiqr4hr=bounces-266693-370@hf.aspiraconnect.com designates 223.165.123.11 as permitted sender) client-ip=223.165.123.11;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@hf.aspiraconnect.com header.s=scph0823 header.b=EZuoNRH0;
+       spf=pass (google.com: domain of msprvs1=197069fiqr4hr=bounces-266693-370@hf.aspiraconnect.com designates 223.165.123.11 as permitted sender) smtp.mailfrom="msprvs1=197069fiqr4HR=bounces-266693-370@hf.aspiraconnect.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=aspiraconnect.com
+X-MSFBL: 9ipBYE2Y/dnvCtGINB9Mp+69i/exovFCHixBRgLmzN0=|eyJzdWJhY2NvdW50X2l
+	kIjoiMzcwIiwiciI6ImJybmthdGhAZ21haWwuY29tIiwidGVuYW50X2lkIjoic3B
+	jIiwiY3VzdG9tZXJfaWQiOiIyNjY2OTMiLCJtZXNzYWdlX2lkIjoiNjU3MzZlNmM
+	3MzY1NmMwMjgxOTQifQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	d=hf.aspiraconnect.com; s=scph0823; t=1702063214;
+	i=@hf.aspiraconnect.com;
+	bh=8Dc6o+h/kpDfCOjD1gfOvEQ22LJuIKbSfBq/oEB3p2I=;
+	h=List-Unsubscribe:Message-ID:To:Date:Content-Type:From:Subject:
+	 From:To:Cc:Subject;
+	b=EZuoNRH09OFbz8OxaX4FLi+A6v/vN3dh7geA34Ezy9a6MiTZo1pbxOifry7IJOoQd
+	 lhJO0MmDpFAMNS9Fcogzh6Wjc7YDmeYvzGDJcXmxT/u5i5m0K1bA4sTjTfzRg/pTbB
+	 CxlIUnMH89PxoBmM2uH7crfx7iB0mZAIcf/lWNE0=
+List-Unsubscribe: <mailto:4_p47z2qbukh9cu30bgfcvz36a4ublflz0bqw5ncmxrygfe61kywviw0@unsubscribe-05.emailinboundprocessing.com?subject=Unsubscribe&body=DO_NOT_DELETE-14eh0hb16jviqrfbo26q733tb68y94md13j2lv4wa09m39ifq9zoz0cwvwky3stzipobi86z5fwxjsxgt-DO_NOT_DELETE>
+Message-ID: <18.49.38627.E6C63756@ki.mta1vrest.cc.prd.sparkpost>
+To: brnkath@gmail.com
+Date: Fri, 08 Dec 2023 19:20:14 +0000
+Content-Type: multipart/alternative; boundary="_----zV6DjtNMo/5aLbBg3BrZWQ===_F5/49-38627-E6C63756"
+MIME-Version: 1.0
+Reply-To: no-reply@hf.aspiraconnect.com
+From: "MN DNR" <no-reply@hf.aspiraconnect.com>
+Subject: Give the gift of a lifetime fishing or hunting license.
+
+--_----zV6DjtNMo/5aLbBg3BrZWQ===_F5/49-38627-E6C63756
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="UTF-8"
+
+The holiday gift that lasts a lifetime!   Purchase a Lifetime=0ALicense =0A=
+( https://clicks.aspiraconnect.com/f/a/t48tLryt6vMs58nc0Sqiow~~/AAQRxQA~/Rg=
+RnVfFuP0SSaHR0cHM6Ly93d3cuZG5yLnN0YXRlLm1uLnVzL2xpY2Vuc2VzL2xpZmV0aW1lL2luZ=
+GV4Lmh0bWw_dXRtX21lZGl1bT1lbWFpbCZ1dG1fc291cmNlPUJyYXplJnV0bV9jYW1wYWlnbj1M=
+aWZldGltZUxpY2Vuc2VfMjAyMzEyJnV0bV9jb250ZW50PXRvcGxpbmtXA3NwY0IKZXNubHNlbAK=
+BlFIRYnJua2F0aEBnbWFpbC5jb21YBAAAAXI~ )=0A=0A=0AGive the gift of a lifetime=
+ fishing or hunting license. =0A( https://clicks.aspiraconnect.com/f/a/2Bk7=
+HtTwM4oOHZ9OzIbegA~~/AAQRxQA~/RgRnVfFuP0SbaHR0cHM6Ly93d3cuZG5yLnN0YXRlLm1uL=
+nVzL2xpY2Vuc2VzL2xpZmV0aW1lL3Jlc2lkZW50cy9pbmRleC5odG1sP3V0bV9tZWRpdW09ZW1h=
+aWwmdXRtX3NvdXJjZT1CcmF6ZSZ1dG1fY2FtcGFpZ249TGlmZXRpbWVMaWNlbnNlXzIwMjMxMiZ=
+1dG1fY29udGVudD1oZWFkZXJXA3NwY0IKZXNubHNlbAKBlFIRYnJua2F0aEBnbWFpbC5jb21YBA=
+AAAXI~ )=0A=0A=0A*********************************************=0ALifetime l=
+icenses: Gifts that keep on giving.=0A*************************************=
+********=0A=0AAre you hunting for holiday gift ideas=3F Give the gift of th=
+e=0Aoutdoors with a Minnesota lifetime fishing or hunting license =0A( http=
+s://clicks.aspiraconnect.com/f/a/aReF4glM73M1CurpUcJa1Q~~/AAQRxQA~/RgRnVfFu=
+P0SPaHR0cHM6Ly93d3cuZG5yLnN0YXRlLm1uLnVzL2xpY2Vuc2VzL2xpZmV0aW1lL2luZGV4Lmh=
+0bWw_dXRtX21lZGl1bT1lbWFpbCZ1dG1fc291cmNlPUJyYXplJnV0bV9jYW1wYWlnbj1MaWZldG=
+ltZUxpY2Vuc2VfMjAyMzEyJnV0bV9jb250ZW50PXRleHRXA3NwY0IKZXNubHNlbAKBlFIRYnJua=
+2F0aEBnbWFpbC5jb21YBAAAAXI~ )=0A. The memory of time spent outdoors is one =
+of the most=0Ameaningful gifts one can give.=0A=0AWe offer reduced rates fo=
+r those under age 16 and over 50.=0APlus, if license prices increase or the=
+ license holder moves out=0Aof state, lifetime licenses remain valid.=0A=0A=
+Share the Passion =0A( https://clicks.aspiraconnect.com/f/a/Gv-LRtXzlGTVtb1=
+VgjaXcA~~/AAQRxQA~/RgRnVfFuP0SaaHR0cHM6Ly93d3cuZG5yLnN0YXRlLm1uLnVzL2xpY2Vu=
+c2VzL2xpZmV0aW1lL3Jlc2lkZW50cy9pbmRleC5odG1sP3V0bV9tZWRpdW09ZW1haWwmdXRtX3N=
+vdXJjZT1CcmF6ZSZ1dG1fY2FtcGFpZ249TGlmZXRpbWVMaWNlbnNlXzIwMjMxMiZ1dG1fY29udG=
+VudD1pbWFnZVcDc3BjQgplc25sc2VsAoGUUhFicm5rYXRoQGdtYWlsLmNvbVgEAAABcg~~ )=0A=
+   'Tis the season to purchase a lifetime license - for yourself=0Aor as a =
+gift for someone else. To learn about the different types=0Aof lifetime lic=
+enses available and learn how to purchase, visit=0Athe DNR website =0A( htt=
+ps://clicks.aspiraconnect.com/f/a/z735zXNzfXBijXIkXL0PGQ~~/AAQRxQA~/RgRnVfF=
+uP0SZaHR0cHM6Ly93d3cuZG5yLnN0YXRlLm1uLnVzL2xpY2Vuc2VzL2xpZmV0aW1lL3Jlc2lkZW=
+50cy9pbmRleC5odG1sP3V0bV9tZWRpdW09ZW1haWwmdXRtX3NvdXJjZT1CcmF6ZSZ1dG1fY2Ftc=
+GFpZ249TGlmZXRpbWVMaWNlbnNlXzIwMjMxMiZ1dG1fY29udGVudD10ZXh0VwNzcGNCCmVzbmxz=
+ZWwCgZRSEWJybmthdGhAZ21haWwuY29tWAQAAAFy )=0A.=0A=0ADownload the applicatio=
+n form =0A( https://clicks.aspiraconnect.com/f/a/JMCYh1quhXH4rSJIpoXtDw~~/A=
+AQRxQA~/RgRnVfFuP0REaHR0cHM6Ly9maWxlcy5kbnIuc3RhdGUubW4udXMvcmxwL2xpY2Vuc2V=
+zL2xpZmV0aW1lL3Jlc19saWZldGltZS5wZGZXA3NwY0IKZXNubHNlbAKBlFIRYnJua2F0aEBnbW=
+FpbC5jb21YBAAAAXI~ )=0A=0A=0A**********************************************=
+*************=0AHow long do lifetime licenses take to pay for themselves=3F=
+=0A***********************************************************=0A=0AWe did =
+the math so you don=E2=80=99t have to:=0A=0A#list-r5c0m2 ul{ margin: 0 !imp=
+ortant; padding: 0 !important; }=0A#list-r5c0m2 ul li{ mso-special-format: =
+bullet; }#list-r5c0m2=0A.levelOne li { margin-top: 0 !important; } #list-r5=
+c0m2 .levelOne=0A{ margin-left: -20px !important; }#list-r5c0m2 .levelTwo l=
+i {=0Amargin-top: 0 !important; } #list-r5c0m2 .levelTwo { margin-left:=0A2=
+0px !important; }* A lifetime fishing license purchased for a=0AMinnesotan =
+age 3 or younger will pay for itself in about 15=0Ayears. That means from a=
+ge 31 on, they=E2=80=99ll enjoy the benefits of=0Ayour gift.=0A* A lifetime=
+ small game license purchased for a Minnesotan age 51=0Aor older will pay f=
+or itself in about 12 years. Small game, big=0Amemories! Perfect for the hu=
+nter in your life.=0A* A lifetime sports license (fishing + small game) pur=
+chased for=0Aa Minnesotan age 4-15 will pay for itself in about 19 years. S=
+et=0Ayour little one up for a lifetime of outdoors adventures!=0A* A lifeti=
+me fishing license purchased for a Minnesotan age 16-50=0Awill pay for itse=
+lf in about 24 years, and for those 51+, only=0Aabout 15 years. Give the gi=
+ft that keeps on giving.=0ABrowse lifetime licenses =0A( https://clicks.asp=
+iraconnect.com/f/a/gYIHqMuQ2tku8vIg2BaokQ~~/AAQRxQA~/RgRnVfFuP0SRaHR0cHM6Ly=
+93d3cuZG5yLnN0YXRlLm1uLnVzL2xpY2Vuc2VzL2xpZmV0aW1lL2luZGV4Lmh0bWw_dXRtX21lZ=
+Gl1bT1lbWFpbCZ1dG1fc291cmNlPUJyYXplJnV0bV9jYW1wYWlnbj1MaWZldGltZUxpY2Vuc2Vf=
+MjAyMzEyJnV0bV9jb250ZW50PWJ1dHRvblcDc3BjQgplc25sc2VsAoGUUhFicm5rYXRoQGdtYWl=
+sLmNvbVgEAAABcg~~ )=0A      Buy a license =0A( https://clicks.aspiraconnect=
+.com/f/a/njIBvaDfAF9EJIcCVmruwg~~/AAQRxQA~/RgRnVfFuP0STaHR0cHM6Ly93d3cuZG5=
+yLnN0YXRlLm1uLnVzL2xpY2Vuc2VzL2FnZW50cy5odG1sP3V0bV9tZWRpdW09ZW1haWwmdXRtX3=
+NvdXJjZT1CcmF6ZSZ1dG1fY2FtcGFpZ249TGlmZXRpbWVMaWNlbnNlXzIwMjMxMiZ1dG1fY29ud=
+GVudD1idXlsaWNlbnNlLWltYWdlVwNzcGNCCmVzbmxzZWwCgZRSEWJybmthdGhAZ21haWwuY29t=
+WAQAAAFy )=0A        Buy a License =0A( https://clicks.aspiraconnect.com/f/=
+a/_SW3FJVBH7Dzgld4Luej7g~~/AAQRxQA~/RgRnVfFuP0SUaHR0cHM6Ly93d3cuZG5yLnN0YXR=
+lLm1uLnVzL2xpY2Vuc2VzL2FnZW50cy5odG1sP3V0bV9tZWRpdW09ZW1haWwmdXRtX3NvdXJjZT=
+1CcmF6ZSZ1dG1fY2FtcGFpZ249TGlmZXRpbWVMaWNlbnNlXzIwMjMxMiZ1dG1fY29udGVudD1id=
+XlsaWNlbnNlLWJ1dHRvblcDc3BjQgplc25sc2VsAoGUUhFicm5rYXRoQGdtYWlsLmNvbVgEAAAB=
+cg~~ )=0A     Explore Public Lands =0A( https://clicks.aspiraconnect.com/f/=
+a/6iYXICSS6YJIbrR9D_Bc8A~~/AAQRxQA~/RgRnVfFuP0STaHR0cHM6Ly93d3cuZG5yLnN0YXR=
+lLm1uLnVzL2dvaHVudGluZy93aGVyZS1odW50Lmh0bWw_dXRtX21lZGl1bT1lbWFpbCZ1dG1fc2=
+91cmNlPUJyYXplJnV0bV9jYW1wYWlnbj1MaWZldGltZUxpY2Vuc2VfMjAyMzEyJnV0bV9jb250Z=
+W50PWxhbmRzLWltYWdlVwNzcGNCCmVzbmxzZWwCgZRSEWJybmthdGhAZ21haWwuY29tWAQAAAFy=
+ )=0A        Explore Public Lands =0A( https://clicks.aspiraconnect.com/f/a=
+/m3sScIYDls3dbxDxCZd8-A~~/AAQRxQA~/RgRnVfFuP0SUaHR0cHM6Ly93d3cuZG5yLnN0YXRl=
+Lm1uLnVzL2dvaHVudGluZy93aGVyZS1odW50Lmh0bWw_dXRtX21lZGl1bT1lbWFpbCZ1dG1fc29=
+1cmNlPUJyYXplJnV0bV9jYW1wYWlnbj1MaWZldGltZUxpY2Vuc2VfMjAyMzEyJnV0bV9jb250ZW=
+50PWxhbmRzLWJ1dHRvblcDc3BjQgplc25sc2VsAoGUUhFicm5rYXRoQGdtYWlsLmNvbVgEAAABc=
+g~~ )=0A     View Regulations =0A( https://clicks.aspiraconnect.com/f/a/6Cs=
+BmSdRKDlabVwvrfrohQ~~/AAQRxQA~/RgRnVfFuP0SeaHR0cHM6Ly93d3cuZG5yLnN0YXRlLm1u=
+LnVzL3JlZ3VsYXRpb25zL2h1bnRpbmcvaW5kZXguaHRtbD91dG1fbWVkaXVtPWVtYWlsJnV0bV9=
+zb3VyY2U9QnJhemUmdXRtX2NhbXBhaWduPUxpZmV0aW1lTGljZW5zZV8yMDIzMTImdXRtX2Nvbn=
+RlbnQ9cmVndWxhdGlvbnMtaW1hZ2VXA3NwY0IKZXNubHNlbAKBlFIRYnJua2F0aEBnbWFpbC5jb=
+21YBAAAAXI~ )=0A        View Regulations =0A( https://clicks.aspiraconnect.=
+com/f/a/lt6rJQGtITGeTfir-b2nAw~~/AAQRxQA~/RgRnVfFuP0SfaHR0cHM6Ly93d3cuZG5yL=
+nN0YXRlLm1uLnVzL3JlZ3VsYXRpb25zL2h1bnRpbmcvaW5kZXguaHRtbD91dG1fbWVkaXVtPWVt=
+YWlsJnV0bV9zb3VyY2U9QnJhemUmdXRtX2NhbXBhaWduPUxpZmV0aW1lTGljZW5zZV8yMDIzMTI=
+mdXRtX2NvbnRlbnQ9cmVndWxhdGlvbnMtYnV0dG9uVwNzcGNCCmVzbmxzZWwCgZRSEWJybmthdG=
+hAZ21haWwuY29tWAQAAAFy )=0A      MN DNR =0A( https://clicks.aspiraconnect.c=
+om/f/a/df3IZSCDWWzfjtxCe_jsAQ~~/AAQRxQA~/RgRnVfFuP0R6aHR0cHM6Ly93d3cuZG5yLn=
+N0YXRlLm1uLnVzLz91dG1fbWVkaXVtPWVtYWlsJnV0bV9zb3VyY2U9QnJhemUmdXRtX2NhbXBha=
+WduPUxpZmV0aW1lTGljZW5zZV8yMDIzMTImdXRtX2NvbnRlbnQ9Zm9vdGVyLWxvZ29XA3NwY0IK=
+ZXNubHNlbAKBlFIRYnJua2F0aEBnbWFpbC5jb21YBAAAAXI~ )=0A  Facebook ( https://c=
+licks.aspiraconnect.com/f/a/92s8bwBShaXOmp5zHIogKA~~/AAQRxQA~/RgRnVfFuP0Qla=
+HR0cHM6Ly93d3cuZmFjZWJvb2suY29tL01pbm5lc290YUROUlcDc3BjQgplc25sc2VsAoGUUhFi=
+cm5rYXRoQGdtYWlsLmNvbVgEAAABcg~~ ) Twitter =0A( https://clicks.aspiraconnec=
+t.com/f/a/S8imCOuXZ9njRdOwUh0ohA~~/AAQRxQA~/RgRnVfFuP0QZaHR0cHM6Ly90d2l0dGV=
+yLmNvbS9tbmRuclcDc3BjQgplc25sc2VsAoGUUhFicm5rYXRoQGdtYWlsLmNvbVgEAAABcg~~ )=
+ Instagram =0A( https://clicks.aspiraconnect.com/f/a/tYQu3QN0BBC6NZRP7AgLDQ=
+~~/AAQRxQA~/RgRnVfFuP0QnaHR0cHM6Ly93d3cuaW5zdGFncmFtLmNvbS9taW5uZXNvdGFkbnI=
+vVwNzcGNCCmVzbmxzZWwCgZRSEWJybmthdGhAZ21haWwuY29tWAQAAAFy ) YouTube =0A( ht=
+tps://clicks.aspiraconnect.com/f/a/3mLZz4txErLChGMtcRYv6Q~~/AAQRxQA~/RgRnVf=
+FuP0QpaHR0cHM6Ly93d3cueW91dHViZS5jb20vdXNlci9NaW5uZXNvdGFETlJXA3NwY0IKZXNub=
+HNlbAKBlFIRYnJua2F0aEBnbWFpbC5jb21YBAAAAXI~ )      Minnesota=0ADepartment o=
+f Natural Resources | mndnr.gov =0A( https://clicks.aspiraconnect.com/f/a/B=
+ipLagJpB5u79wZ9nfUbmg~~/AAQRxQA~/RgRnVfFuP0R1aHR0cHM6Ly93d3cuZG5yLnN0YXRlLm=
+1uLnVzLz91dG1fbWVkaXVtPWVtYWlsJnV0bV9zb3VyY2U9QnJhemUmdXRtX2NhbXBhaWduPUxpZ=
+mV0aW1lTGljZW5zZV8yMDIzMTImdXRtX2NvbnRlbnQ9Zm9vdGVyVwNzcGNCCmVzbmxzZWwCgZRS=
+EWJybmthdGhAZ21haWwuY29tWAQAAAFy )=0A=0A=0AEmail us: info.dnr@state.mn.us |=
+ Call 651-296-6157 or=0A888-646-6367=0A=0AThis email was sent to you becaus=
+e you are a registered user=0Aand subscriber of the Minnesota Online Licens=
+ing portal. Please=0ADO NOT REPLY TO THIS MESSAGE. If you do not want to re=
+ceive=0Afurther emails unsubscribe here (=0Ahttps://clicks.aspiraconnect.co=
+m/f/a/37BrS1jGXOwt-sb4WXlCwQ~~/AAQRxQA~/RgRnVfFuP4S5AWh0dHBzOi8vMDUuZW1haWx=
+pbmJvdW5kcHJvY2Vzc2luZy5jb20vZW5jX3VzZXIvdW5zdWJzY3JpYmU_ZD0lMjQxJTI0Y0hWel=
+JkdWJONFhUYURHMkVVMSUyRmF3JTNEJTNEJTI0TEZhSkdWclJ4MkswbDRLbG9ya0ZSdXJDMzFTJ=
+TJCeGV6V0l3dXB1dUw4a0djZ0wzUmtpRDZ1JTJGVmxxWVI0MiUwQXJTSzVUSEtjSzZvZk5ndjky=
+V2QlMkYwZmppR2tWV3JGam9aRkpUc3Y2eDdsNjFmdEhHWERab2txRFJYME8zJTBBRlpuMEhhenV=
+CdU0yTFFvcmdjNHVYQzYwVUlaWDZ5NTJhZVVtODNGcERiNDVYRk4xaTVLa1hrZnhFJTJCenolME=
+ElMkIybzZOeXhtbVhXbDBYJTJCREFlZzR4NWxLSVMyZEpxQWN2WTE3VyUyQmM3MTgxTkhOdiUyQ=
+kJ5MnhTWnAwT0g4JTJGJTBBNU1XUnZOTVJnNUJXYUFoWHVWM3VBZDVaR3dWcCUyRm1vREdLWFBS=
+RFRsQzR5RWk4blRHekhObiUyQkpmc1pnJTNEJjE9MVcDc3BjQgplc25sc2VsAoGUUhFicm5rYXR=
+oQGdtYWlsLmNvbVgEAAABcg~~ ).=0A=0AAspira: 717 N. Harwood, Suite 2300, Dalla=
+s, TX 75201
+--_----zV6DjtNMo/5aLbBg3BrZWQ===_F5/49-38627-E6C63756
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="UTF-8"
+
+<!DOCTYPE html>=0A<html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=
+=3D"urn:schemas-microsoft-com:office:office" lang=3D"en">=0A<head>=0A<title=
+></title>=0A<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=
+=3Dutf-8">=0A<meta name=3D"viewport" content=3D"width=3Ddevice-width,initia=
+l-scale=3D1">=0A<!--[if mso]><xml><o:OfficeDocumentSettings><o:PixelsPerInc=
+h>96</o:PixelsPerInch><o:AllowPNG/></o:OfficeDocumentSettings></xml><![endi=
+f]--><style>=0A*{box-sizing:border-box}body{margin:0;padding:0}a[x-apple-da=
+ta-detectors]{color:inherit!important;text-decoration:inherit!important}#Me=
+ssageViewBody a{color:inherit;text-decoration:none}p{line-height:inherit}.d=
+esktop_hide,.desktop_hide table{mso-hide:all;display:none;max-height:0;over=
+flow:hidden}.image_block img+div{display:none} @media (max-width:670px){.so=
+cial_block.desktop_hide .social-table{display:inline-block!important}.mobil=
+e_hide{display:none}.row-content{width:100%!important}.stack .column{width:=
+100%;display:block}.mobile_hide{min-height:0;max-height:0;max-width:0;overf=
+low:hidden;font-size:0}.desktop_hide,.desktop_hide table{display:table!impo=
+rtant;max-height:none!important}}=0A</style>=0A</head>=0A<body style=3D"bac=
+kground-color:#fff;margin:0;padding:0;-webkit-text-size-adjust:none;text-si=
+ze-adjust:none">=0A<div style=3D"display:none !important;visibility:hidden;=
+mso-hide:all;font-size:1px;color:#ffffff;line-height:1px;max-height:0px;max=
+-width:0px;opacity:0;overflow:hidden;">The holiday gift that lasts a lifeti=
+me!</div>=0A<table class=3D"nl-container" width=3D"100%" border=3D"0" cellp=
+adding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lsp=
+ace:0;mso-table-rspace:0;background-color:#fff"><tbody><tr><td>=0A<table cl=
+ass=3D"row row-1" align=3D"center" width=3D"100%" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;=
+mso-table-rspace:0"><tbody><tr><td><table class=3D"row-content stack" align=
+=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presen=
+tation" style=3D"mso-table-lspace:0;mso-table-rspace:0;color:#000;width:650=
+px;margin:0 auto" width=3D"650"><tbody><tr><td class=3D"column column-1" wi=
+dth=3D"100%" style=3D"font-weight:400;text-align:left;mso-table-lspace:0;ms=
+o-table-rspace:0;padding-bottom:5px;vertical-align:top;border-top:0;border-=
+right:0;border-bottom:0;border-left:0"><table class=3D"paragraph_block bloc=
+k-1" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;word-break=
+:break-word"><tr><td class=3D"pad"><div style=3D"color:#000;direction:ltr;f=
+ont-family:'Open Sans',Arial,Sans-serif;font-size:14px;font-weight:400;lett=
+er-spacing:0;line-height:normal;text-align:center;mso-line-height-alt:NaNpx=
+"><p style=3D"margin:0">=0A<a href=3D"https://clicks.aspiraconnect.com/f/a/=
+t48tLryt6vMs58nc0Sqiow~~/AAQRxQA~/RgRnVfFuP0SSaHR0cHM6Ly93d3cuZG5yLnN0YXRlL=
+m1uLnVzL2xpY2Vuc2VzL2xpZmV0aW1lL2luZGV4Lmh0bWw_dXRtX21lZGl1bT1lbWFpbCZ1dG1f=
+c291cmNlPUJyYXplJnV0bV9jYW1wYWlnbj1MaWZldGltZUxpY2Vuc2VfMjAyMzEyJnV0bV9jb25=
+0ZW50PXRvcGxpbmtXA3NwY0IKZXNubHNlbAKBlFIRYnJua2F0aEBnbWFpbC5jb21YBAAAAXI~" =
+target=3D"_blank" style=3D"text-decoration: underline; color: #003760;" rel=
+=3D"noopener">Purchase a Lifetime License</a></p></div></td></tr></table></=
+td></tr></tbody></table></td></tr></tbody></table>=0A<table class=3D"row ro=
+w-2" align=3D"center" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspa=
+ce:0"><tbody><tr><td><table class=3D"row-content stack" align=3D"center" bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=
+=3D"mso-table-lspace:0;mso-table-rspace:0;background-color:#f3e8df;border-r=
+adius:0;color:#000;width:650px;margin:0 auto" width=3D"650"><tbody><tr><td =
+class=3D"column column-1" width=3D"100%" style=3D"font-weight:400;text-alig=
+n:left;mso-table-lspace:0;mso-table-rspace:0;vertical-align:top;border-top:=
+0;border-right:0;border-bottom:0;border-left:0"><table class=3D"image_block=
+ block-1" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" r=
+ole=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tr><t=
+d class=3D"pad" style=3D"width:100%"><div class=3D"alignment" align=3D"cent=
+er" style=3D"line-height:10px"><div style=3D"max-width:650px"><a href=3D"ht=
+tps://clicks.aspiraconnect.com/f/a/2Bk7HtTwM4oOHZ9OzIbegA~~/AAQRxQA~/RgRnVf=
+FuP0SbaHR0cHM6Ly93d3cuZG5yLnN0YXRlLm1uLnVzL2xpY2Vuc2VzL2xpZmV0aW1lL3Jlc2lkZ=
+W50cy9pbmRleC5odG1sP3V0bV9tZWRpdW09ZW1haWwmdXRtX3NvdXJjZT1CcmF6ZSZ1dG1fY2Ft=
+cGFpZ249TGlmZXRpbWVMaWNlbnNlXzIwMjMxMiZ1dG1fY29udGVudD1oZWFkZXJXA3NwY0IKZXN=
+ubHNlbAKBlFIRYnJua2F0aEBnbWFpbC5jb21YBAAAAXI~" target=3D"_blank" style=3D"o=
+utline:none" tabindex=3D"-1"><img src=3D"https://braze-images.com/appboy/co=
+mmunication/assets/image_assets/images/655bc281eacfbd004cf0afcb/original.jp=
+g=3F1700512385" style=3D"display:block;height:auto;border:0;width:100%" wid=
+th=3D"650" alt=3D"Give the gift of a lifetime fishing or hunting license." =
+title=3D"Give the gift of a lifetime fishing or hunting license."></a></div=
+></div></td></tr></table></td></tr></tbody></table></td></tr></tbody></tabl=
+e>=0A<table class=3D"row row-3" align=3D"center" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-ta=
+ble-lspace:0;mso-table-rspace:0"><tbody><tr><td><table class=3D"row-content=
+ stack" align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" r=
+ole=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;backgro=
+und-color:#f3e8df;border-radius:0;color:#000;width:650px;margin:0 auto" wid=
+th=3D"650"><tbody><tr>=0A<td class=3D"column column-1" width=3D"58.33333333=
+3333336%" style=3D"font-weight:400;text-align:left;mso-table-lspace:0;mso-t=
+able-rspace:0;padding-bottom:5px;padding-left:5px;padding-right:5px;padding=
+-top:5px;vertical-align:top;border-top:0;border-right:0;border-bottom:0;bor=
+der-left:0">=0A<table class=3D"heading_block block-1" width=3D"100%" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"m=
+so-table-lspace:0;mso-table-rspace:0"><tr><td class=3D"pad" style=3D"paddin=
+g-bottom:5px;padding-left:10px;padding-right:10px;padding-top:10px;text-ali=
+gn:center;width:100%"><h1 style=3D"margin:0;color:#000;direction:ltr;font-f=
+amily:Arial,Sans-serif;font-size:22px;font-weight:700;letter-spacing:normal=
+;line-height:120%;text-align:center;margin-top:0;margin-bottom:0;mso-line-h=
+eight-alt:26.4px">=0A<strong>Lifetime licenses: Gifts that keep on giving.<=
+/strong>=0A</h1></td></tr></table>=0A<table class=3D"paragraph_block block-=
+2" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"=
+presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;word-break:bre=
+ak-word"><tr><td class=3D"pad" style=3D"padding-left:10px;padding-right:10p=
+x;padding-top:10px"><div style=3D"color:#000;direction:ltr;font-family:Aria=
+l,Sans-serif;font-size:15px;font-weight:400;letter-spacing:0;line-height:15=
+0%;text-align:left;mso-line-height-alt:22.5px">=0A<p style=3D"margin:0;marg=
+in-bottom:0">=0AAre you hunting for holiday gift ideas=3F Give the gift of =
+the outdoors with a <a href=3D"https://clicks.aspiraconnect.com/f/a/aReF4gl=
+M73M1CurpUcJa1Q~~/AAQRxQA~/RgRnVfFuP0SPaHR0cHM6Ly93d3cuZG5yLnN0YXRlLm1uLnVz=
+L2xpY2Vuc2VzL2xpZmV0aW1lL2luZGV4Lmh0bWw_dXRtX21lZGl1bT1lbWFpbCZ1dG1fc291cmN=
+lPUJyYXplJnV0bV9jYW1wYWlnbj1MaWZldGltZUxpY2Vuc2VfMjAyMzEyJnV0bV9jb250ZW50PX=
+RleHRXA3NwY0IKZXNubHNlbAKBlFIRYnJua2F0aEBnbWFpbC5jb21YBAAAAXI~" target=3D"_=
+blank" style=3D"text-decoration: underline; color: #003760;" rel=3D"noopene=
+r">Minnesota lifetime fishing or hunting license</a>. The memory of time sp=
+ent outdoors is one of the most meaningful gifts one can give.</p>=0A<p sty=
+le=3D"margin:0;margin-bottom:0">&nbsp;</p>=0A<p style=3D"margin:0">=0AWe of=
+fer reduced rates for those under age 16 and over 50. Plus, if license pric=
+es increase or the license holder moves out of state, lifetime licenses rem=
+ain valid.</p>=0A</div></td></tr></table>=0A</td>=0A<td class=3D"column col=
+umn-2" width=3D"41.666666666666664%" style=3D"font-weight:400;text-align:le=
+ft;mso-table-lspace:0;mso-table-rspace:0;padding-bottom:5px;padding-top:5px=
+;vertical-align:top;border-top:0;border-right:0;border-bottom:0;border-left=
+:0"><table class=3D"image_block block-1" width=3D"100%" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspa=
+ce:0;mso-table-rspace:0"><tr><td class=3D"pad" style=3D"padding-right:10px;=
+padding-top:10px;width:100%"><div class=3D"alignment" align=3D"center" styl=
+e=3D"line-height:10px"><div style=3D"max-width:260.83333333333337px"><a hre=
+f=3D"https://clicks.aspiraconnect.com/f/a/Gv-LRtXzlGTVtb1VgjaXcA~~/AAQRxQA~=
+/RgRnVfFuP0SaaHR0cHM6Ly93d3cuZG5yLnN0YXRlLm1uLnVzL2xpY2Vuc2VzL2xpZmV0aW1lL3=
+Jlc2lkZW50cy9pbmRleC5odG1sP3V0bV9tZWRpdW09ZW1haWwmdXRtX3NvdXJjZT1CcmF6ZSZ1d=
+G1fY2FtcGFpZ249TGlmZXRpbWVMaWNlbnNlXzIwMjMxMiZ1dG1fY29udGVudD1pbWFnZVcDc3Bj=
+Qgplc25sc2VsAoGUUhFicm5rYXRoQGdtYWlsLmNvbVgEAAABcg~~" target=3D"_blank" sty=
+le=3D"outline:none" tabindex=3D"-1"><img src=3D"https://braze-images.com/ap=
+pboy/communication/assets/image_assets/images/655bc281c8d8680057ee4044/orig=
+inal.jpg=3F1700512385" style=3D"display:block;height:auto;border:0;width:10=
+0%" width=3D"260.83333333333337" alt=3D"Share the Passion" title=3D"Share t=
+he Passion"></a></div></div></td></tr></table></td>=0A</tr></tbody></table>=
+</td></tr></tbody></table>=0A<table class=3D"row row-4" align=3D"center" wi=
+dth=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td><ta=
+ble class=3D"row-content stack" align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;=
+mso-table-rspace:0;background-color:#f3e8df;border-radius:0;color:#000;widt=
+h:650px;margin:0 auto" width=3D"650"><tbody><tr><td class=3D"column column-=
+1" width=3D"100%" style=3D"font-weight:400;text-align:left;mso-table-lspace=
+:0;mso-table-rspace:0;vertical-align:top;border-top:0;border-right:0;border=
+-bottom:0;border-left:0"><table class=3D"paragraph_block block-1" width=3D"=
+100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation=
+" style=3D"mso-table-lspace:0;mso-table-rspace:0;word-break:break-word"><tr=
+><td class=3D"pad" style=3D"padding-left:10px;padding-right:20px;padding-to=
+p:10px"><div style=3D"color:#000;direction:ltr;font-family:Arial,Sans-serif=
+;font-size:15px;font-weight:400;letter-spacing:0;line-height:150%;text-alig=
+n:left;mso-line-height-alt:22.5px"><p style=3D"margin:0">=0A'Tis the season=
+ to purchase a lifetime license - for yourself or as a gift for someone els=
+e. To learn about the different types of lifetime licenses available and le=
+arn how to purchase, visit the <a href=3D"https://clicks.aspiraconnect.com/=
+f/a/z735zXNzfXBijXIkXL0PGQ~~/AAQRxQA~/RgRnVfFuP0SZaHR0cHM6Ly93d3cuZG5yLnN0Y=
+XRlLm1uLnVzL2xpY2Vuc2VzL2xpZmV0aW1lL3Jlc2lkZW50cy9pbmRleC5odG1sP3V0bV9tZWRp=
+dW09ZW1haWwmdXRtX3NvdXJjZT1CcmF6ZSZ1dG1fY2FtcGFpZ249TGlmZXRpbWVMaWNlbnNlXzI=
+wMjMxMiZ1dG1fY29udGVudD10ZXh0VwNzcGNCCmVzbmxzZWwCgZRSEWJybmthdGhAZ21haWwuY2=
+9tWAQAAAFy" target=3D"_blank" style=3D"text-decoration: underline; color: #=
+003760;" rel=3D"noopener">DNR website</a>.</p></div></td></tr></table></td>=
+</tr></tbody></table></td></tr></tbody></table>=0A<table class=3D"row row-5=
+" align=3D"center" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:=
+0"><tbody><tr><td><table class=3D"row-content stack" align=3D"center" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"=
+mso-table-lspace:0;mso-table-rspace:0;background-color:#f3e8df;border-radiu=
+s:0;color:#000;width:650px;margin:0 auto" width=3D"650"><tbody><tr><td clas=
+s=3D"column column-1" width=3D"100%" style=3D"font-weight:400;text-align:le=
+ft;mso-table-lspace:0;mso-table-rspace:0;vertical-align:top;border-top:0;bo=
+rder-right:0;border-bottom:0;border-left:0">=0A<table class=3D"button_block=
+ block-1" width=3D"100%" border=3D"0" cellpadding=3D"10" cellspacing=3D"0" =
+role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tr><=
+td class=3D"pad"><div class=3D"alignment" align=3D"center">=0A<!--[if mso]>=
+=0A<v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:sc=
+hemas-microsoft-com:office:word" href=3D"https://clicks.aspiraconnect.com/f=
+/a/JMCYh1quhXH4rSJIpoXtDw~~/AAQRxQA~/RgRnVfFuP0REaHR0cHM6Ly9maWxlcy5kbnIuc3=
+RhdGUubW4udXMvcmxwL2xpY2Vuc2VzL2xpZmV0aW1lL3Jlc19saWZldGltZS5wZGZXA3NwY0IKZ=
+XNubHNlbAKBlFIRYnJua2F0aEBnbWFpbC5jb21YBAAAAXI~" style=3D"height:52px;width=
+:329px;v-text-anchor:middle;" arcsize=3D"21%" strokeweight=3D"0.75pt" strok=
+ecolor=3D"#42833E" fillcolor=3D"#42833e">=0A<w:anchorlock/>=0A<v:textbox in=
+set=3D"0px,0px,0px,0px">=0A<center style=3D"color:#FFFFFF; font-family:sans=
+-serif; font-size:18px">=0A<![endif]-->=0A<a href=3D"https://clicks.aspirac=
+onnect.com/f/a/JMCYh1quhXH4rSJIpoXtDw~~/AAQRxQA~/RgRnVfFuP0REaHR0cHM6Ly9maW=
+xlcy5kbnIuc3RhdGUubW4udXMvcmxwL2xpY2Vuc2VzL2xpZmV0aW1lL3Jlc19saWZldGltZS5wZ=
+GZXA3NwY0IKZXNubHNlbAKBlFIRYnJua2F0aEBnbWFpbC5jb21YBAAAAXI~" target=3D"_bla=
+nk" style=3D"text-decoration:none;display:inline-block;color:#FFFFFF;backgr=
+ound-color:#42833e;border-radius:10px;width:auto;border-top:1px solid #4283=
+3E;font-weight:700;border-right:1px solid #42833E;border-bottom:1px solid #=
+42833E;border-left:1px solid #42833E;padding-top:5px;padding-bottom:5px;fon=
+t-family:'Arial', Sans-serif;font-size:18px;text-align:center;mso-border-al=
+t:none;word-break:keep-all;"><span style=3D"padding-left:30px;padding-right=
+:30px;font-size:18px;display:inline-block;letter-spacing:normal;"><span sty=
+le=3D"word-break: break-word; line-height: 36px;">Download the application =
+form</span></span></a>=0A<!--[if mso]></center></v:textbox></v:roundrect><!=
+[endif]-->=0A</div></td></tr></table>=0A<table class=3D"divider_block block=
+-2" width=3D"100%" border=3D"0" cellpadding=3D"10" cellspacing=3D"0" role=
+=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tr><td c=
+lass=3D"pad"><div class=3D"alignment" align=3D"center"><table border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%" st=
+yle=3D"mso-table-lspace:0;mso-table-rspace:0"><tr><td class=3D"divider_inne=
+r" style=3D"font-size:1px;line-height:1px;border-top:1px solid #bbb"><span>=
+=E2=80=8A</span></td></tr></table></div></td></tr></table>=0A</td></tr></tb=
+ody></table></td></tr></tbody></table>=0A<table class=3D"row row-6" align=
+=3D"center" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tbo=
+dy><tr><td><table class=3D"row-content stack" align=3D"center" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-tab=
+le-lspace:0;mso-table-rspace:0;background-color:#f3e8df;border-radius:0;col=
+or:#000;width:650px;margin:0 auto" width=3D"650"><tbody><tr><td class=3D"co=
+lumn column-1" width=3D"100%" style=3D"font-weight:400;text-align:left;mso-=
+table-lspace:0;mso-table-rspace:0;padding-bottom:5px;padding-top:5px;vertic=
+al-align:top;border-top:0;border-right:0;border-bottom:0;border-left:0">=0A=
+<table class=3D"heading_block block-1" width=3D"100%" border=3D"0" cellpadd=
+ing=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace=
+:0;mso-table-rspace:0"><tr><td class=3D"pad" style=3D"padding-bottom:5px;pa=
+dding-left:10px;padding-right:10px;padding-top:5px;text-align:center;width:=
+100%"><h1 style=3D"margin:0;color:#000;direction:ltr;font-family:Arial,Sans=
+-serif;font-size:22px;font-weight:700;letter-spacing:normal;line-height:120=
+%;text-align:left;margin-top:0;margin-bottom:0;mso-line-height-alt:26.4px">=
+=0A<strong>How long do lifetime licenses take to pay for themselves=3F</str=
+ong> &nbsp;</h1></td></tr></table>=0A<table class=3D"paragraph_block block-=
+2" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"=
+presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;word-break:bre=
+ak-word"><tr><td class=3D"pad" style=3D"padding-left:10px;padding-right:10p=
+x;padding-top:10px"><div style=3D"color:#000;direction:ltr;font-family:Aria=
+l,Sans-serif;font-size:15px;font-weight:400;letter-spacing:0;line-height:15=
+0%;text-align:left;mso-line-height-alt:22.5px"><p style=3D"margin:0">We did=
+ the math so you don=E2=80=99t have to:=0A</p></div></td></tr></table>=0A<!=
+--[if mso]><style>#list-r5c0m2 ul{ margin: 0 !important; padding: 0 !import=
+ant; } #list-r5c0m2 ul li{ mso-special-format: bullet; }#list-r5c0m2 .level=
+One li { margin-top: 0 !important; } #list-r5c0m2 .levelOne { margin-left: =
+-20px !important; }#list-r5c0m2 .levelTwo li { margin-top: 0 !important; } =
+#list-r5c0m2 .levelTwo { margin-left: 20px !important; }</style><![endif]--=
+><table class=3D"list_block block-3" id=3D"list-r5c0m2" width=3D"100%" bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D=
+"mso-table-lspace:0;mso-table-rspace:0;word-break:break-word"><tr><td class=
+=3D"pad" style=3D"padding-bottom:10px;padding-left:30px;padding-right:20px;=
+padding-top:10px"><div class=3D"levelOne" style=3D"margin-left:0"><ul class=
+=3D"leftList" start=3D"1" style=3D"margin-top:0;margin-bottom:0;padding:0;l=
+ist-style-position:inside;padding-left:0;font-weight:400;text-align:left;co=
+lor:#000;direction:ltr;font-family:Arial,Sans-serif;font-size:15px;letter-s=
+pacing:0;line-height:150%;mso-line-height-alt:22.5px;list-style-type:disc">=
+=0A<li style=3D"margin-bottom:0;text-align:left">A lifetime fishing license=
+ purchased for a Minnesotan age 3 or younger will pay for itself in about 1=
+5 years. That means from age 31 on, they=E2=80=99ll enjoy the benefits of y=
+our gift.</li>=0A<li style=3D"margin-bottom:0;text-align:left">A lifetime s=
+mall game license purchased for a Minnesotan age 51 or older will pay for i=
+tself in about 12 years. Small game, big memories! Perfect for the hunter i=
+n your life.</li>=0A<li style=3D"margin-bottom:0;text-align:left">A lifetim=
+e sports license (fishing + small game) purchased for a Minnesotan age 4-15=
+ will pay for itself in about 19 years. Set your little one up for a lifeti=
+me of outdoors adventures!</li>=0A<li style=3D"margin-bottom:0;text-align:l=
+eft">A lifetime fishing license purchased for a Minnesotan age 16-50 will p=
+ay for itself in about 24 years, and for those 51+, only about 15 years. Gi=
+ve the gift that keeps on giving.</li>=0A</ul></div></td></tr></table>=0A<t=
+able class=3D"button_block block-4" width=3D"100%" border=3D"0" cellpadding=
+=3D"10" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0=
+;mso-table-rspace:0"><tr><td class=3D"pad"><div class=3D"alignment" align=
+=3D"center">=0A<!--[if mso]>=0A<v:roundrect xmlns:v=3D"urn:schemas-microsof=
+t-com:vml" xmlns:w=3D"urn:schemas-microsoft-com:office:word" href=3D"https:=
+//clicks.aspiraconnect.com/f/a/gYIHqMuQ2tku8vIg2BaokQ~~/AAQRxQA~/RgRnVfFuP0=
+SRaHR0cHM6Ly93d3cuZG5yLnN0YXRlLm1uLnVzL2xpY2Vuc2VzL2xpZmV0aW1lL2luZGV4Lmh0b=
+Ww_dXRtX21lZGl1bT1lbWFpbCZ1dG1fc291cmNlPUJyYXplJnV0bV9jYW1wYWlnbj1MaWZldGlt=
+ZUxpY2Vuc2VfMjAyMzEyJnV0bV9jb250ZW50PWJ1dHRvblcDc3BjQgplc25sc2VsAoGUUhFicm5=
+rYXRoQGdtYWlsLmNvbVgEAAABcg~~" style=3D"height:52px;width:275px;v-text-anch=
+or:middle;" arcsize=3D"21%" strokeweight=3D"0.75pt" strokecolor=3D"#42833E"=
+ fillcolor=3D"#42833e">=0A<w:anchorlock/>=0A<v:textbox inset=3D"0px,0px,0px=
+,0px">=0A<center style=3D"color:#FFFFFF; font-family:sans-serif; font-size:=
+18px">=0A<![endif]-->=0A<a href=3D"https://clicks.aspiraconnect.com/f/a/gYI=
+HqMuQ2tku8vIg2BaokQ~~/AAQRxQA~/RgRnVfFuP0SRaHR0cHM6Ly93d3cuZG5yLnN0YXRlLm1u=
+LnVzL2xpY2Vuc2VzL2xpZmV0aW1lL2luZGV4Lmh0bWw_dXRtX21lZGl1bT1lbWFpbCZ1dG1fc29=
+1cmNlPUJyYXplJnV0bV9jYW1wYWlnbj1MaWZldGltZUxpY2Vuc2VfMjAyMzEyJnV0bV9jb250ZW=
+50PWJ1dHRvblcDc3BjQgplc25sc2VsAoGUUhFicm5rYXRoQGdtYWlsLmNvbVgEAAABcg~~" tar=
+get=3D"_blank" style=3D"text-decoration:none;display:inline-block;color:#FF=
+FFFF;background-color:#42833e;border-radius:10px;width:auto;border-top:1px =
+solid #42833E;font-weight:700;border-right:1px solid #42833E;border-bottom:=
+1px solid #42833E;border-left:1px solid #42833E;padding-top:5px;padding-bot=
+tom:5px;font-family:'Arial', Sans-serif;font-size:18px;text-align:center;ms=
+o-border-alt:none;word-break:keep-all;"><span style=3D"padding-left:30px;pa=
+dding-right:30px;font-size:18px;display:inline-block;letter-spacing:normal;=
+"><span style=3D"word-break: break-word; line-height: 36px;">Browse lifetim=
+e licenses</span></span></a>=0A<!--[if mso]></center></v:textbox></v:roundr=
+ect><![endif]-->=0A</div></td></tr></table>=0A</td></tr></tbody></table></t=
+d></tr></tbody></table>=0A<table class=3D"row row-7" align=3D"center" width=
+=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presenta=
+tion" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td><table=
+ class=3D"row-content stack" align=3D"center" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-t=
+able-rspace:0;background-color:#003760;border-radius:0;color:#000;width:650=
+px;margin:0 auto" width=3D"650"><tbody><tr>=0A<td class=3D"column column-1"=
+ width=3D"33.333333333333336%" style=3D"font-weight:400;text-align:left;mso=
+-table-lspace:0;mso-table-rspace:0;padding-bottom:5px;padding-top:5px;verti=
+cal-align:top;border-top:0;border-right:0;border-bottom:0;border-left:0">=
+=0A<table class=3D"image_block block-1" width=3D"100%" border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspac=
+e:0;mso-table-rspace:0"><tr><td class=3D"pad" style=3D"width:100%"><div cla=
+ss=3D"alignment" align=3D"center" style=3D"line-height:10px"><div style=3D"=
+max-width:216.66666666666666px"><a href=3D"https://clicks.aspiraconnect.com=
+/f/a/njIBvaDfAF9EJIcCVmruwg~~/AAQRxQA~/RgRnVfFuP0STaHR0cHM6Ly93d3cuZG5yLnN0=
+YXRlLm1uLnVzL2xpY2Vuc2VzL2FnZW50cy5odG1sP3V0bV9tZWRpdW09ZW1haWwmdXRtX3NvdXJ=
+jZT1CcmF6ZSZ1dG1fY2FtcGFpZ249TGlmZXRpbWVMaWNlbnNlXzIwMjMxMiZ1dG1fY29udGVudD=
+1idXlsaWNlbnNlLWltYWdlVwNzcGNCCmVzbmxzZWwCgZRSEWJybmthdGhAZ21haWwuY29tWAQAA=
+AFy" target=3D"_blank" style=3D"outline:none" tabindex=3D"-1"><img src=3D"h=
+ttps://braze-images.com/appboy/communication/assets/image_assets/images/655=
+bc28137bb850058bfe434/original.jpg=3F1700512385" style=3D"display:block;hei=
+ght:auto;border:0;width:100%" width=3D"216.66666666666666" alt=3D"Buy a lic=
+ense" title=3D"Buy a license"></a></div></div></td></tr></table>=0A<table c=
+lass=3D"button_block block-2" width=3D"100%" border=3D"0" cellpadding=3D"10=
+" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-t=
+able-rspace:0"><tr><td class=3D"pad"><div class=3D"alignment" align=3D"cent=
+er">=0A<!--[if mso]>=0A<v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vm=
+l" xmlns:w=3D"urn:schemas-microsoft-com:office:word" href=3D"https://clicks=
+.aspiraconnect.com/f/a/_SW3FJVBH7Dzgld4Luej7g~~/AAQRxQA~/RgRnVfFuP0SUaHR0c=
+HM6Ly93d3cuZG5yLnN0YXRlLm1uLnVzL2xpY2Vuc2VzL2FnZW50cy5odG1sP3V0bV9tZWRpdW09=
+ZW1haWwmdXRtX3NvdXJjZT1CcmF6ZSZ1dG1fY2FtcGFpZ249TGlmZXRpbWVMaWNlbnNlXzIwMjM=
+xMiZ1dG1fY29udGVudD1idXlsaWNlbnNlLWJ1dHRvblcDc3BjQgplc25sc2VsAoGUUhFicm5rYX=
+RoQGdtYWlsLmNvbVgEAAABcg~~" style=3D"height:48px;width:143px;v-text-anchor:=
+middle;" arcsize=3D"23%" strokeweight=3D"0.75pt" strokecolor=3D"#42833E" fi=
+llcolor=3D"#42833e">=0A<w:anchorlock/>=0A<v:textbox inset=3D"0px,0px,0px,0p=
+x">=0A<center style=3D"color:#FFFFFF; font-family:sans-serif; font-size:16p=
+x">=0A<![endif]-->=0A<a href=3D"https://clicks.aspiraconnect.com/f/a/_SW3FJ=
+VBH7Dzgld4Luej7g~~/AAQRxQA~/RgRnVfFuP0SUaHR0cHM6Ly93d3cuZG5yLnN0YXRlLm1uLnV=
+zL2xpY2Vuc2VzL2FnZW50cy5odG1sP3V0bV9tZWRpdW09ZW1haWwmdXRtX3NvdXJjZT1CcmF6ZS=
+Z1dG1fY2FtcGFpZ249TGlmZXRpbWVMaWNlbnNlXzIwMjMxMiZ1dG1fY29udGVudD1idXlsaWNlb=
+nNlLWJ1dHRvblcDc3BjQgplc25sc2VsAoGUUhFicm5rYXRoQGdtYWlsLmNvbVgEAAABcg~~" ta=
+rget=3D"_blank" style=3D"text-decoration:none;display:inline-block;color:#F=
+FFFFF;background-color:#42833e;border-radius:10px;width:auto;border-top:1px=
+ solid #42833E;font-weight:700;border-right:1px solid #42833E;border-bottom=
+:1px solid #42833E;border-left:1px solid #42833E;padding-top:5px;padding-bo=
+ttom:5px;font-family:'Arial', Sans-serif;font-size:16px;text-align:center;m=
+so-border-alt:none;word-break:keep-all;"><span style=3D"padding-left:15px;p=
+adding-right:15px;font-size:16px;display:inline-block;letter-spacing:normal=
+;"><span style=3D"word-break: break-word; line-height: 32px;">Buy a License=
+</span></span></a>=0A<!--[if mso]></center></v:textbox></v:roundrect><![end=
+if]-->=0A</div></td></tr></table>=0A</td>=0A<td class=3D"column column-2" w=
+idth=3D"33.333333333333336%" style=3D"font-weight:400;text-align:left;mso-t=
+able-lspace:0;mso-table-rspace:0;padding-bottom:5px;padding-top:5px;vertica=
+l-align:top;border-top:0;border-right:0;border-bottom:0;border-left:0">=0A<=
+table class=3D"image_block block-1" width=3D"100%" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;=
+mso-table-rspace:0"><tr><td class=3D"pad" style=3D"width:100%"><div class=
+=3D"alignment" align=3D"center" style=3D"line-height:10px"><div style=3D"ma=
+x-width:216.66666666666666px"><a href=3D"https://clicks.aspiraconnect.com/f=
+/a/6iYXICSS6YJIbrR9D_Bc8A~~/AAQRxQA~/RgRnVfFuP0STaHR0cHM6Ly93d3cuZG5yLnN0YX=
+RlLm1uLnVzL2dvaHVudGluZy93aGVyZS1odW50Lmh0bWw_dXRtX21lZGl1bT1lbWFpbCZ1dG1fc=
+291cmNlPUJyYXplJnV0bV9jYW1wYWlnbj1MaWZldGltZUxpY2Vuc2VfMjAyMzEyJnV0bV9jb250=
+ZW50PWxhbmRzLWltYWdlVwNzcGNCCmVzbmxzZWwCgZRSEWJybmthdGhAZ21haWwuY29tWAQAAAF=
+y" target=3D"_blank" style=3D"outline:none" tabindex=3D"-1"><img src=3D"htt=
+ps://braze-images.com/appboy/communication/assets/image_assets/images/655bc=
+281e25ef8004d65d61d/original.jpg=3F1700512385" style=3D"display:block;heigh=
+t:auto;border:0;width:100%" width=3D"216.66666666666666" alt=3D"Explore Pub=
+lic Lands" title=3D"Explore Public Lands"></a></div></div></td></tr></table=
+>=0A<table class=3D"button_block block-2" width=3D"100%" border=3D"0" cellp=
+adding=3D"10" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-ls=
+pace:0;mso-table-rspace:0"><tr><td class=3D"pad"><div class=3D"alignment" a=
+lign=3D"center">=0A<!--[if mso]>=0A<v:roundrect xmlns:v=3D"urn:schemas-micr=
+osoft-com:vml" xmlns:w=3D"urn:schemas-microsoft-com:office:word" href=3D"ht=
+tps://clicks.aspiraconnect.com/f/a/m3sScIYDls3dbxDxCZd8-A~~/AAQRxQA~/RgRnVf=
+FuP0SUaHR0cHM6Ly93d3cuZG5yLnN0YXRlLm1uLnVzL2dvaHVudGluZy93aGVyZS1odW50Lmh0b=
+Ww_dXRtX21lZGl1bT1lbWFpbCZ1dG1fc291cmNlPUJyYXplJnV0bV9jYW1wYWlnbj1MaWZldGlt=
+ZUxpY2Vuc2VfMjAyMzEyJnV0bV9jb250ZW50PWxhbmRzLWJ1dHRvblcDc3BjQgplc25sc2VsAoG=
+UUhFicm5rYXRoQGdtYWlsLmNvbVgEAAABcg~~" style=3D"height:48px;width:198px;v-t=
+ext-anchor:middle;" arcsize=3D"23%" strokeweight=3D"0.75pt" strokecolor=3D"=
+#42833E" fillcolor=3D"#42833e">=0A<w:anchorlock/>=0A<v:textbox inset=3D"0px=
+,0px,0px,0px">=0A<center style=3D"color:#FFFFFF; font-family:sans-serif; fo=
+nt-size:16px">=0A<![endif]-->=0A<a href=3D"https://clicks.aspiraconnect.com=
+/f/a/m3sScIYDls3dbxDxCZd8-A~~/AAQRxQA~/RgRnVfFuP0SUaHR0cHM6Ly93d3cuZG5yLnN0=
+YXRlLm1uLnVzL2dvaHVudGluZy93aGVyZS1odW50Lmh0bWw_dXRtX21lZGl1bT1lbWFpbCZ1dG1=
+fc291cmNlPUJyYXplJnV0bV9jYW1wYWlnbj1MaWZldGltZUxpY2Vuc2VfMjAyMzEyJnV0bV9jb2=
+50ZW50PWxhbmRzLWJ1dHRvblcDc3BjQgplc25sc2VsAoGUUhFicm5rYXRoQGdtYWlsLmNvbVgEA=
+AABcg~~" target=3D"_blank" style=3D"text-decoration:none;display:inline-blo=
+ck;color:#FFFFFF;background-color:#42833e;border-radius:10px;width:auto;bor=
+der-top:1px solid #42833E;font-weight:700;border-right:1px solid #42833E;bo=
+rder-bottom:1px solid #42833E;border-left:1px solid #42833E;padding-top:5px=
+;padding-bottom:5px;font-family:'Arial', Sans-serif;font-size:16px;text-ali=
+gn:center;mso-border-alt:none;word-break:keep-all;"><span style=3D"padding-=
+left:15px;padding-right:15px;font-size:16px;display:inline-block;letter-spa=
+cing:normal;"><span style=3D"word-break: break-word; line-height: 32px;">Ex=
+plore Public Lands</span></span></a>=0A<!--[if mso]></center></v:textbox></=
+v:roundrect><![endif]-->=0A</div></td></tr></table>=0A</td>=0A<td class=3D"=
+column column-3" width=3D"33.333333333333336%" style=3D"font-weight:400;tex=
+t-align:left;mso-table-lspace:0;mso-table-rspace:0;padding-bottom:5px;paddi=
+ng-top:5px;vertical-align:top;border-top:0;border-right:0;border-bottom:0;b=
+order-left:0">=0A<table class=3D"image_block block-1" width=3D"100%" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"m=
+so-table-lspace:0;mso-table-rspace:0"><tr><td class=3D"pad" style=3D"width:=
+100%"><div class=3D"alignment" align=3D"center" style=3D"line-height:10px">=
+<div style=3D"max-width:216.66666666666666px"><a href=3D"https://clicks.asp=
+iraconnect.com/f/a/6CsBmSdRKDlabVwvrfrohQ~~/AAQRxQA~/RgRnVfFuP0SeaHR0cHM6Ly=
+93d3cuZG5yLnN0YXRlLm1uLnVzL3JlZ3VsYXRpb25zL2h1bnRpbmcvaW5kZXguaHRtbD91dG1fb=
+WVkaXVtPWVtYWlsJnV0bV9zb3VyY2U9QnJhemUmdXRtX2NhbXBhaWduPUxpZmV0aW1lTGljZW5z=
+ZV8yMDIzMTImdXRtX2NvbnRlbnQ9cmVndWxhdGlvbnMtaW1hZ2VXA3NwY0IKZXNubHNlbAKBlFI=
+RYnJua2F0aEBnbWFpbC5jb21YBAAAAXI~" target=3D"_blank" style=3D"outline:none"=
+ tabindex=3D"-1"><img src=3D"https://braze-images.com/appboy/communication/=
+assets/image_assets/images/655bc2817ed0b8004b934e08/original.jpg=3F17005123=
+85" style=3D"display:block;height:auto;border:0;width:100%" width=3D"216.66=
+666666666666" alt=3D"View Regulations" title=3D"View Regulations"></a></div=
+></div></td></tr></table>=0A<table class=3D"button_block block-2" width=3D"=
+100%" border=3D"0" cellpadding=3D"10" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tr><td class=3D"pad"><d=
+iv class=3D"alignment" align=3D"center">=0A<!--[if mso]>=0A<v:roundrect xml=
+ns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:schemas-microsoft-com=
+:office:word" href=3D"https://clicks.aspiraconnect.com/f/a/lt6rJQGtITGeTfir=
+-b2nAw~~/AAQRxQA~/RgRnVfFuP0SfaHR0cHM6Ly93d3cuZG5yLnN0YXRlLm1uLnVzL3JlZ3VsY=
+XRpb25zL2h1bnRpbmcvaW5kZXguaHRtbD91dG1fbWVkaXVtPWVtYWlsJnV0bV9zb3VyY2U9QnJh=
+emUmdXRtX2NhbXBhaWduPUxpZmV0aW1lTGljZW5zZV8yMDIzMTImdXRtX2NvbnRlbnQ9cmVndWx=
+hdGlvbnMtYnV0dG9uVwNzcGNCCmVzbmxzZWwCgZRSEWJybmthdGhAZ21haWwuY29tWAQAAAFy" =
+style=3D"height:48px;width:168px;v-text-anchor:middle;" arcsize=3D"23%" str=
+okeweight=3D"0.75pt" strokecolor=3D"#42833E" fillcolor=3D"#42833e">=0A<w:an=
+chorlock/>=0A<v:textbox inset=3D"0px,0px,0px,0px">=0A<center style=3D"color=
+:#FFFFFF; font-family:sans-serif; font-size:16px">=0A<![endif]-->=0A<a href=
+=3D"https://clicks.aspiraconnect.com/f/a/lt6rJQGtITGeTfir-b2nAw~~/AAQRxQA~/=
+RgRnVfFuP0SfaHR0cHM6Ly93d3cuZG5yLnN0YXRlLm1uLnVzL3JlZ3VsYXRpb25zL2h1bnRpbmc=
+vaW5kZXguaHRtbD91dG1fbWVkaXVtPWVtYWlsJnV0bV9zb3VyY2U9QnJhemUmdXRtX2NhbXBhaW=
+duPUxpZmV0aW1lTGljZW5zZV8yMDIzMTImdXRtX2NvbnRlbnQ9cmVndWxhdGlvbnMtYnV0dG9uV=
+wNzcGNCCmVzbmxzZWwCgZRSEWJybmthdGhAZ21haWwuY29tWAQAAAFy" target=3D"_blank" =
+style=3D"text-decoration:none;display:inline-block;color:#FFFFFF;background=
+-color:#42833e;border-radius:10px;width:auto;border-top:1px solid #42833E;f=
+ont-weight:700;border-right:1px solid #42833E;border-bottom:1px solid #4283=
+3E;border-left:1px solid #42833E;padding-top:5px;padding-bottom:5px;font-fa=
+mily:'Arial', Sans-serif;font-size:16px;text-align:center;mso-border-alt:no=
+ne;word-break:keep-all;"><span style=3D"padding-left:15px;padding-right:15p=
+x;font-size:16px;display:inline-block;letter-spacing:normal;"><span style=
+=3D"word-break: break-word; line-height: 32px;">View Regulations</span></sp=
+an></a>=0A<!--[if mso]></center></v:textbox></v:roundrect><![endif]-->=0A</=
+div></td></tr></table>=0A</td>=0A</tr></tbody></table></td></tr></tbody></t=
+able>=0A<table class=3D"row row-8" align=3D"center" width=3D"100%" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"m=
+so-table-lspace:0;mso-table-rspace:0"><tbody><tr><td><table class=3D"row-co=
+ntent stack" align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;ba=
+ckground-color:#003760;border-radius:0;color:#000;width:650px;margin:0 auto=
+" width=3D"650"><tbody><tr>=0A<td class=3D"column column-1" width=3D"50%" s=
+tyle=3D"font-weight:400;text-align:left;mso-table-lspace:0;mso-table-rspace=
+:0;padding-bottom:5px;padding-top:5px;vertical-align:top;border-top:0;borde=
+r-right:0;border-bottom:0;border-left:0"><table class=3D"image_block block-=
+1" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"=
+presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tr><td class=
+=3D"pad" style=3D"padding-top:10px;width:100%"><div class=3D"alignment" ali=
+gn=3D"center" style=3D"line-height:10px"><div style=3D"max-width:313px"><a =
+href=3D"https://clicks.aspiraconnect.com/f/a/df3IZSCDWWzfjtxCe_jsAQ~~/AAQRx=
+QA~/RgRnVfFuP0R6aHR0cHM6Ly93d3cuZG5yLnN0YXRlLm1uLnVzLz91dG1fbWVkaXVtPWVtYWl=
+sJnV0bV9zb3VyY2U9QnJhemUmdXRtX2NhbXBhaWduPUxpZmV0aW1lTGljZW5zZV8yMDIzMTImdX=
+RtX2NvbnRlbnQ9Zm9vdGVyLWxvZ29XA3NwY0IKZXNubHNlbAKBlFIRYnJua2F0aEBnbWFpbC5jb=
+21YBAAAAXI~" target=3D"_blank" style=3D"outline:none" tabindex=3D"-1"><img =
+src=3D"https://braze-images.com/appboy/communication/assets/image_assets/im=
+ages/655bc7e8158f45004ce510c4/original.jpg=3F1700513768" style=3D"display:b=
+lock;height:auto;border:0;width:100%" width=3D"313" alt=3D"MN DNR" title=3D=
+"MN DNR"></a></div></div></td></tr></table></td>=0A<td class=3D"column colu=
+mn-2" width=3D"50%" style=3D"font-weight:400;text-align:left;mso-table-lspa=
+ce:0;mso-table-rspace:0;padding-bottom:5px;padding-top:5px;vertical-align:t=
+op;border-top:0;border-right:0;border-bottom:0;border-left:0"><table class=
+=3D"social_block block-1" width=3D"100%" border=3D"0" cellpadding=3D"10" ce=
+llspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table=
+-rspace:0"><tr><td class=3D"pad"><div class=3D"alignment" align=3D"center">=
+<table class=3D"social-table" width=3D"144px" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-t=
+able-rspace:0;display:inline-block"><tr>=0A<td style=3D"padding:0 2px 0 2px=
+"><a href=3D"https://clicks.aspiraconnect.com/f/a/92s8bwBShaXOmp5zHIogKA~~/=
+AAQRxQA~/RgRnVfFuP0QlaHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL01pbm5lc290YUROUlcDc3=
+BjQgplc25sc2VsAoGUUhFicm5rYXRoQGdtYWlsLmNvbVgEAAABcg~~" target=3D"_blank"><=
+img src=3D"https://braze-social-icons.s3.amazonaws.com/social-networks-icon=
+-sets/circle-color/facebook@2x.png" width=3D"32" height=3D"32" alt=3D"Faceb=
+ook" title=3D"Facebook" style=3D"display:block;height:auto;border:0"></a></=
+td>=0A<td style=3D"padding:0 2px 0 2px"><a href=3D"https://clicks.aspiracon=
+nect.com/f/a/S8imCOuXZ9njRdOwUh0ohA~~/AAQRxQA~/RgRnVfFuP0QZaHR0cHM6Ly90d2l0=
+dGVyLmNvbS9tbmRuclcDc3BjQgplc25sc2VsAoGUUhFicm5rYXRoQGdtYWlsLmNvbVgEAAABcg~=
+~" target=3D"_blank"><img src=3D"https://braze-social-icons.s3.amazonaws.co=
+m/social-networks-icon-sets/circle-color/twitter@2x.png" width=3D"32" heigh=
+t=3D"32" alt=3D"Twitter" title=3D"Twitter" style=3D"display:block;height:au=
+to;border:0"></a></td>=0A<td style=3D"padding:0 2px 0 2px"><a href=3D"https=
+://clicks.aspiraconnect.com/f/a/tYQu3QN0BBC6NZRP7AgLDQ~~/AAQRxQA~/RgRnVfFuP=
+0QnaHR0cHM6Ly93d3cuaW5zdGFncmFtLmNvbS9taW5uZXNvdGFkbnIvVwNzcGNCCmVzbmxzZWwC=
+gZRSEWJybmthdGhAZ21haWwuY29tWAQAAAFy" target=3D"_blank"><img src=3D"https:/=
+/braze-social-icons.s3.amazonaws.com/social-networks-icon-sets/circle-color=
+/instagram@2x.png" width=3D"32" height=3D"32" alt=3D"Instagram" title=3D"In=
+stagram" style=3D"display:block;height:auto;border:0"></a></td>=0A<td style=
+=3D"padding:0 2px 0 2px"><a href=3D"https://clicks.aspiraconnect.com/f/a/3m=
+LZz4txErLChGMtcRYv6Q~~/AAQRxQA~/RgRnVfFuP0QpaHR0cHM6Ly93d3cueW91dHViZS5jb20=
+vdXNlci9NaW5uZXNvdGFETlJXA3NwY0IKZXNubHNlbAKBlFIRYnJua2F0aEBnbWFpbC5jb21YBA=
+AAAXI~" target=3D"_blank"><img src=3D"https://braze-social-icons.s3.amazona=
+ws.com/social-networks-icon-sets/circle-color/youtube@2x.png" width=3D"32" =
+height=3D"32" alt=3D"YouTube" title=3D"YouTube" style=3D"display:block;heig=
+ht:auto;border:0"></a></td>=0A</tr></table></div></td></tr></table></td>=0A=
+</tr></tbody></table></td></tr></tbody></table>=0A<table class=3D"row row-9=
+" align=3D"center" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:=
+0"><tbody><tr><td><table class=3D"row-content stack" align=3D"center" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"=
+mso-table-lspace:0;mso-table-rspace:0;background-color:#fff;border-radius:0=
+;color:#000;width:650px;margin:0 auto" width=3D"650"><tbody><tr><td class=
+=3D"column column-1" width=3D"100%" style=3D"font-weight:400;text-align:lef=
+t;mso-table-lspace:0;mso-table-rspace:0;padding-bottom:5px;padding-top:5px;=
+vertical-align:top;border-top:0;border-right:0;border-bottom:0;border-left:=
+0">=0A<table class=3D"paragraph_block block-1" width=3D"100%" border=3D"0" =
+cellpadding=3D"10" cellspacing=3D"0" role=3D"presentation" style=3D"mso-tab=
+le-lspace:0;mso-table-rspace:0;word-break:break-word"><tr><td class=3D"pad"=
+><div style=3D"color:#101b24;direction:ltr;font-family:Arial,Sans-serif;fon=
+t-size:14px;font-weight:400;letter-spacing:0;line-height:150%;text-align:ce=
+nter;mso-line-height-alt:21px">=0A<p style=3D"margin:0;margin-bottom:0">=0A=
+<strong>Minnesota Department of Natural Resources |&nbsp;<a href=3D"https:/=
+/clicks.aspiraconnect.com/f/a/BipLagJpB5u79wZ9nfUbmg~~/AAQRxQA~/RgRnVfFuP0R=
+1aHR0cHM6Ly93d3cuZG5yLnN0YXRlLm1uLnVzLz91dG1fbWVkaXVtPWVtYWlsJnV0bV9zb3VyY2=
+U9QnJhemUmdXRtX2NhbXBhaWduPUxpZmV0aW1lTGljZW5zZV8yMDIzMTImdXRtX2NvbnRlbnQ9Z=
+m9vdGVyVwNzcGNCCmVzbmxzZWwCgZRSEWJybmthdGhAZ21haWwuY29tWAQAAAFy" target=3D"=
+_blank" style=3D"text-decoration: underline; color: #003760;" rel=3D"noopen=
+er">mndnr.gov</a></strong></p>=0A<p style=3D"margin:0">=0AEmail us:&nbsp;<a=
+ href=3D"mailto:info.dnr@state.mn.us" target=3D"_blank" title=3D"info.dnr@s=
+tate.mn.us" style=3D"text-decoration: underline; color: #003760;" rel=3D"no=
+opener">info.dnr@state.mn.us</a>&nbsp;| Call 651-296-6157 or 888-646-6367</=
+p>=0A</div></td></tr></table>=0A<table class=3D"html_block block-2" width=
+=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presenta=
+tion" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tr><td class=3D"pad"=
+><div style=3D"font-family:'Open Sans',Arial,Sans-serif;text-align:center" =
+align=3D"center"><div class=3D"our-class"><table style=3D"width: 100%; text=
+-align: center;">=0A=09<tbody>=0A=09=09<tr>=0A=09=09=09<td style=3D"color: =
+#1b1b1b;font-size: 12px;line-height: 18px;padding-bottom: 20px;text-align: =
+center;">This email was sent to you because you are a registered user and s=
+ubscriber of the Minnesota Online Licensing portal. Please DO NOT REPLY TO =
+THIS MESSAGE. If you do not want to receive further emails <a href=3D"https=
+://clicks.aspiraconnect.com/f/a/37BrS1jGXOwt-sb4WXlCwQ~~/AAQRxQA~/RgRnVfFuP=
+4S5AWh0dHBzOi8vMDUuZW1haWxpbmJvdW5kcHJvY2Vzc2luZy5jb20vZW5jX3VzZXIvdW5zdWJz=
+Y3JpYmU_ZD0lMjQxJTI0Y0hWelJkdWJONFhUYURHMkVVMSUyRmF3JTNEJTNEJTI0TEZhSkdWclJ=
+4MkswbDRLbG9ya0ZSdXJDMzFTJTJCeGV6V0l3dXB1dUw4a0djZ0wzUmtpRDZ1JTJGVmxxWVI0Mi=
+UwQXJTSzVUSEtjSzZvZk5ndjkyV2QlMkYwZmppR2tWV3JGam9aRkpUc3Y2eDdsNjFmdEhHWERab=
+2txRFJYME8zJTBBRlpuMEhhenVCdU0yTFFvcmdjNHVYQzYwVUlaWDZ5NTJhZVVtODNGcERiNDVY=
+Rk4xaTVLa1hrZnhFJTJCenolMEElMkIybzZOeXhtbVhXbDBYJTJCREFlZzR4NWxLSVMyZEpxQWN=
+2WTE3VyUyQmM3MTgxTkhOdiUyQkJ5MnhTWnAwT0g4JTJGJTBBNU1XUnZOTVJnNUJXYUFoWHVWM3=
+VBZDVaR3dWcCUyRm1vREdLWFBSRFRsQzR5RWk4blRHekhObiUyQkpmc1pnJTNEJjE9MVcDc3BjQ=
+gplc25sc2VsAoGUUhFicm5rYXRoQGdtYWlsLmNvbVgEAAABcg~~" style=3D"color: #1b1b1=
+b">unsubscribe here</a>.<br>=0A=09=09=09<br>=0A=09=09=09Aspira: 717 N. Harw=
+ood, Suite 2300, Dallas, TX 75201</td>=0A=09=09</tr>=0A=09</tbody>=0A</tabl=
+e></div></div></td></tr></table>=0A</td></tr></tbody></table></td></tr></tb=
+ody></table>=0A</td></tr></tbody></table>=0A<!-- End -->=0A=0D=0A<img borde=
+r=3D"0" width=3D"1" height=3D"1" alt=3D"" src=3D"https://clicks.aspiraconne=
+ct.com/q/3Zl8ZQyC8hHYd7AeL_iIug~~/AAQRxQA~/RgRnVfFuPlcDc3BjQgplc25sc2VsAoGU=
+UhFicm5rYXRoQGdtYWlsLmNvbVgEAAABcg~~">=0D=0A</body>=0A</html>
+--_----zV6DjtNMo/5aLbBg3BrZWQ===_F5/49-38627-E6C63756--
+

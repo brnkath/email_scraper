@@ -1,0 +1,874 @@
+Delivered-To: brnkath@gmail.com
+Received: by 2002:ac9:7a45:0:b0:50a:1d1:e0eb with SMTP id c5csp2657017ocq;
+        Mon, 4 Dec 2023 04:10:03 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGy6DUEK6vasZhbYFbJ8O9XYjrRuSFc3qf7VhELpMCxG6g6VQxnf2Fmd1rWVToE1yjxyCd/
+X-Received: by 2002:a25:cf4f:0:b0:db7:dad0:76be with SMTP id f76-20020a25cf4f000000b00db7dad076bemr2090783ybg.90.1701691803220;
+        Mon, 04 Dec 2023 04:10:03 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1701691803; cv=none;
+        d=google.com; s=arc-20160816;
+        b=O2CtqfOITYQ9iA01Pf2ff1bn4nd39rDVVmslpRmSYXi3psLToxHbDpOEaoQW8J/8UD
+         dnq7U800qxSzRL4X2VnCbZ/6W3OTvLC3tsz5rgQWjApkYGLWJ7cp52bO2d6Eq+jYmpfx
+         lGk9cs+vkZmvOrgYcUdSd3813TM4tEGv2Y0/nGKjwZxcqnWUttTPhb30IbsECgxZzoRm
+         Y8IhynP35O6grvNcNV1x86zhSn14JwYMqp9o9D1R9JlIUscoLRdDN/0vdqRHo8IqHqP7
+         LJBu4rd+NUgfvoMDx0bU7H5gOnvBd8Ei7jAwTNV6XW94/TjJ9oLN0xObrtHBRvPKp0vW
+         CtAw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:list-unsubscribe-post:list-unsubscribe:list-id
+         :feedback-id:message-id:date:to:reply-to:from:subject:dkim-signature
+         :dkim-signature;
+        bh=t9gxN1PdBEHv7FEGAcZhNIc+4xSD6Q7d0QOR+7Wk25k=;
+        fh=lgXKtwILENklX0+5i4yZuTGykndz5TEtRSzNP5ayUqg=;
+        b=oMhWIifBrKiKaQZxFwGnUNN5DPGaCM/xorjWmBmW9sIheM/Sgwmq0MLTt3I5lVWuP7
+         uWqmFwla/3rQj2YADRNapfj3WhtE1i8JuNrLSEHCuVzQDZt91ILGkiolJAmT2v0H7TUm
+         B6WJY3BadPi2nTijPepVqRAPtOxMWqiK29ceD+zoPKdh/JqJcgaurnOM35PLTgaxwTl/
+         KvpXFQwRVpdXz00CbfbQHwxgk5TJhdePO14FkuZicF4XY0QG1ueiq082bmKusaKxK27G
+         aOnA+LqJ/1V+azx4Yn5ePC1Ee9tykWPQOitTPrMjxeD/iMc1YU7ce2kduk9j8cCEW7qe
+         V1+w==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.mcsv.net header.s=k1 header.b=nWk25mUH;
+       dkim=pass header.i=@quantopian.com header.s=k2 header.b=dVH57WGZ;
+       spf=pass (google.com: domain of bounce-mc.us5_11246039.672652-33384a4431@mail74.suw15.mcsv.net designates 198.2.182.74 as permitted sender) smtp.mailfrom=bounce-mc.us5_11246039.672652-33384a4431@mail74.suw15.mcsv.net
+Return-Path: <bounce-mc.us5_11246039.672652-33384a4431@mail74.suw15.mcsv.net>
+Received: from mail74.suw15.mcsv.net (mail74.suw15.mcsv.net. [198.2.182.74])
+        by mx.google.com with ESMTPS id a22-20020a25ae16000000b00d9cd9af2a75si3464275ybj.343.2023.12.04.04.10.03
+        for <brnkath@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 04 Dec 2023 04:10:03 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounce-mc.us5_11246039.672652-33384a4431@mail74.suw15.mcsv.net designates 198.2.182.74 as permitted sender) client-ip=198.2.182.74;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.mcsv.net header.s=k1 header.b=nWk25mUH;
+       dkim=pass header.i=@quantopian.com header.s=k2 header.b=dVH57WGZ;
+       spf=pass (google.com: domain of bounce-mc.us5_11246039.672652-33384a4431@mail74.suw15.mcsv.net designates 198.2.182.74 as permitted sender) smtp.mailfrom=bounce-mc.us5_11246039.672652-33384a4431@mail74.suw15.mcsv.net
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.mcsv.net;
+	s=k1; t=1701691769; x=1701778169;
+	bh=t9gxN1PdBEHv7FEGAcZhNIc+4xSD6Q7d0QOR+7Wk25k=;
+	h=Subject:From:Reply-To:To:Date:Message-ID:X-MC-User:Feedback-ID:
+	 List-ID:List-Unsubscribe:List-Unsubscribe-Post:Content-Type:
+	 MIME-Version:CC:Date:Subject:From;
+	b=nWk25mUHYJhN/dtOThdGwKPKArvo3w8U45PvYW0+5afT060+17ugVKz5EoKtKg7bZ
+	 AAHixyo0BrzWb/LcmcbajttfGNBvXGfuwvMXMUhnMV+Cm8OCRYQMXBxbq+h35XcxdH
+	 JH8gl6xVsi2YjtElVIC1PyPI29H2r7FlnDpaneUGrWnNMy8itWQf6yzs01B6GBvNHa
+	 f7PbQV9o3HgliA5heuYU3DcsK14gbdZ4CkqIMg6CyH3k71YZ64Hwuxecvy1nJBPOVQ
+	 +okW6Dhdd8G93X8nzxIJpp5m4zrPd1AKmAW5teXinUS0FiBeuX2BfQ+OMPoWnUpqHk
+	 NMJdL1GHxe6Ww==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=quantopian.com;
+	s=k2; t=1701691769; x=1701952269; i=feedback@quantopian.com;
+	bh=t9gxN1PdBEHv7FEGAcZhNIc+4xSD6Q7d0QOR+7Wk25k=;
+	h=Subject:From:Reply-To:To:Date:Message-ID:X-MC-User:Feedback-ID:
+	 List-ID:List-Unsubscribe:List-Unsubscribe-Post:Content-Type:
+	 MIME-Version:CC:Date:Subject:From;
+	b=dVH57WGZIv6OccsaLm32jEJc2FKhp4V9pQ7zUCG8PpE4xU7n48cSKBl1S8tImE8Rc
+	 0PX+vnTiamNz5bytyItFTdlN/NtX3tGPN07mN7/P84gQXwuKtfmMZZXj6D+4GKiqJw
+	 xPXRNqwnaMk685HtcN4b6Qv1UUaNY0tY4W7TT9lhHafEC22ylqi82lSR+hIUjf6TUa
+	 cYUGpdvaRkZYDQao0AtxkvP5a/YbGUK45gdpRutkl8elaxflfiFiZXOCLfZs6f7WDg
+	 e5pC1+kpE+viaEGQ26pf1RjZ+MadVvGJpmNnKREOQ+jZX6tsYq8jvv1TuikO3SBZ2l
+	 HFfW3AaQPNPSw==
+Received: from localhost (localhost [127.0.0.1])
+	by mail74.suw15.mcsv.net (Mailchimp) with ESMTP id 4SkMsj0bl2zK6Dw9f
+	for <brnkath@gmail.com>; Mon,  4 Dec 2023 12:09:29 +0000 (GMT)
+Subject: =?utf-8?Q?What=27s=20next=3F?=
+From: =?utf-8?Q?Quantopian=20Newsletter?= <feedback@quantopian.com>
+Reply-To: =?utf-8?Q?Quantopian=20Newsletter?= <feedback@quantopian.com>
+To: =?utf-8?Q?Brian?= <brnkath@gmail.com>
+Date: Mon,  4 Dec 2023 12:09:17 +0000
+Message-ID: <4c1d0cf4959586b47ef210e9c.33384a4431.20231204120859.5dd59678f0.b2315bcb@mail74.suw15.mcsv.net>
+X-Mailer: Mailchimp Mailer - **CID5dd59678f033384a4431**
+X-Campaign: mailchimp4c1d0cf4959586b47ef210e9c.5dd59678f0
+X-campaignid: mailchimp4c1d0cf4959586b47ef210e9c.5dd59678f0
+X-Report-Abuse: Please report abuse for this campaign here: https://mailchimp.com/contact/abuse/?u=4c1d0cf4959586b47ef210e9c&id=5dd59678f0&e=33384a4431
+X-MC-User: 4c1d0cf4959586b47ef210e9c
+Feedback-ID: 11246039:11246039.672652:us5:mc
+List-ID: 4c1d0cf4959586b47ef210e9cmc list <4c1d0cf4959586b47ef210e9c.51129.list-id.mcsv.net>
+X-Accounttype: pr
+List-Unsubscribe: <https://quantopian.us5.list-manage.com/unsubscribe?u=4c1d0cf4959586b47ef210e9c&id=7cca55778a&e=33384a4431&c=5dd59678f0>, <mailto:unsubscribe-mc.us5_4c1d0cf4959586b47ef210e9c.5dd59678f0-33384a4431@unsubscribe.mailchimpapp.net?subject=unsubscribe>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Content-Type: multipart/alternative; boundary="_----------=_MCPart_1351925696"
+MIME-Version: 1.0
+
+This is a multi-part message in MIME format
+
+--_----------=_MCPart_1351925696
+Content-Type: text/plain; charset="utf-8"; format="fixed"
+Content-Transfer-Encoding: quoted-printable
+
+Update from fawce on what's coming next
+
+View this email in your browser (https://mailchi.mp/quantopian/arjun_marem=
+pudi?e=3D33384a4431)
+https://quantopian.us5.list-manage.com/track/click?u=3D4c1d0cf4959586b47ef=
+210e9c&id=3D6c5a2147dd&e=3D33384a4431
+
+Hello Brian=2C
+
+I had a relatively simple idea =E2=80=94 take the issues of this newslette=
+r and archive them on a platform that supports forums and live chat. My ho=
+pe is that the newsletter can be a seed for everyone in the community to c=
+ome together and reconnect. So=2C that=E2=80=99s what=E2=80=99s next=2C a=
+ simple email archive.
+
+I=E2=80=99ve had a lot of fun exploring this idea and trying out tools and=
+ platforms. I=E2=80=99m really in love with AI-assisted coding =E2=80=94 I=
+ had taken a 3+ year hiatus from coding and one of the more amazing things=
+ about ai is how much it stokes creativity. The human tendency to never be=
+ satisfied is what will ultimately save us from the luddite nightmare of m=
+achines doing all our work. We=E2=80=99ll just imagine bigger and bigger g=
+oals. It is a big universe.
+
+This week I want to share a bit about how I=E2=80=99m building it and high=
+light two new episodes of the Quantopian Show (you can watch or listen on=
+ youtube (https://quantopian.us5.list-manage.com/track/click?u=3D4c1d0cf49=
+59586b47ef210e9c&id=3Df23c840669&e=3D33384a4431) =2C spotify (https:=
+//quantopian.us5.list-manage.com/track/click?u=3D4c1d0cf4959586b47ef210e9c=
+&id=3D383e2a6f18&e=3D33384a4431) =2C apple podcasts (https://quantop=
+ian.us5.list-manage.com/track/click?u=3D4c1d0cf4959586b47ef210e9c&id=3Da71=
+9bd00d3&e=3D33384a4431) =2C and amazon music (https://quantopian.us5=
+=2Elist-manage.com/track/click?u=3D4c1d0cf4959586b47ef210e9c&id=3D27ed1d9bf8=
+&e=3D33384a4431) ).
+
+Let=E2=80=99s get into it.
+https://quantopian.us5.list-manage.com/track/click?u=3D4c1d0cf4959586b47ef=
+210e9c&id=3D2b12715d12&e=3D33384a4431
+
+Advertisement - Polygon.io offers market data APIs for stocks=2C options=
+=2C indices=2C and currencies.
+
+Building with AI
+
+I decided to try replit.com (https://quantopian.us5.list-manage.com/track/=
+click?u=3D4c1d0cf4959586b47ef210e9c&id=3Ddedd8b89ac&e=3D33384a4431)=
+ =2C which reminds me a lot of the Quantopian environment=2C except replit=
+ is more general purpose. There are three things I love about replit so fa=
+r:
+1. Code in the browser with pre-made templates for different project types=
+=2E I=E2=80=99m currently using two templates =E2=80=94 a fastAPI server and=
+ a react frontend.
+2. The integrated AI is phenomenal=2C especially in ramping up on new fram=
+eworks (I=E2=80=99m new to both fastAPI and react). The most impressive as=
+pect of the AI integration is highlight-and-prompt. You can highlight a se=
+ction of your code=2C prompt the AI to edit it=2C then review and accept t=
+he changes. The AI has all of your project code loaded into the context=2C=
+ so the results are pretty phenomenal.
+3. Push-button deploy. After you have everything working in development re=
+plit has great support for deployments to create a production release.
+
+For persistence=2C I=E2=80=99ve been playing with a new db-as-a-service ca=
+lled Neon (https://quantopian.us5.list-manage.com/track/click?u=3D4c1d0cf4=
+959586b47ef210e9c&id=3D1cb3f7b9be&e=3D33384a4431) =2C which is based=
+ on postgresql. The killer feature for Neon is data branching. I=E2=80=99m=
+ using Neon for my production data. Then=2C in development=2C I create a b=
+ranch of production and use that for dev and testing. When I=E2=80=99m don=
+e=2C I toss the dev branch=2C release the code=2C and repeat the cycle. Th=
+e meta thought =E2=80=94 how far can we push this concept? Could we branch=
+ every day and produce point-in-time records for everything?
+https://quantopian.us5.list-manage.com/track/click?u=3D4c1d0cf4959586b47ef=
+210e9c&id=3Dde946947d1&e=3D33384a4431
+
+Advertisement
+
+What=E2=80=99s it all mean?
+
+All of this AI-assisted-hacking has me wondering what will happen to softw=
+are engineering in the next 12-18 months. My take on the state of AI for m=
+aking software is it is amazing=2C but still very early =E2=80=94 like the=
+ bag phone era of cell phones. You can do some amazing things=2C but the e=
+xperience is very discontinuous and the quality is very uneven. I=E2=80=99=
+ve been daydreaming of a new software lifecycle that is completely AI nati=
+ve. Instead of using AI as a personal turbo charger=2C I=E2=80=99d love to=
+ work with an AI agent that operates at a higher level.
+
+One issue I have found is that over time the AI=E2=80=99s context gets pol=
+luted. Perfect recall is what stands out as a real super power for AI agen=
+ts. When it comes to coding=2C I imagine I am chatting with an engineer wh=
+o has read every piece of documentation and every line of code of every li=
+brary I want to use. As a chat unfolds and I ask questions and prompt for=
+ code=2C I take the agent down a lot of dead ends. Turns out the agent doe=
+sn=E2=80=99t really know how to discern between a prompt/response that wor=
+ked and one that didn=E2=80=99t. That superpower of perfect recall becomes=
+ a liability. In ChatGPT=2C I find myself starting a new chat to get a fre=
+sh context=2C but I haven=E2=80=99t figured out how to do that within repl=
+it.
+
+My intuition is the next step for software engineering would need to be a=
+ system of AI agents that are mapped=2C probably by a human=2C to the arch=
+itectural components of an application. In my current work=2C each fastAPI=
+ endpoint would have agents for:
+1. Service endpoints (FastAPI in this case)
+2. The business logic (I=E2=80=99m using Pydantic for much of this)
+3. The ORM/db model (Sqlalchemy and postgresql)
+
+Then=2C a controller agent could receive the prompt from me (=E2=80=98crea=
+te a service to archive newsletter articles=E2=80=99)=2C and in turn promp=
+t each of the component agents. Maybe the controller agent could engage in=
+ more of a dialog with me to extract better requirements and then prompt t=
+he coding agents when it was ready. It could ask me to review code or try=
+ the application to test it. The context for each coder could be carefully=
+ controlled and reset for each fresh implementation attempt.
+
+Maybe after I finish up the archival project I=E2=80=99ll give this a try.=
+ I have this image in my mind of a huge display covered with IDE windows=
+=2C being populated by all the agents working in concert=2C like a time-la=
+pse video of a dog wood tree growing and blooming over and over=2C ever la=
+rger and more resplendent with blossoms.
+https://quantopian.us5.list-manage.com/track/click?u=3D4c1d0cf4959586b47ef=
+210e9c&id=3D80a58c45f0&e=3D33384a4431
+
+Advertisement
+
+New Quantopian Show Episodes
+
+I had a great conversation with Arjun Marempudi (https://quantopian.us5.li=
+st-manage.com/track/click?u=3D4c1d0cf4959586b47ef210e9c&id=3De1f3306859&e=
+=3D33384a4431) =2C the founder of EventVestor. Arjun is a true entre=
+preneur and I loved hearing why he started EventVestor=2C why he chose to=
+ pursue and MBA after working in the industry for a few years=2C and why h=
+e thinks the future belongs to quants. If you love data=2C business=2C bui=
+lding=2C and the intersections between them=2C you=E2=80=99ll love this ep=
+isode.
+
+I also followed up with Yuri Malitsky (https://quantopian.us5.list-manage.=
+com/track/click?u=3D4c1d0cf4959586b47ef210e9c&id=3D5b6357051a&e=3D33384a4431) to talk more about GPT-4 Turbo=2C the speed of advancements in l=
+anguage models=2C and what it might mean for the industry. The ability to=
+ compress context windows and the introduction of sparse priming represent=
+ations are not just technical improvements; they could represent a leap in=
+ how we approach problem-solving in quantitative finance.
+
+Moreover=2C Yuri's excitement about the new AI assistants is contagious. W=
+e talked a bit about using gpt to create software. Yuri=E2=80=99s cautious=
+ly optimistic about creating software and productivity expansion for softw=
+are engineering=2C but he really emphasized the challenges with maintainin=
+g complex systems. Yuri doesn=E2=80=99t think the current state of the exp=
+lainability problem (understanding how and why LLMs generate what they gen=
+erate)=2C mixes with the criticality of financial software. When I imagine=
+ troubleshooting a mission-critical system=2C I have to agree.
+
+One more thing
+
+After I finish writing this newsletter=2C I=E2=80=99m going to meet up wit=
+h the one and only Dr. Thomas Wiecki! We=E2=80=99re going to sit down for=
+ a retro and hopefully a long conversation about Bayes=2C AI=2C Quant=2C a=
+nd life.
+
+thanks=2C
+
+fawce
+https://quantopian.us5.list-manage.com/track/click?u=3D4c1d0cf4959586b47ef=
+210e9c&id=3Dcc5a0b4013&e=3D33384a4431
+
+The material on this website is provided for informational purposes only a=
+nd does not constitute an offer to sell=2C a solicitation to buy=2C or a r=
+ecommendation or endorsement for any security or strategy=2C nor does it c=
+onstitute an offer to provide investment advisory services by Quantopian.=
+ In addition=2C the material offers no opinion with respect to the suitabi=
+lity of any security or specific investment. No information contained here=
+in should be regarded as a suggestion to engage in or refrain from any inv=
+estment-related course of action as none of Quantopian nor any of its affi=
+liates is undertaking to provide investment advice=2C act as an adviser to=
+ any plan or entity subject to the Employee Retirement Income Security Act=
+ of 1974=2C as amended=2C individual retirement account or individual reti=
+rement annuity=2C or give advice in a fiduciary capacity with respect to t=
+he materials presented herein.
+
+If you are an individual retirement or other investor=2C contact your fina=
+ncial advisor or other fiduciary unrelated to Quantopian about whether any=
+ given investment idea=2C strategy=2C product or service described herein=
+ may be appropriate for your circumstances. All investments involve risk=
+=2C including loss of principal. Quantopian makes no guarantees as to the=
+ accuracy or completeness of the views expressed in the website. The views=
+ are subject to change=2C and may have become unreliable for various reaso=
+ns=2C including changes in market conditions or economic circumstances.
+
+______________________________________________________________________
+
+
+This email was sent to brnkath@gmail.com (mailto:brnkath@gmail.com)
+why did I get this? (https://quantopian.us5.list-manage.com/about?u=3D4c1d=
+0cf4959586b47ef210e9c&id=3D7cca55778a&e=3D33384a4431&c=3D5dd59678f0)     uns=
+ubscribe from this list (https://quantopian.us5.list-manage.com/unsubscrib=
+e?u=3D4c1d0cf4959586b47ef210e9c&id=3D7cca55778a&e=3D33384a4431&c=3D5dd59678f=
+0)     update subscription preferences (https://quantopian.us5.list-manage=
+=2Ecom/profile?u=3D4c1d0cf4959586b47ef210e9c&id=3D7cca55778a&e=3D33384a4431&c=
+=3D5dd59678f0)
+Mile 0 Productions=2C LLC . 45 School St. . Boston=2C MA 02108 . USA
+--_----------=_MCPart_1351925696
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html><html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn=
+:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:of=
+fice"><head>
+<!--[if gte mso 15]>
+<xml>
+<o:OfficeDocumentSettings>
+<o:AllowPNG/>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml>
+<![endif]-->
+<meta charset=3D"UTF-8" />
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge" />
+<meta name=3D"viewport" content=3D"width=3Ddevice-width=2C initial-scale=
+=3D1" />
+<title>What's next?</title>
+<link rel=3D"stylesheet" href=3D"https://fonts.googleapis.com/css?family=
+=3DNoto+Sans:400=2C400i=2C700=2C700i=2C900=2C900i" /><style>          img{=
+-ms-interpolation-mode:bicubic;}
+          table=2C td{mso-table-lspace:0pt; mso-table-rspace:0pt;}
+          .mceStandardButton=2C .mceStandardButton td=2C .mceStandardButto=
+n td a{mso-hide:all !important;}
+          p=2C a=2C li=2C td=2C blockquote{mso-line-height-rule:exactly;}
+          p=2C a=2C li=2C td=2C body=2C table=2C blockquote{-ms-text-size-=
+adjust:100%; -webkit-text-size-adjust:100%;}
+          @media only screen and (max-width: 480px){
+            body=2C table=2C td=2C p=2C a=2C li=2C blockquote{-webkit-text=
+-size-adjust:none !important;}
+          }
+          .mcnPreviewText{display: none !important;}
+          .bodyCell{margin:0 auto; padding:0; width:100%;}
+          .ExternalClass=2C .ExternalClass p=2C .ExternalClass td=2C .Exte=
+rnalClass div=2C .ExternalClass span=2C .ExternalClass font{line-height:10=
+0%;}
+          .ReadMsgBody{width:100%;} .ExternalClass{width:100%;}
+          a[x-apple-data-detectors]{color:inherit !important; text-decora=
+tion:none !important; font-size:inherit !important; font-family:inherit !i=
+mportant; font-weight:inherit !important; line-height:inherit !important;}
+            body{height:100%; margin:0; padding:0; width:100%; background:=
+ #ffffff;}
+            p{margin:0; padding:0;}
+            table{border-collapse:collapse;}
+            td=2C p=2C a{word-break:break-word;}
+            h1=2C h2=2C h3=2C h4=2C h5=2C h6{display:block; margin:0; padd=
+ing:0;}
+            img=2C a img{border:0; height:auto; outline:none; text-decorat=
+ion:none;}
+            a[href^=3D"tel"]=2C a[href^=3D"sms"]{color:inherit; cursor:d=
+efault; text-decoration:none;}
+            li p {margin: 0 !important;}
+            .ProseMirror a {
+                pointer-events: none;
+            }
+            @media only screen and (max-width: 480px){
+                body{width:100% !important; min-width:100% !important; }
+                body.mobile-native {
+                    -webkit-user-select: none; user-select: none; transiti=
+on: transform 0.2s ease-in; transform-origin: top center;
+                }
+                body.mobile-native.selection-allowed a=2C body.mobile-nati=
+ve.selection-allowed .ProseMirror {
+                    user-select: auto;
+                    -webkit-user-select: auto;
+                }
+                colgroup{display: none;}
+                img{height: auto !important;}
+                .mceWidthContainer{max-width: 660px !important;}
+                .mceColumn{display: block !important; width: 100% !importa=
+nt;}
+                .mceColumn-forceSpan{display: table-cell !important; width=
+: auto !important;}
+                .mceBlockContainer{padding-right:16px !important; padding-=
+left:16px !important;}
+                .mceBlockContainerE2E{padding-right:0px; padding-left:0px;=
+}
+                .mceSpacing-24{padding-right:16px !important; padding-left=
+:16px !important;}
+                .mceFooterSection .mceText=2C .mceFooterSection .mceText p=
+{font-size: 16px !important; line-height: 140% !important;}
+                .mceText=2C .mceText p{font-size: 16px !important; line-he=
+ight: 140% !important;}
+                h1{font-size: 30px !important; line-height: 120% !importan=
+t;}
+                h2{font-size: 26px !important; line-height: 120% !importan=
+t;}
+                h3{font-size: 20px !important; line-height: 125% !importan=
+t;}
+                h4{font-size: 18px !important; line-height: 125% !importan=
+t;}
+            }
+            @media only screen and (max-width: 640px){
+                .mceClusterLayout td{padding: 4px !important;}
+            }
+            div[contenteditable=3D"true"] {outline: 0;}
+            .ProseMirror .empty-node=2C .ProseMirror:empty {position: rela=
+tive;}
+            .ProseMirror .empty-node::before=2C .ProseMirror:empty::before=
+ {
+                position: absolute;
+                left: 0;
+                right: 0;
+                color: rgba(0=2C0=2C0=2C0.2);
+                cursor: text;
+            }
+            .ProseMirror .empty-node:hover::before=2C .ProseMirror:empty:h=
+over::before {
+                color: rgba(0=2C0=2C0=2C0.3);
+            }
+            .ProseMirror h1.empty-node:only-child::before=2C
+            .ProseMirror h2.empty-node:only-child::before=2C
+            .ProseMirror h3.empty-node:only-child::before=2C
+            .ProseMirror h4.empty-node:only-child::before {
+                content: 'Heading';
+            }
+            .ProseMirror p.empty-node:only-child::before=2C .ProseMirror:e=
+mpty::before {
+                content: 'Start typing...';
+            }
+            a .ProseMirror p.empty-node::before=2C a .ProseMirror:empty::b=
+efore {
+                content: '';
+            }
+            .mceText=2C .ProseMirror {
+                white-space: pre-wrap;
+            }
+body=2C #bodyTable { background-color: rgb(250=2C 250=2C 250); }.mceText=
+=2C .mceLabel { font-family: "Helvetica Neue"=2C Helvetica=2C Arial=2C Ver=
+dana=2C sans-serif; }.mceText=2C .mceLabel { color: rgb(32=2C 32=2C 32); }=
+=2EmceText p { margin-bottom: 0px; }.mceText ol { margin-bottom: 0px; }.mceT=
+ext label { margin-bottom: 0px; }.mceText input { margin-bottom: 0px; }.mc=
+eSpacing-12 .mceInput + .mceErrorMessage { margin-top: -6px; }.mceText p {=
+ margin-bottom: 0px; }.mceText ol { margin-bottom: 0px; }.mceText label {=
+ margin-bottom: 0px; }.mceText input { margin-bottom: 0px; }.mceSpacing-24=
+ .mceInput + .mceErrorMessage { margin-top: -12px; }.mceInput { background=
+-color: transparent; border: 2px solid rgb(208=2C 208=2C 208); width: 60%;=
+ color: rgb(77=2C 77=2C 77); display: block; }.mceInput[type=3D"radio"]=
+=2C .mceInput[type=3D"checkbox"] { float: left; margin-right: 12px; displ=
+ay: inline; width: auto !important; }.mceLabel > .mceInput { margin-bottom=
+: 0px; margin-top: 2px; }.mceLabel { display: block; }.mceText p { color:=
+ rgb(32=2C 32=2C 32); font-family: "Helvetica Neue"=2C Helvetica=2C Arial=
+=2C Verdana=2C sans-serif; font-size: 16px; font-weight: normal; line-heig=
+ht: 1.5; text-align: center; letter-spacing: 0px; direction: ltr; }.mceTex=
+t a { color: rgb(0=2C 124=2C 137); font-style: normal; font-weight: normal=
+; text-decoration: underline; direction: ltr; }
+@media only screen and (max-width: 480px) {
+            .mceText p { font-size: 16px !important; line-height: 1.5 !imp=
+ortant; }
+          }
+@media only screen and (max-width: 480px) {
+            .mceBlockContainer { padding-left: 16px !important; padding-ri=
+ght: 16px !important; }
+          }
+#dataBlockId-6 p=2C #dataBlockId-6 h1=2C #dataBlockId-6 h2=2C #dataBlockId=
+-6 h3=2C #dataBlockId-6 h4=2C #dataBlockId-6 ul { text-align: center; }#da=
+taBlockId-3 p=2C #dataBlockId-3 h1=2C #dataBlockId-3 h2=2C #dataBlockId-3=
+ h3=2C #dataBlockId-3 h4=2C #dataBlockId-3 ul { line-height: 1.5; text-ali=
+gn: left; }#dataBlockId-6 p=2C #dataBlockId-6 h1=2C #dataBlockId-6 h2=2C #=
+dataBlockId-6 h3=2C #dataBlockId-6 h4=2C #dataBlockId-6 ul { color: rgb(34=
+=2C 34=2C 34); font-family: "Helvetica Neue"=2C Helvetica=2C Arial=2C Verd=
+ana=2C sans-serif; line-height: 1.5; text-align: center; }</style></head>
+<body>
+<!--
+-->
+<!--[if !gte mso 9]><!----><span class=3D"mcnPreviewText" style=3D"displa=
+y:none; font-size:0px; line-height:0px; max-height:0px; max-width:0px; opa=
+city:0; overflow:hidden; visibility:hidden; mso-hide:all;">Update from faw=
+ce on what's coming next</span><!--<![endif]-->
+<!--
+-->
+<center>
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" height=3D"100%" wi=
+dth=3D"100%" id=3D"bodyTable" style=3D"background-color: rgb(250=2C 250=2C=
+ 250);">
+<tbody><tr>
+<td class=3D"bodyCell" align=3D"center" valign=3D"top">
+<table id=3D"root" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%"><tbody data-block-id=3D"10" class=3D"mceWrapper"><tr><td align=
+=3D"center" valign=3D"top" class=3D"mceWrapperOuter"><!--[if (gte mso 9)|=
+(IE)]><table align=3D"center" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" width=3D"660" style=3D"width:660px;"><tr><td><![endif]--><table bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"max=
+-width:660px" role=3D"presentation"><tbody><tr><td style=3D"background-col=
+or:#ffffff;background-position:center;background-repeat:no-repeat;backgrou=
+nd-size:cover" class=3D"mceWrapperInner" valign=3D"top"><table align=3D"ce=
+nter" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=
+=3D"presentation" data-block-id=3D"2"><tbody><tr class=3D"mceRow"><td styl=
+e=3D"background-position:center;background-repeat:no-repeat;background-siz=
+e:cover" valign=3D"top"><table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%" role=3D"presentation"><tbody><tr><td style=3D"paddin=
+g-top:0;padding-bottom:0" class=3D"mceColumn" data-block-id=3D"-4" valign=
+=3D"top" colspan=3D"12" width=3D"100%"><table border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0" width=3D"100%" role=3D"presentation"><tbody><tr><td s=
+tyle=3D"padding-top:0;padding-bottom:0;padding-right:24px;padding-left:24p=
+x" class=3D"mceBlockContainer" valign=3D"top"><div data-block-id=3D"29" cl=
+ass=3D"mceText" id=3D"dataBlockId-29" style=3D"width:100%"><p class=3D"las=
+t-child"><a href=3D"https://mailchi.mp/quantopian/arjun_marempudi?e=3D33384a4431" target=3D"_blank"><span style=3D"font-size: 14px"><span style=3D"fon=
+t-family: 'Helvetica Neue'=2C Helvetica=2C Arial=2C Verdana=2C sans-serif"=
+>View this email in your browser</span></span></a></p></div></td></tr><tr>=
+<td style=3D"background-color:#FFFFFF;padding-top:12px;padding-bottom:12px=
+;padding-right:0;padding-left:0" class=3D"mceBlockContainer" align=3D"cent=
+er" valign=3D"top"><a href=3D"https://quantopian.us5.list-manage.com/track=
+/click?u=3D4c1d0cf4959586b47ef210e9c&id=3D2ca78e5faa&e=3D33384a4431" styl=
+e=3D"display:block" target=3D"_blank" data-block-id=3D"1"><img width=3D"56=
+4" height=3D"auto" style=3D"border:0;width:564px;height:auto;max-width:100=
+%;display:block" alt=3D"" src=3D"https://gallery.mailchimp.com/4c1d0cf4959=
+586b47ef210e9c/images/ae24e896-3de7-4a4e-a678-06035fe33714.jpg" role=3D"pr=
+esentation" class=3D"imageDropZone" /></a></td></tr></tbody></table></td><=
+/tr></tbody></table></td></tr></tbody></table><table align=3D"center" bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presen=
+tation" data-block-id=3D"4"><tbody><tr class=3D"mceRow"><td style=3D"backg=
+round-position:center;background-repeat:no-repeat;background-size:cover" v=
+align=3D"top"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" widt=
+h=3D"100%" role=3D"presentation"><tbody><tr><td style=3D"padding-top:0;pad=
+ding-bottom:0" class=3D"mceColumn" data-block-id=3D"-5" valign=3D"top" col=
+span=3D"12" width=3D"100%"><table border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" width=3D"100%" role=3D"presentation"><tbody><tr><td style=3D"padd=
+ing-top:12px;padding-bottom:12px;padding-right:24px;padding-left:24px" cla=
+ss=3D"mceBlockContainer" valign=3D"top"><div data-block-id=3D"24" class=3D=
+"mceText" id=3D"dataBlockId-24" style=3D"width:100%"><p style=3D"text-alig=
+n: left;" class=3D"last-child">Hello Brian=2C</p></div></td></t=
+r><tr><td style=3D"background-color:#FFFFFF;padding-top:12px;padding-botto=
+m:12px;padding-right:24px;padding-left:24px" class=3D"mceBlockContainer" v=
+align=3D"top"><div data-block-id=3D"3" class=3D"mceText" id=3D"dataBlockId=
+-3" style=3D"width:100%"><p>I had a relatively simple idea =E2=80=94 take=
+ the issues of this newsletter and archive them on a platform that support=
+s forums and live chat. My hope is that the newsletter can be a seed for e=
+veryone in the community to come together and reconnect. So=2C that=E2=80=
+=99s what=E2=80=99s next=2C a simple email archive.</p><p><br /></p><p>I=
+=E2=80=99ve had a lot of fun exploring this idea and trying out tools and=
+ platforms. I=E2=80=99m really in love with AI-assisted coding =E2=80=94 I=
+ had taken a 3+ year hiatus from coding and one of the more amazing things=
+ about ai is how much it stokes creativity. The human tendency to never be=
+ satisfied is what will ultimately save us from the luddite nightmare of m=
+achines doing all our work. We=E2=80=99ll just imagine bigger and bigger g=
+oals. It is a big universe.</p><p><br /></p><p>This week I want to share a=
+ bit about how I=E2=80=99m building it and highlight two new episodes of t=
+he Quantopian Show (you can watch or listen on <a href=3D"https://quantopi=
+an.us5.list-manage.com/track/click?u=3D4c1d0cf4959586b47ef210e9c&id=3D61cb=
+cf35e2&e=3D33384a4431" target=3D"_blank">youtube</a>=2C <a href=3D"https:=
+//quantopian.us5.list-manage.com/track/click?u=3D4c1d0cf4959586b47ef210e9c=
+&id=3Daceb951464&e=3D33384a4431" target=3D"_blank">spotify</a>=2C <a href=
+=3D"https://quantopian.us5.list-manage.com/track/click?u=3D4c1d0cf4959586b=
+47ef210e9c&id=3Dab4dc76e08&e=3D33384a4431" target=3D"_blank">apple podcas=
+ts</a>=2C and <a href=3D"https://quantopian.us5.list-manage.com/track/clic=
+k?u=3D4c1d0cf4959586b47ef210e9c&id=3Df7f3a84d2b&e=3D33384a4431" target=3D=
+"_blank">amazon music</a>). </p><p><br /></p><p class=3D"last-child">Let=
+=E2=80=99s get into it.</p></div></td></tr></tbody></table></td></tr></tbo=
+dy></table></td></tr></tbody></table><table align=3D"center" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentation"=
+ data-block-id=3D"9"><tbody><tr class=3D"mceRow"><td style=3D"background-p=
+osition:center;background-repeat:no-repeat;background-size:cover" valign=
+=3D"top"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"=
+100%" role=3D"presentation"><tbody><tr><td style=3D"padding-top:0;padding-=
+bottom:0" class=3D"mceColumn" data-block-id=3D"-6" valign=3D"top" colspan=
+=3D"12" width=3D"100%"><table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%" role=3D"presentation"><tbody><tr><td style=3D"backgr=
+ound-color:#ffffff;padding-top:3px;padding-bottom:3px;padding-right:24px;p=
+adding-left:24px" class=3D"mceBlockContainer" valign=3D"top"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"backgro=
+und-color:#ffffff" role=3D"presentation" data-block-id=3D"17"><tbody><tr><=
+td style=3D"min-width:100%;border-top:1px dotted #000000" valign=3D"top"><=
+/td></tr></tbody></table></td></tr><tr><td style=3D"background-color:trans=
+parent;padding-top:3px;padding-bottom:0;padding-right:0;padding-left:0" cl=
+ass=3D"mceBlockContainer" align=3D"center" valign=3D"top"><a href=3D"https=
+://quantopian.us5.list-manage.com/track/click?u=3D4c1d0cf4959586b47ef210e9=
+c&id=3Dbdfee2e2f4&e=3D33384a4431" style=3D"display:block" target=3D"_blan=
+k" data-block-id=3D"12"><img width=3D"564" height=3D"auto" style=3D"border=
+:0;width:564px;height:auto;max-width:100%;border-radius:26px;display:block=
+" alt=3D"Polygon.io - data for any strategy" src=3D"https://mcusercontent.=
+com/4c1d0cf4959586b47ef210e9c/images/655334bf-e7d1-9a7f-c78f-adbc0ff705b7.=
+png" class=3D"" /></a></td></tr><tr><td style=3D"padding-top:0;padding-bot=
+tom:0;padding-right:24px;padding-left:24px" class=3D"mceBlockContainer" va=
+lign=3D"top"><div data-block-id=3D"16" class=3D"mceText" id=3D"dataBlockId=
+-16" style=3D"width:100%"><p style=3D"text-align: left;" class=3D"last-chi=
+ld"><em><span style=3D"font-size: 9px"><span style=3D"font-family: 'Noto S=
+ans'=2C Helvetica=2C sans-serif">Advertisement - Polygon.io offers market=
+ data APIs for stocks=2C options=2C indices=2C and currencies.</span></spa=
+n></em></p></div></td></tr><tr><td style=3D"background-color:#ffffff;paddi=
+ng-top:3px;padding-bottom:3px;padding-right:24px;padding-left:24px" class=
+=3D"mceBlockContainer" valign=3D"top"><table border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" width=3D"100%" style=3D"background-color:#ffffff" role=
+=3D"presentation" data-block-id=3D"15"><tbody><tr><td style=3D"min-width:1=
+00%;border-top:1px dotted #000000" valign=3D"top"></td></tr></tbody></tabl=
+e></td></tr><tr><td style=3D"padding-top:12px;padding-bottom:12px;padding-=
+right:24px;padding-left:24px" class=3D"mceBlockContainer" valign=3D"top"><=
+div data-block-id=3D"25" class=3D"mceText" id=3D"dataBlockId-25" style=3D"=
+width:100%"><p style=3D"text-align: left;"><strong>Building with AI</stron=
+g></p><p style=3D"text-align: left;">I decided to try <a href=3D"https://q=
+uantopian.us5.list-manage.com/track/click?u=3D4c1d0cf4959586b47ef210e9c&id=
+=3Dd49ba14482&e=3D33384a4431" target=3D"_blank">replit.com</a>=2C which r=
+eminds me a lot of the Quantopian environment=2C except replit is more gen=
+eral purpose. There are three things I love about replit so far:</p><ol><l=
+i style=3D"text-align: left;"><p style=3D"text-align: left;">Code in the b=
+rowser with pre-made templates for different project types. I=E2=80=99m cu=
+rrently using two templates =E2=80=94 a fastAPI server and a react fronten=
+d.</p></li><li style=3D"text-align: left;"><p style=3D"text-align: left;">=
+The integrated AI is phenomenal=2C especially in ramping up on new framewo=
+rks (I=E2=80=99m new to both fastAPI and react). The most impressive aspec=
+t of the AI integration is highlight-and-prompt. You can highlight a secti=
+on of your code=2C prompt the AI to edit it=2C then review and accept the=
+ changes. The AI has all of your project code loaded into the context=2C s=
+o the results are pretty phenomenal. </p></li><li style=3D"text-align: lef=
+t;"><p style=3D"text-align: left;">Push-button deploy. After you have ever=
+ything working in development replit has great support for deployments to=
+ create a production release.</p></li></ol><p style=3D"text-align: left;">=
+<br /></p><p style=3D"text-align: left;" class=3D"last-child">For persiste=
+nce=2C I=E2=80=99ve been playing with a new db-as-a-service called <a href=
+=3D"https://quantopian.us5.list-manage.com/track/click?u=3D4c1d0cf4959586b=
+47ef210e9c&id=3D66f00b63e3&e=3D33384a4431" target=3D"_blank">Neon</a>=2C=
+ which is based on postgresql. The killer feature for Neon is data branchi=
+ng. I=E2=80=99m using Neon for my production data. Then=2C in development=
+=2C I create a branch of production and use that for dev and testing. When=
+ I=E2=80=99m done=2C I toss the dev branch=2C release the code=2C and repe=
+at the cycle. The meta thought =E2=80=94 how far can we push this concept?=
+ Could we branch every day and produce point-in-time records for everythin=
+g? </p></div></td></tr><tr><td style=3D"background-color:#ffffff;padding-t=
+op:3px;padding-bottom:5px;padding-right:24px;padding-left:24px" class=3D"m=
+ceBlockContainer" valign=3D"top"><table border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" width=3D"100%" style=3D"background-color:#ffffff" role=3D"p=
+resentation" data-block-id=3D"34"><tbody><tr><td style=3D"min-width:100%;b=
+order-top:1px dotted #000000" valign=3D"top"></td></tr></tbody></table></t=
+d></tr><tr><td style=3D"padding-top:12px;padding-bottom:12px;padding-right=
+:0;padding-left:0" class=3D"mceBlockContainer" align=3D"center" valign=3D"=
+top"><a href=3D"https://quantopian.us5.list-manage.com/track/click?u=3D4c1=
+d0cf4959586b47ef210e9c&id=3D05db6c4c45&e=3D33384a4431" style=3D"display:b=
+lock" target=3D"_blank" data-block-id=3D"30"><img width=3D"564" height=3D"=
+auto" style=3D"border:0;width:564px;height:auto;max-width:100%;display:blo=
+ck" alt=3D"QuantConnect offers research=2C backtesting=2C optimization=2C=
+ live trading=2C and alternative data." src=3D"https://mcusercontent.com/4=
+c1d0cf4959586b47ef210e9c/images/cc19a537-3026-8050-18a9-e4725652c6a3.png"=
+ class=3D"" /></a></td></tr><tr><td style=3D"padding-top:0;padding-bottom:=
+0;padding-right:24px;padding-left:24px" class=3D"mceBlockContainer" valign=
+=3D"top"><div data-block-id=3D"35" class=3D"mceText" id=3D"dataBlockId-35"=
+ style=3D"width:100%"><p style=3D"text-align: left;" class=3D"last-child">=
+<em><span style=3D"font-size: 9px"><span style=3D"font-family: 'Noto Sans'=
+=2C Helvetica=2C sans-serif">Advertisement</span></span></em></p></div></t=
+d></tr><tr><td style=3D"background-color:#ffffff;padding-top:3px;padding-b=
+ottom:5px;padding-right:24px;padding-left:24px" class=3D"mceBlockContainer=
+" valign=3D"top"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" w=
+idth=3D"100%" style=3D"background-color:#ffffff" role=3D"presentation" dat=
+a-block-id=3D"33"><tbody><tr><td style=3D"min-width:100%;border-top:1px do=
+tted #000000" valign=3D"top"></td></tr></tbody></table></td></tr><tr><td s=
+tyle=3D"padding-top:12px;padding-bottom:12px;padding-right:24px;padding-le=
+ft:24px" class=3D"mceBlockContainer" valign=3D"top"><div data-block-id=3D"=
+31" class=3D"mceText" id=3D"dataBlockId-31" style=3D"width:100%"><p style=
+=3D"text-align: left;"><strong>What=E2=80=99s it all mean?</strong></p><p=
+ style=3D"text-align: left;">All of this AI-assisted-hacking has me wonder=
+ing what will happen to software engineering in the next 12-18 months. My=
+ take on the state of AI for making software is it is amazing=2C but still=
+ very early =E2=80=94 like the bag phone era of cell phones. You can do so=
+me amazing things=2C but the experience is very discontinuous and the qual=
+ity is very uneven. I=E2=80=99ve been daydreaming of a new software lifecy=
+cle that is completely AI native. Instead of using AI as a personal turbo=
+ charger=2C I=E2=80=99d love to work with an AI agent that operates at a h=
+igher level. </p><p><br /></p><p style=3D"text-align: left;">One issue I h=
+ave found is that over time the AI=E2=80=99s context gets polluted. Perfec=
+t recall is what stands out as a real super power for AI agents. When it c=
+omes to coding=2C I imagine I am chatting with an engineer who has read ev=
+ery piece of documentation and every line of code of every library I want=
+ to use. As a chat unfolds and I ask questions and prompt for code=2C I ta=
+ke the agent down a lot of dead ends. Turns out the agent doesn=E2=80=99t=
+ really know how to discern between a prompt/response that worked and one=
+ that didn=E2=80=99t. That superpower of perfect recall becomes a liabilit=
+y. In ChatGPT=2C I find myself starting a new chat to get a fresh context=
+=2C but I haven=E2=80=99t figured out how to do that within replit. </p><p=
+ style=3D"text-align: left;"><br /></p><p style=3D"text-align: left;">My i=
+ntuition is the next step for software engineering would need to be a syst=
+em of AI agents that are mapped=2C probably by a human=2C to the architect=
+ural components of an application. In my current work=2C each fastAPI endp=
+oint would have agents for:</p><ol><li style=3D"text-align: left;"><p styl=
+e=3D"text-align: left;">Service endpoints (FastAPI in this case)</p></li><=
+li style=3D"text-align: left;"><p style=3D"text-align: left;">The business=
+ logic (I=E2=80=99m using Pydantic for much of this)</p></li><li style=3D"=
+text-align: left;"><p style=3D"text-align: left;">The ORM/db model (Sqlalc=
+hemy and postgresql)</p></li></ol><p style=3D"text-align: left;"><br /></p=
+><p style=3D"text-align: left;">Then=2C a controller agent could receive t=
+he prompt from me (=E2=80=98create a service to archive newsletter article=
+s=E2=80=99)=2C and in turn prompt each of the component agents. Maybe the=
+ controller agent could engage in more of a dialog with me to extract bett=
+er requirements and then prompt the coding agents when it was ready. It co=
+uld ask me to review code or try the application to test it. The context f=
+or each coder could be carefully controlled and reset for each fresh imple=
+mentation attempt. </p><p style=3D"text-align: left;"><br /></p><p style=
+=3D"text-align: left;" class=3D"last-child">Maybe after I finish up the ar=
+chival project I=E2=80=99ll give this a try. I have this image in my mind=
+ of a huge display covered with IDE windows=2C being populated by all the=
+ agents working in concert=2C like a time-lapse video of a dog wood tree g=
+rowing and blooming over and over=2C ever larger and more resplendent with=
+ blossoms.</p></div></td></tr><tr><td style=3D"background-color:#ffffff;pa=
+dding-top:3px;padding-bottom:5px;padding-right:24px;padding-left:24px" cla=
+ss=3D"mceBlockContainer" valign=3D"top"><table border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" width=3D"100%" style=3D"background-color:#ffffff" ro=
+le=3D"presentation" data-block-id=3D"21"><tbody><tr><td style=3D"min-width=
+:100%;border-top:1px dotted #000000" valign=3D"top"></td></tr></tbody></ta=
+ble></td></tr><tr><td style=3D"padding-top:0;padding-bottom:0;padding-righ=
+t:0;padding-left:0" class=3D"mceBlockContainer" align=3D"center" valign=3D=
+"top"><a href=3D"https://quantopian.us5.list-manage.com/track/click?u=3D4c=
+1d0cf4959586b47ef210e9c&id=3Dbdaa226e12&e=3D33384a4431" style=3D"display:=
+block" target=3D"_blank" data-block-id=3D"22"><img width=3D"564" height=3D=
+"auto" style=3D"border:0;width:564px;height:auto;max-width:100%;display:bl=
+ock" alt=3D"QuantRocket offers multiple backtesters=2C global data=2C clou=
+d or local deployment=2C and live trading." src=3D"https://mcusercontent.c=
+om/4c1d0cf4959586b47ef210e9c/images/9f016b4c-327e-cdd9-1b57-4be6ebc5cc1e.p=
+ng" class=3D"" /></a></td></tr><tr><td style=3D"padding-top:0;padding-bott=
+om:0;padding-right:24px;padding-left:24px" class=3D"mceBlockContainer" val=
+ign=3D"top"><div data-block-id=3D"20" class=3D"mceText" id=3D"dataBlockId-=
+20" style=3D"width:100%"><p style=3D"text-align: left;" class=3D"last-chil=
+d"><em><span style=3D"font-size: 9px"><span style=3D"font-family: 'Noto Sa=
+ns'=2C Helvetica=2C sans-serif">Advertisement</span></span></em></p></div>=
+</td></tr><tr><td style=3D"background-color:#ffffff;padding-top:3px;paddin=
+g-bottom:3px;padding-right:24px;padding-left:24px" class=3D"mceBlockContai=
+ner" valign=3D"top"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" width=3D"100%" style=3D"background-color:#ffffff" role=3D"presentation"=
+ data-block-id=3D"19"><tbody><tr><td style=3D"min-width:100%;border-top:1p=
+x dotted #000000" valign=3D"top"></td></tr></tbody></table></td></tr><tr><=
+td style=3D"padding-top:12px;padding-bottom:12px;padding-right:24px;paddin=
+g-left:24px" class=3D"mceBlockContainer" valign=3D"top"><div data-block-id=
+=3D"32" class=3D"mceText" id=3D"dataBlockId-32" style=3D"width:100%"><p st=
+yle=3D"text-align: left;"><strong>New Quantopian Show Episodes</strong></p=
+><p style=3D"text-align: left;">I had a <a href=3D"https://quantopian.us5.=
+list-manage.com/track/click?u=3D4c1d0cf4959586b47ef210e9c&id=3D4ec2fa0faa&=
+e=3D33384a4431">great conversation with Arjun Marempudi</a>=2C the founde=
+r of EventVestor. Arjun is a true entrepreneur and I loved hearing why he=
+ started EventVestor=2C why he chose to pursue and MBA after working in th=
+e industry for a few years=2C and why he thinks the future belongs to quan=
+ts. If you love data=2C business=2C building=2C and the intersections betw=
+een them=2C you=E2=80=99ll love this episode.</p><p style=3D"text-align: l=
+eft;"><br /></p><p style=3D"text-align: left;">I also followed up with <a=
+ href=3D"https://quantopian.us5.list-manage.com/track/click?u=3D4c1d0cf495=
+9586b47ef210e9c&id=3D67362d2d9e&e=3D33384a4431">Yuri Malitsky</a> to talk=
+ more about GPT-4 Turbo=2C the speed of advancements in language models=2C=
+ and what it might mean for the industry. The ability to compress context=
+ windows and the introduction of sparse priming representations are not ju=
+st technical improvements; they could represent a leap in how we approach=
+ problem-solving in quantitative finance.</p><p style=3D"text-align: left;=
+"><br /></p><p style=3D"text-align: left;">Moreover=2C Yuri's excitement a=
+bout the new AI assistants is contagious. We talked a bit about using gpt=
+ to create software. Yuri=E2=80=99s cautiously optimistic about creating s=
+oftware and productivity expansion for software engineering=2C but he real=
+ly emphasized the challenges with maintaining complex systems. Yuri doesn=
+=E2=80=99t think the current state of the explainability problem (understa=
+nding how and why LLMs generate what they generate)=2C mixes with the crit=
+icality of financial software. When I imagine troubleshooting a mission-cr=
+itical system=2C I have to agree. </p><p><br /></p><p style=3D"text-align:=
+ left;"><strong>One more thing</strong></p><p style=3D"text-align: left;">=
+After I finish writing this newsletter=2C I=E2=80=99m going to meet up wit=
+h the one and only Dr. Thomas Wiecki! We=E2=80=99re going to sit down for=
+ a retro and hopefully a long conversation about Bayes=2C AI=2C Quant=2C a=
+nd life.</p><p style=3D"text-align: left;"><br /></p><p style=3D"text-alig=
+n: left;">thanks=2C</p><p style=3D"text-align: left;" class=3D"last-child"=
+>fawce</p></div></td></tr><tr><td style=3D"padding-top:8px;padding-bottom:=
+8px;padding-right:8px;padding-left:8px" class=3D"mceLayoutContainer" valig=
+n=3D"top"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" width=3D"100%" role=3D"presentation" data-block-id=3D"8" id=3D"se=
+ction_014563b3b0c94cb9cacfc9e3a67aa05e" class=3D"mceFooterSection"><tbody>=
+<tr class=3D"mceRow"><td style=3D"background-position:center;background-re=
+peat:no-repeat;background-size:cover" valign=3D"top"><table border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"12" width=3D"100%" role=3D"presentation"><=
+tbody><tr><td style=3D"padding-top:0;padding-bottom:0;margin-bottom:12px"=
+ class=3D"mceColumn" data-block-id=3D"-3" valign=3D"top" colspan=3D"12" wi=
+dth=3D"100%"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%" role=3D"presentation"><tbody><tr><td style=3D"padding-top:12px;p=
+adding-bottom:12px;padding-right:0;padding-left:0" class=3D"mceBlockContai=
+ner" align=3D"center" valign=3D"top"><a href=3D"https://quantopian.us5.lis=
+t-manage.com/track/click?u=3D4c1d0cf4959586b47ef210e9c&id=3D9fcd559a70&e=
+=3D33384a4431" style=3D"display:block" target=3D"_blank" data-block-id=3D=
+"5"><img width=3D"100" height=3D"auto" style=3D"border:0;width:100px;heigh=
+t:auto;max-width:100%;display:block" alt=3D"" src=3D"https://mcusercontent=
+=2Ecom/4c1d0cf4959586b47ef210e9c/images/95dd7845-b6a0-4dc9-ec76-933a20b94d79=
+=2Ejpg" role=3D"presentation" class=3D"imageDropZone" /></a></td></tr><tr><t=
+d style=3D"background-color:#ffffff;padding-top:12px;padding-bottom:12px;p=
+adding-right:16px;padding-left:16px" class=3D"mceBlockContainer" align=3D"=
+center" valign=3D"top"><div data-block-id=3D"6" class=3D"mceText" id=3D"da=
+taBlockId-6" style=3D"display:inline-block;width:100%"><table width=3D"600=
+" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" id=3D"templateContainer=
+" class=3D"last-child"><tbody><tr><td colspan=3D"1" rowspan=3D"1" valign=
+=3D"top"><table width=3D"600" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" id=3D"templateBody"><tbody><tr><td colspan=3D"1" rowspan=3D"1" vali=
+gn=3D"top"><table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpaddin=
+g=3D"20"><tbody><tr><td colspan=3D"1" rowspan=3D"1"><p style=3D"text-align=
+: left; line-height: 1;"><span style=3D"font-size: 10px">The material on t=
+his website is provided for informational purposes only and does not const=
+itute an offer to sell=2C a solicitation to buy=2C or a recommendation or=
+ endorsement for any security or strategy=2C nor does it constitute an off=
+er to provide investment advisory services by Quantopian. In addition=2C t=
+he material offers no opinion with respect to the suitability of any secur=
+ity or specific investment. No information contained herein should be rega=
+rded as a suggestion to engage in or refrain from any investment-related c=
+ourse of action as none of Quantopian nor any of its affiliates is underta=
+king to provide investment advice=2C act as an adviser to any plan or enti=
+ty subject to the Employee Retirement Income Security Act of 1974=2C as am=
+ended=2C individual retirement account or individual retirement annuity=2C=
+ or give advice in a fiduciary capacity with respect to the materials pres=
+ented herein.</span></p><p style=3D"text-align: left; line-height: 1;"><sp=
+an style=3D"font-size: 10px">If you are an individual retirement or other=
+ investor=2C contact your financial advisor or other fiduciary unrelated t=
+o Quantopian about whether any given investment idea=2C strategy=2C produc=
+t or service described herein may be appropriate for your circumstances. A=
+ll investments involve risk=2C including loss of principal. Quantopian mak=
+es no guarantees as to the accuracy or completeness of the views expressed=
+ in the website. The views are subject to change=2C and may have become un=
+reliable for various reasons=2C including changes in market conditions or=
+ economic circumstances.</span></p><p style=3D"line-height: 1;"><span styl=
+e=3D"font-size: 10px">____________________________________________________=
+__________________</span></p></td></tr></tbody></table></td></tr></tbody><=
+/table></td></tr><tr><td colspan=3D"1" rowspan=3D"1" valign=3D"top"><p sty=
+le=3D"line-height: 1;"><span style=3D"font-size: 10px">=C2=A0</span></p></=
+td></tr></tbody></table></div></td></tr><tr><td class=3D"mceLayoutContaine=
+r" align=3D"center" valign=3D"top"><table align=3D"center" border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentation" dat=
+a-block-id=3D"-2"><tbody><tr class=3D"mceRow"><td style=3D"background-posi=
+tion:center;background-repeat:no-repeat;background-size:cover;padding-top:=
+0px;padding-bottom:0px" valign=3D"top"><table border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"24" width=3D"100%" role=3D"presentation"><tbody></tbody>=
+</table></td></tr></tbody></table></td></tr></tbody></table></td></tr></tb=
+ody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr>=
+</tbody></table></td></tr></tbody></table></td></tr></tbody></table><!--[=
+if (gte mso 9)|(IE)]></td></tr></table><![endif]--></td></tr></tbody></ta=
+ble>
+</td>
+</tr>
+</tbody></table>
+</center>
+            <center>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" wi=
+dth=3D"100%" id=3D"canspamBarWrapper" style=3D"background-color:#FFFFFF; b=
+order-top:1px solid #E5E5E5;">
+                    <tr>
+                        <td align=3D"center" valign=3D"top" style=3D"paddi=
+ng-top:20px; padding-bottom:20px;">
+                            <table border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" id=3D"canspamBar">
+                                <tr>
+                                    <td align=3D"center" valign=3D"top" st=
+yle=3D"color:#606060; font-family:Helvetica=2C Arial=2C sans-serif; font-s=
+ize:11px; line-height:150%; padding-right:20px; padding-bottom:5px; paddin=
+g-left:20px; text-align:center;">
+                                        This email was sent to <a href=3D"=
+mailto:brnkath@gmail.com" target=3D"_blank" style=3D"color:#404040 !importa=
+nt;">brnkath@gmail.com</a>
+                                        <br />
+                                        <a href=3D"https://quantopian.us5.=
+list-manage.com/about?u=3D4c1d0cf4959586b47ef210e9c&id=3D7cca55778a&e=3D33384a4431&c=3D5dd59678f0" target=3D"_blank" style=3D"color:#404040 !important=
+;"><em>why did I get this?</em></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href=3D"http=
+s://quantopian.us5.list-manage.com/unsubscribe?u=3D4c1d0cf4959586b47ef210e=
+9c&id=3D7cca55778a&e=3D33384a4431&c=3D5dd59678f0" style=3D"color:#404040 !im=
+portant;">unsubscribe from this list</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href=3D=
+"https://quantopian.us5.list-manage.com/profile?u=3D4c1d0cf4959586b47ef210=
+e9c&id=3D7cca55778a&e=3D33384a4431&c=3D5dd59678f0" style=3D"color:#404040 !i=
+mportant;">update subscription preferences</a>
+                                        <br />
+                                        Mile 0 Productions=2C LLC &middot;=
+ 45 School St. &middot; Boston=2C MA 02108 &middot; USA
+                                        <br />
+                                        <br />
+
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <style type=3D"text/css">
+                    @media only screen and (max-width: 480px){
+                        table#canspamBar td{font-size:14px !important;}
+                        table#canspamBar td a{display:block !important; ma=
+rgin-top:10px !important;}
+                    }
+                </style>
+            </center><img src=3D"https://quantopian.us5.list-manage.com/tr=
+ack/open.php?u=3D4c1d0cf4959586b47ef210e9c&id=3D5dd59678f0&e=3D33384a4431=
+" height=3D"1" width=3D"1" alt=3D""></body></html>
+--_----------=_MCPart_1351925696--

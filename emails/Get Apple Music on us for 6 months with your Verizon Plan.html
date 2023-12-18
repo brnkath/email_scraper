@@ -1,0 +1,1694 @@
+Delivered-To: brnkath@gmail.com
+Received: by 2002:a8a:50e:0:b0:50c:ab77:6570 with SMTP id w14csp612778ocq;
+        Fri, 8 Dec 2023 15:19:35 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGavnOGzkEsS0E4rgvr2/Vf5Zp5yOtuMm/fwqI0S1fEGPNxuO9F0b/j4X9kPgp/w3HRR9Zb
+X-Received: by 2002:a05:6a20:cea7:b0:187:ef24:358 with SMTP id if39-20020a056a20cea700b00187ef240358mr714509pzb.60.1702077575079;
+        Fri, 08 Dec 2023 15:19:35 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1702077575; cv=none;
+        d=google.com; s=arc-20160816;
+        b=S0RILeeVV7XCHaSUe2fKN7V4AFxU261qsziDMtv1d7hUkAiYvgNItDAFBTxzBAand9
+         7jPt+FFlpV2ovQZ7pmGirVHC2EK8UHZ5GLc1q+6ZI9J0VA3KS+BtpjSBTxq18k2RV7Ph
+         ktoa38E+sIMNjiX7DyJVY4ff4NaklRGcpfIrsvTN0XwT9OUGnvjZcPC6WSzVcl2lxkt6
+         Q2HI64DDPQVbD7ZtRPw8ecEWtvPwJnwImggU2uIO1W03abwz87x/9AQGATQ3F8Z1TBXP
+         lUv83cI85wnZu4Du5EZotERptz2xSfUMJVa5NfdkXnjsasdjvBgSe1t//SIU9aVRjMPx
+         295w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:message-id:mime-version:reply-to:to:date
+         :subject:from:dkim-signature;
+        bh=v69GeGGXjEqzD9b6Ya/wosZtbrhxH2aLh+l65VRHeYY=;
+        fh=h8fhLntCqZqpGGoIKwT3QX9qaqz6XXlumbVoY4KJp1U=;
+        b=z+CV6sq/WBvKi4sBuaKfwSkgnly2DI7KyWnXpVOvmAMjKG0kYwBnTI07AdT7bFiFsL
+         fLqLaHcVOVUx7dUYvL39FukZxrkRmuPrrvdnyDgcmUi1VdJVnRMrWhcvml/hLMmU7a/h
+         SQnm8rPVs2ajO3cRhsWoOKgcUB/HuMGocr6uKN73Nfv1dZy/6Vqqk9whCvC+akxDwpCh
+         NZlfeQ+uXUZ8iFgM4HBu93+aTO097DpBPMHPdAk2b3cxVq07I9LWLSlEcZBW7eeuG8kg
+         1eKjVXX0kJfIx0WKcSk7Vazphzo0FYq9TVexMcY8zENynvrl72mcQZIqh/Aqi2nbxTcQ
+         +37w==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@customer.verizon.com header.s=verizonwirelesspdi header.b=WuhT8LwM;
+       spf=pass (google.com: domain of no-reply@customer.verizon.com designates 172.82.196.6 as permitted sender) smtp.mailfrom=no-reply@customer.verizon.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=customer.verizon.com
+Return-Path: <no-reply@customer.verizon.com>
+Received: from r6.customer.verizon.com (r6.customer.verizon.com. [172.82.196.6])
+        by mx.google.com with ESMTPS id m2-20020a632602000000b005c2122e482csi2194376pgm.700.2023.12.08.15.19.34
+        for <brnkath@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 08 Dec 2023 15:19:35 -0800 (PST)
+Received-SPF: pass (google.com: domain of no-reply@customer.verizon.com designates 172.82.196.6 as permitted sender) client-ip=172.82.196.6;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@customer.verizon.com header.s=verizonwirelesspdi header.b=WuhT8LwM;
+       spf=pass (google.com: domain of no-reply@customer.verizon.com designates 172.82.196.6 as permitted sender) smtp.mailfrom=no-reply@customer.verizon.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=customer.verizon.com
+Return-Path: <no-reply@customer.verizon.com>
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	d=customer.verizon.com; s=verizonwirelesspdi; t=1702077570;
+	bh=v69GeGGXjEqzD9b6Ya/wosZtbrhxH2aLh+l65VRHeYY=;
+	h=From:Subject:Date:To:MIME-Version:Message-ID:Content-Type;
+	b=WuhT8LwModIvTjzsZYGBx4RriDJfseFik3ERBQgjYa/h5LBitcwPpIsas6U6enj2g
+	 a9U2bw/T3UF9ClKtu/DJCiwGi+pyW3zKcH6qHap8oo6TJ5cSuPfIgcYYo8I5Hdxn8L
+	 xzchmUCY4PSl0JBYF0LNlTgi6lCMhM/xoiI9e3oU=
+X-MSFBL: G9+y6iXhmkd8oMqnBcg6XqLjVwHICAu1WvTSeawxPYE=|eyJiIjoiYXdzX3Zlcml
+	6b253aXJlbGVzc3BkaV9wcm9kMTNfcHJvZC5jdXN0b21lcl9tb21lbnR1bTM5X21
+	0YTAwM18xNzIuODIuMTk2LjYiLCJnIjoicHJvZC5jdXN0b21lcl9lYTdkODg0OC0
+	3MDc5LTRlOTAtODAyNS03ODZmYmFjYmNkMGEiLCJyIjoiYnJua2F0aEBnbWFpbC5
+	jb20iLCJyY3B0X21ldGEiOnsgImluIjogInZlcml6b25fbWlkX3Byb2QxMyIsICJ
+	yIjogImJybmthdGhAZ21haWwuY29tIiwgIm0iOiAiNDQ0NzQwNjY2IiwgImQiOiA
+	iODI2MTkxODAiLCAiaSI6ICIiIH19
+Received: from [10.139.37.131] ([10.139.37.131:49600] helo=r6.customer.verizon.com)
+	by momentum39.or1.cpt.adobe.net (envelope-from <no-reply@customer.verizon.com>)
+	(ecelerity 4.2.38.999 r(:)) with ESMTP
+	id 27/28-30865-284A3756; Fri, 08 Dec 2023 15:19:30 -0800
+From: "Verizon Wireless" <no-reply@customer.verizon.com>
+Subject: Get Apple Music on us for 6 months with your Verizon Plan
+Date: Fri, 08 Dec 2023 15:19:28 -0800
+To: <brnkath@gmail.com>
+Reply-To: "Verizon Wireless" <no-reply@customer.verizon.com>
+MIME-Version: 1.0
+X-mailer: nlserver, Build 6.7.0
+Message-ID: <NM60074867704ECAB2Cverizon_mid_prod13@customer.verizon.com>
+Content-Type: text/html;
+	charset="windows-1252"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.=
+w3.org/TR/html4/loose.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-microso=
+ft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office">
+    
+<head>
+    <title>Verizon</title>
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1.0"/>
+    <!-- Outlook DPI FIX --><!--[if gte mso 9]><noscript><xml><o:OfficeDocu=
+mentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSetting=
+s></xml></noscript><![endif]-->
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1">
+<meta name=3D"x-apple-disable-message-reformatting">
+    <link type=3D"text/css" rel=3D"stylesheet" href=3D"https://assets.veriz=
+on.com/is/content/verizon/en/production/vcg/crm/vbm_global/rebrand/3d/css/C=
+RM_VBMGlobal_Rebrand_3D_CSS_Global.css"/>
+    <style type=3D"text/css">
+* {padding: 0px; margin: 0px; line-height: 100%;}
+html {-webkit-text-size-adjust: none; -webkit-font-smoothing: antialiased; =
+-moz-osx-font-smoothing: grayscale;}
+body {padding: 0px; width: 100%; background-color: #ffffff !important;}
+table, td {border-collapse: collapse; border-spacing: 0; border: 0; padding=
+: 0px; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important;}
+br, td {mso-line-height-rule: exactly;}
+a {outline: 0;}
+img {display: block;border: 0;}
+[id=3D"Item.MessageUniqueBody"] a div, [id=3D"Item.MessageUniqueBody"] span=
+ div, [id=3D"Item.MessageUniqueBody"] button {display: block !important;}
+img + div { display:none; }
+strong, em {line-height: inherit;}
+
+
+u ~ div .fontVeTX_10 {font-family: Helvetica, Arial !important; letter-spac=
+ing: 0.1px !important; font-size: 11px !important; line-height: 13px !impor=
+tant;}
+u ~ div .fontVeTX_11 {font-family: Helvetica, Arial !important; letter-spac=
+ing: 0.6px !important;}
+u ~ div .fontVeDS_14 {font-family: Helvetica, Arial !important; letter-spac=
+ing: -0.1px !important;}
+u ~ div .fontVeDS_16 {font-family: Helvetica, Arial !important; letter-spac=
+ing: -0.1px !important;}
+u ~ div .fontVeDS_18 {font-family: Helvetica, Arial !important; letter-spac=
+ing: -0.1px !important;}
+u ~ div .fontVeDS_20 {font-family: Helvetica, Arial !important; letter-spac=
+ing: -0.6px !important;}
+u ~ div .fontVeDS_22 {font-family: Helvetica, Arial !important; letter-spac=
+ing: -0.9px !important;}
+u ~ div .fontVeDS_24 {font-family: Helvetica, Arial !important; letter-spac=
+ing: -0.9px !important;}
+u ~ div .fontVeDS_26 {font-family: Helvetica, Arial !important; letter-spac=
+ing: -0.9px !important;}
+u ~ div .fontVeDS_28 {font-family: Helvetica, Arial !important; letter-spac=
+ing: -0.9px !important;}
+u ~ div .fontVeDS_30 {font-family: Helvetica, Arial !important; letter-spac=
+ing: -1px !important;}
+u ~ div .fontVeDS_32_42 {font-family: Helvetica, Arial !important; letter-s=
+pacing: -1.25px !important;}
+u ~ div .fontVeDS_44_52 {font-family: Helvetica, Arial !important; letter-s=
+pacing: -1.8px !important;}
+u ~ div .fontVeDS_54_60 {font-family: Helvetica, Arial !important; letter-s=
+pacing: -1.8px !important;}
+u ~ div .fontVeDS_62_70 {font-family: Helvetica, Arial !important; letter-s=
+pacing: -2.3px !important;}
+u ~ div .fontVeDS_72_84 {font-family: Helvetica, Arial !important; letter-s=
+pacing: -2.8px !important;}
+u ~ div .fontVeDS_86_96 {font-family: Helvetica, Arial !important; letter-s=
+pacing: -3.3px !important;}
+u ~ div .fontVeDS_98_122 {font-family: Helvetica, Arial !important; letter-=
+spacing: -3.6px !important;}
+u ~ div .fontVeDS_124_140 {font-family: Helvetica, Arial !important; letter=
+-spacing: -4.6px !important;}
+
+
+u ~ div li {margin-left: 0px !important;}
+
+
+=2EbgBorderOff {background-color: transparent !important;}
+
+
+u ~ div .bgTransparent {background-color: transparent !important;}
+
+
+u ~ div h1 > sup {font-size: 34% !important; line-height: 156% !important;}
+u ~ div h1.mobFontVeDS_40 > sup {font-size: 46% !important; line-height: 11=
+6% !important;}
+u ~ div h1 > sup.suph1 {font-size: 52% !important; line-height: 110% !impor=
+tant;}
+u ~ div h2 > sup, u ~ div h3 > sup {font-size: 60% !important; line-height:=
+ 124% !important;}
+u ~ div p > sup {font-size: 70% !important; line-height: 124% !important;}
+
+
+=2EproChannelPod #cta {background-color: #1B1D1F !important;}
+=2EproChannelPod .img_2 {display: none !important; max-height: 0 !important=
+; overflow: hidden !important;}
+
+@media (max-width:540px) {
+  
+  .mobileContainer {min-width:360px !important; max-width:360px !important;=
+ width:360px !important;}
+  .fullWidth {width: 100% !important;}
+  .fontweightBold {font-weight: bold !important;}
+  .displayBlock {display: block !important;}
+  .displayTable {display: table !important;}
+  .centerBlock {margin: 0 auto !important;}
+  .txtAlignCenter {text-align: center !important;}
+  .txtAlignLeft {text-align: left !important;}
+  .txtAlignRight {text-align: right !important;}
+  .hAuto {height: auto !important; max-height: none !important;}
+
+  
+  .hideInMobile {display:none !important;}
+  .showInMobile {width: 100% !important; display: block !important; float: =
+none !important; max-height: none !important; height: auto !important;}
+  .showInMobileWidth {display: block !important; float: none !important;}
+
+  
+  .mobilePods {width: 100% !important; display: table !important; margin: 0=
+ auto !important;}
+
+  
+  .gblFtrQuickLinks .mobilePods, .wayfinderPOD .mobilePods, .recoveryPod .m=
+obilePods {display: block !important;}
+
+  
+  .w6 {width: 6px !important;}
+  .w12 {width: 12px !important;}
+  .w18 {width: 18px !important;}
+  .w24 {width: 24px !important;}
+  .w136 {width: 136px !important;}
+  .w142 {width: 142px !important;}
+  .w324 {width: 324px !important;}
+  .w358 {width: 358px !important;}
+
+  
+  .h21 {height: 21px !important;}
+  
+  
+  .sup24 {font-size: 24px !important; line-height: 34px !important;}
+  .padR0 {padding-right: 0px !important;}
+  
+  
+  u ~ div .mobFontVeDS_24 {font-family: Helvetica, Arial !important; letter=
+-spacing: -0.9px !important; font-size: 24px !important; line-height: 26px =
+!important;}
+  .mobFontVeDS_24 {font-family: eDS, Helvetica, Arial !important; letter-sp=
+acing: 0px !important; font-size: 24px !important; line-height: 26px !impor=
+tant;}
+  u ~ div .mobFontVeDS_40 {font-family: Helvetica, Arial !important; letter=
+-spacing: -1.25px !important; font-size: 40px !important; line-height: 40px=
+ !important;}
+  .mobFontVeDS_40 {font-family: eDS, Helvetica, Arial !important; letter-sp=
+acing: 0px !important; font-size: 40px !important; line-height: 40px !impor=
+tant;}
+  u ~ div .mobFontVeDS_52 {font-family: Helvetica, Arial !important; letter=
+-spacing: -1.8px !important; font-size: 52px !important; line-height: 52px =
+!important;}
+  .mobFontVeDS_52 {font-family: eDS, Helvetica, Arial !important; letter-sp=
+acing: 0px !important; font-size: 52px !important; line-height: 52px !impor=
+tant;}
+  u ~ div .mobFontVeDS_56 {font-family: Helvetica, Arial !important; letter=
+-spacing: -1.8px !important; font-size: 56px !important; line-height: 56px =
+!important;}
+  .mobFontVeDS_56 {font-family: eDS, Helvetica, Arial !important; letter-sp=
+acing: 0px !important; font-size: 56px !important; line-height: 56px !impor=
+tant;}
+  u ~ div .mobFontVeDS_60 {font-family: Helvetica, Arial !important; letter=
+-spacing: -1.8px !important; font-size: 60px !important; line-height: 60px =
+!important;}
+  .mobFontVeDS_60 {font-family: eDS, Helvetica, Arial !important; letter-sp=
+acing: 0px !important; font-size: 60px !important; line-height: 60px !impor=
+tant;}
+  u ~ div .mobFontVeDS_68 {font-family: Helvetica, Arial !important; letter=
+-spacing: -2.3px !important; font-size: 68px !important; line-height: 68px =
+!important;}
+  .mobFontVeDS_68 {font-family: eDS, Helvetica, Arial !important; letter-sp=
+acing: 0px !important; font-size: 68px !important; line-height: 68px !impor=
+tant;}
+
+  
+  .btnCTA {border-color: #808080 !important; } 
+
+  
+  h1.mobFontVeDS_40 > sup.suph1, h1.mobFontVeDS_40 > sup.suph1Reg {font-siz=
+e: 80% !important; top: 0 !important;}
+  u ~ div h1.mobFontVeDS_40 > sup.suph1, u ~ div h1.mobFontVeDS_40 > sup.su=
+ph1Reg, u ~ div h1.mobFontVeDS_52 > sup.suph1, u ~ div h1.mobFontVeDS_52 > =
+sup.suph1Reg {font-size: 38% !important; line-height: 116% !important;}
+  
+  
+  .proChannelPod #borderLeft {width: 100% !important; height: 24px !importa=
+nt;}
+  .proChannelPod #cta, .proChannelPod #cta a {width: 100% !important;}
+}
+</style>
+
+<style type=3D"text/css">
+=2E& .fontVeTX_10 {font-family: Helvetica, Arial !important; letter-spacing=
+: 0.1px !important; font-size: 11px !important; line-height: 13px !importan=
+t;}
+=2E& .fontVeTX_11 {font-family: Helvetica, Arial !important; letter-spacing=
+: 0.6px !important;}
+=2E& .fontVeDS_14 {font-family: Helvetica, Arial !important; letter-spacing=
+: -0.1px !important;}
+=2E& .fontVeDS_16 {font-family: Helvetica, Arial !important; letter-spacing=
+: -0.1px !important;}
+=2E& .fontVeDS_18 {font-family: Helvetica, Arial !important; letter-spacing=
+: -0.1px !important;}
+=2E& .fontVeDS_20 {font-family: Helvetica, Arial !important; letter-spacing=
+: -0.6px !important;}
+=2E& .fontVeDS_22 {font-family: Helvetica, Arial !important; letter-spacing=
+: -0.9px !important;}
+=2E& .fontVeDS_24 {font-family: Helvetica, Arial !important; letter-spacing=
+: -0.9px !important;}
+=2E& .fontVeDS_26 {font-family: Helvetica, Arial !important; letter-spacing=
+: -0.9px !important;}
+=2E& .fontVeDS_28 {font-family: Helvetica, Arial !important; letter-spacing=
+: -0.9px !important;}
+=2E& .fontVeDS_30 {font-family: Helvetica, Arial !important; letter-spacing=
+: -1px !important;}
+=2E& .fontVeDS_32_42 {font-family: Helvetica, Arial !important; letter-spac=
+ing: -1.25px !important;}
+=2E& .fontVeDS_44_52 {font-family: Helvetica, Arial !important; letter-spac=
+ing: -1.8px !important;}
+=2E& .fontVeDS_54_60 {font-family: Helvetica, Arial !important; letter-spac=
+ing: -1.8px !important;}
+=2E& .fontVeDS_62_70 {font-family: Helvetica, Arial !important; letter-spac=
+ing: -2.3px !important;}
+=2E& .fontVeDS_72_84 {font-family: Helvetica, Arial !important; letter-spac=
+ing: -2.8px !important;}
+=2E& .fontVeDS_86_96 {font-family: Helvetica, Arial !important; letter-spac=
+ing: -3.3px !important;}
+=2E& .fontVeDS_98_122 {font-family: Helvetica, Arial !important; letter-spa=
+cing: -3.6px !important;}
+=2E& .fontVeDS_124_140 {font-family: Helvetica, Arial !important; letter-sp=
+acing: -4.6px !important;}
+
+
+=2E& h1 > sup {font-size: 28% !important; line-height: 156% !important;}
+=2E& h1.mobFontVeDS_40 > sup {font-size: 46% !important; line-height: 116% =
+!important;}
+=2E& h1 > sup.suph1 {font-size: 52% !important; line-height: 110% !importan=
+t;}
+=2E& h2 > sup, .& h3 > sup {font-size: 60% !important; line-height: 124% !i=
+mportant;}
+=2E& p > sup {font-size: 70% !important; line-height: 124% !important;}
+ 
+@media (max-width:540px) {
+
+  .& .mobFontVeDS_24 {font-family: Helvetica, Arial !important; letter-spac=
+ing: -0.9px !important; font-size: 24px !important; line-height: 26px !impo=
+rtant;}
+  .& .mobFontVeDS_40 {font-family: Helvetica, Arial !important; letter-spac=
+ing: -1.25px !important; font-size: 40px !important; line-height: 40px !imp=
+ortant;}
+  .& .mobFontVeDS_52 {font-family: Helvetica, Arial !important; letter-spac=
+ing: -1.8px !important; font-size: 52px !important; line-height: 52px !impo=
+rtant;}
+  .& .mobFontVeDS_56 {font-family: Helvetica, Arial !important; letter-spac=
+ing: -1.8px !important; font-size: 56px !important; line-height: 56px !impo=
+rtant;}
+  .& .mobFontVeDS_60 {font-family: Helvetica, Arial !important; letter-spac=
+ing: -1.8px !important; font-size: 60px !important; line-height: 60px !impo=
+rtant;}
+  .& .mobFontVeDS_68 {font-family: Helvetica, Arial !important; letter-spac=
+ing: -2.3px !important; font-size: 68px !important; line-height: 68px !impo=
+rtant;}
+}
+</style>
+
+
+<style type=3D"text/css">
+@media (min-width:540px) {
+  u ~ div .gmailHackBM {
+    mix-blend-mode: normal !important;
+  }
+}
+</style>
+
+
+<!--[if mso]>
+<link type=3D"text/css" rel=3D"stylesheet" href=3D"https://assets.verizon.c=
+om/is/content/verizon/en/production/vcg/crm/vbm_global/rebrand/3d/css/CRM_V=
+BMGlobal_Rebrand_3D_CSS_Outlook.css">
+<![endif]-->
+    <style type=3D"text/css">
+@media (max-width:540px) {
+}
+    </style>
+</head>
+    
+    
+<body style=3D"padding:0px; margin:0 auto;">
+
+     <style type=3D"text/css">
+        .& .btnCTA {
+            border-color: #808080 !important;
+        }/* Fix for Pill buttons in Yahoo App Android Dark Mode */
+    </style> 
+
+    <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" =
+lang=3D"en" role=3D"presentation">
+        <tr>
+            <td valign=3D"top" align=3D"center" style=3D"background-color:#=
+ffffff" class=3D"bgTransparent">
+                <table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" wid=
+th=3D"720" align=3D"center" style=3D"margin:0 auto;" class=3D"mobileContain=
+er" role=3D"presentation">
+                    <!-- HEADER START -->                              
+                        
+
+
+
+
+<tr>
+    <td align=3D"left" valign=3D"top"><div style=3D"display:none !important=
+; visibility:hidden; mso-hide:all; max-height:0px; max-width:0px; opacity:0=
+; overflow:hidden;">Take advantage of the benefits that come with your plan=
+.</div></td>
+</tr>
+
+    
+<tr>
+  <td align=3D"left" valign=3D"top" bgcolor=3D"#000000" style=3D"background=
+-image: url('https://assets.verizon.com/is/image/verizon/CRM_VBMGlobal_Rebr=
+and_3D_DarkMode_BGblack-apex'); background-color:#000000;">
+    <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" =
+role=3D"presentation">
+      <tr>
+        <td width=3D"6" class=3D"hideInMobile"><!--[if mso]>
+        <v:rect xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"true" str=
+oke=3D"false" style=3D"width:6px;height:80px;">
+          <v:fill type=3D"tile" src=3D"https://assets.verizon.com/is/image/=
+verizon/CRM_VBMGlobal_Rebrand_3D_DarkMode_BGblack-apex" color=3D"#000000" /=
+>
+          <o:lock selection=3D"true" />
+        </v:rect>
+        <![endif]--></td>
+        
+        
+        <td height=3D"80" align=3D"left" valign=3D"top">
+   <a href=3D"https://t.e.verizonwireless.com/r/=3Fid=3Dh1a82343a,2a1ffe24,=
+14c39fc5&e=3DQ01QPUNSTV9NX0NVX0FDX0VNX0VSTF8yM18xMl9BUFBMRV9NVVNJQ182TU8mRU=
+1ISUQ9NzY0ZjQzYzg5MWU0OWQ3YjNjYjU3YzY4ZmZkYzVhZWZlODMwYWU1YmFlNjcxN2Y2NTFlN=
+mYzNDkwYjZkMGQwNiZDVUhJRD1kN2E4MTY3NzA5NmVlYWFhYzRkZTkxMzkxZmRmNmMyNTA4Y2E3=
+MGZkNTgwMjhlZWZmZTdkY2E1NDRhMGY0MDYzJkJJRD00NDQ3NDA2NjY&s=3Dooy75bXDcd-R-JO=
+KS6Ip7kBQw6XSWxmLeCLfODQfpWo" _label=3D"gbl_header_verizon" target=3D"_blan=
+k"><span style=3D"font-family: Helvetica, Arial; font-size: 32px; line-heig=
+ht: 32px; letter-spacing: -1.2px; color:#ffffff; font-weight:bold; -webkit-=
+text-size-adjust:none;" class=3D"fontVeDS_32_42" id=3D"lineheight_32"><img =
+src=3D"https://assets.verizon.com/is/image/verizon/CRM_VBMGlobal_Rebrand_3D=
+_Headers_Checkmark_Logo-apex" height=3D"80" alt=3D"Verizon" border=3D"0" st=
+yle=3D"display:block;"></span></a>
+
+</td>  
+            
+          
+        
+        <td align=3D"right" valign=3D"top">
+          
+          
+                
+                
+                <table align=3D"right" border=3D"0" cellspacing=3D"0" cellp=
+adding=3D"0" role=3D"presentation">
+  <tr>
+    <!--[if mso]><td align=3D"left" valign=3D"top">
+    <v:rect xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"true" stroke=
+=3D"false" style=3D"width:384px;height:80px;">
+      <v:fill type=3D"tile" src=3D"https://assets.verizon.com/is/image/veri=
+zon/CRM_VBMGlobal_Rebrand_3D_DarkMode_BGblack-apex" color=3D"#000000" />
+      <o:lock selection=3D"true" />
+    </v:rect>
+    </td><![endif]-->
+    <td align=3D"left" valign=3D"top"><a href=3D"https://t.sl.e.verizonwire=
+less.com/r/=3Fid=3Dh1a82343a,2a1ffe24,14c39fe1&e=3DQ01QPUNSTV9NX0NVX0FDX0VN=
+X0VSTF8yM18xMl9BUFBMRV9NVVNJQ182TU8mRU1ISUQ9NzY0ZjQzYzg5MWU0OWQ3YjNjYjU3YzY=
+4ZmZkYzVhZWZlODMwYWU1YmFlNjcxN2Y2NTFlNmYzNDkwYjZkMGQwNiZDVUhJRD1kN2E4MTY3Nz=
+A5NmVlYWFhYzRkZTkxMzkxZmRmNmMyNTA4Y2E3MGZkNTgwMjhlZWZmZTdkY2E1NDRhMGY0MDYzJ=
+kJJRD00NDQ3NDA2NjY&s=3DMdYZi_EzxK6Spftymst7vimjYDnvhf7-geD7unstAOE" _label=
+=3D"gbl_header_shop" target=3D"_blank"><span style=3D"font-family: Helvetic=
+a, Arial; font-size: 16px; line-height: 20px; letter-spacing: -0.1px; color=
+:#ffffff; font-weight:bold; -webkit-text-size-adjust:none;" class=3D"fontVe=
+DS_16"><img src=3D"https://assets.verizon.com/is/image/verizon/CRM_VBMGloba=
+l_Rebrand_3D_Headers_Shop-apex" alt=3D"Shop" height=3D"80" style=3D"display=
+:block;" border=3D"0"></span></a></td>
+    <td align=3D"left" valign=3D"top" class=3D"hideInMobile"><a href=3D"htt=
+ps://t.sl.e.verizonwireless.com/r/=3Fid=3Dh1a82343a,2a1ffe24,14c39fe2&e=3DQ=
+01QPUNSTV9NX0NVX0FDX0VNX0VSTF8yM18xMl9BUFBMRV9NVVNJQ182TU8mRU1ISUQ9NzY0ZjQz=
+Yzg5MWU0OWQ3YjNjYjU3YzY4ZmZkYzVhZWZlODMwYWU1YmFlNjcxN2Y2NTFlNmYzNDkwYjZkMGQ=
+wNiZDVUhJRD1kN2E4MTY3NzA5NmVlYWFhYzRkZTkxMzkxZmRmNmMyNTA4Y2E3MGZkNTgwMjhlZW=
+ZmZTdkY2E1NDRhMGY0MDYzJkJJRD00NDQ3NDA2NjY&s=3DpcODgreM5M-091jqISj6UIAqkRRvn=
+dHk0RhTPv09Xfs" _label=3D"gbl_header_support" target=3D"_blank"><span style=
+=3D"font-family: Helvetica, Arial; font-size: 16px; line-height: 20px; lett=
+er-spacing: -0.1px; color:#ffffff; font-weight:bold; -webkit-text-size-adju=
+st:none;" class=3D"fontVeDS_16"><img src=3D"https://assets.verizon.com/is/i=
+mage/verizon/CRM_VBMGlobal_Rebrand_3D_Headers_Support-apex" alt=3D"Support"=
+ height=3D"80" style=3D"display:block;" border=3D"0"></span></a></td>
+    <td align=3D"left" valign=3D"top"><a href=3D"https://t.sl.e.verizonwire=
+less.com/r/=3Fid=3Dh1a82343a,2a1ffe24,14c39fe3&e=3DQ01QPUNSTV9NX0NVX0FDX0VN=
+X0VSTF8yM18xMl9BUFBMRV9NVVNJQ182TU8mRU1ISUQ9NzY0ZjQzYzg5MWU0OWQ3YjNjYjU3YzY=
+4ZmZkYzVhZWZlODMwYWU1YmFlNjcxN2Y2NTFlNmYzNDkwYjZkMGQwNiZDVUhJRD1kN2E4MTY3Nz=
+A5NmVlYWFhYzRkZTkxMzkxZmRmNmMyNTA4Y2E3MGZkNTgwMjhlZWZmZTdkY2E1NDRhMGY0MDYzJ=
+kJJRD00NDQ3NDA2NjY&s=3D53CjGjrB_bLlyV_5mWBF99DWK58HVatQKyEMS9U358I" _label=
+=3D"gbl_header_myverizon" target=3D"_blank"><span style=3D"font-family: Hel=
+vetica, Arial; font-size: 16px; line-height: 20px; letter-spacing: -0.1px; =
+color:#ffffff; font-weight:bold; -webkit-text-size-adjust:none;" class=3D"f=
+ontVeDS_16"><img src=3D"https://assets.verizon.com/is/image/verizon/CRM_VBM=
+Global_Rebrand_3D_Headers_My_Verizon-apex" alt=3D"My Verizon" height=3D"80"=
+ style=3D"display:block;" border=3D"0"></span></a></td>
+  </tr>
+</table>
+            
+          
+        </td>
+        
+        <td width=3D"12" class=3D"w6"><!--[if mso]>
+        <v:rect xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"true" str=
+oke=3D"false" style=3D"width:12px;height:80px;">
+          <v:fill type=3D"tile" src=3D"https://assets.verizon.com/is/image/=
+verizon/CRM_VBMGlobal_Rebrand_3D_DarkMode_BGblack-apex" color=3D"#000000" /=
+>
+          <o:lock selection=3D"true" />
+        </v:rect>
+        <![endif]--></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+
+
+  
+
+  <!--[if !mso]><!-- -->
+  <tr>
+    <td align=3D"left" valign=3D"top" bgcolor=3D"#333333" style=3D"backgrou=
+nd: url(https://assets.verizon.com/is/image/verizon/CRM_VBMGlobal_Rebrand_3=
+D_DarkMode_BGgrey_333-apex); background-size: 720px 32px; mso-hide:all;">
+      <table cellspacing=3D"0" cellpadding=3D"0" width=3D"100%" border=3D"0=
+" role=3D"presentation">
+        <tr>
+          <td align=3D"left" valign=3D"top" class=3D"hideInMobile">
+          <a href=3D"https://t.e.verizonwireless.com/r/=3Fid=3Dh1a82343a,2a=
+1ffe24,14c39fe6&e=3DQ01QPUNSTV9NX0NVX0FDX0VNX0VSTF8yM18xMl9BUFBMRV9NVVNJQ18=
+2TU8mRU1ISUQ9NzY0ZjQzYzg5MWU0OWQ3YjNjYjU3YzY4ZmZkYzVhZWZlODMwYWU1YmFlNjcxN2=
+Y2NTFlNmYzNDkwYjZkMGQwNiZDVUhJRD1kN2E4MTY3NzA5NmVlYWFhYzRkZTkxMzkxZmRmNmMyN=
+TA4Y2E3MGZkNTgwMjhlZWZmZTdkY2E1NDRhMGY0MDYzJkJJRD00NDQ3NDA2NjYmcDE9YXBpL1BG=
+ZXRjaD9tYm94WERvbWFpbj1kaXNhYmxlZCZtYm94WERvbWFpbkNoZWNrPXRydWUmbWJveFNlc3N=
+pb249NDQ0NzQwNjY2Jm1ib3hQQz00NDQ3NDA2NjYmdGFyPTImdXBFbnJvbGxlZD10cnVlJnVwRW=
+xpZ2liaWxpdHk9ZmFsc2Umb3NOYW1lPUFuZHJvaWQmZGF0YVRpZXI9U21hcnQmRGV2aWNlQnJhb=
+mROYW1lPUdBTEFYWSBTMjImdnZjRW5nYWdlPWZhbHNlJnZ2Y1JlY3J1aXQ9dHJ1ZSZqb2ludEN1=
+c3RvbWVyPU4mdnpSZXdhcmRCYWw9MCZtc2dfaWQ9NDQ0NzQwNjY2Jk1WQWRvd25sb2FkPTE4LjE=
+uMiZNVkFwdXNoZW5hYmxlZD10cnVlJmRldmljZUJhbGFuY2U9MCZtYm94PUdsb2JhbEJhbm5lcl=
+9EZXNrX2NsayZtYm94RGVmYXVsdD1odHRwcyUzQSUyRiUyRnd3dy52ZXJpem9uLmNvbSZhdF9wc=
+m9wZXJ0eT0wMTg4MzUwOS04ZGZmLWM5ODctNTY3ZS00NjA4MDMzYzhjM2I&s=3DqLr5Du0ZYpAA=
+xXJqh-V8cZZqD2IQqIeD47bBgIhYX9k" target=3D"_blank" _label=3D"gbl_header_tar=
+get_banner" class=3D"Target_Desktop"><img src=3D"https://t.verizon.com/api/=
+PFetch=3FmboxXDomain=3Ddisabled&mboxXDomainCheck=3Dtrue&mboxSession=3D44474=
+0666&mboxPC=3D444740666&tar=3D2&upEnrolled=3Dtrue&upEligibility=3Dfalse&osN=
+ame=3DAndroid&dataTier=3DSmart&DeviceBrandName=3DGALAXY S22&vvcEngage=3Dfal=
+se&vvcRecruit=3Dtrue&jointCustomer=3DN&vzRewardBal=3D0&MVAdownload=3D18.1.2=
+&MVApushenabled=3Dtrue&deviceBalance=3D0&mbox=3DGlobalBanner_Desk_img&mboxD=
+efault=3Dhttps%3A%2F%2Fecrm.e.verizon.com%2FAC%2FGlobal%2FUniversal%2FTarge=
+t%2FImages%2FFallback_720.png&at_property=3D01883509-8dff-c987-567e-4608033=
+c8c3b&msg_id=3D444740666&CMP=3DEMC-CRM_M_CU_AC_EM_ERL_23_12_APPLE_MUSIC_6MO=
+&EMHID=3D764f43c891e49d7b3cb57c68ffdc5aefe830ae5bae6717f651e6f3490b6d0d06&C=
+UHID=3Dd7a81677096eeaaac4de91391fdf6c2508ca70fd58028eeffe7dca544a0f4063&BID=
+=3D444740666" width=3D"720" alt=3D"" style=3D"display:block;" border=3D"0">=
+</a></td>
+        </tr>
+        <tr>
+          <td align=3D"left" valign=3D"top" class=3D"showInMobile hAuto" st=
+yle=3D"height:0px; display:none; max-height:0; overflow:hidden;">
+          <a href=3D"https://t.e.verizonwireless.com/r/=3Fid=3Dh1a82343a,2a=
+1ffe24,14c39fe7&e=3DQ01QPUNSTV9NX0NVX0FDX0VNX0VSTF8yM18xMl9BUFBMRV9NVVNJQ18=
+2TU8mRU1ISUQ9NzY0ZjQzYzg5MWU0OWQ3YjNjYjU3YzY4ZmZkYzVhZWZlODMwYWU1YmFlNjcxN2=
+Y2NTFlNmYzNDkwYjZkMGQwNiZDVUhJRD1kN2E4MTY3NzA5NmVlYWFhYzRkZTkxMzkxZmRmNmMyN=
+TA4Y2E3MGZkNTgwMjhlZWZmZTdkY2E1NDRhMGY0MDYzJkJJRD00NDQ3NDA2NjYmcDE9YXBpL1BG=
+ZXRjaD9tYm94WERvbWFpbj1kaXNhYmxlZCZtYm94WERvbWFpbkNoZWNrPXRydWUmbWJveFNlc3N=
+pb249NDQ0NzQwNjY2Jm1ib3hQQz00NDQ3NDA2NjYmdGFyPTImdXBFbnJvbGxlZD10cnVlJnVwRW=
+xpZ2liaWxpdHk9ZmFsc2Umb3NOYW1lPUFuZHJvaWQmZGF0YVRpZXI9U21hcnQmRGV2aWNlQnJhb=
+mROYW1lPUdBTEFYWSBTMjImdnZjRW5nYWdlPWZhbHNlJnZ2Y1JlY3J1aXQ9dHJ1ZSZqb2ludEN1=
+c3RvbWVyPU4mdnpSZXdhcmRCYWw9MCZtc2dfaWQ9NDQ0NzQwNjY2Jk1WQWRvd25sb2FkPTE4LjE=
+uMiZNVkFwdXNoZW5hYmxlZD10cnVlJmRldmljZUJhbGFuY2U9MCZtYm94PUdsb2JhbEJhbm5lcl=
+9Nb2JfY2xrJm1ib3hEZWZhdWx0PWh0dHBzJTNBJTJGJTJGd3d3LnZlcml6b24uY29tJmF0X3Byb=
+3BlcnR5PTAxODgzNTA5LThkZmYtYzk4Ny01NjdlLTQ2MDgwMzNjOGMzYg&s=3DQlb8moxeo-seE=
+JA8QDqo2qp1zx3_AEhqGTwc3BODdQ0" target=3D"_blank" _label=3D"gbl_header_targ=
+et_banner" class=3D"Target_Mobile"><img src=3D"https://t.verizon.com/api/PF=
+etch=3FmboxXDomain=3Ddisabled&mboxXDomainCheck=3Dtrue&mboxSession=3D4447406=
+66&mboxPC=3D444740666&tar=3D2&upEnrolled=3Dtrue&upEligibility=3Dfalse&osNam=
+e=3DAndroid&dataTier=3DSmart&DeviceBrandName=3DGALAXY S22&vvcEngage=3Dfalse=
+&vvcRecruit=3Dtrue&jointCustomer=3DN&vzRewardBal=3D0&MVAdownload=3D18.1.2&M=
+VApushenabled=3Dtrue&deviceBalance=3D0&mbox=3DGlobalBanner_Mob_img&mboxDefa=
+ult=3Dhttps%3A%2F%2Fecrm.e.verizon.com%2FAC%2FGlobal%2FUniversal%2FTarget%2=
+FImages%2FFallback_360.png&at_property=3D01883509-8dff-c987-567e-4608033c8c=
+3b&msg_id=3D444740666&CMP=3DEMC-CRM_M_CU_AC_EM_ERL_23_12_APPLE_MUSIC_6MO&EM=
+HID=3D764f43c891e49d7b3cb57c68ffdc5aefe830ae5bae6717f651e6f3490b6d0d06&CUHI=
+D=3Dd7a81677096eeaaac4de91391fdf6c2508ca70fd58028eeffe7dca544a0f4063&BID=3D=
+444740666" width=3D"360" alt=3D"" style=3D"display:block;" border=3D"0"></a=
+></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <!--<![endif]-->
+
+
+
+<!--[if mso]><tr>
+    <td height=3D"1" bgcolor=3D"#333333" width=3D"100%" style=3D"border-col=
+lapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; mso-line-height=
+-rule:exactly; line-height:1px;"><img src=3D"https://assets.verizon.com/is/=
+image/verizon/CRM_VBMGlobal_Rebrand_3D_DarkMode_BGgrey_333-apex" width=3D"7=
+20" height=3D"1" alt=3D"" style=3D"display:block;" border=3D"0" class=3D"mo=
+bileContainer"></td>
+  </tr><![endif]-->
+
+
+                                  
+                    <!-- HEADER END -->
+
+                    <!-- BODY START -->                              
+
+    
+    
+
+
+
+
+
+
+    <!-- TEXT CTA FULL WIDTH START -->
+    <tr>
+        <td align=3D"left" valign=3D"top" style=3D"background-color: #00000=
+0">
+            <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpaddin=
+g=3D"0" role=3D"presentation">
+                <tr>
+                    <td width=3D"24" class=3D"w18"></td>
+                    <td align=3D"left" valign=3D"top" style=3D"padding-top:=
+ 20px">
+                        <table width=3D"100%" border=3D"0" cellspacing=3D"0=
+" cellpadding=3D"0" role=3D"presentation">
+                            
+                            
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    <!-- CHILD TEXT START -->
+    
+    <tr>
+        <td align=3D"left" valign=3D"top" style=3D"padding-bottom: 20px; pa=
+dding-right: 0px">
+            
+
+            
+
+            
+                <!-- Heading 1 - 64 :: START -->
+                <h1 id=3D"lineheight_64" style=3D"font-family: Helvetica, A=
+rial; font-size: 64px; line-height: 64px; letter-spacing: -2.2px; color:#FF=
+FFFF; font-weight:bold; -webkit-text-size-adjust:none; margin: 0;" class=3D=
+"fontVeDS_62_70 mobFontVeDS_52"><strong>Enjoy Apple Music, on us for 6 mont=
+hs</strong></h1>
+                <!-- Heading 1 - 64 :: END -->
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+        </td>
+    </tr>
+    
+    <!-- CHILD TEXT END -->
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    <!-- CHILD TEXT START -->
+    
+    <tr>
+        <td align=3D"left" valign=3D"top" style=3D"padding-bottom: 20px; pa=
+dding-right: 0px">
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+                <!-- Heading 3 24 :: START -->
+                <h1 style=3D"font-family: Helvetica, Arial; font-size: 24px=
+; line-height: 28px; letter-spacing: -0.9px; color:#FFFFFF; font-weight:bol=
+d; -webkit-text-size-adjust:none; margin: 0;" class=3D"fontVeDS_24">All the=
+ music you love. Across all of your devices.</h1>
+                <!-- Heading 3 24 :: END -->
+            
+
+            
+
+            
+
+            
+        </td>
+    </tr>
+    
+    <!-- CHILD TEXT END -->
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    <!-- CHILD BUTTON START -->
+    <tr>
+        <td align=3D"left" valign=3D"top" style=3D"padding-bottom: 16px; pa=
+dding-top: 7px;">
+            <table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" role=3D=
+"presentation" style=3D"border-collapse: separate;">
+                <tr>
+                    <td align=3D"center" valign=3D"middle" style=3D"text-al=
+ign: center; vertical-align: middle;">
+                        <p style=3D"font-family: Helvetica, Arial; font-siz=
+e: 16px; line-height: 100%; letter-spacing: -0.1px; color: #FFFFFF; font-we=
+ight:bold; -webkit-text-size-adjust:none; margin:0;" class=3D"fontVeDS_16">
+                            <a _label=3D"CTA_1.0" href=3D"https://t.sl.e.ve=
+rizonwireless.com/r/=3Fid=3Dh1a82343a,2a1ffe24,14c39fe8&e=3DQ01QPUNSTV9NX0N=
+VX0FDX0VNX0VSTF8yM18xMl9BUFBMRV9NVVNJQ182TU8mRU1ISUQ9NzY0ZjQzYzg5MWU0OWQ3Yj=
+NjYjU3YzY4ZmZkYzVhZWZlODMwYWU1YmFlNjcxN2Y2NTFlNmYzNDkwYjZkMGQwNiZDVUhJRD1kN=
+2E4MTY3NzA5NmVlYWFhYzRkZTkxMzkxZmRmNmMyNTA4Y2E3MGZkNTgwMjhlZWZmZTdkY2E1NDRh=
+MGY0MDYzJkJJRD00NDQ3NDA2NjY&s=3DK_oLAExYcajTxnyxKgQz3QVPYjlZyj9glzKY8hInxEQ=
+" target=3D"_blank" style=3D"text-decoration:none; display: block; padding:=
+ 13px 24px; border: 1px solid #FFFFFF; background-color: transparent; borde=
+r-radius: 50px; min-width: 0px" class=3D"btnCTA" aria-label=3D"Enjoy Apple =
+Music, on us for 6 months. All the music you love. Across all your devices.=
+"><span tabindex=3D"0" style=3D"color: #FFFFFF" class=3D"outlookFix">Enroll=
+ Now</span>
+                            </a>
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <!-- CHILD BUTTON END -->
+
+
+
+
+
+                        </table>
+                    </td>
+                    <td width=3D"198" class=3D"w18"></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <!-- TEXT CTA FULL WIDTH END -->
+
+
+
+
+    
+    
+
+
+
+
+
+
+    <!-- TEXT CTA FULL WIDTH START -->
+    <tr>
+        <td align=3D"left" valign=3D"top" style=3D"background-color: transp=
+arent">
+            <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpaddin=
+g=3D"0" role=3D"presentation">
+                <tr>
+                    <td width=3D"24" class=3D"w18"></td>
+                    <td align=3D"left" valign=3D"top" style=3D"padding-top:=
+ 20px">
+                        <table width=3D"100%" border=3D"0" cellspacing=3D"0=
+" cellpadding=3D"0" role=3D"presentation">
+                            
+                            
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    <!-- CHILD TEXT START -->
+    
+    <tr>
+        <td align=3D"left" valign=3D"top" style=3D"padding-bottom: 16px; pa=
+dding-right: 0px">
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+                <!-- Body Copy - 16 :: START -->
+                <p style=3D"font-family: Helvetica, Arial; font-size: 16px;=
+ line-height: 20px; letter-spacing: -0.1px; color:#000000; font-weight:norm=
+al; -webkit-text-size-adjust:none; margin: 0;" class=3D"fontVeDS_16">Hi Bri=
+an,</p>
+                <!-- Body Copy - 16 :: END -->
+            
+
+            
+        </td>
+    </tr>
+    
+    <!-- CHILD TEXT END -->
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    <!-- CHILD TEXT START -->
+    
+    <tr>
+        <td align=3D"left" valign=3D"top" style=3D"padding-bottom: 16px; pa=
+dding-right: 0px">
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+                <!-- Body Copy - 16 :: START -->
+                <p style=3D"font-family: Helvetica, Arial; font-size: 16px;=
+ line-height: 20px; letter-spacing: -0.1px; color:#000000; font-weight:norm=
+al; -webkit-text-size-adjust:none; margin: 0;" class=3D"fontVeDS_16">Your V=
+erizon plan includes 6 months of Apple Music, on us (then $10.99/mo after).=
+ With Apple Music, you can access over 100 million songs and 30,000 playlis=
+ts, ad-free. Listen online or off, across all your devices, and hear sound =
+all around in Spatial Audio with Dolby Atmos.</p>
+                <!-- Body Copy - 16 :: END -->
+            
+
+            
+        </td>
+    </tr>
+    
+    <!-- CHILD TEXT END -->
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    <!-- CHILD TEXT START -->
+    
+    <tr>
+        <td align=3D"left" valign=3D"top" style=3D"padding-bottom: 16px; pa=
+dding-right: 0px">
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+                <!-- Body Copy - 16 :: START -->
+                <p style=3D"font-family: Helvetica, Arial; font-size: 16px;=
+ line-height: 20px; letter-spacing: -0.1px; color:#000000; font-weight:norm=
+al; -webkit-text-size-adjust:none; margin: 0;" class=3D"fontVeDS_16"><stron=
+g>With Apple Music, you can:</strong></p>
+                <!-- Body Copy - 16 :: END -->
+            
+
+            
+        </td>
+    </tr>
+    
+    <!-- CHILD TEXT END -->
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+    <!-- List :: START -->
+    
+    <tr>
+        <td align=3D"left" valign=3D"top" style=3D"padding-bottom: 12px; pa=
+dding-right: 0px">
+            <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpaddin=
+g=3D"0" role=3D"presentation">
+                
+                    <!-- List Item 0 :: START -->
+                    <tr>
+                        <td align=3D"left" valign=3D"top" style=3D"padding-=
+bottom: 8px;">
+                            <table width=3D"100%" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0" role=3D"presentation">
+                                <tr>
+                                    <td width=3D"24" align=3D"left" valign=
+=3D"top">
+                                        <p style=3D"font-family: Helvetica,=
+ Arial; font-size: 16px; line-height: 20px; letter-spacing: -0.1px; color: =
+#000000; font-weight:normal; -webkit-text-size-adjust:none; margin: 0;" cla=
+ss=3D"fontVeDS_16">&bull;</p>
+                                    </td>
+                                    <td align=3D"left" valign=3D"top">
+                                        <p style=3D"font-family: Helvetica,=
+ Arial; font-size: 16px; line-height: 20px; letter-spacing: -0.1px; color: =
+#000000; font-weight:normal; -webkit-text-size-adjust:none; margin: 0;" cla=
+ss=3D"fontVeDS_16">Stream over 100 million songs ad-free</p>
+
+                                        
+
+                                        
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- List Item 0 :: END -->
+                
+                    <!-- List Item 1 :: START -->
+                    <tr>
+                        <td align=3D"left" valign=3D"top" style=3D"padding-=
+bottom: 8px;">
+                            <table width=3D"100%" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0" role=3D"presentation">
+                                <tr>
+                                    <td width=3D"24" align=3D"left" valign=
+=3D"top">
+                                        <p style=3D"font-family: Helvetica,=
+ Arial; font-size: 16px; line-height: 20px; letter-spacing: -0.1px; color: =
+#000000; font-weight:normal; -webkit-text-size-adjust:none; margin: 0;" cla=
+ss=3D"fontVeDS_16">&bull;</p>
+                                    </td>
+                                    <td align=3D"left" valign=3D"top">
+                                        <p style=3D"font-family: Helvetica,=
+ Arial; font-size: 16px; line-height: 20px; letter-spacing: -0.1px; color: =
+#000000; font-weight:normal; -webkit-text-size-adjust:none; margin: 0;" cla=
+ss=3D"fontVeDS_16">Hear sound all around with Spatial Audio</p>
+
+                                        
+
+                                        
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- List Item 1 :: END -->
+                
+                    <!-- List Item 2 :: START -->
+                    <tr>
+                        <td align=3D"left" valign=3D"top" style=3D"padding-=
+bottom: 8px;">
+                            <table width=3D"100%" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0" role=3D"presentation">
+                                <tr>
+                                    <td width=3D"24" align=3D"left" valign=
+=3D"top">
+                                        <p style=3D"font-family: Helvetica,=
+ Arial; font-size: 16px; line-height: 20px; letter-spacing: -0.1px; color: =
+#000000; font-weight:normal; -webkit-text-size-adjust:none; margin: 0;" cla=
+ss=3D"fontVeDS_16">&bull;</p>
+                                    </td>
+                                    <td align=3D"left" valign=3D"top">
+                                        <p style=3D"font-family: Helvetica,=
+ Arial; font-size: 16px; line-height: 20px; letter-spacing: -0.1px; color: =
+#000000; font-weight:normal; -webkit-text-size-adjust:none; margin: 0;" cla=
+ss=3D"fontVeDS_16">Download your favorite tracks and play them offline</p>
+
+                                        
+
+                                        
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- List Item 2 :: END -->
+                
+                    <!-- List Item 3 :: START -->
+                    <tr>
+                        <td align=3D"left" valign=3D"top" style=3D"padding-=
+bottom: 8px;">
+                            <table width=3D"100%" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0" role=3D"presentation">
+                                <tr>
+                                    <td width=3D"24" align=3D"left" valign=
+=3D"top">
+                                        <p style=3D"font-family: Helvetica,=
+ Arial; font-size: 16px; line-height: 20px; letter-spacing: -0.1px; color: =
+#000000; font-weight:normal; -webkit-text-size-adjust:none; margin: 0;" cla=
+ss=3D"fontVeDS_16">&bull;</p>
+                                    </td>
+                                    <td align=3D"left" valign=3D"top">
+                                        <p style=3D"font-family: Helvetica,=
+ Arial; font-size: 16px; line-height: 20px; letter-spacing: -0.1px; color: =
+#000000; font-weight:normal; -webkit-text-size-adjust:none; margin: 0;" cla=
+ss=3D"fontVeDS_16">Available on iOS and Android</p>
+
+                                        
+
+                                        
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- List Item 3 :: END -->
+                
+                    <!-- List Item 4 :: START -->
+                    <tr>
+                        <td align=3D"left" valign=3D"top" style=3D"padding-=
+bottom: 8px;">
+                            <table width=3D"100%" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0" role=3D"presentation">
+                                <tr>
+                                    <td width=3D"24" align=3D"left" valign=
+=3D"top">
+                                        <p style=3D"font-family: Helvetica,=
+ Arial; font-size: 16px; line-height: 20px; letter-spacing: -0.1px; color: =
+#000000; font-weight:normal; -webkit-text-size-adjust:none; margin: 0;" cla=
+ss=3D"fontVeDS_16">&bull;</p>
+                                    </td>
+                                    <td align=3D"left" valign=3D"top">
+                                        <p style=3D"font-family: Helvetica,=
+ Arial; font-size: 16px; line-height: 20px; letter-spacing: -0.1px; color: =
+#000000; font-weight:normal; -webkit-text-size-adjust:none; margin: 0;" cla=
+ss=3D"fontVeDS_16">Listen to playlists curated for every occasion</p>
+
+                                        
+
+                                        
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- List Item 4 :: END -->
+                
+                    <!-- List Item 5 :: START -->
+                    <tr>
+                        <td align=3D"left" valign=3D"top" style=3D"padding-=
+bottom: 8px;">
+                            <table width=3D"100%" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0" role=3D"presentation">
+                                <tr>
+                                    <td width=3D"24" align=3D"left" valign=
+=3D"top">
+                                        <p style=3D"font-family: Helvetica,=
+ Arial; font-size: 16px; line-height: 20px; letter-spacing: -0.1px; color: =
+#000000; font-weight:normal; -webkit-text-size-adjust:none; margin: 0;" cla=
+ss=3D"fontVeDS_16">&bull;</p>
+                                    </td>
+                                    <td align=3D"left" valign=3D"top">
+                                        <p style=3D"font-family: Helvetica,=
+ Arial; font-size: 16px; line-height: 20px; letter-spacing: -0.1px; color: =
+#000000; font-weight:normal; -webkit-text-size-adjust:none; margin: 0;" cla=
+ss=3D"fontVeDS_16">Sing along, tap ahead, or just listen with lyrics view</=
+p>
+
+                                        
+
+                                        
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- List Item 5 :: END -->
+                
+                    <!-- List Item 6 :: START -->
+                    <tr>
+                        <td align=3D"left" valign=3D"top" style=3D"padding-=
+bottom: 8px;">
+                            <table width=3D"100%" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0" role=3D"presentation">
+                                <tr>
+                                    <td width=3D"24" align=3D"left" valign=
+=3D"top">
+                                        <p style=3D"font-family: Helvetica,=
+ Arial; font-size: 16px; line-height: 20px; letter-spacing: -0.1px; color: =
+#000000; font-weight:normal; -webkit-text-size-adjust:none; margin: 0;" cla=
+ss=3D"fontVeDS_16">&bull;</p>
+                                    </td>
+                                    <td align=3D"left" valign=3D"top">
+                                        <p style=3D"font-family: Helvetica,=
+ Arial; font-size: 16px; line-height: 20px; letter-spacing: -0.1px; color: =
+#000000; font-weight:normal; -webkit-text-size-adjust:none; margin: 0;" cla=
+ss=3D"fontVeDS_16">Play music with your voice&mdash;just ask Siri</p>
+
+                                        
+
+                                        
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- List Item 6 :: END -->
+                
+            </table>
+        </td>
+    </tr>
+    
+    <!-- List :: END -->
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+            
+    
+    
+    
+    
+        <!-- Text + Caret CTA Show in Desktop And Mobile :: START -->
+        <tr>
+            <td align=3D"left" valign=3D"top" height=3D"20" style=3D"paddin=
+g-bottom: 21px; padding-top: 8px; mso-line-height-rule: at-least;">
+                <p style=3D"font-family: Helvetica, Arial; font-size: 16px;=
+ line-height: 20px; letter-spacing: -0.1px; color:#000000; font-weight:bold=
+; -webkit-text-size-adjust:none; display:inline-block; text-align: left; ma=
+rgin: 0;" class=3D"fontVeDS_16">
+                    <a _label=3D"CTA_2.0" href=3D"https://t.sl.e.verizonwir=
+eless.com/r/=3Fid=3Dh1a82343a,2a1ffe24,14c39fe9&e=3DQ01QPUNSTV9NX0NVX0FDX0V=
+NX0VSTF8yM18xMl9BUFBMRV9NVVNJQ182TU8mRU1ISUQ9NzY0ZjQzYzg5MWU0OWQ3YjNjYjU3Yz=
+Y4ZmZkYzVhZWZlODMwYWU1YmFlNjcxN2Y2NTFlNmYzNDkwYjZkMGQwNiZDVUhJRD1kN2E4MTY3N=
+zA5NmVlYWFhYzRkZTkxMzkxZmRmNmMyNTA4Y2E3MGZkNTgwMjhlZWZmZTdkY2E1NDRhMGY0MDYz=
+JkJJRD00NDQ3NDA2NjY&s=3DeUFbp65dstj7tSfy6d8trHuf3lcH-qukPUt217iK75s" target=
+=3D"_blank" style=3D"text-decoration:none; color:#000000; display: block; l=
+ine-height: 20px;" aria-label=3D"Enjoy Apple Music, on us for 6 months. All=
+ the music you love. Across all your devices."><span tabindex=3D"0" style=
+=3D"display:inline-block; line-height: 20px; vertical-align: top; mso-text-=
+raise: 4px;" class=3D"outlookFix" align=3D"left">Enroll Now</span>
+                        <img src=3D"https://assets.verizon.com/is/image/ver=
+izon/CRM_VBMGlobal_Rebrand_3D_CTAs_caret_bw-apex-alpha" alt=3D"" width=3D"1=
+8" style=3D"display:inline;" border=3D"0"/>
+                    </a>
+                </p>
+            </td>
+        </tr>
+        <!-- Text + Caret CTA Show in Desktop And Mobile :: END -->
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <!-- CHILD TEXT CTA :: END -->
+
+
+
+
+
+
+                        </table>
+                    </td>
+                    <td width=3D"198" class=3D"w18"></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <!-- TEXT CTA FULL WIDTH END -->
+
+
+
+
+    
+
+
+
+
+    <!-- FOOTER START -->
+    
+
+
+
+
+<tr>
+  <td height=3D"1" bgcolor=3D"#333333" width=3D"100%" style=3D"border-colla=
+pse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; mso-line-height-r=
+ule:exactly; line-height:1px;"><img src=3D"https://assets.verizon.com/is/im=
+age/verizon/CRM_VBMGlobal_Rebrand_3D_DarkMode_BGgrey_333-apex" width=3D"720=
+" height=3D"1" alt=3D"" style=3D"display:block;max-height:1px;" border=3D"0=
+" class=3D"mobileContainer"></td>
+</tr>
+
+<tr>
+  <td valign=3D"top" align=3D"left">
+    <div style=3D"background:#000000; color:#ffffff;">
+      <div style=3D"mix-blend-mode:difference;" class=3D"gmailHackBM">
+        <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D=
+"0" bgcolor=3D"#000000" role=3D"presentation">
+          <tr>
+            <td align=3D"left" valign=3D"top">
+              <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadd=
+ing=3D"0" role=3D"presentation">
+                <tr>
+                  <td width=3D"24" class=3D"w18"></td>
+                  <td align=3D"left" valign=3D"top">
+                    <table width=3D"100%" border=3D"0" cellspacing=3D"0" ce=
+llpadding=3D"0" role=3D"presentation">
+                      <tr>
+                        <td height=3D"18"></td>
+                      </tr>
+                      
+                      <tr>
+                        <td align=3D"left" valign=3D"top">
+                          <table border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" role=3D"presentation" class=3D"gblFtrQuickLinks">
+                            <tr>
+                            
+                            
+
+                                
+                                
+                                  <td align=3D"left" valign=3D"top" class=
+=3D"mobilePods"><p style=3D"font-family: Helvetica, Arial; font-size: 16px;=
+ line-height: 20px; letter-spacing: -0.1px; color:#FFFFFF; font-weight:bold=
+; -webkit-text-size-adjust:none; margin: 0;" class=3D"fontVeDS_16"><a href=
+=3D"https://t.sl.e.verizonwireless.com/r/=3Fid=3Dh1a82343a,2a1ffe24,14c3a00=
+3&e=3DQ01QPUNSTV9NX0NVX0FDX0VNX0VSTF8yM18xMl9BUFBMRV9NVVNJQ182TU8mRU1ISUQ9N=
+zY0ZjQzYzg5MWU0OWQ3YjNjYjU3YzY4ZmZkYzVhZWZlODMwYWU1YmFlNjcxN2Y2NTFlNmYzNDkw=
+YjZkMGQwNiZDVUhJRD1kN2E4MTY3NzA5NmVlYWFhYzRkZTkxMzkxZmRmNmMyNTA4Y2E3MGZkNTg=
+wMjhlZWZmZTdkY2E1NDRhMGY0MDYzJkJJRD00NDQ3NDA2NjY&s=3DWFlSffB4Hoj3uDmAvNS70z=
+YnLDdI6-L_edbwFdOQtog" _label=3D"gbl_footer_phones" target=3D"_blank" style=
+=3D"color:#FFFFFF; text-decoration:none; line-height:20px;" class=3D"ignore=
+Tracking fontVeDS_16"><span style=3D"color:#FFFFFF; text-decoration:none; l=
+ine-height:20px;" class=3D"ignoreTracking fontVeDS_16">Phones</span></a></p=
+></td>
+
+<td width=3D"24" height=3D"24" class=3D"mobilePods"></td>
+<td align=3D"left" valign=3D"top" class=3D"mobilePods"><p style=3D"font-fam=
+ily: Helvetica, Arial; font-size: 16px; line-height: 20px; letter-spacing: =
+-0.1px; color:#FFFFFF; font-weight:bold; -webkit-text-size-adjust:none; mar=
+gin: 0;" class=3D"fontVeDS_16"><a href=3D"https://t.sl.e.verizonwireless.co=
+m/r/=3Fid=3Dh1a82343a,2a1ffe24,14c3a005&e=3DQ01QPUNSTV9NX0NVX0FDX0VNX0VSTF8=
+yM18xMl9BUFBMRV9NVVNJQ182TU8mRU1ISUQ9NzY0ZjQzYzg5MWU0OWQ3YjNjYjU3YzY4ZmZkYz=
+VhZWZlODMwYWU1YmFlNjcxN2Y2NTFlNmYzNDkwYjZkMGQwNiZDVUhJRD1kN2E4MTY3NzA5NmVlY=
+WFhYzRkZTkxMzkxZmRmNmMyNTA4Y2E3MGZkNTgwMjhlZWZmZTdkY2E1NDRhMGY0MDYzJkJJRD00=
+NDQ3NDA2NjY&s=3DPaW9KE9EWNo2-wjX-zpwWye2GmO4uNIZ1isTHBSuoP8" _label=3D"gbl_=
+footer_accessories" target=3D"_blank" style=3D"color:#FFFFFF; text-decorati=
+on:none; line-height:20px;" class=3D"ignoreTracking fontVeDS_16"><span styl=
+e=3D"color:#FFFFFF; text-decoration:none; line-height:20px;" class=3D"ignor=
+eTracking fontVeDS_16">Accessories</span></a></p></td>
+<td width=3D"24" height=3D"24" class=3D"mobilePods"></td>
+<td align=3D"left" valign=3D"top" class=3D"mobilePods"><p style=3D"font-fam=
+ily: Helvetica, Arial; font-size: 16px; line-height: 20px; letter-spacing: =
+-0.1px; color:#FFFFFF; font-weight:bold; -webkit-text-size-adjust:none; mar=
+gin: 0;" class=3D"fontVeDS_16"><a href=3D"https://t.sl.e.verizonwireless.co=
+m/r/=3Fid=3Dh1a82343a,2a1ffe24,14c3a006&e=3DQ01QPUNSTV9NX0NVX0FDX0VNX0VSTF8=
+yM18xMl9BUFBMRV9NVVNJQ182TU8mRU1ISUQ9NzY0ZjQzYzg5MWU0OWQ3YjNjYjU3YzY4ZmZkYz=
+VhZWZlODMwYWU1YmFlNjcxN2Y2NTFlNmYzNDkwYjZkMGQwNiZDVUhJRD1kN2E4MTY3NzA5NmVlY=
+WFhYzRkZTkxMzkxZmRmNmMyNTA4Y2E3MGZkNTgwMjhlZWZmZTdkY2E1NDRhMGY0MDYzJkJJRD00=
+NDQ3NDA2NjY&s=3DnR9a5DF76N4eF78l6YxQGr7Zk9ef3F7XaiiauVuthho" _label=3D"gbl_=
+footer_plans" target=3D"_blank" style=3D"color:#FFFFFF; text-decoration:non=
+e; line-height:20px;" class=3D"ignoreTracking fontVeDS_16"><span style=3D"c=
+olor:#FFFFFF; text-decoration:none; line-height:20px;" class=3D"ignoreTrack=
+ing fontVeDS_16">Plans</span></a></p></td>
+
+<td width=3D"24" height=3D"24" class=3D"mobilePods"></td>
+<td align=3D"left" valign=3D"top" class=3D"mobilePods"><p style=3D"font-fam=
+ily: Helvetica, Arial; font-size: 16px; line-height: 20px; letter-spacing: =
+-0.1px; color:#FFFFFF; font-weight:bold; -webkit-text-size-adjust:none; mar=
+gin: 0;" class=3D"fontVeDS_16"><a href=3D"https://t.sl.e.verizonwireless.co=
+m/r/=3Fid=3Dh1a82343a,2a1ffe24,14c3a007&e=3DQ01QPUNSTV9NX0NVX0FDX0VNX0VSTF8=
+yM18xMl9BUFBMRV9NVVNJQ182TU8mRU1ISUQ9NzY0ZjQzYzg5MWU0OWQ3YjNjYjU3YzY4ZmZkYz=
+VhZWZlODMwYWU1YmFlNjcxN2Y2NTFlNmYzNDkwYjZkMGQwNiZDVUhJRD1kN2E4MTY3NzA5NmVlY=
+WFhYzRkZTkxMzkxZmRmNmMyNTA4Y2E3MGZkNTgwMjhlZWZmZTdkY2E1NDRhMGY0MDYzJkJJRD00=
+NDQ3NDA2NjY&s=3DhofOPS_9S0mdLt8fXAmot9unjFO1mVs1lTybQC-8Rrc" _label=3D"gbl_=
+footer_verizonup" target=3D"_blank" style=3D"color:#FFFFFF; text-decoration=
+:none; line-height:20px;" class=3D"ignoreTracking fontVeDS_16"><span style=
+=3D"color:#FFFFFF; text-decoration:none; line-height:20px;" class=3D"ignore=
+Tracking fontVeDS_16">Verizon Up</span></a></p></td>
+<td width=3D"24" height=3D"24" class=3D"mobilePods"></td>
+<td align=3D"left" valign=3D"top" class=3D"mobilePods"><p style=3D"font-fam=
+ily: Helvetica, Arial; font-size: 16px; line-height: 20px; letter-spacing: =
+-0.1px; color:#FFFFFF; font-weight:bold; -webkit-text-size-adjust:none; mar=
+gin: 0;" class=3D"fontVeDS_16"><a href=3D"https://t.e.verizonwireless.com/r=
+/=3Fid=3Dh1a82343a,2a1ffe24,14c3a008&e=3DQ01QPUNSTV9NX0NVX0FDX0VNX0VSTF8yM1=
+8xMl9BUFBMRV9NVVNJQ182TU8mRU1ISUQ9NzY0ZjQzYzg5MWU0OWQ3YjNjYjU3YzY4ZmZkYzVhZ=
+WZlODMwYWU1YmFlNjcxN2Y2NTFlNmYzNDkwYjZkMGQwNiZDVUhJRD1kN2E4MTY3NzA5NmVlYWFh=
+YzRkZTkxMzkxZmRmNmMyNTA4Y2E3MGZkNTgwMjhlZWZmZTdkY2E1NDRhMGY0MDYzJkJJRD00NDQ=
+3NDA2NjY&s=3D1WntOq-L__yMWchIwaIiP7GcKCRejbBsjcEly1E8f4A" _label=3D"gbl_foo=
+ter_myverizonapp" target=3D"_blank" style=3D"color:#FFFFFF; text-decoration=
+:none; line-height:20px;" class=3D"ignoreTracking fontVeDS_16"><span style=
+=3D"color:#FFFFFF; text-decoration:none; line-height:20px;" class=3D"ignore=
+Tracking fontVeDS_16">My Verizon app</span></a></p></td>
+
+
+<td width=3D"24" height=3D"24" class=3D"mobilePods"></td>
+<td align=3D"left" valign=3D"top" class=3D"mobilePods"><p style=3D"font-fam=
+ily: Helvetica, Arial; font-size: 16px; line-height: 20px; letter-spacing: =
+-0.1px; color:#FFFFFF; font-weight:bold; -webkit-text-size-adjust:none; mar=
+gin: 0;" class=3D"fontVeDS_16"><a href=3D"https://t.sl.e.verizonwireless.co=
+m/r/=3Fid=3Dh1a82343a,2a1ffe24,14c3a00a&e=3DQ01QPUNSTV9NX0NVX0FDX0VNX0VSTF8=
+yM18xMl9BUFBMRV9NVVNJQ182TU8mRU1ISUQ9NzY0ZjQzYzg5MWU0OWQ3YjNjYjU3YzY4ZmZkYz=
+VhZWZlODMwYWU1YmFlNjcxN2Y2NTFlNmYzNDkwYjZkMGQwNiZDVUhJRD1kN2E4MTY3NzA5NmVlY=
+WFhYzRkZTkxMzkxZmRmNmMyNTA4Y2E3MGZkNTgwMjhlZWZmZTdkY2E1NDRhMGY0MDYzJkJJRD00=
+NDQ3NDA2NjY&s=3DfhFyvmdBaMV2rPHmAR0x84rzluohboPrux8CGjifuyU" _label=3D"gbl_=
+footer_contactus" target=3D"_blank" style=3D"color:#FFFFFF; text-decoration=
+:none; line-height:20px;" class=3D"ignoreTracking fontVeDS_16"><span style=
+=3D"color:#FFFFFF; text-decoration:none; line-height:20px;" class=3D"ignore=
+Tracking fontVeDS_16">Contact&nbsp;us</span></a></p></td>
+
+                                
+                              
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td height=3D"16" class=3D"h21"></td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td width=3D"24" class=3D"w18"></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          
+          
+
+
+
+<tr>
+  <td align=3D"left" valign=3D"top">
+    <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" =
+role=3D"presentation">
+      <tr>
+        <td width=3D"12" class=3D"w6"></td>
+        <td align=3D"left" valign=3D"top">
+          <table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" role=3D"p=
+resentation">
+            <tr>
+            
+            
+              <td align=3D"left" valign=3D"top"><a href=3D"https://t.e.veri=
+zonwireless.com/r/=3Fid=3Dh1a82343a,2a1ffe24,14c3a00d&e=3DQ01QPUNSTV9NX0NVX=
+0FDX0VNX0VSTF8yM18xMl9BUFBMRV9NVVNJQ182TU8mRU1ISUQ9NzY0ZjQzYzg5MWU0OWQ3YjNj=
+YjU3YzY4ZmZkYzVhZWZlODMwYWU1YmFlNjcxN2Y2NTFlNmYzNDkwYjZkMGQwNiZDVUhJRD1kN2E=
+4MTY3NzA5NmVlYWFhYzRkZTkxMzkxZmRmNmMyNTA4Y2E3MGZkNTgwMjhlZWZmZTdkY2E1NDRhMG=
+Y0MDYzJkJJRD00NDQ3NDA2NjY&s=3DK5vtDDw-0Pr74yV2gL0-j3IaBMreBpRkuGmLegLZ-NU" =
+target=3D"_blank" class=3D"ignoreTracking" _label=3D"gbl_footer_facebook"><=
+img src=3D"https://assets.verizon.com/is/image/verizon/CRM_VBMGlobal_Rebran=
+d_3D_Footers_Facebookv2-apex-alpha" height=3D"64" alt=3D"Verizon on Faceboo=
+k" border=3D"0" style=3D"display:block;"></a></td>
+              <td align=3D"left" valign=3D"top"><a href=3D"https://t.e.veri=
+zonwireless.com/r/=3Fid=3Dh1a82343a,2a1ffe24,14c3a00e&e=3DQ01QPUNSTV9NX0NVX=
+0FDX0VNX0VSTF8yM18xMl9BUFBMRV9NVVNJQ182TU8mRU1ISUQ9NzY0ZjQzYzg5MWU0OWQ3YjNj=
+YjU3YzY4ZmZkYzVhZWZlODMwYWU1YmFlNjcxN2Y2NTFlNmYzNDkwYjZkMGQwNiZDVUhJRD1kN2E=
+4MTY3NzA5NmVlYWFhYzRkZTkxMzkxZmRmNmMyNTA4Y2E3MGZkNTgwMjhlZWZmZTdkY2E1NDRhMG=
+Y0MDYzJkJJRD00NDQ3NDA2NjY&s=3DqOaekHxeX1tZ83F_sKuKXic5MrrEYIhfXi9U2sXkwyY" =
+target=3D"_blank" class=3D"ignoreTracking" _label=3D"gbl_footer_twitter"><i=
+mg src=3D"https://assets.verizon.com/is/image/verizon/CRM_VBMGlobal_Rebrand=
+_3D_Footers_Xv2-apex-alpha" height=3D"64" alt=3D"Verizon on Twitter" border=
+=3D"0" style=3D"display:block;"></a></td>
+              <td align=3D"left" valign=3D"top"><a href=3D"https://t.e.veri=
+zonwireless.com/r/=3Fid=3Dh1a82343a,2a1ffe24,14c3a00f&e=3DQ01QPUNSTV9NX0NVX=
+0FDX0VNX0VSTF8yM18xMl9BUFBMRV9NVVNJQ182TU8mRU1ISUQ9NzY0ZjQzYzg5MWU0OWQ3YjNj=
+YjU3YzY4ZmZkYzVhZWZlODMwYWU1YmFlNjcxN2Y2NTFlNmYzNDkwYjZkMGQwNiZDVUhJRD1kN2E=
+4MTY3NzA5NmVlYWFhYzRkZTkxMzkxZmRmNmMyNTA4Y2E3MGZkNTgwMjhlZWZmZTdkY2E1NDRhMG=
+Y0MDYzJkJJRD00NDQ3NDA2NjY&s=3Dj7LaZHbpNKXZ_IlT5yxivKGkvf0V6lEvYuUG0zWkL0k" =
+target=3D"_blank" class=3D"ignoreTracking" _label=3D"gbl_footer_youtube"><i=
+mg src=3D"https://assets.verizon.com/is/image/verizon/CRM_VBMGlobal_Rebrand=
+_3D_Footers_YouTube-apex-alpha" height=3D"64" alt=3D"Verizon on YouTube" bo=
+rder=3D"0" style=3D"display:block;"></a></td>
+              <td align=3D"left" valign=3D"top"><a href=3D"https://t.e.veri=
+zonwireless.com/r/=3Fid=3Dh1a82343a,2a1ffe24,14c3a010&e=3DQ01QPUNSTV9NX0NVX=
+0FDX0VNX0VSTF8yM18xMl9BUFBMRV9NVVNJQ182TU8mRU1ISUQ9NzY0ZjQzYzg5MWU0OWQ3YjNj=
+YjU3YzY4ZmZkYzVhZWZlODMwYWU1YmFlNjcxN2Y2NTFlNmYzNDkwYjZkMGQwNiZDVUhJRD1kN2E=
+4MTY3NzA5NmVlYWFhYzRkZTkxMzkxZmRmNmMyNTA4Y2E3MGZkNTgwMjhlZWZmZTdkY2E1NDRhMG=
+Y0MDYzJkJJRD00NDQ3NDA2NjY&s=3DaMZ7wKvnrs6mOeO9CMZWYPa9q_Xo3zlzgJD9PNpcljA" =
+target=3D"_blank" class=3D"ignoreTracking" _label=3D"gbl_footer_instagram">=
+<img src=3D"https://assets.verizon.com/is/image/verizon/CRM_VBMGlobal_Rebra=
+nd_3D_Footers_Instagram-apex-alpha" height=3D"64" alt=3D"Verizon on Instagr=
+am" border=3D"0" style=3D"display:block;"></a></td>
+            
+            </tr>
+          </table>
+        </td>
+        <td width=3D"18"></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+          
+
+          <tr>
+            <td align=3D"left" valign=3D"top">
+              <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadd=
+ing=3D"0" role=3D"presentation">
+                <tr>
+                  <td width=3D"24" class=3D"w18"></td>
+                  <td align=3D"left" valign=3D"top">
+                    <table width=3D"100%" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" role=3D"presentation">
+                            <tr>
+                              <td height=3D"5" width=3D"100%" style=3D"bord=
+er-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; mso-line-=
+height-rule: exactly; line-height:5px;"><!--[if gte mso 15]>&nbsp;<![endif]=
+--></td>
+                            </tr>
+                        
+
+
+<tr>
+    <td align=3D"left" valign=3D"top">
+        
+    
+    
+    
+
+    
+=09<table role=3D"presentation" width=3D"100%" border=3D"0" cellspacing=3D"=
+0" cellpadding=3D"0">
+=09=09
+=09=09=09
+=09=09=09=09<tr>
+=09=09=09=09=09<td valign=3D"top" align=3D"left" style=3D"padding-top:17px;=
+"><p style=3D"color:#A7A7A7;-webkit-text-size-adjust:none;font-weight:norma=
+l;letter-spacing:0.1px;font-size:11px;font-family:Helvetica, Arial;line-hei=
+ght:16px;" class=3D"fontVeTX_11">Get Apple Music for 6 mos. on us (must enr=
+oll w/Verizon by 5.17.24). $10.99/mo + tax applies after 6-mo. trial unless=
+ you cancel at <a href=3D"https://t.e.verizonwireless.com/r/=3Fid=3Dh1a8234=
+3a,2a1ffe24,14c3a011&e=3DQ01QPUNSTV9NX0NVX0FDX0VNX0VSTF8yM18xMl9BUFBMRV9NVV=
+NJQ182TU8mRU1ISUQ9NzY0ZjQzYzg5MWU0OWQ3YjNjYjU3YzY4ZmZkYzVhZWZlODMwYWU1YmFlN=
+jcxN2Y2NTFlNmYzNDkwYjZkMGQwNiZDVUhJRD1kN2E4MTY3NzA5NmVlYWFhYzRkZTkxMzkxZmRm=
+NmMyNTA4Y2E3MGZkNTgwMjhlZWZmZTdkY2E1NDRhMGY0MDYzJkJJRD00NDQ3NDA2NjY&s=3D7T0=
+1ZoOPzXElitnYncP_0ys1xuKD4VoWBGqFY50IM1U" class=3D"outlookFix" _label=3D"Ap=
+ple music" style=3D"color:#A7A7A7; text-decoration:underline; font-weight:n=
+ormal;" target=3D"_blank"><span class=3D"outlookFix" style=3D"color:#A7A7A7=
+; text-decoration:underline; font-weight:normal;">vzw.com/applemusic</span>=
+</a>. Cancel anytime. Data charges apply for app download/use. Apple Music =
+requires a subscription.</p></td>
+=09=09=09=09</tr>
+=09=09=09
+=09=09
+=09</table>
+
+
+
+    
+
+
+    
+
+
+
+        
+        
+    </td>
+    
+    
+</tr>
+                            <tr>
+                              <td valign=3D"top" align=3D"left" style=3D"pa=
+dding-top: 17px;"><p style=3D"font-family: Helvetica, Arial; font-size: 11p=
+x; line-height: 16px; letter-spacing: 0.1px; color:#A7A7A7; font-weight:nor=
+mal; -webkit-text-size-adjust:none;" class=3D"fontVeTX_11">&#9426; 2023 Ver=
+izon</p></td>
+                            </tr>
+
+                            
+                            
+                            
+                              <tr>
+  <td valign=3D"top" align=3D"left" style=3D"padding-top: 17px;"><p style=
+=3D"font-family: Helvetica, Arial; font-size: 11px; line-height: 16px; lett=
+er-spacing: 0.1px; color:#A7A7A7; font-weight:normal; -webkit-text-size-adj=
+ust:none;" class=3D"fontVeTX_11">This email was sent to <!--[if mso]><a hre=
+f=3D"#" style=3D"color:#A7A7A7; text-decoration:none; line-height: 16px; cu=
+rsor:default;" class=3D"fontVeTX_11 ignoreUrl" target=3D"_blank"><span styl=
+e=3D"color:#A7A7A7; text-decoration:none; line-height: 16px;" class=3D"font=
+VeTX_11 ignoreUrl"><![endif]-->brnkath&#xFEFF;@&#xFEFF;gmail&#xFEFF;.&#xFEF=
+F;com<!--[if mso]></span></a><![endif]-->. We&nbsp;respect your privacy. Pl=
+ease review our <a href=3D"https://t.e.verizonwireless.com/r/=3Fid=3Dh1a823=
+43a,2a1ffe24,14c3a014&e=3DQ01QPUNSTV9NX0NVX0FDX0VNX0VSTF8yM18xMl9BUFBMRV9NV=
+VNJQ182TU8mRU1ISUQ9NzY0ZjQzYzg5MWU0OWQ3YjNjYjU3YzY4ZmZkYzVhZWZlODMwYWU1YmFl=
+NjcxN2Y2NTFlNmYzNDkwYjZkMGQwNiZDVUhJRD1kN2E4MTY3NzA5NmVlYWFhYzRkZTkxMzkxZmR=
+mNmMyNTA4Y2E3MGZkNTgwMjhlZWZmZTdkY2E1NDRhMGY0MDYzJkJJRD00NDQ3NDA2NjY&s=3DAO=
+mqhHJZ1eyP4-RxyHdTVhare3_DnVCI51RV2EYQcMs" _label=3D"gbl_FOOTER_EXCEPTIONS_=
+privacy" target=3D"_blank" style=3D"color:#A7A7A7; text-decoration:underlin=
+e; line-height: 16px;" class=3D"fontVeTX_11 ignoreTracking"><span style=3D"=
+color:#A7A7A7; text-decoration:underline; line-height: 16px;" class=3D"font=
+VeTX_11 ignoreTracking">Privacy&nbsp;Policy</span></a>.
+    
+    
+    
+    
+      
+      
+        You may <a href=3D"https://t.e.verizonwireless.com/r/=3Fid=3Dh1a823=
+43a,2a1ffe24,14c3a018&e=3DQ01QPUNSTV9NX0NVX0FDX0VNX0VSTF8yM18xMl9BUFBMRV9NV=
+VNJQ182TU8mRU1ISUQ9NzY0ZjQzYzg5MWU0OWQ3YjNjYjU3YzY4ZmZkYzVhZWZlODMwYWU1YmFl=
+NjcxN2Y2NTFlNmYzNDkwYjZkMGQwNiZDVUhJRD1kN2E4MTY3NzA5NmVlYWFhYzRkZTkxMzkxZmR=
+mNmMyNTA4Y2E3MGZkNTgwMjhlZWZmZTdkY2E1NDRhMGY0MDYzJkJJRD00NDQ3NDA2NjYmcDE9JT=
+QwUUMyJTJCUmd4VHI2aUFLdk9RJTJCN2dIOXclM0QlM0QmcDI9RE05MTYzNzcmcDM9T1AzNjk3J=
+nA0PSU0MHQwR3FsUVVqTFptSjRQNEZSWnBaSFElM0QlM0Q&s=3DOr-4zkhdo9QTswx8ESo2t8Ga=
+-gBmp1Rty4VcYwjJrNU" _label=3D"gbl_FOOTER_EXCEPTIONS_unsubscribe" target=3D=
+"_blank" style=3D"color:#A7A7A7; text-decoration:underline; line-height: 16=
+px;" class=3D"fontVeTX_11 ignoreTracking"><span style=3D"color:#A7A7A7; tex=
+t-decoration:underline; line-height: 16px;" class=3D"fontVeTX_11 ignoreTrac=
+king">unsubscribe</span></a> from Verizon promotional emails at any&#xFEFF;=
+&nbsp;&#xFEFF;time.
+      
+
+    
+    </p>
+  </td>
+</tr>
+<tr>
+  <td valign=3D"top" align=3D"left" style=3D"padding-top: 17px;"><p style=
+=3D"font-family: Helvetica, Arial; font-size: 11px; line-height: 16px; lett=
+er-spacing: 0.1px; color:#A7A7A7; font-weight:normal; -webkit-text-size-adj=
+ust:none;" class=3D"fontVeTX_11">Verizon, One Verizon Way, Mail Code: 180WV=
+B, Basking&nbsp;Ridge, NJ 07920</p></td>
+</tr>
+
+                            
+                            
+
+                            <tr>
+                              <td height=3D"45"></td>
+                            </tr>
+                          </table>
+                  </td>
+                  <td width=3D"24" class=3D"w18"></td>
+                </tr>
+              </table>
+              <div style=3D"display:none; white-space:nowrap; font:15px cou=
+rier; color:#ffffff; background: #ffffff; max-height:0; height:0; overflow:=
+hidden;">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -<=
+/div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </td>
+</tr>
+
+
+<tr>
+  <td valign=3D"top" align=3D"left">
+    <table cellSpacing=3D"0" cellPadding=3D"0" width=3D"100%" border=3D"0" =
+role=3D"presentation">
+      <tr>
+        <td></td>
+        <td valign=3D"bottom" align=3D"right" width=3D"15"><a class=3D"igno=
+reTracking" style=3D"cursor: default;" href=3D"https://t.e.verizonwireless.=
+com/r/=3Fid=3Dh1a82343a,2a1ffe24,14c3a019&e=3DQ01QPUNSTV9NX0NVX0FDX0VNX0VST=
+F8yM18xMl9BUFBMRV9NVVNJQ182TU8mRU1ISUQ9NzY0ZjQzYzg5MWU0OWQ3YjNjYjU3YzY4ZmZk=
+YzVhZWZlODMwYWU1YmFlNjcxN2Y2NTFlNmYzNDkwYjZkMGQwNiZDVUhJRD1kN2E4MTY3NzA5NmV=
+lYWFhYzRkZTkxMzkxZmRmNmMyNTA4Y2E3MGZkNTgwMjhlZWZmZTdkY2E1NDRhMGY0MDYzJkJJRD=
+00NDQ3NDA2NjYmcDE9JTQwNXE3RmowdXklMkJiUHE4TXBwZnR0SjFCdHdaa0J5Y3VzWUpJOWgwZ=
+lk4cUUwJTNE&s=3DNRix7mjhBh648jG_6Lgbzr6621rbeg_QrODbv7-MAR8" target=3D"_bla=
+nk" _label=3D"gbl_footer_viewonline"><img style=3D"display: inline" alt=3D"=
+View Online" src=3D"https://assets.verizon.com/is/image/verizon/CRM_VBMGlob=
+al_Rebrand_3D_Footers_viewonline-apex-alpha" width=3D"15"></a></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+
+
+
+<tr>
+  <td align=3D"left" valign=3D"top" style=3D"line-height:1px;"><img src=3D"=
+https://assets.verizon.com/is/image/verizon/CRM_VBMGlobal_Rebrand_3D_Footer=
+s_viewonline-apex-alpha" height=3D"1" width=3D"720" border=3D"0" style=3D"d=
+isplay:block;" alt=3D"" class=3D"mobileContainer"></td>
+</tr>
+
+
+<tr>
+  <td>
+      
+        
+
+<div style=3D"display:none; max-height:0; height:0; color:#ffffff; overflow=
+:hidden;" data-delivery-name=3D"CRM_M_CU_AC_EM_ERL_23_12_APPLE_MUSIC_6MO">
+    
+ <img src=3D"https://verizonwireless.demdex.net/event=3Fcategory=3DEnrollme=
+nt_Purchase&d_cid=3D126185%012b86a9fa74143bfab257978421b9e0cef65b1022c80945=
+bbb40de02b6f5d9197&d_cid=3D126186%01764f43c891e49d7b3cb57c68ffdc5aefe830ae5=
+bae6717f651e6f3490b6d0d06&d_cid=3D146625%01d7a81677096eeaaac4de91391fdf6c25=
+08ca70fd58028eeffe7dca544a0f4063&d_cid=3D147161%01f307324c5fbe02ad97a80e954=
+c67f40ae67ed504abf43c3d07389398fa56f82d" width=3D"1" height=3D"1" alt=3D"">
+
+<!-- ea.campaign_name =3D CRM_M_CU_AC_EM_ERL_23_12_APPLE_MUSIC_6MO -->
+
+</div>
+      </td>
+</tr>
+
+
+
+    <!-- FOOTER END -->
+
+
+
+
+
+                    <!-- BODY END -->
+                </table>
+            </td>
+        </tr>
+    </table>
+<img height=3D'0' width=3D'0' alt=3D'' src=3D'https://t.e.verizonwireless.c=
+om/r/=3Fid=3Dh1a82343a,2a1ffe24,1'/></body>
+</html>
+

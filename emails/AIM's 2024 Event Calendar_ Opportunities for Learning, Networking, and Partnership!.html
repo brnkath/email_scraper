@@ -1,0 +1,2940 @@
+Delivered-To: brnkath@gmail.com
+Received: by 2002:a8a:50e:0:b0:50c:ab77:6570 with SMTP id w14csp1941502ocq;
+        Mon, 11 Dec 2023 06:09:28 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFA5Vh2km0U+S8WT99dqnFBARdr4wg86RRyvFmNiuy9kV1oMjrT2hx3yFScku7Br7Iv0gvO
+X-Received: by 2002:a05:6a00:2e19:b0:6d0:8c48:9365 with SMTP id fc25-20020a056a002e1900b006d08c489365mr801803pfb.37.1702303767731;
+        Mon, 11 Dec 2023 06:09:27 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1702303767; cv=none;
+        d=google.com; s=arc-20160816;
+        b=kwp545uJrXafIJvPHOSvNECBej2tdHf5aujoE8zhBlUXz4LQi514WnjhbFaGGK/VXv
+         OkHX6gG4cBFyzHDh3VtRdxt9Da8qW7seadTQkA9/fZtesqHqZKOFDYwEuxTugysvOQVV
+         3hlKWqUcbpNyKceUtnlZ4V32wFnAoL06HwF90IidXK6tkhIFRg3MSKAN7g6kJMWVYGv0
+         X3dyU4+AfhBNgbqNPe8et/6b1aFjUXpUfXBS9yN1LieIjrLfAhQIm4V64MS5nB4O942r
+         UumxyYJ+FO/alI6vAyFhVEDYwrfoHiwgGtNo7ccD85RYanoaHMHE0ZRv4RUV/LY/SA7g
+         Nc3g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:reply-to:list-unsubscribe-post:list-unsubscribe
+         :mime-version:subject:message-id:to:from:date:dkim-signature
+         :dkim-signature;
+        bh=s6icc4Bcnl/fpowcpoCkGN/2DVkVAm3Vilu1TjybMsw=;
+        fh=klRu0xqzj5H1zWy0PpMcZJrySHX3lkozz7zsAp7ou8A=;
+        b=qXNzXhWLonqbG9z5YTQRfeqm1Et6WA+WJtz+lp591hv8w7x/FhEMy4pxpe+XSRbXCI
+         mZg6KXM0nUY88XjQRpg8LuAM0cte0DmcViukdDhoJR/hvLPvzCxFwme6xSYMhxZeG1Gq
+         pZJ6B/NoZB+6bF0RZEmmhMFfwxCikxYcwoUM0jiDI3HtcNDL/14d9/e1ZpI6TKzkD+j8
+         EIB/AoVZysWkgv03VFJIK25W03yd5S1q7o3G6CsX8ZQJ0oVRjHHHJ2ojMbQ3hI7QS8Kn
+         QN/lXMHu6rA3HXugowrD0QO53XsW35w0+AdzmqNe9PClMpQTci9zql7RpMhdyWdJe52B
+         u6gQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@aimresearch.co header.s=31317 header.b=DuGUXPqN;
+       dkim=pass header.i=@mailb1.analydiamag.zcinsend.net header.s=k1 header.b=HmwM36mb;
+       spf=pass (google.com: domain of bounce_60012960408+a.1127b8852afa68c3_dz138@mail1.analydiamag.zcinsend.net designates 103.103.198.138 as permitted sender) smtp.mailfrom=bounce_60012960408+a.1127b8852afa68c3_dz138@mail1.analydiamag.zcinsend.net
+Return-Path: <bounce_60012960408+a.1127b8852afa68c3_dz138@mail1.analydiamag.zcinsend.net>
+Received: from mail1.analyticsindiamag.com (mail1.analyticsindiamag.com. [103.103.198.138])
+        by mx.google.com with ESMTPS id b14-20020a63cf4e000000b00577461296a9si6183020pgj.338.2023.12.11.06.09.26
+        for <brnkath@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 11 Dec 2023 06:09:27 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounce_60012960408+a.1127b8852afa68c3_dz138@mail1.analydiamag.zcinsend.net designates 103.103.198.138 as permitted sender) client-ip=103.103.198.138;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@aimresearch.co header.s=31317 header.b=DuGUXPqN;
+       dkim=pass header.i=@mailb1.analydiamag.zcinsend.net header.s=k1 header.b=HmwM36mb;
+       spf=pass (google.com: domain of bounce_60012960408+a.1127b8852afa68c3_dz138@mail1.analydiamag.zcinsend.net designates 103.103.198.138 as permitted sender) smtp.mailfrom=bounce_60012960408+a.1127b8852afa68c3_dz138@mail1.analydiamag.zcinsend.net
+Received: from 10.213.29.23 by mail1.analyticsindiamag.com
+	with SMTP id 170228908759592067; Mon, 11 Dec 2023 15:34:47 +0530
+DKIM-Signature: a=rsa-sha256; b=DuGUXPqNajO/bJOwXbs/pqzCTgdIkKk7iVGM6Pt/PbMLezYFdfvXVp/1Rr52harUB6P25v0sHTj0zCFHnjfJRjbiQ3MTf5IKAzOoyTseNVD8CDtJIv665FQzIsMXXY6NkWy4X717RZWIBIJbTnDZtGq9qr2qdOo2JTzwHRyYTw8=; c=simple/simple; s=31317; d=aimresearch.co; v=1; bh=KdUmYKU69vUurJRwmuAasOVXIHVpLsV6D2DiKMDmtU4=; h=date:from:to:message-id:subject:mime-version:content-type:list-unsubscribe:list-unsubscribe-post:x-csa-complaints;
+DKIM-Signature: a=rsa-sha256; b=HmwM36mbLUYEEFatc4ZnKm0PL+/Hpt0RXvDPtftBoMtA0xEaPA8DrYXllEjVK5LOfdtzjSpu1Qu1t/3j91yb7oiZhikV/rmrBCZiP4DbTvbMkLuOP0HQADNxueKUB7JqBVezG5hQFbwx6n3aB8Y7L7TlPAYXaxGZQSa8l1BlLM0=; c=simple/simple; s=k1; d=mailb1.analydiamag.zcinsend.net; v=1; bh=KdUmYKU69vUurJRwmuAasOVXIHVpLsV6D2DiKMDmtU4=; h=date:from:to:message-id:subject:mime-version:content-type:list-unsubscribe:list-unsubscribe-post:x-csa-complaints;
+Date: Mon, 11 Dec 2023 15:34:47 +0530 (IST)
+From: "AIM Media House" <info@aimresearch.co>
+To: brnkath@gmail.com
+Message-ID: <zcb.3z89f4a444e5d587ee6eb6363a3e13c7f5e664e744bd0b5dd30353de4b42e816d4.1127b8852afa68c3.1702289087559@mail1.analydiamag.zcinsend.net>
+Subject: AIM's 2024 Event Calendar: Opportunities for Learning, Networking,
+ and Partnership!
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_1654898_1008984.1702289087556"
+List-Unsubscribe: <https://cbybs-zc1.maillist-manage.in/ua/optout?od=3z89f4a444e5d587ee6eb6363a3e13c7f5e664e744bd0b5dd30353de4b42e816d4&rd=1127b8852afa68c3&sd=1127b8852af73258&n=11699e4c3835906>,<mailto:leave_60012960408+1127b8852afa68c3_1127b8852af73258@zcsend.in>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-CSA-Complaints: csa-complaints@eco.de
+Reply-To: info@aimresearch.co
+Feedback-ID: c1127b8852aecda28:z1df90d1a98:s1a3b60ff5a087
+X-JID: 3z89f4a444e5d587ee6eb6363a3e13c7f5e664e744bd0b5dd30353de4b42e816d4.1127b8852aecda28
+X-campaignid: zohocampaigns.3z89f4a444e5d587ee6eb6363a3e13c7f5e664e744bd0b5dd30353de4b42e816d4.zcb.1127b8852afa68c3.11699e4c3835906
+X-Zoho-RID: zohocampaigns.3z89f4a444e5d587ee6eb6363a3e13c7f5e664e744bd0b5dd30353de4b42e816d4.zcb.1127b8852afa68c3.11699e4c3835906
+X-Mailer: Zoho Campaigns
+X-Report-Abuse: <Please send a copy of this message along with header to abuse+3z89f4a444e5d587ee6eb6363a3e13c7f5e664e744bd0b5dd30353de4b42e816d4_zcb_1127b8852afa68c3@zohocampaigns.in>, <https://cbybs-zc1.maillist-manage.in/campaigns/ReportAbuse.zc?od=3z89f4a444e5d587ee6eb6363a3e13c7f5e664e744bd0b5dd30353de4b42e816d4&rd=1127b8852afa68c3&sd=1127b8852af73258&n=11699e4c3835906>
+
+------=_Part_1654898_1008984.1702289087556
+Content-Type: text/plain;charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+
+
+###
+
+Get ready to mark your calendars! AIM is excited to unveil our 2024 event l=
+ineup, packed with opportunities for learning, networking, and growth.
+
+Here=E2=80=99s what=E2=80=99s coming up, sorted by date:
+
+REGISTRATIONS OPEN
+
+DevPalooza 2.0 - AI Forum Meetup
+
+A vibrant meetup for AI enthusiasts to discuss innovations and trends. Feat=
+uring advanced sessions on Generative AI and ChatGPT, the event offers unpa=
+ralleled networking, a coding challenge, and hands-on workshops led by AI e=
+xperts.
+
+* =F0=9F=93=85 Date : January 6th, 2024
+* =F0=9F=93=8D Location : Bangalore
+
+https://aiforum.analyticsindiamag.com/devpalooza-2-0/ REGISTER
+
+https://mlds.analyticsindiamag.com/
+
+Machine Learning Developers Summit 2024
+February 1 to 2, 2024
+NIMHANS Convention Center, Bangalore, India.
+
+THE BIGGEST GENERATIVE AI CONFERENCE IN INDIA. 6th Edition 1,500+Attendees =
+50+Speakers 400+Organizations
+
+https://mlds.analyticsindiamag.com/ REGISTER
+
+CDO Vision New York
+
+Connect with New York's 30 Top CDOs at an exclusive networking event presen=
+ted by AIM. Engage in stimulating dialogues over an intimate dinner in the =
+heart of the city, exchanging insights on critical business issues.
+
+Date: March 22, 2024
+
+https://council.aimresearch.co/events/cdo-vision-newyork/ Partner with us
+
+https://rising.analyticsindiamag.com/
+
+###
+RISING 2024 | India's Biggest Summit on Diversity and Inclusion in Technolo=
+gy
+
+###
+
+We're excited to announce the 6th edition of Rising, India's biggest summit=
+ on Diversity and Inclusion in Technology, hosted by AIM Media House. This =
+year, Rising 2024 is scheduled for April 4-5 in Bangalore, promising an enl=
+ightening and transformative experience.
+
+With over 1,000 in-person attendees and 50+ renowned speakers, Rising 2024 =
+offers a platform to challenge the norms and redefine diversity in tech. Ou=
+r agenda includes engaging tracks on innovative inclusivity, future-ready s=
+kills, tech for social good, and mental health in the tech sector.
+
+When : April 4 and 5th 2024
+Where : Bangalore
+
+https://rising.analyticsindiamag.com/ More Details
+
+CDO Vision San Francisco
+
+Connect with SFO Bay Area's 30 Top CDOs at an exclusive networking event pr=
+esented by AIM. Engage in stimulating dialogues over an intimate dinner in =
+the heart of the city, exchanging insights on critical business issues.
+
+Date: April 19, 2024
+
+https://council.aimresearch.co/events/cdo-vision-newyork/ Partner with us
+
+CDO Vision Dallas
+
+Connect with Dallas's 30 Top CDOs at an exclusive networking event presente=
+d by AIM. Engage in stimulating dialogues over an intimate dinner in the he=
+art of the city, exchanging insights on critical business issues.
+
+Date: May 24, 2024
+
+https://council.aimresearch.co/events/cdo-vision-austin/ Partner with us
+
+Data Engineering Summit 2024
+
+India's First & Only Conference Dedicated To The Emerging Field Of Data Eng=
+ineering.
+
+* =F0=9F=93=85 Date: May 30 - 31, 2024
+* =F0=9F=93=8D Location: Bangalore, India
+
+https://des.analyticsindiamag.com/ Registrations Open
+
+https://machinecon.aimmediahouse.com/
+
+###
+
+MachineCon USA 2024
+
+### The Biggest Exclusive Gathering Of CDOs & Analytics Leaders In United S=
+tates. Meet 100 Most Influential Chief Data Officers & Analytics Heads from=
+ leading organizations in USA.
+
+26 July 2024
+583 Park Avenue, New York
+
+https://machinecon.aimmediahouse.com/ More Details
+
+###
+
+Cypher India 2024
+
+India's largest AI summit, bringing together industry leaders.
+
+=F0=9F=93=85 Date: September 25-27, 2024
+=F0=9F=93=8D Location: Bangalore, India
+
+Yes, we are planning a USA edition of Cypher...
+
+https://cypher.analyticsindiamag.com/ More Details
+
+###
+
+Our Awards & Recognition Tracker for 2024, a comprehensive platform to disc=
+over, apply, and reflect on various awards and recognitions offered by AIM.
+
+Open Surveys & Recognitions:
+* Survey on Enterprise Challenges in Accessing External Data : https://form=
+s.zohopublic.in/meghna1/form/ChallengesfacedbyEnterprisesinAccessingPublicD=
+omai/formperma/TkL3-9RCis_qctwt0UtE7L3bkdNdYfacD9ZvKKnv2Io Share your insig=
+hts .
+* Survey on Enterprise Challenges with Modern Data Tools & Platforms : http=
+s://forms.zohopublic.in/meghna1/form/CurrentEnterpriseChallengeswithModernD=
+ataToolsampP/formperma/jI8FVJddcV_N9qFNV8SvHpeXoWta-MRU4jYXaEyHOMI Particip=
+ate in our latest survey .
+*
+AI/Data Science Trends 2024. https://forms.zohopublic.in/meghna1/form/TopDa=
+taScienceAITrendsFor2023/formperma/HoG6FEUHxyjPqSah2ZfjBfKpE3vHNe7yh5Dis3YG=
+u4w Participate in this Survey
+Award Nominations Now Open:
+* https://machinecon.aimmediahouse.com/ai100/ AI100 Award 2024 : Celebratin=
+g 100 Most Influential AI Leaders in USA.
+* https://mlds.analyticsindiamag.com/40-under-40-data-scientists-awards/ 40=
+ under 40 Data Scientists 2024 : Recognizing India's leading data scientist=
+s.
+* https://des.analyticsindiamag.com/awards/ Data Engineering Awards 2024 : =
+Celebrating innovative data-driven teams.
+
+Don't miss this opportunity to be recognized for your contributions. https:=
+//aimresearch.co/recognitions/ Visit our website to submit your survey resp=
+onses and nominations today!
+
+For details on partnerships, write to us at info@aimresearch.co
+
+Follow Us On
+https://www.facebook.com/AnalyticsIndiaMagazine/
+https://twitter.com/@analyticsindiam
+https://www.linkedin.com/company/analytics-india-magazine
+https://www.youtube.com/channel/UCAlwrsgeJavG1vw9qSFOUmA
+https://www.instagram.com/analyticsindiamagazine/
+
+You are receiving this email as you signed up for our newsletters.
+Want to change how you receive these emails?
+You can https://cbybs-zc1.maillist-manage.in/ua/optout?od=3D3z89f4a444e5d58=
+7ee6eb6363a3e13c7f5e664e744bd0b5dd30353de4b42e816d4&rd=3D1127b8852afa68c3&s=
+d=3D1127b8852af73258&n=3D11699e4c3835906 Unsubscribe or https://cbybs-zc1.m=
+aillist-manage.in/ua/commpref?od=3D3z89f4a444e5d587ee6eb6363a3e13c7f5e664e7=
+44bd0b5dd30353de4b42e816d4&rd=3D1127b8852afa68c3&sd=3D1127b8852af73258&n=3D=
+11699e4c3835906 Update your preferences
+
+
+
+
+
+
+----------------------------------------------------------------------
+This email was sent by info@aimresearch.co to brnkath@gmail.com
+
+Not interested? Unsubscribe - https://cbybs-zc1.maillist-manage.in/ua/optou=
+t?od=3D3z89f4a444e5d587ee6eb6363a3e13c7f5e664e744bd0b5dd30353de4b42e816d4&r=
+d=3D1127b8852afa68c3&sd=3D1127b8852af73258&n=3D11699e4c3835906
+
+Update profile -  https://cbybs-zc1.maillist-manage.in/ua/upc?upd=3D1127b88=
+5291f7794&r=3D1127b8852afa68c3&n=3D11699e4c3835906&od=3D3z89f4a444e5d587ee6=
+eb6363a3e13c7f5e664e744bd0b5dd30353de4b42e816d4&r=3D1127b8852afa68c3&n=3D11=
+699e4c3835906&od=3D3z89f4a444e5d587ee6eb6363a3e13c7f5e664e744bd0b5dd30353de=
+4b42e816d4
+  =20
+
+
+
+Analytics India Magazine | 280, 2nd floor, 5th Main, 15 A cross, Sector 6, =
+HSR layout Bengaluru, Karnataka 560102  =20
+
+
+
+Our Privacy Policy [ https://analyticsindiamag.com/privacy-policy/ ] and Te=
+rms of Use. [ https://analyticsindiamag.com/terms-use/ ]=20
+
+------=_Part_1654898_1008984.1702289087556
+Content-Type: text/html;charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:o=3D"urn:schemas-microso=
+ft-com:office:office" xmlns:v=3D"urn:schemas-microsoft-com:vml"><head><titl=
+e>AIM's 2024 Event Calendar: Opportunities for Learning, Networking, and Pa=
+rtnership!</title><!--[if gte mso 9]><xml><o:OfficeDocumentSettings><o:Allo=
+wPNG/><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml=
+><![endif]-->
+=09<meta content=3D"width=3Ddevice-width" name=3D"viewport">
+=09<style>
+=09/* #### Mobile Phones Portrait #### */
+=09/* #### iPhone 4+ Portrait or Landscape #### */
+=09@media only screen and (max-width: 480px){
+=09=09table[class=3DcontentInner] {width:100% !important;padding:0px;margin=
+:0px;}
+=09=09img[class=3DzpImage]{width:260px !important;max-width: 360px !importa=
+nt;text-align:center;margin:0px;padding:0px}=20
+=09=09body, table, td, p, li,div,span, blockquote{-webkit-text-size-adjust:=
+none !important;margin:0px auto;line-height:1.7}
+=09=09table[class=3DzpImageCaption]{text-align:left;}
+=09=09table[class=3Dcols]{width:100% !important;max-width:100% !important;t=
+ext-align:left;}
+=09=09table[class=3Dzpcolumns] {text-align:left;margin:0px;}=20
+=09=09table[class=3Dzpcolumn] {text-align:left;margin:0px;}=20
+=09=09table[class=3DzpAlignPos]{width:100%;text-align:left;margin:0px;}=20
+=09=09td[class=3Dtxtsize]{font-size:18px !important;}
+=09=09td[class=3Dpaddingcomp]{ padding-left: 15px !important; padding-right=
+: 15px !important }
+=09=09td[class=3Dbannerimgpad]{padding:0px !important;}
+=09=09span[class=3Dtxtsize]{font-size:18px !important;}
+=09=09img[size =3D "B"]{width: 100% !important;max-width:100% !important;ma=
+rgin: 0px !important;padding:0px !important;}
+=09=09img[size =3D "F"]{width: 100% !important;max-width:100% !important;ma=
+rgin: 0px !important;padding:0px !important;}
+=09=09img[size =3D "S"]{width:105px !important; height:auto; margin:0px aut=
+o !important;padding:0px !important;}
+=09=09img[size =3D "M"]{width:277.869px !important;height:auto;margin:0px a=
+uto !important;padding:0px !important;}
+=09=09h1{
+=09=09=09font-size:28px !important;
+=09=09=09line-height:100% !important;
+=09=09}
+=09=09h2{
+=09=09=09font-size:24px !important;
+=09=09=09line-height:100% !important;
+=09=09}
+=09=09h3{
+=09=09=09font-size:20px !important;
+=09=09=09line-height:100% !important;
+=09=09}
+=09=09h4{
+=09=09=09font-size:18px !important;
+=09=09=09line-height:100% !important;
+=09=09}
+=09=09}=09=09
+=09=09@media only screen and (max-width: 480px){
+=09=09.zpImage{
+=09=09=09height:auto !important;
+=09=09=09width:100% !important;
+=09=09}}
+=09=09@media only screen and (max-width: 480px){
+=09=09.contentInner,.cols,.zpAlignPos{
+=09=09=09width:100% !important;
+=09=09=09max-width:100% !important;
+=09=09}}
+=09=09@media only screen and (max-width: 480px){
+=09=09.paddingcomp{
+=09=09=09padding-left: 15px !important;
+=09=09=09padding-right: 15px !important;=20
+=09=09}
+=09=09.bannerimgpad{
+=09=09=09padding:0px !important;
+=09=09}
+=09=09.buttonElem a
+=09=09{
+=09=09=09max-width: 320px !important;
+=09=09}
+=09}
+=09=09@media screen and (max-width: 480px)
+        {
+                .tmplheader,.tmplfooter{width:100% !important;max-width:400=
+px !important;margin:0px auto;text-align:center;}
+        }
+=09=09a[x-apple-data-detectors] {
+=09=09    color: inherit !important;
+=09=09    text-decoration: none !important;
+=09=09    font-size: inherit !important;
+=09=09    font-family: inherit !important;
+=09=09    font-weight: inherit !important;
+=09=09    line-height: inherit !important;
+=09=09}
+=09=09
+=09=09</style>
+<meta content=3D"text/html;charset=3DUTF-8" http-equiv=3D"Content-Type"></h=
+ead><body bgcolor=3D"#f6f6f6" style=3D"margin:0; padding:0;font-family:Aria=
+l, Helvetica, sans-serif; font-size:12px; color:#000000;"><!--[if !mso 9]><=
+!--><span style=3D'font-size:0px;max-width: 0px;max-height: 0px;mso-hide:al=
+l;'>  </span><!--<![endif]--><head>
+        <meta name=3D"viewport" content=3D"width=3Ddevice-width">
+        <style>
+            @media screen and (max-width: 480px)
+            {
+=09                table[class=3Dtmplfooter]{width:100% !important;max-widt=
+h:100% !important; text-align:left;}=20
+=09                table[class=3Dtmplheader]{width:100% !important; max-wid=
+th:100% !important; text-align:left;}=20
+=09                div[class=3Dtxtsize]{text-align:left}=20
+=09                td[class=3Dtxtsize]{text-align:left}
+            }
+            @media screen and (min-width: 320px) and (max-width: 480px) and=
+ (orientation : portrait){
+            {
+=09                table[class=3Dtmplfooter]{width:100% !important;max-widt=
+h:100% !important; text-align:left;}=20
+=09                table[class=3Dtmplheader]{width:100% !important; max-wid=
+th:100% !important; text-align:left;}=20
+=09                div[class=3Dtxtsize]{text-align:left}=20
+=09                td[class=3Dtxtsize]{text-align:left}
+            }
+            @media screen and (max-width: 598px)
+            {
+=09                table[class=3Dtmplfooter]{width:100% !important;max-widt=
+h:100% !important; text-align:left;}=20
+=09                table[class=3Dtmplheader]{width:100% !important; max-wid=
+th:100% !important; text-align:left;}=20
+=09                div[class=3Dtxtsize]{text-align:left}=20
+=09                td[class=3Dtxtsize]{text-align:left}
+            }
+        </style>
+</head>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"backgrou=
+nd-color:#f7f7f7;color:#333;font-size:11px;border-color:#f0f0f0;border-widt=
+h:1px;font-family:Arial;border-style:solid;">
+        <tr><td align=3D"center">
+<div>
+=09=09=09<table style=3D"color:#333;font-size:11px;font-family:Arial; paddi=
+ng:5px;text-align:center;;width:600px;" class=3D"tmplheader"  align=3D"cent=
+er" id=3D"H_INNER"><tr><td><div class=3D"txtsize" style=3D"text-align:cente=
+r;color:#333;font-size:11px;font-family:Arial; ">Can't read or see images?&=
+nbsp;<a target=3D"_blank" href=3D"https://cbybs-zc1.campaign-view.in/ua/vie=
+winbrowser?od=3D3z89f4a444e5d587ee6eb6363a3e13c7f5e664e744bd0b5dd30353de4b4=
+2e816d4&rd=3D1127b8852afa68c3&sd=3D1127b8852af73258&n=3D11699e4c3835906&mrd=
+=3D1127b8852af73242&m=3D1" style=3D"color:#03F;font-size:11px;font-family:A=
+rial;"><span style=3D'color:#03F;font-size:11px;font-family:Arial;'>View th=
+is email in a browser</span></a></div></td></tr></table>
+</div>
+=09</td></tr>
+</table>
+<center>=20
+<div class=3D"zppage-container">                                           =
+              =20
+=09=09<table bgcolor=3D"#f6f6f6" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" class=3D"contentOuter" id=3D"contentOuter" style=3D"background-color=
+:#f0f0f0;background-color:#f6f6f6; mso-table-lspace:0pt; mso-table-rspace:0=
+pt;font-size:12px;text-align:center;border:0px;padding:0px;border-collapse:=
+collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" width=3D"100%">=20
+=09=09=09<tbody><tr>=20
+=09=09=09=09<td style=3D" mso-table-lspace:0pt; font-size:12px;font-family:=
+Arial, Helvetica, sans-serif; mso-table-rspace:0pt;font-size:12px;border:0p=
+x;padding:0px;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rsp=
+ace:0pt;">&nbsp;</td>
+=09=09=09=09<td align=3D"center" style=3D" mso-table-lspace:0pt; font-size:=
+12px;font-family:Arial, Helvetica, sans-serif; mso-table-rspace:0pt;font-si=
+ze:12px;border:0px;padding:0px;border-collapse:collapse; mso-table-lspace:0=
+pt; mso-table-rspace:0pt;">
+=09=09=09=09=09<table bgcolor=3D"#ffffff" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" class=3D"contentInner" id=3D"contentInner" style=3D"border-=
+collapse:collapse; border:0px;font-size:12px;border-collapse:collapse; mso-=
+table-lspace:0pt; mso-table-rspace:0pt;background-color:#ffffff;background-=
+color:#ffffff;width:600px;margin:0px auto;border:0px;" width=3D"600">=20
+=09=09=09=09=09<tbody><tr>=20
+=09=09=09=09=09<td height=3D"570" style=3D"border-collapse:collapse; mso-ta=
+ble-lspace:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; ms=
+o-table-rspace:0pt;font-size:12px;border:0px;padding:0px;" valign=3D"top">
+=09=09=09=09=09 =09<a name=3D"Top" style=3D"text-decoration:underline;"></a=
+>
+    <div baseposition=3D"pos_YrobDQg7SAqnBt5RUo4dhQ" class=3D"zpcontent-wra=
+pper" id=3D"page-container">
+    <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" id=3D"page-cont=
+ainer" style=3D" mso-table-lspace:0pt;font-size:12px;border:0px;padding:0px=
+;border-collapse:collapse; mso-table-lspace:0pt;mso-table-rspace:0pt;text-d=
+ecoration:none !important;" width=3D"100%">
+<tbody><tr><td class=3D"txtsize" id=3D"elm_1702284799210" style=3D" mso-tab=
+le-lspace:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso=
+-table-rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse=
+:collapse;" valign=3D"top">
+
+          <div class=3D"zpelement-wrapper" id=3D"elm_1702284799210" style=
+=3D";word-wrap:break-word;overflow:hidden;padding-right:0px;background-colo=
+r:#ffffff;">
+=09    =09<table bgcolor=3D"#ffffff" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" class=3D"zpAlignPos" style=3D" mso-table-lspace:0pt; mso-table-r=
+space:0pt;font-size:12px;padding:0px;border:0px;border-collapse:collapse; m=
+so-table-lspace:0pt; mso-table-rspace:0pt;word-break:break-word;-ms-text-si=
+ze-adjust: 100%;-webkit-text-size-adjust: 100%;" width=3D"100%">
+=09  =09
+            <tbody><tr><td class=3D"paddingcomp" style=3D"border-collapse:c=
+ollapse; mso-table-lspace:0pt; mso-table-rspace:0pt;border:0px;padding:7px =
+15px;font-size:12pt;font-family:Arial,Helvetica;line-height:17pt;border-top=
+:0px none ;   border-bottom:0px none ;padding-top:7px;padding-bottom:7px;pa=
+dding-right:50px;padding-left:50px;">
+             =09    =09=09<div componentbgcolor=3D"#ffffff" componentlinehe=
+ight=3D"17pt" componentpaddingbottom=3D"7px" componentpaddingleft=3D"50px" =
+componentpaddingright=3D"50px" componentpaddingtop=3D"7px" style=3D"backgro=
+und-color: rgb(255, 255, 255); line-height: 17pt;"><p align=3D"center" styl=
+e=3D"line-height:1.7;font-family:Arial,verdana;font-size:12px; color:#00000=
+0;padding:0px;margin: 0;text-align: center; color: rgb(0, 0, 0); font-famil=
+y: Georgia, &quot;Times New Roman&quot;, Times, serif; font-size: 12pt; lin=
+e-height: 17pt;"><font style=3D"line-height: 17pt;"><span style=3D"line-hei=
+ght: 17pt;"><span style=3D"line-height: 17pt;"></span></span></font></p><h3=
+ style=3D"font-family:Arial,verdana,Helvetica, sans-serif;font-size: 24px; =
+font-weight:normal;padding: 0px;margin: 0;color: rgb(0, 0, 0); font-family:=
+ Georgia, &quot;Times New Roman&quot;, Times, serif; font-size: 12pt;"><fon=
+t color=3D"#444343" face=3D"Georgia, Times New Roman, Times, serif" style=
+=3D"font-size: 12pt; line-height: 17pt;"><span style=3D"line-height: 17pt;"=
+><span style=3D"line-height: 17pt;"><i></i></span></span></font></h3><p sty=
+le=3D"line-height:1.7;font-size:12px; color:#000000;padding:0px;margin: 0;f=
+ont-family: Georgia, &quot;Times New Roman&quot;, Times, serif; text-align:=
+ left; color: rgb(0, 0, 0); font-size: 12pt; line-height: 17pt;"><font colo=
+r=3D"#000000" face=3D"Georgia, Times New Roman, Times, serif" style=3D"colo=
+r: rgb(0, 0, 0); line-height: 17pt;"></font></p><p style=3D"line-height:1.7=
+;font-size:12px; color:#000000;padding:0px;margin: 0;font-family: Georgia, =
+&quot;Times New Roman&quot;, Times, serif; text-align: left; color: rgb(0, =
+0, 0); font-size: 12pt; line-height: 17pt;"><font color=3D"#000000" face=3D=
+"Georgia, Times New Roman, Times, serif" style=3D"color: rgb(0, 0, 0); line=
+-height: 17pt;"><font color=3D"#000000" face=3D"Arial, Helvetica" style=3D"=
+color: rgb(0, 0, 0); line-height: 17pt;"><font style=3D"font-size: 10pt; li=
+ne-height: 17pt;"></font></font></font></p><p style=3D"line-height:1.7;font=
+-family:Arial,verdana;font-size:12px; color:#000000;padding:0px;margin: 0;t=
+ext-align: left; color: rgb(0, 0, 0); font-family: Georgia, &quot;Times New=
+ Roman&quot;, Times, serif; font-size: 12pt; line-height: 17pt;"><font colo=
+r=3D"#000000" face=3D"Georgia, Times New Roman, Times, serif" style=3D"colo=
+r: rgb(0, 0, 0); font-size: 12pt; line-height: 17pt;"></font></p><span styl=
+e=3D"color: rgb(0, 0, 0); line-height: 17pt;"><font style=3D"line-height: 1=
+7pt;"><p style=3D"line-height:1.7;font-size:12px; color:#000000;padding:0px=
+;margin: 0;font-family: Georgia, &quot;Times New Roman&quot;, Times, serif;=
+ text-align: left; line-height: 17pt;"><font color=3D"#000000" face=3D"Aria=
+l, Helvetica" style=3D"color: rgb(0, 0, 0); font-size: 10pt; line-height: 1=
+7pt;"></font></p><span style=3D"line-height: 17pt;"><font style=3D"font-siz=
+e: 10pt; line-height: 17pt;"><p style=3D"line-height:1.7;font-family:Arial,=
+verdana;font-size:12px; color:#000000;padding:0px;margin: 0;text-align: lef=
+t; line-height: 17pt;"><font color=3D"#000000" face=3D"Arial, Helvetica" st=
+yle=3D"color: rgb(0, 0, 0); line-height: 17pt;"><br></font></p><p style=3D"=
+line-height:1.7;font-family:Arial,verdana;font-size:12px; color:#000000;pad=
+ding:0px;margin: 0;text-align: left; line-height: 17pt;"><font color=3D"#00=
+0000" face=3D"Arial, Helvetica" style=3D"color: rgb(0, 0, 0); line-height: =
+17pt;">Get ready to mark your calendars! AIM is excited to unveil our 2024 =
+event lineup, packed with opportunities for learning, networking, and growt=
+h. </font></p><p style=3D"line-height:1.7;font-family:Arial,verdana;font-si=
+ze:12px; color:#000000;padding:0px;margin: 0;text-align: left; line-height:=
+ 17pt;"><font color=3D"#000000" face=3D"Arial, Helvetica" style=3D"color: r=
+gb(0, 0, 0); line-height: 17pt;"><br></font></p><p style=3D"line-height:1.7=
+;font-family:Arial,verdana;font-size:12px; color:#000000;padding:0px;margin=
+: 0;text-align: left; line-height: 17pt;"><font color=3D"#000000" face=3D"A=
+rial, Helvetica" style=3D"color: rgb(0, 0, 0); line-height: 17pt;">Here&rsq=
+uo;s what&rsquo;s coming up, sorted by date:</font></p><p style=3D"line-hei=
+ght:1.7;font-family:Arial,verdana;font-size:12px; color:#000000;padding:0px=
+;margin: 0;text-align: left; line-height: 17pt;"><font color=3D"#000000" fa=
+ce=3D"Arial, Helvetica" style=3D"color: rgb(0, 0, 0); line-height: 17pt;"><=
+br></font></p></font></span><p style=3D"line-height:1.7;font-family:Arial,v=
+erdana;font-size:12px; color:#000000;padding:0px;margin: 0;text-align: left=
+; line-height: 17pt;"><span style=3D"font-family: Arial, Helvetica; line-he=
+ight: 17pt;"><font style=3D"font-size: 10pt; line-height: 17pt;"></font></s=
+pan></p></font></span><font style=3D"color: rgb(0, 0, 0); font-family: Geor=
+gia, &quot;Times New Roman&quot;, Times, serif; font-size: 12pt; line-heigh=
+t: 17pt;"><span style=3D"color: rgb(77, 77, 77); font-family: Arial, Helvet=
+ica; font-size: 12pt; line-height: 17pt;"></span></font><p style=3D"font-fa=
+mily:Arial,verdana;font-size:12px; color:#000000;padding:0px;margin: 0;line=
+-height: 17pt;"></p></div>
+=09=09=09</td></tr>
+=09=09</tbody></table>
+       =09  </div>
+</td></tr>
+<tr><td class=3D"txtsize" id=3D"elm_1701334480010" style=3D" mso-table-lspa=
+ce:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse:collap=
+se;" valign=3D"top">
+
+          <div class=3D"zpelement-wrapper" id=3D"elm_1701334480010" style=
+=3D";word-wrap:break-word;overflow:hidden;padding-right:0px;background-colo=
+r:#9fcafc;">
+=09    =09<table bgcolor=3D"#9fcafc" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" class=3D"zpAlignPos" style=3D" mso-table-lspace:0pt; mso-table-r=
+space:0pt;font-size:12px;padding:0px;border:0px;border-collapse:collapse; m=
+so-table-lspace:0pt; mso-table-rspace:0pt;word-break:break-word;-ms-text-si=
+ze-adjust: 100%;-webkit-text-size-adjust: 100%;" width=3D"100%">
+=09  =09
+            <tbody><tr><td class=3D"paddingcomp" style=3D"border-collapse:c=
+ollapse; mso-table-lspace:0pt; mso-table-rspace:0pt;border:0px;padding:7px =
+15px;font-size:12pt;font-family:Arial,Helvetica;line-height:17pt;border-top=
+:0px none ;   border-bottom:0px none ;padding-top:7px;padding-bottom:7px;pa=
+dding-right:50px;padding-left:50px;">
+             =09    =09=09<div componentbgcolor=3D"#9fcafc" componentlinehe=
+ight=3D"17pt" componentpaddingbottom=3D"7px" componentpaddingleft=3D"50px" =
+componentpaddingright=3D"50px" componentpaddingtop=3D"7px" style=3D"backgro=
+und-color: rgb(159, 202, 252); line-height: 17pt;"><p align=3D"center" styl=
+e=3D"line-height:1.7;font-family:Arial,verdana;font-size:12px; color:#00000=
+0;padding:0px;margin: 0;text-align: center; line-height: 17pt;"><font color=
+=3D"#333333" style=3D"color: rgb(51, 51, 51); line-height: 17pt;"><font sty=
+le=3D"font-size: 11pt; line-height: 17pt;"><span style=3D"line-height: 17pt=
+;"></span></font></font></p><p align=3D"left" style=3D"line-height:1.7;font=
+-family:Arial,verdana;font-size:12px; color:#000000;padding:0px;margin: 0;t=
+ext-align: left; line-height: 17pt;"><font color=3D"#333333" style=3D"color=
+: rgb(51, 51, 51); line-height: 17pt;"><font style=3D"line-height: 17pt;"><=
+font color=3D"#000000" face=3D"Arial, Helvetica" style=3D"color: rgb(0, 0, =
+0); font-size: 10pt; line-height: 17pt;"><br></font></font></font></p><p al=
+ign=3D"left" style=3D"line-height:1.7;font-family:Arial,verdana;font-size:1=
+2px; color:#000000;padding:0px;margin: 0;text-align: left; line-height: 17p=
+t;"><font face=3D"Arial, Helvetica" style=3D"line-height: 17pt; font-size: =
+9pt;">REGISTRATIONS OPEN</font></p><p align=3D"left" style=3D"line-height:1=
+.7;font-family:Arial,verdana;font-size:12px; color:#000000;padding:0px;marg=
+in: 0;text-align: left; line-height: 17pt;"><font face=3D"Arial, Helvetica"=
+ style=3D"line-height: 17pt; font-size: 9pt;"><span style=3D"line-height: 1=
+7pt;"></span></font></p><p style=3D"line-height:1.7;font-family:Arial,verda=
+na;font-size:12px; color:#000000;padding:0px;margin: 0;text-align: left; li=
+ne-height: 17pt;"><font color=3D"#000000" face=3D"Arial, Helvetica" style=
+=3D"color: rgb(0, 0, 0); line-height: 17pt; font-size: 9pt;"></font></p><p =
+style=3D"line-height:1.7;font-family:Arial,verdana;font-size:12px; color:#0=
+00000;padding:0px;margin: 0;text-align: left; line-height: 17pt;"><font col=
+or=3D"#000000" face=3D"Arial, Helvetica" style=3D"color: rgb(0, 0, 0); line=
+-height: 17pt;"><font color=3D"#000000" face=3D"Arial, Helvetica" style=3D"=
+color: rgb(0, 0, 0); line-height: 17pt; font-size: 9pt;"></font></font></p>=
+<h1 style=3D"margin: 0;padding: 0px;font-family:Arial, Helvetica, sans-seri=
+f; color:#000000;color:#000000; font-weight:normal;font-family:Arial,verdan=
+a,Helvetica, sans-serif; color:#000000;font-size: 28px;"><font color=3D"#00=
+0000" face=3D"Arial, Helvetica" style=3D"color: rgb(0, 0, 0); line-height: =
+17pt;"><font color=3D"#000000" face=3D"Arial, Helvetica" style=3D"color: rg=
+b(0, 0, 0); line-height: 17pt; font-size: 15pt;"><b style><span><span><b><s=
+pan>DevPalooza 2.0 - <span><strong>AI Forum Meetup</strong></span></span></=
+b></span></span></b></font></font></h1><div><font color=3D"#000000" face=3D=
+"Arial, Helvetica" style=3D"color: rgb(0, 0, 0); line-height: 17pt;"><font =
+color=3D"#000000" face=3D"Arial, Helvetica" style=3D"color: rgb(0, 0, 0); l=
+ine-height: 17pt; font-size: 15pt;"><b style><span><span><b><span><span><st=
+rong><br></strong></span></span></b></span></span></b></font></font></div><=
+div><font color=3D"#000000" face=3D"Arial, Helvetica" style=3D"color: rgb(0=
+, 0, 0); line-height: 17pt;"><font color=3D"#000000" face=3D"Arial, Helveti=
+ca" style=3D"color: rgb(0, 0, 0); line-height: 17pt;"><p style=3D"font-fami=
+ly:Arial,verdana;font-size:12px; color:#000000;padding:0px;margin: 0;line-h=
+eight: 17pt; text-align: left;"><font style=3D"font-size: 10pt;"><font colo=
+r=3D"#000000" face=3D"Arial, Helvetica" style=3D"color: rgb(0, 0, 0);">A vi=
+brant meetup for AI enthusiasts to discuss innovations and trends. </font><=
+span style=3D"font-family: Arial, Helvetica;">Featuring advanced sessions o=
+n Generative AI and ChatGPT, the event offers unparalleled networking, a co=
+ding challenge, and hands-on workshops led by AI experts.</span></font><fon=
+t color=3D"#000000" face=3D"Arial, Helvetica" style=3D"color: rgb(0, 0, 0);=
+"><span style=3D"font-size: 12pt;"><br></span></font></p></font></font></di=
+v><p style=3D"font-family:Arial,verdana;font-size:12px; color:#000000;paddi=
+ng:0px;margin: 0;line-height: 17pt;"></p><p style=3D"font-family:Arial,verd=
+ana;font-size:12px; color:#000000;padding:0px;margin: 0;line-height: 17pt;"=
+></p><p style=3D"line-height:1.7;font-family:Arial,verdana;font-size:12px; =
+color:#000000;padding:0px;margin: 0;text-align: left; line-height: 17pt;"><=
+font color=3D"#000000" face=3D"Arial, Helvetica" style=3D"color: rgb(0, 0, =
+0); font-size: 10pt; line-height: 17pt;"><br></font></p><p style=3D"line-he=
+ight:1.7;font-family:Arial,verdana;font-size:12px; color:#000000;padding:0p=
+x;margin: 0;text-align: left; line-height: 17pt;"><font color=3D"#000000" f=
+ace=3D"Arial, Helvetica" style=3D"color: rgb(0, 0, 0); line-height: 17pt; f=
+ont-size: 10pt;"></font></p><ul style=3D"font-family: Arial, Helvetica; lin=
+e-height: 17pt; font-size: 9pt;"><li style=3D"font-family: Arial, Helvetica=
+; line-height: 17pt; font-size: 9pt;"><font color=3D"#000000" face=3D"Arial=
+, Helvetica" style=3D"color: rgb(0, 0, 0); line-height: 17pt; font-size: 10=
+pt;">=F0=9F=93=85 <b>Date</b>: January 6th, 2024</font><li style=3D"font-fa=
+mily: Arial, Helvetica; line-height: 17pt; font-size: 9pt;"><font color=3D"=
+#000000" face=3D"Arial, Helvetica" style=3D"color: rgb(0, 0, 0); line-heigh=
+t: 17pt; font-size: 10pt;">=F0=9F=93=8D <b>Location</b>: Bangalore</font></=
+ul><p style=3D"margin: 0;padding: 0px;font-family:Arial, Helvetica, sans-se=
+rif; color:#000000;line-height:1.7;font-family:Arial,verdana;font-size:12px=
+;padding:0px;"></p><p style=3D"line-height:1.7;font-family:Arial,verdana;fo=
+nt-size:12px; color:#000000;padding:0px;margin: 0;text-align: left; line-he=
+ight: 17pt;"><font color=3D"#000000" face=3D"Arial, Helvetica" style=3D"col=
+or: rgb(0, 0, 0); font-size: 10pt; line-height: 17pt;"><span><br></span></f=
+ont></p><p style=3D"font-family:Arial,verdana;font-size:12px; color:#000000=
+;padding:0px;margin: 0;line-height: 17pt;"></p><p style=3D"font-family:Aria=
+l,verdana;font-size:12px; color:#000000;padding:0px;margin: 0;line-height: =
+17pt;"></p></div>
+=09=09=09</td></tr>
+=09=09</tbody></table>
+       =09  </div>
+</td></tr>
+<tr><td class=3D"txtsize" id=3D"elm_1701334523621" style=3D" mso-table-lspa=
+ce:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse:collap=
+se;" valign=3D"top">
+
+=09=09=09
+=09=09 =09       =20
+=09=09           =20
+=09=09 =20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=09<table bgcolor=3D"#9fcafc" cellpadding=3D"0" cellspacing=3D"0" height=3D=
+"48" style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font-size:12px;bo=
+rder:0px;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0=
+pt;border:none;" width=3D"100%">
+        <tbody><tr><td class=3D"paddingcomp" style=3D"border-collapse:colla=
+pse; mso-table-lspace:0pt; font-size:12px;font-family:Arial, Helvetica, san=
+s-serif; mso-table-rspace:0pt;font-size:12px;border:0px;padding:7px 15px;bo=
+rder-top:none none none;border-bottom:none none none;padding-top:7px;paddin=
+g-bottom:27px;padding-right:50px;padding-left:50px;">
+        <div class=3D"zpelement-wrapper buttonElem" id=3D"elm_1701334523621=
+" style=3D"overflow:hidden;word-wrap:break-word;">
+=09    <div class=3D"zpAlignPos" style=3D"text-align:left;">
+                 <table align=3D"left" cellpadding=3D"0" cellspacing=3D"0" =
+style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font-size:12px;border:=
+none;padding:0px;border:0px;margin:0px;border-collapse:separate; mso-table-=
+lspace:0pt; mso-table-rspace:0pt;">
+                <tbody><tr>
+                   <td align=3D"left" class=3D"txtsize" style=3D"border-col=
+lapse:collapse; mso-table-lspace:0pt; font-size:12px; mso-table-rspace:0pt;=
+font-size:12px;border:0px;padding:0px;color:#ffffff;font-family:Arial;text-=
+align:left;border-radius:108px;text-align:left;cursor:pointer;">
+                         <!--[if mso]>
+=09=09=09=09=09          <v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:=
+vml" xmlns:w=3D"urn:schemas-microsoft-com:office:office" href=3D"https://cb=
+ybs-zc1.maillist-manage.in/click/1127b8852afa68c3/1127b8852aecdaad" style=
+=3D"border-radius:108px;height:48px;v-text-anchor:middle;width:217px;" arcs=
+ize=3D"108%" strokecolor=3D"#ffffff" strokeweight =3D"0px" fillcolor=3D"#00=
+0000">
+=09=09=09=09=09          <v:stroke dashstyle=3D"solid" />
+=09=09=09=09=09            <w:anchorlock/>
+=09=09=09=09=09            <center style=3D"direction:ltr;color:#ffffff;fon=
+t-family:Arial;font-size:12pt;">REGISTER</center>
+=09=09=09=09=09          </v:roundrect>
+        =09=09=09=09<![endif]-->
+                        <a align=3D"center" href=3D"https://cbybs-zc1.maill=
+ist-manage.in/click/1127b8852afa68c3/1127b8852aecdaad" style=3D"padding:0px=
+ 0px;background-color:#000000;width:217px;height:48px;font-size:12pt;direct=
+ion:ltr;font-family:Arial;color:#ffffff;cursor:pointer;text-decoration:none=
+;border-radius:108px;border:0px solid #ffffff;border-collapse:separate;disp=
+lay:table;mso-hide:all;text-align:center;" target=3D"_blank" zcurl_name=3D"=
+l_1">
+=09=09=09=09=09=09=09<font style=3D"color:#ffffff;display:table-cell;vertic=
+al-align:middle;">
+                     =09=09   REGISTER
+=09=09=09=09=09=09=09</font>
+                        </a>
+                    </td>
+                </tr>
+                </tbody></table>
+            </div>
+=09</div>
+=09</td></tr></tbody></table>
+</td></tr>
+<tr><td class=3D"txtsize" id=3D"elm_1701337721947" style=3D" mso-table-lspa=
+ce:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse:collap=
+se;" valign=3D"top">
+
+=09    =09<table bgcolor=3D"transparent" border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font-si=
+ze:12px;border:0px;padding:0px;width:100%;border-collapse:collapse; mso-tab=
+le-lspace:0pt; mso-table-rspace:0pt;word-break:break-word;background-color:=
+transparent;">
+=09    <tbody><tr>
+=09=09<td class=3D"txtsize" style=3D"border-collapse:collapse; mso-table-ls=
+pace:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-tabl=
+e-rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-top:none none=
+ none ;border-bottom:none none none;">
+            =09<div class=3D"zpelement-wrapper image" coupcmp id=3D"elm_170=
+1337721947" prodcmp style=3D";word-wrap:break-word;overflow:hidden;padding:=
+0px;background-color:transparent;">
+=09=09=09<div>
+=09=09        <table align=3D"left" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" class=3D"zpAlignPos" style=3D" mso-table-lspace:0pt; mso-table-rs=
+pace:0pt;font-size:12px;text-align:left;width:100%;padding:0px;border:0px;b=
+order-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;word-br=
+eak:break-word;width:100%;text-align:left;">
+            =09=09<tbody><tr><td class=3D"paddingcomp" style=3D"border-coll=
+apse:collapse; mso-table-lspace:0pt; font-size:12px;font-family:Arial, Helv=
+etica, sans-serif; mso-table-rspace:0pt;font-size:12px;border:0px;padding:7=
+px 15px;text-align:center;padding-top:0px;padding-bottom:0px;padding-right:=
+0px;padding-left:0px;">
+=09=09=09<a href=3D"https://cbybs-zc1.maillist-manage.in/click/1127b8852afa=
+68c3/1127b8852aecdaaf" style=3D"text-decoration:underline;border:0px;" targ=
+et=3D"_blank" zcurl_name=3D"l_2">
+=09=09=09<img align=3D"left" alt=3D"https://stratus.campaign-image.in/image=
+s/83238000219970092_1_1702287802291_mlds-banner.jpg" class=3D"zpImage" heig=
+ht=3D"auto" hspace=3D"0" size=3D"F" src=3D"https://stratus.campaign-image.i=
+n/images/83238000219970092_1_1702287802291_mlds-banner.jpg" style=3D"width:=
+600px;height:autopx;max-width:600px !important;border:0px;text-align:left;"=
+ vspace=3D"0" width=3D"600">
+=09=09=09</a>
+=09=09=09</td></tr>
+=09=09=09</tbody></table>
+=09=09</div>
+            </div>
+            </td></tr></tbody></table>
+</td></tr>
+<tr><td class=3D"txtsize" id=3D"elm_1669624519443" style=3D" mso-table-lspa=
+ce:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse:collap=
+se;" valign=3D"top">
+
+          <div class=3D"zpelement-wrapper" id=3D"elm_1669624519443" style=
+=3D";word-wrap:break-word;overflow:hidden;padding-right:0px;background-colo=
+r:#000000;">
+=09    =09<table bgcolor=3D"#000000" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" class=3D"zpAlignPos" style=3D" mso-table-lspace:0pt; mso-table-r=
+space:0pt;font-size:12px;padding:0px;border:0px;border-collapse:collapse; m=
+so-table-lspace:0pt; mso-table-rspace:0pt;word-break:break-word;-ms-text-si=
+ze-adjust: 100%;-webkit-text-size-adjust: 100%;" width=3D"100%">
+=09  =09
+            <tbody><tr><td class=3D"paddingcomp" style=3D"border-collapse:c=
+ollapse; mso-table-lspace:0pt; mso-table-rspace:0pt;border:0px;padding:7px =
+15px;font-size:12pt;font-family:Arial,Helvetica;line-height:19pt;border-top=
+:0px none ;   border-bottom:0px none ;padding-top:40px;padding-bottom:20px;=
+padding-right:50px;padding-left:50px;">
+             =09    =09=09<div componentbgcolor=3D"#000000" componentlinehe=
+ight=3D"19pt" componentpaddingbottom=3D"20px" componentpaddingleft=3D"50px"=
+ componentpaddingright=3D"50px" componentpaddingtop=3D"40px" style=3D"line-=
+height: 19pt; background-color: rgb(0, 0, 0);"><p style=3D"line-height:1.7;=
+font-family:Arial,verdana;font-size:12px; color:#000000;padding:0px;margin:=
+ 0;text-align: left; line-height: 19pt;"><font color=3D"#ffffff" face=3D"Ge=
+orgia, Times New Roman, Times, serif" style=3D"font-size: 20pt;"><b></b></f=
+ont></p><p style=3D"line-height:1.7;font-family:Arial,verdana;font-size:12p=
+x;padding:0px;margin: 0;color: rgb(255, 255, 255); line-height: 19pt; text-=
+align: left;"><font color=3D"#ffffff" style=3D"font-family: Arial, Helvetic=
+a, sans-serif; font-size: 15pt;"><b style>Machine Learning Developers Summi=
+t</b> 2024</font></p><p style=3D"line-height:1.7;font-family:Arial,verdana;=
+font-size:12px;padding:0px;margin: 0;color: rgb(255, 255, 255); line-height=
+: 19pt; text-align: left;"><font color=3D"#ffffff" style=3D"font-size: 10pt=
+; font-family: Arial, Helvetica, sans-serif;">February 1 to 2, 2024</font><=
+/p><p style=3D"line-height:1.7;font-family:Arial,verdana;font-size:12px;pad=
+ding:0px;margin: 0;color: rgb(255, 255, 255); line-height: 19pt; text-align=
+: left;"><font color=3D"#ffffff" style=3D"font-size: 10pt; font-family: Ari=
+al, Helvetica, sans-serif;">NIMHANS Convention Center, Bangalore, India.&nb=
+sp;</font></p><p style=3D"line-height:1.7;font-family:Arial,verdana;font-si=
+ze:12px;padding:0px;margin: 0;color: rgb(255, 255, 255); line-height: 19pt;=
+ text-align: left;"><br></p><p style=3D"font-family:Arial,verdana;font-size=
+:12px; color:#000000;padding:0px;margin: 0;line-height: 19pt; text-align: l=
+eft;"></p><p style=3D"line-height:1.7;font-family:Arial,verdana;font-size:1=
+2px;padding:0px;margin: 0;color: rgb(255, 255, 255); line-height: 19pt; tex=
+t-align: left;"><font color=3D"#000000" face=3D"Arial, Helvetica" style=3D"=
+font-size: 12pt;color:#000000;"></font></p><p style=3D"line-height:1.7;font=
+-family:Arial,verdana;font-size:12px;padding:0px;margin: 0;color: rgb(255, =
+255, 255); line-height: 19pt; text-align: left;"><font color=3D"#000000" fa=
+ce=3D"Arial, Helvetica" style=3D"font-size: 12pt;color:#000000;"><font colo=
+r=3D"#000000" face=3D"Arial, Helvetica" style=3D"font-size: 12pt;color:#000=
+000;"></font></font></p><h1 style=3D"margin: 0;padding: 0px;font-family:Ari=
+al, Helvetica, sans-serif; color:#000000;color:#000000; font-weight:normal;=
+font-family:Arial,verdana,Helvetica, sans-serif; color:#000000;font-size: 2=
+8px;"><font face=3D"Arial, Helvetica" style=3D"font-size: 12pt;"><font colo=
+r=3D"#ffffff" face=3D"Arial, Helvetica" style=3D"font-size: 12pt;"><b>THE B=
+IGGEST GENERATIVE AI CONFERENCE IN INDIA.&nbsp;</b></font></font></h1><h1 s=
+tyle=3D"margin: 0;padding: 0px;font-family:Arial, Helvetica, sans-serif; co=
+lor:#000000;color:#000000; font-weight:normal;font-family:Arial,verdana,Hel=
+vetica, sans-serif; color:#000000;font-size: 28px;"><font face=3D"Arial, He=
+lvetica" style><font color=3D"#ffffff" face=3D"Arial, Helvetica" style=3D"f=
+ont-size: 12pt;"><i style>6th Edition 1,500+Attendees 50+Speakers 400+Organ=
+izations</i></font></font></h1><div><font face=3D"Arial, Helvetica" style><=
+font color=3D"#ffffff" face=3D"Arial, Helvetica" style=3D"font-size: 12pt;"=
+><i style><br></i></font></font></div></div>
+=09=09=09</td></tr>
+=09=09</tbody></table>
+       =09  </div>
+</td></tr>
+<tr><td class=3D"txtsize" id=3D"elm_1702286086426" style=3D" mso-table-lspa=
+ce:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse:collap=
+se;" valign=3D"top">
+
+=09=09=09
+=09=09 =09       =20
+=09=09           =20
+=09=09 =20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=09<table bgcolor=3D"#000000" cellpadding=3D"0" cellspacing=3D"0" height=3D=
+"48" style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font-size:12px;bo=
+rder:0px;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0=
+pt;border:none;" width=3D"100%">
+        <tbody><tr><td class=3D"paddingcomp" style=3D"border-collapse:colla=
+pse; mso-table-lspace:0pt; font-size:12px;font-family:Arial, Helvetica, san=
+s-serif; mso-table-rspace:0pt;font-size:12px;border:0px;padding:7px 15px;bo=
+rder-top:none none none;border-bottom:none none none;padding-top:7px;paddin=
+g-bottom:27px;padding-right:50px;padding-left:50px;">
+        <div class=3D"zpelement-wrapper buttonElem" id=3D"elm_1702286086426=
+" style=3D"overflow:hidden;word-wrap:break-word;">
+=09    <div class=3D"zpAlignPos" style=3D"text-align:left;">
+                 <table align=3D"left" cellpadding=3D"0" cellspacing=3D"0" =
+style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font-size:12px;border:=
+none;padding:0px;border:0px;margin:0px;border-collapse:separate; mso-table-=
+lspace:0pt; mso-table-rspace:0pt;">
+                <tbody><tr>
+                   <td align=3D"left" class=3D"txtsize" style=3D"border-col=
+lapse:collapse; mso-table-lspace:0pt; font-size:12px; mso-table-rspace:0pt;=
+font-size:12px;border:0px;padding:0px;color:#000000;font-family:Arial;text-=
+align:left;border-radius:108px;text-align:left;cursor:pointer;">
+                         <!--[if mso]>
+=09=09=09=09=09          <v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:=
+vml" xmlns:w=3D"urn:schemas-microsoft-com:office:office" href=3D"https://cb=
+ybs-zc1.maillist-manage.in/click/1127b8852afa68c3/1127b8852aecdaaf" style=
+=3D"border-radius:108px;height:48px;v-text-anchor:middle;width:217px;" arcs=
+ize=3D"108%" strokecolor=3D"#ffffff" strokeweight =3D"0px" fillcolor=3D"#ff=
+ffff">
+=09=09=09=09=09          <v:stroke dashstyle=3D"solid" />
+=09=09=09=09=09            <w:anchorlock/>
+=09=09=09=09=09            <center style=3D"direction:ltr;color:#000000;fon=
+t-family:Arial;font-size:12pt;">REGISTER</center>
+=09=09=09=09=09          </v:roundrect>
+        =09=09=09=09<![endif]-->
+                        <a align=3D"center" href=3D"https://cbybs-zc1.maill=
+ist-manage.in/click/1127b8852afa68c3/1127b8852aecdab1" style=3D"padding:0px=
+ 0px;background-color:#ffffff;width:217px;height:48px;font-size:12pt;direct=
+ion:ltr;font-family:Arial;color:#000000;cursor:pointer;text-decoration:none=
+;border-radius:108px;border:0px solid #ffffff;border-collapse:separate;disp=
+lay:table;mso-hide:all;text-align:center;" target=3D"_blank" zcurl_name=3D"=
+l_3">
+=09=09=09=09=09=09=09<font style=3D"color:#000000;display:table-cell;vertic=
+al-align:middle;">
+                     =09=09   REGISTER
+=09=09=09=09=09=09=09</font>
+                        </a>
+                    </td>
+                </tr>
+                </tbody></table>
+            </div>
+=09</div>
+=09</td></tr></tbody></table>
+</td></tr>
+<tr><td class=3D"txtsize" id=3D"elm_1617083390487" style=3D" mso-table-lspa=
+ce:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse:collap=
+se;" valign=3D"top">
+
+          <div class=3D"zpelement-wrapper" id=3D"elm_1617083390487" style=
+=3D";word-wrap:break-word;overflow:hidden;padding-right:0px;background-colo=
+r:#fff465;">
+=09    =09<table bgcolor=3D"#fff465" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" class=3D"zpAlignPos" style=3D" mso-table-lspace:0pt; mso-table-r=
+space:0pt;font-size:12px;padding:0px;border:0px;border-collapse:collapse; m=
+so-table-lspace:0pt; mso-table-rspace:0pt;word-break:break-word;-ms-text-si=
+ze-adjust: 100%;-webkit-text-size-adjust: 100%;" width=3D"100%">
+=09  =09
+            <tbody><tr><td class=3D"paddingcomp" style=3D"border-collapse:c=
+ollapse; mso-table-lspace:0pt; mso-table-rspace:0pt;border:0px;padding:7px =
+15px;font-size:12pt;font-family:Arial,Helvetica;line-height:13pt;border-top=
+:0px none ;   border-bottom:0px none ;padding-top:7px;padding-bottom:7px;pa=
+dding-right:50px;padding-left:50px;">
+             =09    =09=09<div componentbgcolor=3D"#fff465" componentlinehe=
+ight=3D"13pt" componentpaddingbottom=3D"7px" componentpaddingleft=3D"50px" =
+componentpaddingright=3D"50px" componentpaddingtop=3D"7px" style=3D"backgro=
+und-color: rgb(255, 244, 101); line-height: 13pt;"><p align=3D"center" styl=
+e=3D"line-height:1.7;font-family:Arial,verdana;font-size:12px; color:#00000=
+0;padding:0px;margin: 0;text-align: center; line-height: 13pt;"><font color=
+=3D"#333333" style=3D"color: rgb(51, 51, 51); line-height: 13pt;"><font sty=
+le=3D"font-size: 11pt; line-height: 13pt;"><span style=3D"line-height: 13pt=
+;"></span></font></font></p><p align=3D"left" style=3D"line-height:1.7;font=
+-family:Arial,verdana;font-size:12px; color:#000000;padding:0px;margin: 0;t=
+ext-align: left; line-height: 13pt;"><b style=3D"font-family: Arial, Helvet=
+ica; font-size: 26px;"><font style=3D"font-size: 15pt; line-height: 13pt;">=
+<br></font></b></p><p align=3D"left" style=3D"line-height:1.7;font-family:A=
+rial,verdana;font-size:12px; color:#000000;padding:0px;margin: 0;text-align=
+: left; line-height: 13pt;"><b style=3D"font-family: Arial, Helvetica; font=
+-size: 26px;"><font style=3D"font-size: 15pt; line-height: 13pt;">CDO</font=
+></b><span style=3D"font-family: Arial, Helvetica; font-size: 26px; line-he=
+ight: 13pt;"> </span><b style=3D"font-family: Arial, Helvetica; font-size: =
+15pt;">Vision New York</b><br></p><p style=3D"font-family:Arial,verdana;fon=
+t-size:12px; color:#000000;padding:0px;margin: 0;line-height: 13pt;"></p><p=
+ style=3D"font-family:Arial,verdana;font-size:12px; color:#000000;padding:0=
+px;margin: 0;line-height: 13pt;"></p><p style=3D"line-height:1.7;font-famil=
+y:Arial,verdana;font-size:12px; color:#000000;padding:0px;margin: 0;text-al=
+ign: left; line-height: 13pt;"><font color=3D"#000000" face=3D"Arial, Helve=
+tica" style=3D"color: rgb(0, 0, 0); font-size: 10pt; line-height: 13pt;"><b=
+r></font></p><p style=3D"line-height:1.7;font-family:Arial,verdana;font-siz=
+e:12px; color:#000000;padding:0px;margin: 0;text-align: left; line-height: =
+13pt;"><font color=3D"#000000" face=3D"Arial, Helvetica" style=3D"color: rg=
+b(0, 0, 0); line-height: 13pt;"></font></p><h2 style=3D"margin: 0;padding: =
+0px;font-family:Arial, Helvetica, sans-serif; color:#000000;color:#000000; =
+font-weight:normal;font-family:Arial,verdana,Helvetica, sans-serif; color:#=
+000000;font-size: 26px;"><font color=3D"#000000" face=3D"Arial, Helvetica" =
+style=3D"color: rgb(0, 0, 0); line-height: 13pt;"><font style=3D"font-size:=
+ 10pt; line-height: 13pt;">Connect</font><span style=3D"font-size: 10pt; li=
+ne-height: 13pt;"> with New York's 30 Top CDOs at an exclusive networking e=
+vent presented by AIM. Engage in stimulating dialogues over an intimate din=
+ner in the heart of the city, exchanging insights on critical business issu=
+es.</span></font></h2><div><font color=3D"#000000" face=3D"Arial, Helvetica=
+" style=3D"color: rgb(0, 0, 0); line-height: 13pt;"><span style=3D"font-siz=
+e: 10pt; line-height: 13pt;"><br></span></font></div><div><font color=3D"#0=
+00000" face=3D"Arial, Helvetica" style=3D"color: rgb(0, 0, 0); line-height:=
+ 13pt;"><span style=3D"line-height: 13pt;"><p style=3D"font-family:Arial,ve=
+rdana;font-size:12px; color:#000000;padding:0px;margin: 0;line-height: 13pt=
+; text-align: left;"><font color=3D"#000000" face=3D"Arial, Helvetica" styl=
+e=3D"color: rgb(0, 0, 0); font-size: 10pt;"><b style><i style>Date: March 2=
+2, 2024</i></b></font></p></span></font></div><p style=3D"margin: 0;padding=
+: 0px;font-family:Arial, Helvetica, sans-serif; color:#000000;line-height:1=
+.7;font-family:Arial,verdana;font-size:12px;padding:0px;"></p><p style=3D"l=
+ine-height:1.7;font-family:Arial,verdana;font-size:12px; color:#000000;padd=
+ing:0px;margin: 0;text-align: left; line-height: 13pt;"><br></p><p style=3D=
+"font-family:Arial,verdana;font-size:12px; color:#000000;padding:0px;margin=
+: 0;line-height: 13pt;"></p><p style=3D"font-family:Arial,verdana;font-size=
+:12px; color:#000000;padding:0px;margin: 0;line-height: 13pt;"></p></div>
+=09=09=09</td></tr>
+=09=09</tbody></table>
+       =09  </div>
+</td></tr>
+<tr><td class=3D"txtsize" id=3D"elm_1701334132467" style=3D" mso-table-lspa=
+ce:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse:collap=
+se;" valign=3D"top">
+
+=09=09=09
+=09=09 =09       =20
+=09=09           =20
+=09=09 =20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=09<table bgcolor=3D"#fff465" cellpadding=3D"0" cellspacing=3D"0" height=3D=
+"48" style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font-size:12px;bo=
+rder:0px;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0=
+pt;border:none;" width=3D"100%">
+        <tbody><tr><td class=3D"paddingcomp" style=3D"border-collapse:colla=
+pse; mso-table-lspace:0pt; font-size:12px;font-family:Arial, Helvetica, san=
+s-serif; mso-table-rspace:0pt;font-size:12px;border:0px;padding:7px 15px;bo=
+rder-top:none none none;border-bottom:none none none;padding-top:7px;paddin=
+g-bottom:27px;padding-right:50px;padding-left:50px;">
+        <div class=3D"zpelement-wrapper buttonElem" id=3D"elm_1701334132467=
+" style=3D"overflow:hidden;word-wrap:break-word;">
+=09    <div class=3D"zpAlignPos" style=3D"text-align:left;">
+                 <table align=3D"left" cellpadding=3D"0" cellspacing=3D"0" =
+style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font-size:12px;border:=
+none;padding:0px;border:0px;margin:0px;border-collapse:separate; mso-table-=
+lspace:0pt; mso-table-rspace:0pt;">
+                <tbody><tr>
+                   <td align=3D"left" class=3D"txtsize" style=3D"border-col=
+lapse:collapse; mso-table-lspace:0pt; font-size:12px; mso-table-rspace:0pt;=
+font-size:12px;border:0px;padding:0px;color:#ffffff;font-family:Arial;text-=
+align:left;border-radius:108px;text-align:left;cursor:pointer;">
+                         <!--[if mso]>
+=09=09=09=09=09          <v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:=
+vml" xmlns:w=3D"urn:schemas-microsoft-com:office:office" href=3D"https://cb=
+ybs-zc1.maillist-manage.in/click/1127b8852afa68c3/1127b8852aecdab3" style=
+=3D"border-radius:108px;height:48px;v-text-anchor:middle;width:217px;" arcs=
+ize=3D"108%" strokecolor=3D"#ffffff" strokeweight =3D"0px" fillcolor=3D"#00=
+0000">
+=09=09=09=09=09          <v:stroke dashstyle=3D"solid" />
+=09=09=09=09=09            <w:anchorlock/>
+=09=09=09=09=09            <center style=3D"direction:ltr;color:#ffffff;fon=
+t-family:Arial;font-size:12pt;">Partner with us</center>
+=09=09=09=09=09          </v:roundrect>
+        =09=09=09=09<![endif]-->
+                        <a align=3D"center" href=3D"https://cbybs-zc1.maill=
+ist-manage.in/click/1127b8852afa68c3/1127b8852aecdab3" style=3D"padding:0px=
+ 0px;background-color:#000000;width:217px;height:48px;font-size:12pt;direct=
+ion:ltr;font-family:Arial;color:#ffffff;cursor:pointer;text-decoration:none=
+;border-radius:108px;border:0px solid #ffffff;border-collapse:separate;disp=
+lay:table;mso-hide:all;text-align:center;" target=3D"_blank" zcurl_name=3D"=
+l_4">
+=09=09=09=09=09=09=09<font style=3D"color:#ffffff;display:table-cell;vertic=
+al-align:middle;">
+                     =09=09   Partner with us
+=09=09=09=09=09=09=09</font>
+                        </a>
+                    </td>
+                </tr>
+                </tbody></table>
+            </div>
+=09</div>
+=09</td></tr></tbody></table>
+</td></tr>
+<tr><td class=3D"txtsize" id=3D"elm_1702285023297" style=3D" mso-table-lspa=
+ce:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse:collap=
+se;" valign=3D"top">
+
+=09    =09<table bgcolor=3D"transparent" border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font-si=
+ze:12px;border:0px;padding:0px;width:100%;border-collapse:collapse; mso-tab=
+le-lspace:0pt; mso-table-rspace:0pt;word-break:break-word;background-color:=
+transparent;">
+=09    <tbody><tr>
+=09=09<td class=3D"txtsize" style=3D"border-collapse:collapse; mso-table-ls=
+pace:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-tabl=
+e-rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-top:none none=
+ none ;border-bottom:none none none;">
+            =09<div class=3D"zpelement-wrapper image" coupcmp id=3D"elm_170=
+2285023297" prodcmp style=3D";word-wrap:break-word;overflow:hidden;padding:=
+0px;background-color:transparent;">
+=09=09=09<div>
+=09=09        <table align=3D"center" border=3D"0" cellpadding=3D"0" cellsp=
+acing=3D"0" class=3D"zpAlignPos" style=3D" mso-table-lspace:0pt; mso-table-=
+rspace:0pt;font-size:12px;text-align:left;width:100%;padding:0px;border:0px=
+;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;word-=
+break:break-word;width:100%;text-align:center;">
+            =09=09<tbody><tr><td class=3D"paddingcomp" style=3D"border-coll=
+apse:collapse; mso-table-lspace:0pt; font-size:12px;font-family:Arial, Helv=
+etica, sans-serif; mso-table-rspace:0pt;font-size:12px;border:0px;padding:7=
+px 15px;text-align:center;padding-top:0px;padding-bottom:0px;padding-right:=
+0px;padding-left:0px;">
+=09=09=09<a href=3D"https://cbybs-zc1.maillist-manage.in/click/1127b8852afa=
+68c3/1127b8852aecdab5" style=3D"text-decoration:underline;border:0px;" targ=
+et=3D"_blank" zcurl_name=3D"l_5">
+=09=09=09<img align=3D"center" alt=3D"https://stratus.campaign-image.in/ima=
+ges/83238000023970173_zc_v1_1701337753903_rising-banner-final.gif" class=3D=
+"zpImage" height=3D"auto" hspace=3D"0" size=3D"F" src=3D"https://stratus.ca=
+mpaign-image.in/images/83238000219970092_2_1702287802970_rising-banner-fina=
+l.gif" style=3D"width:600px;height:autopx;max-width:600px !important;border=
+:0px;text-align:center;" vspace=3D"0" width=3D"600">
+=09=09=09</a>
+=09=09=09</td></tr>
+=09=09=09</tbody></table>
+=09=09</div>
+            </div>
+            </td></tr></tbody></table>
+</td></tr>
+<tr><td class=3D"txtsize" id=3D"elm_1614668472422" style=3D" mso-table-lspa=
+ce:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse:collap=
+se;" valign=3D"top">
+
+          <div class=3D"zpelement-wrapper" id=3D"elm_1614668472422" style=
+=3D";word-wrap:break-word;overflow:hidden;padding-right:0px;background-colo=
+r:#ffffff;">
+=09    =09<table bgcolor=3D"#ffffff" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" class=3D"zpAlignPos" style=3D" mso-table-lspace:0pt; mso-table-r=
+space:0pt;font-size:12px;padding:0px;border:0px;border-collapse:collapse; m=
+so-table-lspace:0pt; mso-table-rspace:0pt;word-break:break-word;-ms-text-si=
+ze-adjust: 100%;-webkit-text-size-adjust: 100%;" width=3D"100%">
+=09  =09
+            <tbody><tr><td class=3D"paddingcomp" style=3D"border-collapse:c=
+ollapse; mso-table-lspace:0pt; mso-table-rspace:0pt;border:0px;padding:7px =
+15px;font-size:12pt;font-family:Arial,Helvetica;line-height:25pt;border-top=
+:0px none ;   border-bottom:0px none ;padding-top:40px;padding-bottom:7px;p=
+adding-right:50px;padding-left:50px;">
+             =09    =09=09<div componentbgcolor=3D"#ffffff" componentlinehe=
+ight=3D"25pt" componentpaddingbottom=3D"7px" componentpaddingleft=3D"50px" =
+componentpaddingright=3D"50px" componentpaddingtop=3D"40px" style=3D"backgr=
+ound-color: rgb(255, 255, 255); line-height: 25pt;"><p align=3D"center" sty=
+le=3D"line-height:1.7;font-family:Arial,verdana;font-size:12px; color:#0000=
+00;padding:0px;margin: 0;text-align: center; line-height: 25pt;"><font face=
+=3D"Arial, Helvetica" style=3D"line-height: 25pt;"><font style=3D"font-size=
+: 24pt; line-height: 25pt;"><b style><span style=3D"line-height: 25pt;"><fo=
+nt color=3D"#252525" style=3D"line-height: 25pt;"><span style=3D"line-heigh=
+t: 25pt;"></span></font></span></b></font></font></p><p style=3D"line-heigh=
+t:1.7;font-family:Arial,verdana;font-size:12px; color:#000000;padding:0px;m=
+argin: 0;text-align: left; line-height: 25pt;"><font face=3D"Arial, Helveti=
+ca" style=3D"line-height: 25pt;"><font style=3D"font-size: 24pt; line-heigh=
+t: 25pt;"><b style><font color=3D"#252525" style=3D"line-height: 25pt;"><fo=
+nt color=3D"#333333" face=3D"Arial, Helvetica" style=3D"font-size: 12pt; co=
+lor: rgb(51, 51, 51); line-height: 25pt;"></font></font></b></font></font><=
+/p><p style=3D"line-height:1.7;font-family:Arial,verdana;font-size:12px; co=
+lor:#000000;padding:0px;margin: 0;text-align: left; line-height: 25pt;"><fo=
+nt face=3D"Arial, Helvetica" style=3D"line-height: 25pt;"><font style=3D"fo=
+nt-size: 24pt; line-height: 25pt;"><b style><font color=3D"#252525" style=
+=3D"line-height: 25pt;"><font color=3D"#333333" face=3D"Arial, Helvetica" s=
+tyle=3D"font-size: 12pt; color: rgb(51, 51, 51); line-height: 25pt;"><font =
+color=3D"#333333" face=3D"Arial, Helvetica" style=3D"font-size: 12pt; color=
+: rgb(51, 51, 51); line-height: 25pt;"></font></font></font></b></font></fo=
+nt></p><h3 style=3D"margin: 0;padding: 0px;font-family:Arial, Helvetica, sa=
+ns-serif; color:#000000;color:#000000; font-weight:normal;font-family:Arial=
+,verdana,Helvetica, sans-serif; color:#000000;font-size: 24px;"><span style=
+=3D"color: rgb(68, 67, 67);"><b style><font face=3D"Arial, Helvetica" style=
+><p style=3D"font-family:Arial,verdana;font-size:12px; color:#000000;paddin=
+g:0px;margin: 0;line-height: 19pt; text-align: left;"><font style=3D"font-s=
+ize: 15pt;">RISING 2024 | India's Biggest Summit on Diversity and Inclusion=
+ in Technology</font></p></font></b></span></h3><p style=3D"font-family:Ari=
+al,verdana;font-size:12px; color:#000000;padding:0px;margin: 0;line-height:=
+ 25pt;"></p><font face=3D"Arial, Helvetica" style=3D"line-height: 25pt;"><f=
+ont style=3D"font-size: 24pt; line-height: 25pt;"><b style><font color=3D"#=
+252525" style=3D"line-height: 25pt;">
+
+</font>
+
+</b></font></font><p style=3D"font-family:Arial,verdana;font-size:12px; col=
+or:#000000;padding:0px;margin: 0;line-height: 25pt;"></p></div>
+=09=09=09</td></tr>
+=09=09</tbody></table>
+       =09  </div>
+</td></tr>
+<tr><td class=3D"txtsize" id=3D"elm_1614669206522" style=3D" mso-table-lspa=
+ce:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse:collap=
+se;" valign=3D"top">
+
+          <div class=3D"zpelement-wrapper" id=3D"elm_1614669206522" style=
+=3D";word-wrap:break-word;overflow:hidden;padding-right:0px;background-colo=
+r:#ffffff;">
+=09    =09<table bgcolor=3D"#ffffff" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" class=3D"zpAlignPos" style=3D" mso-table-lspace:0pt; mso-table-r=
+space:0pt;font-size:12px;padding:0px;border:0px;border-collapse:collapse; m=
+so-table-lspace:0pt; mso-table-rspace:0pt;word-break:break-word;-ms-text-si=
+ze-adjust: 100%;-webkit-text-size-adjust: 100%;" width=3D"100%">
+=09  =09
+            <tbody><tr><td class=3D"paddingcomp" style=3D"border-collapse:c=
+ollapse; mso-table-lspace:0pt; mso-table-rspace:0pt;border:0px;padding:7px =
+15px;font-size:12pt;font-family:Arial,Helvetica;line-height:15pt;border-top=
+:0px none ;   border-bottom:0px none ;padding-top:7px;padding-bottom:7px;pa=
+dding-right:50px;padding-left:50px;">
+             =09    =09=09<div componentbgcolor=3D"#ffffff" componentlinehe=
+ight=3D"15pt" componentpaddingbottom=3D"7px" componentpaddingleft=3D"50px" =
+componentpaddingright=3D"50px" componentpaddingtop=3D"7px" style=3D"backgro=
+und-color: rgb(255, 255, 255); line-height: 15pt;"><p align=3D"center" styl=
+e=3D"line-height:1.7;font-family:Arial,verdana;font-size:12px; color:#00000=
+0;padding:0px;margin: 0;text-align: center; line-height: 15pt; color: rgb(0=
+, 0, 0); font-family: Georgia, &quot;Times New Roman&quot;, Times, serif; f=
+ont-size: 12pt;"><font style=3D"line-height: 15pt;"><span style=3D"line-hei=
+ght: 15pt;"><span style=3D"line-height: 15pt;"></span></span></font></p><h3=
+ style=3D"font-family:Arial,verdana,Helvetica, sans-serif;font-size: 24px; =
+font-weight:normal;padding: 0px;margin: 0;color: rgb(0, 0, 0); font-family:=
+ Georgia, &quot;Times New Roman&quot;, Times, serif; font-size: 12pt;"><fon=
+t color=3D"#444343" face=3D"Georgia, Times New Roman, Times, serif" style=
+=3D"line-height: 15pt; font-size: 12pt;"><span style=3D"line-height: 15pt;"=
+><span><i></i></span></span></font></h3><p style=3D"line-height:1.7;font-si=
+ze:12px; color:#000000;padding:0px;margin: 0;font-family: Georgia, &quot;Ti=
+mes New Roman&quot;, Times, serif; line-height: 19pt; text-align: left; col=
+or: rgb(0, 0, 0); font-size: 12pt;"><font color=3D"#000000" face=3D"Georgia=
+, Times New Roman, Times, serif" style=3D"color: rgb(0, 0, 0);"></font></p>=
+<p style=3D"line-height:1.7;font-size:12px; color:#000000;padding:0px;margi=
+n: 0;font-family: Georgia, &quot;Times New Roman&quot;, Times, serif; line-=
+height: 19pt; text-align: left; color: rgb(0, 0, 0); font-size: 12pt;"><fon=
+t color=3D"#000000" face=3D"Georgia, Times New Roman, Times, serif" style=
+=3D"color: rgb(0, 0, 0);"><font color=3D"#000000" face=3D"Arial, Helvetica"=
+ style=3D"color: rgb(0, 0, 0);"><font style=3D"font-size: 10pt;"></font></f=
+ont></font></p><p style=3D"font-family:Arial,verdana;font-size:12px; color:=
+#000000;padding:0px;margin: 0;line-height: 19pt; text-align: left; color: r=
+gb(0, 0, 0); font-family: Georgia, &quot;Times New Roman&quot;, Times, seri=
+f; font-size: 12pt;"><font color=3D"#000000" face=3D"Georgia, Times New Rom=
+an, Times, serif" style=3D"color: rgb(0, 0, 0); font-size: 12pt;"></font></=
+p><span style=3D"color: rgb(0, 0, 0);"><font style><p style=3D"line-height:=
+1.7;font-size:12px; color:#000000;padding:0px;margin: 0;font-family: Georgi=
+a, &quot;Times New Roman&quot;, Times, serif; line-height: 15pt; text-align=
+: left;"><font color=3D"#000000" face=3D"Arial, Helvetica" style=3D"color: =
+rgb(0, 0, 0); font-size: 10pt;">We're excited to announce the 6th edition o=
+f Rising, India's biggest summit on Diversity and Inclusion in Technology, =
+hosted by AIM Media House. This year, Rising 2024 is scheduled for April 4-=
+5 in Bangalore, promising an enlightening and transformative experience.</f=
+ont></p><p style=3D"line-height:1.7;font-size:12px; color:#000000;padding:0=
+px;margin: 0;font-family: Georgia, &quot;Times New Roman&quot;, Times, seri=
+f; line-height: 15pt; text-align: left;"><font color=3D"#000000" face=3D"Ar=
+ial, Helvetica" style=3D"color: rgb(0, 0, 0); font-size: 10pt;"><br></font>=
+</p><p style=3D"line-height:1.7;font-size:12px; color:#000000;padding:0px;m=
+argin: 0;font-family: Georgia, &quot;Times New Roman&quot;, Times, serif; l=
+ine-height: 15pt; text-align: left;"><font color=3D"#000000" face=3D"Arial,=
+ Helvetica" style=3D"color: rgb(0, 0, 0); font-size: 10pt;">With over 1,000=
+ in-person attendees and 50+ renowned speakers, Rising 2024 offers a platfo=
+rm to challenge the norms and redefine diversity in tech. Our agenda includ=
+es engaging tracks on innovative inclusivity, future-ready skills, tech for=
+ social good, and mental health in the tech sector.</font></p><p style=3D"l=
+ine-height:1.7;font-size:12px; color:#000000;padding:0px;margin: 0;font-fam=
+ily: Georgia, &quot;Times New Roman&quot;, Times, serif; font-size: 12pt; l=
+ine-height: 15pt; text-align: left;"><font color=3D"#000000" face=3D"Arial,=
+ Helvetica" style=3D"color: rgb(0, 0, 0);"><br></font></p><p style=3D"font-=
+family:Arial,verdana;font-size:12px; color:#000000;padding:0px;margin: 0;li=
+ne-height: 15pt; text-align: left;"><font style=3D"font-size: 10pt;"><font =
+face=3D"Arial, Helvetica" style><b>When</b>: </font><span style=3D"font-fam=
+ily: Arial, Helvetica;">April 4 and 5th 2024</span></font></p><p style=3D"f=
+ont-family:Arial,verdana;font-size:12px; color:#000000;padding:0px;margin: =
+0;line-height: 15pt; text-align: left;"><span style=3D"font-family: Arial, =
+Helvetica;"><font style=3D"font-size: 10pt;"><b>Where</b>: Bangalore</font>=
+</span></p><p style=3D"font-family:Arial,verdana;font-size:12px; color:#000=
+000;padding:0px;margin: 0;line-height: 15pt; text-align: left;"><span style=
+=3D"font-family: Arial, Helvetica;"><font style=3D"font-size: 10pt;"><br></=
+font></span></p></font></span><font style=3D"line-height: 15pt; color: rgb(=
+0, 0, 0); font-family: Georgia, &quot;Times New Roman&quot;, Times, serif; =
+font-size: 12pt;"><span style=3D"color: rgb(77, 77, 77); font-family: Arial=
+, Helvetica; font-size: 12pt; line-height: 15pt;"></span></font><p style=3D=
+"font-family:Arial,verdana;font-size:12px; color:#000000;padding:0px;margin=
+: 0;line-height: 15pt;"></p></div>
+=09=09=09</td></tr>
+=09=09</tbody></table>
+       =09  </div>
+</td></tr>
+<tr><td class=3D"txtsize" id=3D"elm_1614669306336" style=3D" mso-table-lspa=
+ce:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse:collap=
+se;" valign=3D"top">
+
+=09=09=09
+=09=09 =09       =20
+=09=09           =20
+=09=09 =20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=09<table bgcolor=3D"#ffffff" cellpadding=3D"0" cellspacing=3D"0" height=3D=
+"48" style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font-size:12px;bo=
+rder:0px;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0=
+pt;border:none;" width=3D"100%">
+        <tbody><tr><td class=3D"paddingcomp" style=3D"border-collapse:colla=
+pse; mso-table-lspace:0pt; font-size:12px;font-family:Arial, Helvetica, san=
+s-serif; mso-table-rspace:0pt;font-size:12px;border:0px;padding:7px 15px;bo=
+rder-top:none none none;border-bottom:none none none;padding-top:7px;paddin=
+g-bottom:27px;padding-right:50px;padding-left:50px;">
+        <div class=3D"zpelement-wrapper buttonElem" id=3D"elm_1614669306336=
+" style=3D"overflow:hidden;word-wrap:break-word;">
+=09    <div class=3D"zpAlignPos" style=3D"text-align:left;">
+                 <table align=3D"left" cellpadding=3D"0" cellspacing=3D"0" =
+style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font-size:12px;border:=
+none;padding:0px;border:0px;margin:0px;border-collapse:separate; mso-table-=
+lspace:0pt; mso-table-rspace:0pt;">
+                <tbody><tr>
+                   <td align=3D"left" class=3D"txtsize" style=3D"border-col=
+lapse:collapse; mso-table-lspace:0pt; font-size:12px; mso-table-rspace:0pt;=
+font-size:12px;border:0px;padding:0px;color:#ffffff;font-family:Arial;text-=
+align:left;border-radius:108px;text-align:left;cursor:pointer;">
+                         <!--[if mso]>
+=09=09=09=09=09          <v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:=
+vml" xmlns:w=3D"urn:schemas-microsoft-com:office:office" href=3D"https://cb=
+ybs-zc1.maillist-manage.in/click/1127b8852afa68c3/1127b8852aecdab5" style=
+=3D"border-radius:108px;height:48px;v-text-anchor:middle;width:217px;" arcs=
+ize=3D"108%" strokecolor=3D"#ffffff" strokeweight =3D"0px" fillcolor=3D"#00=
+0000">
+=09=09=09=09=09          <v:stroke dashstyle=3D"solid" />
+=09=09=09=09=09            <w:anchorlock/>
+=09=09=09=09=09            <center style=3D"direction:ltr;color:#ffffff;fon=
+t-family:Arial;font-size:12pt;">More Details</center>
+=09=09=09=09=09          </v:roundrect>
+        =09=09=09=09<![endif]-->
+                        <a align=3D"center" href=3D"https://cbybs-zc1.maill=
+ist-manage.in/click/1127b8852afa68c3/1127b8852aecdab7" style=3D"padding:0px=
+ 0px;background-color:#000000;width:217px;height:48px;font-size:12pt;direct=
+ion:ltr;font-family:Arial;color:#ffffff;cursor:pointer;text-decoration:none=
+;border-radius:108px;border:0px solid #ffffff;border-collapse:separate;disp=
+lay:table;mso-hide:all;text-align:center;" target=3D"_blank" zcurl_name=3D"=
+l_6">
+=09=09=09=09=09=09=09<font style=3D"color:#ffffff;display:table-cell;vertic=
+al-align:middle;">
+                     =09=09   More Details
+=09=09=09=09=09=09=09</font>
+                        </a>
+                    </td>
+                </tr>
+                </tbody></table>
+            </div>
+=09</div>
+=09</td></tr></tbody></table>
+</td></tr>
+<tr><td class=3D"txtsize" id=3D"elm_1702286368445" style=3D" mso-table-lspa=
+ce:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse:collap=
+se;" valign=3D"top">
+
+          <div class=3D"zpelement-wrapper" id=3D"elm_1702286368445" style=
+=3D";word-wrap:break-word;overflow:hidden;padding-right:0px;background-colo=
+r:#ffb3b0;">
+=09    =09<table bgcolor=3D"#ffb3b0" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" class=3D"zpAlignPos" style=3D" mso-table-lspace:0pt; mso-table-r=
+space:0pt;font-size:12px;padding:0px;border:0px;border-collapse:collapse; m=
+so-table-lspace:0pt; mso-table-rspace:0pt;word-break:break-word;-ms-text-si=
+ze-adjust: 100%;-webkit-text-size-adjust: 100%;" width=3D"100%">
+=09  =09
+            <tbody><tr><td class=3D"paddingcomp" style=3D"border-collapse:c=
+ollapse; mso-table-lspace:0pt; mso-table-rspace:0pt;border:0px;padding:7px =
+15px;font-size:12pt;font-family:Arial,Helvetica;line-height:13pt;border-top=
+:0px none ;   border-bottom:0px none ;padding-top:7px;padding-bottom:7px;pa=
+dding-right:50px;padding-left:50px;">
+             =09    =09=09<div componentbgcolor=3D"#ffb3b0" componentlinehe=
+ight=3D"13pt" componentpaddingbottom=3D"7px" componentpaddingleft=3D"50px" =
+componentpaddingright=3D"50px" componentpaddingtop=3D"7px" style=3D"backgro=
+und-color: rgb(255, 179, 176); line-height: 13pt;"><p align=3D"center" styl=
+e=3D"line-height:1.7;font-family:Arial,verdana;font-size:12px; color:#00000=
+0;padding:0px;margin: 0;text-align: center; line-height: 13pt;"><font color=
+=3D"#333333" style=3D"color: rgb(51, 51, 51); line-height: 13pt;"><font sty=
+le=3D"font-size: 11pt; line-height: 13pt;"><span style=3D"line-height: 13pt=
+;"></span></font></font></p><p align=3D"left" style=3D"line-height:1.7;font=
+-family:Arial,verdana;font-size:12px; color:#000000;padding:0px;margin: 0;t=
+ext-align: left; line-height: 13pt;"><b style=3D"font-family: Arial, Helvet=
+ica; font-size: 26px;"><font style=3D"font-size: 15pt; line-height: 13pt;">=
+<br></font></b></p><p align=3D"left" style=3D"line-height:1.7;font-family:A=
+rial,verdana;font-size:12px; color:#000000;padding:0px;margin: 0;text-align=
+: left; line-height: 13pt;"><b style=3D"font-family: Arial, Helvetica; font=
+-size: 26px;"><font style=3D"font-size: 15pt; line-height: 13pt;">CDO</font=
+></b><span style=3D"font-family: Arial, Helvetica; font-size: 26px; line-he=
+ight: 13pt;"> </span><b style=3D"font-family: Arial, Helvetica; font-size: =
+15pt;">Vision San Francisco</b><br></p><p style=3D"font-family:Arial,verdan=
+a;font-size:12px; color:#000000;padding:0px;margin: 0;line-height: 13pt;"><=
+/p><p style=3D"font-family:Arial,verdana;font-size:12px; color:#000000;padd=
+ing:0px;margin: 0;line-height: 13pt;"></p><p style=3D"line-height:1.7;font-=
+family:Arial,verdana;font-size:12px; color:#000000;padding:0px;margin: 0;te=
+xt-align: left; line-height: 13pt;"><font color=3D"#000000" face=3D"Arial, =
+Helvetica" style=3D"color: rgb(0, 0, 0); font-size: 10pt; line-height: 13pt=
+;"><br></font></p><p style=3D"line-height:1.7;font-family:Arial,verdana;fon=
+t-size:12px; color:#000000;padding:0px;margin: 0;text-align: left; line-hei=
+ght: 13pt;"><font color=3D"#000000" face=3D"Arial, Helvetica" style=3D"colo=
+r: rgb(0, 0, 0); line-height: 13pt;"></font></p><h2 style=3D"margin: 0;padd=
+ing: 0px;font-family:Arial, Helvetica, sans-serif; color:#000000;color:#000=
+000; font-weight:normal;font-family:Arial,verdana,Helvetica, sans-serif; co=
+lor:#000000;font-size: 26px;"><font color=3D"#000000" face=3D"Arial, Helvet=
+ica" style=3D"color: rgb(0, 0, 0); line-height: 13pt;"><font style=3D"font-=
+size: 10pt; line-height: 13pt;">Connect</font><span style=3D"font-size: 10p=
+t; line-height: 13pt;"> with SFO Bay Area's 30 Top CDOs at an exclusive net=
+working event presented by AIM. Engage in stimulating dialogues over an int=
+imate dinner in the heart of the city, exchanging insights on critical busi=
+ness issues.</span></font></h2><div><font color=3D"#000000" face=3D"Arial, =
+Helvetica" style=3D"color: rgb(0, 0, 0); line-height: 13pt;"><span style=3D=
+"font-size: 10pt; line-height: 13pt;"><br></span></font></div><div><font co=
+lor=3D"#000000" face=3D"Arial, Helvetica" style=3D"color: rgb(0, 0, 0); lin=
+e-height: 13pt;"><span style=3D"line-height: 13pt;"><p style=3D"font-family=
+:Arial,verdana;font-size:12px; color:#000000;padding:0px;margin: 0;line-hei=
+ght: 13pt; text-align: left;"><font color=3D"#000000" face=3D"Arial, Helvet=
+ica" style=3D"color: rgb(0, 0, 0); font-size: 10pt;"><b style><i style>Date=
+: April 19, 2024</i></b></font></p></span></font></div><p style=3D"margin: =
+0;padding: 0px;font-family:Arial, Helvetica, sans-serif; color:#000000;line=
+-height:1.7;font-family:Arial,verdana;font-size:12px;padding:0px;"></p><p s=
+tyle=3D"line-height:1.7;font-family:Arial,verdana;font-size:12px; color:#00=
+0000;padding:0px;margin: 0;text-align: left; line-height: 13pt;"><br></p><p=
+ style=3D"font-family:Arial,verdana;font-size:12px; color:#000000;padding:0=
+px;margin: 0;line-height: 13pt;"></p><p style=3D"font-family:Arial,verdana;=
+font-size:12px; color:#000000;padding:0px;margin: 0;line-height: 13pt;"></p=
+></div>
+=09=09=09</td></tr>
+=09=09</tbody></table>
+       =09  </div>
+</td></tr>
+<tr><td class=3D"txtsize" id=3D"elm_1702286407322" style=3D" mso-table-lspa=
+ce:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse:collap=
+se;" valign=3D"top">
+
+=09=09=09
+=09=09 =09       =20
+=09=09           =20
+=09=09 =20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=09<table bgcolor=3D"#ffb3b0" cellpadding=3D"0" cellspacing=3D"0" height=3D=
+"48" style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font-size:12px;bo=
+rder:0px;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0=
+pt;border:none;" width=3D"100%">
+        <tbody><tr><td class=3D"paddingcomp" style=3D"border-collapse:colla=
+pse; mso-table-lspace:0pt; font-size:12px;font-family:Arial, Helvetica, san=
+s-serif; mso-table-rspace:0pt;font-size:12px;border:0px;padding:7px 15px;bo=
+rder-top:none none none;border-bottom:none none none;padding-top:7px;paddin=
+g-bottom:27px;padding-right:50px;padding-left:50px;">
+        <div class=3D"zpelement-wrapper buttonElem" id=3D"elm_1702286407322=
+" style=3D"overflow:hidden;word-wrap:break-word;">
+=09    <div class=3D"zpAlignPos" style=3D"text-align:left;">
+                 <table align=3D"left" cellpadding=3D"0" cellspacing=3D"0" =
+style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font-size:12px;border:=
+none;padding:0px;border:0px;margin:0px;border-collapse:separate; mso-table-=
+lspace:0pt; mso-table-rspace:0pt;">
+                <tbody><tr>
+                   <td align=3D"left" class=3D"txtsize" style=3D"border-col=
+lapse:collapse; mso-table-lspace:0pt; font-size:12px; mso-table-rspace:0pt;=
+font-size:12px;border:0px;padding:0px;color:#ffffff;font-family:Arial;text-=
+align:left;border-radius:108px;text-align:left;cursor:pointer;">
+                         <!--[if mso]>
+=09=09=09=09=09          <v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:=
+vml" xmlns:w=3D"urn:schemas-microsoft-com:office:office" href=3D"https://cb=
+ybs-zc1.maillist-manage.in/click/1127b8852afa68c3/1127b8852aecdab3" style=
+=3D"border-radius:108px;height:48px;v-text-anchor:middle;width:217px;" arcs=
+ize=3D"108%" strokecolor=3D"#ffffff" strokeweight =3D"0px" fillcolor=3D"#00=
+0000">
+=09=09=09=09=09          <v:stroke dashstyle=3D"solid" />
+=09=09=09=09=09            <w:anchorlock/>
+=09=09=09=09=09            <center style=3D"direction:ltr;color:#ffffff;fon=
+t-family:Arial;font-size:12pt;">Partner with us</center>
+=09=09=09=09=09          </v:roundrect>
+        =09=09=09=09<![endif]-->
+                        <a align=3D"center" href=3D"https://cbybs-zc1.maill=
+ist-manage.in/click/1127b8852afa68c3/1127b8852aecdab9" style=3D"padding:0px=
+ 0px;background-color:#000000;width:217px;height:48px;font-size:12pt;direct=
+ion:ltr;font-family:Arial;color:#ffffff;cursor:pointer;text-decoration:none=
+;border-radius:108px;border:0px solid #ffffff;border-collapse:separate;disp=
+lay:table;mso-hide:all;text-align:center;" target=3D"_blank" zcurl_name=3D"=
+l_7">
+=09=09=09=09=09=09=09<font style=3D"color:#ffffff;display:table-cell;vertic=
+al-align:middle;">
+                     =09=09   Partner with us
+=09=09=09=09=09=09=09</font>
+                        </a>
+                    </td>
+                </tr>
+                </tbody></table>
+            </div>
+=09</div>
+=09</td></tr></tbody></table>
+</td></tr>
+<tr><td class=3D"txtsize" id=3D"elm_1702286569525" style=3D" mso-table-lspa=
+ce:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse:collap=
+se;" valign=3D"top">
+
+          <div class=3D"zpelement-wrapper" id=3D"elm_1702286569525" style=
+=3D";word-wrap:break-word;overflow:hidden;padding-right:0px;background-colo=
+r:#decdff;">
+=09    =09<table bgcolor=3D"#decdff" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" class=3D"zpAlignPos" style=3D" mso-table-lspace:0pt; mso-table-r=
+space:0pt;font-size:12px;padding:0px;border:0px;border-collapse:collapse; m=
+so-table-lspace:0pt; mso-table-rspace:0pt;word-break:break-word;-ms-text-si=
+ze-adjust: 100%;-webkit-text-size-adjust: 100%;" width=3D"100%">
+=09  =09
+            <tbody><tr><td class=3D"paddingcomp" style=3D"border-collapse:c=
+ollapse; mso-table-lspace:0pt; mso-table-rspace:0pt;border:0px;padding:7px =
+15px;font-size:12pt;font-family:Arial,Helvetica;line-height:13pt;border-top=
+:0px none ;   border-bottom:0px none ;padding-top:7px;padding-bottom:7px;pa=
+dding-right:50px;padding-left:50px;">
+             =09    =09=09<div componentbgcolor=3D"#decdff" componentlinehe=
+ight=3D"13pt" componentpaddingbottom=3D"7px" componentpaddingleft=3D"50px" =
+componentpaddingright=3D"50px" componentpaddingtop=3D"7px" style=3D"backgro=
+und-color: rgb(222, 205, 255); line-height: 13pt;"><p align=3D"center" styl=
+e=3D"line-height:1.7;font-family:Arial,verdana;font-size:12px; color:#00000=
+0;padding:0px;margin: 0;text-align: center; line-height: 13pt;"><font color=
+=3D"#333333" style=3D"color: rgb(51, 51, 51); line-height: 13pt;"><font sty=
+le=3D"font-size: 11pt; line-height: 13pt;"><span style=3D"line-height: 13pt=
+;"></span></font></font></p><p align=3D"left" style=3D"line-height:1.7;font=
+-family:Arial,verdana;font-size:12px; color:#000000;padding:0px;margin: 0;t=
+ext-align: left; line-height: 13pt;"><b style=3D"font-family: Arial, Helvet=
+ica; font-size: 26px;"><font style=3D"font-size: 15pt; line-height: 13pt;">=
+<br></font></b></p><p align=3D"left" style=3D"line-height:1.7;font-family:A=
+rial,verdana;font-size:12px; color:#000000;padding:0px;margin: 0;text-align=
+: left; line-height: 13pt;"><b style=3D"font-family: Arial, Helvetica; font=
+-size: 26px;"><font style=3D"font-size: 15pt; line-height: 13pt;">CDO</font=
+></b><span style=3D"font-family: Arial, Helvetica; font-size: 26px; line-he=
+ight: 13pt;"> </span><b style=3D"font-family: Arial, Helvetica; font-size: =
+15pt;">Vision Dallas</b><br></p><p style=3D"font-family:Arial,verdana;font-=
+size:12px; color:#000000;padding:0px;margin: 0;line-height: 13pt;"></p><p s=
+tyle=3D"font-family:Arial,verdana;font-size:12px; color:#000000;padding:0px=
+;margin: 0;line-height: 13pt;"></p><p style=3D"line-height:1.7;font-family:=
+Arial,verdana;font-size:12px; color:#000000;padding:0px;margin: 0;text-alig=
+n: left; line-height: 13pt;"><font color=3D"#000000" face=3D"Arial, Helveti=
+ca" style=3D"color: rgb(0, 0, 0); font-size: 10pt; line-height: 13pt;"><br>=
+</font></p><p style=3D"line-height:1.7;font-family:Arial,verdana;font-size:=
+12px; color:#000000;padding:0px;margin: 0;text-align: left; line-height: 13=
+pt;"><font color=3D"#000000" face=3D"Arial, Helvetica" style=3D"color: rgb(=
+0, 0, 0); line-height: 13pt;"></font></p><h2 style=3D"margin: 0;padding: 0p=
+x;font-family:Arial, Helvetica, sans-serif; color:#000000;color:#000000; fo=
+nt-weight:normal;font-family:Arial,verdana,Helvetica, sans-serif; color:#00=
+0000;font-size: 26px;"><font color=3D"#000000" face=3D"Arial, Helvetica" st=
+yle=3D"color: rgb(0, 0, 0); line-height: 13pt;"><font style=3D"font-size: 1=
+0pt; line-height: 13pt;">Connect</font><span style=3D"font-size: 10pt; line=
+-height: 13pt;"> with Dallas's 30 Top CDOs at an exclusive networking event=
+ presented by AIM. Engage in stimulating dialogues over an intimate dinner =
+in the heart of the city, exchanging insights on critical business issues.<=
+/span></font></h2><div><font color=3D"#000000" face=3D"Arial, Helvetica" st=
+yle=3D"color: rgb(0, 0, 0); line-height: 13pt;"><span style=3D"font-size: 1=
+0pt; line-height: 13pt;"><br></span></font></div><div><font color=3D"#00000=
+0" face=3D"Arial, Helvetica" style=3D"color: rgb(0, 0, 0); line-height: 13p=
+t;"><span style=3D"line-height: 13pt;"><p style=3D"font-family:Arial,verdan=
+a;font-size:12px; color:#000000;padding:0px;margin: 0;line-height: 13pt; te=
+xt-align: left;"><font color=3D"#000000" face=3D"Arial, Helvetica" style=3D=
+"color: rgb(0, 0, 0); font-size: 10pt;"><b style><i style>Date: May 24, 202=
+4</i></b></font></p></span></font></div><p style=3D"margin: 0;padding: 0px;=
+font-family:Arial, Helvetica, sans-serif; color:#000000;line-height:1.7;fon=
+t-family:Arial,verdana;font-size:12px;padding:0px;"></p><p style=3D"line-he=
+ight:1.7;font-family:Arial,verdana;font-size:12px; color:#000000;padding:0p=
+x;margin: 0;text-align: left; line-height: 13pt;"><br></p><p style=3D"font-=
+family:Arial,verdana;font-size:12px; color:#000000;padding:0px;margin: 0;li=
+ne-height: 13pt;"></p><p style=3D"font-family:Arial,verdana;font-size:12px;=
+ color:#000000;padding:0px;margin: 0;line-height: 13pt;"></p></div>
+=09=09=09</td></tr>
+=09=09</tbody></table>
+       =09  </div>
+</td></tr>
+<tr><td class=3D"txtsize" id=3D"elm_1702286574241" style=3D" mso-table-lspa=
+ce:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse:collap=
+se;" valign=3D"top">
+
+=09=09=09
+=09=09 =09       =20
+=09=09           =20
+=09=09 =20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=09<table bgcolor=3D"#decdff" cellpadding=3D"0" cellspacing=3D"0" height=3D=
+"48" style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font-size:12px;bo=
+rder:0px;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0=
+pt;border:none;" width=3D"100%">
+        <tbody><tr><td class=3D"paddingcomp" style=3D"border-collapse:colla=
+pse; mso-table-lspace:0pt; font-size:12px;font-family:Arial, Helvetica, san=
+s-serif; mso-table-rspace:0pt;font-size:12px;border:0px;padding:7px 15px;bo=
+rder-top:none none none;border-bottom:none none none;padding-top:7px;paddin=
+g-bottom:27px;padding-right:50px;padding-left:50px;">
+        <div class=3D"zpelement-wrapper buttonElem" id=3D"elm_1702286574241=
+" style=3D"overflow:hidden;word-wrap:break-word;">
+=09    <div class=3D"zpAlignPos" style=3D"text-align:left;">
+                 <table align=3D"left" cellpadding=3D"0" cellspacing=3D"0" =
+style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font-size:12px;border:=
+none;padding:0px;border:0px;margin:0px;border-collapse:separate; mso-table-=
+lspace:0pt; mso-table-rspace:0pt;">
+                <tbody><tr>
+                   <td align=3D"left" class=3D"txtsize" style=3D"border-col=
+lapse:collapse; mso-table-lspace:0pt; font-size:12px; mso-table-rspace:0pt;=
+font-size:12px;border:0px;padding:0px;color:#ffffff;font-family:Arial;text-=
+align:left;border-radius:108px;text-align:left;cursor:pointer;">
+                         <!--[if mso]>
+=09=09=09=09=09          <v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:=
+vml" xmlns:w=3D"urn:schemas-microsoft-com:office:office" href=3D"https://cb=
+ybs-zc1.maillist-manage.in/click/1127b8852afa68c3/1127b8852aecdabb" style=
+=3D"border-radius:108px;height:48px;v-text-anchor:middle;width:217px;" arcs=
+ize=3D"108%" strokecolor=3D"#ffffff" strokeweight =3D"0px" fillcolor=3D"#00=
+0000">
+=09=09=09=09=09          <v:stroke dashstyle=3D"solid" />
+=09=09=09=09=09            <w:anchorlock/>
+=09=09=09=09=09            <center style=3D"direction:ltr;color:#ffffff;fon=
+t-family:Arial;font-size:12pt;">Partner with us</center>
+=09=09=09=09=09          </v:roundrect>
+        =09=09=09=09<![endif]-->
+                        <a align=3D"center" href=3D"https://cbybs-zc1.maill=
+ist-manage.in/click/1127b8852afa68c3/1127b8852aecdabb" style=3D"padding:0px=
+ 0px;background-color:#000000;width:217px;height:48px;font-size:12pt;direct=
+ion:ltr;font-family:Arial;color:#ffffff;cursor:pointer;text-decoration:none=
+;border-radius:108px;border:0px solid #ffffff;border-collapse:separate;disp=
+lay:table;mso-hide:all;text-align:center;" target=3D"_blank" zcurl_name=3D"=
+l_8">
+=09=09=09=09=09=09=09<font style=3D"color:#ffffff;display:table-cell;vertic=
+al-align:middle;">
+                     =09=09   Partner with us
+=09=09=09=09=09=09=09</font>
+                        </a>
+                    </td>
+                </tr>
+                </tbody></table>
+            </div>
+=09</div>
+=09</td></tr></tbody></table>
+</td></tr>
+<tr><td class=3D"txtsize" id=3D"elm_1702286459223" style=3D" mso-table-lspa=
+ce:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse:collap=
+se;" valign=3D"top">
+
+          <div class=3D"zpelement-wrapper" id=3D"elm_1702286459223" style=
+=3D";word-wrap:break-word;overflow:hidden;padding-right:0px;background-colo=
+r:#94e6c5;">
+=09    =09<table bgcolor=3D"#94e6c5" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" class=3D"zpAlignPos" style=3D" mso-table-lspace:0pt; mso-table-r=
+space:0pt;font-size:12px;padding:0px;border:0px;border-collapse:collapse; m=
+so-table-lspace:0pt; mso-table-rspace:0pt;word-break:break-word;-ms-text-si=
+ze-adjust: 100%;-webkit-text-size-adjust: 100%;" width=3D"100%">
+=09  =09
+            <tbody><tr><td class=3D"paddingcomp" style=3D"border-collapse:c=
+ollapse; mso-table-lspace:0pt; mso-table-rspace:0pt;border:0px;padding:7px =
+15px;font-size:12pt;font-family:Arial,Helvetica;line-height:13pt;border-top=
+:0px none ;   border-bottom:0px none ;padding-top:7px;padding-bottom:7px;pa=
+dding-right:50px;padding-left:50px;">
+             =09    =09=09<div componentbgcolor=3D"#94e6c5" componentlinehe=
+ight=3D"13pt" componentpaddingbottom=3D"7px" componentpaddingleft=3D"50px" =
+componentpaddingright=3D"50px" componentpaddingtop=3D"7px" style=3D"backgro=
+und-color: rgb(148, 230, 197); line-height: 13pt;"><p align=3D"center" styl=
+e=3D"line-height:1.7;font-family:Arial,verdana;font-size:12px; color:#00000=
+0;padding:0px;margin: 0;text-align: center; line-height: 13pt;"><font color=
+=3D"#333333" style=3D"color: rgb(51, 51, 51); line-height: 13pt;"><font sty=
+le=3D"font-size: 11pt; line-height: 13pt;"><span style=3D"line-height: 13pt=
+;"></span></font></font></p><p align=3D"left" style=3D"line-height:1.7;font=
+-family:Arial,verdana;font-size:12px; color:#000000;padding:0px;margin: 0;t=
+ext-align: left; line-height: 13pt;"><b style=3D"font-family: Arial, Helvet=
+ica; font-size: 26px;"><font style=3D"font-size: 15pt; line-height: 13pt;">=
+<br></font></b></p><p align=3D"left" style=3D"line-height:1.7;font-family:A=
+rial,verdana;font-size:12px; color:#000000;padding:0px;margin: 0;text-align=
+: left; line-height: 13pt;"><b style=3D"font-family: Arial, Helvetica; font=
+-size: 26px;"><font style=3D"font-size: 15pt; line-height: 13pt;">Data Engi=
+neering Summit 2024</font></b><br></p><p style=3D"font-family:Arial,verdana=
+;font-size:12px; color:#000000;padding:0px;margin: 0;line-height: 13pt;"></=
+p><p style=3D"font-family:Arial,verdana;font-size:12px; color:#000000;paddi=
+ng:0px;margin: 0;line-height: 13pt;"></p><p style=3D"line-height:1.7;font-f=
+amily:Arial,verdana;font-size:12px; color:#000000;padding:0px;margin: 0;tex=
+t-align: left; line-height: 13pt;"><font color=3D"#000000" face=3D"Arial, H=
+elvetica" style=3D"color: rgb(0, 0, 0); font-size: 10pt; line-height: 13pt;=
+"><br></font></p><p style=3D"line-height:1.7;font-family:Arial,verdana;font=
+-size:12px; color:#000000;padding:0px;margin: 0;text-align: left; line-heig=
+ht: 13pt;"><font color=3D"#000000" face=3D"Arial, Helvetica" style=3D"color=
+: rgb(0, 0, 0); line-height: 13pt;"></font></p><h2 style=3D"margin: 0;paddi=
+ng: 0px;font-family:Arial, Helvetica, sans-serif; color:#000000;color:#0000=
+00; font-weight:normal;font-family:Arial,verdana,Helvetica, sans-serif; col=
+or:#000000;font-size: 26px;"><font color=3D"#000000" face=3D"Arial, Helveti=
+ca" style=3D"color: rgb(0, 0, 0); line-height: 13pt;"><font style=3D"font-s=
+ize: 10pt; line-height: 13pt;"><span>India's First & Only Conference Dedica=
+ted To The Emerging Field Of Data Engineering.</span></font></font></h2><di=
+v><font color=3D"#000000" face=3D"Arial, Helvetica" style=3D"color: rgb(0, =
+0, 0); line-height: 13pt;"><font style=3D"font-size: 10pt; line-height: 13p=
+t;"><span><br></span></font></font></div><div><font color=3D"#000000" face=
+=3D"Arial, Helvetica" style=3D"color: rgb(0, 0, 0); line-height: 13pt;"><sp=
+an style=3D"line-height: 13pt;"><p style=3D"font-family:Arial,verdana;font-=
+size:12px; color:#000000;padding:0px;margin: 0;line-height: 13pt; text-alig=
+n: left;"><font color=3D"#000000" face=3D"Arial, Helvetica" style=3D"color:=
+ rgb(0, 0, 0); font-size: 10pt;"><b style><i style></i></b></font></p><ul s=
+tyle=3D"font-family: Arial, Helvetica; line-height: 13pt;"><li style=3D"fon=
+t-family: Arial, Helvetica; line-height: 13pt; font-size: 10pt;"><font colo=
+r=3D"#000000" face=3D"Arial, Helvetica" style=3D"color: rgb(0, 0, 0); font-=
+size: 10pt;"><b style><i style>=F0=9F=93=85 Date: May 30 - 31, 2024</i></b>=
+</font><li style=3D"font-family: Arial, Helvetica; line-height: 13pt; font-=
+size: 10pt;"><font color=3D"#000000" face=3D"Arial, Helvetica" style=3D"col=
+or: rgb(0, 0, 0); font-size: 10pt;"><b style><i style>=F0=9F=93=8D Location=
+: Bangalore, India</i></b></font></ul><p style=3D"margin: 0;padding: 0px;fo=
+nt-family:Arial, Helvetica, sans-serif; color:#000000;line-height:1.7;font-=
+family:Arial,verdana;font-size:12px;padding:0px;"></p></span></font></div><=
+p style=3D"line-height:1.7;font-family:Arial,verdana;font-size:12px; color:=
+#000000;padding:0px;margin: 0;text-align: left; line-height: 13pt;"><br></p=
+><p style=3D"font-family:Arial,verdana;font-size:12px; color:#000000;paddin=
+g:0px;margin: 0;line-height: 13pt;"></p><p style=3D"font-family:Arial,verda=
+na;font-size:12px; color:#000000;padding:0px;margin: 0;line-height: 13pt;">=
+</p></div>
+=09=09=09</td></tr>
+=09=09</tbody></table>
+       =09  </div>
+</td></tr>
+<tr><td class=3D"txtsize" id=3D"elm_1702286473409" style=3D" mso-table-lspa=
+ce:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse:collap=
+se;" valign=3D"top">
+
+=09=09=09
+=09=09 =09       =20
+=09=09           =20
+=09=09 =20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=09<table bgcolor=3D"#94e6c5" cellpadding=3D"0" cellspacing=3D"0" height=3D=
+"48" style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font-size:12px;bo=
+rder:0px;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0=
+pt;border:none;" width=3D"100%">
+        <tbody><tr><td class=3D"paddingcomp" style=3D"border-collapse:colla=
+pse; mso-table-lspace:0pt; font-size:12px;font-family:Arial, Helvetica, san=
+s-serif; mso-table-rspace:0pt;font-size:12px;border:0px;padding:7px 15px;bo=
+rder-top:none none none;border-bottom:none none none;padding-top:7px;paddin=
+g-bottom:27px;padding-right:50px;padding-left:50px;">
+        <div class=3D"zpelement-wrapper buttonElem" id=3D"elm_1702286473409=
+" style=3D"overflow:hidden;word-wrap:break-word;">
+=09    <div class=3D"zpAlignPos" style=3D"text-align:left;">
+                 <table align=3D"left" cellpadding=3D"0" cellspacing=3D"0" =
+style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font-size:12px;border:=
+none;padding:0px;border:0px;margin:0px;border-collapse:separate; mso-table-=
+lspace:0pt; mso-table-rspace:0pt;">
+                <tbody><tr>
+                   <td align=3D"left" class=3D"txtsize" style=3D"border-col=
+lapse:collapse; mso-table-lspace:0pt; font-size:12px; mso-table-rspace:0pt;=
+font-size:12px;border:0px;padding:0px;color:#ffffff;font-family:Arial;text-=
+align:left;border-radius:108px;text-align:left;cursor:pointer;">
+                         <!--[if mso]>
+=09=09=09=09=09          <v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:=
+vml" xmlns:w=3D"urn:schemas-microsoft-com:office:office" href=3D"https://cb=
+ybs-zc1.maillist-manage.in/click/1127b8852afa68c3/1127b8852aecdabd" style=
+=3D"border-radius:108px;height:48px;v-text-anchor:middle;width:217px;" arcs=
+ize=3D"108%" strokecolor=3D"#ffffff" strokeweight =3D"0px" fillcolor=3D"#00=
+0000">
+=09=09=09=09=09          <v:stroke dashstyle=3D"solid" />
+=09=09=09=09=09            <w:anchorlock/>
+=09=09=09=09=09            <center style=3D"direction:ltr;color:#ffffff;fon=
+t-family:Arial;font-size:12pt;">Registrations Open</center>
+=09=09=09=09=09          </v:roundrect>
+        =09=09=09=09<![endif]-->
+                        <a align=3D"center" href=3D"https://cbybs-zc1.maill=
+ist-manage.in/click/1127b8852afa68c3/1127b8852aecdabd" style=3D"padding:0px=
+ 0px;background-color:#000000;width:217px;height:48px;font-size:12pt;direct=
+ion:ltr;font-family:Arial;color:#ffffff;cursor:pointer;text-decoration:none=
+;border-radius:108px;border:0px solid #ffffff;border-collapse:separate;disp=
+lay:table;mso-hide:all;text-align:center;" target=3D"_blank" zcurl_name=3D"=
+l_9">
+=09=09=09=09=09=09=09<font style=3D"color:#ffffff;display:table-cell;vertic=
+al-align:middle;">
+                     =09=09   Registrations Open
+=09=09=09=09=09=09=09</font>
+                        </a>
+                    </td>
+                </tr>
+                </tbody></table>
+            </div>
+=09</div>
+=09</td></tr></tbody></table>
+</td></tr>
+<tr><td class=3D"txtsize" id=3D"elm_1702286661468" style=3D" mso-table-lspa=
+ce:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse:collap=
+se;" valign=3D"top">
+
+=09    =09<table bgcolor=3D"transparent" border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font-si=
+ze:12px;border:0px;padding:0px;width:100%;border-collapse:collapse; mso-tab=
+le-lspace:0pt; mso-table-rspace:0pt;word-break:break-word;background-color:=
+transparent;">
+=09    <tbody><tr>
+=09=09<td class=3D"txtsize" style=3D"border-collapse:collapse; mso-table-ls=
+pace:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-tabl=
+e-rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-top:none none=
+ none ;border-bottom:none none none;">
+            =09<div class=3D"zpelement-wrapper image" coupcmp id=3D"elm_170=
+2286661468" prodcmp style=3D";word-wrap:break-word;overflow:hidden;padding:=
+0px;background-color:transparent;">
+=09=09=09<div>
+=09=09        <table align=3D"left" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" class=3D"zpAlignPos" style=3D" mso-table-lspace:0pt; mso-table-rs=
+pace:0pt;font-size:12px;text-align:left;width:100%;padding:0px;border:0px;b=
+order-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;word-br=
+eak:break-word;width:100%;text-align:left;">
+            =09=09<tbody><tr><td class=3D"paddingcomp" style=3D"border-coll=
+apse:collapse; mso-table-lspace:0pt; font-size:12px;font-family:Arial, Helv=
+etica, sans-serif; mso-table-rspace:0pt;font-size:12px;border:0px;padding:7=
+px 15px;text-align:center;padding-top:0px;padding-bottom:0px;padding-right:=
+0px;padding-left:0px;">
+=09=09=09<a href=3D"https://cbybs-zc1.maillist-manage.in/click/1127b8852afa=
+68c3/1127b8852aecdabf" style=3D"text-decoration:underline;border:0px;" targ=
+et=3D"_blank" zcurl_name=3D"l_10">
+=09=09=09<img align=3D"left" alt=3D"https://stratus.campaign-image.in/image=
+s/83238000219970092_8_1702287803877_45abff366aca987a928bb81b9jpg" class=3D"=
+zpImage" height=3D"auto" hspace=3D"0" size=3D"F" src=3D"https://stratus.cam=
+paign-image.in/images/83238000219970092_8_1702287803877_45abff366aca987a928=
+bb81b9jpg" style=3D"width:600px;height:autopx;max-width:600px !important;bo=
+rder:0px;text-align:left;" vspace=3D"0" width=3D"600">
+=09=09=09</a>
+=09=09=09</td></tr>
+=09=09=09</tbody></table>
+=09=09</div>
+            </div>
+            </td></tr></tbody></table>
+</td></tr>
+<tr><td class=3D"txtsize" id=3D"elm_1685085515565" style=3D" mso-table-lspa=
+ce:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse:collap=
+se;" valign=3D"top">
+
+          <div class=3D"zpelement-wrapper" id=3D"elm_1685085515565" style=
+=3D";word-wrap:break-word;overflow:hidden;padding-right:0px;background-colo=
+r:#fff3ea;">
+=09    =09<table bgcolor=3D"#fff3ea" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" class=3D"zpAlignPos" style=3D" mso-table-lspace:0pt; mso-table-r=
+space:0pt;font-size:12px;padding:0px;border:0px;border-collapse:collapse; m=
+so-table-lspace:0pt; mso-table-rspace:0pt;word-break:break-word;-ms-text-si=
+ze-adjust: 100%;-webkit-text-size-adjust: 100%;" width=3D"100%">
+=09  =09
+            <tbody><tr><td class=3D"paddingcomp" style=3D"border-collapse:c=
+ollapse; mso-table-lspace:0pt; mso-table-rspace:0pt;border:0px;padding:7px =
+15px;font-size:12pt;font-family:Arial,Helvetica;line-height:15pt;border-top=
+:0px none ;   border-bottom:0px none ;padding-top:7px;padding-bottom:7px;pa=
+dding-right:50px;padding-left:50px;">
+             =09    =09=09<div componentbgcolor=3D"#fff3ea" componentlinehe=
+ight=3D"15pt" componentpaddingbottom=3D"7px" componentpaddingleft=3D"50px" =
+componentpaddingright=3D"50px" componentpaddingtop=3D"7px" style=3D"backgro=
+und-color: rgb(255, 243, 234); line-height: 15pt;"><p align=3D"center" styl=
+e=3D"line-height:1.7;font-family:Arial,verdana;font-size:12px; color:#00000=
+0;padding:0px;margin: 0;text-align: center; line-height: 15pt;"><font style=
+=3D"line-height: 15pt;"><span style=3D"line-height: 15pt;"><span style=3D"l=
+ine-height: 15pt;"></span></span></font></p><h3 style=3D"margin: 0;padding:=
+ 0px;font-family:Arial, Helvetica, sans-serif; color:#000000;color:#000000;=
+ font-weight:normal;font-family:Arial,verdana,Helvetica, sans-serif; color:=
+#000000;font-size: 24px;"><font color=3D"#444343" face=3D"Georgia, Times Ne=
+w Roman, Times, serif" style=3D"line-height: 15pt; font-size: 12pt;"><span =
+style=3D"line-height: 15pt;"><span><i></i></span></span></font></h3><font f=
+ace=3D"Georgia, Times New Roman, Times, serif" style><p style=3D"font-famil=
+y:Arial,verdana;font-size:12px; color:#000000;padding:0px;margin: 0;line-he=
+ight: 19pt; text-align: left;"><font color=3D"#000000" face=3D"Georgia, Tim=
+es New Roman, Times, serif" style=3D"color: rgb(0, 0, 0);"></font></p><p st=
+yle=3D"font-family:Arial,verdana;font-size:12px; color:#000000;padding:0px;=
+margin: 0;line-height: 19pt; text-align: left;"><font color=3D"#000000" fac=
+e=3D"Georgia, Times New Roman, Times, serif" style=3D"color: rgb(0, 0, 0);"=
+><font color=3D"#000000" face=3D"Arial, Helvetica" style=3D"color: rgb(0, 0=
+, 0);"><font style=3D"font-size: 10pt;"><span></span></font></font></font><=
+/p></font><span><p style=3D"font-family:Arial,verdana;font-size:12px; color=
+:#000000;padding:0px;margin: 0;line-height: 19pt; text-align: left;"><font =
+color=3D"#000000" face=3D"Arial, Helvetica" style=3D"color: rgb(0, 0, 0); f=
+ont-size: 10pt;"><br></font></p><p style=3D"font-family:Arial,verdana;font-=
+size:12px; color:#000000;padding:0px;margin: 0;line-height: 19pt; text-alig=
+n: left;"><font face=3D"Arial, Helvetica" style=3D"font-size: 15pt;"><b sty=
+le>MachineCon USA 2024</b></font></p><p style=3D"font-family:Arial,verdana;=
+font-size:12px; color:#000000;padding:0px;margin: 0;line-height: 19pt; text=
+-align: left;"><font face=3D"Arial, Helvetica"><span style=3D"font-size: 13=
+.3333px;"><br></span></font></p><p style=3D"font-family:Arial,verdana;font-=
+size:12px; color:#000000;padding:0px;margin: 0;line-height: 19pt; text-alig=
+n: left;"><font color=3D"#000000" face=3D"Arial, Helvetica" style=3D"color:=
+ rgb(0, 0, 0);"></font></p><h3 style=3D"margin: 0;padding: 0px;font-family:=
+Arial, Helvetica, sans-serif; color:#000000;color:#000000; font-weight:norm=
+al;font-family:Arial,verdana,Helvetica, sans-serif; color:#000000;font-size=
+: 24px;"><font color=3D"#000000" face=3D"Arial, Helvetica" style=3D"color: =
+rgb(0, 0, 0);"><font style=3D"font-size: 10pt;"><b>The Biggest Exclusive Ga=
+thering Of CDOs & Analytics Leaders In United States. </b>Meet 100 Most Inf=
+luential Chief Data Officers & Analytics Heads from leading organizations i=
+n USA.</font></font></h3><div><font color=3D"#000000" face=3D"Arial, Helvet=
+ica" style=3D"color: rgb(0, 0, 0);"><font style=3D"font-size: 10pt;"><b><sp=
+an><br></span></b></font></font></div><div><font color=3D"#000000" face=3D"=
+Arial, Helvetica" style=3D"color: rgb(0, 0, 0);"><font style=3D"font-size: =
+10pt;"><span><i><span>26 July 2024<br></span><span>583 Park Avenue, New Yor=
+k</span></i><br></span></font></font></div><font color=3D"#000000" face=3D"=
+Arial, Helvetica" style=3D"color: rgb(0, 0, 0);"><br></font><p style=3D"mar=
+gin: 0;padding: 0px;font-family:Arial, Helvetica, sans-serif; color:#000000=
+;line-height:1.7;font-family:Arial,verdana;font-size:12px;padding:0px;"></p=
+></span></div>
+=09=09=09</td></tr>
+=09=09</tbody></table>
+       =09  </div>
+</td></tr>
+<tr><td class=3D"txtsize" id=3D"elm_1701337683382" style=3D" mso-table-lspa=
+ce:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse:collap=
+se;" valign=3D"top">
+
+=09=09=09
+=09=09 =09       =20
+=09=09           =20
+=09=09 =20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=09<table bgcolor=3D"#fff3ea" cellpadding=3D"0" cellspacing=3D"0" height=3D=
+"48" style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font-size:12px;bo=
+rder:0px;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0=
+pt;border:none;" width=3D"100%">
+        <tbody><tr><td class=3D"paddingcomp" style=3D"border-collapse:colla=
+pse; mso-table-lspace:0pt; font-size:12px;font-family:Arial, Helvetica, san=
+s-serif; mso-table-rspace:0pt;font-size:12px;border:0px;padding:7px 15px;bo=
+rder-top:none none none;border-bottom:none none none;padding-top:7px;paddin=
+g-bottom:27px;padding-right:50px;padding-left:50px;">
+        <div class=3D"zpelement-wrapper buttonElem" id=3D"elm_1701337683382=
+" style=3D"overflow:hidden;word-wrap:break-word;">
+=09    <div class=3D"zpAlignPos" style=3D"text-align:left;">
+                 <table align=3D"left" cellpadding=3D"0" cellspacing=3D"0" =
+style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font-size:12px;border:=
+none;padding:0px;border:0px;margin:0px;border-collapse:separate; mso-table-=
+lspace:0pt; mso-table-rspace:0pt;">
+                <tbody><tr>
+                   <td align=3D"left" class=3D"txtsize" style=3D"border-col=
+lapse:collapse; mso-table-lspace:0pt; font-size:12px; mso-table-rspace:0pt;=
+font-size:12px;border:0px;padding:0px;color:#ffffff;font-family:Arial;text-=
+align:left;border-radius:108px;text-align:left;cursor:pointer;">
+                         <!--[if mso]>
+=09=09=09=09=09          <v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:=
+vml" xmlns:w=3D"urn:schemas-microsoft-com:office:office" href=3D"https://cb=
+ybs-zc1.maillist-manage.in/click/1127b8852afa68c3/1127b8852aecdabf" style=
+=3D"border-radius:108px;height:48px;v-text-anchor:middle;width:217px;" arcs=
+ize=3D"108%" strokecolor=3D"#ffffff" strokeweight =3D"0px" fillcolor=3D"#00=
+0000">
+=09=09=09=09=09          <v:stroke dashstyle=3D"solid" />
+=09=09=09=09=09            <w:anchorlock/>
+=09=09=09=09=09            <center style=3D"direction:ltr;color:#ffffff;fon=
+t-family:Arial;font-size:12pt;">More Details</center>
+=09=09=09=09=09          </v:roundrect>
+        =09=09=09=09<![endif]-->
+                        <a align=3D"center" href=3D"https://cbybs-zc1.maill=
+ist-manage.in/click/1127b8852afa68c3/1127b8852aecdac1" style=3D"padding:0px=
+ 0px;background-color:#000000;width:217px;height:48px;font-size:12pt;direct=
+ion:ltr;font-family:Arial;color:#ffffff;cursor:pointer;text-decoration:none=
+;border-radius:108px;border:0px solid #ffffff;border-collapse:separate;disp=
+lay:table;mso-hide:all;text-align:center;" target=3D"_blank" zcurl_name=3D"=
+l_11">
+=09=09=09=09=09=09=09<font style=3D"color:#ffffff;display:table-cell;vertic=
+al-align:middle;">
+                     =09=09   More Details
+=09=09=09=09=09=09=09</font>
+                        </a>
+                    </td>
+                </tr>
+                </tbody></table>
+            </div>
+=09</div>
+=09</td></tr></tbody></table>
+</td></tr>
+<tr><td class=3D"txtsize" id=3D"elm_1702286669037" style=3D" mso-table-lspa=
+ce:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse:collap=
+se;" valign=3D"top">
+
+          <div class=3D"zpelement-wrapper" id=3D"elm_1702286669037" style=
+=3D";word-wrap:break-word;overflow:hidden;padding-right:0px;background-colo=
+r:#ffffff;">
+=09    =09<table bgcolor=3D"#ffffff" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" class=3D"zpAlignPos" style=3D" mso-table-lspace:0pt; mso-table-r=
+space:0pt;font-size:12px;padding:0px;border:0px;border-collapse:collapse; m=
+so-table-lspace:0pt; mso-table-rspace:0pt;word-break:break-word;-ms-text-si=
+ze-adjust: 100%;-webkit-text-size-adjust: 100%;" width=3D"100%">
+=09  =09
+            <tbody><tr><td class=3D"paddingcomp" style=3D"border-collapse:c=
+ollapse; mso-table-lspace:0pt; mso-table-rspace:0pt;border:0px;padding:7px =
+15px;font-size:12pt;font-family:Arial,Helvetica;line-height:17pt;border-top=
+:0px none ;   border-bottom:0px none ;padding-top:7px;padding-bottom:7px;pa=
+dding-right:50px;padding-left:50px;">
+             =09    =09=09<div componentbgcolor=3D"#ffffff" componentlinehe=
+ight=3D"17pt" componentpaddingbottom=3D"7px" componentpaddingleft=3D"50px" =
+componentpaddingright=3D"50px" componentpaddingtop=3D"7px" style=3D"backgro=
+und-color: rgb(255, 255, 255); line-height: 17pt;"><p align=3D"center" styl=
+e=3D"line-height:1.7;font-family:Arial,verdana;font-size:12px; color:#00000=
+0;padding:0px;margin: 0;text-align: center; color: rgb(0, 0, 0); font-famil=
+y: Arial, Helvetica; font-size: 12pt; line-height: 17pt;"><font style=3D"li=
+ne-height: 17pt;"><span style=3D"line-height: 17pt;"><span style=3D"line-he=
+ight: 17pt;"></span></span></font></p><h3 style=3D"font-family:Arial,verdan=
+a,Helvetica, sans-serif;font-size: 24px; font-weight:normal;padding: 0px;ma=
+rgin: 0;color: rgb(0, 0, 0); font-family: Arial, Helvetica; font-size: 12pt=
+;"><font color=3D"#444343" face=3D"Georgia, Times New Roman, Times, serif" =
+style=3D"font-size: 12pt; line-height: 17pt;"><span style=3D"line-height: 1=
+7pt;"><span style=3D"line-height: 17pt;"><i></i></span></span></font></h3><=
+font face=3D"Georgia, Times New Roman, Times, serif" style=3D"color: rgb(0,=
+ 0, 0); font-family: Arial, Helvetica; font-size: 12pt; line-height: 17pt;"=
+><p style=3D"line-height:1.7;font-family:Arial,verdana;font-size:12px; colo=
+r:#000000;padding:0px;margin: 0;text-align: left; line-height: 17pt;"><font=
+ color=3D"#000000" face=3D"Georgia, Times New Roman, Times, serif" style=3D=
+"color: rgb(0, 0, 0); line-height: 17pt;"></font></p><p style=3D"line-heigh=
+t:1.7;font-family:Arial,verdana;font-size:12px; color:#000000;padding:0px;m=
+argin: 0;text-align: left; line-height: 17pt;"><font color=3D"#000000" face=
+=3D"Georgia, Times New Roman, Times, serif" style=3D"color: rgb(0, 0, 0); l=
+ine-height: 17pt;"><font color=3D"#000000" face=3D"Arial, Helvetica" style=
+=3D"color: rgb(0, 0, 0); line-height: 17pt;"><font style=3D"font-size: 10pt=
+; line-height: 17pt;"><span style=3D"line-height: 17pt;"></span></font></fo=
+nt></font></p></font><span style=3D"color: rgb(0, 0, 0); font-family: Arial=
+, Helvetica; line-height: 17pt;"><p style=3D"line-height:1.7;font-family:Ar=
+ial,verdana; color:#000000;padding:0px;margin: 0;font-size: 12pt; text-alig=
+n: left; line-height: 17pt;"><font color=3D"#000000" face=3D"Arial, Helveti=
+ca" style=3D"color: rgb(0, 0, 0); font-size: 10pt; line-height: 17pt;"></fo=
+nt></p><p style=3D"line-height:1.7;font-family:Arial,verdana; color:#000000=
+;padding:0px;margin: 0;font-size: 12pt; text-align: left; line-height: 17pt=
+;"><font color=3D"#000000" face=3D"Arial, Helvetica" style=3D"font-size: 12=
+pt; color: rgb(0, 0, 0); line-height: 17pt;"><strong></strong></font></p><p=
+ style=3D"line-height:1.7;font-family:Arial,verdana;font-size:12px; color:#=
+000000;padding:0px;margin: 0;text-align: left; line-height: 17pt;"><font co=
+lor=3D"#000000" face=3D"Arial, Helvetica" style=3D"color: rgb(0, 0, 0); fon=
+t-size: 15pt; line-height: 17pt;"><strong style><br></strong></font></p><p =
+style=3D"line-height:1.7;font-family:Arial,verdana;font-size:12px; color:#0=
+00000;padding:0px;margin: 0;text-align: left; line-height: 17pt;"><font col=
+or=3D"#000000" face=3D"Arial, Helvetica" style=3D"color: rgb(0, 0, 0); font=
+-size: 15pt; line-height: 17pt;"><strong style>Cypher India 2024</strong></=
+font></p><p style=3D"line-height:1.7;font-family:Arial,verdana;font-size:12=
+px; color:#000000;padding:0px;margin: 0;text-align: left; line-height: 17pt=
+;"><font color=3D"#000000" face=3D"Arial, Helvetica" style=3D"color: rgb(0,=
+ 0, 0); font-size: 15pt; line-height: 17pt;"><strong></strong></font></p><p=
+ style=3D"line-height:1.7;font-family:Arial,verdana;font-size:12px; color:#=
+000000;padding:0px;margin: 0;text-align: left; line-height: 17pt;"><font co=
+lor=3D"#000000" face=3D"Arial, Helvetica" style=3D"color: rgb(0, 0, 0); fon=
+t-size: 15pt; line-height: 17pt;"><strong><span style=3D"line-height: 17pt;=
+"></span></strong></font></p><p style=3D"line-height:1.7;font-family:Arial,=
+verdana; color:#000000;padding:0px;margin: 0;font-size: 12pt; text-align: l=
+eft; line-height: 17pt;"><font color=3D"#000000" face=3D"Arial, Helvetica" =
+style=3D"font-size: 12pt; color: rgb(0, 0, 0); line-height: 17pt;"><strong>=
+<font color=3D"#000000" face=3D"Arial, Helvetica" style=3D"font-size: 12pt;=
+ color: rgb(0, 0, 0); line-height: 17pt;"><br></font></strong></font></p><p=
+ style=3D"line-height:1.7;font-family:Arial,verdana;font-size:12px; color:#=
+000000;padding:0px;margin: 0;text-align: left; line-height: 17pt;"><font co=
+lor=3D"#000000" face=3D"Arial, Helvetica" style=3D"color: rgb(0, 0, 0); lin=
+e-height: 17pt;"><strong style><font color=3D"#000000" face=3D"Arial, Helve=
+tica" style=3D"color: rgb(0, 0, 0); font-size: 10pt; line-height: 17pt;"><i=
+ style>India's largest AI summit, bringing together industry leaders.</i></=
+font></strong></font></p><font color=3D"#000000" face=3D"Arial, Helvetica" =
+style=3D"color: rgb(0, 0, 0); font-size: 10pt; line-height: 17pt;"><i><stro=
+ng></strong></i></font><p style=3D"font-family:Arial,verdana;font-size:12px=
+; color:#000000;padding:0px;margin: 0;line-height: 17pt;"></p></span><span =
+style=3D"font-family: Arial, Helvetica; color: rgb(0, 0, 0); line-height: 1=
+7pt;"><div><span style=3D"font-family: Arial, Helvetica; font-size: 12pt; c=
+olor: rgb(0, 0, 0); line-height: 17pt;"><br></span></div><span style=3D"fon=
+t-size: 12pt; line-height: 17pt;">=F0=9F=93=85 </span><font style=3D"font-s=
+ize: 10pt; line-height: 17pt;">Date: September 25-27, 2024</font></span><di=
+v><font style=3D"font-size: 10pt; line-height: 17pt;"><span style=3D"color:=
+ rgb(0, 0, 0); font-family: Arial, Helvetica; line-height: 17pt;"></span><s=
+pan style=3D"font-family: Arial, Helvetica; color: rgb(0, 0, 0); line-heigh=
+t: 17pt;">=F0=9F=93=8D Location: Bangalore, India</span></font><span style=
+=3D"color: rgb(0, 0, 0); font-family: Arial, Helvetica; font-size: 12pt; li=
+ne-height: 17pt;"></span><font color=3D"#000000" face=3D"Arial, Helvetica" =
+style=3D"color: rgb(0, 0, 0); font-family: Arial, Helvetica; font-size: 12p=
+t; line-height: 17pt;"></font><p style=3D"font-family:Arial,verdana;font-si=
+ze:12px; color:#000000;padding:0px;margin: 0;line-height: 17pt;"></p></div>=
+<div><font style=3D"font-size: 10pt; line-height: 17pt;"><span style=3D"fon=
+t-family: Arial, Helvetica; color: rgb(0, 0, 0); line-height: 17pt;"><br></=
+span></font></div><div><font style=3D"font-size: 10pt; line-height: 17pt;">=
+<span style=3D"font-family: Arial, Helvetica; color: rgb(0, 0, 0); line-hei=
+ght: 17pt;"><i>Yes, we are planning a USA edition of Cypher...</i></span></=
+font></div><div><span style=3D"font-family: Arial, Helvetica; font-size: 12=
+pt; color: rgb(0, 0, 0); line-height: 17pt;"><br></span></div></div>
+=09=09=09</td></tr>
+=09=09</tbody></table>
+       =09  </div>
+</td></tr>
+<tr><td class=3D"txtsize" id=3D"elm_1702287037521" style=3D" mso-table-lspa=
+ce:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse:collap=
+se;" valign=3D"top">
+
+=09=09=09
+=09=09 =09       =20
+=09=09           =20
+=09=09 =20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=09<table bgcolor=3D"#ffffff" cellpadding=3D"0" cellspacing=3D"0" height=3D=
+"48" style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font-size:12px;bo=
+rder:0px;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0=
+pt;border:none;" width=3D"100%">
+        <tbody><tr><td class=3D"paddingcomp" style=3D"border-collapse:colla=
+pse; mso-table-lspace:0pt; font-size:12px;font-family:Arial, Helvetica, san=
+s-serif; mso-table-rspace:0pt;font-size:12px;border:0px;padding:7px 15px;bo=
+rder-top:none none none;border-bottom:none none none;padding-top:7px;paddin=
+g-bottom:27px;padding-right:50px;padding-left:50px;">
+        <div class=3D"zpelement-wrapper buttonElem" id=3D"elm_1702287037521=
+" style=3D"overflow:hidden;word-wrap:break-word;">
+=09    <div class=3D"zpAlignPos" style=3D"text-align:left;">
+                 <table align=3D"left" cellpadding=3D"0" cellspacing=3D"0" =
+style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font-size:12px;border:=
+none;padding:0px;border:0px;margin:0px;border-collapse:separate; mso-table-=
+lspace:0pt; mso-table-rspace:0pt;">
+                <tbody><tr>
+                   <td align=3D"left" class=3D"txtsize" style=3D"border-col=
+lapse:collapse; mso-table-lspace:0pt; font-size:12px; mso-table-rspace:0pt;=
+font-size:12px;border:0px;padding:0px;color:#ffffff;font-family:Arial;text-=
+align:left;border-radius:108px;text-align:left;cursor:pointer;">
+                         <!--[if mso]>
+=09=09=09=09=09          <v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:=
+vml" xmlns:w=3D"urn:schemas-microsoft-com:office:office" href=3D"https://cb=
+ybs-zc1.maillist-manage.in/click/1127b8852afa68c3/1127b8852aecdac3" style=
+=3D"border-radius:108px;height:48px;v-text-anchor:middle;width:217px;" arcs=
+ize=3D"108%" strokecolor=3D"#ffffff" strokeweight =3D"0px" fillcolor=3D"#00=
+0000">
+=09=09=09=09=09          <v:stroke dashstyle=3D"solid" />
+=09=09=09=09=09            <w:anchorlock/>
+=09=09=09=09=09            <center style=3D"direction:ltr;color:#ffffff;fon=
+t-family:Arial;font-size:12pt;">More Details</center>
+=09=09=09=09=09          </v:roundrect>
+        =09=09=09=09<![endif]-->
+                        <a align=3D"center" href=3D"https://cbybs-zc1.maill=
+ist-manage.in/click/1127b8852afa68c3/1127b8852aecdac3" style=3D"padding:0px=
+ 0px;background-color:#000000;width:217px;height:48px;font-size:12pt;direct=
+ion:ltr;font-family:Arial;color:#ffffff;cursor:pointer;text-decoration:none=
+;border-radius:108px;border:0px solid #ffffff;border-collapse:separate;disp=
+lay:table;mso-hide:all;text-align:center;" target=3D"_blank" zcurl_name=3D"=
+l_12">
+=09=09=09=09=09=09=09<font style=3D"color:#ffffff;display:table-cell;vertic=
+al-align:middle;">
+                     =09=09   More Details
+=09=09=09=09=09=09=09</font>
+                        </a>
+                    </td>
+                </tr>
+                </tbody></table>
+            </div>
+=09</div>
+=09</td></tr></tbody></table>
+</td></tr>
+<tr><td class=3D"txtsize" id=3D"elm_1701337555245" style=3D" mso-table-lspa=
+ce:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse:collap=
+se;" valign=3D"top">
+
+          <div class=3D"zpelement-wrapper" id=3D"elm_1701337555245" style=
+=3D";word-wrap:break-word;overflow:hidden;padding-right:0px;background-colo=
+r:#eedeff;">
+=09    =09<table bgcolor=3D"#eedeff" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" class=3D"zpAlignPos" style=3D" mso-table-lspace:0pt; mso-table-r=
+space:0pt;font-size:12px;padding:0px;border:0px;border-collapse:collapse; m=
+so-table-lspace:0pt; mso-table-rspace:0pt;word-break:break-word;-ms-text-si=
+ze-adjust: 100%;-webkit-text-size-adjust: 100%;" width=3D"100%">
+=09  =09
+            <tbody><tr><td class=3D"paddingcomp" style=3D"border-collapse:c=
+ollapse; mso-table-lspace:0pt; mso-table-rspace:0pt;border:0px;padding:7px =
+15px;font-size:12pt;font-family:Arial,Helvetica;line-height:15pt;border-top=
+:0px none ;   border-bottom:0px none ;padding-top:7px;padding-bottom:7px;pa=
+dding-right:50px;padding-left:50px;">
+             =09    =09=09<div componentbgcolor=3D"#eedeff" componentlinehe=
+ight=3D"15pt" componentpaddingbottom=3D"7px" componentpaddingleft=3D"50px" =
+componentpaddingright=3D"50px" componentpaddingtop=3D"7px" style=3D"backgro=
+und-color: rgb(238, 222, 255); line-height: 15pt;"><p align=3D"center" styl=
+e=3D"line-height:1.7;font-family:Arial,verdana;font-size:12px; color:#00000=
+0;padding:0px;margin: 0;text-align: center; line-height: 15pt;"><font style=
+=3D"line-height: 15pt;"><span style=3D"line-height: 15pt;"><span style=3D"l=
+ine-height: 15pt;"></span></span></font></p><h3 style=3D"margin: 0;padding:=
+ 0px;font-family:Arial, Helvetica, sans-serif; color:#000000;color:#000000;=
+ font-weight:normal;font-family:Arial,verdana,Helvetica, sans-serif; color:=
+#000000;font-size: 24px;"><font color=3D"#444343" face=3D"Georgia, Times Ne=
+w Roman, Times, serif" style=3D"line-height: 15pt; font-size: 12pt;"><span =
+style=3D"line-height: 15pt;"><span><i></i></span></span></font></h3><font f=
+ace=3D"Georgia, Times New Roman, Times, serif" style><p style=3D"font-famil=
+y:Arial,verdana;font-size:12px; color:#000000;padding:0px;margin: 0;line-he=
+ight: 19pt; text-align: left;"><font color=3D"#000000" face=3D"Georgia, Tim=
+es New Roman, Times, serif" style=3D"color: rgb(0, 0, 0);"></font></p><p st=
+yle=3D"font-family:Arial,verdana;font-size:12px; color:#000000;padding:0px;=
+margin: 0;line-height: 19pt; text-align: left;"><font color=3D"#000000" fac=
+e=3D"Georgia, Times New Roman, Times, serif" style=3D"color: rgb(0, 0, 0);"=
+><font color=3D"#000000" face=3D"Arial, Helvetica" style=3D"color: rgb(0, 0=
+, 0);"><font style=3D"font-size: 10pt;"><span></span></font></font></font><=
+/p></font><p style=3D"font-family:Arial,verdana;font-size:12px; color:#0000=
+00;padding:0px;margin: 0;line-height: 19pt; text-align: left;"><font color=
+=3D"#000000" face=3D"Arial, Helvetica" style=3D"color: rgb(0, 0, 0); font-s=
+ize: 10pt;"></font></p><p style=3D"font-family:Arial,verdana;font-size:12px=
+; color:#000000;padding:0px;margin: 0;line-height: 15pt; text-align: left;"=
+><font color=3D"#000000" face=3D"Arial, Helvetica" style=3D"color: rgb(0, 0=
+, 0); font-size: 10pt;"><br></font></p><p style=3D"font-family:Arial,verdan=
+a;font-size:12px; color:#000000;padding:0px;margin: 0;line-height: 15pt; te=
+xt-align: left;"><font color=3D"#000000" face=3D"Arial, Helvetica" style=3D=
+"color: rgb(0, 0, 0); font-size: 10pt;"><br></font></p><p style=3D"font-fam=
+ily:Arial,verdana;font-size:12px; color:#000000;padding:0px;margin: 0;line-=
+height: 15pt; text-align: left;"><font color=3D"#000000" face=3D"Arial, Hel=
+vetica" style=3D"color: rgb(0, 0, 0); font-size: 10pt;">Our Awards & Recogn=
+ition Tracker for 2024, a comprehensive platform to discover, apply, and re=
+flect on various awards and recognitions offered by AIM.</font></p><p style=
+=3D"font-family:Arial,verdana;font-size:12px; color:#000000;padding:0px;mar=
+gin: 0;line-height: 15pt; text-align: left;"><font color=3D"#000000" face=
+=3D"Arial, Helvetica" style=3D"color: rgb(0, 0, 0); font-size: 10pt;"><br><=
+/font></p><p style=3D"font-family:Arial,verdana;font-size:12px; color:#0000=
+00;padding:0px;margin: 0;line-height: 15pt; text-align: left;"><font color=
+=3D"#000000" face=3D"Arial, Helvetica" style=3D"color: rgb(0, 0, 0); font-s=
+ize: 10pt;"><strong>Open Surveys & Recognitions:</strong></font></p><ul sty=
+le=3D"font-family: Arial, Helvetica; line-height: 15pt; font-size: 10pt;"><=
+li style=3D"font-family: Arial, Helvetica; line-height: 15pt; font-size: 10=
+pt;"><font style=3D"font-size: 10pt;"><strong>Survey on Enterprise Challeng=
+es in Accessing External Data</strong>: <a alt=3D"Share your insights" href=
+=3D"https://cbybs-zc1.maillist-manage.in/click/1127b8852afa68c3/1127b8852ae=
+cdac5" rel=3D"noopener noreferrer" style=3D"text-decoration:underline;color=
+: rgb(0, 0, 0);" target=3D"_blank" title=3D"Share your insights" zcurl_name=
+=3D"l_13"><font color=3D"#000000" style=3D"color:#000000;">Share your insig=
+hts</font></a>.</font><li style=3D"font-family: Arial, Helvetica; line-heig=
+ht: 15pt; font-size: 10pt;"><font style=3D"font-size: 10pt;"><strong>Survey=
+ on Enterprise Challenges with Modern Data Tools & Platforms</strong>: <a a=
+lt=3D"Participate in our latest survey" href=3D"https://cbybs-zc1.maillist-=
+manage.in/click/1127b8852afa68c3/1127b8852aecdac7" rel=3D"noopener noreferr=
+er" style=3D"text-decoration:underline;color: rgb(0, 0, 0);" target=3D"_bla=
+nk" title=3D"Participate in our latest survey" zcurl_name=3D"l_14"><font co=
+lor=3D"#000000" style=3D"color:#000000;">Participate in our latest survey</=
+font></a>.</font><li style=3D"font-family: Arial, Helvetica; line-height: 1=
+5pt; font-size: 10pt;"><font style><p style=3D"font-family:Arial,verdana;fo=
+nt-size:12px; color:#000000;padding:0px;margin: 0;line-height: 15pt; text-a=
+lign: left;"><font color=3D"#000000" face=3D"Arial, Helvetica" style=3D"col=
+or: rgb(0, 0, 0); font-size: 10pt;"><b>AI/Data Science Trends 2024. </b><a =
+alt=3D"Participate in this Survey" href=3D"https://cbybs-zc1.maillist-manag=
+e.in/click/1127b8852afa68c3/1127b8852aecdac9" rel=3D"noopener noreferrer" s=
+tyle=3D"text-decoration:underline;color: rgb(0, 0, 0);" target=3D"_blank" t=
+itle=3D"Participate in this Survey" zcurl_name=3D"l_15"><font color=3D"#000=
+000" style=3D"color:#000000;">Participate in this Survey</font></a></font><=
+/p></font></ul><p style=3D"font-family:Arial,verdana;font-size:12px; color:=
+#000000;padding:0px;margin: 0;line-height: 15pt; text-align: left;"><font c=
+olor=3D"#000000" face=3D"Arial, Helvetica" style=3D"color: rgb(0, 0, 0); fo=
+nt-size: 10pt;"><strong>Award Nominations Now Open:</strong></font></p><ul =
+style=3D"font-family: Arial, Helvetica; line-height: 15pt; font-size: 10pt;=
+"><li style=3D"font-family: Arial, Helvetica; line-height: 15pt; font-size:=
+ 10pt;"><font style=3D"font-size: 10pt;"><strong><a alt=3D"AI100 Award 2024=
+" href=3D"https://cbybs-zc1.maillist-manage.in/click/1127b8852afa68c3/1127b=
+8852aecdacb" rel=3D"noopener noreferrer" style=3D"text-decoration:underline=
+;color: rgb(0, 0, 0);" target=3D"_blank" title=3D"AI100 Award 2024" zcurl_n=
+ame=3D"l_16"><font color=3D"#000000" style=3D"color:#000000;">AI100 Award 2=
+024</font></a></strong>: Celebrating 100 Most Influential AI Leaders in USA=
+.</font><li style=3D"font-family: Arial, Helvetica; line-height: 15pt; font=
+-size: 10pt;"><font style=3D"font-size: 10pt;"><strong><a alt=3D"40 under 4=
+0 Data Scientists 2024" href=3D"https://cbybs-zc1.maillist-manage.in/click/=
+1127b8852afa68c3/1127b8852aecdacd" rel=3D"noopener noreferrer" style=3D"tex=
+t-decoration:underline;color: rgb(0, 0, 0);" target=3D"_blank" title=3D"40 =
+under 40 Data Scientists 2024" zcurl_name=3D"l_17"><font color=3D"#000000" =
+style=3D"color:#000000;">40 under 40 Data Scientists 2024</font></a></stron=
+g>: Recognizing India's leading data scientists.</font><li style=3D"font-fa=
+mily: Arial, Helvetica; line-height: 15pt; font-size: 10pt;"><font style=3D=
+"font-size: 10pt;"><strong><a alt=3D"Data Engineering Awards 2024" href=3D"=
+https://cbybs-zc1.maillist-manage.in/click/1127b8852afa68c3/1127b8852aecdac=
+f" rel=3D"noopener noreferrer" style=3D"text-decoration:underline;color: rg=
+b(0, 0, 0);" target=3D"_blank" title=3D"Data Engineering Awards 2024" zcurl=
+_name=3D"l_18"><font color=3D"#000000" style=3D"color:#000000;">Data Engine=
+ering Awards 2024</font></a></strong>: Celebrating innovative data-driven t=
+eams.</font></ul><p style=3D"font-family:Arial,verdana;font-size:12px; colo=
+r:#000000;padding:0px;margin: 0;line-height: 15pt; text-align: left;"><font=
+ color=3D"#000000" face=3D"Arial, Helvetica" style=3D"color: rgb(0, 0, 0); =
+font-size: 10pt;"><br></font></p><p style=3D"font-family:Arial,verdana;font=
+-size:12px; color:#000000;padding:0px;margin: 0;line-height: 15pt; text-ali=
+gn: left;"><font color=3D"#000000" face=3D"Arial, Helvetica" style=3D"color=
+: rgb(0, 0, 0); font-size: 10pt;">Don't miss this opportunity to be recogni=
+zed for your contributions. <a alt=3D"Visit our website" href=3D"https://cb=
+ybs-zc1.maillist-manage.in/click/1127b8852afa68c3/1127b8852aecdad1" rel=3D"=
+noopener noreferrer" style=3D"text-decoration:underline;color: rgb(0, 0, 0)=
+;" target=3D"_blank" title=3D"Visit our website" zcurl_name=3D"l_19"><font =
+color=3D"#000000" style=3D"color:#000000;">Visit our website</font></a> to =
+submit your survey responses and nominations today!</font></p><font color=
+=3D"#000000" face=3D"Arial, Helvetica" style=3D"color: rgb(0, 0, 0);"><div>=
+<font color=3D"#000000" face=3D"Arial, Helvetica" style=3D"color: rgb(0, 0,=
+ 0);"><br></font></div><b><i><font style=3D"font-size: 15pt;"><div><font co=
+lor=3D"#000000" face=3D"Arial, Helvetica" style=3D"color: rgb(0, 0, 0);"><b=
+><i><font style=3D"font-size: 15pt;"><br></font></i></b></font></div>For de=
+tails on partnerships, write to us at info@aimresearch.co</font></i></b><br=
+></font><p style=3D"margin: 0;padding: 0px;font-family:Arial, Helvetica, sa=
+ns-serif; color:#000000;line-height:1.7;font-family:Arial,verdana;font-size=
+:12px;padding:0px;"></p><div><font color=3D"#000000" face=3D"Arial, Helveti=
+ca" style=3D"color: rgb(0, 0, 0);"><br></font></div></div>
+=09=09=09</td></tr>
+=09=09</tbody></table>
+       =09  </div>
+</td></tr>
+<tr><td class=3D"txtsize" id=3D"elm_1617208374872" style=3D" mso-table-lspa=
+ce:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse:collap=
+se;" valign=3D"top">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=09=20
+
+=09          <div class=3D"zpelement-wrapper spacebar" id=3D"elm_1617208374=
+872" style=3D";word-wrap:break-word;overflow:hidden;background-color:#25252=
+5;">
+=09=09=09=09=09
+=09=09=09=09=09 <table bgcolor=3D"#252525" border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" class=3D"zpAlignPos" style=3D" mso-table-lspace:0pt; mso-t=
+able-rspace:0pt;padding:0px;border:0px;border-collapse:collapse; mso-table-=
+lspace:0pt;font-size:5px; mso-table-rspace:0pt;word-break:break-word;-ms-te=
+xt-size-adjust: 100%;-webkit-text-size-adjust: 100%;height:23px;" width=3D"=
+100%">
+
+=09                        <tbody><tr><td style=3D"border-collapse:collapse=
+; mso-table-lspace:0pt;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;padding:0px;border:0px;font-size:5px;height:23px;border-top:none=
+ none none;border-bottom:none none none;">
+
+=09                        &nbsp;&nbsp;&nbsp;
+
+=09                        </td></tr>
+
+=09                </tbody></table>
+
+=09          </div>
+
+</td></tr>
+<tr><td class=3D"txtsize" id=3D"elm_1617208345924" style=3D" mso-table-lspa=
+ce:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse:collap=
+se;" valign=3D"top">
+
+          <div class=3D"zpelement-wrapper" id=3D"elm_1617208345924" style=
+=3D";word-wrap:break-word;overflow:hidden;padding-right:0px;background-colo=
+r:#252525;">
+=09    =09<table bgcolor=3D"#252525" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" class=3D"zpAlignPos" style=3D" mso-table-lspace:0pt; mso-table-r=
+space:0pt;font-size:12px;padding:0px;border:0px;border-collapse:collapse; m=
+so-table-lspace:0pt; mso-table-rspace:0pt;word-break:break-word;-ms-text-si=
+ze-adjust: 100%;-webkit-text-size-adjust: 100%;" width=3D"100%">
+=09  =09
+            <tbody><tr><td class=3D"paddingcomp" style=3D"border-collapse:c=
+ollapse; mso-table-lspace:0pt; mso-table-rspace:0pt;border:0px;padding:7px =
+15px;font-size:12pt;font-family:Arial,Helvetica;line-height:19pt;border-top=
+:0px none ;   border-bottom:0px none ;padding-top:7px;padding-bottom:7px;pa=
+dding-right:15px;padding-left:15px;">
+             =09    =09=09<div componentbgcolor=3D"#252525" style=3D"backgr=
+ound-color: rgb(37, 37, 37);"><p style=3D"line-height:1.7;font-family:Arial=
+,verdana;font-size:12px; color:#000000;padding:0px;margin: 0;text-align: ce=
+nter; line-height: 19pt;"><font color=3D"#b4b4b4" face=3D"Arial, Helvetica,=
+ sans-serif" style=3D"font-size: 11pt;">Follow Us On</font></p></div>
+=09=09=09</td></tr>
+=09=09</tbody></table>
+       =09  </div>
+</td></tr>
+<tr><td class=3D"txtsize" id=3D"elm_1617208406084" style=3D" mso-table-lspa=
+ce:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse:collap=
+se;" valign=3D"top">
+
+
+
+
+
+
+
+
+
+
+=09                <div class=3D"zpelement-wrapper wdgts" id=3D"elm_1617208=
+406084" style=3D"overflow:hidden;word-wrap:break-word;">
+=09=09=09=09=09=09<table bgcolor=3D"#252525" border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" class=3D"zpAlignPos" style=3D" mso-table-lspace:0pt; mso=
+-table-rspace:0pt;padding:0px;border:0px;border-collapse:collapse; mso-tabl=
+e-lspace:0pt;font-size:5px; mso-table-rspace:0pt;word-break:break-word;-ms-=
+text-size-adjust: 100%;-webkit-text-size-adjust: 100%;  background-color:#2=
+52525;" width=3D"100%">
+=09=09=09=09=09=09=09<tbody><tr><td style=3D"border-collapse:collapse; mso-=
+table-lspace:0pt;font-family:Arial, Helvetica, sans-serif; mso-table-rspace=
+:0pt;padding:7px 15px;border:0px;font-size:5px;border-top:0px none ;border-=
+bottom:0px none ;padding-top:7px;padding-bottom:7px;padding-right:15px;padd=
+ing-left:15px;">
+=09=09=09=09=09=09=09=09<table align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" style=3D"border-collapse:collapse;border-collapse:col=
+lapse; mso-table-lspace:0pt; mso-table-rspace:0pt;font-size:12px;min-width:=
+ 100%;border: none;" width=3D"100%"><tbody><tr><td align=3D"center" style=
+=3D"border-collapse:collapse; mso-table-lspace:0pt; font-size:12px;font-fam=
+ily:Arial, Helvetica, sans-serif; mso-table-rspace:0pt;font-size:12px;borde=
+r: none;padding: 0px;margin: 0px;" valign=3D"top"> <table align=3D"center" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" componentbgcolor=3D"#25252=
+5" icontext=3D"false" index=3D"2" name=3D"zcsclwdgts_alnmnt" style=3D" mso-=
+table-lspace:0pt; mso-table-rspace:0pt;font-size:12px;border-collapse: coll=
+apse;border: none;margin:auto;"><tbody><tr><td align=3D"left" style=3D"bord=
+er-collapse:collapse; mso-table-lspace:0pt; font-size:12px;font-family:Aria=
+l, Helvetica, sans-serif; mso-table-rspace:0pt;font-size:12px;border: none;=
+padding: 0px;margin: 0px;" valign=3D"top"> <table align=3D"center" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" name=3D"zcsclwdgtscontainer" sty=
+le=3D"border-collapse:collapse;border-collapse:collapse; mso-table-lspace:0=
+pt; mso-table-rspace:0pt;font-size:12px;border: none;"><tbody><tr><td align=
+=3D"left" style=3D"border-collapse:collapse; mso-table-lspace:0pt; font-siz=
+e:12px;font-family:Arial, Helvetica, sans-serif; mso-table-rspace:0pt;font-=
+size:12px;border:none;padding:0px;margin:0px;" valign=3D"top"><table align=
+=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D" mso-ta=
+ble-lspace:0pt; mso-table-rspace:0pt;font-size:12px;border-collapse: collap=
+se;border: none;"><tbody><tr><td style=3D"border-collapse:collapse; mso-tab=
+le-lspace:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso=
+-table-rspace:0pt;font-size:12px;padding-right: 9px;padding-bottom: 9px;bor=
+der:none;padding: 0px;margin: 0px;" valign=3D"top"> <table border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" style=3D" mso-table-lspace:0pt; mso-table-=
+rspace:0pt;font-size:12px;border-collapse: separate;border: none;"><tbody><=
+tr><td align=3D"left" style=3D"border-collapse:collapse; mso-table-lspace:0=
+pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-rspa=
+ce:0pt;font-size:12px;padding:7px;padding-top: 0px;padding-right: 9px;paddi=
+ng-bottom: 0px;padding-left: 9px;border:none;" valign=3D"middle"> <table al=
+ign=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D" mso=
+-table-lspace:0pt; mso-table-rspace:0pt;font-size:12px;border-collapse: col=
+lapse;border: none;" width><tbody><tr><td align=3D"center" name=3D"sclwdgti=
+mges" style=3D"border-collapse:collapse; mso-table-lspace:0pt; font-size:12=
+px;font-family:Arial, Helvetica, sans-serif; mso-table-rspace:0pt;font-size=
+:12px;border: none;padding: 0px;margin: 0px;padding-bottom: 6px;" valign=3D=
+"middle"> <a href=3D"https://cbybs-zc1.maillist-manage.in/click/1127b8852af=
+a68c3/1127b8852aecdad3" style=3D"text-decoration:underline;display: block;f=
+ont-size: 1px;" target=3D"_blank" zcurl_name=3D"l_20"><img alt=3D"Facebook"=
+ height=3D"35" src=3D"https://stratus.campaign-image.in/images/832380002199=
+70092_3_1702287803604_zcsclwgtfb2.png" style=3D"border: 0px; margin: 0px; o=
+utline: none; text-decoration: none; width: 20px; height: 20px;" vspace=3D"=
+10" width=3D"35"></a> </td></tr></tbody></table></td></tr></tbody></table><=
+/td></tr></tbody></table></td><td align=3D"left" style=3D"border-collapse:c=
+ollapse; mso-table-lspace:0pt; font-size:12px;font-family:Arial, Helvetica,=
+ sans-serif; mso-table-rspace:0pt;font-size:12px;border:none;padding:0px;ma=
+rgin:0px;" valign=3D"top"><table align=3D"left" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;=
+font-size:12px;border-collapse: collapse;border: none;"><tbody><tr><td styl=
+e=3D"border-collapse:collapse; mso-table-lspace:0pt; font-size:12px;font-fa=
+mily:Arial, Helvetica, sans-serif; mso-table-rspace:0pt;font-size:12px;padd=
+ing-right: 9px;padding-bottom: 9px;border:none;padding: 0px;margin: 0px;" v=
+align=3D"top"> <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" styl=
+e=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font-size:12px;border-coll=
+apse: separate;border: none;"><tbody><tr><td align=3D"left" style=3D"border=
+-collapse:collapse; mso-table-lspace:0pt; font-size:12px;font-family:Arial,=
+ Helvetica, sans-serif; mso-table-rspace:0pt;font-size:12px;padding:7px;pad=
+ding-top: 0px;padding-right: 9px;padding-bottom: 0px;padding-left: 9px;bord=
+er:none;" valign=3D"middle"> <table align=3D"left" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D" mso-table-lspace:0pt; mso-table-rspace:0=
+pt;font-size:12px;border-collapse: collapse;border: none;" width><tbody><tr=
+><td align=3D"center" name=3D"sclwdgtimges" style=3D"border-collapse:collap=
+se; mso-table-lspace:0pt; font-size:12px;font-family:Arial, Helvetica, sans=
+-serif; mso-table-rspace:0pt;font-size:12px;border: none;padding: 0px;margi=
+n: 0px;padding-bottom: 6px;" valign=3D"middle"> <a href=3D"https://cbybs-zc=
+1.maillist-manage.in/click/1127b8852afa68c3/1127b8852aecdad5" style=3D"text=
+-decoration:underline;display: block;font-size: 1px;" target=3D"_blank" zcu=
+rl_name=3D"l_21"><img alt=3D"Twitter" height=3D"35" src=3D"https://stratus.=
+campaign-image.in/images/83238000219970092_4_1702287803657_zcsclwgttwt2.png=
+" style=3D"border: 0px; margin: 0px; outline: none; text-decoration: none; =
+width: 20px; height: 20px;" vspace=3D"10" width=3D"35"></a> </td></tr></tbo=
+dy></table></td></tr></tbody></table></td></tr></tbody></table></td><td ali=
+gn=3D"left" style=3D"border-collapse:collapse; mso-table-lspace:0pt; font-s=
+ize:12px;font-family:Arial, Helvetica, sans-serif; mso-table-rspace:0pt;fon=
+t-size:12px;border:none;padding:0px;margin:0px;" valign=3D"top"><table alig=
+n=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D" mso-t=
+able-lspace:0pt; mso-table-rspace:0pt;font-size:12px;border-collapse: colla=
+pse;border: none;"><tbody><tr><td style=3D"border-collapse:collapse; mso-ta=
+ble-lspace:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; ms=
+o-table-rspace:0pt;font-size:12px;padding-right: 9px;padding-bottom: 9px;bo=
+rder:none;padding: 0px;margin: 0px;" valign=3D"top"> <table border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" style=3D" mso-table-lspace:0pt; mso-table=
+-rspace:0pt;font-size:12px;border-collapse: separate;border: none;"><tbody>=
+<tr><td align=3D"left" style=3D"border-collapse:collapse; mso-table-lspace:=
+0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-rsp=
+ace:0pt;font-size:12px;padding:7px;padding-top: 0px;padding-right: 9px;padd=
+ing-bottom: 0px;padding-left: 9px;border:none;" valign=3D"middle"> <table a=
+lign=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D" ms=
+o-table-lspace:0pt; mso-table-rspace:0pt;font-size:12px;border-collapse: co=
+llapse;border: none;" width><tbody><tr><td align=3D"center" name=3D"sclwdgt=
+imges" style=3D"border-collapse:collapse; mso-table-lspace:0pt; font-size:1=
+2px;font-family:Arial, Helvetica, sans-serif; mso-table-rspace:0pt;font-siz=
+e:12px;border: none;padding: 0px;margin: 0px;padding-bottom: 6px;" valign=
+=3D"middle"> <a href=3D"https://cbybs-zc1.maillist-manage.in/click/1127b885=
+2afa68c3/1127b8852aecdad7" style=3D"text-decoration:underline;display: bloc=
+k;font-size: 1px;" target=3D"_blank" zcurl_name=3D"l_22"><img alt=3D"Linked=
+In" height=3D"35" src=3D"https://stratus.campaign-image.in/images/832380002=
+19970092_5_1702287803720_zcsclwgtlin2.png" style=3D"border: 0px; margin: 0p=
+x; outline: none; text-decoration: none; width: 20px; height: 20px;" vspace=
+=3D"10" width=3D"35"></a> </td></tr></tbody></table></td></tr></tbody></tab=
+le></td></tr></tbody></table></td><td align=3D"left" style=3D"border-collap=
+se:collapse; mso-table-lspace:0pt; font-size:12px;font-family:Arial, Helvet=
+ica, sans-serif; mso-table-rspace:0pt;font-size:12px;border:none;padding:0p=
+x;margin:0px;" valign=3D"top"><table align=3D"left" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" style=3D" mso-table-lspace:0pt; mso-table-rspace:=
+0pt;font-size:12px;border-collapse: collapse;border: none;"><tbody><tr><td =
+style=3D"border-collapse:collapse; mso-table-lspace:0pt; font-size:12px;fon=
+t-family:Arial, Helvetica, sans-serif; mso-table-rspace:0pt;font-size:12px;=
+padding-right: 9px;padding-bottom: 9px;border:none;padding: 0px;margin: 0px=
+;" valign=3D"top"> <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" =
+style=3D" mso-table-lspace:0pt; mso-table-rspace:0pt;font-size:12px;border-=
+collapse: separate;border: none;"><tbody><tr><td align=3D"left" style=3D"bo=
+rder-collapse:collapse; mso-table-lspace:0pt; font-size:12px;font-family:Ar=
+ial, Helvetica, sans-serif; mso-table-rspace:0pt;font-size:12px;padding:7px=
+;padding-top: 0px;padding-right: 9px;padding-bottom: 0px;padding-left: 9px;=
+border:none;" valign=3D"middle"> <table align=3D"left" border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" style=3D" mso-table-lspace:0pt; mso-table-rspa=
+ce:0pt;font-size:12px;border-collapse: collapse;border: none;" width><tbody=
+><tr><td align=3D"center" name=3D"sclwdgtimges" style=3D"border-collapse:co=
+llapse; mso-table-lspace:0pt; font-size:12px;font-family:Arial, Helvetica, =
+sans-serif; mso-table-rspace:0pt;font-size:12px;border: none;padding: 0px;m=
+argin: 0px;padding-bottom: 6px;" valign=3D"middle"> <a href=3D"https://cbyb=
+s-zc1.maillist-manage.in/click/1127b8852afa68c3/1127b8852aecdad9" style=3D"=
+text-decoration:underline;display: block;font-size: 1px;" target=3D"_blank"=
+ zcurl_name=3D"l_23"><img alt=3D"Youtube" height=3D"35" src=3D"https://stra=
+tus.campaign-image.in/images/83238000219970092_6_1702287803771_zcsclwgtyt2.=
+png" style=3D"border: 0px; margin: 0px; outline: none; text-decoration: non=
+e; width: 20px; height: 20px;" vspace=3D"10" width=3D"35"></a> </td></tr></=
+tbody></table></td></tr></tbody></table></td></tr></tbody></table></td><td =
+align=3D"left" style=3D"border-collapse:collapse; mso-table-lspace:0pt; fon=
+t-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-rspace:0pt;=
+font-size:12px;border:none;padding:0px;margin:0px;" valign=3D"top"><table a=
+lign=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D" ms=
+o-table-lspace:0pt; mso-table-rspace:0pt;font-size:12px;border-collapse: co=
+llapse;border: none;"><tbody><tr><td style=3D"border-collapse:collapse; mso=
+-table-lspace:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif;=
+ mso-table-rspace:0pt;font-size:12px;padding-right: 9px;padding-bottom: 9px=
+;border:none;padding: 0px;margin: 0px;" valign=3D"top"> <table border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" style=3D" mso-table-lspace:0pt; mso-ta=
+ble-rspace:0pt;font-size:12px;border-collapse: separate;border: none;"><tbo=
+dy><tr><td align=3D"left" style=3D"border-collapse:collapse; mso-table-lspa=
+ce:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;font-size:12px;padding:7px;padding-top: 0px;padding-right: 9px;p=
+adding-bottom: 0px;padding-left: 9px;border:none;" valign=3D"middle"> <tabl=
+e align=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"=
+ mso-table-lspace:0pt; mso-table-rspace:0pt;font-size:12px;border-collapse:=
+ collapse;border: none;" width><tbody><tr><td align=3D"center" name=3D"sclw=
+dgtimges" style=3D"border-collapse:collapse; mso-table-lspace:0pt; font-siz=
+e:12px;font-family:Arial, Helvetica, sans-serif; mso-table-rspace:0pt;font-=
+size:12px;border: none;padding: 0px;margin: 0px;padding-bottom: 6px;" valig=
+n=3D"middle"> <a href=3D"https://cbybs-zc1.maillist-manage.in/click/1127b88=
+52afa68c3/1127b8852aecdadb" style=3D"text-decoration:underline;display: blo=
+ck;font-size: 1px;" target=3D"_blank" zcurl_name=3D"l_24"><img alt=3D"Insta=
+gram" height=3D"35" src=3D"https://stratus.campaign-image.in/images/8323800=
+0219970092_7_1702287803822_zcsclwgtinsta2.png" style=3D"border: 0px; margin=
+: 0px; outline: none; text-decoration: none; width: 20px; height: 20px;" vs=
+pace=3D"10" width=3D"35"></a> </td></tr></tbody></table></td></tr></tbody><=
+/table></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbod=
+y></table></td></tr></tbody></table>=09
+=09=09=09=09=09=09=09</td></tr>
+=09=09=09            </tbody></table>=09
+=09=09            </div>
+</td></tr>
+<tr><td class=3D"txtsize" id=3D"elm_1617208446087" style=3D" mso-table-lspa=
+ce:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse:collap=
+se;" valign=3D"top">
+
+          <div class=3D"zpelement-wrapper" id=3D"elm_1617208446087" style=
+=3D";word-wrap:break-word;overflow:hidden;padding-right:0px;background-colo=
+r:#252525;">
+=09    =09<table bgcolor=3D"#252525" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" class=3D"zpAlignPos" style=3D" mso-table-lspace:0pt; mso-table-r=
+space:0pt;font-size:12px;padding:0px;border:0px;border-collapse:collapse; m=
+so-table-lspace:0pt; mso-table-rspace:0pt;word-break:break-word;-ms-text-si=
+ze-adjust: 100%;-webkit-text-size-adjust: 100%;" width=3D"100%">
+=09  =09
+            <tbody><tr><td class=3D"paddingcomp" style=3D"border-collapse:c=
+ollapse; mso-table-lspace:0pt; mso-table-rspace:0pt;border:0px;padding:7px =
+15px;font-size:12pt;font-family:Arial,Helvetica;line-height:19pt;border-top=
+:0px none ;   border-bottom:0px none ;padding-top:7px;padding-bottom:7px;pa=
+dding-right:100px;padding-left:100px;">
+             =09    =09=09<div componentbgcolor=3D"#252525" componentpaddin=
+gbottom=3D"7px" componentpaddingleft=3D"100px" componentpaddingright=3D"100=
+px" componentpaddingtop=3D"7px" style=3D"background-color: rgb(37, 37, 37);=
+"><p align=3D"center" style=3D"font-family:Arial,verdana;font-size:12px; co=
+lor:#000000;padding:0px;margin: 0;line-height: 19pt; text-align: center;"><=
+font face=3D"Arial, Helvetica" style=3D"font-size: 9pt;"><font color=3D"#ae=
+aeae">You are receiving this email as you signed up for our newsletters.</f=
+ont><font color=3D"#aeaeae"></font></font></p><p align=3D"center" style=3D"=
+font-family:Arial,verdana;font-size:12px; color:#000000;padding:0px;margin:=
+ 0;line-height: 19pt; text-align: center;"><font face=3D"Arial, Helvetica" =
+style><span><font color=3D"#aeaeae" style=3D"font-size: 9pt;"><span>Want to=
+ change how you receive these emails?</span><br></font></span></font></p><p=
+ align=3D"center" style=3D"font-family:Arial,verdana;font-size:12px; color:=
+#000000;padding:0px;margin: 0;line-height: 19pt; text-align: center;"><font=
+ face=3D"Arial, Helvetica" style=3D"font-size: 9pt;"><span><font color=3D"#=
+aeaeae">You can </font><font color=3D"#d4d4d4" style><a alt=3D"Unsubscribe"=
+ href=3D"https://cbybs-zc1.maillist-manage.in/ua/optout?od=3D3z89f4a444e5d5=
+87ee6eb6363a3e13c7f5e664e744bd0b5dd30353de4b42e816d4&rd=3D1127b8852afa68c3&=
+sd=3D1127b8852af73258&n=3D11699e4c3835906" rel=3D"noopener noreferrer" styl=
+e=3D"text-decoration:underline;" target=3D"_blank" title=3D"Unsubscribe" zc=
+url_name=3D"l_25"><font color=3D"#d4d4d4" style=3D"color:#d4d4d4;">Unsubscr=
+ibe</font></a></font><font color=3D"#aeaeae"> or </font><font color=3D"#d4d=
+4d4" style><a alt=3D"Update your preferences" href=3D"https://cbybs-zc1.mai=
+llist-manage.in/click/1127b8852afa68c3/1127b8852aecdadd" rel=3D"noopener no=
+referrer" style=3D"text-decoration:underline;" target=3D"_blank" title=3D"U=
+pdate your preferences" zcurl_name=3D"l_26"><font color=3D"#d4d4d4" style=
+=3D"color:#d4d4d4;">Update your preferences</font></a></font><br></span></f=
+ont></p><p align=3D"center" style=3D"font-family:Arial,verdana;font-size:12=
+px; color:#000000;padding:0px;margin: 0;line-height: 19pt; text-align: cent=
+er;"><font face=3D"Arial, Helvetica" style><font color=3D"#aeaeae" style=3D=
+"font-size: 10pt;"></font><br></font></p></div>
+=09=09=09</td></tr>
+=09=09</tbody></table>
+       =09  </div>
+</td></tr>
+<tr><td class=3D"txtsize" id=3D"elm_1614755025369" style=3D" mso-table-lspa=
+ce:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse:collap=
+se;" valign=3D"top">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=09=20
+
+=09          <div class=3D"zpelement-wrapper spacebar" id=3D"elm_1614755025=
+369" style=3D";word-wrap:break-word;overflow:hidden;background-color:#25252=
+5;">
+=09=09=09=09=09
+=09=09=09=09=09 <table bgcolor=3D"#252525" border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" class=3D"zpAlignPos" style=3D" mso-table-lspace:0pt; mso-t=
+able-rspace:0pt;padding:0px;border:0px;border-collapse:collapse; mso-table-=
+lspace:0pt;font-size:5px; mso-table-rspace:0pt;word-break:break-word;-ms-te=
+xt-size-adjust: 100%;-webkit-text-size-adjust: 100%;height:22px;" width=3D"=
+100%">
+
+=09                        <tbody><tr><td style=3D"border-collapse:collapse=
+; mso-table-lspace:0pt;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;padding:0px;border:0px;font-size:5px;height:22px;border-top:none=
+ none none;border-bottom:none none none;">
+
+=09                        &nbsp;&nbsp;&nbsp;
+
+=09                        </td></tr>
+
+=09                </tbody></table>
+
+=09          </div>
+
+</td></tr>
+<tr><td class=3D"txtsize" id=3D"elm_1614755058514" style=3D" mso-table-lspa=
+ce:0pt; font-size:12px;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;font-size:12px;border:0px;padding:0px 0px;border-collapse:collap=
+se;" valign=3D"top">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=09=20
+
+=09          <div class=3D"zpelement-wrapper spacebar" id=3D"elm_1614755058=
+514" style=3D";word-wrap:break-word;overflow:hidden;background-color:#f0f0f=
+0;">
+=09=09=09=09=09
+=09=09=09=09=09 <table bgcolor=3D"#f0f0f0" border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" class=3D"zpAlignPos" style=3D" mso-table-lspace:0pt; mso-t=
+able-rspace:0pt;padding:0px;border:0px;border-collapse:collapse; mso-table-=
+lspace:0pt;font-size:5px; mso-table-rspace:0pt;word-break:break-word;-ms-te=
+xt-size-adjust: 100%;-webkit-text-size-adjust: 100%;height:35px;" width=3D"=
+100%">
+
+=09                        <tbody><tr><td style=3D"border-collapse:collapse=
+; mso-table-lspace:0pt;font-family:Arial, Helvetica, sans-serif; mso-table-=
+rspace:0pt;padding:0px;border:0px;font-size:5px;height:35px;border-top:none=
+ none none;border-bottom:none none none;">
+
+=09                        &nbsp;&nbsp;&nbsp;
+
+=09                        </td></tr>
+
+=09                </tbody></table>
+
+=09          </div>
+
+</td></tr>
+    </tbody></table>
+</div>
+
+=09=09=09=09=09</td>=20
+=09=09=09=09=09</tr>=20
+=09=09=09=09=09</tbody></table>
+=09=09=09=09</td>=20
+=09=09=09=09<td style=3D" mso-table-lspace:0pt; font-size:12px;font-family:=
+Arial, Helvetica, sans-serif; mso-table-rspace:0pt;font-size:12px;border:0p=
+x;padding:0px;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rsp=
+ace:0pt;">&nbsp;</td>
+=09=09=09</tr>=20
+=09=09</tbody></table>=20
+</div>
+</center>=20
+
+        <meta content=3D"width=3Ddevice-width" name=3D"viewport">
+        <style>
+            @media screen and (max-width: 480px)
+            {
+                table[class=3Dtmplfooter]{width:100% !important;max-width:1=
+00% !important; text-align:left;}=20
+                table[class=3Dtmplheader]{width:100% !important; max-width:=
+100% !important; text-align:left;}=20
+                div[class=3Dtxtsize]{text-align:left}=20
+                td[class=3Dtxtsize]{text-align:left}
+            }
+            @media screen and (min-width: 320px) and (max-width: 480px) and=
+ (orientation : portrait){
+            {
+                    table[class=3Dtmplfooter]{width:100% !important;max-wid=
+th:100% !important; text-align:left;}=20
+=09                table[class=3Dtmplheader]{width:100% !important; max-wid=
+th:100% !important; text-align:left;}=20
+=09                div[class=3Dtxtsize]{text-align:left}=20
+=09                td[class=3Dtxtsize]{text-align:left}
+             }
+            @media screen and (max-width: 598px)
+            {
+                table[class=3Dtmplfooter]{width:100% !important;max-width:1=
+00% !important; text-align:left;}=20
+                table[class=3Dtmplheader]{width:100% !important; max-width:=
+100% !important; text-align:left;}=20
+                div[class=3Dtxtsize]{text-align:left}=20
+                td[class=3Dtxtsize]{text-align:left}
+            }
+        </style>
+
+<table cellpadding=3D"0" cellspacing=3D"0" style=3D"background-color:#f7f7f=
+7;color:#333;font-size:11px;border-color:#f0f0f0;border-width:1px;font-fami=
+ly:Arial;border-style:solid;" width=3D"100%"><tbody><tr><td align=3D"center=
+">
+=09<table align=3D"center" cellpadding=3D"9" cellspacing=3D"0" class=3D"tmp=
+lfooter" id=3D"F_INNER" style=3D"width:600px;text-align:center;color:inheri=
+t;font-size:inherit;font-family:inherit;">
+=09<tbody><tr><td align=3D"center">
+=09=09<div class=3D"txtsize" style=3D"text-align:center;color:#333;font-siz=
+e:11px;font-family:Arial;">
+=09=09
+=09=09<div style=3D"color:#333;font-size:11px;font-family:Arial;">This emai=
+l was sent by <a href=3D"mailto:info@aimresearch.co" id=3D"FOOTERLINK" styl=
+e=3D"color:#0000FF;font-size:11px;font-family:Arial;" target=3D"_blank"><sp=
+an style>info@aimresearch.co</span></a> to <a href=3D"mailto:brnkath@gmail.=
+com" id=3D"FOOTERLINK" style=3D"color:#0000FF;font-size:11px;font-family:Ar=
+ial;" target=3D"_blank"><span style>brnkath@gmail.com</span></a></div>
+=09=09<div class=3D"txtsize" style=3D"padding-top:3px;text-align:center;col=
+or:#333;font-size:11px;font-family:Arial;">Not interested? <a href=3D"https=
+://cbybs-zc1.maillist-manage.in/ua/optout?od=3D3z89f4a444e5d587ee6eb6363a3e=
+13c7f5e664e744bd0b5dd30353de4b42e816d4&rd=3D1127b8852afa68c3&sd=3D1127b8852=
+af73258&n=3D11699e4c3835906" id=3D"FOOTERLINK" rel=3D"nofollow" style=3D"co=
+lor:#0000FF;font-size:11px;font-family:Arial;" target=3D"_blank"><span styl=
+e>Unsubscribe</span></a> | <a href=3D"https://cbybs-zc1.maillist-manage.in/=
+ua/commpref?od=3D3z89f4a444e5d587ee6eb6363a3e13c7f5e664e744bd0b5dd30353de4b=
+42e816d4&rd=3D1127b8852afa68c3&sd=3D1127b8852af73258&n=3D11699e4c3835906" i=
+d=3D"FOOTERLINK" rel=3D"nofollow" style=3D"color:#0000FF;font-size:11px;fon=
+t-family:Arial;" target=3D"_blank"><span id=3D"f11p">Manage Preference</spa=
+n></a> | <a href=3D"https://cbybs-zc1.maillist-manage.in/ua/upc?upd=3D1127b=
+885291f7794&r=3D1127b8852afa68c3&n=3D11699e4c3835906&od=3D3z89f4a444e5d587e=
+e6eb6363a3e13c7f5e664e744bd0b5dd30353de4b42e816d4" id=3D"FOOTERLINK" rel=3D=
+"nofollow" style=3D"color:#0000FF;font-size:11px;font-family:Arial;" target=
+=3D"_blank"><span style>Update profile</span></a> </div>
+=09=09<div style=3D"margin-top:5px;color:#333;font-size:11px;font-family:Ar=
+ial;"></div>=20
+=09=09<div class=3D"txtsize" style=3D"padding-top:3px;text-align:center;col=
+or:#acacac;font-size:11px;font-family:Arial;">Analytics India Magazine | 28=
+0, 2nd floor, 5th Main, 15 A cross, Sector 6, HSR layout Bengaluru, Karnata=
+ka 560102  </div>
+=09=09<div class=3D"txtsize" style=3D"padding:3px;text-align:center;color:#=
+acacac;font-size:11px;font-family:Arial;"></div>=09=09
+=09=09<div class=3D"txtsize" style=3D"margin-top:5px;text-align:center;">  =
+ </div>
+=09=09<div class=3D"txtsize" id=3D"FOOTERADDRESS" style=3D"padding:3px;padd=
+ing-left:0px;text-align:center;color:#acacac;font-size:11px;font-family:Ari=
+al;"></div>
+=09=09
+=09=09</div>
+=09</td></tr>
+</tbody></table>
+=09</td></tr>
+</tbody></table>
+   =20
+<img style=3D'visibility:hidden' src=3D"https://cbybs-zc1.maillist-manage.i=
+n/click/1127b8852afa68c3/open.gif" alt=3D"" height=3D"1" width=3D"1"/></bod=
+y></html>
+------=_Part_1654898_1008984.1702289087556--
