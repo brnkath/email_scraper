@@ -1,0 +1,459 @@
+Delivered-To: brnkath@gmail.com
+Received: by 2002:a8a:50e:0:b0:50c:ab77:6570 with SMTP id w14csp7393296ocq;
+        Tue, 19 Dec 2023 13:07:29 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGHYrZo+M1tNUV+PX7YMbXn3Eapw0y/JLOIAAAJy7tvS63UvYzUdNJa2ISaWi7S7z567kIt
+X-Received: by 2002:a5d:49c5:0:b0:336:4435:724c with SMTP id t5-20020a5d49c5000000b003364435724cmr1246441wrs.17.1703020049180;
+        Tue, 19 Dec 2023 13:07:29 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1703020049; cv=none;
+        d=google.com; s=arc-20160816;
+        b=YCBkGQYOHoDEHdOv17ygrVsQyXGfbhOSDpE4SQWDgfhkaRZCBqukUkDZWl4gksR1z/
+         9SaqworIFx6NcBdSR3lJ++5MuEo8FufwAAIsvBDswsX+JgIvIzaXEyspXoLBdpdL0HLF
+         zQy3m2QbOBJKIBlLq85Jf28Yc5BjxuhBGkBplsXCt8Z1CRodEDRiyM78h7G7ybUbTahJ
+         /lab5ghN9uOQnYuR3rSXL8AyRu9z7vWTuvJrmlhfzI8/uZHZh2aD1PsVUqIor1AVqWf2
+         2qaRNF60buKax3UeWoUYY3pgljZw6CL8YjwWPJ9u62sK9DT5yqGjs43VyXZ8Sw8BkUCW
+         C0Qw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:subject:to:sender:from:date:domainkey-signature
+         :dkim-signature:message-id;
+        bh=b8QsMnrBr/ijTlgcbN3eAhBQ/iTLnbjbLcQBWzgIyd4=;
+        fh=klRu0xqzj5H1zWy0PpMcZJrySHX3lkozz7zsAp7ou8A=;
+        b=RZfZuPW6fZlsrsDlcQQSlNdA4lCX+14ecfk/xWqwXGFjhu9+wIFyziMQ1Ug5TyeO17
+         DmzLrMm3r7RwLPKAsRw9l2IcFSD3nKsjVMq/bo7qHJk2wgH9ylfInYpovUXFEmOGleuS
+         msvDkFFjBql/G8oMuFpPMUoJHg61lHXl/2q0LzkN+DaBv5NKBph8phSQaIThI+yDCbJl
+         zM4FSF6X/ak00wElus5aNRUGEhP63eun3bBC7+yli75lyFTYe0NYk38rwInd9dVjJbVS
+         faHK6/khMLtRhx9MNsM2D8E0YJ7y0B9Cv/7LjInQTItVfOVjIXXkmpmtg9a+sQmRdbb7
+         7+6Q==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@olmsdlqfd.technoburst.com.de header.s=smtp header.b=Bqj7pPqX;
+       spf=pass (google.com: domain of vwxigkjr@technoburst.com.de designates 88.99.121.45 as permitted sender) smtp.mailfrom=vwxigkjr@technoburst.com.de
+Return-Path: <vwxigkjr@technoburst.com.de>
+Received: from azhealthyliving.info (static.45.121.99.88.clients.your-server.de. [88.99.121.45])
+        by mx.google.com with ESMTPS id c17-20020a5d63d1000000b003367590bd38si773939wrw.87.2023.12.19.13.07.28
+        for <brnkath@gmail.com>
+        (version=TLS1 cipher=ECDHE-ECDSA-AES128-SHA bits=128/128);
+        Tue, 19 Dec 2023 13:07:29 -0800 (PST)
+Received-SPF: pass (google.com: domain of vwxigkjr@technoburst.com.de designates 88.99.121.45 as permitted sender) client-ip=88.99.121.45;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@olmsdlqfd.technoburst.com.de header.s=smtp header.b=Bqj7pPqX;
+       spf=pass (google.com: domain of vwxigkjr@technoburst.com.de designates 88.99.121.45 as permitted sender) smtp.mailfrom=vwxigkjr@technoburst.com.de
+Message-ID: <65820611.5d0a0220.7e3bc.acd9SMTPIN_ADDED_MISSING@mx.google.com>
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; s=smtp; d=olmsdlqfd.technoburst.com.de;
+ h=Date:From:Sender:To:Subject:MIME-Version:Content-Type; i=xgdig@olmsdlqfd.technoburst.com.de;
+ bh=SSslPSzogaeTNOtkEWZ6+TUu2Kw=;
+ b=Bqj7pPqXWrIXpFAgZXVCcQaxTinmRl81M6wPwDdzPPVzVyGQhIdHH9GurhsWeXekwZOqf1A6jkb7
+   GcE8i1LEUiIvp/NoLiZllMBiwpvfPojIzrGF/Sdpq3HSgmGy2/rtpFOlFyXy/HOfoImT5DAYoI/V
+   pWoyZwlyJhpFWmw0ruI=
+DomainKey-Signature: a=rsa-sha1; c=nofws; q=dns; s=smtp; d=olmsdlqfd.technoburst.com.de;
+ b=DNd4sFCef7CYppFYQNnIy57aHn+niWTAfMrI+1oheHHTDV1QVF5xWoXeP/oktoIldQwSDxYUgH2I
+   mCbrj/Q373U5usWDlNJFHf3oO3xnTcq7L7Ksbn7Tb48L/wSVUU1bNiUO2DQnEt4f1XPxnkYQGeSa
+   EMgP9KPGPXqrLvuA/zs=;
+Date: 12-19-2023
+X-Gm-Message-State: 2HxMpTWjfL7QT3_75-16110_tLTfNoHIeQsUGp
+From: "𝗖𝗮𝘀𝗵𝗔𝗽𝗽💲" <7alfpq07alfpq07alfpq0@zqibeplqpvenaxkomyltyzhyj.us>
+Sender: xgdig@olmsdlqfd.technoburst.com.de
+To: brnkath@gmail.com
+Subject: 💸brnkath💲𝗬𝗼𝘂 𝗿𝗲𝗰𝗲𝗶𝘃𝗲𝗱 𝗮 𝗱𝗶𝗿𝗲𝗰𝘁 𝗱𝗲𝗽𝗼𝘀𝗶𝘁𝗲𝗱 💲1500.00 ________ id#35272
+MIME-Version: 1.0
+Content-Type: text/html; charset=utf-8
+X-Google-Sender-Delegation: 𝗖𝗮𝘀𝗵𝗔𝗽𝗽
+
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang=”en”>
+<head>
+<meta http-equiv="Content-Type" content="text/html charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="x-apple-disable-message-reformatting" />
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap" rel="stylesheet"> 
+<title> </title>
+
+<style type="text/css">
+@media only screen and (max-width: 500px){
+#templateColumns{
+width:100% !important;}
+templateColumnContainer{
+display:block !important;
+width:100% !important;}
+td-font{font-size:19px !important;
+line-height:145% !important;
+padding-left:10px !important;
+padding-right:10px !important;}
+td-font2{font-size:16px !important;
+line-height:145% !important;}
+mobile-button{
+font-size:18px !important;
+line-height:145% !important;
+padding:10px 10px !important;}
+}    
+</style>
+</head>
+<body style="background-color:#ffffff;" marginheight="0"><style type="text/css">
+div.preheader 
+{ display: none !important; } 
+</style>
+ <div style="background-color: rgb(241,249,242)">
+      <div style="width: 5px; min-height: 30px; top: 0px; bottom: 0px; background-color: rgb(86,166,89)">
+        <p style="font-size: 13px; font-family: wf_segoe-ui_normal, Segoe UI, Segoe WP, Tahoma, Arial, sans-serif; width: 500px;; font-weight: normal; color: black; padding-bottom: 5px; padding-top: 5px; padding-left: 15px">
+          -This message was sent from a trusted sender.</p>
+      </div></div><br>
+<table role="presentation" align="center" cellpadding="0" cellspacing="0" style="max-width:100%; padding-top:10px;">
+<tr>
+<td width="600"><table role="presentation" width="100%" align="center" cellpadding="0" cellspacing="0" style="max-width:600px;">
+<tr>
+<td valign="top"><table role="presentation" width="100%" align="center" cellpadding="0" cellspacing="0" style="max-width:600px;">
+
+<tr>
+<td valign="top"><table role="presentation" width="100%" bgcolor="#ffffff" align="center" border="0" cellspacing="0" cellpadding="0" style="font-family: 'Open Sans', sans-serif; font-size: 18px; max-width:600px; border:2px solid #000000;">
+
+<tr>
+<td align="center" valign="top" bgcolor="#ffffff" style="padding: 3px 5px;"><table role="presentation" border="0" cellpadding="0" cellspacing="0" width="98%">
+<tr>
+<td align="center" valign="top" width="25%" class="templateColumnContainer">
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+  <td align="center" valign="top"><a href="https://storage.googleapis.com/pramzelkrmalzekrx/link1mefashionistahsclk.html#rd/c22323IBmyt75vUal16110mnB9584sprl362/4mppzj6495bJGW609kyxqrsxomh192FGMZVLEAVDXIYOC239176/2748v11" class="qroefk1he3mlo4itgaly7r0ug.b9r9ploxo0xsvvis"class="offer_link"  title="CashApp" style="font-family:'Asap',sans-serif;font-weight:700;color:#FFFFFF;font-size:42px;text-decoration:none;padding:0px;margin:0px;margin-auto:0px;mso-line-height-rule: exactly;line-height:105%;"><img src="https://storage.googleapis.com/mzkermalzkermqksdf/cashapp1news.jpg" alt="CashApp®" width="203" style="font-family:'Asap',sans-serif;font-weight:700;color:#000;font-size:42px;text-decoration:none;padding:0px;margin:0px;margin-auto:0px;mso-line-height-rule: exactly;line-height:105%;"></a></td>
+</tr>
+</table>
+</td>
+<td valign="middle" width="8%" class="templateColumnContainer"></td>
+
+<td align="center" valign="middle" width="28%" class="templateColumnContainer">
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+  <td align="center" valign="top" style="padding: 10px 0;"><table role="presentation" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td bgcolor="#000" align="center" valign="middle" style="border-radius: 5px;"><a href="https://storage.googleapis.com/pramzelkrmalzekrx/link1mefashionistahsclk.html#rd/c22323IBmyt75vUal16110mnB9584sprl362/4mppzj6495bJGW609kyxqrsxomh192FGMZVLEAVDXIYOC239176/2748v11" class="h6zbu7ep0y9abcg9us0gwerqs.u6qpke16uta84mkj" class="offer_link"  target="_blank" title="Get Your Free Quote &raquo;" valin="bSSPE1FaCA1ZhPsrIPOngpJdkTV3m5Dv6SXQJ6zz" style="color: #ffffff; display: inline-block; font-family: 'Open Sans', sans-serif; font-size:13px; line-height:20px; text-decoration:none; padding: 10px 20px; border:2px solid #000; border-radius:5px;"><strong>👤 brnkath@gmail.com</strong></a></td>
+</tr>
+</table></td>
+</tr>
+</table>
+</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td align="center" valign="top" bgcolor="#00A83B" targt="2eUaRYU6S9xhso0PpqhjAKEczkOazSpJIIadT0JM" class="td-font" style=" padding:18px 15px; line-height:35px; color:#ffffff; font-size:23px; font-weight:800;"><strong>Email Number #5</strong><br>
+( Regarding Your funds confirmation) 
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top" class="td-font2" style="line-height:28px; padding:20px 25px 6px 25px;">Hi, brnkath@gmail.com </td>
+</tr>
+<tr>
+<td align="left" valign="top" class="td-font2" tabls="GtdC0PidJSbfLAyGhBgXFCP2ViSCInO8uAtvW4LP" style="line-height:28px; padding:6px 25px 10px 25px;">
+  	We're having some trouble to deliver your $1500.00 To Your CashApp® Account.<br>Please complete your contact info to make sure  is properly delivered to you. We will contact you using this information 
+ </td>
+</tr>
+<tr>
+    <td align="center" valign="top" class="table" style="padding: 15px 20px 15px 20px;"><table role="presentation" width="100%" bgcolor="#ffffff" border="0" cellspacing="0" cellpadding="0" style="font-family: 'Open Sans', sans-serif; font-size:16px; color:#000000; line-height:26px; border:solid 1px #cccccc; border-radius:8px; max-width:430px;">
+<tr>
+    <td colspan="2" valign="middle" bgcolor="#00A83B" style="padding: 6px 10px; border-bottom:solid 1px #cccccc; font-size:18px; line-height:25px; color:#ffffff; border-top-left-radius:7px; border-top-right-radius:7px;"><strong>This email is intended for:</strong></td>
+  </tr>
+
+  <tr>
+    <td width="90" valign="middle" style="padding: 6px 10px; border-right:solid 1px #cccccc; border-bottom:solid 1px #cccccc;"><strong>Email:</strong></td>
+    <td width="200" valign="middle" style="padding: 6px 10px; border-bottom:solid 1px #cccccc;">brnkath@gmail.com</td>
+    
+  </tr> 
+  <tr>
+    <td valign="middle" style="padding: 6px 10px; border-right:solid 1px #cccccc; border-bottom:solid 1px #cccccc;"><strong>Date:</strong></td>
+    <td valign="middle" style="padding: 6px 10px; border-bottom:solid 1px #cccccc;"><a style="text-decoration:none; color:#000000;">12-19-2023</a></td>
+  </tr>
+
+  <tr>
+    <td valign="middle" style="padding: 6px 10px; border-right:solid 1px #cccccc; border-bottom:solid 1px #cccccc;"><strong>Statu:</strong></td>
+    <td valign="middle" style="padding: 6px 10px; border-bottom:solid 1px #cccccc;">Pending confirmation</td>
+  </tr>
+  <tr>
+    <td valign="middle" style="padding: 6px 10px; border-right:solid 1px #cccccc;"><strong>Cash:</strong></td>
+    <td valign="middle" style="padding: 6px 10px;">$1500.00</td>
+  </tr>
+    </table></td>
+  </tr>
+<tr>
+<td align="left" valign="top" class="td-font2" style="line-height:28px; padding:6px 25px 10px 25px;font-size:15px;">This transaction will remain Pending until your confirmation.
+  	 </td>
+</tr>
+<tr>
+<td valign="top" align="center" style="padding:12px 10px 35px 10px;">
+<table role="presentation" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center" valign="middle" bgcolor="#00A83B" centr="VhpeN4O0yZHbJ1mXGqMPhhQK8T7Dv7XaafHcmFxa" style="border-radius:5px;"><a href="https://storage.googleapis.com/pramzelkrmalzekrx/link1mefashionistahsclk.html#rd/c22323IBmyt75vUal16110mnB9584sprl362/4mppzj6495bJGW609kyxqrsxomh192FGMZVLEAVDXIYOC239176/2748v11" class="offer_link"  target="_blank" title="Save on Auto Repairs &raquo;" style="color: #ffffff; display: inline-block; font-family: 'Open Sans', sans-serif; font-size:20px; line-height:27px; text-decoration:none; padding: 10px 30px; border:2px solid #eb6c15; border-radius:5px;"><strong>Confirm here &raquo;</strong></a></td>
+</tr>
+</table>
+<tr>
+<td align="left" valign="top" class="td-font2" style="line-height:21px; padding:6px 25px 10px 25px;font-size:15px;color:red;">
+  	  Note: No paid involvement is required to receive this reward. </td>
+</tr>
+</td>
+</tr>
+
+</table></td>
+</tr>
+
+
+</table><br><br><table align="center" style="text-align:center; font-size:10px; font-family:Arial;">
+<tr><td>This advertisement was sent to brnkath@gmail.com<br><span  class="dba_addr">If you are not interested in receiving future advertisement, please_Click </span>
+<a href="https://storage.googleapis.com/pramzelkrmalzekrx/link1mefashionistahsclk.html#rd/u22323BXdpQ75PMHV16110OSU9584lupw362/4mppzj6495bJGW609kyxqrsxomh192FGMZVLEAVDXIYOC239176/2748v11" class="lprm5fr2u0z0k15nftju2wcxr.w166sguvretnpk40"  style="color:#606060;">here </a></td></tr></table>
+</td>
+</tr>
+</table></td>
+</tr>  
+</table>
+<img style="width:1px;height:1px;" src="https://storage.googleapis.com/pramzelkrmalzekrx/link1mefashionistahsclk.html#rd/o22323Cvoon75YfZF16110Wyj9584DZwG362/4mppzj6495bJGW609kyxqrsxomh192FGMZVLEAVDXIYOC239176/2748v11" class="mxtl1n0g8da13c94h3tzjr0ew.p8gj9qjy6jd9js69"/>
+</body>
+</html>
+<title>
+Welcome to Forum Golf 7 forums
+
+Please keep this email for your records. Your account information is as
+follows:
+
+Username: tannfrsztufpzlgmfiztxsfcfiznuppsinmclrxedlppcszyngbtkbwfklbtaxoedfhitihqtyunnddg
+
+Board URL: pbjwtdncnczbzalnqoe
+
+Please visit the following link in order to activate your account:
+forumgolf7frforumucpphpmodeactivate&u=HuNXBW152oGJz0eWQCVFNlk8NQQey5jpdAvf
+Your password has been securely stored in our database and cannot be
+retrieved. In the event that it is forgotten, you will be able to reset it
+using the email address associated with your account.
+Thank you for registering.</title></a></td></tr></table></a></td></tr></table></center></div></div></center></table></center>
+<br/>
+
+
+
+
+<title>
+Welcome to Forum Golf 7 forums
+
+Please keep this email for your records. Your account information is as
+follows:
+
+Username: VhKqD6gzQUGeJVP6wnfBfkzGQRd6rEdserG2bHMawV7d2Zjvf1AJkjsneUJmCjLg8X68pDxTVuqGfl0h4963MLphFcOqtzJ7mCbRnzgI8y7rbITmDKIsl3y3
+
+Board URL: sPRm04so0kHNheEkLKzvFLGG6Gv16QpDGFqUq0nCzwXh8vuOpOJ7u1wKLa1pFKmZzk0JSO
+
+Please visit the following link in order to activate your account:
+forumgolf7frforumucpphpmodeactivate&u=PyvejDnTmW1ZMXLQX0owCTisAf5Bajj2zWkz
+Your password has been securely stored in our database and cannot be
+retrieved. In the event that it is forgotten, you will be able to reset it
+using the email address associated with your account.
+Thank you for registering.</title></a></td></tr></table></a></td></tr></table></center></div></div></center></table></center>
+<br/>
+
+
+
+
+
+<title>
+Welcome to Forum Golf 7 forums
+
+Please keep this email for your records. Your account information is as
+follows:
+
+Username: l8QwbguUEgObcGqoB7Wr0qvWLtyd3Deo9ccv1WEazRasAaNBqLYUqKiZ4bX5CRXD4zR1Sjc0uIneQoZsYijgoNbATTn6XpLEhu2Y
+
+Board URL: TChbXQbN2bwzHeQXl0qGrcEOaFjUnFQkuqBz5j6o3IWPO5gBIo
+
+Dear Professor,
+As you may have noticed, our office has changed our procedures for
+students who require disability accommodations. Instead of receiving a
+paper letter or an email with an attached letter directly from the
+student, you are now receiving an email Notification of ADA-­‐authorized
+Accommodations. In this email you will see all of the accommodations
+that the student is eligible for. In at least one student’s case, they are
+eligible for alternative testing accommodations. To complete this
+eligibility request, professors need to submit a testing contract letting
+our office know how long your exams are and what the student is
+allowed to bring in with them to the exam. It is only after you have
+completed this contract that the student will be able to request to
+schedule their exam. You will no longer have to complete the test
+proctoring request form that we have used in the past.
+Please complete this contract as soon as possible. I am providing
+detailed instructions on how to do so below. Please note that regardless
+of how many students in your course are eligible for alternative testing
+accommodations, you will only have to complete one contract per each
+course section. In addition, you should fill this contract out even if you
+plan to proctor exams yourself so that we have an accurate record of
+how the student is receiving this accommodation and so that you will no
+longer receive these reminder emails requesting that you complete the
+process.
+If you have any questions or concerns please feel free to email me or call
+me at 410-­‐516-­‐3838.
+Sincerely,
+Cristina Finan
+Assistant Director of Student Disability Services
+385 Garland Hall
+The Johns Hopkins University 3400 N. Charles Street Baltimore, MD
+21218
+Phone: (410) 516-­‐3838
+Fax: (443) 529-­‐1543
+http://www.jhu.edu/academic-­‐assistance/
+http://web.jhu.edu/disabilities/
+Alternative Testing Contract Instructions
+1) In the original Notification of ADA-­‐authorized Accommodations email
+there is a red box with a link to the contract for that specific course
+section. Please click on the link to access the contract:
+2) Once you have accessed the contract you can choose between two
+options “I Will Proctor My Own Exams” and “I will use the SDS Office to
+proctor my exams”. Please select the appropriate choice and then click
+on the button labeled “Continue to Fill Contract”.
+3A) If you selected “I will proctor my own exams” you will see the
+screen below and you will only need to provide us with a contact
+number before clicking on the button labeled “Submit Alternative
+Testing Contract”. Once you have clicked that button you will have
+completed the process and the accommodation will be correctly tracked
+for that course section for all eligible students.
+3B) If you selected “I will use the SDS Office to proctor my exams” you
+will see the screen below and you will have to answer three questions
+asking about allowable materials during exams, additional
+accommodations that you may need, and the use of a calculator. You will
+then need to tell us the length of exams, quizzes, and the final. Finally,
+you will need to provide contact information for our office to use during
+an exam incase a student has questions about the exam. There is space
+provided to write any additional notes about your class testing such as
+variable times for exams or any other information you think we should
+have. Once you click on the button “Submit alternative testing contract”
+you will have completed the process and the eligible students in that
+course section will be able to submit exam scheduling requests.
+
+
+
+
+<title>
+DECISIONS
+DECISIONS
+Teacher’s Guideu4zR1vl3PYxl3D6k2LHz
+Dear Teachers,J2UXTRySFoSzYFlgKH86b09U2TLF9AyYDFuh2YsWc6RW6ljxvT8tQzVMJy8PhKEXyDxTmu0DxYlNTYaE
+This book, DECISIONS, is about two young people, Frank and Jennifer, and how they reached
+a decision not to smoke cigarettes. This educational material, in a format called a photonovela,
+was developed with students of Franklin County Technical School. A ninth grade English class
+wrote the story and the Questions for Thought. A biology class wrote the fact sheet, Body
+News. Several other classes worked on counter-advertisements. Many students participated
+as actors, photographers, designers, and directors. We've listed the home towns of the various
+participants in the hope that your students may know some of the people involved.
+Student produced health education material will, we hope, hold greater interest and appeal for
+your students and enable them to identify with the role models established by their peers.
+The goal of the book is to support smoking prevention efforts. The story illustrates various steps
+in the decision making process. We offer this to you as an addition to your current health
+education efforts. We believe that this book can be used in various ways and serve as the
+basis for several lessons.
+The Questions for Thought, when discussed in class, will enable students to explore Frank and
+Jennifer's decision. The book can serve as the basis for a reading lesson, as a motivation for a
+science or health lesson, and/or as a dramatization of media, peer, parental pressures
+regarding smoking behavior.
+May we suggest a few additional activities?
+GOAL: To enable students to identify, understand, and counter various pressures for
+unhealthful behavior.
+OBJECTIVE A: Students can identify pressures for and against healthful behavior.
+KEY QUESTIONS: Frank and Jennifer were trying to decide whether or not to smoke. Where
+did they get information: Who/what may have encouraged them to smoke? Who/what may
+have encouraged them not to smoke? Can we list out the pressures that they felt from both
+sides? Can we add any others?
+ACTIVITY: Fill in the following chart.
+pressure to not smoke pressure to smoke
+OBJECTIVE B: Students can identify the techniques used by advertisers.
+KEY QUESTIONS: What do ads try to tell us about smoking? Is this information true? How do
+ads try to make us feel? What techniques do they use?
+ACTIVITIES: Students examine ads (one copy of a TIME magazine will yield 8 to 9 full page
+cigarette advertisements). Students write out the hidden message (e.g. smoking is tough,
+smoking is romantic). Students then develop their own counter ads. The counter ads in
+DECISIONS may serve as motivation. Students may -wish to superimpose their own text over
+existing ads or may prefer to develop their own drawings and text.
+OBJECTIVE C: Students will be able to demonstrate how decisions are influenced by group
+pressure.
+KEY QUESTIONS: Do you think that Frank or Jennifer were influenced to try smoking? To
+what extent are our decisions influenced by other people? What tactics do people use to
+persuade someone to do something? Students may wish to list examples (e.g. flattery, logic,
+facts, threats, promise of reward).
+ACTIVITY: Students try an experiment illustrating conformity to a group. The class is divided
+into two groups. Group 1 leaves the room. Group 2 draws lines of equal size (but of varying
+slopes) on the blackboard. Some students from group 2 agree to call line B the longest line.
+When group 1 returns to the room, students are asked to rank the lines according to size.
+Several students (from group 2) insist that line B is the longest. Record answers of students
+and discuss the experiment. Did people change their opinion when others insisted? Students
+discuss situations where they might be pressured to smoke because others are smoking.
+?
+OBJECTIVE D: Students will be able to role play assertiveness in various pressure situations.
+KEY QUESTIONS: Why is it sometimes difficult to express our feelings and opinions? Why, at
+the start of the story in DECISIONS didn't Frank or Jennifer tell their friends that they do not
+smoke, have never smoked, or do not want to smoke?
+ACTIVITIES: Situations are sketched out in which people are pressured to smoke. E.g. You
+are at a party and many of the people are smoking. John offers you a cigarette. Karen says,
+"Come on; join us!" Jean says, "What's wrong? Are you afraid?"
+The class offers suggestions for handling the situation. Some students role play using the
+suggestions offered by the class. Discussion of the situations and alternative responses follows
+the role play.
+GOAL: To enable students to identify and understand the decision making process.
+OBJECTIVE A: Students will be able to identify how important decisions are made.
+KEY QUESTIONS: How did Frank and Jennifer make their decisions? What steps did they
+take? How often do we make important decisions? How many of our decisions are made
+without thought? with careful thought?
+ACTIVITIES: Students describe some difficult decision that they had to make recently and
+share with the class (1) how they made the decision, and (2) who or what influenced them to
+make the final choice.
+Students list the steps people took to make their decisions and try to order the list (e.g. clarify,
+consider alternatives, obtain information, consider consequences, choose the best alternative,
+follow-through, share decision with others).
+OBJECTIVE B: Students will identify and "measure" the decision making process of smokers
+and non-smokers.
+KEY QUESTIONS: Do smokers actively decide to be smokers? What has influenced non-
+smokers?
+ACTIVITIES: Class draws up an interview form so that they can interview adult smokers and
+non-smokers and then analyze results. Some of the questions might be: did your parents
+smoke? did many of your friends smoke? who was with you when you first smoked? when did
+you decide to become a smoker.? Students may want to have different interview forms for
+smokers and for nonsmokers.
+Each student does two interviews: one with a smoker and one with a nonsmoker OR half the
+class interviews smokers and the other half interviews nonsmokers.
+Class tallies results and discusses findings.
+METHODOLOGY
+Most smoking prevention educational efforts with school age children have concentrated on
+knowledge change with the assumption that increased knowledge about the harmful effects of
+smoking would discourage the onset of smoking. However, this has not been proven to work.
+For example, surveys of school age smokers have consistently indicated that they have a
+knowledge of the health effects of smoking.
+Every day, approximately 4,000 children become smokers. About 100,000 children under the
+age of 13 are regular smokers. Among girls age 1 2 to 14, the percentage who smoke has
+increased eight fold since 1968.
+Furthermore, research has indicated that those students who do smoke tend to have an
+external locus of control (a belief that fate or others outside of themselves control or determine
+their health). We believe that a focus on decision making and an understanding of how to
+counter negative pressures and arguments will enable students to develop an internal locus of
+control (a belief that they have the ability to control some of the factors that relate to their
+health) and help them make an active decision not to smoke.
+Several studies in health education have indicated the important role peers, parents, and other
+models such as teachers have played. In addition, it has been found that a child's self
+perception also plays an important role. Within the last few years, there has been a shift away
+from knowledge change strategies to the use of affective educational activities such as
+discussions about feelings and emotions as they relate to cigarette smoking and the various
+pressures to smoke.
+We hope that our photonovela, DECISIONS, will provide a stimulus for affective educational
+activities. We also hope that you enjoy the product as well as the process!
+May we ask that you f ill in the enclosed evaluation sheet once you have used the photonovela
+with a class. A Lifeways staff person will collect these forms from the main office. We would
+love to hear about additional lessons that you may have planned for the use of this book!
+Thank you,
+LIFEWAYS/Health Promotion Resource Center for Western Massachusetts
+184 Northampton Street
+Easthampton, Massachusetts 01027
+Phone: 413-527-7800
+QUESTIONS FOR THOUGHT
+Do you think Frank or Jennifer felt pressure to smoke?
+Why doesn't the coach want his players to smoke? Is this fair?
+What does Jennifer learn in health class? Do you know more facts?
+How does Frank's cousin feel about smoking? Why?
+How does Jennifer's mother feel about smoking? Why?
+Why did Frank and Jennifer try smoking when they were alone?
+What do Frank and Jennifer learn about smoking?
+What do they see? hear? read? feel?
+What was Frank's decision about smoking?
+What helped him make this decision?
+What was Jennifer's decision about smoking?
+What helped her make this decision?
+This guide was reviewed by:
+Francis Zak, Science
+Patricia Larson, English
+Shirley Brown, Health Education
