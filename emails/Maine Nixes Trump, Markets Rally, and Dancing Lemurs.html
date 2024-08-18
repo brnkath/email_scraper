@@ -1,0 +1,2651 @@
+Delivered-To: brnkath@gmail.com
+Received: by 2002:a8a:e86:0:b0:511:33d7:88bb with SMTP id t6csp4035536ocw;
+        Fri, 29 Dec 2023 01:41:18 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFGAeqCGDyBFH4Z6Bz+bjo834PWdF0a6or8+TYtQfrXVf0AQYBj0gFIFUQWp0NyUo94j01N
+X-Received: by 2002:a05:6a20:3d06:b0:196:69a9:d958 with SMTP id y6-20020a056a203d0600b0019669a9d958mr812649pzi.0.1703842877760;
+        Fri, 29 Dec 2023 01:41:17 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1703842877; cv=none;
+        d=google.com; s=arc-20160816;
+        b=YaW7aeGeCleLDohbtlP+ItxEII6OyW+ufb/pdye0iPb7BC+c/q258Qo3g4K+YHwiD6
+         MLnY0LekSCdQvBV514Ix6HrWgmsCvSAN04SthMxHY9zX+bdTmGY6uAS4QIxUjYsYxJCr
+         qsZaPrRn+AphPzMd+ZadvAeFc1N+OqmZcRwmA1HqSXvWLy+kqL4gCe5sentZcO5FrDyA
+         KCG9jl6J/44uooWcaOgNB5TMuM3zJ2BJJT8JFQEylm2jJroiCgahIjpzoZvbO37olvIC
+         Zy7ErPnlundCYFq5ypLdNRJZd9dKAExA90s+gVlX155Fzd3Uad86mzIG2zMnQ2lPGtRd
+         AD1w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=message-id:list-unsubscribe:mime-version:date:reply-to:to:from
+         :subject:dkim-signature:dkim-signature;
+        bh=mtQpzl+YrauwqdlMJd+flV1GsivB8yJ5QjW9VqEltOQ=;
+        fh=q3wsJwZFp6bhetw6UpJHK1inO8/ugWLBDhVAuJZzoAM=;
+        b=z+Y60mJop/w1Dbubv7al3wxCy43clHVTAXNFtOApkNUnQs1NHYEapMZOW74Eb9q6s9
+         UfacvBFUJYIeUWoL7Iszbt+02sK4hvf/xe1e+evGxcjzsRMW4mL5b9RT8mxegKaaYPvG
+         OQ9jDMepXpA0/IaXxwj0PD1df8Bf9U/3TjnTjrpemSqw1tU/PZXaiDcnFhHDX1xzCoGL
+         oTUO6rSHfCVfQDM7xUHPLJDsfC+Mxy2PzGugTMiigzq5UvvALF24tbKnHNX530QyMsQx
+         lRWlmPTXVYneSxGVXsgmnATzedz8tZ2nmbpPMdsDR7w/Jf6Lf9xqvg38K4VqPSlkx8n8
+         fMKQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email.join1440.com header.s=cm header.b=huhfaCiT;
+       dkim=pass header.i=@cmail2.com header.s=cs2013 header.b=cvauNIYl;
+       spf=pass (google.com: domain of dailydigest-sihtux1djluhhpiy1j@bounce.email.join1440.com designates 203.55.21.41 as permitted sender) smtp.mailfrom=DailyDigest-sihtux1djluhhpiy1j@bounce.email.join1440.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=email.join1440.com
+Return-Path: <DailyDigest-sihtux1djluhhpiy1j@bounce.email.join1440.com>
+Received: from mx41.a.outbound.createsend.com (mx41.a.outbound.createsend.com. [203.55.21.41])
+        by mx.google.com with ESMTPS id d15-20020a17090ab30f00b0028bd39a7c4asi13501604pjr.143.2023.12.29.01.41.16
+        for <brnkath@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 29 Dec 2023 01:41:17 -0800 (PST)
+Received-SPF: pass (google.com: domain of dailydigest-sihtux1djluhhpiy1j@bounce.email.join1440.com designates 203.55.21.41 as permitted sender) client-ip=203.55.21.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email.join1440.com header.s=cm header.b=huhfaCiT;
+       dkim=pass header.i=@cmail2.com header.s=cs2013 header.b=cvauNIYl;
+       spf=pass (google.com: domain of dailydigest-sihtux1djluhhpiy1j@bounce.email.join1440.com designates 203.55.21.41 as permitted sender) smtp.mailfrom=DailyDigest-sihtux1djluhhpiy1j@bounce.email.join1440.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=email.join1440.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=cm; d=email.join1440.com;
+ h=Subject:From:To:Reply-To:Date:MIME-Version:Content-Type:X-Feedback-ID:
+ List-Unsubscribe:Message-ID; i=DailyDigest@email.join1440.com;
+ bh=mtQpzl+YrauwqdlMJd+flV1GsivB8yJ5QjW9VqEltOQ=;
+ b=huhfaCiT8ZhmKWnexbpmY0XXrtC8PsfeiOsYfa4bY/3svnbnTR8Stf8QsnjosceYhfxLy/gTJHQC
+   1yFt2SAucCQ0oq0X4dKzGt/0exGX3wV/M662Sni7L8qMh3gICpI1aRW4F9PQr/5h2JyKOIZTJFta
+   ipv887gF5phzoO6Mubw=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=cs2013; d=cmail2.com;
+ h=Subject:From:To:Reply-To:Date:MIME-Version:Content-Type:X-Feedback-ID:
+ List-Unsubscribe:Message-ID;
+ bh=mtQpzl+YrauwqdlMJd+flV1GsivB8yJ5QjW9VqEltOQ=;
+ b=cvauNIYlli3OMxVgTyCeCIHFMd9TLdDl17BmsXTJKSuHa4OYsJHGF/86qIE4pFhstgY9DiUtJajq
+   xk7mktgkTCrhmFaV1NUYARQQYs9jZZUN3aCfQkgcwCEsiPnNXjPpUkK+V2LUZA89WggdTkYBDKyL
+   dMQ6VA8eiqwzWpoQLxo=
+Subject: Maine Nixes Trump, Markets Rally, and Dancing Lemurs
+From: "1440 Daily Digest" <DailyDigest@email.join1440.com> 
+To: "brnkath@gmail.com" <brnkath@gmail.com>
+Reply-To: admin@join1440.com
+Date: Fri, 29 Dec 2023 20:18:19 +1100
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="_b119e53a-064f-4717-966f-c21abc79c0c8_"; charset=utf-8
+X-Mailer: Create Send
+X-Complaints-To: abuse@cmail20.com
+X-Feedback-ID: CA1-j-sihtux:LI1-j-jriyjhd:CL1-j-ikiudj:createSEND
+List-Unsubscribe: <http://unsub.cmail20.com/t/j-u-sihtux-djluhhpiy/>,
+ <mailto:unsubscribe-sihtux2djluhhpiy2j-F33D6939@cmail20.com?subject=Unsubscribe>
+Message-ID: <cm.2018194106012.sihtux.djluhhpiy.j@cmail20.com>
+
+--_b119e53a-064f-4717-966f-c21abc79c0c8_
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Facts, without motives.                           View email in browser htt=
+ps://news.join1440.com/t/j-e-sihtux-djluhhpiy-du/                 =
+                                         =
+=
+=
+
+
+In partnership with
+
+=
+=
+=
+
+
+Good morning. It's Friday, Dec. 29, and we're covering 2024 primary turmoil=
+, a boom year for the stock market, and much more. First time reading?  Sig=
+n up here [http://join1440.com/?utm_source=3Djoin1440&utm_medium=3Demail].
+
+You share. We listen. As always, send us feedback at  [hello@join1440.com]=
+=2E
+
+=
+=
+=
+                                    Need To Know                Need To Kno=
+w
+
+Trump Nixed From Maine Ballot (For Now)
+
+Former President Donald Trump  will not appear [https://www.pressherald.co=
+m/2023/12/28/maine-secretary-of-state-says-donald-trump-cant-appear-on-stat=
+es-2024-presidential-primary-ballot/?utm_source=3Djoin1440&utm_medium=3Dema=
+il&utm_placement=3Dnewsletter] on the Republican ballot in Maine's presiden=
+tial primary after Secretary of State Shenna Bellows (D) ruled his role in =
+the events of Jan. 6, 2021, made him ineligible under a clause in the 14th =
+Amendment. The decision follows a ruling with similar effect by Colorado's =
+Supreme Court, and a decision by Michigan's Supreme Court leaving him eligi=
+ble for the primary race.
+
+The Trump campaign said it would file an appeal challenging the decision. I=
+n Colorado, the US Supreme Court must  issue a decision [https://apnews.co=
+m/article/trump-ballot-insurrection-colorado-supreme-court-c51a09d231a5b294=
+75505b0c402a2d89] or suspend the lower court's ruling by Jan. 4 for Trump t=
+o appear on the ballot.
+
+Primaries in both Colorado and Maine fall on Super Tuesday (March 5), after=
+ critical votes in early states including Iowa (Jan. 15), New Hampshire (Ja=
+n. 23), and South Carolina (Feb. 24), among others ( see calendar [https:/=
+/www.270towin.com/2024-presidential-election-calendar/]).
+
+See an overview of the legal theory  here [https://www.bbc.com/news/world-=
+us-canada-66690276].
+
+Year-End Market Rally
+
+US stock markets are on pace to wrap up the year with  double-digit gains [=
+https://www.cnbc.com/2023/12/27/stock-market-today-live-updates-dec2728-20=
+23.html]. The S&P 500, which is hovering near its all-time high, closed up =
+25% for the year yesterday. The technology-heavy Nasdaq closed up 45% for t=
+he year and is nearing its best year since 2003. The Dow closed up 14% for =
+the year, setting a seventh record high for the month yesterday.
+
+This year's rally marks a reversal from 2022, when all three major indexes =
+closed lower (S&P 500 -19.4%, Dow -8.8%, Nasdaq -33.1%), ending the worst y=
+ear for markets since 2008. Gains in 2023 have been partly due to the  rise=
+ of artificial intelligence [https://www.investopedia.com/what-to-expect-f=
+rom-magnificent-7-in-2024-more-gains-from-ai-8418549] and big tech stock in=
+creases, primarily with a group known as the Magnificent Seven: Alphabet, A=
+mazon, Apple, Meta, Microsoft, Tesla, and Nvidia.
+
+A  softening economy [https://www.cbsnews.com/news/2024-jobs-economy-soft-=
+landing-inflation-gdp/], marked by a cooling labor market and easing inflat=
+ion, paired with next year's expected interest rate cuts also helped drive =
+stock market gains. The annual inflation rate was at 3.1% in November, abou=
+t a percentage point away from the Federal Reserve's annual target rate ( s=
+ee 101 [https://sites.lsa.umich.edu/mje/2023/09/04/why-the-2-inflation-tar=
+get/]).
+
+Gypsy Rose Blanchard Walks
+
+Gypsy Rose Blanchard, convicted of coordinating the 2015 murder of her abus=
+ive mother,  was released [https://www.nbcnews.com/news/us-news/gypsy-rose=
+-blanchard-released-prison-early-serving-time-murder-abusive-rcna131423] fr=
+om Missouri state prison yesterday after serving seven years of a 10-year s=
+entence. The 32-year-old Blanchard's story garnered international attention=
+ via  numerous documentaries [https://wegotthiscovered.com/tv/every-gypsy-=
+rose-blanchard-movie-and-tv-show-you-need-to-watch/], with a series of pris=
+on interviews set to air next week on Lifetime.
+
+The case stemmed from Dee Dee Blanchard, Gypsy's mother who reportedly suff=
+ered from  Munchausen by proxy syndrome [https://abcnews.go.com/Health/mun=
+chausen-proxy/story?id=3D52123783]=E2=80=94a mental illness where a caregiv=
+er fakes sickness in their patient to gain sympathy for themselves. Neighbo=
+rs and friends were made to believe Gypsy suffered from cerebral palsy, leu=
+kemia, and many other major ailments while being  forced to use a wheelchai=
+r [https://abcnews.go.com/US/young-wheelchair-bound-woman-treated-illnesse=
+s-ended-prison/story?id=3D52138979] and undergo invasive surgeries.
+
+The extent of the mother's abuse was only uncovered amid the investigation =
+into her stabbing death at the hands of Nick Godejohn, Gypsy's then-boyfrie=
+nd, whom Gypsy asked to commit the murder. Godejohn was sentenced to life i=
+n prison in 2019; explore the case in-depth  here [https://www.theguardian=
+=2Ecom/us-news/2017/aug/27/would-you-kill-my-mother-for-me-murder-abuse-film-=
+crime-erin-lee-carr].
+
+=
+=
+=
+
+
+In partnership with LMNT
+
+Stay Salty
+
+It's easy to forget that our sweat isn't just water. But why is it that we =
+only down a glass of water after a long run or a hot day? Our sweat consist=
+s of water and salt, so next time you're reaching for that glass of water .=
+=2E.  remember to replenish electrolytes, too [https://partners.drinklmnt.co=
+m/free-gift-with-purchase?rfsn=3D4728267.fe6b5f&utm_medium=3Dsponsor&utm_so=
+urce=3D1440&utm_campaign=3Dagwp&utm_content=3D&utm_term=3D&rfsn_cn=3DEXCLUS=
+IVE%20GIFT%20FOR%20THE%201440%20COMMUNITY].
+
+After years of mixing his own homemade electrolyte blends and frustration w=
+ith the lack of healthy options on the market, LMNT Co-founder Robb Wolf us=
+ed his experience as a biochemist and Navy SEAL resiliency committee member=
+ to create LMNT. With  no sugar, artificial ingredients, or junk found [ht=
+tps://partners.drinklmnt.com/free-gift-with-purchase?rfsn=3D4728267.fe6b5f&=
+utm_medium=3Dsponsor&utm_source=3D1440&utm_campaign=3Dagwp&utm_content=3D&u=
+tm_term=3D&rfsn_cn=3DEXCLUSIVE%20GIFT%20FOR%20THE%201440%20COMMUNITY] in co=
+nventional sports drinks, LMNT is your chance for a clean electrolyte boost=
+ after a long day or intense workout. And even if you=E2=80=99re not an ath=
+lete, you=E2=80=99d be surprised how useful LMNT can be. It tastes great, w=
+hich makes it  the perfect cocktail mixer=E2=80=94or hangover cure [https:=
+//partners.drinklmnt.com/free-gift-with-purchase?rfsn=3D4728267.fe6b5f&utm_=
+medium=3Dsponsor&utm_source=3D1440&utm_campaign=3Dagwp&utm_content=3D&utm_t=
+erm=3D&rfsn_cn=3DEXCLUSIVE%20GIFT%20FOR%20THE%201440%20COMMUNITY]. Plus, ju=
+st in time for cold weather, LMNT launched 3 new flavors meant to be consum=
+ed hot: Chocolate Mint, Chocolate Chai, and Chocolate Raspberry! (We prefer=
+ adding them to our coffee.)
+
+Ready to hydrate your body the right way?  Enjoy a FREE sample pack of eigh=
+t flavors today with any purchase, plus a money-back satisfaction guarantee=
+=2E [https://partners.drinklmnt.com/free-gift-with-purchase?rfsn=3D4728267.f=
+e6b5f&utm_medium=3Dsponsor&utm_source=3D1440&utm_campaign=3Dagwp&utm_conten=
+t=3D&utm_term=3D&rfsn_cn=3DEXCLUSIVE%20GIFT%20FOR%20THE%201440%20COMMUNITY]
+
+Please support our sponsors!
+
+=
+=
+=
+                     In The Know                In The Know
+
+Sports, Entertainment, & Culture
+
+> University of Wisconsin-La Crosse Chancellor Joe Gow fired after pornogra=
+phic videos of Gow and his wife are uncovered ( More [https://www.nbcnews.=
+com/news/us-news/wisconsin-university-chancellor-fired-ongoing-porn-career-=
+wife-sexy-ha-rcna131460])
+
+> College Football Playoff kicks off Monday with No. 1 Michigan taking on N=
+o. 4 Alabama (4 pm ET, ESPN) and No. 2 Washington against No. 3 Texas (8 pm=
+ ET, ESPN) ( More [https://www.sportingnews.com/us/ncaa-football/news/coll=
+ege-football-playoff-predictions-michigan-alabama-washington-texas/ccaf3b6c=
+487ca93b9118f1a3]) | See full college football bowl schedule ( More [https=
+://www.espn.com/college-football/story/_/page/cfpbowls2023/college-football=
+-bowl-2023-2024-schedule-matchups])
+
+> Mbongeni Ngema, iconic South African playwright and six-time Tony and Gra=
+mmy Award nominee, dies in a car crash at 68 ( More [https://www.npr.org/2=
+023/12/28/1221946731/mbongeni-ngema-south-african-creator-sarafina-dies-68]=
+)
+
+Science & Technology
+
+=
+=
+=
+
+
+In partnership with  Brilliant [https://brilliant.org/1440/]
+
+=
+=
+=
+
+
+> US military's X-37B space plane begins seventh mission; vehicle was launc=
+hed via a SpaceX Falcon Heavy rocket, allowing it to reach as high as 22,00=
+0 miles above Earth ( More [https://www.cnn.com/2023/12/28/world/spacex-x3=
+7b-space-plane-military-scn/index.html?utm_source=3Djoin1440&utm_medium=3De=
+mail&utm_placement=3Dnewsletter])
+
+> Scientists discover source of mysterious type of immune system cells know=
+n as stem-like central memory T cells, which play a key role in remembering=
+ previously encountered pathogens ( More [https://medicalxpress.com/news/2=
+023-12-scientists-year-old-mystery-once-elusive-source.html?utm_source=3Djo=
+in1440&utm_medium=3Demail&utm_placement=3Dnewsletter])
+
+> Study suggests ultra-dense neutron stars contain quarks=E2=80=94fundament=
+al particles that make up protons and neutrons, which help make up atoms=E2=
+=80=94at their core ( More [https://www.helsinki.fi/en/news/human-centric-=
+technology/further-evidence-quark-matter-cores-massive-neutron-stars?utm_so=
+urce=3Djoin1440&utm_medium=3Demail&utm_placement=3Dnewsletter]) | Learn mor=
+e about neutron stars, collapsed super giant stars roughly 10 miles wide ( =
+More [https://www.youtube.com/watch?v=3DudFxKZRyQt4], w/video)
+
+=
+=
+=
+
+
+From our partners: Make 2024 your smartest year ever. Brilliant is  the one=
+ app for learning everything you need to stay on top of our rapidly changin=
+g world [https://brilliant.org/1440/]=E2=80=94from AI and data science to =
+programming, technology, you name it. Bite-sized, interactive lessons make =
+it easy to sharpen your skills in minutes a day.  Join 10M+ global learners=
+ and start your 30-day free trial today. [https://brilliant.org/1440/]
+
+=
+=
+=
+
+
+Business & Markets
+
+> Global mergers and acquisitions fell 17% to $2.87T in 2023, the lowest le=
+vel in more than 10 years and driven partly by tightening markets; Japan wa=
+s the only country to see M&A growth at 32% ( More [https://www.axios.com/=
+2023/12/28/year-end-deals-data?utm_source=3Djoin1440&utm_medium=3Demail&utm=
+_placement=3Dnewsletter])
+
+> Detroit-based General Motors sues San Francisco for $121M refund, allegin=
+g the city miscalculated its tax bill for seven years by improperly includi=
+ng GM's separate San Francisco-based Cruise unit ( More [https://sfstandar=
+d.com/2023/12/27/gm-cruise-sues-san-francisco/?utm_source=3Djoin1440&utm_me=
+dium=3Demail&utm_placement=3Dnewsletter])
+
+> Chinese smartphone maker Xiaomi unveils first electric vehicle in bid to =
+compete with Tesla, Porsche ( More [https://www.cnbc.com/2023/12/28/chinas=
+-xiaomi-unveils-first-ev-in-bid-to-compete-with-porsche-tesla.html?utm_sour=
+ce=3Djoin1440&utm_medium=3Demail&utm_placement=3Dnewsletter])
+
+Politics & World Affairs
+
+> An estimated 150,000 people forced to flee central Gaza as Israeli troops=
+ expand operations against Hamas to refugee camps ( More [https://apnews.c=
+om/article/israel-hamas-war-news-12-28-2023-382e5c3abfee7e98fc73b51e8cee2b7=
+f?utm_source=3Djoin1440&utm_medium=3Demail&utm_placement=3Dnewsletter]) | S=
+ee updates on war here ( More [https://www.ft.com/content/42bbe534-8a0d-4b=
+a8-9cc6-f84936d87196?utm_source=3Djoin1440&utm_medium=3Demail&utm_placement=
+=3Dnewsletter])
+
+> Rep. Lauren Boebert (R, CO-3) to move residences, will run in Colorado's =
+4th District after facing tough reelection bid; former President Donald Tru=
+mp won the 4th District by 16 points in 2020, current Rep. Ken Buck (R) is =
+retiring ( More [https://www.usatoday.com/story/news/politics/2023/12/28/l=
+auren-boebert-switching-2024-colorado-congressional-districts/72046258007/?=
+utm_source=3Djoin1440&utm_medium=3Demail&utm_placement=3Dnewsletter])
+
+> US homicide rate dropped by as much as 12% between 2022 and 2023, but rem=
+ained higher than 2008-20 period, according to preliminary data ( More [ht=
+tps://www.axios.com/2023/12/28/us-murder-violent-crime-rates-drop?utm_sourc=
+e=3Djoin1440&utm_medium=3Demail&utm_placement=3Dnewsletter])
+
+In-Depth
+
+> Burning Bodies for Science
+
+Undark | Will Peischel. After decades of viewing fire fatality investigatio=
+ns as an intuitive art, a growing movement of scientists is furthering the =
+field with concrete experiments. ( Read [https://undark.org/2023/12/18/fir=
+e-deaths-science/?utm_source=3Djoin1440&utm_medium=3Demail])
+
+> Seriously, Have Fun
+
+Psyche | Mike Rucker. Work, chores, relationships, everything=E2=80=94exper=
+ts say they all feel and do better when you bring playfulness into the pict=
+ure. ( Read [https://psyche.co/guides/how-to-start-having-more-fun-in-your=
+-busy-life?utm_source=3Djoin1440&utm_medium=3Demai])
+
+> What Would Socrates Do?
+
+Hidden Brain | Shankar Vedantam. (Podcast) A look back at how three ancient=
+ Greek philosophers made sense of identity, purpose, and happiness. ( Liste=
+n [https://hiddenbrain.org/podcast/what-would-socrates-do/?utm_source=3Djo=
+in1440&utm_medium=3Demail])
+
+> When We Stopped Being Naked
+
+PBS Eons | Staff. Trace the fascinating (and scant) archaeological evidence=
+ that reveals the prehistoric moment humans started covering up. ( Watch [=
+https://www.youtube.com/watch?v=3Dopg6RO9cYnk?utm_source=3Djoin1440&utm_med=
+ium=3Demail])
+
+=
+=
+=
+
+
+In partnership with LMNT
+
+The Trusted Way To Hydrate
+
+What will you find in your LMNT single-serve packets? Simple: 1,000mg sodiu=
+m, 200mg potassium, 60mg magnesium (for the optimal hydration ratio),  zero=
+ sugar, zero coloring, and zero other junk [https://partners.drinklmnt.com=
+/free-gift-with-purchase?rfsn=3D4728267.fe6b5f&utm_medium=3Dsponsor&utm_sou=
+rce=3D1440&utm_campaign=3Dagwp&utm_content=3D&utm_term=3D&rfsn_cn=3DEXCLUSI=
+VE%20GIFT%20FOR%20THE%201440%20COMMUNITY].
+
+And LMNT is the  perfect electrolyte mix for just about everyone [https://=
+partners.drinklmnt.com/free-gift-with-purchase?rfsn=3D4728267.fe6b5f&utm_me=
+dium=3Dsponsor&utm_source=3D1440&utm_campaign=3Dagwp&utm_content=3D&utm_ter=
+m=3D&rfsn_cn=3DEXCLUSIVE%20GIFT%20FOR%20THE%201440%20COMMUNITY]. From every=
+day athletes to the US Olympic Weightlifting team. From people on keto or l=
+ow-carb diets to pro sports teams across the NFL, NBA, and NHL. And, of cou=
+rse, anyone who's trying to avoid or mitigate a hangover. Today, you can  e=
+njoy a FREE sample pack of all eight LMNT flavors with any order, plus a ri=
+sk-free refund policy. [https://partners.drinklmnt.com/free-gift-with-purc=
+hase?rfsn=3D4728267.fe6b5f&utm_medium=3Dsponsor&utm_source=3D1440&utm_campa=
+ign=3Dagwp&utm_content=3D&utm_term=3D&rfsn_cn=3DEXCLUSIVE%20GIFT%20FOR%20TH=
+E%201440%20COMMUNITY]
+
+Please support our sponsors!
+
+=
+=
+=
+            =
+=
+=
+
+
+Share 1440
+
+=E2=80=A2  Don=E2=80=99t keep us a secret:  Share the email [mailto:hello@=
+join1440.com?subject=3DBest%20newsletter%20for%20unbiased%20news&body=3DHey=
+%2C%0A%0AI%E2%80%99ve%20been%20reading%201440%2C%20and%20definitely%20think=
+%20you%E2%80%99d%20enjoy%20it%20as%20well.%20It%20has%20all%20of%20the%20da=
+y%E2%80%99s%20top%20news%20and%20info%E2%80%94sports%2C%20science%2C%20cult=
+ure%2C%20politics%2C%20business%2C%20and%20more%E2%80%94%20in%20a%20concise=
+%20and%20impartial%20(and%20free)%205-minute%20morning%20email.%20I%20learn=
+%20something%20new%20every%20time%20I%20open%20it.%20Check%20out%20the%20#1=
+%20newsletter%20for%20unbiased%20news%20here%3A%0A%0Ahttps%3A%2F%2Fjoin1440=
+=2Ecom%2F%3Futm_source%3Dnl_fwd_cta_main%26utm_medium%3Demail%26utm_campaign%=
+3Dslim-share2] with friends (copy URL  here [https://join1440.com/?utm_sou=
+rce=3Djoin1440&utm_medium=3Dnl_share_start&utm_campaign=3Dslim-share2&share=
+=3Dtrue]) =E2=80=A2  Support our team with our  monthly ad-free subscriptio=
+n [http://premium.join1440.com/?utm_source=3Dnl_premium_cta_main&utm_mediu=
+m=3Demail&utm_campaign=3Dslim-share2]        =
+=
+=
+                     Etcetera                Etcetera
+
+Eighty-one science facts  you probably didn't know [https://www.theatlanti=
+c.com/science/archive/2023/12/science-facts-that-blew-our-mind-2023/676959/=
+?gift=3DKA3KGfYfSJuXahz57d8Ku7QYXrcX93RTUhU-GCIUko8&utm_source=3Dcopy-link&=
+utm_medium=3Dsocial&utm_campaign=3Dshare&utm_source=3Djoin1440&utm_medium=3D=
+email&utm_placement=3Dnewsletter].
+
+This year's most moving  black-and-white photography [https://refocus-awar=
+ds.com/contests/winners/black-white?utm_source=3Djoin1440&utm_medium=3Demai=
+l&utm_placement=3Dnewsletter].
+
+Have a good cry with these  autogenerated tear-jerkers [https://www.cryonc=
+eaweek.com/?utm_source=3Djoin1440&utm_medium=3Demail&utm_placement=3Dnewsle=
+tter].
+
+Glacier gurus rank US and Canada's  best ski resorts [https://www.cntravel=
+er.com/galleries/2014-12-05/america-s-best-ski-resorts-readers-choice-award=
+s-2014?utm_source=3Djoin1440&utm_medium=3Demail&utm_placement=3Dnewsletter]=
+=2E
+
+Americans projected to spend $32B less  on gas next year [https://www.prne=
+wswire.com/news-releases/gasbuddy-releases-annual-fuel-outlook-predicts-low=
+er-gas-diesel-prices-in-2024-302022966.html?utm_source=3Djoin1440&utm_mediu=
+m=3Demail&utm_placement=3Dnewsletter].
+
+Visiting the most  unique hotels of 2023 [https://www.dezeen.com/2023/12/2=
+6/top-hotels-2023-review/?utm_source=3Djoin1440&utm_medium=3Demail&utm_plac=
+ement=3Dnewsletter].
+
+Rare "dancing lemur"  born at British zoo [https://apnews.com/video/animal=
+s-united-kingdom-pregnancy-and-childbirth-national-national-794a6c0b286443b=
+1bb519f850b4918cd?utm_source=3Djoin1440&utm_medium=3Demail&utm_placement=3D=
+newsletter] (w/video).
+
+A scantily clad shindig causes  an uproar in Russia [https://www.bbc.com/n=
+ews/world-europe-67827443].
+
+Clickbait: Bambi gets a taste  for blood in 2024 [https://www.joblo.com/ba=
+mbi-the-reckoning-director-cast/?utm_source=3Djoin1440&utm_medium=3Demail&u=
+tm_placement=3Dnewsletter].
+
+Historybook: President Andrew Johnson born (1808); Texas becomes the 28th U=
+S state (1845); US Army kills over 250 Lakota people at  Wounded Knee [htt=
+ps://www.history.com/this-day-in-history/u-s-army-massacres-indians-at-woun=
+ded-knee] (1890); Actress Mary Tyler Moore born (1936); Soccer legend Pel=C3=
+=A9 dies (2022).
+
+"Pain nourishes courage. You can't be brave if you've only had wonderful th=
+ings happen to you."
+
+- Mary Tyler Moore
+
+Why 1440? The printing press was invented around the year 1440, spreading k=
+nowledge to the masses and changing the course of history. More facts: In e=
+very day, there are 1,440 minutes. We=E2=80=99re here to make each one coun=
+t.
+
+Send us your feedback at  [hello@join1440.com] and help us stay as unbiase=
+d as humanly possible. We=E2=80=99re ready to listen.
+
+Interested in reaching smart readers like you? To become a 1440 partner,  a=
+pply here [https://join1440.com/partner].
+
+1440 Media 222 W Merchandise Mart Plaza, Suite 1212 Chicago, IL 60654
+
+Copyright =C2=A9 2023, 1440 Media, All rights reserved.
+
+=
+=
+=
+
+
+Update your preferences https://1440.updatemyprofile.com/j-sihtux-=
+F33D6939-djluhhpiy-hl or  unsubscribe https://news.join1440.com/=
+t/j-u-sihtux-djluhhpiy-hr/ from this email.
+
+--_b119e53a-064f-4717-966f-c21abc79c0c8_
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html lang=3D"en" xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:sch=
+emas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office"=
+>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.=
+0">
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+<meta name=3D"x-apple-disable-message-reformatting">
+<meta name=3D"format-detection" content=3D"telephone=3Dno">
+<title>Maine Nixes Trump, Markets Rally, and Dancing Lemurs</title>
+<link href=3D"https://fonts.googleapis.com/css?family=3DRoboto&amp;subset=3D=
+latin-ext" rel=3D"stylesheet" type=3D"text/css">
+<!--[if gte mso 16]>
+<xml>
+<o:OfficeDocumentSettings>
+<o:AllowPNG/>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml>
+<![endif]-->
+<style>
+html,body,table,tbody,tr,td,div,p,ul,ol,li,h1,h2,h3,h4,h5,h6 {
+margin: 0;
+padding: 0;
+}
+body {
+-ms-text-size-adjust: 100%;
+-webkit-text-size-adjust: 100%;
+}
+table {
+border-spacing: 0;
+mso-table-lspace: 0pt;
+mso-table-rspace: 0pt;
+}
+table td {
+border-collapse: collapse;
+}
+h1,h2,h3,h4,h5,h6 {
+font-family: Arial;
+}
+=2EExternalClass {
+width: 100%;
+}
+=2EExternalClass,
+=2EExternalClass p,
+=2EExternalClass span,
+=2EExternalClass font,
+=2EExternalClass td,
+=2EExternalClass div {
+line-height: 100%;
+}
+/* Outermost container in Outlook.com */
+=2EReadMsgBody {
+width: 100%;
+}
+img {
+-ms-interpolation-mode: bicubic;
+}
+</style>
+<style>
+a[x-apple-data-detectors=3Dtrue]{
+color: inherit !important;
+text-decoration: inherit !important;
+}
+u + #body a {
+color: inherit;
+text-decoration: inherit !important;
+font-size: inherit;
+font-family: inherit;
+font-weight: inherit;
+line-height: inherit;
+}
+a, a:link, .no-detect-local a, .appleLinks a {
+color: inherit !important;
+text-decoration: inherit;
+}
+</style>
+<style>
+=2Ewidth600 {
+width: 600px;
+max-width: 100%;
+}
+@media all and (max-width: 599px) {
+=2Ewidth600 {
+width: 100% !important;
+}
+}
+@media screen and (min-width: 600px) {
+=2Ehide-on-desktop {
+display: none !important;
+}
+}
+@media all and (max-width: 599px),
+only screen and (max-device-width: 599px) {
+=2Emain-container {
+width: 100% !important;
+}
+=2Ecol {
+width: 100%;
+}
+=2Efluid-on-mobile {
+width: 100% !important;
+height: auto !important;
+text-align:center;
+}
+=2Efluid-on-mobile img {
+width: 100% !important;
+}
+=2Ehide-on-mobile {
+display:none !important;
+width:0px !important;
+height:0px !important;
+overflow:hidden;
+}
+}
+</style>
+<!--[if gte mso 9]>
+<style>
+=2Ecol {
+width: 100%;
+}
+=2Ewidth600 {
+width: 600px;
+}
+=2Ewidth155 {
+width: 155px;
+height: auto;
+}
+=2Ewidth134 {
+width: 134px;
+height: auto;
+}
+=2Ewidth154 {
+width: 154px;
+height: auto;
+}
+=2Ewidth45 {
+width: 45px;
+height: auto;
+}
+=2Ewidth65 {
+width: 65px;
+height: auto;
+}
+=2Ehide-on-desktop {
+display: none;
+}
+=2Ehide-on-desktop table {
+mso-hide: all;
+}
+=2Ehide-on-desktop div {
+mso-hide: all;
+}
+=2Enounderline { text-decoration: none; }
+=2Emso-font-fix-arial: { font-family: Arial, sans-serif; }
+=2Emso-font-fix-georgia: { font-family: Georgia, serif; }
+</style>
+<![endif]-->
+</head>
+<body id=3D"body" leftmargin=3D"0" marginwidth=3D"0" topmargin=3D"0" margin=
+height=3D"0" offset=3D"0" style=3D"font-family:Arial, sans-serif; font-size=
+:0px;margin:0;padding:0;background-color:#f4f4f4;"><div style=3D"mso-hide:a=
+ll;position:fixed;height:0;max-height:0;overflow:hidden;font-size:0;">Facts=
+, without motives. &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; =
+&#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8=
+204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204=
+; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &=
+#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#82=
+04; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204;=
+ &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#=
+8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#820=
+4; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; =
+&#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8=
+204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204=
+; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &=
+#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#82=
+04; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204;=
+ &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#=
+8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#820=
+4; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; =
+&#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8=
+204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204=
+; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &=
+#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#82=
+04; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204;=
+ &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#=
+8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#820=
+4; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; =
+&#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8=
+204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204;</div>
+<span style=3D"display:none;font-size:0px;line-height:0px;max-height:0px;ma=
+x-width:0px;opacity:0;overflow:hidden;">Facts, without motives.</span>
+<style>
+@media screen and (min-width: 600px) {
+=2Ehide-on-desktop {
+display: none;
+}
+}
+@media all and (max-width: 599px) {
+=2Ehide-on-mobile {
+display:none !important;
+width:0px !important;
+height:0px !important;
+overflow:hidden;
+}
+=2Emain-container {
+width: 100% !important;
+}
+=2Ecol {
+width: 100%;
+}
+=2Efluid-on-mobile {
+width: 100% !important;
+height: auto !important;
+text-align:center;
+}
+=2Efluid-on-mobile img {
+width: 100% !important;
+}
+}
+</style>
+<div style=3D"background-color:#f4f4f4;">
+<table height=3D"100%" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" b=
+order=3D"0">
+<tr>
+<td valign=3D"top" align=3D"left">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td width=3D"100%">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td align=3D"center" width=3D"100%">
+<!--[if gte mso 9]><table width=3D"600" cellpadding=3D"0" cellspacing=3D"0=
+"><tr><td><![endif]-->
+<table class=3D"width600 main-container" cellpadding=3D"0" cellspacing=3D"0=
+" border=3D"0" width=3D"100%" style=3D"max-width:600px;">
+<tr>
+<td width=3D"100%">
+<style> @media print{ #_two50 { background-image:url('https://join1440.ever=
+estengagement.com/ea/czipVtFs98/?t=3Dp&e=3D=
+brnkath@gmail.com=
+&c=3Dsiht=
+ux'); } } blockquote #_two50, #mailContainerBody #_two50, div.OutlookMessag=
+eHeader, table.moz-email-headers-table { background-image:url('https://join=
+1440.everestengagement.com/ea/czipVtFs98/?t=3Df&e=3D=
+brnkath@gmail.com=
+=
+&c=3Dsihtux'); } </style> <div id=3D'_two50'></div> <img id=3D'_two50_img' =
+src=3D'https://join1440.everestengagement.com/ea/czipVtFs98/?e=3D=
+=
+brnkath@gmail.com=
+&c=3Dsihtux' width=3D'1' height=3D'1' style=3D'margin:0 !impor=
+tant; padding:0 !important; border:0 !important; height:1px !important; wid=
+th:1px !important;' /><table cellpadding=3D"0" cellspacing=3D"0" border=3D"=
+0" width=3D"100%">
+<tr>
+<td align=3D"center" width=3D"100%">
+<!--[if gte mso 9]><table width=3D"600" cellpadding=3D"0" cellspacing=3D"0=
+"><tr><td><![endif]-->
+<table class=3D"width600 main-container" cellpadding=3D"0" cellspacing=3D"0=
+" border=3D"0" width=3D"100%" style=3D"max-width:600px;">
+<tr>
+<td width=3D"100%">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:11px;padding-left:20px;"><div style=
+=3D"font-family:Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;font-s=
+ize:15px;color:#131313;line-height:22px;text-align:left;"><h3 style=3D"font=
+-family:Roboto, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 12=
+px; color: #999999; font-weight: normal; line-height: 18px; mso-line-height=
+: exactly; mso-text-raise: 3px; padding: 0; margin: 0;text-align: right;"><=
+span class=3D"mso-font-fix-arial"><a href=3D"https://news.join1440.com/t/j-=
+e-sihtux-djluhhpiy-dd/">View email in browser</a></span></h3>
+</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!--[if gte mso 9]></td></tr></table><![endif]-->
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!--[if gte mso 9]></td></tr></table><![endif]-->
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" styl=
+e=3D"background-color:transparent;">
+<tr>
+<td align=3D"center" width=3D"100%">
+<!--[if gte mso 9]><table width=3D"600" cellpadding=3D"0" cellspacing=3D"0=
+"><tr><td><![endif]-->
+<table class=3D"width600 main-container" cellpadding=3D"0" cellspacing=3D"0=
+" border=3D"0" width=3D"100%" style=3D"max-width:600px;">
+<tr>
+<td width=3D"100%">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:10px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff" style=3D"background-color:#ffffff;">
+<tr>
+<td valign=3D"top" style=3D"padding-top:20px;padding-right:30px;padding-bot=
+tom:10px;padding-left:30px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" align=3D"center"><!--[if gte mso 9]><table width=3D"155=
+" cellpadding=3D"0" cellspacing=3D"0"><tr><td><![endif]-->
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"img-wrap" =
+style=3D"max-width:100%;">
+<tr>
+<td valign=3D"top" align=3D"center" style=3D"padding-bottom:10px;"><a href=3D=
+"https://news.join1440.com/t/j-l-sihtux-djluhhpiy-r/" class=3D"img=
+link" target=3D"_blank">
+<img src=3D"http://i1.cmail20.com/ei/j/FA/B34/926/135954/csimport/166783256=
+8119_1440_primary_brandmark_darkmode_0.png" width=3D"155" height=3D"71" alt=
+=3D"" border=3D"0" style=3D"display:block;font-size:14px;max-width:100%;hei=
+ght:auto;" class=3D"width155" />
+</a>
+</td>
+</tr>
+</table>
+<!--[if gte mso 9]></td></tr></table><![endif]-->
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td style=3D"padding-top:10px;padding-bottom:10px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" styl=
+e=3D"border-top:2px solid #000000;">
+<tr>
+<td style=3D"font-size:0px;line-height:0;mso-line-height-rule:exactly;">&nb=
+sp;
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+=
+=
+=
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" styl=
+e=3D"background-color:#ffffff;">
+<tr>
+<td valign=3D"top" width=3D"50%">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:8px;padding-right:10px;padding-bott=
+om:5px;padding-left:10px;"><div style=3D"font-family:Roboto, Helvetica Neue=
+, Helvetica, Arial, sans-serif;font-size:12px;color:#000000;font-weight:nor=
+mal;line-height:20px;mso-line-height-rule:exactly;letter-spacing:normal;mso=
+-text-raise:4px;text-align:right;"><p style=3D"padding:0;margin:0;"><span c=
+lass=3D"mso-font-fix-arial"><strong>In partnership with</strong></span></p>=
+</div>
+</td>
+</tr>
+</table>
+</td>
+<td valign=3D"top" width=3D"50%">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" align=3D"left"><!--[if gte mso 9]><table width=3D"144" =
+cellpadding=3D"0" cellspacing=3D"0"><tr><td><![endif]-->
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"img-wrap" =
+style=3D"max-width:100%;">
+<tr>
+<td valign=3D"top" align=3D"left" style=3D"padding-right:10px;"><a href=3D"=
+https://news.join1440.com/t/j-l-sihtux-djluhhpiy-y/" class=3D"imgl=
+ink" target=3D"_blank">
+<img src=3D"http://i2.cmail20.com/ei/j/FA/B34/926/135954/csimport/163463729=
+7062_lmnt_1.png" width=3D"134" height=3D"38" alt=3D"" border=3D"0" style=3D=
+"display:block;font-size:14px;max-width:100%;height:auto;" class=3D"width13=
+4" />
+</a>
+</td>
+</tr>
+</table>
+<!--[if gte mso 9]></td></tr></table><![endif]-->
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>=
+=
+=
+
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#fffefe" style=3D"background-color:#fffefe;">
+<tr>
+<td valign=3D"top" style=3D"padding-right:20px;padding-bottom:10px;padding-=
+left:20px;"><div style=3D"font-family:Roboto, Helvetica Neue, Helvetica, Ar=
+ial, sans-serif;font-size:14px;color:#000000;font-weight:normal;line-height=
+:20px;mso-line-height-rule:exactly;letter-spacing:normal;mso-text-raise:3px=
+;text-align:left;"><p style=3D"margin-left:0px;margin-top:0px;margin-right:=
+0px;margin-bottom:0px;padding:0;"><span class=3D"mso-font-fix-arial"><stron=
+g>Good morning.&nbsp;It's Friday, Dec. 29,</strong>&nbsp;and we're covering=
+ 2024 primary turmoil, a boom year for the stock market, and much more. Fir=
+st time reading? <a href=3D"https://news.join1440.com/t/j-l-sihtux-=
+djluhhpiy-j/" target=3D"_blank" style=3D"text-decoration:underline !import=
+ant;color:#0000ee !important;"><font
+style=3D"color:#0000ee;"><strong>Sign up here</strong></font></a>.</span></=
+p>
+<p style=3D"margin-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0=
+px;padding:0;"><span class=3D"mso-font-fix-arial">&nbsp;</span></p>
+<p style=3D"padding:0;margin:0;"><span class=3D"mso-font-fix-arial"><strong=
+>You share. We listen.</strong>&nbsp;As always, send us feedback at&nbsp;<s=
+trong><a href=3D"mailto:hello@join1440.com" style=3D"text-decoration:underl=
+ine !important;color:#0000ee !important;"><font style=3D"color:#0000ee;">he=
+llo@join1440.com</font></a></strong>.</span></p></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!--[if gte mso 9]></td></tr></table><![endif]-->
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td align=3D"center" width=3D"100%">
+<!--[if gte mso 9]><table width=3D"600" cellpadding=3D"0" cellspacing=3D"0=
+"><tr><td><![endif]-->
+<table class=3D"width600 main-container" cellpadding=3D"0" cellspacing=3D"0=
+" border=3D"0" width=3D"100%" style=3D"max-width:600px;">
+<tr>
+<td width=3D"100%">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:10px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top">=
+=
+=
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!--[if gte mso 9]></td></tr></table><![endif]-->
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" styl=
+e=3D"background-color:transparent;">
+<tr>
+<td align=3D"center" width=3D"100%">
+<!--[if gte mso 9]><table width=3D"600" cellpadding=3D"0" cellspacing=3D"0=
+"><tr><td><![endif]-->
+<table class=3D"width600 main-container" cellpadding=3D"0" cellspacing=3D"0=
+" border=3D"0" width=3D"100%" style=3D"max-width:600px;">
+<tr>
+<td width=3D"100%">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:10px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff" style=3D"background-color:#ffffff;">
+<tr>
+<td valign=3D"top" style=3D"padding-bottom:20px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" align=3D"left" style=3D"padding-top:20px;padding-right:3=
+0px;padding-left:20px;">
+<!--[if !mso]><!-- -->
+<a href=3D"" target=3D"_blank" style=3D"display:inline-block; text-decorati=
+on:none;" >
+<span>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" bgcolor=3D"#efef6f"=
+ style=3D"background-color:#efef6f;">
+<tr>
+<td align=3D"center" style=3D"padding-top:2px;padding-right:8px;padding-bot=
+tom:2px;padding-left:8px;">
+<span style=3D"color:#000000 !important;font-family:Georgia, Times, Times N=
+ew Roman, serif;font-size:23px;mso-line-height:exactly;line-height:32px;mso=
+-text-raise:4px;letter-spacing: normal;">
+<font style=3D"color:#000000;" class=3D"button">
+<span><span class=3D"mso-font-fix-georgia">Need To Know</span></span>
+</font>
+</span>
+</td>
+</tr>
+</table>
+</span>
+</a>
+<!--<![endif]-->
+<div style=3D"display:none; mso-hide: none;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" bgcolor=3D"#efef6f"=
+ style=3D"background-color:#efef6f;">
+<tr>
+<td align=3D"center" style=3D"padding-top:2px;padding-right:8px;padding-bot=
+tom:2px;padding-left:8px;">
+<a href=3D"" target=3D"_blank" style=3D"color:#000000 !important;font-famil=
+y:Georgia, Times, Times New Roman, serif;font-size:23px;mso-line-height:exa=
+ctly;line-height:32px;mso-text-raise:4px;letter-spacing: normal;text-decora=
+tion:none;text-align:center;">
+<span style=3D"color:#000000 !important;font-family:Georgia, Times, Times N=
+ew Roman, serif;font-size:23px;mso-line-height:exactly;line-height:32px;mso=
+-text-raise:4px;letter-spacing: normal;">
+<font style=3D"color:#000000;" class=3D"button">
+<span><span class=3D"mso-font-fix-georgia">Need To Know</span></span>
+</font>
+</span>
+</a>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td style=3D"padding-top:10px;padding-right:20px;padding-bottom:10px;paddin=
+g-left:20px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" styl=
+e=3D"border-top:2px solid #000000;">
+<tr>
+<td style=3D"font-size:0px;line-height:0;mso-line-height-rule:exactly;">&nb=
+sp;
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<span id=3D"needtoknow1"></span>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-right:20px;padding-bottom:5px;padding-l=
+eft:20px;"><div style=3D"font-family:Georgia, Times, Times New Roman, serif=
+;font-size:23px;color:#000000;font-weight:normal;line-height:32px;mso-line-=
+height-rule:exactly;letter-spacing:normal;mso-text-raise:4px;text-align:lef=
+t;"><p style=3D"padding:0;margin:0;">Trump Nixed From Maine Ballot (For Now=
+)</p></div>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:12px;padding-right:20px;padding-bot=
+tom:10px;padding-left:20px;"><div style=3D"font-family:Roboto, Helvetica Ne=
+ue, Helvetica, Arial, sans-serif;font-size:15px;color:#000000;font-weight:n=
+ormal;line-height:22px;mso-line-height-rule:exactly;letter-spacing:normal;m=
+so-text-raise:3px;text-align:left;"><p style=3D"margin-left:0px;margin-top:=
+0px;margin-right:0px;margin-bottom:0px;padding:0;"><span class=3D"mso-font-=
+fix-arial">Former President Donald Trump <a href=3D"https://news.join1440.c=
+om/t/j-l-sihtux-djluhhpiy-i/" target=3D"_blank" style=3D"text-deco=
+ration:underline !important;color:#0000ee !important;"><font
+style=3D"color:#0000ee;">will not appear</font></a> on the Republican ballo=
+t in Maine's presidential primary after Secretary of State&nbsp;Shenna Bell=
+ows (D) ruled his role in the events of Jan. 6, 2021, made him ineligible u=
+nder a clause in the 14th Amendment. The decision follows a ruling with sim=
+ilar effect by Colorado's Supreme Court, and a decision by Michigan's Supre=
+me Court leaving him eligible for the primary race.&nbsp;</span></p>
+<p style=3D"margin-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0=
+px;padding:0;"><span class=3D"mso-font-fix-arial">&nbsp;</span></p>
+<p style=3D"margin-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0=
+px;padding:0;"><span class=3D"mso-font-fix-arial">The Trump campaign said i=
+t would file an appeal challenging the decision. In Colorado, the US Suprem=
+e Court must <a href=3D"https://news.join1440.com/t/j-l-sihtux-=
+djluhhpiy-d/" target=3D"_blank" style=3D"text-decoration:underline !important;=
+color:#0000ee !important;"><font style=3D"color:#0000ee;">issue a decision<=
+/font></a> or suspend the lower court's ruling by Jan. 4 for Trump to appea=
+r on the ballot.&nbsp;</span></p>
+<p style=3D"margin-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0=
+px;padding:0;"><span class=3D"mso-font-fix-arial">&nbsp;</span></p>
+<p style=3D"margin-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0=
+px;padding:0;"><span class=3D"mso-font-fix-arial">Primaries in both Colorad=
+o and Maine fall on Super Tuesday (March 5), after critical votes in early =
+states including Iowa (Jan. 15), New Hampshire (Jan. 23), and South Carolin=
+a (Feb. 24), among others (<a href=3D"https://news.join1440.com/t/j-l-sihtu=
+x-djluhhpiy-h/" target=3D"_blank" style=3D"text-decoration:underli=
+ne !important;color:#0000ee !important;"><font style=3D"color:#0000ee;">see=
+ calendar</font></a>).</span></p>
+<p style=3D"margin-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0=
+px;padding:0;"><span class=3D"mso-font-fix-arial">&nbsp;</span></p>
+<p style=3D"padding:0;margin:0;"><span class=3D"mso-font-fix-arial">See an =
+overview of the legal theory <a href=3D"https://news.join1440.com/t/j-l-sih=
+tux-djluhhpiy-k/" target=3D"_blank" style=3D"text-decoration:under=
+line !important;color:#0000ee !important;"><font style=3D"color:#0000ee;">h=
+ere</font></a>.</span></p></div>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td style=3D"padding:20px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" styl=
+e=3D"border-top:2px solid #000000;">
+<tr>
+<td style=3D"font-size:0px;line-height:0;mso-line-height-rule:exactly;">&nb=
+sp;
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<span id=3D"needtoknow2"></span>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:7px;padding-right:20px;padding-bott=
+om:5px;padding-left:20px;"><div style=3D"font-family:Georgia, Times, Times =
+New Roman, serif;font-size:23px;color:#000000;font-weight:normal;line-heigh=
+t:32px;mso-line-height-rule:exactly;letter-spacing:normal;mso-text-raise:4p=
+x;text-align:left;"><p style=3D"padding:0;margin:0;">Year-End Market Rally&=
+nbsp;</p></div>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:12px;padding-right:20px;padding-bot=
+tom:10px;padding-left:20px;"><div style=3D"font-family:Roboto, Helvetica Ne=
+ue, Helvetica, Arial, sans-serif;font-size:15px;color:#000000;font-weight:n=
+ormal;line-height:22px;mso-line-height-rule:exactly;letter-spacing:normal;m=
+so-text-raise:3px;text-align:left;"><p style=3D"margin-left:0px;margin-top:=
+0px;margin-right:0px;margin-bottom:0px;padding:0;"><span class=3D"mso-font-=
+fix-arial">US stock markets are on pace to wrap up the year with&nbsp;<a hr=
+ef=3D"https://news.join1440.com/t/j-l-sihtux-djluhhpiy-u/" target=3D=
+"_blank" style=3D"text-decoration:underline !important;color:#0000ee !impor=
+tant;"><font
+style=3D"color:#0000ee;">double-digit gains</font></a>. The S&amp;P 500,&nb=
+sp;which is hovering near its all-time high,&nbsp;closed up 25% for the yea=
+r yesterday. The technology-heavy Nasdaq closed up 45% for the year and is =
+nearing its best year since 2003.&nbsp;The Dow closed up 14% for the year, =
+setting a seventh record high for the month yesterday.</span></p>
+<p style=3D"margin-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0=
+px;padding:0;"><span class=3D"mso-font-fix-arial">&nbsp;</span></p>
+<p style=3D"margin-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0=
+px;padding:0;"><span class=3D"mso-font-fix-arial">This year's rally marks a=
+ reversal from 2022, when all three major indexes closed lower (S&amp;P 500=
+ -19.4%, Dow -8.8%, Nasdaq -33.1%), ending the worst year for markets since=
+ 2008. Gains in 2023 have been partly due to the <a href=3D"https://news.jo=
+in1440.com/t/j-l-sihtux-djluhhpiy-o/" target=3D"_blank" style=3D"t=
+ext-decoration:underline !important;color:#0000ee !important;"><font style=3D=
+"color:#0000ee;">rise of artificial intelligence</font></a> and big tech st=
+ock increases, primarily with a group known as the Magnificent Seven: Alpha=
+bet, Amazon, Apple, Meta, Microsoft, Tesla, and Nvidia.&nbsp;</span></p>
+<p style=3D"margin-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0=
+px;padding:0;"><span class=3D"mso-font-fix-arial">&nbsp;</span></p>
+<p style=3D"padding:0;margin:0;"><span class=3D"mso-font-fix-arial">A <a hr=
+ef=3D"https://news.join1440.com/t/j-l-sihtux-djluhhpiy-b/" target=3D=
+"_blank" style=3D"text-decoration:underline !important;color:#0000ee !impor=
+tant;"><font style=3D"color:#0000ee;">softening economy</font></a>, marked =
+by a cooling labor market and easing inflation, paired with next year's exp=
+ected interest rate cuts also helped drive stock market gains. The annual i=
+nflation rate was at 3.1% in November,&nbsp;about a percentage point away f=
+rom the Federal Reserve's annual target rate (<a href=3D"https://news.join1=
+440.com/t/j-l-sihtux-djluhhpiy-n/" target=3D"_blank" style=3D"text=
+-decoration:underline !important;color:#0000ee !important;"><font
+style=3D"color:#0000ee;">see 101</font></a>).</span></p></div>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td style=3D"padding:20px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" styl=
+e=3D"border-top:2px solid #000000;">
+<tr>
+<td style=3D"font-size:0px;line-height:0;mso-line-height-rule:exactly;">&nb=
+sp;
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<span id=3D"needtoknow3"></span>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-right:20px;padding-bottom:5px;padding-l=
+eft:20px;"><div style=3D"font-family:Georgia, Times, Times New Roman, serif=
+;font-size:23px;color:#000000;font-weight:normal;line-height:32px;mso-line-=
+height-rule:exactly;letter-spacing:normal;mso-text-raise:4px;text-align:lef=
+t;"><p style=3D"padding:0;margin:0;">Gypsy Rose Blanchard Walks</p></div>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:12px;padding-right:20px;padding-bot=
+tom:10px;padding-left:20px;"><div style=3D"font-family:Roboto, Helvetica Ne=
+ue, Helvetica, Arial, sans-serif;font-size:15px;color:#000000;font-weight:n=
+ormal;line-height:22px;mso-line-height-rule:exactly;letter-spacing:normal;m=
+so-text-raise:3px;text-align:left;"><p style=3D"margin-left:0px;margin-top:=
+0px;margin-right:0px;margin-bottom:0px;padding:0;"><span class=3D"mso-font-=
+fix-arial">Gypsy Rose Blanchard, convicted of coordinating the 2015 murder =
+of her abusive mother, <a href=3D"https://news.join1440.com/t/j-l-sihtux-=
+djluhhpiy-p/" target=3D"_blank" style=3D"text-decoration:underline !=
+important;color:#0000ee !important;"><font
+style=3D"color:#0000ee;">was released</font></a> from Missouri state prison=
+ yesterday after serving seven years of a 10-year sentence. The 32-year-old=
+ Blanchard's story garnered international attention via <a href=3D"https://=
+news.join1440.com/t/j-l-sihtux-djluhhpiy-x/" target=3D"_blank" sty=
+le=3D"text-decoration:underline !important;color:#0000ee !important;"><font=
+ style=3D"color:#0000ee;">numerous documentaries</font></a>, with&nbsp;a se=
+ries of prison interviews set to air next week on Lifetime.</span></p>
+<p style=3D"margin-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0=
+px;padding:0;"><span class=3D"mso-font-fix-arial">&nbsp;</span></p>
+<p style=3D"margin-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0=
+px;padding:0;"><span class=3D"mso-font-fix-arial">The case stemmed from Dee=
+ Dee Blanchard, Gypsy's mother who reportedly suffered from <a href=3D"http=
+s://news.join1440.com/t/j-l-sihtux-djluhhpiy-m/" target=3D"_blank"=
+ style=3D"text-decoration:underline !important;color:#0000ee !important;"><=
+font style=3D"color:#0000ee;">Munchausen by proxy syndrome</font></a>=E2=80=
+=94a mental illness where a caregiver fakes sickness in their patient to ga=
+in sympathy for themselves. Neighbors and friends were made to believe Gyps=
+y suffered from cerebral palsy, leukemia, and many other major ailments whi=
+le being <a href=3D"https://news.join1440.com/t/j-l-sihtux-=
+djluhhpiy-c/" target=3D"_blank"
+style=3D"text-decoration:underline !important;color:#0000ee !important;"><f=
+ont style=3D"color:#0000ee;">forced to use a wheelchair</font></a> and unde=
+rgo invasive surgeries.</span></p>
+<p style=3D"margin-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0=
+px;padding:0;"><span class=3D"mso-font-fix-arial">&nbsp;</span></p>
+<p style=3D"padding:0;margin:0;"><span class=3D"mso-font-fix-arial">The ext=
+ent of the mother's abuse was only uncovered amid the investigation into he=
+r stabbing death at the hands of Nick Godejohn, Gypsy's then-boyfriend, who=
+m Gypsy asked to commit the murder. Godejohn was sentenced to life in priso=
+n in 2019; explore the case in-depth&nbsp;<a href=3D"https://news.join1440.=
+com/t/j-l-sihtux-djluhhpiy-q/" target=3D"_blank" style=3D"text-dec=
+oration:underline !important;color:#0000ee !important;"><font style=3D"colo=
+r:#0000ee;">here</font></a>.</span></p></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!--[if gte mso 9]></td></tr></table><![endif]-->
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td align=3D"center" width=3D"100%">
+<!--[if gte mso 9]><table width=3D"600" cellpadding=3D"0" cellspacing=3D"0=
+"><tr><td><![endif]-->
+<table class=3D"width600 main-container" cellpadding=3D"0" cellspacing=3D"0=
+" border=3D"0" width=3D"100%" style=3D"max-width:600px;">
+<tr>
+<td width=3D"100%">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:10px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top">=
+=
+=
+
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff" style=3D"background-color:#ffffff;">
+<tr>
+<td valign=3D"top" style=3D"padding-top:5px;padding-right:20px;padding-left=
+:20px;"><div style=3D"font-family:Roboto, Helvetica Neue, Helvetica, Arial,=
+ sans-serif;font-size:15px;color:#000000;font-weight:normal;line-height:22p=
+x;mso-line-height-rule:exactly;letter-spacing:normal;mso-text-raise:3px;tex=
+t-align:left;"><p style=3D"padding:0;margin:0;"><span class=3D"mso-font-fix=
+-arial"><span style=3D"font-size:10px;"><strong><em>In partnership with LMN=
+T</em></strong></span></span></p></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff" style=3D"background-color:#ffffff;">
+<tr>
+<td valign=3D"top" style=3D"padding-top:10px;padding-right:20px;padding-bot=
+tom:3px;padding-left:20px;"><div style=3D"font-family:Georgia, Times, Times=
+ New Roman, serif;font-size:23px;color:#000000;font-weight:normal;line-heig=
+ht:32px;mso-line-height-rule:exactly;letter-spacing:normal;mso-text-raise:4=
+px;text-align:left;"><p style=3D"padding:0;margin:0;">Stay Salty</p></div>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff" style=3D"background-color:#ffffff;">
+<tr>
+<td style=3D"padding-top:5px;padding-right:18px;padding-bottom:10px;padding=
+-left:20px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" styl=
+e=3D"border-top:2px solid #000000;">
+<tr>
+<td style=3D"font-size:0px;line-height:0;mso-line-height-rule:exactly;">&nb=
+sp;
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff" style=3D"background-color:#ffffff;">
+<tr>
+<td valign=3D"top">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" align=3D"center"><!--[if gte mso 9]><table width=3D"154=
+" cellpadding=3D"0" cellspacing=3D"0"><tr><td><![endif]-->
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"img-wrap" =
+style=3D"max-width:100%;">
+<tr>
+<td valign=3D"top" align=3D"center" style=3D"padding-bottom:10px;"><a href=3D=
+"https://news.join1440.com/t/j-l-sihtux-djluhhpiy-a/" class=3D"img=
+link" target=3D"_blank">
+<img src=3D"http://i2.cmail20.com/ei/j/FA/B34/926/135954/csimport/163463729=
+7062_lmnt_1.png" width=3D"154" height=3D"43" alt=3D"" border=3D"0" style=3D=
+"display:block;font-size:14px;max-width:100%;height:auto;" class=3D"width15=
+4" />
+</a>
+</td>
+</tr>
+</table>
+<!--[if gte mso 9]></td></tr></table><![endif]-->
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff" style=3D"background-color:#ffffff;">
+<tr>
+<td valign=3D"top" style=3D"padding-right:20px;padding-bottom:10px;padding-=
+left:20px;"><div style=3D"font-family:Roboto, Helvetica Neue, Helvetica, Ar=
+ial, sans-serif;font-size:15px;color:#000000;font-weight:normal;line-height=
+:22px;mso-line-height-rule:exactly;letter-spacing:normal;mso-text-raise:3px=
+;text-align:left;"><p style=3D"margin-left:0px;margin-top:0px;margin-right:=
+0px;margin-bottom:0px;padding:0;"><span class=3D"mso-font-fix-arial">It's e=
+asy to forget that our sweat isn't just water. But why is it that we only d=
+own a glass of water after a long run or a hot day? Our sweat consists of w=
+ater&nbsp;<em>and salt</em>, so next time you're reaching for that glass of=
+ water ... <a
+href=3D"https://news.join1440.com/t/j-l-sihtux-djluhhpiy-f/" targe=
+t=3D"_blank" style=3D"text-decoration:underline !important;color:#0000ee !i=
+mportant;"><font style=3D"color:#0000ee;"><strong>remember to replenish ele=
+ctrolytes, too</strong></font></a>.</span></p>
+<p style=3D"margin-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0=
+px;padding:0;"><span class=3D"mso-font-fix-arial">&nbsp;</span></p>
+<p style=3D"margin-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0=
+px;padding:0;"><span class=3D"mso-font-fix-arial">After years of mixing his=
+ own homemade electrolyte blends and frustration with the lack of healthy o=
+ptions on the market, LMNT Co-founder Robb Wolf used his experience as a bi=
+ochemist and Navy SEAL resiliency committee member to create LMNT. With <a =
+href=3D"https://news.join1440.com/t/j-l-sihtux-djluhhpiy-z/" targe=
+t=3D"_blank" style=3D"text-decoration:underline !important;color:#0000ee !i=
+mportant;"><font
+style=3D"color:#0000ee;"><strong>no sugar, artificial ingredients, or junk =
+found</strong></font></a> in conventional sports drinks, LMNT is your chanc=
+e for a clean electrolyte boost after a long day or intense workout. And ev=
+en if you=E2=80=99re not an athlete, you=E2=80=99d be surprised how useful =
+LMNT can be. It tastes great, which makes it <a href=3D"https://news.join14=
+40.com/t/j-l-sihtux-djluhhpiy-v/" target=3D"_blank" style=3D"text-=
+decoration:underline !important;color:#0000ee !important;"><font
+style=3D"color:#0000ee;"><strong>the perfect cocktail mixer=E2=80=94or hang=
+over cure</strong></font></a>. Plus, just in time for cold weather, LMNT la=
+unched 3 new flavors meant to be consumed hot: Chocolate Mint, Chocolate Ch=
+ai, and Chocolate Raspberry! (We prefer adding them to our coffee.)</span><=
+/p>
+<p style=3D"margin-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0=
+px;padding:0;"><span class=3D"mso-font-fix-arial">&nbsp;</span></p>
+<p style=3D"padding:0;margin:0;"><span class=3D"mso-font-fix-arial">Ready t=
+o hydrate your body the right way? <a href=3D"https://news.join1440.com/t/j=
+-l-sihtux-djluhhpiy-e/" target=3D"_blank" style=3D"text-decoration=
+:underline !important;color:#0000ee !important;"><font style=3D"color:#0000=
+ee;"><strong>Enjoy a FREE sample pack of eight flavors today with any purch=
+ase, plus a money-back satisfaction guarantee.</strong></font></a></span></=
+p></div>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff" style=3D"background-color:#ffffff;">
+<tr>
+<td valign=3D"top" style=3D"padding-right:20px;padding-bottom:10px;padding-=
+left:20px;"><div style=3D"font-family:Roboto, Helvetica Neue, Helvetica, Ar=
+ial, sans-serif;font-size:15px;color:#000000;font-weight:normal;line-height=
+:22px;mso-line-height-rule:exactly;letter-spacing:normal;mso-text-raise:3px=
+;text-align:center;"><p style=3D"padding:0;margin:0;"><span class=3D"mso-fo=
+nt-fix-arial"><span style=3D"font-size:10px;"><em>Please support our sponso=
+rs!</em></span></span></p></div>
+</td>
+</tr>
+</table>
+=
+=
+=
+
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:10px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff" style=3D"background-color:#ffffff;">
+<tr>
+<td valign=3D"top" style=3D"padding-right:20px;padding-left:20px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" align=3D"left" style=3D"padding-top:20px;">
+<!--[if !mso]><!-- -->
+<a href=3D"" target=3D"_blank" style=3D"display:inline-block; text-decorati=
+on:none;" >
+<span>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" bgcolor=3D"#7edcf2"=
+ style=3D"background-color:#7edcf2;">
+<tr>
+<td align=3D"center" style=3D"padding-top:2px;padding-right:8px;padding-bot=
+tom:2px;padding-left:8px;">
+<span style=3D"color:#000000 !important;font-family:Georgia, Times, Times N=
+ew Roman, serif;font-size:23px;mso-line-height:exactly;line-height:33px;mso=
+-text-raise:5px;letter-spacing: normal;">
+<font style=3D"color:#000000;" class=3D"button">
+<span><span class=3D"mso-font-fix-georgia">In The Know</span></span>
+</font>
+</span>
+</td>
+</tr>
+</table>
+</span>
+</a>
+<!--<![endif]-->
+<div style=3D"display:none; mso-hide: none;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" bgcolor=3D"#7edcf2"=
+ style=3D"background-color:#7edcf2;">
+<tr>
+<td align=3D"center" style=3D"padding-top:2px;padding-right:8px;padding-bot=
+tom:2px;padding-left:8px;">
+<a href=3D"" target=3D"_blank" style=3D"color:#000000 !important;font-famil=
+y:Georgia, Times, Times New Roman, serif;font-size:23px;mso-line-height:exa=
+ctly;line-height:33px;mso-text-raise:5px;letter-spacing: normal;text-decora=
+tion:none;text-align:center;">
+<span style=3D"color:#000000 !important;font-family:Georgia, Times, Times N=
+ew Roman, serif;font-size:23px;mso-line-height:exactly;line-height:33px;mso=
+-text-raise:5px;letter-spacing: normal;">
+<font style=3D"color:#000000;" class=3D"button">
+<span><span class=3D"mso-font-fix-georgia">In The Know</span></span>
+</font>
+</span>
+</a>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td style=3D"padding-top:10px;padding-bottom:10px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" styl=
+e=3D"border-top:2px solid #000000;">
+<tr>
+<td style=3D"font-size:0px;line-height:0;mso-line-height-rule:exactly;">&nb=
+sp;
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:7px;padding-bottom:5px;"><div style=
+=3D"font-family:Georgia, Times, Times New Roman, serif;font-size:23px;color=
+:#000000;font-weight:normal;line-height:32px;mso-line-height-rule:exactly;l=
+etter-spacing:normal;mso-text-raise:4px;text-align:left;"><p style=3D"paddi=
+ng:0;margin:0;">Sports, Entertainment, &amp; Culture</p></div>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:10px;padding-bottom:10px;"><div sty=
+le=3D"font-family:Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;font=
+-size:15px;color:#000000;font-weight:normal;line-height:22px;mso-line-heigh=
+t-rule:exactly;letter-spacing:normal;mso-text-raise:3px;text-align:left;"><=
+p style=3D"padding:0;margin:0;"><span class=3D"mso-font-fix-arial"><span st=
+yle=3D"font-size:18px;"><strong><span style=3D"color:#7edcf2;">&gt;</span><=
+/strong>&nbsp;</span><strong>University of Wisconsin-La Crosse Chancellor <=
+/strong>Joe Gow fired after pornographic videos of Gow and his wife are unc=
+overed&nbsp;(<a href=3D"https://news.join1440.com/t/j-l-sihtux-=
+djluhhpiy-s/" target=3D"_blank"
+style=3D"text-decoration:underline !important;color:#0000ee !important;"><f=
+ont style=3D"color:#0000ee;">More</font></a>)</span></p></div>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:10px;padding-bottom:10px;"><div sty=
+le=3D"font-family:Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;font=
+-size:15px;color:#000000;font-weight:normal;line-height:22px;mso-line-heigh=
+t-rule:exactly;letter-spacing:normal;mso-text-raise:3px;text-align:left;"><=
+p style=3D"padding:0;margin:0;"><span class=3D"mso-font-fix-arial"><span st=
+yle=3D"font-size:18px;"><strong><span style=3D"color:#7edcf2;">&gt;</span><=
+/strong>&nbsp;</span><strong>College Football Playoff kicks off Monday</str=
+ong> with No. 1 Michigan taking on No. 4 Alabama (4 pm ET, ESPN) and No. 2 =
+Washington against No. 3 Texas (8 pm ET, ESPN) (<a href=3D"https://news.joi=
+n1440.com/t/j-l-sihtux-djluhhpiy-g/"
+target=3D"_blank" style=3D"text-decoration:underline !important;color:#0000=
+ee !important;"><font style=3D"color:#0000ee;">More</font></a>) | <strong>S=
+ee full college football bowl schedule</strong> (<a href=3D"https://news.jo=
+in1440.com/t/j-l-sihtux-djluhhpiy-w/" target=3D"_blank" style=3D"t=
+ext-decoration:underline !important;color:#0000ee !important;"><font style=3D=
+"color:#0000ee;">More</font></a>)</span></p></div>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:10px;padding-bottom:10px;"><div sty=
+le=3D"font-family:Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;font=
+-size:15px;color:#000000;font-weight:normal;line-height:22px;mso-line-heigh=
+t-rule:exactly;letter-spacing:normal;mso-text-raise:3px;text-align:left;"><=
+p style=3D"padding:0;margin:0;"><span class=3D"mso-font-fix-arial"><span st=
+yle=3D"font-size:18px;"><strong><span style=3D"color:#7edcf2;">&gt;</span><=
+/strong>&nbsp;</span><strong>Mbongeni Ngema</strong>, iconic South African =
+playwright and six-time Tony and Grammy Award nominee, dies in a car crash =
+at 68&nbsp;(<a href=3D"https://news.join1440.com/t/j-l-sihtux-=
+djluhhpiy-yd/" target=3D"_blank" style=3D"text-decoration:underline !important;=
+color:#0000ee !important;"><font
+style=3D"color:#0000ee;">More</font></a>)</span></p></div>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td style=3D"padding-top:10px;padding-bottom:10px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" styl=
+e=3D"border-top:2px solid #000000;">
+<tr>
+<td style=3D"font-size:0px;line-height:0;mso-line-height-rule:exactly;">&nb=
+sp;
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff" style=3D"background-color:#ffffff;">
+<tr>
+<td valign=3D"top" style=3D"padding-right:20px;padding-left:20px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:10px;padding-bottom:5px;"><div styl=
+e=3D"font-family:Georgia, Times, Times New Roman, serif;font-size:23px;colo=
+r:#000000;font-weight:normal;line-height:32px;mso-line-height-rule:exactly;=
+letter-spacing:normal;mso-text-raise:4px;text-align:left;"><p style=3D"padd=
+ing:0;margin:0;">Science &amp; Technology</p></div>
+</td>
+</tr>
+</table>
+=
+=
+=
+
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:5px;padding-bottom:5px;"><div style=
+=3D"font-family:Arial, Helvetica Neue, Helvetica, sans-serif;font-size:15px=
+;color:#131313;font-weight:normal;line-height:25px;mso-line-height-rule:exa=
+ctly;letter-spacing:normal;mso-text-raise:5px;text-align:left;"><p style=3D=
+"padding:0;margin:0;"><em>In partnership with <a href=3D"https://news.join1=
+440.com/t/j-l-sihtux-djluhhpiy-yh/" target=3D"_blank" style=3D"tex=
+t-decoration:underline !important;color:#0000ee !important;"><font style=3D=
+"color:#0000ee;">Brilliant</font></a></em></p></div>
+</td>
+</tr>
+</table>
+=
+=
+=
+
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:10px;padding-bottom:10px;"><div sty=
+le=3D"font-family:Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;font=
+-size:15px;color:#000000;font-weight:normal;line-height:22px;mso-line-heigh=
+t-rule:exactly;letter-spacing:normal;mso-text-raise:3px;text-align:left;"><=
+p style=3D"padding:0;margin:0;"><span class=3D"mso-font-fix-arial"><span st=
+yle=3D"font-size:18px;"><strong><span style=3D"color:#7edcf2;">&gt;</span><=
+/strong>&nbsp;</span><strong>US military's X-37B space plane</strong>&nbsp;=
+begins seventh mission; vehicle was launched via a SpaceX Falcon Heavy rock=
+et, allowing it to reach as high as 22,000 miles above Earth (<a
+href=3D"https://news.join1440.com/t/j-l-sihtux-djluhhpiy-yk/" targ=
+et=3D"_blank" style=3D"text-decoration:underline !important;color:#0000ee !=
+important;"><font style=3D"color:#0000ee;">More</font></a>)</span></p></div=
+>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:10px;padding-bottom:10px;"><div sty=
+le=3D"font-family:Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;font=
+-size:15px;color:#000000;font-weight:normal;line-height:22px;mso-line-heigh=
+t-rule:exactly;letter-spacing:normal;mso-text-raise:3px;text-align:left;"><=
+p style=3D"padding:0;margin:0;"><span class=3D"mso-font-fix-arial"><span st=
+yle=3D"font-size:18px;"><strong><span style=3D"color:#7edcf2;">&gt;</span><=
+/strong>&nbsp;</span><strong>Scientists discover source</strong>&nbsp;of my=
+sterious type of immune system cells known as stem-like central memory T ce=
+lls, which play a key role in remembering previously encountered pathogens =
+(<a
+href=3D"https://news.join1440.com/t/j-l-sihtux-djluhhpiy-yu/" targ=
+et=3D"_blank" style=3D"text-decoration:underline !important;color:#0000ee !=
+important;"><font style=3D"color:#0000ee;">More</font></a>)</span></p></div=
+>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:10px;padding-bottom:10px;"><div sty=
+le=3D"font-family:Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;font=
+-size:15px;color:#000000;font-weight:normal;line-height:22px;mso-line-heigh=
+t-rule:exactly;letter-spacing:normal;mso-text-raise:3px;text-align:left;"><=
+p style=3D"padding:0;margin:0;"><span class=3D"mso-font-fix-arial"><span st=
+yle=3D"font-size:18px;"><strong><span style=3D"color:#7edcf2;">&gt;</span><=
+/strong>&nbsp;</span><strong>Study suggests</strong>&nbsp;ultra-dense neutr=
+on stars contain quarks=E2=80=94fundamental particles that make up protons =
+and neutrons, which help make up atoms=E2=80=94at their core (<a
+href=3D"https://news.join1440.com/t/j-l-sihtux-djluhhpiy-jl/" targ=
+et=3D"_blank" style=3D"text-decoration:underline !important;color:#0000ee !=
+important;"><font style=3D"color:#0000ee;">More</font></a>) | <strong>Learn=
+ more about neutron stars</strong>, collapsed super giant stars roughly 10 =
+miles wide (<a href=3D"https://news.join1440.com/t/j-l-sihtux-=
+djluhhpiy-jr/" target=3D"_blank" style=3D"text-decoration:underline !important;=
+color:#0000ee !important;"><font style=3D"color:#0000ee;">More</font></a>, =
+w/video)</span></p></div>
+</td>
+</tr>
+</table>
+=
+=
+=
+
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#fdfdfd" style=3D"background-color:#fdfdfd;">
+<tr>
+<td valign=3D"top" style=3D"padding-top:10px;padding-bottom:10px;"><div sty=
+le=3D"font-family:Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;font=
+-size:15px;color:#000000;font-weight:normal;line-height:20px;mso-line-heigh=
+t-rule:exactly;letter-spacing:normal;mso-text-raise:2px;text-align:left;"><=
+p style=3D"padding:0;margin:0;"><span class=3D"mso-font-fix-arial"><em>From=
+ our partners:</em>&nbsp;<strong>Make 2024 your smartest year ever.</strong=
+>&nbsp;Brilliant&nbsp;is <a href=3D"https://news.join1440.com/t/j-l-sihtux-=
+djluhhpiy-jy/" target=3D"_blank" style=3D"text-decoration:underlin=
+e !important;color:#0000ee !important;"><font
+style=3D"color:#0000ee;"><strong>the one app for learning everything you ne=
+ed to stay on top of our rapidly changing world</strong></font></a>=E2=80=94=
+from AI and data science to programming, technology, you name it. Bite-size=
+d, interactive lessons make it easy to sharpen your skills in minutes a day=
+=2E <a href=3D"https://news.join1440.com/t/j-l-sihtux-djluhhpiy-jj/"=
+ target=3D"_blank" style=3D"text-decoration:underline !important;color:#000=
+0ee !important;"><font style=3D"color:#0000ee;"><strong>Join 10M+ global le=
+arners and start your 30-day free trial today.</strong></font></a></span></=
+p></div>
+</td>
+</tr>
+</table>
+=
+=
+=
+
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td style=3D"padding-top:10px;padding-bottom:10px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" styl=
+e=3D"border-top:2px solid #000000;">
+<tr>
+<td style=3D"font-size:0px;line-height:0;mso-line-height-rule:exactly;">&nb=
+sp;
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff" style=3D"background-color:#ffffff;">
+<tr>
+<td valign=3D"top" style=3D"padding-right:20px;padding-left:20px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:10px;padding-bottom:5px;"><div styl=
+e=3D"font-family:Georgia, Times, Times New Roman, serif;font-size:23px;colo=
+r:#000000;font-weight:normal;line-height:32px;mso-line-height-rule:exactly;=
+letter-spacing:normal;mso-text-raise:4px;text-align:left;"><p style=3D"padd=
+ing:0;margin:0;">Business &amp; Markets</p></div>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:10px;padding-bottom:10px;"><div sty=
+le=3D"font-family:Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;font=
+-size:15px;color:#000000;font-weight:normal;line-height:22px;mso-line-heigh=
+t-rule:exactly;letter-spacing:normal;mso-text-raise:3px;text-align:left;"><=
+p style=3D"padding:0;margin:0;"><span class=3D"mso-font-fix-arial"><span st=
+yle=3D"font-size:18px;"><strong><span style=3D"color:#7edcf2;">&gt;</span><=
+/strong>&nbsp;</span><strong>Global mergers and acquisitions </strong>fell =
+17% to &#36;2.87T in 2023, the lowest level in more than 10 years and drive=
+n partly by tightening markets; Japan was the only country to see M&amp;A g=
+rowth at 32% (<a href=3D"https://news.join1440.com/t/j-l-sihtux-=
+djluhhpiy-jt/"
+target=3D"_blank" style=3D"text-decoration:underline !important;color:#0000=
+ee !important;"><font style=3D"color:#0000ee;">More</font></a>)</span></p><=
+/div>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:10px;padding-bottom:10px;"><div sty=
+le=3D"font-family:Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;font=
+-size:15px;color:#000000;font-weight:normal;line-height:22px;mso-line-heigh=
+t-rule:exactly;letter-spacing:normal;mso-text-raise:3px;text-align:left;"><=
+p style=3D"padding:0;margin:0;"><span class=3D"mso-font-fix-arial"><span st=
+yle=3D"font-size:18px;"><strong><span style=3D"color:#7edcf2;">&gt;</span><=
+/strong>&nbsp;</span><strong>Detroit-based General Motors </strong>sues San=
+ Francisco&nbsp;for &#36;121M refund, alleging the city miscalculated its t=
+ax bill for seven years by improperly including GM's separate San Francisco=
+-based Cruise unit&nbsp;(<a
+href=3D"https://news.join1440.com/t/j-l-sihtux-djluhhpiy-ji/" targ=
+et=3D"_blank" style=3D"text-decoration:underline !important;color:#0000ee !=
+important;"><font style=3D"color:#0000ee;">More</font></a>)</span></p></div=
+>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:10px;padding-bottom:10px;"><div sty=
+le=3D"font-family:Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;font=
+-size:15px;color:#000000;font-weight:normal;line-height:22px;mso-line-heigh=
+t-rule:exactly;letter-spacing:normal;mso-text-raise:3px;text-align:left;"><=
+p style=3D"padding:0;margin:0;"><span class=3D"mso-font-fix-arial"><span st=
+yle=3D"font-size:18px;"><strong><span style=3D"color:#7edcf2;">&gt;</span><=
+/strong>&nbsp;</span><strong>Chinese smartphone maker Xiaomi</strong> unvei=
+ls first electric vehicle in bid to compete with Tesla, Porsche&nbsp;(<a hr=
+ef=3D"https://news.join1440.com/t/j-l-sihtux-djluhhpiy-jd/" target=
+=3D"_blank"
+style=3D"text-decoration:underline !important;color:#0000ee !important;"><f=
+ont style=3D"color:#0000ee;">More</font></a>)&nbsp;</span></p></div>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td style=3D"padding-top:10px;padding-bottom:10px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" styl=
+e=3D"border-top:2px solid #000000;">
+<tr>
+<td style=3D"font-size:0px;line-height:0;mso-line-height-rule:exactly;">&nb=
+sp;
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff" style=3D"background-color:#ffffff;">
+<tr>
+<td valign=3D"top" style=3D"padding-right:20px;padding-left:20px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:10px;padding-bottom:5px;"><div styl=
+e=3D"font-family:Georgia, Times, Times New Roman, serif;font-size:23px;colo=
+r:#000000;font-weight:normal;line-height:32px;mso-line-height-rule:exactly;=
+letter-spacing:normal;mso-text-raise:4px;text-align:left;"><p style=3D"padd=
+ing:0;margin:0;">Politics &amp; World Affairs</p></div>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:10px;padding-bottom:10px;"><div sty=
+le=3D"font-family:Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;font=
+-size:15px;color:#000000;font-weight:normal;line-height:22px;mso-line-heigh=
+t-rule:exactly;letter-spacing:normal;mso-text-raise:3px;text-align:left;"><=
+p style=3D"padding:0;margin:0;"><span class=3D"mso-font-fix-arial"><span st=
+yle=3D"font-size:18px;"><strong><span style=3D"color:#7edcf2;">&gt;</span><=
+/strong>&nbsp;</span><strong>An estimated 150,000 people</strong>&nbsp;forc=
+ed to flee central Gaza as Israeli troops expand operations against Hamas t=
+o refugee camps (<a href=3D"https://news.join1440.com/t/j-l-sihtux-=
+djluhhpiy-jh/" target=3D"_blank"
+style=3D"text-decoration:underline !important;color:#0000ee !important;"><f=
+ont style=3D"color:#0000ee;">More</font></a>) | <strong>See updates</strong=
+> on war here (<a href=3D"https://news.join1440.com/t/j-l-sihtux-=
+djluhhpiy-jk/" target=3D"_blank" style=3D"text-decoration:underline !importa=
+nt;color:#0000ee !important;"><font style=3D"color:#0000ee;">More</font></a=
+>)</span></p></div>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:10px;padding-bottom:10px;"><div sty=
+le=3D"font-family:Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;font=
+-size:15px;color:#000000;font-weight:normal;line-height:22px;mso-line-heigh=
+t-rule:exactly;letter-spacing:normal;mso-text-raise:3px;text-align:left;"><=
+p style=3D"padding:0;margin:0;"><span class=3D"mso-font-fix-arial"><span st=
+yle=3D"font-size:18px;"><strong><span style=3D"color:#7edcf2;">&gt;</span><=
+/strong>&nbsp;</span><strong>Rep. Lauren Boebert (R, CO-3)</strong> to move=
+ residences, will run in Colorado's 4th District after facing tough reelect=
+ion bid; former President Donald Trump won the 4th District by 16 points in=
+ 2020, current Rep. Ken Buck (R) is retiring (<a
+href=3D"https://news.join1440.com/t/j-l-sihtux-djluhhpiy-ju/" targ=
+et=3D"_blank" style=3D"text-decoration:underline !important;color:#0000ee !=
+important;"><font style=3D"color:#0000ee;">More</font></a>)</span></p></div=
+>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:10px;padding-bottom:10px;"><div sty=
+le=3D"font-family:Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;font=
+-size:15px;color:#000000;font-weight:normal;line-height:22px;mso-line-heigh=
+t-rule:exactly;letter-spacing:normal;mso-text-raise:3px;text-align:left;"><=
+p style=3D"padding:0;margin:0;"><span class=3D"mso-font-fix-arial"><span st=
+yle=3D"font-size:18px;"><strong><span style=3D"color:#7edcf2;">&gt;</span><=
+/strong>&nbsp;</span><strong>US homicide rate dropped</strong> by as much a=
+s 12% between 2022 and 2023, but remained higher than 2008-20 period, accor=
+ding to preliminary data (<a href=3D"https://news.join1440.com/t/j-l-sihtux=
+-djluhhpiy-tl/" target=3D"_blank"
+style=3D"text-decoration:underline !important;color:#0000ee !important;"><f=
+ont style=3D"color:#0000ee;">More</font></a>)</span></p></div>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td style=3D"padding-top:10px;padding-bottom:10px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" styl=
+e=3D"border-top:2px solid #000000;">
+<tr>
+<td style=3D"font-size:0px;line-height:0;mso-line-height-rule:exactly;">&nb=
+sp;
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff" style=3D"background-color:#ffffff;">
+<tr>
+<td valign=3D"top" style=3D"padding-right:20px;padding-bottom:10px;padding-=
+left:20px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:10px;padding-bottom:5px;"><div styl=
+e=3D"font-family:Georgia, Times, Times New Roman, serif;font-size:23px;colo=
+r:#000000;font-weight:normal;line-height:32px;mso-line-height-rule:exactly;=
+letter-spacing:normal;mso-text-raise:4px;text-align:left;"><p style=3D"padd=
+ing:0;margin:0;">In-Depth</p></div>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:10px;padding-bottom:10px;"><div sty=
+le=3D"font-family:Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;font=
+-size:15px;color:#000000;font-weight:normal;line-height:22px;mso-line-heigh=
+t-rule:exactly;letter-spacing:normal;mso-text-raise:3px;text-align:left;"><=
+p style=3D"margin-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0p=
+x;padding:0;"><span class=3D"mso-font-fix-arial"><strong><span style=3D"col=
+or:#7edcf2;"><span style=3D"font-size:18px;">&gt;</span></span>&nbsp;Burnin=
+g Bodies for Science</strong></span></p>
+<p style=3D"margin-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0=
+px;padding:0;"><span class=3D"mso-font-fix-arial"><strong>Undark | Will Pei=
+schel.</strong>&nbsp;After decades of viewing fire fatality investigations =
+as an intuitive art, a growing movement of scientists is furthering the fie=
+ld with concrete experiments. (<a href=3D"https://news.join1440.com/t/j-l-s=
+ihtux-djluhhpiy-tr/" target=3D"_blank" style=3D"text-decoration:un=
+derline !important;color:#0000ee !important;"><font style=3D"color:#0000ee;=
+">Read</font></a>)</span></p>
+<p style=3D"margin-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0=
+px;padding:0;"><span class=3D"mso-font-fix-arial">&nbsp;</span></p>
+<p style=3D"margin-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0=
+px;padding:0;"><span class=3D"mso-font-fix-arial"><strong><span style=3D"co=
+lor:#7edcf2;"><span style=3D"font-size:18px;">&gt;</span></span> Seriously,=
+ Have Fun</strong></span></p>
+<p style=3D"padding:0;margin:0;"><span class=3D"mso-font-fix-arial"><strong=
+>Psyche | Mike Rucker.</strong>&nbsp;Work, chores, relationships, everythin=
+g=E2=80=94experts say they all feel and do better when you bring playfulnes=
+s into the picture.&nbsp;(<a href=3D"https://news.join1440.com/t/j-l-sihtux=
+-djluhhpiy-ty/" target=3D"_blank" style=3D"text-decoration:underli=
+ne !important;color:#0000ee !important;"><font style=3D"color:#0000ee;">Rea=
+d</font></a>)</span></p></div>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:10px;padding-bottom:10px;"><div sty=
+le=3D"font-family:Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;font=
+-size:15px;color:#000000;font-weight:normal;line-height:22px;mso-line-heigh=
+t-rule:exactly;letter-spacing:normal;mso-text-raise:3px;text-align:left;"><=
+p style=3D"margin-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0p=
+x;padding:0;"><span class=3D"mso-font-fix-arial"><strong><span style=3D"col=
+or:#7edcf2;"><span style=3D"font-size:18px;">&gt;</span></span> What Would =
+Socrates Do?</strong></span></p>
+<p style=3D"margin-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0=
+px;padding:0;"><span class=3D"mso-font-fix-arial"><strong>Hidden Brain | Sh=
+ankar Vedantam.</strong>&nbsp;(Podcast) A look back at how three ancient Gr=
+eek philosophers made sense of identity, purpose, and happiness. (<a href=3D=
+"https://news.join1440.com/t/j-l-sihtux-djluhhpiy-tj/" target=3D"_=
+blank" style=3D"text-decoration:underline !important;color:#0000ee !importa=
+nt;"><font style=3D"color:#0000ee;">Listen</font></a>)</span></p>
+<p style=3D"margin-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0=
+px;padding:0;"><span class=3D"mso-font-fix-arial">&nbsp;</span></p>
+<p style=3D"margin-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0=
+px;padding:0;"><span class=3D"mso-font-fix-arial"><strong><span style=3D"co=
+lor:#7edcf2;"><span style=3D"font-size:18px;">&gt;</span></span>&nbsp;When =
+We Stopped Being Naked</strong></span></p>
+<p style=3D"padding:0;margin:0;"><span class=3D"mso-font-fix-arial"><strong=
+>PBS Eons | Staff.</strong>&nbsp;Trace the fascinating (and scant) archaeol=
+ogical evidence that reveals the prehistoric moment humans started covering=
+ up. (<a href=3D"https://news.join1440.com/t/j-l-sihtux-djluhhpiy-=
+tt/" target=3D"_blank" style=3D"text-decoration:underline !important;color:=
+#0000ee !important;"><font style=3D"color:#0000ee;">Watch</font></a>)</span=
+></p></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:8px;padding-bottom:8px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top">=
+=
+=
+
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff" style=3D"background-color:#ffffff;">
+<tr>
+<td valign=3D"top" style=3D"padding-top:5px;padding-right:20px;padding-left=
+:20px;"><div style=3D"font-family:Roboto, Helvetica Neue, Helvetica, Arial,=
+ sans-serif;font-size:15px;color:#000000;font-weight:normal;line-height:22p=
+x;mso-line-height-rule:exactly;letter-spacing:normal;mso-text-raise:3px;tex=
+t-align:left;"><p style=3D"padding:0;margin:0;"><span class=3D"mso-font-fix=
+-arial"><span style=3D"font-size:10px;"><strong><em>In partnership with LMN=
+T</em></strong></span></span></p></div>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff" style=3D"background-color:#ffffff;">
+<tr>
+<td valign=3D"top" style=3D"padding-top:10px;padding-right:20px;padding-bot=
+tom:3px;padding-left:20px;"><div style=3D"font-family:Georgia, Times, Times=
+ New Roman, serif;font-size:23px;color:#000000;font-weight:normal;line-heig=
+ht:32px;mso-line-height-rule:exactly;letter-spacing:normal;mso-text-raise:4=
+px;text-align:left;"><p style=3D"padding:0;margin:0;">The Trusted Way To Hy=
+drate</p></div>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff" style=3D"background-color:#ffffff;">
+<tr>
+<td style=3D"padding-top:5px;padding-right:20px;padding-bottom:10px;padding=
+-left:20px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" styl=
+e=3D"border-top:2px solid #000000;">
+<tr>
+<td style=3D"font-size:0px;line-height:0;mso-line-height-rule:exactly;">&nb=
+sp;
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#fdfdfd" style=3D"background-color:#fdfdfd;">
+<tr>
+<td valign=3D"top" style=3D"padding-top:10px;padding-right:20px;padding-bot=
+tom:10px;padding-left:20px;"><div style=3D"font-family:Roboto, Helvetica Ne=
+ue, Helvetica, Arial, sans-serif;font-size:15px;color:#000000;font-weight:n=
+ormal;line-height:22px;mso-line-height-rule:exactly;letter-spacing:normal;m=
+so-text-raise:3px;text-align:left;"><p style=3D"margin-left:0px;margin-top:=
+0px;margin-right:0px;margin-bottom:0px;padding:0;"><span class=3D"mso-font-=
+fix-arial">What will you find in your LMNT single-serve packets? Simple: 1,=
+000mg sodium, 200mg potassium, 60mg magnesium (for the optimal hydration ra=
+tio), <a
+href=3D"https://news.join1440.com/t/j-l-sihtux-djluhhpiy-ti/" targ=
+et=3D"_blank" style=3D"text-decoration:underline !important;color:#0000ee !=
+important;"><font style=3D"color:#0000ee;"><strong>zero sugar, zero colorin=
+g, and zero other junk</strong></font></a>.</span></p>
+<p style=3D"margin-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0=
+px;padding:0;"><span class=3D"mso-font-fix-arial">&nbsp;</span></p>
+<p style=3D"padding:0;margin:0;"><span class=3D"mso-font-fix-arial">And LMN=
+T is the <a href=3D"https://news.join1440.com/t/j-l-sihtux-=
+djluhhpiy-td/" target=3D"_blank" style=3D"text-decoration:underline !important;col=
+or:#0000ee !important;"><font style=3D"color:#0000ee;"><strong>perfect elec=
+trolyte mix for just about everyone</strong></font></a>. From everyday athl=
+etes to the US Olympic Weightlifting team. From people on keto or low-carb =
+diets to pro sports teams across the NFL, NBA, and NHL. And, of course, any=
+one who's trying to avoid or mitigate a hangover. Today, you can <a
+href=3D"https://news.join1440.com/t/j-l-sihtux-djluhhpiy-th/" targ=
+et=3D"_blank" style=3D"text-decoration:underline !important;color:#0000ee !=
+important;"><font style=3D"color:#0000ee;"><strong>enjoy a FREE sample pack=
+ of all eight LMNT flavors with any order, plus a risk-free refund policy.<=
+/strong></font></a></span></p></div>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff" style=3D"background-color:#ffffff;">
+<tr>
+<td valign=3D"top" style=3D"padding-right:20px;padding-bottom:10px;padding-=
+left:20px;"><div style=3D"font-family:Roboto, Helvetica Neue, Helvetica, Ar=
+ial, sans-serif;font-size:15px;color:#000000;font-weight:normal;line-height=
+:22px;mso-line-height-rule:exactly;letter-spacing:normal;mso-text-raise:3px=
+;text-align:center;"><p style=3D"padding:0;margin:0;"><span class=3D"mso-fo=
+nt-fix-arial"><span style=3D"font-size:10px;"><em>Please support our sponso=
+rs!</em></span></span></p></div>
+</td>
+</tr>
+</table>
+=
+=
+=
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:10px;padding-bottom:10px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top">=
+=
+=
+
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff" style=3D"background-color:#ffffff;">
+<tr>
+<td valign=3D"top" style=3D"padding-top:3px;padding-right:20px;padding-bott=
+om:15px;padding-left:20px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff" style=3D"background-color:#ffffff;">
+<tr>
+<td valign=3D"top" style=3D"padding-top:10px;padding-bottom:3px;"><div styl=
+e=3D"font-family:Georgia, Times, Times New Roman, serif;font-size:23px;colo=
+r:#000000;font-weight:normal;line-height:32px;mso-line-height-rule:exactly;=
+letter-spacing:normal;mso-text-raise:4px;text-align:left;"><p style=3D"padd=
+ing:0;margin:0;">Share 1440</p></div>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff" style=3D"background-color:#ffffff;">
+<tr>
+<td style=3D"padding-top:5px;padding-bottom:10px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" styl=
+e=3D"border-top:2px solid #000000;">
+<tr>
+<td style=3D"font-size:0px;line-height:0;mso-line-height-rule:exactly;">&nb=
+sp;
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:8px;padding-bottom:5px;"><div><tabl=
+e cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+<tr style=3D"font-family:Roboto, Helvetica Neue, Helvetica, Arial, sans-ser=
+if;font-size:15px;color:#131313;font-weight:normal;line-height:22px;mso-lin=
+e-height-rule:exactly;letter-spacing:normal;mso-text-raise:3px;text-align:l=
+eft;"><td width=3D"22" align=3D"right" valign=3D"top" style=3D"margin:0;pad=
+ding:0;"><span class=3D"mso-font-fix-arial"><span>&#x02022;</span><span>&nb=
+sp;</span></span></td><td style=3D"margin:0;padding:0;"><span class=3D"mso-=
+font-fix-arial">&nbsp;</span></td><td align=3D"left" style=3D"padding-left:=
+0px;padding-top:0px;padding-right:0px;padding-bottom:0px;margin:0;"><span c=
+lass=3D"mso-font-fix-arial"><strong>Don=E2=80=99t keep us a secret: </stron=
+g><strong><a
+href=3D"mailto:hello@join1440.com?subject=3DBest%20newsletter%20for%20unbia=
+sed%20news&body=3DHey%2C%0A%0AI%E2%80%99ve%20been%20reading%201440%2C%20and=
+%20definitely%20think%20you%E2%80%99d%20enjoy%20it%20as%20well.%20It%20has%=
+20all%20of%20the%20day%E2%80%99s%20top%20news%20and%20info%E2%80%94sports%2=
+C%20science%2C%20culture%2C%20politics%2C%20business%2C%20and%20more%E2%80%=
+94%20in%20a%20concise%20and%20impartial%20(and%20free)%205-minute%20morning=
+%20email.%20I%20learn%20something%20new%20every%20time%20I%20open%20it.%20C=
+heck%20out%20the%20%231%20newsletter%20for%20unbiased%20news%20here%3A%0A%0=
+Ahttps%3A%2F%2Fjoin1440.com%2F%3Futm_source%3Dnl_fwd_cta_main%26utm_medium%=
+3Demail%26utm_campaign%3Dslim-share2" style=3D"text-decoration:underline !i=
+mportant;color:#1634cc !important;"><font
+style=3D"color:#1634cc;">Share the email</font></a>&nbsp;</strong>with frie=
+nds&nbsp;(copy&nbsp;URL&nbsp;<strong><a href=3D"https://news.join1440.com/t=
+/j-l-sihtux-djluhhpiy-tk/" target=3D"_blank" style=3D"text-decorat=
+ion:underline !important;color:#1634cc !important;"><font style=3D"color:#1=
+634cc;">here</font></a>)</strong></span></td></tr>
+<tr style=3D"font-family:Roboto, Helvetica Neue, Helvetica, Arial, sans-ser=
+if;font-size:15px;color:#131313;font-weight:normal;line-height:22px;mso-lin=
+e-height-rule:exactly;letter-spacing:normal;mso-text-raise:3px;text-align:l=
+eft;"><td width=3D"22" align=3D"right" valign=3D"top" style=3D"margin:0;pad=
+ding:0;"><span class=3D"mso-font-fix-arial"><span>&#x02022;</span><span>&nb=
+sp;</span></span></td><td style=3D"margin:0;padding:0;"><span class=3D"mso-=
+font-fix-arial">&nbsp;</span></td><td align=3D"left" style=3D"padding:0;mar=
+gin:0;"><span class=3D"mso-font-fix-arial"><strong>Support our team</strong=
+> with our&nbsp;<strong><a href=3D"https://news.join1440.com/t/j-l-sihtux-=
+djluhhpiy-tu/" target=3D"_blank"
+style=3D"text-decoration:underline !important;color:#1634cc !important;"><f=
+ont style=3D"color:#1634cc;">monthly ad-free subscription</font></a></stron=
+g></span></td></tr>
+</table></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+=
+=
+=
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff" style=3D"background-color:#ffffff;">
+<tr>
+<td valign=3D"top"><span id=3D"etc"></span>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" align=3D"left" style=3D"padding-top:20px;padding-right:2=
+0px;padding-left:20px;">
+<!--[if !mso]><!-- -->
+<a href=3D"" target=3D"_blank" style=3D"display:inline-block; text-decorati=
+on:none;" >
+<span>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" bgcolor=3D"#f48cd9"=
+ style=3D"background-color:#f48cd9;">
+<tr>
+<td align=3D"center" style=3D"padding-top:2px;padding-right:8px;padding-bot=
+tom:2px;padding-left:8px;">
+<span style=3D"color:#000000 !important;font-family:Georgia, Times, Times N=
+ew Roman, serif;font-size:23px;mso-line-height:exactly;line-height:33px;mso=
+-text-raise:5px;letter-spacing: normal;">
+<font style=3D"color:#000000;" class=3D"button">
+<span><span class=3D"mso-font-fix-georgia">Etcetera</span></span>
+</font>
+</span>
+</td>
+</tr>
+</table>
+</span>
+</a>
+<!--<![endif]-->
+<div style=3D"display:none; mso-hide: none;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" bgcolor=3D"#f48cd9"=
+ style=3D"background-color:#f48cd9;">
+<tr>
+<td align=3D"center" style=3D"padding-top:2px;padding-right:8px;padding-bot=
+tom:2px;padding-left:8px;">
+<a href=3D"" target=3D"_blank" style=3D"color:#000000 !important;font-famil=
+y:Georgia, Times, Times New Roman, serif;font-size:23px;mso-line-height:exa=
+ctly;line-height:33px;mso-text-raise:5px;letter-spacing: normal;text-decora=
+tion:none;text-align:center;">
+<span style=3D"color:#000000 !important;font-family:Georgia, Times, Times N=
+ew Roman, serif;font-size:23px;mso-line-height:exactly;line-height:33px;mso=
+-text-raise:5px;letter-spacing: normal;">
+<font style=3D"color:#000000;" class=3D"button">
+<span><span class=3D"mso-font-fix-georgia">Etcetera</span></span>
+</font>
+</span>
+</a>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td style=3D"padding-top:10px;padding-right:20px;padding-bottom:10px;paddin=
+g-left:20px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" styl=
+e=3D"border-top:2px solid #000000;">
+<tr>
+<td style=3D"font-size:0px;line-height:0;mso-line-height-rule:exactly;">&nb=
+sp;
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:5px;padding-right:20px;padding-bott=
+om:15px;padding-left:20px;"><div style=3D"font-family:Roboto, Helvetica Neu=
+e, Helvetica, Arial, sans-serif;font-size:15px;color:#000000;font-weight:no=
+rmal;line-height:22px;mso-line-height-rule:exactly;letter-spacing:normal;ms=
+o-text-raise:3px;text-align:left;"><p style=3D"margin-left:0px;margin-top:0=
+px;margin-right:0px;margin-bottom:0px;padding:0;"><span class=3D"mso-font-f=
+ix-arial">Eighty-one science facts <a href=3D"https://news.join1440.com/t/j=
+-l-sihtux-djluhhpiy-il/" target=3D"_blank"
+style=3D"text-decoration:underline !important;color:#0000ee !important;"><f=
+ont style=3D"color:#0000ee;">you probably didn't know</font></a>.</span></p=
+>
+<p style=3D"margin-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0=
+px;padding:0;"><span class=3D"mso-font-fix-arial">&nbsp;</span></p>
+<p style=3D"margin-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0=
+px;padding:0;"><span class=3D"mso-font-fix-arial">This year's most moving <=
+a href=3D"https://news.join1440.com/t/j-l-sihtux-djluhhpiy-ir/" ta=
+rget=3D"_blank" style=3D"text-decoration:underline !important;color:#0000ee=
+ !important;"><font style=3D"color:#0000ee;">black-and-white photography</f=
+ont></a>.</span></p>
+<p style=3D"margin-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0=
+px;padding:0;"><span class=3D"mso-font-fix-arial">&nbsp;</span></p>
+<p style=3D"margin-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0=
+px;padding:0;"><span class=3D"mso-font-fix-arial">Have a good cry with thes=
+e&nbsp;<a href=3D"https://news.join1440.com/t/j-l-sihtux-djluhhpiy=
+-iy/" target=3D"_blank" style=3D"text-decoration:underline !important;color=
+:#0000ee !important;"><font style=3D"color:#0000ee;">autogenerated tear-jer=
+kers</font></a>.&nbsp;</span></p>
+<p style=3D"margin-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0=
+px;padding:0;"><span class=3D"mso-font-fix-arial">&nbsp;</span></p>
+<p style=3D"margin-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0=
+px;padding:0;"><span class=3D"mso-font-fix-arial">Glacier gurus rank US and=
+ Canada's <a href=3D"https://news.join1440.com/t/j-l-sihtux-=
+djluhhpiy-ij/" target=3D"_blank" style=3D"text-decoration:underline !important;co=
+lor:#0000ee !important;"><font style=3D"color:#0000ee;">best ski resorts</f=
+ont></a>.&nbsp;</span></p>
+<p style=3D"margin-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0=
+px;padding:0;"><span class=3D"mso-font-fix-arial">&nbsp;</span></p>
+<p style=3D"margin-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0=
+px;padding:0;"><span class=3D"mso-font-fix-arial">Americans projected to sp=
+end &#36;32B less <a href=3D"https://news.join1440.com/t/j-l-sihtux-=
+djluhhpiy-it/" target=3D"_blank" style=3D"text-decoration:underline !impo=
+rtant;color:#0000ee !important;"><font style=3D"color:#0000ee;">on gas next=
+ year</font></a>.</span></p>
+<p style=3D"margin-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0=
+px;padding:0;"><span class=3D"mso-font-fix-arial">&nbsp;</span></p>
+<p style=3D"margin-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0=
+px;padding:0;"><span class=3D"mso-font-fix-arial">Visiting the most <a href=
+=3D"https://news.join1440.com/t/j-l-sihtux-djluhhpiy-ii/" target=3D=
+"_blank" style=3D"text-decoration:underline !important;color:#0000ee !impor=
+tant;"><font style=3D"color:#0000ee;">unique hotels of 2023</font></a>.</sp=
+an></p>
+<p style=3D"margin-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0=
+px;padding:0;"><span class=3D"mso-font-fix-arial">&nbsp;</span></p>
+<p style=3D"margin-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0=
+px;padding:0;"><span class=3D"mso-font-fix-arial">Rare "dancing lemur" <a h=
+ref=3D"https://news.join1440.com/t/j-l-sihtux-djluhhpiy-id/" targe=
+t=3D"_blank" style=3D"text-decoration:underline !important;color:#0000ee !i=
+mportant;"><font style=3D"color:#0000ee;">born at British zoo</font></a> (w=
+/video).</span></p>
+<p style=3D"margin-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0=
+px;padding:0;"><span class=3D"mso-font-fix-arial">&nbsp;</span></p>
+<p style=3D"margin-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0=
+px;padding:0;"><span class=3D"mso-font-fix-arial">A scantily clad shindig c=
+auses <a href=3D"https://news.join1440.com/t/j-l-sihtux-djluhhpiy-=
+ih/" target=3D"_blank" style=3D"text-decoration:underline !important;color:=
+#0000ee !important;"><font style=3D"color:#0000ee;">an uproar in Russia</fo=
+nt></a>.</span></p>
+<p style=3D"margin-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0=
+px;padding:0;"><span class=3D"mso-font-fix-arial">&nbsp;</span></p>
+<p style=3D"margin-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0=
+px;padding:0;"><span class=3D"mso-font-fix-arial"><strong>Clickbait:&nbsp;<=
+/strong>Bambi gets a taste <a href=3D"https://news.join1440.com/t/j-l-sihtu=
+x-djluhhpiy-ik/" target=3D"_blank" style=3D"text-decoration:underl=
+ine !important;color:#0000ee !important;"><font style=3D"color:#0000ee;">fo=
+r blood in 2024</font></a>.</span></p>
+<p style=3D"margin-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0=
+px;padding:0;"><span class=3D"mso-font-fix-arial">&nbsp;</span></p>
+<p style=3D"padding:0;margin:0;"><span class=3D"mso-font-fix-arial"><strong=
+>Historybook:&nbsp;</strong>President Andrew Johnson born (1808); Texas bec=
+omes the 28th US state (1845); US Army kills over 250 Lakota people at&nbsp=
+;<a href=3D"https://news.join1440.com/t/j-l-sihtux-djluhhpiy-iu/" =
+target=3D"_blank" style=3D"text-decoration:underline !important;color:#0000=
+ee !important;"><font style=3D"color:#0000ee;">Wounded Knee</font></a>&nbsp=
+;(1890); Actress Mary Tyler Moore born (1936); Soccer legend&nbsp;Pel=C3=A9=
+ dies (2022).&nbsp;</span></p></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#000000" style=3D"background-color:#000000;">
+<tr>
+<td valign=3D"top" style=3D"padding-top:30px;padding-bottom:30px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-right:30px;padding-bottom:10px;padding-=
+left:30px;"><div style=3D"font-family:Georgia, Times, Times New Roman, seri=
+f;font-size:23px;color:#ffffff;font-weight:normal;line-height:32px;mso-line=
+-height-rule:exactly;letter-spacing:normal;mso-text-raise:4px;text-align:ce=
+nter;"><p style=3D"padding:0;margin:0;">"Pain nourishes courage. You can't =
+be brave if you've only had wonderful things happen to you."</p></div>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:5px;padding-right:10px;padding-bott=
+om:5px;padding-left:10px;"><div style=3D"font-family:Roboto, Helvetica Neue=
+, Helvetica, Arial, sans-serif;font-size:14px;color:#ffffff;font-weight:nor=
+mal;line-height:20px;mso-line-height-rule:exactly;letter-spacing:normal;mso=
+-text-raise:3px;text-align:center;"><p style=3D"padding:0;margin:0;"><span =
+class=3D"mso-font-fix-arial">- Mary Tyler Moore</span></p></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff" style=3D"background-color:#ffffff;">
+<tr>
+<td valign=3D"top" style=3D"padding-top:30px;padding-right:20px;padding-bot=
+tom:20px;padding-left:20px;"><div style=3D"font-family:Roboto, Helvetica Ne=
+ue, Helvetica, Arial, sans-serif;font-size:12px;color:#000000;font-weight:n=
+ormal;line-height:18px;mso-line-height-rule:exactly;letter-spacing:normal;m=
+so-text-raise:3px;text-align:left;"><p style=3D"margin-left:0px;margin-top:=
+0px;margin-right:0px;margin-bottom:0px;padding:0;"><span class=3D"mso-font-=
+fix-arial"><span style=3D"font-size:12px;"><strong>Why 1440? </strong>The p=
+rinting press was invented around the year 1440, spreading knowledge to the=
+ masses and changing the course of history. More facts: In every day, there=
+ are&nbsp;1,440 minutes. We=E2=80=99re here to make each one count.</span><=
+/span></p>
+<p style=3D"margin-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0=
+px;padding:0;"><span class=3D"mso-font-fix-arial">&nbsp;</span></p>
+<p style=3D"margin-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0=
+px;padding:0;"><span class=3D"mso-font-fix-arial"><span style=3D"font-size:=
+12px;"><strong>Send us your feedback at</strong> <a href=3D"mailto:hello@jo=
+in1440.com" style=3D"text-decoration:underline !important;color:#0000ee !im=
+portant;"><font style=3D"color:#0000ee;">hello@join1440.com</font></a> and =
+help us stay as unbiased as humanly possible. We=E2=80=99re ready to listen=
+=2E</span></span></p>
+<p style=3D"margin-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0=
+px;padding:0;"><span class=3D"mso-font-fix-arial">&nbsp;</span></p>
+<p style=3D"padding:0;margin:0;"><span class=3D"mso-font-fix-arial"><span s=
+tyle=3D"font-size:12px;"><strong>Interested in reaching smart readers like =
+you?</strong> To become a 1440 partner, <a href=3D"https://news.join1440.co=
+m/t/j-l-sihtux-djluhhpiy-dl/" target=3D"_blank" style=3D"text-deco=
+ration:underline !important;color:#0000ee !important;"><font style=3D"color=
+:#0000ee;">apply here</font></a>.</span></span></p></div>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff" style=3D"background-color:#ffffff;">
+<tr>
+<td valign=3D"top"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" =
+width=3D"100%">
+<tr>
+<td valign=3D"top" width=3D"37.5%">
+</td>
+<td valign=3D"top" width=3D"8.333333333333334%">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" align=3D"right"><!--[if gte mso 9]><table width=3D"45" =
+cellpadding=3D"0" cellspacing=3D"0"><tr><td><![endif]-->
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"img-wrap" =
+style=3D"max-width:100%;">
+<tr>
+<td valign=3D"top" align=3D"right"><a href=3D"https://news.join1440.com/t/j=
+-l-sihtux-djluhhpiy-dr/" title=3D"Facebook" class=3D"imglink" targ=
+et=3D"_blank">
+<img src=3D"http://i3.cmail20.com/ei/j/FA/B34/926/135954/csimport/164929016=
+4413_facebook_2.jpg" width=3D"45" height=3D"45" alt=3D"" border=3D"0" style=
+=3D"display:block;font-size:14px;max-width:100%;height:auto;" class=3D"widt=
+h45" />
+</a>
+</td>
+</tr>
+</table>
+<!--[if gte mso 9]></td></tr></table><![endif]-->
+</td>
+</tr>
+</table>
+</td>
+<td valign=3D"top" width=3D"8.333333333333334%">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" align=3D"center"><!--[if gte mso 9]><table width=3D"45"=
+ cellpadding=3D"0" cellspacing=3D"0"><tr><td><![endif]-->
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"img-wrap" =
+style=3D"max-width:100%;">
+<tr>
+<td valign=3D"top" align=3D"center"><a href=3D"https://news.join1440.com/t/=
+j-l-sihtux-djluhhpiy-dy/" title=3D"Twitter" class=3D"imglink" targ=
+et=3D"_blank">
+<img src=3D"http://i4.cmail20.com/ei/j/FA/B34/926/135954/csimport/164929016=
+4457_twitter_3.jpg" width=3D"45" height=3D"45" alt=3D"" border=3D"0" style=3D=
+"display:block;font-size:14px;max-width:100%;height:auto;" class=3D"width45=
+" />
+</a>
+</td>
+</tr>
+</table>
+<!--[if gte mso 9]></td></tr></table><![endif]-->
+</td>
+</tr>
+</table>
+</td>
+<td valign=3D"top" width=3D"8.333333333333334%">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" align=3D"left"><!--[if gte mso 9]><table width=3D"45" c=
+ellpadding=3D"0" cellspacing=3D"0"><tr><td><![endif]-->
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"img-wrap" =
+style=3D"max-width:100%;">
+<tr>
+<td valign=3D"top" align=3D"left"><a href=3D"https://news.join1440.com/t/j-=
+l-sihtux-djluhhpiy-dj/" title=3D"Instagram" class=3D"imglink" targ=
+et=3D"_blank">
+<img src=3D"http://i5.cmail20.com/ei/j/FA/B34/926/135954/csimport/164929016=
+4594_instagram_4.jpg" width=3D"45" height=3D"45" alt=3D"" border=3D"0" styl=
+e=3D"display:block;font-size:14px;max-width:100%;height:auto;" class=3D"wid=
+th45" />
+</a>
+</td>
+</tr>
+</table>
+<!--[if gte mso 9]></td></tr></table><![endif]-->
+</td>
+</tr>
+</table>
+</td>
+<td valign=3D"top" width=3D"37.5%">
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#fdfdfd" style=3D"background-color:#fdfdfd;">
+<tr>
+<td valign=3D"top">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff" style=3D"background-color:#ffffff;">
+<tr>
+<td valign=3D"top" style=3D"padding-top:20px;padding-right:30px;padding-bot=
+tom:20px;padding-left:30px;"><div style=3D"font-family:Roboto, Helvetica Ne=
+ue, Helvetica, Arial, sans-serif;font-size:12px;color:#000000;font-weight:n=
+ormal;line-height:18px;mso-line-height-rule:exactly;letter-spacing:normal;m=
+so-text-raise:3px;text-align:center;"><p style=3D"margin-left:0px;margin-to=
+p:0px;margin-right:0px;margin-bottom:0px;padding:0;"><span class=3D"mso-fon=
+t-fix-arial">1440 Media 222 W Merchandise Mart Plaza,&nbsp;Suite 1212 Chica=
+go, IL 60654</span></p>
+<p style=3D"padding:0;margin:0;"><span class=3D"mso-font-fix-arial">Copyrig=
+ht =C2=A9 2023, 1440 Media, All rights reserved.</span></p></div>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" align=3D"center"><!--[if gte mso 9]><table width=3D"65"=
+ cellpadding=3D"0" cellspacing=3D"0"><tr><td><![endif]-->
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" bgcolor=3D"#fdfdfd"=
+ class=3D"img-wrap" style=3D"background-color:#fdfdfd;max-width:100%;">
+<tr>
+<td valign=3D"top" align=3D"center" style=3D"padding-bottom:20px;"><img src=
+=3D"http://i6.cmail20.com/ei/j/FA/B34/926/135954/csimport/1662125990165_144=
+0_primary_brandmark_rbg_black_5.png" width=3D"65" height=3D"29" alt=3D"" bo=
+rder=3D"0" style=3D"display:block;font-size:14px;max-width:100%;height:auto=
+;" class=3D"width65" />
+</td>
+</tr>
+</table>
+<!--[if gte mso 9]></td></tr></table><![endif]-->
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#f4f4f4" style=3D"background-color:#f4f4f4;">
+<tr>
+<td style=3D"padding:5px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td style=3D"font-size:0px;line-height:0;mso-line-height-rule:exactly;">&nb=
+sp;
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+=
+=
+=
+<table bgcolor=3D"#f4f4f4" style=3D"background-color:#f4f4f4;" cellpadding=3D=
+"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td align=3D"center" width=3D"100%">
+<!--[if gte mso 9]><table width=3D"600" cellpadding=3D"0" cellspacing=3D"0=
+"><tr><td><![endif]-->
+<table class=3D"width600 main-container" cellpadding=3D"0" cellspacing=3D"0=
+" border=3D"0" width=3D"100%" style=3D"max-width:600px;">
+<tr>
+<td width=3D"100%">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top">
+<table align=3D"left" cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+<tr>
+<td valign=3D"top" style=3D"padding-top:5px;padding-right:10px;padding-bott=
+om:5px;padding-left:10px;"><div style=3D"font-family:Roboto, Helvetica Neue=
+, Helvetica, Arial, sans-serif;font-size:12px;color: #999999;line-height:18=
+px;text-align:left;"><p style=3D"padding: 0; margin: 0;text-align: center;"=
+><span class=3D"mso-font-fix-arial"><u><a href=3D"https://1440.updatemyprof=
+ile.com/j-sihtux-F33D6939-djluhhpiy-dh">Update your pre=
+ferences</a></u> or <u><a href=3D"https://news.join1440.com/t/j-u-sihtux-=
+djluhhpiy-dk/">unsubscribe</a></u> from this email.</span></p>
+</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!--[if gte mso 9]></td></tr></table><![endif]-->
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!--[if gte mso 9]></td></tr></table><![endif]-->
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<img src=3D"https://1440.cmail20.com/t/j-o-sihtux-djluhhpiy/o.gif"=
+ style=3D"visibility: hidden !important; display: block !important; height:=
+1px !important; width:1px !important; border: 0 !important; margin: 0 !impo=
+rtant; padding: 0 !important" width=3D"1" height=3D"1" border=3D"0" alt=3D"=
+" /></body>
+</html>
+
+
+
+--_b119e53a-064f-4717-966f-c21abc79c0c8_--

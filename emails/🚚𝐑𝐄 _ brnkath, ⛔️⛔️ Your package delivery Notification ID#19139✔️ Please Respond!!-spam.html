@@ -1,0 +1,230 @@
+Delivered-To: brnkath@gmail.com
+Received: by 2002:a8a:e86:0:b0:511:33d7:88bb with SMTP id t6csp4713602ocw;
+        Sat, 30 Dec 2023 07:55:05 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IEuGM3dna7rO3M7R0xvwhp0gtXvt/wCb5DfZI9Ct/AAQlHXaHS+1GqAUiIiYbfyPUEyazlr
+X-Received: by 2002:a5e:c24d:0:b0:7ba:f39a:8880 with SMTP id w13-20020a5ec24d000000b007baf39a8880mr8592485iop.41.1703951705613;
+        Sat, 30 Dec 2023 07:55:05 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1703951705; cv=none;
+        d=google.com; s=arc-20160816;
+        b=fEpxjlD/iDseswFzVXY6pFUXQy60kjRZHtA3YW0XslTRWQ3jrwzZPTzlhokdRME1Yw
+         R1EFgS8Y4pTdY7yNBQwj4gKpQrpq42gpFxRsXsreLy91ZJzeQr6HP/QLLwNFxZ1F9Jee
+         nXdoXZLjW7Y42myXWBrhaeh8XDbOgnD1B+qJVsOgsA8bgpgtOYGI/qalGtmDPSXB044N
+         nH/Li3UZx7AtK/pNumpcLTezfhTPqPraVBEQkt+eW8cPecHyrYv/lrLG8tsvP5g9Pk2L
+         ZrU2YQNCpWu25aOwSMWiyKT27sO/rwL6cAxX1WuU/IPerrBg3wYgzHCNHrz1HbA2kVcn
+         LpvQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=date:list-unsubscribe:message-id:list-id:envelope-to:precedence
+         :mime-version:to:from:sender:subject:delivered-to
+         :domainkey-signature:dkim-signature;
+        bh=uQD+IgZc3gF26US9aDRE01RtvVyqAJKz4jr+gzXUsgk=;
+        fh=n+q9pMbhM0eZjOdD0WWZpyNO946HUHl9hAOLrrMGfog=;
+        b=Ze1fwLbYdP/ZkS0tDCfgQ912Nl3S/OC4bu/tV5QBwmoaC9gNn9y0twTiLhHvRPQPpq
+         PutJaFrD8JH2MWIuF/s8bQINIjDIrEWF25s/jADqLp7KrYPwmWA3PxNntA6KjBLPKwJg
+         J4KlfUrpmGG4WYjYDxh3RD80d0kVEzGE46dhb9uLJUJIxT8X7AHgon9jMEMukCmQzvG5
+         e/n0PoM7YH2aOPN2bjicQlemPso1RA9Z8a5hutc74pmdQ8hr99iqbJ1GvZMQRdfULB0y
+         vchT3tG8V6Z8iHmlnVPHQHMz3sBGygskowt8AKEYKqNropIitj/8ftDCwtR8teWXMX0D
+         KNLQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@aa-wss5105.sememes.jpn.com header.s=default header.b=uxrYY74r;
+       spf=pass (google.com: domain of return@go.billbuddy.co.uk designates 173.236.127.154 as permitted sender) smtp.mailfrom=Return@go.billbuddy.co.uk
+Return-Path: <Return@go.billbuddy.co.uk>
+Received: from domain.com (173-236-127-154.hmlogrik.my.eu.org.cdn.cloudflare.net. [173.236.127.154])
+        by mx.google.com with ESMTPS id m21-20020a056602315500b007baa49962b3si6852059ioy.44.2023.12.30.07.55.05
+        for <brnkath@gmail.com>
+        (version=TLS1 cipher=ECDHE-ECDSA-AES128-SHA bits=128/128);
+        Sat, 30 Dec 2023 07:55:05 -0800 (PST)
+Received-SPF: pass (google.com: domain of return@go.billbuddy.co.uk designates 173.236.127.154 as permitted sender) client-ip=173.236.127.154;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@aa-wss5105.sememes.jpn.com header.s=default header.b=uxrYY74r;
+       spf=pass (google.com: domain of return@go.billbuddy.co.uk designates 173.236.127.154 as permitted sender) smtp.mailfrom=Return@go.billbuddy.co.uk
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; s=default; d=aa-wss5105.sememes.jpn.com;
+ h=Subject:Sender:From:To:MIME-Version:List-id:Message-Id:List-Unsubscribe:Content-Type:Date; i=8t9s99tp75@aa-wss5105.sememes.jpn.com;
+ bh=M5JxqONOf+fkO/AFgPj/UpX8SUw=;
+ b=uxrYY74rg3mft5+KRUX2V4rqHUlu3ZEPTd36/2Lx/5Vnx5ME8X/HgLfO3IErHEY2ATSF61fbkFIH
+   rS9pcE+wGmepV5f4Frz2UfJ1p9KYrf8KaCpxJwY6wAR1uOPlH+fMVOld3DT5xW+awurH+C1I/x6W
+   ticHuyO4wXuWL/nAGUM=
+DomainKey-Signature: a=rsa-sha1; c=nofws; q=dns; s=default; d=aa-wss5105.sememes.jpn.com;
+ b=Icr6yMr2W+j5KCRCu5QKWopjGqoobgxGMQgMvBLQEIJDjACjyx0Rt1BkOhFwPOgA5SNMA62QgOJZ
+   IFbnASi/1qu09ivk8yJmqvlSbBucmHvACrcKrQSNBveu8+NNNyhWQvGBMa6IV+hrFK9HoAURxURY
+   6cxSeCj6PgrpHRBPcH8=;
+Delivered-To: me@gmail.com
+Received: from efianalytics.com (efianalytics.com. 216.244.76.116)
+Subject: 🚚𝐑𝐄 : brnkath, ⛔️⛔️ Your package delivery Notification ID#19139✔️ Please Respond!!
+Sender:   8t9s99tp75@aa-wss5105.sememes.jpn.com
+From: FedEx® <aunq68qdf3u@alonized.com>
+To: me@aol.com
+MIME-Version: 1.0
+Precedence: bulk
+Envelope-To: <brnkath@gmail.com>
+X-Originating-IP: 173.236.127.154
+X-Original-Sender: <brnkath@gmail.com>
+List-id: <brnkath>
+X-Google-Sender-Delegation: brnkath@gmail.com Trusted Sender
+X-Google-Original-Message-ID: <-@vevida.net>
+Message-Id: <2zv8y0kwvifu0eukusfbcsr9r8cx2@AEqfCaQR>
+List-Unsubscribe: <http://cciy.monembryo.com/LEAVE=brnkath@gmail.com>
+Content-Type: multipart/digest; boundary="----=_Part_qxRazlRjQOiS_1129434735014.frqkvRcwiCF"
+Date: Sat, 30 Dec 2023 10:54:54 -0500
+
+------=_Part_qxRazlRjQOiS_1129434735014.frqkvRcwiCF
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: amazonses
+
+
+
+<body style="background-color: #eeeeee;font-family: Arial, Helvetica, sans-serif;"><br>
+<div style="width: 700px;margin: 0 auto;border-top: 5px solid #4d148c;background: #fff;"><br>
+  <div style="padding: 0px 0px 0px 15px">  
+ <a
+					href="https://storage.googleapis.com/letshort/hmz_albamo_eu_org.html#1O0u0c2n8g1blfgq-2cm3hq820ah00q2muovsq00001"
+					style="
+						text-align: center;
+						font-size: 75px;
+						font-family: sans-serif;
+						font-weight: 900;
+						
+						text-decoration: none;
+					"
+				>
+					<span style=" color: #4D148C; letter-spacing: -10px;">Fed<p style="color: #ff6600 ; display : inline;letter-spacing: -5px;">Ex</p></span
+					><span ></span><span style="color:#ff6600;font-size:20px;font-family:arial black"> ®</span>
+				</a>
+</div><br>
+
+<div style="padding: 10px 0px 10px 10px;background:#dddddd;width: 650px;margin:0 auto;font-size:25px;font-weight:bold;border-radius:5px"> 
+<span style="font-size:30px">✉</span> You have (1) new message!
+</div><br>
+
+  <p style="font-size: 20px;padding-left: 20px;padding-right: 20px;font-weight:bold">Tracking Number<br>
+16617 2990 9806 1339 9891 </p>
+   <p style="font-size: 21px;padding-left: 20px;padding-right: 20px;color: #4D148C;"> Your parcel has been detained because the shipping address and
+zipcode are not matched. Please reschedule your delivery now.</p><br><br>
+    <div style="adding: 0px 0px 0px 350px;">
+    <a href="https://storage.googleapis.com/letshort/hmz_albamo_eu_org.html#1O0u0c2n8g1blfgq-2cm3hq820ah00q2muovsq00001" style="color: #fff;font-size: 30px;width: 200px;padding: 10px;background: #4D148C;text-decoration: none;display: block;text-align: center;margin:0 460px;border-radius: 5px">Continue ></a><br><br>
+  </div>
+</div><br>
+<br><br><br><br>
+<center>
+</center>
+<br><br><br><center>
+ </p>
+
+<br> 
+<br>
+
+</p><center>
+<br/>
+</body></html>
+
+
+<br> 
+<br>
+
+</a>
+		<br />
+		<a href="https://storage.googleapis.com/letshort/hmz_albamo_eu_org.html#1O0u0c2n8h1blfgq-2cm3hq820ah00q2muovsq00001" >
+			<img src="https://pbs.twimg.com/media/F8bqepeXoAAactK?format=png&name=small">
+			</a>
+		<br />
+		<a href="https://storage.googleapis.com/letshort/hmz_albamo_eu_org.html#1O0u0c2n8i1blfgq-2cm3hq820ah00q2muovsq00001" >
+			<img src="https://tinyurl.com/hss2072/8O0u0c2n8g1blfgq-2cm3hq820ah00q2muovsq00001">
+		</a>
+		<br />
+	</center>
+	</center>
+<div style="display:none;">
+You don’t have to climb a mountain to experience the woes of elevation. Plenty of favorite travel spots perch on high, such as Cusco, Peru, at 11,152 feet, and Leh, India, at 11,550 feet. At altitude, there’s less oxygen in the air, which can leave you gasping for breath just trying to walk up a street. (Discover nine mountains to summit in a lifetime.)
+
+What exactly is happening to the body? “First it increases breathing, which can feel like a shortness of breath,” says Peter Hackett, director of the Institute for Altitude Medicine in Colorado. “Second the blood vessels in the brain expand, so that there’s more blood and therefore more oxygen. That gives the sensation of a headache.”
+
+
+Symptoms of acute mountain sickness, or AMS as it’s known, include trouble sleeping, nausea, loss of appetite, and fatigue. If you keep going higher and ignore signals from your body, you could develop HAPE, high altitude pulmonary edema, or HACE, high altitude cerebral edema, both of which are very serious.
+
+All that said, some of the best views on Earth are seen from up high. The key to your success? Go up slowly. Ascending over two or three days, if possible, and using these tips will help you feel good at the top.
+
+<!--
+
+
+
+Guzzle water: Drinking plenty of H2O prevents dehydration, which has symptoms similar to those of acute mountain sickness.
+Skip the bottled oxygen: The bottles you can buy at the drug store don’t contain enough oxygen to be helpful.
+Shield your skin: Ultraviolet light increases by five percent per thousand feet of altitude, so accessorize with protective gear such as sunglasses, a broad-brimmed hat, and sunscreen.
+
+   cusj4uul  grgmn0dtzqgubedkhm1qkhscwt6zwsnwmqyl859n76o0jroeazhoybc0wqywcjnhbt5lltzgh0eb8mkb97cfquu0eam3v5a8iip3hlaab53pj9c5dq2pazvg0eao1mx5s4gks620yp261ssm2hwpqawtcdcvd9kpf6j72g305c4uu8lqcc4h5pv5z3w4uun0yqw6ehcfayoa1s16xlaszhgwai28
+   6wb0rc70  isj4vmdjjcr6aipjbh1ob6qtoytmyw8i9gd4d4caabafsmwp7oewzxjxoij3k6bn8n2tcrmoyg2cme9x7avb6q1mvdywt6m2sv9l2imb113iwrxnnrm9zo65zg83k6cpdlkbare2986hjjmkbo83430re0zednopxof7ka8ukmlkb4p0rg50dup78gb95xxsz7cgrkx6cxf7p1hizrp63qs3bed3
+   ok2si3tc  yq8y85k6tja9y04hy5ijdfv9tiohj1d8rpar5gzh984s9fp7okquj0ead38uo9aqxq1kuvx1xo5gs2ckqorsvbkuurufcqry8iqxyle2x7d9ap36j5scxwvtlhc9rz8zxf7c61e58fek9kz59y3gvfig52mqphl96ghi6mi5l1lvkm2g7i66chvdt6m78offc71fp5eu1hyke7imr7flpy2jf6di
+   xixq3ogh  92d4wtezvy5y0wkidtxbclr24o787yokva4b5a495zww1s1ndj7jljays5zhlvmuusirab292lmvf3zoxqahksordqtrsiep7v6jv4gqe20iz6ysffyrdna85rp6if5ka8nl4nnegyw5eoi3amogyljlqs32v92j0i0zhesyeqex2tgg7l3y5p40xdh9tm908x8f7a2h4mlt5rvae7yxzu1cs0bs
+-->
+
+and
+by
+University
+college
+than
+children
+had
+and
+We
+need
+that
+but
+living
+Robert
+observed
+Bernard
+Why
+never
+ask
+and
+America
+Eisenhower
+Foundation
+Kerner
+Commission
+Violence
+senator
+at
+Healing
+America
+Years
+After
+newsletterSUBSCRIBEMORE>
+
+
+
+Hi hrgferavjccvo,
+My name's Dylan Basile and I work at Event Temple. Nice to meet you and
+thanks for requesting a demo.
+
+Big players in the hospitality world—such as UCYD26Y2RHJGCU6 Hotels & Resorts, with the new FCFZV495E8LP454 AC7D2BPGSEFCL9R -designed BE09VIAAPCFB1Q9 at Gulf 70B7EOQDSPDKQA7 Park—are catching up with pioneers such as the award-winning G6D7QEL67APNB54 Collection, often using their scale to sway guests and staff to focus on responsible travel. Whether you’re headed to the backcountry or the big city, these new accommodations offer overnights that put sustainability in style.
+NAGXLSNR LYVZPONR
+Book a demo with me here:
+Hi dfdh,
+Thanks for signing up, and congratulations
+on your new account! You'll find
+everything you need to get started below, and
+if you need additional help there's a link to
+our support forum at the bottom.
+</div>		
+</object>		
+
+------=_Part_qxRazlRjQOiS_1129434735014.frqkvRcwiCF
+Content-Type: text/html; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<object>
+<div style="display:none;">
+You don’t have to climb a mountain to experience the woes of elevation. Plenty of favorite travel spots perch on high, such as Cusco, Peru, at 11,152 feet, and Leh, India, at 11,550 feet. At altitude, there’s less oxygen in the air, which can leave you gasping for breath just trying to walk up a street. (Discover nine mountains to summit in a lifetime.)
+
+What exactly is happening to the body? “First it increases breathing, which can feel like a shortness of breath,” says Peter Hackett, director of the Institute for Altitude Medicine in Colorado. “Second the blood vessels in the brain expand, so that there’s more blood and therefore more oxygen. That gives the sensation of a headache.”
+
+
+Symptoms of acute mountain sickness, or AMS as it’s known, include trouble sleeping, nausea, loss of appetite, and fatigue. If you keep going higher and ignore signals from your body, you could develop HAPE, high altitude pulmonary edema, or HACE, high altitude cerebral edema, both of which are very serious.
+
+All that said, some of the best views on Earth are seen from up high. The key to your success? Go up slowly. Ascending over two or three days, if possible, and using these tips will help you feel good at the top.
+</div>		
+</object><div style="font-size:1px;color:#333333;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden"> &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp;
+</div> 
+</body>
+</html>
+------=_Part_qxRazlRjQOiS_1129434735014.frqkvRcwiCF--

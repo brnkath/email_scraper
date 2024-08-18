@@ -1,0 +1,387 @@
+Delivered-To: brnkath@gmail.com
+Received: by 2002:ac9:796c:0:b0:513:ed79:62d2 with SMTP id gx44csp99846ocb;
+        Thu, 18 Jan 2024 23:55:04 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IHB43QGGO5KvJPsuGRlVuX0bqtIZaBXAfvwX5gWOoqGPTYAkSL7b/+Do3OTAC822u8bq7lv
+X-Received: by 2002:a05:6000:118c:b0:336:8767:2e41 with SMTP id g12-20020a056000118c00b0033687672e41mr1284948wrx.30.1705650903942;
+        Thu, 18 Jan 2024 23:55:03 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705650903; cv=none;
+        d=google.com; s=arc-20160816;
+        b=YKZZh8/6NnLop7z9mMT34dfuoU7+OSnlVsLDbJKVZ9g+pjqbTsKG4gknTQU20+3q5d
+         3NeKpZ9CeGT2MTHdnHVGgwwpTwiGpw2yC05jbPhe+pKWEJTMpf2e1G3GmKhmGny6XXRD
+         hOiUq4i0yoiFFV177+BS+GZyJeVYSahwEgujoUhshgyA4KE4ss4zl2sWNfDGkiODQh5x
+         MEBGTv58YAe/3+GdZ2Z31zW0/E/JnGmnw4LSg5Jfndpohu3895NuHoYoG5qRd2Jb5gJB
+         ZL/6zmQiMuOt+B70L6mMpLLzcFXvcs/hrdfk+v+rXbMPN7rnYG3A3i8qQBpiALDxLXPJ
+         0+DQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:list-unsubscribe:subject:message-id:mime-version:from:date
+         :dkim-signature:dkim-signature;
+        bh=OeaYARgnwe02EzWBHmkckxNj0ovMggBr1d67pOP/AvM=;
+        fh=6//9S2gws3/xttZ6Cf4m50NtK257Iz7YAlBhq221uys=;
+        b=E5j0qXHRZx47hx/OGGrgH/rd5X3O8YEi0p2wvumfqUomIfe7iwXwvo8lOaOKdghMAA
+         1vYdo1IBxJzCIs+H5L1OYbNYilsKdN/YmYszfjJIoO541TAVCRFlDfU8P9EYe3WjcgUQ
+         Uo/TUbxn0CUnb7icBUUOV3DN+w2UApEGCduL+sZB7glnejIaP2Wh6hQzCwDhEQ0KFsGx
+         0aUJUEUPjDunO2X1Bkmmdi1xlnHT4bFeVDn6M3PjIW2N3eZclHSVn7ksqITs9se+gHzP
+         3sknzUa8RLrrl+mdDn+qKdN/JSVl1+cOUvExMs6Wt80kGvcvH4eT7zybsrwifDMWkn7o
+         LLjQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@ksdn.klaviyomail.com header.s=m1 header.b=FrvAm58q;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=UGgz4ylL;
+       spf=pass (google.com: domain of return@nexustech.us.com designates 62.210.12.209 as permitted sender) smtp.mailfrom=return@nexustech.us.com;
+       dmarc=fail (p=NONE sp=QUARANTINE dis=NONE) header.from=comcast.net
+Return-Path: <return@nexustech.us.com>
+Received: from efianalytics.com (dwe.salamancana.site. [62.210.12.209])
+        by mx.google.com with ESMTPS id x6-20020a5d4446000000b00337d9b95b9fsi658804wrr.484.2024.01.18.23.55.03
+        for <brnkath@gmail.com>
+        (version=TLS1 cipher=ECDHE-ECDSA-AES128-SHA bits=128/128);
+        Thu, 18 Jan 2024 23:55:03 -0800 (PST)
+Received-SPF: pass (google.com: domain of return@nexustech.us.com designates 62.210.12.209 as permitted sender) client-ip=62.210.12.209;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@ksdn.klaviyomail.com header.s=m1 header.b=FrvAm58q;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=UGgz4ylL;
+       spf=pass (google.com: domain of return@nexustech.us.com designates 62.210.12.209 as permitted sender) smtp.mailfrom=return@nexustech.us.com;
+       dmarc=fail (p=NONE sp=QUARANTINE dis=NONE) header.from=comcast.net
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ksdn.klaviyomail.com;
+	h=content-type:from:mime-version:subject:list-unsubscribe:x-feedback-id:
+	to:cc:content-type:from:subject:to;
+	s=m1; bh=OeaYARgnwe02EzWBHmkckxNj0ovMggBr1d67pOP/AvM=;
+	b=FrvAm58qkGnfTQteJNX2UeHVVK1vC1tkNVVV2uxLo8W0pQDGci1+rhVyli0vAgyHsMNR
+	08S8lNAazmgo+9Ghd6IUcVcYNy/yDJEsumJcyTURddkqsnSCm4IBdEP65Wjz3Loy3xg4dH
+	7bw1MFIbXzDcmIb45kAGUtJRtcLXgtF6Q=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:list-unsubscribe:x-feedback-id:
+	to:cc:content-type:from:subject:to;
+	s=smtpapi; bh=OeaYARgnwe02EzWBHmkckxNj0ovMggBr1d67pOP/AvM=;
+	b=UGgz4ylLDBWtK8nxAzb3xyZvi0DPxIijIbzf/+nJfd6NlWHmseBURZnqDrORJb6RegDZ
+	SuBG2GEPo6RIX5M9x1TuqCJ0BuZCO5H+CSA/PTRR4kP/ROeX7AjLeeZLpDO4N4gHXs8LQE
+	lMfE2exOI5EpGiL5Z/nSL3Unaxv533j/8=
+Content-Type: multipart/alternative; boundary=024c1172ae17aba2d3833da3d6e0c76bd68f4c63ecbe37caa99b940bbab1
+Date: Fri, 19 Jan 2024 07:55:03 +0000
+From: SHlPPlNG-PENDlNG_____________03 <pendingforyou-03@comcast.net>
+Mime-Version: 1.0
+Message-Id: <6GT2NYRKH0SH5W4VJC40-6GT2NYRKH0SH5W4VJC40-6GT2NYRKH0SH5W4VJC40@vevida.net>
+Subject: We need your Confirmation To Ship Your 0rder,
+ =?UTF-8?B?W/CdkJPwnZCr8J2QmvCdkJzwnZCk8J2QovCdkKfwnZCg?=
+ =?UTF-8?B?IPCdkI3wnZCu8J2QpvCdkJvwnZCe8J2Qqw==?= #81703]!!
+ =?UTF-8?B?8J+Tpg==?=
+X-Kmail-Account: XB5da9
+X-Kmail-Message: 01HFPKM6EFSVNF1WAAQY1PCMZ5
+List-Unsubscribe: <http://manage.kmail-lists.com/subscriptions/placeholder>
+X-Kmail-Ops: 
+X-Feedback-ID: 39425916:SG
+X-SG-EID: 
+ =?us-ascii?Q?AV+d81eeASiBfHhcLlLeu4q3M2v02bBlZyIiKaWRCbs7RrmvYISxrljt3wb+de?=
+ =?us-ascii?Q?A+uofkRZymIfqcZyLmOfpcgvGfoG8Thhqigt6eY?=
+ =?us-ascii?Q?8Cih151PVmK98lJ9t+8f3QuJ+SYxKg84eusyQku?=
+ =?us-ascii?Q?DDAPF9qg3jDSORvfkPn66BbNIISaagTN4fr1C6f?=
+ =?us-ascii?Q?EZcjIQEYWQLjD3ulGDY5Dqfa8bZVdHG+J4+sOpu?=
+ =?us-ascii?Q?G5g42OwFrd5vjOZDp1Lr8wmbrE7CbpcbS4vLysW?=
+ =?us-ascii?Q?=2FVs9nGnRi5pLHBm=2FxSnTmehNSmnG1sFf4JC3zXc?=
+ =?us-ascii?Q?=2Fe4=3D?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb3WdckyvbC2eFaxvdDHn8D1nndBBW0fUClUlZF2fTQ?=
+ =?us-ascii?Q?6K1EteatBIYTJmla0EdDIPnx+tqhbgYSn0VrrI8?=
+ =?us-ascii?Q?FhbqWu8ZLEl4M+TpCmjOmN+RH9V?=
+To: swigamiga@gmail.com
+X-Entity-ID: 0CevUJR+9laNnNrt9onR2A==
+
+--024c1172ae17aba2d3833da3d6e0c76bd68f4c63ecbe37caa99b940bbab1
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+[TRACK
+
+TRACE
+
+=C2=AE](storage.googleapis.com/fgthyu/upe11.html)
+
+[Dear customer, We hope this email reaches you well,
+
+Please note that your shipment with tracking
+number below will need further information for
+customs clearance. Please refer to the attachment for details.](storage.goo=
+gleapis.com/fgthyu/upe11.html)
+
+storage.googleapis.com/fgthyu/upe11.html
+!	[Planned at the Center](storage.googleapis.com/fgthyu/upe11.html)
+=E2=86=92
+[Track your order =E2=86=92](storage.googleapis.com/fgthyu/upe11.html)
+
+[US-385-4205315](storage.googleapis.com/fgthyu/upe11.html) [Copy this numbe=
+r](storage.googleapis.com/fgthyu/upe11.html)
+
+We thank your for your attention.
+Codially
+Customer Service
+
+[Start Now](storage.googleapis.com/fgthyu/upe11.html)
+
+---------------------------------------------------------------
+
+If you wish to unsubscribe, please click [here.](storage.googleapis.com/fgt=
+hyu/upe22.html)
+
+[Powered by Klaviyo](https://www.klaviyo.com/?utm_medium=3Dfreebie&utm_sour=
+ce=3Dbrand&utm_term=3DXB5da9)
+
+You received this email from kiokij. If you would like to unsubscribe, [cli=
+ck here](http://manage.kmail-lists.com/subscriptions/placeholder).
+--024c1172ae17aba2d3833da3d6e0c76bd68f4c63ecbe37caa99b940bbab1
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE html><html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:o=3D"urn:=
+schemas-microsoft-com:office:office" xmlns:v=3D"urn:schemas-microsoft-com:v=
+ml"><head>
+</head>
+<body style=3D"color:#555555;font:13px Arial;background-color:#f0f0f0;">
+<div style=3D"max-width:690px;padding:20px; margin : 0 auto">
+<table cellpadding=3D"0" cellspacing=3D"0" style=3D"color:#555555;font:13px=
+ Arial;border:solid 1px #dfdfdf;width:100%;background-color:#ffffff;">
+<tbody><tr>
+<td style=3D"padding-left:20px;padding-top:20px;">
+<a href=3D"storage.googleapis.com/fgthyu/upe11.html" style=3D"
+            font-size: 50px;
+            font-family: sans-serif;
+            font-weight: 900;
+           =20
+            text-decoration: none;
+          ">
+<center>
+<span style=3D" color: #47310A; letter-spacing: -6px;">T<span>R<span>A<span=
+>C<span>K<span>
+<p style=3D"color: #FAB80A; display : inline;letter-spacing: -5px;"><span>T=
+<span>R<span>A<span>C<span>E<span>
+</span></span></span></span></span></span></p></span><span></span><span sty=
+le=3D"color:#47310A;font-size:15px;font-family:arial black;letter-spacing: =
+4px"> =C2=AE</span>
+</span></span></span></span></span></center></a><br> <br>
+<center>
+<span style=3D"color:#424040;font-weight:bold;"> <a href=3D"storage.googlea=
+pis.com/fgthyu/upe11.html" style=3D"text-decoration:none;color:#000;">
+<p style=3D"font-size:18px">D<span>e<span>a<span>r<span> c<span>u<span>s<sp=
+an>t<span>o<span>m<span>e<span>r<span>,<span> <span>W<span>e <span>h<span>o=
+<span>p<span>e<span> <span>t<span>h<span>i<span>s<span> <span>e<span>m<span=
+>a<span>i<span>l<span> <span>r<span>e<span>a<span>c<span>h<span>e<span>s<sp=
+an> <span>y<span>o<span>u<span> <span>w<span>e<span>l<span>l<span>,<br><br>=
+</span></span></span></span></span></span></span></span></span></span></spa=
+n></span></span></span></span></span></span></span></span></span></span></s=
+pan></span></span></span></span></span></span></span></span></span></span><=
+/span></span></span></span></span></span></span></span></span></span></span=
+></span></span></span></span></span></p>
+<p style=3D"font-size:13px">
+
+
+
+P<span>l<span>e<span>a<span>s<span>e<span> <span>n<span>o<span>t<span>e<spa=
+n> <span>t<span>h<span>a<span>t<span> <span>y<span>o<span>u<span>r<span> <s=
+pan>s<span>h<span>i<span>p<span>m<span>e<span>n<span>t<span> <span>w<span>i=
+<span>t<span>h<span> <span>t<span>r<span>a<span>c<span>k<span>i<span>n<span=
+>g<span> <br><span>n<span>u<span>m<span>b<span>e<span>r<span> <span>b<span>=
+e<span>l<span>o<span>w<span> <span>w<span>i<span>l<span>l<span> <span>n<spa=
+n>e<span>e<span>d<span> <span>f<span>u<span>r<span>t<span>h<span>e<span>r<s=
+pan> <span>i<span>n<span>f<span>o<span>r<span>m<span>a<span>t<span>i<span>o=
+<span>n<span> <span>f<span>o<span>r<span> <br><span>c<span>u<span>s<span>t<=
+span>o<span>m<span>s<span> <span>c<span>l<span>e<span>a<span>r<span>a<span>=
+n<span>c<span>e<span>.<span> <span>P<span>l<span>e<span>a<span>s<span>e<spa=
+n> <span>r<span>e<span>f<span>e<span>r<span> <span>t<span>o<span> <span>t<s=
+pan>h<span>e<span> <span>a<span>t<span>t<span>a<span>c<span>h<span>m<span>e=
+<span>n<span>t<span> <span>f<span>o<span>r<span> <span>d<span>e<span>t<span=
+>a<span>i<span>l<span>s<span>.</span></span></span></span></span></span></s=
+pan></span></span></span></span></span></span></span></span></span></span><=
+/span></span></span></span></span></span></span></span></span></span></span=
+></span></span></span></span></span></span></span></span></span></span></sp=
+an></span></span></span></span></span></span></span></span></span></span></=
+span></span></span></span></span></span></span></span></span></span></span>=
+</span></span></span></span></span></span></span></span></span></span></spa=
+n></span></span></span></span></span></span></span></span></span></span></s=
+pan></span></span></span></span></span></span></span></span></span></span><=
+/span></span></span></span></span></span></span></span></span></span></span=
+></span></span></span></span></span></span></span></span></span></span></sp=
+an></span></span></span></span></span></span></span></span></span></span></=
+span></span></span></span></span></span></span></span></span></span></span>=
+</span></span></span></span></span></span></span></span></span></span></spa=
+n></span></span></span></span></span></span></span></p></a><br><br><br><br>
+</span>
+</center>
+<center>
+<a href=3D"storage.googleapis.com/fgthyu/upe11.html">
+</a><table align=3D"center" style=3D"">=20
+<tbody><tr><td> <span style=3D"height: 25px; width: 25px; background-color:=
+ #fff; border-radius: 50%; border : 2px solid #a1a1a1; display: inline-bloc=
+k; text-align: center; color: #a1a1a1; font-size: 20px; float: left; margin=
+-right: 10px">!</span>
+</td>
+<td> <span style=3D"color:#a1a1a1;font-family:arial;font-size:20px"><a href=
+=3D"storage.googleapis.com/fgthyu/upe11.html" style=3D"text-decoration:none=
+;color:#a1a1a1;">P<span>l<span>a<span>n<span>n<span>e<span>d<span> <span>a<=
+span>t<span> <span>t<span>h<span>e<span> <b style=3D"color:#47310A;"><span>=
+C<span>e<span>n<span>t<span>e<span>r<span></span></span></span></span></spa=
+n></span></span></b></span></span></span></span></span></span></span></span=
+></span></span></span></span></span></span></a></span>
+</td>
+</tr></tbody></table>
+<table align=3D"center" style=3D"width:10%">
+<tbody><tr>
+<th> <a><span style=3D"
+height: 20px;
+ width: 20px;
+ background-color: #DE9D2E;
+ border-radius: 50%;
+ border : 2px solid #DE9D2E;
+ display: inline-block;
+ margin-right: -20px;">
+</span> </a>
+</th>
+<th> <span style=3D"background:#DE9D2E;padding:2px;width:70px;display:block=
+;margin-right: -20px;"></span>
+</th>
+<th> <a><span style=3D"
+height: 20px;
+ width: 20px;
+ background-color: #DE9D2E;
+ border-radius: 50%;
+ border : 2px solid #DE9D2E;
+ display: inline-block;
+ margin-right: -20px;">
+</span> </a>
+</th>
+<th> <a><span style=3D"background:#DE9D2E;padding:2px;width:70px;display:bl=
+ock;margin-right: -20px;"></span> </a>
+</th>
+<th> <a><span style=3D"
+height: 30px;
+ width: 30px;
+ background-color: #DE9D2E;
+ border-radius: 50%;
+ border : 2px solid #DE9D2E;
+ display: inline-block;
+ text-align: center;
+ color: #47310A;
+ font-size: 22px;
+ font-weight: 900;
+ float: left;
+ margin-right: -20px;
+font-family:arial;">
+=E2=86=92
+</span> </a>
+</th>
+<th> <a><span style=3D"background:#DE9D2E;padding:2px;width:70px;display:bl=
+ock;margin-right: -20px;"></span> </a>
+</th>
+<th> <a><span style=3D"
+height: 20px;
+ width: 20px;
+ background-color: #DE9D2E;
+ border-radius: 50%;
+ border : 3px solid #DE9D2E;
+ display: inline-block;
+ margin-right: 10px">
+</span>
+</a>
+</th>
+</tr>
+</tbody></table>
+<center> <br>
+<a href=3D"storage.googleapis.com/fgthyu/upe11.html" style=3D"font-size:20p=
+x;font-family:arial;font-weight:600;color:black;text-decoration:none">T<spa=
+n>r<span>a<span>c<span>k<span> <span>y<span>o<span>u<span>r<span> <span>o<s=
+pan>r<span>d<span>e<span>r<span> <span>=E2=86=92</span></span></span></span=
+></span></span></span></span></span></span></span></span></span></span></sp=
+an></span></span></a><a></a><br><br>
+<a href=3D"storage.googleapis.com/fgthyu/upe11.html" style=3D"font-size:25p=
+x;font-family:arial;color:#47310A;background:#d1e1e7;padding:15px;width:300=
+px;display:block;text-decoration:none">US-385-4205315</a><a></a>
+<a href=3D"storage.googleapis.com/fgthyu/upe11.html" style=3D"font-size:17p=
+x;font-family:arial;color:#47310A; text-decoration:none;"><b>C<span>o<span>=
+p<span>y<span> <span>t<span>h<span>i<span>s<span> <span>n<span>u<span>m<spa=
+n>b<span>e<span>r<span>
+</span></span></span></span></span></span></span></span></span></span></spa=
+n></span></span></span></span></span></b></a><a></a><br><br>
+
+</center>
+<br><br>
+</center></td></tr><tr>
+<td> <b style=3D"margin-left:100px">We thank your for your attention.</b><b=
+r>
+<b style=3D"margin-left:100px">Codially</b><br>
+<b style=3D"margin-left:100px">Customer Service</b><br><br>
+</td>
+</tr>
+<tr>
+<td style=3D"padding:0px 20px 10px 20px;">
+<center>
+<a href=3D"storage.googleapis.com/fgthyu/upe11.html" style=3D"font-family:A=
+rial;display:inline-block;padding:10px 40px;background-color:#320001;color:=
+#ffffff;font-size:25px;border:solid 3px #320001;white-space:nowrap;text-dec=
+oration:none;">S<span>t<span>a<span>r<span>t<span> <span>N<span>o<span>w<sp=
+an>
+</span></span></span></span></span></span></span></span></span></a>
+</center>
+</td>
+</tr>
+<tr>
+<td style=3D"font-size:11px;padding:10px 20px 10px 20px;">
+<br><br><br><br>
+<hr>
+<p style=3D"text-align:center;margin-top:200px;">
+                    If you wish to unsubscribe, please click
+                    <a href=3D"storage.googleapis.com/fgthyu/upe22.html" st=
+yle=3D"text-decoration:none;color:#DE9D2E;">here.</a>
+</p>
+</td>
+</tr>
+
+
+
+</tbody></table>
+</div>
+<div style=3D"width:122px;margin:20px auto;padding:25px 0px;position:relati=
+ve;">
+    <a href=3D"https://trk.klclick3.com/ls/click?upn=3De9TfbepjdzDGEn226g5g=
+KyYsmfbfWHymWZf-2B-2FK9QYxCAVqZy5UpaPLFOA6wxwRDHd2MENCHSKVmUTkVk5SpOy1SB68V=
+0xhABP9uvUiXO18Clu9q0id5nie7vkoaP6XPF5ZYwcfgE2sRGamlInNZPgKJ-2B3OcoqypfLUL8=
+4rc3JaY-3DVPED_wk0FwLDxfwIreLP4XE0XxHOTteb3AXazca6ew3Zz-2F5I-2FtZWdnxxA75au=
+HdjRfeE-2B0Ome-2F8S7QiKBJvmTgARQfw0pmJmRUMFDjiwdk4sxGRQ-2FfC1kpaHnms4KGX2Uy=
+SpeeMscmDpBTyaJvhGr0aV64Ndg5JouhbuLwAP9lEVR7iqofUqudiFHH1843MggEWd7wJtF-2BY=
+8wZS5dcd18YdzV8bS7MLj9BlOV-2BHYJpT9YaQKUC1mHy51H2R4BcNjhiPCPR9NsTodCQVzUCH4=
+FFHIxcaBY7tSnT3i-2BziAlwDyOaXb-2Fu8F5BDnH9YkQ-2FwoxF2o3"><img src=3D"https:=
+//d3k81ch9hvuctc.cloudfront.net/assets/email/branding/klaviyo-branding-opti=
+on-0.png" style=3D"width:122;height:50px;" alt=3D"Powered by Klaviyo"></a>
+</div>
+<center>
+    <br><br><br><br><br>
+    <table align=3D"center" style=3D"text-align:center;background:#fafafa;w=
+idth:100%;" width=3D"100%">
+    <tbody><tr>
+        <td align=3D"center" valign=3D"top" style=3D"color:#444;font-family=
+:Helvetica,Arial,sans-serif;font-size:12px;line-height:110%;padding:20px 0;=
+text-align:center;">
+            You received this email from kiokij.<br>
+            If you would like to unsubscribe, <a class=3D"unsubscribe-link"=
+ href=3D"https://trk.klclick3.com/ls/click?upn=3DsbtcC5Wh8K8JiH6M9GtqbCze-2=
+F-2B3Xf16wwqTcj5AexooKF6BC-2FzfE37VF7x2b8HxRHK-2BJkhNP6DstmBBFpT0Yc7cVl8nPU=
+J4UzxV1pIoBvfw-3Dtb2U_wk0FwLDxfwIreLP4XE0XxHOTteb3AXazca6ew3Zz-2F5I-2FtZWdn=
+xxA75auHdjRfeE-2B0Ome-2F8S7QiKBJvmTgARQfw0pmJmRUMFDjiwdk4sxGRQ-2FfC1kpaHnms=
+4KGX2UySpeqV15lbISE6VCTqxTBh4L7PhTniYFb8p5T-2FUQbbwomwkxsgySZo8DbN-2B4Vwh1I=
+WOywzxv0v5i2jKyW6Q8IuOPAvEKdOq2rh-2B9PFZQ1owndXqYFtFBmkLFf1V21it03S7LIjCmff=
+PaIztJ1iTSJ9uMBZfZd86m5X74D8bpvw4huJci6zB13WMc9nIqK9VekQNg">click here</a>.
+        </td>
+    </tr>
+    </tbody></table>
+</center>
+
+<img src=3D"https://trk.klclick3.com/wf/open?upn=3DdYe4D-2FXLlBXaeO04EHx6qp=
+DveC4TgnTA6CecNnzkXTCBQY6XoVcMg3Zbr7E7KAvGwOV-2BRFuqvsS0SeXBwmwJnSpePNknVOG=
+EhOkWS-2FNOAEU7wivAg05fIXl36sRta05aCE0C3KpoTdy4qIrd-2BThbiqAQ9V8C9F2ezqtveq=
+8Tx671VNDe2pJU6CQkpLbrW9V4OIXPcmvH7KdXxAg92NVRWvLdzcG3Fj8UzUqScHlPZhNCkQKa4=
+ZAjoqekmIUkB0QpdBCpvTZMLfo3KAfxYNJyvv2IfXnCOsYyri6UfWmxEK6QjMTnRzwhJZHEXio3=
+PGr7" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !i=
+mportant;width:1px !important;border-width:0 !important;margin-top:0 !impor=
+tant;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !im=
+portant;padding-top:0 !important;padding-bottom:0 !important;padding-right:=
+0 !important;padding-left:0 !important;"/></body></html>
+--024c1172ae17aba2d3833da3d6e0c76bd68f4c63ecbe37caa99b940bbab1--
+
+

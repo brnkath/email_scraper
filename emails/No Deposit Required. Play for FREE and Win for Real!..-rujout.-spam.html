@@ -1,0 +1,208 @@
+Delivered-To: brnkath@gmail.com
+Received: by 2002:ac9:4b19:0:b0:511:33d7:88bb with SMTP id q25csp2802068oci;
+        Sat, 13 Jan 2024 03:58:12 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IHNuaorckxJbpSijR4Gp+iUKu3ZjVtI8XWDy9HxQerEtzLMJRP8UuDJhWzgNweAzfLfo3gI
+X-Received: by 2002:a05:600c:310d:b0:40c:2c40:8c with SMTP id g13-20020a05600c310d00b0040c2c40008cmr1463328wmo.154.1705147092471;
+        Sat, 13 Jan 2024 03:58:12 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705147092; cv=none;
+        d=google.com; s=arc-20160816;
+        b=HEHc/3zmrIHLJigR+lecD50zMARXDtrDbvjQTaOveRJ3hJ7AWUciy/90c4ogU/ozMb
+         JO9Z9YXAWweEPeaipkP13I1p0PYPQgzCKncFujqXHfRh1xsceZpYQugKJ35BA2OxnxtA
+         hf4/sVEb+pVhBT1NFWEbsVh8vr4mK8ceCwgPAwxMsiJjcX4mFSkQ38mKHcbbxk3HnswW
+         ytdY2naYlJj6K0qCAaPnExiNL+j33rkLgBjMjhRFby8LCB6mZ9Yu2DSO0HV0leUiy+Ud
+         n5rfvad8U20DNsIU87IF9fMEADcqQO/IO7BESmRKHvWnYsT/yOrdYaGV5EgmUHU7/2Q+
+         3puA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:from:feedback-id:list-unsubscribe-post:to
+         :content-transfer-encoding:message-id:subject:date:dkim-signature;
+        bh=hqnNmD5MRQwQ4zzgvBuCpfZkax95yXyUZPVzyy/KHoI=;
+        fh=SAVgOJ9tOnCx3grszLPsutQQMQl2pA2GpO22QYS9W4Q=;
+        b=klpw9y+Nkrs7h8OIVALMXdi6477BsxqVOhfV4yZM1IfJC/5zvwKy7R4XsAsfmXRTku
+         vK9ZLKP/V0gjOdCBm+tXxN+CicDD/FMue+VjLGVK/DnX9esOtrzhLUcgbz12OHJSUrnw
+         gVKWjgiDo1TG7dwEJjbmH47vINB4WIeX9UfHmm4K6Xx/0/bJN/nvWU76bsSnBkw1k7mo
+         lFLdS32l9PMBgbDtSSk2FE3m4QhDtHNm7DdgpR3KEDG8Q3wpiBlaCJ8WwDFboU3704Bp
+         gBB1oR/wo5Caov8OdWHgqztiBBDEQEMNRreRp+SV29ugPMNJpHv0o/jOFBDhxjz0OOWz
+         Jg+Q==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@sendinblue.com header.s=mail header.b=EWuBDpUJ;
+       spf=pass (google.com: domain of return@localone.us.com designates 212.83.183.104 as permitted sender) smtp.mailfrom=return@localone.us.com
+Return-Path: <return@localone.us.com>
+Received: from efianalytics.com (212-83-183-104.rev.poneytelecom.eu. [212.83.183.104])
+        by mx.google.com with ESMTPS id h5-20020a056402280500b005590009900asi381884ede.548.2024.01.13.03.58.12
+        for <brnkath@gmail.com>
+        (version=TLS1 cipher=ECDHE-ECDSA-AES128-SHA bits=128/128);
+        Sat, 13 Jan 2024 03:58:12 -0800 (PST)
+Received-SPF: pass (google.com: domain of return@localone.us.com designates 212.83.183.104 as permitted sender) client-ip=212.83.183.104;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@sendinblue.com header.s=mail header.b=EWuBDpUJ;
+       spf=pass (google.com: domain of return@localone.us.com designates 212.83.183.104 as permitted sender) smtp.mailfrom=return@localone.us.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendinblue.com;
+ q=dns/txt; s=mail; bh=hqnNmD5MRQwQ4zzgvBuCpfZkax95yXyUZPVzyy/KHoI=;
+ h=from:subject:date:to:content-type:content-transfer-encoding:list-unsubscribe:x-csa-complaints:list-unsubscribe-post;
+        b=EWuBDpUJpzlz0PBZTII7G5r/FX8/YtCcCdoi0grliCM7qvDAoGYGTgKXGCINUltbTruKRrj4qdzU
+        xIgKuJ+JOVVcb4L9RZPOtgGa2NhNVGWEiOlh8dZEJInH8UWWWFLcKwScVWO3qfHvGabWbu/3Tijq
+        Uk+aAesxWT+UUS+NsEU=
+Received: by smtp-relay.sendinblue.com with ESMTP id f52f8962-bcfb-44c8-8645-de5ee5fe30a2; Tue, 26 September 2023 13:56:26 +0000 (UTC)
+X-Mailin-EID: MjMxNjcxNzIyfmJhcnJvc29hbmRyZXM3MzJAZ21haWwuY29tfjwyMDIzMDkyNjEzNTYuOTA3MTA5MDg3NDJAc210cC1yZWxheS5zZW5kaW5ibHVlLmNvbT5%2BZ3ouZC5zZW5kZXItc2liLmNvbQ%3D%3D
+Date: Tue, 26 Sep 2023 13:56:25 +0000
+Subject: No Deposit Required. Play for FREE and Win for Real!..-rujout.
+Message-ID: <3SEI7ZXT361IYEDUXCS7-3SEI7ZXT361IYEDUXCS7-3SEI7ZXT361IYEDUXCS7.5smtpin_added_missing@mx.google.com>
+Content-Type: text/html
+Content-Transfer-Encoding: quoted-printable
+To: <barrosoandres732@gmail.com>
+X-sib-id: iTeSPpc6xceoZ8y_0Cz7TN8DGC6BxbGTubzWYZy0-lhit-UvLJHgIYfz7lN_Oh7V-omm438lUMdVC1qfCyweho--sK3MGBGJbFWn34ytmCp0veVmD8waJYpIeGT879_aXthyacwxLyA3058Pmjqisrv4mEu_y-PnnFYa_pBFo55q_TfW7O1Wig
+X-CSA-Complaints: csa-complaints@eco.de
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Feedback-ID: 77.32.148.26:6570534_-1:6570534:Sendinblue
+From: =?UTF-8?Q?=F0=9F=92=B8_TItanSpins=F0=9F=92=B0_=20?= <fxcwrybhdlrw@fxcwrybhdlrw.com>
+List-Unsubscribe: <https://gfhafde.r.af.d.sendibt2.com/tr/un/li/ivkteoGX7Slcqhbdx6oF2kiTnHk8cZMIhxKdOKZmVg1MX03TucXUXGYhYxM5Zw1mLS897Tad3AxQODh5QRp9XZK_Wk41mxxZIpb1P_lzHn534F62Ipof4Z2UGyDHofdjV2wVYGiWIi_PxaoMlRyFIAWsEPQ0SbD2BZYAdjw1fZvtxNc8z7bi_brHNCNV2W5EWvFlFPX3f3dnUsbmGQRscnvwu2Secgfj9276kKUxHb_bxPVPrMHY3piA90ou6Hqr8P5txW5Dob7hcBn0xZFRfrho>
+
+<!DOCTYPE html PUBLIC =22-//W3C//DTD HTML 4.0 Transitional//EN=22 =
+=22http://www.w3.org/TR/REC-html40/loose.dtd=22>
+<html style=3D=22width: 100%;=22><head><meta name=3D=22viewport=22 =
+content=3D=22width=3Ddevice-width; initial-scale=3D1.0; maximum-scale=3D1.=
+0;=22><title>
+ TitanSpins</title>
+
+ </head>
+<body yahoo=3D=22fix=22 leftmargin=3D=220=22 topmargin=3D=220=22 =
+marginwidth=3D=220=22 marginheight=3D=220=22 style=3D=22-webkit-font-smooth=
+ing: antialiased;background-color: #333;margin: 0;mso-margin-bottom-alt: =
+0px;mso-margin-top-alt: 0px;mso-padding-alt: 0px 0px 0px 0px;padding: =
+0;width: 100%;=22>
+=20
+ <table width=3D=22100%=22 border=3D=220=22 align=3D=22center=22 =
+cellpadding=3D=220=22 cellspacing=3D=220=22 bgcolor=3D=22#333=22 =
+style=3D=22border: 0; font-size: 12px;=22><tbody><tr><td =
+align=3D=22center=22 valign=3D=22top=22>
+ <table width=3D=22350=22 border=3D=220=22 align=3D=22center=22 =
+cellpadding=3D=220=22 cellspacing=3D=220=22 class=3D=22main=22 =
+style=3D=22border: 0; font-size: 12px;=22><tbody><tr><td height=3D=2250=22 =
+align=3D=22center=22 valign=3D=22top=22 style=3D=22font-size:50px; =
+line-height:50px;=22>
+ &nbsp;
+ </td>
+ </tr><tr>
+=20
+ <td align=3D=22center=22 valign=3D=22top=22 bgcolor=3D=22#000=22 =
+background=3D=22casbg.jpg=22 style=3D=22background-size: =
+350px;-webkit-text-size-adjust: 100%;mso-line-height-rule: exactly;=22>
+ <table width=3D=22100%=22 border=3D=220=22 align=3D=22center=22 =
+cellpadding=3D=220=22 cellspacing=3D=2215=22 style=3D=22border: 0; =
+font-size: 12px;=22><tbody>
+=20
+=20
+=20
+ <tr>
+ <td height=3D=2225=22 align=3D=22center=22 valign=3D=22top=22 =
+style=3D=22font-size:35px;line-height: 25px;=22>
+ <img border=3D=220=22 src=3Dstorage.googleapis.com/fgthyu/tit.png =
+alt=3D=22TitanSpins=22 width=3D=22120px=22>
+ </td>
+ </tr>
+ <tr>
+ <td height=3D=2225=22 align=3D=22center=22 valign=3D=22top=22 =
+style=3D=22font-size:35px;line-height: 25px;=22>
+ <img border=3D=220=22 src=3Dstorage.googleapis.com/fgthyu/all-tita.png =
+alt=3D=22TitanSpins=22 width=3D=22180px=22>
+ </td>
+ </tr>
+ <tr>
+ <td align=3D=22center=22 valign=3D=22top=22>
+ <table width=3D=22320=22 border=3D=220=22 align=3D=22center=22 =
+cellpadding=3D=220=22 cellspacing=3D=2215=22 class=3D=22two-left-inner=22 =
+style=3D=22border: 0; font-size: 12px;=22><tbody>
+=20
+ <tr>
+ <td align=3D=22left=22 valign=3D=22top=22 style=3D=22font-family: 'Roboto'=
+,Verdana, Arial, sans-serif;font-size: 18px;font-weight: bold;line-height: =
+0px;color: #fff;=22>GET</strong></td>
+ </tr>
+ <tr>
+ <td align=3D=22left=22 valign=3D=22top=22 style=3D=22font-family: 'Roboto'=
+,Verdana, Arial, sans-serif;font-size: 100px;font-weight: bold;line-height:=
+ 100px;color: #78c2ea;=22>100 FREE SPINS</strong></td>
+ </tr>
+ <tr><td align=3D=22center=22 valign=3D=22top=22 style=3D=22font-family: =
+'Roboto',Verdana, Arial, sans-serif;font-size: 22px;color: =
+#FFF;font-weight:bold;line-height: 26px;=22>Free for New Casino =
+Players</td>
+ </tr>
+ <tr><td align=3D=22center=22 valign=3D=22top=22 style=3D=22font-family: =
+'Roboto',Verdana, Arial, sans-serif;font-size: 16px;color: =
+#FFF;font-weight:normal;line-height: 22px;=22>No Deposit Required. Play for=
+ Free and Win for Real!</td>
+ </tr>
+ <tr><td align=3D=22center=22 height=3D=223=22 valign=3D=22top=22 =
+style=3D=22font-size: 12px;line-height: 3px;=22></td></tr>
+=20
+=20
+ <tr><td height=3D=2248=22 align=3D=22center=22 valign=3D=22middle=22>
+ <a href=3Dstorage.googleapis.com/fgthyu/tita1.html>
+ <span style=3D=22color:#df073b=22><strong>FINAL WARNING!</strong>
+</span>Click below now or lose access.</p>
+ </a>
+ </td>
+ </tr>
+ <tr>
+ <td height=3D=2295=22 align=3D=22center=22 valign=3D=22top=22 =
+style=3D=22font-size: 45px;line-height: 95px;=22>
+ &nbsp;
+ </td>
+ </tr>
+ </tbody></table></td>
+ </tr>=20
+ </tbody></table></td>
+ </tr>
+ <tr><td height=3D=2225=22 align=3D=22left=22 valign=3D=22top=22 =
+style=3D=22font-size:85px;line-height: 25px;=22>
+ &nbsp;
+ </td>
+ </tr>
+ <tr>
+ <td height=3D=2256=22 align=3D=22center=22 valign=3D=22top=22 =
+style=3D=22font-family: 'Roboto',Verdana, Arial, sans-serif;font-size:12px;=
+line-height: 18px;color: #797979;=22>
+ If you no longer wish to receive these emails, you may unsubscribe by =
+clicking <a href=3Dstorage.googleapis.com/fgthyu/tita2.html =
+style=3D=22color:#ccc;text-decoration:none;=22>here</a> or by writing to =
+801 US Highway 1, N Palm Beach, FL 33408
+
+ <br>
+ </p>
+<script>
+<tr>
+<td align=3D=22=22 valign=3D=22top=22 style=3D=22font-family:Arial, =
+Helvetica, sans-serif;
+ font-size:18px; line-height:22px; color:#000000; padding-bottom: =
+20px;=22>
+
+</td>
+</tr>
+ <tr>
+ <td colspan=3D=222=22 style=3D=22font-size:10px; color: #000;=22><br><br>
+ <div align=3D=22center=22>CASH APP..lS NOT AFFILIATED..WlTH, D0ES N0T =
+SP0NSOR,
+ <br>0r..otherwise..endorse..this.PROMOTlON.
+ <br><br>To UNSUBSCRlBE, pleasee <a
+ href=3D=22https://gfhafde.r.af.d.sendibt2.com/tr/cl/RAu=5FqRAtx2ErtJQmCIhx=
+Fq8KRqBdMSEzQ1cnnZFCu07HiceWlLgm=5FFasKqPk-b-rpxMcvUt2L2MBkL1bEhDIN6IxGwSQj=
+0BAMe0EvR4rph=5FDPR=5F71Oa93BJacoqIGf8hnallKim7g2okw7Wky1dcArJpd7x4MXGCRTVc=
+e-ExvPzIGptO9otSzysoQX9R9xpS3dZLku5-VOQrkCP-=22>VlSlT-HERE</a> 0r write =
+to:
+ <br><br>
+ </div>
+ </td>
+ </tr>
+ </tbody>
+ </table>
+
+</div><img width=3D'1' height=3D'1' src=3D'https://gfhafde.r.af.d.sendibt2.=
+com/tr/op/gIKbMAHSz=5FETXN3ATnJfAhKb8ywqUCATRiJeJcx3F5rXqQaFSw6L4SvJSosk9WT=
+YGcpuMUdCbbpMP1JPmGGt9iLj8rhTLNbarwKXKu2M4RZuqBW3egRiwbOQ6ip1LiPAi1xF-lD0lp=
+yNZPttzXERk8aRZRYUTIdlAdd-VJNGA5KE' alt=3D'' /></body>
+</html>
+=20
+</body>
+</script>
+

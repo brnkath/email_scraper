@@ -1,0 +1,1123 @@
+Delivered-To: brnkath@gmail.com
+Received: by 2002:a8a:e86:0:b0:511:33d7:88bb with SMTP id t6csp6401138ocw;
+        Tue, 2 Jan 2024 18:08:18 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IH2K3jurWGS1S3Pf/GZY05TFa/lwlHSIqV+A9+yYRQ1auCn5/DV7I00BMoiBLhcDIX/lDl+
+X-Received: by 2002:a05:622a:1312:b0:427:9981:5b84 with SMTP id v18-20020a05622a131200b0042799815b84mr27602506qtk.107.1704247698190;
+        Tue, 02 Jan 2024 18:08:18 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1704247698; cv=none;
+        d=google.com; s=arc-20160816;
+        b=En06hpQYCq3FufdvCtTk+f9qfKV12bVeLe3cGulcuFZ/UqPZtR70PIuslt+BX/KYB5
+         ZPABee6sQAn6DZokU2b/DKHeNdzwiqTG7jYsCMh60y5E7yUboMohdJ27u9r9SvDHQlWm
+         ECPqz6TFefBFz59c0epvFu+FUALn5tMRwsH6SnFOutn/8atnqtrDwRdLVa2sMHm2vMHy
+         bTDIt9sg3Kz6K0nWWsTGmaM8q9atr7DRgtLYKpd4yfmTBHKMYwexOC7B8ZLmlT4sv/xf
+         wECaYe4TVoyuUGNAJnhzbiG18IaJzFKEo9sF/LeXZT/l2paRcCGryYji4o3nImrDcpRP
+         iU3w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:date:message-id:mime-version:subject:to:reply-to:from
+         :dkim-signature:dkim-signature;
+        bh=rb1VnaQYQYx8Tt50tzADLLm7Bj5XcYVnoE4fHf2Z7mI=;
+        fh=jtCceFG8HVKB2IpOH+Sl5vnl1QwyIuZuuJOPT2WPv3k=;
+        b=P2DuH5WhyNnQVswVEkNEVcS1mIk5oTqs6xQ42cgLO1ISqLeKRxIHGIo2kcE3B/rQ10
+         fkzjKe7efU1TCmY7MBkg9eSarGJuIsgXf/UE8ve9tI9ggR/zA4y0QO+D16ABzLpBAOuW
+         Hv4wUH2oUFW+DZRU2n6PXK/S4SkxZ6xeSjT4RRKQl9WOhdEKolA65FG5ornIjq605xB5
+         OeF3t9sXmuqEzEZF6ISj+kcqYsJOE6Lpvtnqu8KI9o3VmeiPbwKdk0cLSTQZw2GrOZLI
+         ZtIQ6lPhKoPQZ+kuuwYsM/zgd6Jm3GhJ+MPQmmjXSvotx5eypgZEGmp9lXXXqliVOvXI
+         E0sw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@verizonadministrativechargesettlement.com header.s=o5xtawvbibygqznopg3t472brc5en72v header.b=H7kMy3Bo;
+       dkim=pass header.i=@amazonses.com header.s=224i4yxa5dv7c2xz3womw6peuasteono header.b=V8Nz8y7j;
+       spf=pass (google.com: domain of 0100018ccd1420d2-d90a0e42-c133-452d-b86c-941ea331fdf3-000000@amazonses.com designates 54.240.49.173 as permitted sender) smtp.mailfrom=0100018ccd1420d2-d90a0e42-c133-452d-b86c-941ea331fdf3-000000@amazonses.com
+Return-Path: <0100018ccd1420d2-d90a0e42-c133-452d-b86c-941ea331fdf3-000000@amazonses.com>
+Received: from a49-173.smtp-out.amazonses.com (a49-173.smtp-out.amazonses.com. [54.240.49.173])
+        by mx.google.com with ESMTPS id j17-20020a05622a039100b004281317ca73si8148427qtx.662.2024.01.02.18.08.17
+        for <BRNKATH@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 02 Jan 2024 18:08:18 -0800 (PST)
+Received-SPF: pass (google.com: domain of 0100018ccd1420d2-d90a0e42-c133-452d-b86c-941ea331fdf3-000000@amazonses.com designates 54.240.49.173 as permitted sender) client-ip=54.240.49.173;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@verizonadministrativechargesettlement.com header.s=o5xtawvbibygqznopg3t472brc5en72v header.b=H7kMy3Bo;
+       dkim=pass header.i=@amazonses.com header.s=224i4yxa5dv7c2xz3womw6peuasteono header.b=V8Nz8y7j;
+       spf=pass (google.com: domain of 0100018ccd1420d2-d90a0e42-c133-452d-b86c-941ea331fdf3-000000@amazonses.com designates 54.240.49.173 as permitted sender) smtp.mailfrom=0100018ccd1420d2-d90a0e42-c133-452d-b86c-941ea331fdf3-000000@amazonses.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=o5xtawvbibygqznopg3t472brc5en72v;
+	d=verizonadministrativechargesettlement.com; t=1704247697;
+	h=From:Reply-To:To:Subject:MIME-Version:Content-Type:Message-ID:Date;
+	bh=3Z5nvKljQYGt4LaMCZlJ0crZ+P5qK1qu72aq67lP6RE=;
+	b=H7kMy3BoOMEfXQWsn6iiv+3tk9yN3zog2IGwhdhPqJBfe77qm3GRcVmpcAlxW4PH
+	O/w5kTKtd9RImZrEwUfftYOgfogBPe9pKpSgZ8Kso2Q1RCcjj23/milDaaNu5qJ3cHG
+	N63GsTar0ALSZvoktiydtQTcchXfpmqarLmRpkg+gr2VUztG4cN+gnk1wXJ9umiejvG
+	8EOPVW9BsWgp5ys5BhO/EVMidff/vU+VZzyztXXPvFb8bFF5KVpgEYMdgIgqZWvIlsL
+	8yjk3XbcK355x31iRIGbMUNVSXr9TdbF5zjk9pVaWW2qOUpo8mIRgR+5IRVWRusVOvd
+	xHFTgIf1bQ==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=224i4yxa5dv7c2xz3womw6peuasteono; d=amazonses.com; t=1704247697;
+	h=From:Reply-To:To:Subject:MIME-Version:Content-Type:Message-ID:Date:Feedback-ID;
+	bh=3Z5nvKljQYGt4LaMCZlJ0crZ+P5qK1qu72aq67lP6RE=;
+	b=V8Nz8y7jNl8z34l0mp7C7/kOQauLUd67PLLRXxYhxERC5GRzE90ro9nXripPvnlH
+	M4w2SDMsWVJIDFMVUkojIV16NLD33jGJZFvPYVl3UR+hN/N5sK0eRFMKEdM5n4FzAmE
+	uHczYJF8PH4GLyAK9URNQIdVSi4hLYcX+kcusVZU=
+From: Verizon Class Action Settlement Administrator <donotreply@verizonadministrativechargesettlement.com>
+Reply-To: 
+	Verizon Class Action Settlement Administrator <donotreply@verizonadministrativechargesettlement.com>
+To: BRNKATH@GMAIL.COM
+Subject: Notice of Verizon Class Action Settlement
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_721020_49039806.1704247697618"
+Message-ID: <0100018ccd1420d2-d90a0e42-c133-452d-b86c-941ea331fdf3-000000@email.amazonses.com>
+Date: Wed, 3 Jan 2024 02:08:17 +0000
+Feedback-ID: 1.us-east-1.wLc5IWXNRAd9daXsYIrFcDkA8bqCEA2UImqsvLWQtag=:AmazonSES
+X-SES-Outgoing: 2024.01.03-54.240.49.173
+
+------=_Part_721020_49039806.1704247697618
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Notice ID: VAC00059182612
+Confirmation Code:=20
+=C2=A0
+VERIZON CLASS ACTION SETTLEMENT
+A court authorized this notice. This is not a solicitation from a lawyer.
+You are not being sued.
+=C2=A0
+Para ver este aviso en espa=C3=B1ol, visite=C2=A0
+www.VerizonAdministrativeChargeSettlement.com.
+=C2=A0=C2=A0
+**YOU MAY BE ENTITLED TO A PAYMENT OF UP TO $100.00 IF YOU FILE A CLAIM**
+*You must file a claim by April 15, 2024 to receive a payment*
+To file a claim click here.
+
+
+Read this notice or visit www.VerizonAdministrativeChargeSettlement.com or =
+call toll-free (844) 689-0186 for more information.
+
+What is this notice about? A proposed settlement has been reached in a clas=
+s action lawsuit. The lawsuit claimed that Cellco Partnership d/b/a Verizon=
+ Wireless (=E2=80=9CVerizon=E2=80=9D) charged a monthly Administrative Char=
+ge and/or Administrative and Telco Recovery Charge (collectively, =E2=80=9C=
+Administrative Charge=E2=80=9D) on Verizon post-paid individual consumer wi=
+reless accounts that was unfair and not adequately disclosed. Verizon has d=
+enied and continues to deny that it did anything wrong and that the lawsuit=
+ has any merit. =C2=A0Verizon states that it will continue to charge the Ad=
+ministrative Charge and that it has the right to increase the Administrativ=
+e Charge. The settlement, if approved, resolves the lawsuit and provides be=
+nefits to Settlement Class Members who file a claim.
+
+Who is included? The =E2=80=9CSettlement Class=E2=80=9D includes consumers =
+residing in the United States (based on account holders=E2=80=99 last known=
+ billing address) who received postpaid wireless or data services from Veri=
+zon and who were charged and paid an Administrative Charge between January =
+1, 2016 and November 8, 2023. You are receiving this notice because Verizon=
+=E2=80=99s records indicate that you are in the Settlement Class.
+
+What can I get? Under the proposed settlement, Verizon will pay $100 millio=
+n to create a settlement fund. If the settlement is approved and becomes fi=
+nal, payments will be made to eligible account holders. You must file a cla=
+im to receive a payment (see below). If you file a claim by the deadline, y=
+our settlement payment may be up to $100.00 for your account, but the final=
+ amount may be lower depending on how long you were a Verizon subscriber an=
+d how many Settlement Class Members file valid claims.
+
+How do I get a payment? You must file a claim by April 15, 2024 to receive =
+a settlement payment. You can file a claim online by clicking here, or you =
+can download a claim form at www.VerizonAdministrativeChargeSettlement.com,=
+ fill it out, and submit it by mail. Payments will be issued to valid claim=
+ants by mailed check or electronic payment.=C2=A0
+
+What are my options? You can (1) file a claim for a payment from the settle=
+ment, and, if the settlement becomes final and you are in the Settlement Cl=
+ass, you will give up the right to sue Verizon about the issues in this law=
+suit; (2) do nothing, thereby receiving no payment, and, if the settlement =
+becomes final, you will give up the right to sue Verizon about the issues i=
+n this lawsuit; or (3) exclude yourself from the Settlement Class by opting=
+ out, thereby receiving no payment, and you will retain any right you may h=
+ave to sue Verizon about the issues in this lawsuit. To exclude yourself, y=
+ou must mail a signed request for exclusion containing the information desc=
+ribed at www.VerizonAdministrativeChargeSettlement.com, postmarked by Febru=
+ary 20, 2024, to: Verizon Administrative Charge Settlement Administrator, A=
+ttn: Exclusions, P.O. Box 58220, Philadelphia, PA 19102.
+
+If you do not exclude yourself, and the Court approves the settlement, you =
+will be bound by the Court=E2=80=99s orders and judgments and will release =
+your claims relating to this lawsuit. If you do not exclude yourself, you c=
+an object to or comment on the settlement and/or Settlement Class Counsel=
+=E2=80=99s request for attorneys=E2=80=99 fees, expenses, and service award=
+s for the plaintiffs who brought this case on behalf of the Settlement Clas=
+s.=C2=A0 To object, you must submit a signed, written objection containing =
+the information described at www.VerizonAdministrativeChargeSettlement.com =
+to the Court by February 26, 2024. Visit www.VerizonAdministrativeChargeSet=
+tlement.com for more information.
+
+What happens next? The Court will hold a hearing, currently scheduled for M=
+arch 22, 2024 at 10:00 a.m., at the Superior Court of the State of New Jers=
+ey, located at 56 Paterson Street, New Brunswick, New Jersey 08903-0964 to =
+decide whether to approve the settlement, attorneys=E2=80=99 fees and expen=
+ses for the attorneys representing the Settlement Class (up to $33.3 millio=
+n plus expenses, to be paid from the $100 million settlement fund), and ser=
+vice awards of up to $3,500 to each of the plaintiffs who brought this case=
+ on behalf of the Settlement Class. You or your attorney may ask permission=
+ to speak at the hearing at your own cost. The date and time of this hearin=
+g may change without further notice, and/or the Court could order that this=
+ hearing be held remotely or telephonically. Check www.VerizonAdministrativ=
+eChargeSettlement.com for updates.
+
+Who represents me? The Court has appointed DeNittis Osefchen Prince, P.C. a=
+nd Hattis & Lukacs to represent the Settlement Class. Together, these lawye=
+rs are called Settlement Class Counsel. You do not need to pay these lawyer=
+s out of your pocket; instead, these lawyers will apply for compensation ou=
+t of the settlement fund. If you want to be represented by your own lawyer,=
+ you may hire one at your own expense.
+
+How do I get more information? For more information, including to view copi=
+es of case documents, the full settlement agreement, the complaint in the l=
+awsuit, and Settlement Class Counsel=E2=80=99s fee application (once it is =
+filed), visit www.VerizonAdministrativeChargeSettlement.com. You can also c=
+all (844) 689-0186 or email info@VerizonAdministrativeChargeSettlement.com.
+
+PLEASE DO NOT CONTACT THE COURT
+
+Unsubscribe
+------=_Part_721020_49039806.1704247697618
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:o=3D"urn:schemas-microso=
+ft-com:office:office" xmlns:v=3D"urn:schemas-microsoft-com:vml">
+<head>
+=09<title></title>
+=09<!-- NAME: 1 COLUMN --><!--[if gte mso 15]>
+        <xml>
+            <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+        <![endif]--><meta charset=3D"UTF-8"><meta http-equiv=3D"X-UA-Compat=
+ible" content=3D"IE=3Dedge"><meta name=3D"viewport" content=3D"width=3Ddevi=
+ce-width, initial-scale=3D1">
+=09<style type=3D"text/css">p{
+=09=09=09margin:10px 0;
+=09=09=09padding:0;
+=09=09}
+=09=09table{
+=09=09=09border-collapse:collapse;
+=09=09}
+=09=09h1,h2,h3,h4,h5,h6{
+=09=09=09display:block;
+=09=09=09margin:0;
+=09=09=09padding:0;
+=09=09}
+=09=09img,a img{
+=09=09=09border:0;
+=09=09=09height:auto;
+=09=09=09outline:none;
+=09=09=09text-decoration:none;
+=09=09}
+=09=09body,#bodyTable,#bodyCell{
+=09=09=09height:100%;
+=09=09=09margin:0;
+=09=09=09padding:0;
+=09=09=09width:100%;
+=09=09}
+=09=09.mcnPreviewText{
+=09=09=09display:none !important;
+=09=09}
+=09=09#outlook a{
+=09=09=09padding:0;
+=09=09}
+=09=09img{
+=09=09=09-ms-interpolation-mode:bicubic;
+=09=09}
+=09=09table{
+=09=09=09mso-table-lspace:0pt;
+=09=09=09mso-table-rspace:0pt;
+=09=09}
+=09=09.ReadMsgBody{
+=09=09=09width:100%;
+=09=09}
+=09=09.ExternalClass{
+=09=09=09width:100%;
+=09=09}
+=09=09p,a,li,td,blockquote{
+=09=09=09mso-line-height-rule:exactly;
+=09=09}
+=09=09a[href^=3Dtel],a[href^=3Dsms]{
+=09=09=09color:inherit;
+=09=09=09cursor:default;
+=09=09=09text-decoration:none;
+=09=09}
+=09=09p,a,li,td,body,table,blockquote{
+=09=09=09-ms-text-size-adjust:100%;
+=09=09=09-webkit-text-size-adjust:100%;
+=09=09}
+=09=09.ExternalClass,.ExternalClass p,.ExternalClass td,.ExternalClass div,=
+.ExternalClass span,.ExternalClass font{
+=09=09=09line-height:100%;
+=09=09}
+=09=09a[x-apple-data-detectors]{
+=09=09=09color:inherit !important;
+=09=09=09text-decoration:none !important;
+=09=09=09font-size:inherit !important;
+=09=09=09font-family:inherit !important;
+=09=09=09font-weight:inherit !important;
+=09=09=09line-height:inherit !important;
+=09=09}
+=09=09#bodyCell{
+=09=09=09padding:10px;
+=09=09}
+=09=09.templateContainer{
+=09=09=09max-width:600px !important;
+=09=09}
+=09=09a.mcnButton{
+=09=09=09display:block;
+=09=09}
+=09=09.mcnImage,.mcnRetinaImage{
+=09=09=09vertical-align:bottom;
+=09=09}
+=09=09.mcnTextContent{
+=09=09=09word-break:break-word;
+=09=09}
+=09=09.mcnTextContent img{
+=09=09=09height:auto !important;
+=09=09}
+=09=09.mcnDividerBlock{
+=09=09=09table-layout:fixed !important;
+=09=09}
+=09/*
+=09@tab Page
+=09@section Background Style
+=09@tip Set the background color and top border for your email. You may wan=
+t to choose colors that match your company's branding.
+=09*/
+=09=09body,#bodyTable{
+=09=09=09/*@editable*/background-color:#FAFAFA;
+=09=09}
+=09/*
+=09@tab Page
+=09@section Background Style
+=09@tip Set the background color and top border for your email. You may wan=
+t to choose colors that match your company's branding.
+=09*/
+=09=09#bodyCell{
+=09=09=09/*@editable*/border-top:0;
+=09=09}
+=09/*
+=09@tab Page
+=09@section Email Border
+=09@tip Set the border for your email.
+=09*/
+=09=09.templateContainer{
+=09=09=09/*@editable*/border:0;
+=09=09}
+=09/*
+=09@tab Page
+=09@section Heading 1
+=09@tip Set the styling for all first-level headings in your emails. These =
+should be the largest of your headings.
+=09@style heading 1
+=09*/
+=09=09h1{
+=09=09=09/*@editable*/color:#202020;
+=09=09=09/*@editable*/font-family:Helvetica;
+=09=09=09/*@editable*/font-size:26px;
+=09=09=09/*@editable*/font-style:normal;
+=09=09=09/*@editable*/font-weight:bold;
+=09=09=09/*@editable*/line-height:125%;
+=09=09=09/*@editable*/letter-spacing:normal;
+=09=09=09/*@editable*/text-align:left;
+=09=09}
+=09/*
+=09@tab Page
+=09@section Heading 2
+=09@tip Set the styling for all second-level headings in your emails.
+=09@style heading 2
+=09*/
+=09=09h2{
+=09=09=09/*@editable*/color:#202020;
+=09=09=09/*@editable*/font-family:Helvetica;
+=09=09=09/*@editable*/font-size:22px;
+=09=09=09/*@editable*/font-style:normal;
+=09=09=09/*@editable*/font-weight:bold;
+=09=09=09/*@editable*/line-height:125%;
+=09=09=09/*@editable*/letter-spacing:normal;
+=09=09=09/*@editable*/text-align:left;
+=09=09}
+=09/*
+=09@tab Page
+=09@section Heading 3
+=09@tip Set the styling for all third-level headings in your emails.
+=09@style heading 3
+=09*/
+=09=09h3{
+=09=09=09/*@editable*/color:#202020;
+=09=09=09/*@editable*/font-family:Helvetica;
+=09=09=09/*@editable*/font-size:20px;
+=09=09=09/*@editable*/font-style:normal;
+=09=09=09/*@editable*/font-weight:bold;
+=09=09=09/*@editable*/line-height:125%;
+=09=09=09/*@editable*/letter-spacing:normal;
+=09=09=09/*@editable*/text-align:left;
+=09=09}
+=09/*
+=09@tab Page
+=09@section Heading 4
+=09@tip Set the styling for all fourth-level headings in your emails. These=
+ should be the smallest of your headings.
+=09@style heading 4
+=09*/
+=09=09h4{
+=09=09=09/*@editable*/color:#202020;
+=09=09=09/*@editable*/font-family:Helvetica;
+=09=09=09/*@editable*/font-size:18px;
+=09=09=09/*@editable*/font-style:normal;
+=09=09=09/*@editable*/font-weight:bold;
+=09=09=09/*@editable*/line-height:125%;
+=09=09=09/*@editable*/letter-spacing:normal;
+=09=09=09/*@editable*/text-align:left;
+=09=09}
+=09/*
+=09@tab Preheader
+=09@section Preheader Style
+=09@tip Set the background color and borders for your email's preheader are=
+a.
+=09*/
+=09=09#templatePreheader{
+=09=09=09/*@editable*/background-color:#FAFAFA;
+=09=09=09/*@editable*/background-image:none;
+=09=09=09/*@editable*/background-repeat:no-repeat;
+=09=09=09/*@editable*/background-position:center;
+=09=09=09/*@editable*/background-size:cover;
+=09=09=09/*@editable*/border-top:0;
+=09=09=09/*@editable*/border-bottom:0;
+=09=09=09/*@editable*/padding-top:9px;
+=09=09=09/*@editable*/padding-bottom:9px;
+=09=09}
+=09/*
+=09@tab Preheader
+=09@section Preheader Text
+=09@tip Set the styling for your email's preheader text. Choose a size and =
+color that is easy to read.
+=09*/
+=09=09#templatePreheader .mcnTextContent,#templatePreheader .mcnTextContent=
+ p{
+=09=09=09/*@editable*/color:#656565;
+=09=09=09/*@editable*/font-family:Helvetica;
+=09=09=09/*@editable*/font-size:12px;
+=09=09=09/*@editable*/line-height:150%;
+=09=09=09/*@editable*/text-align:left;
+=09=09}
+=09/*
+=09@tab Preheader
+=09@section Preheader Link
+=09@tip Set the styling for your email's preheader links. Choose a color th=
+at helps them stand out from your text.
+=09*/
+=09=09#templatePreheader .mcnTextContent a,#templatePreheader .mcnTextConte=
+nt p a{
+=09=09=09/*@editable*/color:#656565;
+=09=09=09/*@editable*/font-weight:normal;
+=09=09=09/*@editable*/text-decoration:underline;
+=09=09}
+=09/*
+=09@tab Header
+=09@section Header Style
+=09@tip Set the background color and borders for your email's header area.
+=09*/
+=09=09#templateHeader{
+=09=09=09/*@editable*/background-color:#FFFFFF;
+=09=09=09/*@editable*/background-image:none;
+=09=09=09/*@editable*/background-repeat:no-repeat;
+=09=09=09/*@editable*/background-position:center;
+=09=09=09/*@editable*/background-size:cover;
+=09=09=09/*@editable*/border-top:0;
+=09=09=09/*@editable*/border-bottom:0;
+=09=09=09/*@editable*/padding-top:9px;
+=09=09=09/*@editable*/padding-bottom:0;
+=09=09}
+=09/*
+=09@tab Header
+=09@section Header Text
+=09@tip Set the styling for your email's header text. Choose a size and col=
+or that is easy to read.
+=09*/
+=09=09#templateHeader .mcnTextContent,#templateHeader .mcnTextContent p{
+=09=09=09/*@editable*/color:#202020;
+=09=09=09/*@editable*/font-family:Helvetica;
+=09=09=09/*@editable*/font-size:16px;
+=09=09=09/*@editable*/line-height:150%;
+=09=09=09/*@editable*/text-align:left;
+=09=09}
+=09/*
+=09@tab Header
+=09@section Header Link
+=09@tip Set the styling for your email's header links. Choose a color that =
+helps them stand out from your text.
+=09*/
+=09=09#templateHeader .mcnTextContent a,#templateHeader .mcnTextContent p a=
+{
+=09=09=09/*@editable*/color:#007C89;
+=09=09=09/*@editable*/font-weight:normal;
+=09=09=09/*@editable*/text-decoration:underline;
+=09=09}
+=09/*
+=09@tab Body
+=09@section Body Style
+=09@tip Set the background color and borders for your email's body area.
+=09*/
+=09=09#templateBody{
+=09=09=09/*@editable*/background-color:#FFFFFF;
+=09=09=09/*@editable*/background-image:none;
+=09=09=09/*@editable*/background-repeat:no-repeat;
+=09=09=09/*@editable*/background-position:center;
+=09=09=09/*@editable*/background-size:cover;
+=09=09=09/*@editable*/border-top:0;
+=09=09=09/*@editable*/border-bottom:2px solid #EAEAEA;
+=09=09=09/*@editable*/padding-top:0;
+=09=09=09/*@editable*/padding-bottom:9px;
+=09=09}
+=09/*
+=09@tab Body
+=09@section Body Text
+=09@tip Set the styling for your email's body text. Choose a size and color=
+ that is easy to read.
+=09*/
+=09=09#templateBody .mcnTextContent,#templateBody .mcnTextContent p{
+=09=09=09/*@editable*/color:#202020;
+=09=09=09/*@editable*/font-family:Helvetica;
+=09=09=09/*@editable*/font-size:16px;
+=09=09=09/*@editable*/line-height:150%;
+=09=09=09/*@editable*/text-align:left;
+=09=09}
+=09/*
+=09@tab Body
+=09@section Body Link
+=09@tip Set the styling for your email's body links. Choose a color that he=
+lps them stand out from your text.
+=09*/
+=09=09#templateBody .mcnTextContent a,#templateBody .mcnTextContent p a{
+=09=09=09/*@editable*/color:#007C89;
+=09=09=09/*@editable*/font-weight:normal;
+=09=09=09/*@editable*/text-decoration:underline;
+=09=09}
+=09/*
+=09@tab Footer
+=09@section Footer Style
+=09@tip Set the background color and borders for your email's footer area.
+=09*/
+=09=09#templateFooter{
+=09=09=09/*@editable*/background-color:#FAFAFA;
+=09=09=09/*@editable*/background-image:none;
+=09=09=09/*@editable*/background-repeat:no-repeat;
+=09=09=09/*@editable*/background-position:center;
+=09=09=09/*@editable*/background-size:cover;
+=09=09=09/*@editable*/border-top:0;
+=09=09=09/*@editable*/border-bottom:0;
+=09=09=09/*@editable*/padding-top:9px;
+=09=09=09/*@editable*/padding-bottom:9px;
+=09=09}
+=09/*
+=09@tab Footer
+=09@section Footer Text
+=09@tip Set the styling for your email's footer text. Choose a size and col=
+or that is easy to read.
+=09*/
+=09=09#templateFooter .mcnTextContent,#templateFooter .mcnTextContent p{
+=09=09=09/*@editable*/color:#656565;
+=09=09=09/*@editable*/font-family:Helvetica;
+=09=09=09/*@editable*/font-size:12px;
+=09=09=09/*@editable*/line-height:150%;
+=09=09=09/*@editable*/text-align:center;
+=09=09}
+=09/*
+=09@tab Footer
+=09@section Footer Link
+=09@tip Set the styling for your email's footer links. Choose a color that =
+helps them stand out from your text.
+=09*/
+=09=09#templateFooter .mcnTextContent a,#templateFooter .mcnTextContent p a=
+{
+=09=09=09/*@editable*/color:#656565;
+=09=09=09/*@editable*/font-weight:normal;
+=09=09=09/*@editable*/text-decoration:underline;
+=09=09}
+=09@media only screen and (min-width:768px){
+=09=09.templateContainer{
+=09=09=09width:600px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09body,table,td,p,a,li,blockquote{
+=09=09=09-webkit-text-size-adjust:none !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09body{
+=09=09=09width:100% !important;
+=09=09=09min-width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnRetinaImage{
+=09=09=09max-width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImage{
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnCartContainer,.mcnCaptionTopContent,.mcnRecContentContainer,.mcnC=
+aptionBottomContent,.mcnTextContentContainer,.mcnBoxedTextContentContainer,=
+.mcnImageGroupContentContainer,.mcnCaptionLeftTextContentContainer,.mcnCapt=
+ionRightTextContentContainer,.mcnCaptionLeftImageContentContainer,.mcnCapti=
+onRightImageContentContainer,.mcnImageCardLeftTextContentContainer,.mcnImag=
+eCardRightTextContentContainer,.mcnImageCardLeftImageContentContainer,.mcnI=
+mageCardRightImageContentContainer{
+=09=09=09max-width:100% !important;
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnBoxedTextContentContainer{
+=09=09=09min-width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageGroupContent{
+=09=09=09padding:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnCaptionLeftContentOuter .mcnTextContent,.mcnCaptionRightContentOu=
+ter .mcnTextContent{
+=09=09=09padding-top:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageCardTopImageContent,.mcnCaptionBottomContent:last-child .mcn=
+CaptionBottomImageContent,.mcnCaptionBlockInner .mcnCaptionTopContent:last-=
+child .mcnTextContent{
+=09=09=09padding-top:18px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageCardBottomImageContent{
+=09=09=09padding-bottom:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageGroupBlockInner{
+=09=09=09padding-top:0 !important;
+=09=09=09padding-bottom:0 !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageGroupBlockOuter{
+=09=09=09padding-top:9px !important;
+=09=09=09padding-bottom:9px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnTextContent,.mcnBoxedTextContentColumn{
+=09=09=09padding-right:18px !important;
+=09=09=09padding-left:18px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcnImageCardLeftImageContent,.mcnImageCardRightImageContent{
+=09=09=09padding-right:18px !important;
+=09=09=09padding-bottom:0 !important;
+=09=09=09padding-left:18px !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09=09.mcpreview-image-uploader{
+=09=09=09display:none !important;
+=09=09=09width:100% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09/*
+=09@tab Mobile Styles
+=09@section Heading 1
+=09@tip Make the first-level headings larger in size for better readability=
+ on small screens.
+=09*/
+=09=09h1{
+=09=09=09/*@editable*/font-size:22px !important;
+=09=09=09/*@editable*/line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09/*
+=09@tab Mobile Styles
+=09@section Heading 2
+=09@tip Make the second-level headings larger in size for better readabilit=
+y on small screens.
+=09*/
+=09=09h2{
+=09=09=09/*@editable*/font-size:20px !important;
+=09=09=09/*@editable*/line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09/*
+=09@tab Mobile Styles
+=09@section Heading 3
+=09@tip Make the third-level headings larger in size for better readability=
+ on small screens.
+=09*/
+=09=09h3{
+=09=09=09/*@editable*/font-size:18px !important;
+=09=09=09/*@editable*/line-height:125% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09/*
+=09@tab Mobile Styles
+=09@section Heading 4
+=09@tip Make the fourth-level headings larger in size for better readabilit=
+y on small screens.
+=09*/
+=09=09h4{
+=09=09=09/*@editable*/font-size:16px !important;
+=09=09=09/*@editable*/line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09/*
+=09@tab Mobile Styles
+=09@section Boxed Text
+=09@tip Make the boxed text larger in size for better readability on small =
+screens. We recommend a font size of at least 16px.
+=09*/
+=09=09.mcnBoxedTextContentContainer .mcnTextContent,.mcnBoxedTextContentCon=
+tainer .mcnTextContent p{
+=09=09=09/*@editable*/font-size:14px !important;
+=09=09=09/*@editable*/line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09/*
+=09@tab Mobile Styles
+=09@section Preheader Visibility
+=09@tip Set the visibility of the email's preheader on small screens. You c=
+an hide it to save space.
+=09*/
+=09=09#templatePreheader{
+=09=09=09/*@editable*/display:block !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09/*
+=09@tab Mobile Styles
+=09@section Preheader Text
+=09@tip Make the preheader text larger in size for better readability on sm=
+all screens.
+=09*/
+=09=09#templatePreheader .mcnTextContent,#templatePreheader .mcnTextContent=
+ p{
+=09=09=09/*@editable*/font-size:14px !important;
+=09=09=09/*@editable*/line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09/*
+=09@tab Mobile Styles
+=09@section Header Text
+=09@tip Make the header text larger in size for better readability on small=
+ screens.
+=09*/
+=09=09#templateHeader .mcnTextContent,#templateHeader .mcnTextContent p{
+=09=09=09/*@editable*/font-size:16px !important;
+=09=09=09/*@editable*/line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09/*
+=09@tab Mobile Styles
+=09@section Body Text
+=09@tip Make the body text larger in size for better readability on small s=
+creens. We recommend a font size of at least 16px.
+=09*/
+=09=09#templateBody .mcnTextContent,#templateBody .mcnTextContent p{
+=09=09=09/*@editable*/font-size:16px !important;
+=09=09=09/*@editable*/line-height:150% !important;
+=09=09}
+
+}=09@media only screen and (max-width: 480px){
+=09/*
+=09@tab Mobile Styles
+=09@section Footer Text
+=09@tip Make the footer content text larger in size for better readability =
+on small screens.
+=09*/
+=09=09#templateFooter .mcnTextContent,#templateFooter .mcnTextContent p{
+=09=09=09/*@editable*/font-size:14px !important;
+=09=09=09/*@editable*/line-height:150% !important;
+=09=09}
+
+}
+=09</style>
+=09<script>!function(){function o(n,i){if(n&&i)for(var r in i)i.hasOwnPrope=
+rty(r)&&(void 0=3D=3D=3Dn[r]?n[r]=3Di[r]:n[r].constructor=3D=3D=3DObject&&i=
+[r].constructor=3D=3D=3DObject?o(n[r],i[r]):n[r]=3Di[r])}try{var n=3Ddecode=
+URIComponent("%7B%0A%22ResourceTiming%22%3A%7B%0A%22comment%22%3A%20%22Clea=
+r%20RT%20Buffer%20on%20mPulse%20beacon%22%2C%0A%22clearOnBeacon%22%3A%20tru=
+e%0A%7D%2C%0A%22AutoXHR%22%3A%7B%0A%22comment%22%3A%20%22Monitor%20XHRs%20r=
+equested%20using%20FETCH%22%2C%0A%22monitorFetch%22%3A%20true%2C%0A%22comme=
+nt%22%3A%20%22Start%20Monitoring%20SPAs%20from%20Click%22%2C%0A%22spaStartF=
+romClick%22%3A%20true%0A%7D%2C%0A%22PageParams%22%3A%7B%0A%22comment%22%3A%=
+20%22Monitor%20all%20SPA%20XHRs%22%2C%0A%22spaXhr%22%3A%20%22all%22%0A%7D%0=
+A%7D");if(n.length>0&&window.JSON&&"function"=3D=3Dtypeof window.JSON.parse=
+){var i=3DJSON.parse(n);void 0!=3D=3Dwindow.BOOMR_config?o(window.BOOMR_con=
+fig,i):window.BOOMR_config=3Di}}catch(r){window.console&&"function"=3D=3Dty=
+peof window.console.error&&console.error("mPulse: Could not parse configura=
+tion",r)}}();</script><script>!function(a){var e=3D"https://s.go-mpulse.net=
+/boomerang/",t=3D"addEventListener";if("True"=3D=3D"True")a.BOOMR_config=3D=
+a.BOOMR_config||{},a.BOOMR_config.PageParams=3Da.BOOMR_config.PageParams||{=
+},a.BOOMR_config.PageParams.pci=3D!0,e=3D"https://s2.go-mpulse.net/boomeran=
+g/";if(window.BOOMR_API_key=3D"QAT5G-9HZLF-7EDMX-YMVCJ-QZJDA",function(){fu=
+nction n(e){a.BOOMR_onload=3De&&e.timeStamp||(new Date).getTime()}if(!a.BOO=
+MR||!a.BOOMR.version&&!a.BOOMR.snippetExecuted){a.BOOMR=3Da.BOOMR||{},a.BOO=
+MR.snippetExecuted=3D!0;var i,_,o,r=3Ddocument.createElement("iframe");if(a=
+[t])a[t]("load",n,!1);else if(a.attachEvent)a.attachEvent("onload",n);r.src=
+=3D"javascript:void(0)",r.title=3D"",r.role=3D"presentation",(r.frameElemen=
+t||r).style.cssText=3D"width:0;height:0;border:0;display:none;",o=3Ddocumen=
+t.getElementsByTagName("script")[0],o.parentNode.insertBefore(r,o);try{_=3D=
+r.contentWindow.document}catch(O){i=3Ddocument.domain,r.src=3D"javascript:v=
+ar d=3Ddocument.open();d.domain=3D'"+i+"';void(0);",_=3Dr.contentWindow.doc=
+ument}_.open()._l=3Dfunction(){var a=3Dthis.createElement("script");if(i)th=
+is.domain=3Di;a.id=3D"boomr-if-as",a.src=3De+"QAT5G-9HZLF-7EDMX-YMVCJ-QZJDA=
+",BOOMR_lstart=3D(new Date).getTime(),this.body.appendChild(a)},_.write("<b=
+o"+'dy onload=3D"document._l();">'),_.close()}}(),"400".length>0)if(a&&"per=
+formance"in a&&a.performance&&"function"=3D=3Dtypeof a.performance.setResou=
+rceTimingBufferSize)a.performance.setResourceTimingBufferSize(400);!functio=
+n(){if(BOOMR=3Da.BOOMR||{},BOOMR.plugins=3DBOOMR.plugins||{},!BOOMR.plugins=
+.AK){var e=3D""=3D=3D"true"?1:0,t=3D"",n=3D"2xtfzlaxya3iezmeugvq-f-3ea191c9=
+5-clientnsv4-s.akamaihd.net",i=3D"false"=3D=3D"true"?2:1,_=3D{"ak.v":"36","=
+ak.cp":"641052","ak.ai":parseInt("493573",10),"ak.ol":"0","ak.cr":191,"ak.i=
+pv":4,"ak.proto":"h2","ak.rid":"163c37c3","ak.r":19947,"ak.a2":e,"ak.m":"x"=
+,"ak.n":"essl","ak.bpcip":"213.230.92.0","ak.cport":7905,"ak.gh":"208.185.5=
+5.100","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.csrc":"-","ak.acc"=
+:"","ak.t":"1703190955","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ=3D=3DNIxDyXmqujMgc1=
+snXtieZww6Pwg4T/9/BhsPMYHI3fVvtwdcuaVrCVXrzperIZL3oDF7iVaYb0KXXnKkCmLMp/PMl=
+xi0NPwhRj5tjnj6DehuLowkvkMHKDezri9yK8DttSmN6biXO1bjy3jL9hVsTqdp37sIm3JiU1qo=
+5GDodqgspaLl36xNjuhIGzHMrMTrZGGCXcG/ELSdHmmI/jjRsOFwDpIr05X/iLUzD0APHe614G0=
+MG34Yj5KGysVo8XF/EJMgt9YrFPEVEyrKh7NJFYsjTOYAUHTMEmTQeyFoxMgD7F2YKhZhk38HQj=
+cS6ltv+3+V2RevnYzIzMgx+0z4VIDi4yvILO2Y2u+cI28/ysumhFt+3nF2XZ12JdJTYhYjvUUff=
+PFtyhUz3maVSTnRdoSMhG+f8nv7xcEVSFg/jQA=3D","ak.pv":"86","ak.dpoabenc":"","a=
+k.tf":i};if(""!=3D=3Dt)_["ak.ruds"]=3Dt;var o=3D{i:!1,av:function(e){var t=
+=3D"http.initiator";if(e&&(!e[t]||"spa_hard"=3D=3D=3De[t]))_["ak.feo"]=3Dvo=
+id 0!=3D=3Da.aFeoApplied?1:0,BOOMR.addVar(_)},rv:function(){var a=3D["ak.bp=
+cip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","a=
+k.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.r","ak.acc","ak.t","ak.tf"];BOO=
+MR.removeVar(a)}};BOOMR.plugins.AK=3D{akVars:_,akDNSPreFetchDomain:n,init:f=
+unction(){if(!o.i){var a=3DBOOMR.subscribe;a("before_beacon",o.av,null,null=
+),a("onbeacon",o.rv,null,null),o.i=3D!0}return this},is_complete:function()=
+{return!0}}}}()}(window);</script>
+</head>
+<body>
+<center>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" he=
+ight=3D"100%" id=3D"bodyTable" width=3D"100%">
+=09<tbody>
+=09=09<tr>
+=09=09=09<td align=3D"center" id=3D"bodyCell" valign=3D"top"><!-- BEGIN TEM=
+PLATE // --><!--[if (gte mso 9)|(IE)]>
+                        <table align=3D"center" border=3D"0" cellspacing=3D=
+"0" cellpadding=3D"0" width=3D"600" style=3D"width:600px;">
+                        <tr>
+                        <td align=3D"center" valign=3D"top" width=3D"600" s=
+tyle=3D"width:600px;">
+                        <![endif]-->
+=09=09=09<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"t=
+emplateContainer" width=3D"100%">
+=09=09=09=09<tbody>
+=09=09=09=09=09<tr>
+=09=09=09=09=09=09<td id=3D"templateBody" valign=3D"top">
+=09=09=09=09=09=09<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" c=
+lass=3D"mcnTextBlock" style=3D"min-width:100%;" width=3D"100%">
+=09=09=09=09=09=09=09<tbody class=3D"mcnTextBlockOuter">
+=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09<td class=3D"mcnTextBlockInner" style=3D"padding=
+-top:9px;" valign=3D"top"><!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddin=
+g=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]--><!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"599" style=3D"width:599px;">
+=09=09=09=09<![endif]-->
+=09=09=09=09=09=09=09=09=09<table align=3D"left" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" class=3D"mcnTextContentContainer" style=3D"max-wid=
+th:100%; min-width:100%;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09<tbody>
+=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09<td class=3D"mcnTextContent" style=3D"p=
+adding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;" v=
+align=3D"top"><span style=3D"font-size:14px;"><span style=3D"font-family:Ti=
+mes New Roman,Times,serif;"><strong>Notice ID: VAC00059182612</strong></spa=
+n></span><br />
+=09=09=09=09=09=09=09=09=09=09=09=09<span style=3D"font-family:times new ro=
+man,times,baskerville,georgia,serif"><span style=3D"font-size:14px;"><span =
+style=3D"font-family:Times New Roman,Times,serif;"><strong>Confirmation Cod=
+e: p4Lh3Mf9Eqbd</strong></span></span></span><br />
+=09=09=09=09=09=09=09=09=09=09=09=09<span style=3D"font-size:14px;"><span s=
+tyle=3D"font-family:Times New Roman,Times,serif;">&nbsp;</span></span>
+=09=09=09=09=09=09=09=09=09=09=09=09<div style=3D"text-align: center;"><spa=
+n style=3D"font-size:14px;"><span style=3D"font-family:Times New Roman,Time=
+s,serif;"><strong><u>VERIZON CLASS ACTION SETTLEMENT</u></strong><br />
+=09=09=09=09=09=09=09=09=09=09=09=09<em>A court authorized this notice. Thi=
+s is not a solicitation from a lawyer.<br />
+=09=09=09=09=09=09=09=09=09=09=09=09You are not being sued.</em></span></sp=
+an></div>
+=09=09=09=09=09=09=09=09=09=09=09=09<span style=3D"font-size:14px;"><span s=
+tyle=3D"font-family:Times New Roman,Times,serif;"> &nbsp;</span></span>
+
+=09=09=09=09=09=09=09=09=09=09=09=09<div style=3D"text-align: center;"><spa=
+n style=3D"font-size:14px;"><span style=3D"font-family:Times New Roman,Time=
+s,serif;"><strong><em>Para ver este aviso en espa&ntilde;ol, visite&nbsp;<b=
+r />
+=09=09=09=09=09=09=09=09=09=09=09=09<u>www.VerizonAdministrativeChargeSettl=
+ement.com.</u></em></strong></span></span></div>
+=09=09=09=09=09=09=09=09=09=09=09=09&nbsp;&nbsp;
+
+=09=09=09=09=09=09=09=09=09=09=09=09<div style=3D"text-align: center;">
+=09=09=09=09=09=09=09=09=09=09=09=09<p style=3D"border-width: 2px; border-s=
+tyle: double; border-color: black; padding: 1em; text-align: center;"><span=
+ style=3D"font-size:14px;"><span style=3D"font-family:Times New Roman,Times=
+,serif;"><span style=3D"color:#B22222"><strong>**YOU MAY BE ENTITLED TO A P=
+AYMENT OF UP TO <u>$100.00</u> IF YOU FILE A CLAIM**</strong></span><br />
+=09=09=09=09=09=09=09=09=09=09=09=09<strong>*<u>You must file a claim by Ap=
+ril 15, 2024 to receive a</u> <u>payment</u>*</strong><br />
+=09=09=09=09=09=09=09=09=09=09=09=09<strong>To file a claim click <u><a hre=
+f=3D"https://lzzgcc5d.r.us-east-1.awstrack.me/L0/https:%2F%2Fverizonadminis=
+trativechargesettlement.com%2Fsubmit-claim/1/0100018ccd1420d2-d90a0e42-c133=
+-452d-b86c-941ea331fdf3-000000/anyrCyV8RHwU2TRRwFQUwQKcWuI=3D355">here</a>.=
+</u></strong></span></span></p>
+=09=09=09=09=09=09=09=09=09=09=09=09</div>
+
+=09=09=09=09=09=09=09=09=09=09=09=09<div>&nbsp;</div>
+
+=09=09=09=09=09=09=09=09=09=09=09=09<div style=3D"text-align: center;"><spa=
+n style=3D"font-size:14px;"><span style=3D"font-family:Times New Roman,Time=
+s,serif;"><strong>Read this notice or visit </strong><a href=3D"http://lzzg=
+cc5d.r.us-east-1.awstrack.me/L0/http:%2F%2Fwww.VerizonAdministrativeChargeS=
+ettlement.com/1/0100018ccd1420d2-d90a0e42-c133-452d-b86c-941ea331fdf3-00000=
+0/7SgEIfkcLRQYCC5X8V0pcL7YFCM=3D355">www.VerizonAdministrativeChargeSettlem=
+ent.com</a><strong> or call toll-free (844) 689-0186 for more information.<=
+/strong></span></span></div>
+
+=09=09=09=09=09=09=09=09=09=09=09=09<div>&nbsp;</div>
+
+=09=09=09=09=09=09=09=09=09=09=09=09<div style=3D"text-align: justify;">
+=09=09=09=09=09=09=09=09=09=09=09=09<p style=3D"text-align: justify;"><span=
+ style=3D"font-family:Times New Roman,Times,serif;"><span style=3D"font-siz=
+e:14px"><span style=3D"color:#0000CD"><strong>What is this notice about?</s=
+trong></span><span style=3D"color:#0000FF"><strong> </strong></span>A propo=
+sed settlement has been reached in a class action lawsuit. The lawsuit clai=
+med that Cellco Partnership d/b/a Verizon Wireless (&ldquo;Verizon&rdquo;) =
+charged a monthly Administrative Charge and/or Administrative and Telco Rec=
+overy Charge (collectively, &ldquo;Administrative Charge&rdquo;) on Verizon=
+ post-paid individual consumer wireless accounts that was unfair and not ad=
+equately disclosed. Verizon has denied and continues to deny that it did an=
+ything wrong and that the lawsuit has any merit. &nbsp;Verizon states that =
+it will continue to charge the Administrative Charge and that it has the ri=
+ght to increase the Administrative Charge. The settlement, if approved, res=
+olves the lawsuit and provides benefits to Settlement Class Members who fil=
+e a claim.</span></span></p>
+
+=09=09=09=09=09=09=09=09=09=09=09=09<p style=3D"text-align: justify;"><span=
+ style=3D"font-family:Times New Roman,Times,serif;"><span style=3D"font-siz=
+e:14px"><strong><span style=3D"color:#0000CD">Who is included?</span> </str=
+ong>The &ldquo;Settlement Class&rdquo; includes consumers residing in the U=
+nited States (based on account holders&rsquo; last known billing address) w=
+ho received postpaid wireless or data services from Verizon and who were ch=
+arged and paid an Administrative Charge between January 1, 2016 and Novembe=
+r 8, 2023. You are receiving this notice because Verizon&rsquo;s records in=
+dicate that you are in the Settlement Class.</span></span></p>
+=09=09=09=09=09=09=09=09=09=09=09=09</div>
+
+=09=09=09=09=09=09=09=09=09=09=09=09<div style=3D"text-align: justify;">
+=09=09=09=09=09=09=09=09=09=09=09=09<p style=3D"text-align: justify;"><span=
+ style=3D"font-family:Times New Roman,Times,serif;"><span style=3D"font-siz=
+e:14px"><span style=3D"color:#0000CD"><strong>What can I get? </strong></sp=
+an>Under the proposed settlement, Verizon will pay $100 million to create a=
+ settlement fund. If the settlement is approved and becomes final, payments=
+ will be made to eligible account holders. <strong><u>You must file a claim=
+ to receive a payment (see below).</u> </strong>If you file a claim by the =
+deadline, your settlement payment may be up to $100.00 for your account, bu=
+t the final amount may be lower depending on how long you were a Verizon su=
+bscriber and how many Settlement Class Members file valid claims.</span></s=
+pan></p>
+
+=09=09=09=09=09=09=09=09=09=09=09=09<p style=3D"text-align: justify;"><span=
+ style=3D"font-family:Times New Roman,Times,serif;"><span style=3D"font-siz=
+e:14px"><strong><span style=3D"color:#0000CD">How do I get a payment?</span=
+> <u>You must file a claim by April 15, 2024 to</u> <u>receive a settlement=
+ payment</u>. You can file a claim online by clicking <a href=3D"https://lz=
+zgcc5d.r.us-east-1.awstrack.me/L0/https:%2F%2Fverizonadministrativechargese=
+ttlement.com%2Fsubmit-claim/2/0100018ccd1420d2-d90a0e42-c133-452d-b86c-941e=
+a331fdf3-000000/v1D-Fo3zpKf_HWzTQpubVybvqWI=3D355"><u>here</u></a>, or you =
+can download a claim form at <u>www.VerizonAdministrativeChargeSettlement.c=
+om</u>,</strong> <strong>fill</strong> <strong>it</strong> <strong>out,</st=
+rong> <strong>and</strong> <strong>submit </strong><strong>it by mail. </st=
+rong>Payments will be issued to valid claimants by mailed check or electron=
+ic payment.&nbsp;</span></span></p>
+
+=09=09=09=09=09=09=09=09=09=09=09=09<p style=3D"text-align: justify;"><span=
+ style=3D"font-family:Times New Roman,Times,serif;"><span style=3D"font-siz=
+e:14px"><span style=3D"color:#0000CD"><strong>What are my options? </strong=
+></span>You can (1) file a claim for a payment from the settlement, and, if=
+ the settlement becomes final and you are in the Settlement Class, you will=
+ give up the right to sue Verizon about the issues in this lawsuit; (2) do =
+nothing, thereby receiving no payment, and, if the settlement becomes final=
+, you will give up the right to sue Verizon about the issues in this lawsui=
+t; or (3) exclude yourself from the Settlement Class by opting out, thereby=
+ receiving no payment, and you will retain any right you may have to sue Ve=
+rizon about the issues in this lawsuit. To exclude yourself, you must mail =
+a signed request for exclusion containing the information described at <a h=
+ref=3D"http://lzzgcc5d.r.us-east-1.awstrack.me/L0/http:%2F%2Fwww.VerizonAdm=
+inistrativeChargeSettlement.com/2/0100018ccd1420d2-d90a0e42-c133-452d-b86c-=
+941ea331fdf3-000000/CU6EOcRyvjeGs4fRV-SsE28oiDo=3D355">www.VerizonAdministr=
+ativeChargeSettlement.com,</a> postmarked by <strong>February 20, 2024</str=
+ong>, to: Verizon Administrative Charge Settlement Administrator, Attn: Exc=
+lusions, P.O. Box 58220, Philadelphia, PA 19102.</span></span></p>
+
+=09=09=09=09=09=09=09=09=09=09=09=09<p style=3D"text-align: justify;"><span=
+ style=3D"font-family:Times New Roman,Times,serif;"><span style=3D"font-siz=
+e:14px;">If you do not exclude yourself, and the Court approves the settlem=
+ent, you will be bound by the Court&rsquo;s orders and judgments and will r=
+elease your claims relating to this lawsuit. If you do not exclude yourself=
+, you can object to or comment on the settlement and/or Settlement Class Co=
+unsel&rsquo;s request for attorneys&rsquo; fees, expenses, and service awar=
+ds for the plaintiffs who brought this case on behalf of the Settlement Cla=
+ss.&nbsp; To object, you must submit a signed, written objection containing=
+ the information described at www.VerizonAdministrativeChargeSettlement.com=
+ to the Court by <strong>February 26, 2024</strong>. Visit <a href=3D"http:=
+//lzzgcc5d.r.us-east-1.awstrack.me/L0/http:%2F%2Fwww.VerizonAdministrativeC=
+hargeSettlement.com/3/0100018ccd1420d2-d90a0e42-c133-452d-b86c-941ea331fdf3=
+-000000/EABpsBMUutcbZOEXSTH7cag_Ugo=3D355">www.VerizonAdministrativeChargeS=
+ettlement.com</a> for more information.</span></span></p>
+
+=09=09=09=09=09=09=09=09=09=09=09=09<p style=3D"text-align: justify;"><span=
+ style=3D"font-family:Times New Roman,Times,serif;"><span style=3D"font-siz=
+e:14px"><strong><span style=3D"color:#0000CD">What happens next?</span> </s=
+trong>The Court will hold a hearing, currently scheduled for March 22, 2024=
+ at 10:00 a.m., at the Superior Court of the State of New Jersey, located a=
+t 56 Paterson Street, New Brunswick, New Jersey 08903-0964 to decide whethe=
+r to approve the settlement, attorneys&rsquo; fees and expenses for the att=
+orneys representing the Settlement Class (up to $33.3 million plus expenses=
+, to be paid from the $100 million settlement fund), and service awards of =
+up to $3,500 to each of the plaintiffs who brought this case on behalf of t=
+he Settlement Class. You or your attorney may ask permission to speak at th=
+e hearing at your own cost. The date and time of this hearing may change wi=
+thout further notice, and/or the Court could order that this hearing be hel=
+d remotely or telephonically. Check <a href=3D"http://lzzgcc5d.r.us-east-1.=
+awstrack.me/L0/http:%2F%2Fwww.VerizonAdministrativeChargeSettlement.com/4/0=
+100018ccd1420d2-d90a0e42-c133-452d-b86c-941ea331fdf3-000000/-d7nlDowJslhiFg=
+7MyJfDK0A1pE=3D355">www.VerizonAdministrativeChargeSettlement.com</a> for u=
+pdates.</span></span></p>
+
+=09=09=09=09=09=09=09=09=09=09=09=09<p style=3D"text-align: justify;"><span=
+ style=3D"font-family:Times New Roman,Times,serif;"><span style=3D"font-siz=
+e:14px"><strong><span style=3D"color:#0000CD">Who represents me?</span> </s=
+trong>The Court has appointed DeNittis Osefchen Prince, P.C. and Hattis &am=
+p; Lukacs to represent the Settlement Class. Together, these lawyers are ca=
+lled Settlement Class Counsel. You do not need to pay these lawyers out of =
+your pocket; instead, these lawyers will apply for compensation out of the =
+settlement fund. If you want to be represented by your own lawyer, you may =
+hire one at your own expense.</span></span></p>
+
+=09=09=09=09=09=09=09=09=09=09=09=09<p style=3D"text-align: justify;"><span=
+ style=3D"font-family:Times New Roman,Times,serif;"><span style=3D"font-siz=
+e:14px"><strong><span style=3D"color:#0000CD">How do I get more information=
+?</span> </strong>For more information, including to view copies of case do=
+cuments, the full settlement agreement, the complaint in the lawsuit, and S=
+ettlement Class Counsel&rsquo;s fee application (once it is filed), visit <=
+a href=3D"http://lzzgcc5d.r.us-east-1.awstrack.me/L0/http:%2F%2Fwww.Verizon=
+AdministrativeChargeSettlement.com/5/0100018ccd1420d2-d90a0e42-c133-452d-b8=
+6c-941ea331fdf3-000000/LqqKlbtqEeK-o8ts8Os__UFhJ3M=3D355">www.VerizonAdmini=
+strativeChargeSettlement.com</a>. You can also call (844) 689-0186 or email=
+ info@VerizonAdministrativeChargeSettlement.com.</span></span></p>
+
+=09=09=09=09=09=09=09=09=09=09=09=09<p style=3D"text-align: center;"><span =
+style=3D"font-family:Times New Roman,Times,serif;"><span style=3D"font-size=
+:14px"><strong>PLEASE DO NOT CONTACT THE COURT</strong></span></span></p>
+=09=09=09=09=09=09=09=09=09=09=09=09</div>
+=09=09=09=09=09=09=09=09=09=09=09=09</td>
+=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09</tbody>
+=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]--><!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]--></td>
+=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09</tbody>
+=09=09=09=09=09=09</table>
+=09=09=09=09=09=09</td>
+=09=09=09=09=09</tr>
+=09=09=09=09=09<tr>
+=09=09=09=09=09=09<td id=3D"templateFooter" valign=3D"top">
+=09=09=09=09=09=09<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" c=
+lass=3D"mcnTextBlock" style=3D"min-width:100%;" width=3D"100%">
+=09=09=09=09=09=09=09<tbody class=3D"mcnTextBlockOuter">
+=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09<td class=3D"mcnTextBlockInner" style=3D"padding=
+-top:9px;" valign=3D"top"><!--[if mso]>
+=09=09=09=09<table align=3D"left" border=3D"0" cellspacing=3D"0" cellpaddin=
+g=3D"0" width=3D"100%" style=3D"width:100%;">
+=09=09=09=09<tr>
+=09=09=09=09<![endif]--><!--[if mso]>
+=09=09=09=09<td valign=3D"top" width=3D"599" style=3D"width:599px;">
+=09=09=09=09<![endif]-->
+=09=09=09=09=09=09=09=09=09<table align=3D"left" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" class=3D"mcnTextContentContainer" style=3D"max-wid=
+th:100%; min-width:100%;" width=3D"100%">
+=09=09=09=09=09=09=09=09=09=09<tbody>
+=09=09=09=09=09=09=09=09=09=09=09<tr>
+=09=09=09=09=09=09=09=09=09=09=09=09<td class=3D"mcnTextContent" style=3D"p=
+adding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;" v=
+align=3D"top"><span style=3D"font-family:Times New Roman,Times,serif;"><a h=
+ref=3D"https://lzzgcc5d.r.us-east-1.awstrack.me/L0/https:%2F%2Fwww.angeione=
+mail.com%2Funsubscribe%2F1Y9sXVItGBC6Pl4NOSVM5763763YGSTUTzDyEP1Q3lbFXyI%2F=
+j9UOmOvGivbcSNXfvYZ8Sg%2FsrsqtNktHWRBVby6VOqjIQ/1/0100018ccd1420d2-d90a0e42=
+-c133-452d-b86c-941ea331fdf3-000000/teXgY4yDrrSAri_KLlbdYtMbFFw=3D355"><str=
+ong><em>Unsubscribe</em></strong></a></span></td>
+=09=09=09=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09=09=09=09</tbody>
+=09=09=09=09=09=09=09=09=09</table>
+=09=09=09=09=09=09=09=09=09<!--[if mso]>
+=09=09=09=09</td>
+=09=09=09=09<![endif]--><!--[if mso]>
+=09=09=09=09</tr>
+=09=09=09=09</table>
+=09=09=09=09<![endif]--></td>
+=09=09=09=09=09=09=09=09</tr>
+=09=09=09=09=09=09=09</tbody>
+=09=09=09=09=09=09</table>
+=09=09=09=09=09=09</td>
+=09=09=09=09=09</tr>
+=09=09=09=09</tbody>
+=09=09=09</table>
+=09=09=09<!--[if (gte mso 9)|(IE)]>
+                        </td>
+                        </tr>
+                        </table>
+                        <![endif]--><!-- // END TEMPLATE --></td>
+=09=09</tr>
+=09</tbody>
+</table>
+</center>
+<img alt=3D"" src=3D"https://lzzgcc5d.r.us-east-1.awstrack.me/I0/0100018ccd=
+1420d2-d90a0e42-c133-452d-b86c-941ea331fdf3-000000/707CqBc0owR2JP6sfk920rEu=
+-eg=3D355" style=3D"display: none; width: 1px; height: 1px;">
+</body>
+</html>
+
+------=_Part_721020_49039806.1704247697618--

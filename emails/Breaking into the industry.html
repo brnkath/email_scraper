@@ -1,0 +1,723 @@
+Delivered-To: brnkath@gmail.com
+Received: by 2002:ac9:7210:0:b0:514:ec54:96c0 with SMTP id v16csp769440ocr;
+        Sun, 4 Feb 2024 05:04:38 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGGRFXcm1fvfbISM5DZaAhVQKNLhjlCDtrG/4w1i3amE2t2Qbp4v9pHx78tCjnt0z7Ff+YM
+X-Received: by 2002:a05:6870:5d99:b0:214:dbd9:b8e0 with SMTP id fu25-20020a0568705d9900b00214dbd9b8e0mr6498565oab.21.1707051878295;
+        Sun, 04 Feb 2024 05:04:38 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1707051878; cv=none;
+        d=google.com; s=arc-20160816;
+        b=YmnldJuwwWxdCoYD2Oa9j2Q2s8rQAj5o2sQ0bdNd5EdnnSG9xb7VF7HXm2ixCQ+vzF
+         0s9VndbmmVry/+WUIwqlWeNIMps/3+hTAN0sz9gN7gbNLL5lLSQEUXHLb2R/eUlg/5uf
+         0MlQpJlw86IRrij0xqYCAvPfvDfqptJwedIpLWDtyMQWhT85PfdkEHb3yTqBFoLwn/b9
+         x9jdxDc04lfKSrEb7jrJVzuwEhBY7FC/Bc3bT6CX3/MfuRXdMjNcrb7oRMOgbTKXn2aK
+         6BJiEpfIC34l4xHK+6D8SuXCQB7WO6PrMDYpFzc3GO5dC27UpB7nz+0d6dWyf1KiRJzK
+         dXOQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:feedback-id:precedence:list-unsubscribe:subject:message-id
+         :mime-version:from:date:dkim-signature:dkim-signature;
+        bh=80PwSO5B3/RPv4hfGIMS8nSDF8TSE7g4WeBQ9OonRvk=;
+        fh=uGyoTawyUIMDaDJqDYrKEZz1xF0PL96sJl7LH+VzV6M=;
+        b=eHj9Xt4LdwUMzLEWb4Dx8B2b+YaqpdJzHqZTSCymqm4trlZNYxwhAypI6vcUdmUcH/
+         WcLmz/7JDvF61hXqKG3mKfdtS+R8uwqR5sM9RZCDPFJjw40m4UCwj65rvHlDn+bHUF67
+         gSdedQ8yQiy9sDi9Y79+KVxE2P2noOhTSiIRsz7gIStuAVhc613gLcPspe7iIO0aeYEb
+         Hqn8Kh9E8ZpfoofdqZi6VJzJnCYTt6t+TYj38DpEPhf/sAYy7GXavogOaaCD7OimR1lV
+         ciL3X9KXMncMg6/CO1/Q3w8YxFf1yRL23N+N2PkbApLOGfNJ7+utkt/HIXHlm/jaW/HH
+         Fc9w==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@kevinpowell.co header.s=cka header.b=iII7c4FR;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=OVhwKbK6;
+       spf=pass (google.com: domain of bounces+10564122-5da1-brnkath=gmail.com@ckespa.kevinpowell.co designates 168.245.93.138 as permitted sender) smtp.mailfrom="bounces+10564122-5da1-brnkath=gmail.com@ckespa.kevinpowell.co";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=kevinpowell.co
+Return-Path: <bounces+10564122-5da1-brnkath=gmail.com@ckespa.kevinpowell.co>
+Received: from o10.ck.n.convertkit.com (o10.ck.n.convertkit.com. [168.245.93.138])
+        by mx.google.com with ESMTPS id g25-20020a05620a109900b00784026af7aasi6396202qkk.424.2024.02.04.05.04.37
+        for <brnkath@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 04 Feb 2024 05:04:38 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+10564122-5da1-brnkath=gmail.com@ckespa.kevinpowell.co designates 168.245.93.138 as permitted sender) client-ip=168.245.93.138;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@kevinpowell.co header.s=cka header.b=iII7c4FR;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=OVhwKbK6;
+       spf=pass (google.com: domain of bounces+10564122-5da1-brnkath=gmail.com@ckespa.kevinpowell.co designates 168.245.93.138 as permitted sender) smtp.mailfrom="bounces+10564122-5da1-brnkath=gmail.com@ckespa.kevinpowell.co";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=kevinpowell.co
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kevinpowell.co;
+	h=content-type:from:mime-version:subject:list-unsubscribe:x-feedback-id:
+	to:cc:content-type:from:subject:to;
+	s=cka; bh=80PwSO5B3/RPv4hfGIMS8nSDF8TSE7g4WeBQ9OonRvk=;
+	b=iII7c4FRSyS5MV7QvYlj4Y3K5ZGhBVFA4Bm9Vqh7IKCb/xZC+Uvp/gOKwyUNwdNa5nuI
+	3kuL/52MnUYq+4e2Oeq62Q4R21TolfPRUlcbzIf633r0ZMIdPteGMacmx3MoORBjSAig9n
+	Q1ZG1IVxwIOzSn1a03Y7KZZ1LfrkJm8G0=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:list-unsubscribe:x-feedback-id:
+	to:cc:content-type:from:subject:to;
+	s=smtpapi; bh=80PwSO5B3/RPv4hfGIMS8nSDF8TSE7g4WeBQ9OonRvk=;
+	b=OVhwKbK6UX6lLCOP7YgpNQi7AG5AoK/cOTk/9ijdiPlZQhPMe4awfoJpyhzo8bKF4a61
+	Xx2xgdfQxJxFSq7x1WQn/u5YUqYVj9eBRXjKX6kNwjDK6GW/P7oxWNPqzxL2DRr7UeoNb9
+	Fhd3ktTQt+w+GhEKHtH4CLUAeaU67XxOM=
+Received: by filterdrecv-f59f74c68-pf2tw with SMTP id filterdrecv-f59f74c68-pf2tw-1-65BF8B63-A7
+        2024-02-04 13:04:36.161428068 +0000 UTC m=+9483868.513321535
+Received: from MTA1NjQxMjI (unknown)
+	by geopod-ismtpd-23 (SG) with HTTP
+	id DLy0HDJkRoaQ_W_G8sLvIQ
+	Sun, 04 Feb 2024 13:04:35.915 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=8b39aa520b08589cc2d5316a94248b0ec2db4e7b5b699ff8dbba61b9e731
+Date: Sun, 04 Feb 2024 13:04:36 +0000 (UTC)
+From: Kevin Powell <hi@kevinpowell.co>
+Mime-Version: 1.0
+Message-ID: <o8u8g357pwcqhk9nr8ravhpdpw8rr@convertkit-mail.com>
+Subject: Breaking into the industry
+List-Unsubscribe: 
+ <https://unsubscribe.convertkit-mail.com/o8u8g357pwcqhk9nr8ravhpdpw8rr>
+X-Report-Spam: <abuse@convertkit.com>
+X-Report-Abuse: <abuse@convertkit.com>
+Precedence: bulk
+Feedback-ID: 12985496:150663:broadcast:CK
+X-Feedback-ID: 10564122:SG
+X-SG-EID: 
+ =?us-ascii?Q?5plbwHlDV1x0k2R0bHwCz4JtpFgL+DKzk6r+tWmWO+BzXj3kiGAIHV=2F5bbz6=2FC?=
+ =?us-ascii?Q?J59wY5C7iawvjcAwu1e2eQVyZZ10UHT1Tpa9gPq?=
+ =?us-ascii?Q?a+TAeP0jNyJdVmpMEFC5xn1LAWNjcLdqta2Ls7A?=
+ =?us-ascii?Q?xjOU5b45ufwAiHO+UZKHYqy=2FueaCrBNm9LECVE0?=
+ =?us-ascii?Q?RQfmtJhhrW+ylCH2Pj4RN3Bp774ksdTwoBkiXCn?=
+ =?us-ascii?Q?U6mAvRf6uqxRW9bucHe7DQY=2FOZRNYKgy1zfxX=2F?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb8raWjw0ZPf1VmjsCkspi=2FJHjDFAea1uZocvZojyqe?=
+ =?us-ascii?Q?ADndtkpqFlfrohOxWZqtStL6TMRrCO=2FW7teX0cN?=
+ =?us-ascii?Q?9OMKZvEEMoyWemLycBfy3bWlv59qluBKQVQrk0B?=
+ =?us-ascii?Q?D2aQ9N1R1Ivb0u4aGBs6CISaUIu190ODA=2FXDquX?=
+ =?us-ascii?Q?W9aIcfxqhZw2NJy9f=2FojOKQUEPxcXFWrxgkzeci?=
+ =?us-ascii?Q?OYsmAy5VFThbqALYipx2=2FtwiX5KwCgQMh4LeWK6?=
+ =?us-ascii?Q?ZrrWqFHzcs3+ldDaLZyplbPLwrCulF68r62uIv=2F?=
+ =?us-ascii?Q?6QmxdnR=2FiarcNzLi17ZLOOs0QcdtmF8+nnnJ2SY?=
+ =?us-ascii?Q?d9yVKA8m=2F7OKiw3YUZsvM=2FYqxvlo=3D?=
+To: Brian <brnkath@gmail.com>
+X-Entity-ID: qbGN6fdZp+GB4P4ij14Z2g==
+
+--8b39aa520b08589cc2d5316a94248b0ec2db4e7b5b699ff8dbba61b9e731
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+Hello Brian,
+
+Normally, I share other content a bit lower down in my
+newsletter, but I know there are a lot of people who read this
+who are still trying to break into the industry and, especially
+with today=E2=80=99s current climate, are having a hard time with it, and
+I didn=E2=80=99t want to bury this further down.
+
+I was at THAT Conference (
+https://click.convertkit-mail.com/o8u8g357pwcqhk9nr8ravhpdpw8rr/08hwh9hdgw0=
+77msp/aHR0cHM6Ly90aGF0Y29uZmVyZW5jZS5jb20v
+) this past week, and Shaudai Person (
+https://click.convertkit-mail.com/o8u8g357pwcqhk9nr8ravhpdpw8rr/8ghqhohlqpe=
+55lcl/aHR0cHM6Ly90d2l0dGVyLmNvbS9zaGF1bmRhaQ=3D=3D
+)=E2=80=99s gave a fantastic keynote (
+https://click.convertkit-mail.com/o8u8g357pwcqhk9nr8ravhpdpw8rr/vqh3hrhpe32=
+kkofw/aHR0cHM6Ly93d3cueW91dHViZS5jb20vbGl2ZS9xY0tLMll5cjRuRT9zaT1UM0dMQ1Jjd=
+lFtdzIxT1QtJnQ9MTU0NA=3D=3D
+) about breaking into tech, with a big focus on people who are
+career switchers and don=E2=80=99t have a =E2=80=9Ctraditional=E2=80=9D bac=
+kground to get
+into the industry.
+
+=E2=80=8B (
+https://click.convertkit-mail.com/o8u8g357pwcqhk9nr8ravhpdpw8rr/vqh3hrhpe32=
+kkofw/aHR0cHM6Ly93d3cueW91dHViZS5jb20vbGl2ZS9xY0tLMll5cjRuRT9zaT1UM0dMQ1Jjd=
+lFtdzIxT1QtJnQ9MTU0NA=3D=3D
+)(I=E2=80=99m not sure how embeds work here, so while I have timestamped
+this, just in case it starts at the beginning, you can skip over
+to 25:44)
+
+If anyone here is reading this and is having a hard time finding
+a job, whether it=E2=80=99s your first one or you=E2=80=99re looking for a =
+new
+position, or even if you=E2=80=99re going to be doing that soon, I=E2=80=99=
+d
+really recommend giving the talk a listen, it=E2=80=99s 100% worth the
+time.
+
+And if you found that helpful, then watch this keynote from Danny
+Thompson (
+https://click.convertkit-mail.com/o8u8g357pwcqhk9nr8ravhpdpw8rr/l2hehmh36v5=
+kk6ug/aHR0cHM6Ly93d3cueW91dHViZS5jb20vbGl2ZS9wZ0ZCaXR3S2Q2Zz9zaT0xVWRPdlRwd=
+3p3VW5CbzdDJnQ9MTMxMQ=3D=3D
+) from the second day because it's just as valuable.
+
+=E2=80=8B (
+https://click.convertkit-mail.com/o8u8g357pwcqhk9nr8ravhpdpw8rr/l2hehmh36v5=
+kk6ug/aHR0cHM6Ly93d3cueW91dHViZS5jb20vbGl2ZS9wZ0ZCaXR3S2Q2Zz9zaT0xVWRPdlRwd=
+3p3VW5CbzdDJnQ9MTMxMQ=3D=3D
+)The videos above are a full replay of the main track from each
+day, so you can also find live episodes of Syntax FM, Changelog,
+JS Party, and Whiskey Web and Whatnot podcasts as well, which all
+took place on the main stage.
+
+As for my talk, it wasn=E2=80=99t recorded.
+
+They only recorded the main stage, and unlike others who=E2=80=99ve
+obviously done this before, I didn=E2=80=99t think to record it myself =F0=
+=9F=98=85.
+Maybe next time!
+
+On the topic of THAT, it was a blast, and I met a ton of awesome
+people!
+
+From left to right: Me, Dave Gray, Danny Thompson, Jesse Hall
+(CodeSTACKr), and Jess Chan (CoderCoder)
+While it was awesome meeting some fellow YouTubers in person, I
+also met so many other amazing people.
+
+While we weren't there for that long, I made some meaningful
+connections and had a lot of fun.
+
+While there were a lot of great talks (being multi-track, there
+were too many good ones, making it hard to pick which to go to!),
+the people side of things was the real highlight of the entire
+conference for me.
+
+-----------------------------------
+=F0=9F=99=8B=E2=80=8D=E2=99=82=EF=B8=8F What I=E2=80=99ve been up to this w=
+eek
+-----------------------------------
+
+Learn how to use Media Queries & Container Queries
+--------------------------------------------------
+
+=E2=80=8B (
+https://click.convertkit-mail.com/o8u8g357pwcqhk9nr8ravhpdpw8rr/m2h7h5h8m0k=
+nnesl/aHR0cHM6Ly95b3V0dS5iZS8ycmxXQloxN1dlcw=3D=3D
+)I wanted to do a new video taking a dive into media queries, and
+it only made sense to also dive into container queries as well,
+as they're going to be a big part of it all going forward, and I
+think a point of confusion for new people who are just learning
+how it all works right now.
+
+As a little bonus, near the end, I also look at style queries,
+which I=E2=80=99m sooo excited for!
+
+And they say CSS isn=E2=80=99t a programming language!
+----------------------------------------------
+
+=E2=80=8B (
+https://click.convertkit-mail.com/o8u8g357pwcqhk9nr8ravhpdpw8rr/dpheh0h08wz=
+77rhl/aHR0cHM6Ly95b3V0dS5iZS9UTDQxTnBZbmhXbw=3D=3D
+)It=E2=80=99s been a little while since I=E2=80=99ve looked at other people=
+=E2=80=99s
+amazing CSS-only creations, and this time, I took a dive into the
+world of CSS-only games!
+
+From classics like Space Invaders to full-on adventure games and
+even a fully-functional 3D Connect Four and a bunch more.
+
+----------------
+=F0=9F=93=86 Upcoming stuff
+----------------
+
+Smashing hour
+-------------
+
+A reminder that I=E2=80=99ll be joining Vitaly Friedman for a Smashing
+Hour on February 15th.
+
+There are some more details here (
+https://click.convertkit-mail.com/o8u8g357pwcqhk9nr8ravhpdpw8rr/e0hph7h0qw9=
+nnmu7/aHR0cHM6Ly90aS50by9zbWFzaGluZ21hZ2F6aW5lL3NtYXNoaW5nLWhvdXIta2V2aW4tc=
+G93ZWxs
+), and you can book a spot if you=E2=80=99d like to attend live. If you
+can make it, we will be taking questions from those in
+attendance, and yes, it=E2=80=99s free!
+
+If you=E2=80=99re unable to make it live, they do post the replays on
+their YouTube channel afterwards.
+
+-
+=F0=9F=8F=81
+-
+
+Quickly circling back to talking about conferences, if you=E2=80=99ve
+never been to one, I=E2=80=99d highly recommend it.
+
+I realize that it can be hard, between the price (they tend to be
+expensive) and travel that=E2=80=99s often required, but as someone who=E2=
+=80=99s
+never been to one before, I regret not having been to some
+earlier.
+
+In terms of affordability, many companies have training budgets
+that can go to this type of thing, and I met several students who
+were attending thanks to their school paying their way!
+
+Even if that isn=E2=80=99t on the table, a lot of conferences offer good
+student discounts as well.
+
+I know some people dismiss this type of thing outright, but if
+you ever have the chance, at least consider it =F0=9F=98=8A.
+
+Have a fantastic week! Kevin
+
+=E2=80=8BUnsubscribe (
+https://unsubscribe.convertkit-mail.com/o8u8g357pwcqhk9nr8ravhpdpw8rr
+) =C2=B7 Preferences (
+https://preferences.convertkit-mail.com/o8u8g357pwcqhk9nr8ravhpdpw8rr
+)=E2=80=8B113 Cherry St #92768, Seattle, WA 98104-2205
+--8b39aa520b08589cc2d5316a94248b0ec2db4e7b5b699ff8dbba61b9e731
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE html>
+<html style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:g=
+rayscale;line-height:1.5">
+<head style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:g=
+rayscale">
+<style style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:=
+grayscale">@media only screen and (max-width:600px){.email-container{paddin=
+g:0 !important;}}
+@media only screen and (max-width:600px) {
+        .ck-mobile-font-size {
+          font-size: 50px !important;
+        }
+     }
+@media only screen and (max-width:600px) {
+        .ck-mobile-font-size {
+          font-size: 50px !important;
+        }
+     }
+@media only screen and (max-width:600px) {
+        .ck-mobile-font-size {
+          font-size: 50px !important;
+        }
+     }</style>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" st=
+yle=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale=
+">
+</head>
+<body style=3D"-moz-osx-font-smoothing:grayscale;margin:0;padding:0;-webkit=
+-font-smoothing:antialiased;line-height:1.5;-webkit-text-size-adjust:100%;-=
+ms-text-size-adjust:100%">
+<div style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:gr=
+ayscale;background-color:#ffffff"><table role=3D"presentation" cellpadding=
+=3D"0" cellspacing=3D"0" class=3D"email" style=3D"-webkit-font-smoothing:an=
+tialiased;-moz-osx-font-smoothing:grayscale;border-collapse:separate;line-h=
+eight:1.5;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table=
+-lspace:0pt;mso-table-rspace:0pt;background:#ffffff !important;width:100%" =
+bgcolor=3D"#ffffff"><tbody style=3D"-webkit-font-smoothing:antialiased;-moz=
+-osx-font-smoothing:grayscale"><tr style=3D"-webkit-font-smoothing:antialia=
+sed;-moz-osx-font-smoothing:grayscale">
+<td style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:gra=
+yscale;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-ls=
+pace:0pt;mso-table-rspace:0pt;vertical-align:top"><div class=3D"email-conta=
+iner normal" style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoo=
+thing:grayscale;padding-top:0;padding-left:0;padding-bottom:30px;padding-ri=
+ght:0;margin:0 auto;max-width:100%"><div style=3D"-webkit-font-smoothing:an=
+tialiased;-moz-osx-font-smoothing:grayscale">
+<div class=3D"ck-section" style=3D"-webkit-font-smoothing:antialiased;-moz-=
+osx-font-smoothing:grayscale;margin:30px auto 7px auto"><center style=3D"-w=
+ebkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale">
+<table cellpadding=3D"0" cellspacing=3D"0" style=3D"-webkit-font-smoothing:=
+antialiased;-moz-osx-font-smoothing:grayscale;border-collapse:separate;line=
+-height:1.5;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-tab=
+le-lspace:0pt;mso-table-rspace:0pt;width:100%;margin:0 auto;max-width:640px=
+"><tbody style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothin=
+g:grayscale"><tr style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-=
+smoothing:grayscale">
+<td contenteditable=3D"false" style=3D"-webkit-font-smoothing:antialiased;-=
+moz-osx-font-smoothing:grayscale;-webkit-text-size-adjust:100%;-ms-text-siz=
+e-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;vertical-align:top"=
+></td>
+<td width=3D"640" style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font=
+-smoothing:grayscale;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100=
+%;mso-table-lspace:0pt;mso-table-rspace:0pt;vertical-align:top;background-s=
+ize:cover;background-position:center;box-sizing:border-box"><div class=3D"c=
+k-inner-section ck-padding-left-none ck-padding-right-none" style=3D"-webki=
+t-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;padding:0px =
+0px 0px 0px"><div style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font=
+-smoothing:grayscale;margin-left:auto;margin-right:auto">
+<p style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:gray=
+scale;margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, sans-seri=
+f;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-height=
+:1.5;text-transform:none" class=3D"">Hello Brian,</p>
+<p style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:gray=
+scale;margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, sans-seri=
+f;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-height=
+:1.5;text-transform:none" class=3D"">Normally, I share other content a bit =
+lower down in my newsletter, but I know there are <strong style=3D"-webkit-=
+font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale">a lot of peop=
+le who read this who are still trying to break into the industry</strong> a=
+nd, especially with today=E2=80=99s current climate, are having a hard time=
+ with it, and I didn=E2=80=99t want to bury this further down.</p>
+<p style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:gray=
+scale;margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, sans-seri=
+f;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-height=
+:1.5;text-transform:none" class=3D"">I was at <a href=3D"https://click.conv=
+ertkit-mail.com/o8u8g357pwcqhk9nr8ravhpdpw8rr/08hwh9hdgw077msp/aHR0cHM6Ly90=
+aGF0Y29uZmVyZW5jZS5jb20v" target=3D"_blank" rel=3D"noopener noreferrer" sty=
+le=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;=
+-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#0000ff" url-=
+id=3D"1609780759">THAT Conference</a> this past week, and <a href=3D"https:=
+//click.convertkit-mail.com/o8u8g357pwcqhk9nr8ravhpdpw8rr/8ghqhohlqpe55lcl/=
+aHR0cHM6Ly90d2l0dGVyLmNvbS9zaGF1bmRhaQ=3D=3D" target=3D"_blank" rel=3D"noop=
+ener noreferrer" style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-=
+smoothing:grayscale;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%=
+;color:#0000ff" url-id=3D"1609780760">Shaudai Person</a>=E2=80=99s gave <a =
+href=3D"https://click.convertkit-mail.com/o8u8g357pwcqhk9nr8ravhpdpw8rr/vqh=
+3hrhpe32kkofw/aHR0cHM6Ly93d3cueW91dHViZS5jb20vbGl2ZS9xY0tLMll5cjRuRT9zaT1UM=
+0dMQ1JjdlFtdzIxT1QtJnQ9MTU0NA=3D=3D" target=3D"_blank" rel=3D"noopener nore=
+ferrer" style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing=
+:grayscale;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#0=
+000ff" url-id=3D"1609780761">a fantastic keynote</a> about breaking into te=
+ch, with a big focus on people who are career switchers and don=E2=80=99t h=
+ave a =E2=80=9Ctraditional=E2=80=9D background to get into the industry.</p=
+>
+<!--[if mso]><table><tr><td width=3D"800"><![endif]--><a href=3D"https://cl=
+ick.convertkit-mail.com/o8u8g357pwcqhk9nr8ravhpdpw8rr/vqh3hrhpe32kkofw/aHR0=
+cHM6Ly93d3cueW91dHViZS5jb20vbGl2ZS9xY0tLMll5cjRuRT9zaT1UM0dMQ1JjdlFtdzIxT1Q=
+tJnQ9MTU0NA=3D=3D" style=3D"-webkit-font-smoothing:antialiased;-moz-osx-fon=
+t-smoothing:grayscale;-webkit-text-size-adjust:100%;-ms-text-size-adjust:10=
+0%;display:block;width:100%;max-width:480px;margin:0 auto 0 0;border:0;text=
+-decoration:none" url-id=3D"1609780761"><img alt=3D"video preview" src=3D"h=
+ttps://functions-js.convertkit.com/playbutton?play=3D%23324C85&amp;accent=
+=3D%23ffffff&amp;thumbnailof=3Dhttps%3A%2F%2Fwww.youtube.com%2Flive%2FqcKK2=
+Yyr4nE%3Fsi%3DT3GLCRcvQmw21OT-%26t%3D1544&amp;width=3D480&amp;height=3D270&=
+amp;fit=3Dcontain" width=3D"480" height=3D"270" style=3D"-webkit-font-smoot=
+hing:antialiased;-moz-osx-font-smoothing:grayscale;display:block;border:0;h=
+eight:auto;line-height:100%;outline:none;-webkit-text-decoration:none;text-=
+decoration:none;-ms-interpolation-mode:bicubic;max-width:100%;border:0 none=
+;display:block;border-radius:4px">=E2=80=8B</a><!--[if mso]></td></tr></tab=
+le><![endif]--><p style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font=
+-smoothing:grayscale;margin:1em 0;font-family:-apple-system, BlinkMacSystem=
+Font, sans-serif;font-size:18px;color:#353535;font-weight:400;letter-spacin=
+g:0;line-height:1.5;text-transform:none" class=3D""><em style=3D"-webkit-fo=
+nt-smoothing:antialiased;-moz-osx-font-smoothing:grayscale">(I=E2=80=99m no=
+t sure how embeds work here, so while I have timestamped this, just in case=
+ it starts at the beginning, you can skip over to 25:44)</em></p>
+<p style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:gray=
+scale;margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, sans-seri=
+f;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-height=
+:1.5;text-transform:none" class=3D""><strong style=3D"-webkit-font-smoothin=
+g:antialiased;-moz-osx-font-smoothing:grayscale">If anyone here is reading =
+this and is having a hard time finding a job, whether it=E2=80=99s your fir=
+st one or you=E2=80=99re looking for a new position</strong>, or even if yo=
+u=E2=80=99re going to be doing that soon, I=E2=80=99d <em style=3D"-webkit-=
+font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale">really</em> r=
+ecommend giving the talk a listen, it=E2=80=99s 100% worth the time.</p>
+<p style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:gray=
+scale;margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, sans-seri=
+f;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-height=
+:1.5;text-transform:none" class=3D"">And if you found that helpful, then wa=
+tch <a href=3D"https://click.convertkit-mail.com/o8u8g357pwcqhk9nr8ravhpdpw=
+8rr/l2hehmh36v5kk6ug/aHR0cHM6Ly93d3cueW91dHViZS5jb20vbGl2ZS9wZ0ZCaXR3S2Q2Zz=
+9zaT0xVWRPdlRwd3p3VW5CbzdDJnQ9MTMxMQ=3D=3D" target=3D"_blank" rel=3D"noopen=
+er noreferrer" style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-sm=
+oothing:grayscale;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;c=
+olor:#0000ff" url-id=3D"1609780762">this keynote from Danny Thompson</a> fr=
+om the second day because it's just as valuable.</p>
+<!--[if mso]><table><tr><td width=3D"800"><![endif]--><a href=3D"https://cl=
+ick.convertkit-mail.com/o8u8g357pwcqhk9nr8ravhpdpw8rr/l2hehmh36v5kk6ug/aHR0=
+cHM6Ly93d3cueW91dHViZS5jb20vbGl2ZS9wZ0ZCaXR3S2Q2Zz9zaT0xVWRPdlRwd3p3VW5Cbzd=
+DJnQ9MTMxMQ=3D=3D" style=3D"-webkit-font-smoothing:antialiased;-moz-osx-fon=
+t-smoothing:grayscale;-webkit-text-size-adjust:100%;-ms-text-size-adjust:10=
+0%;display:block;width:100%;max-width:480px;margin:0 auto 0 0;border:0;text=
+-decoration:none" url-id=3D"1609780762"><img alt=3D"video preview" src=3D"h=
+ttps://functions-js.convertkit.com/playbutton?play=3D%23324C85&amp;accent=
+=3D%23ffffff&amp;thumbnailof=3Dhttps%3A%2F%2Fwww.youtube.com%2Flive%2FpgFBi=
+twKd6g%3Fsi%3D1UdOvTpwzwUnBo7C%26t%3D1311&amp;width=3D480&amp;height=3D270&=
+amp;fit=3Dcontain" width=3D"480" height=3D"270" style=3D"-webkit-font-smoot=
+hing:antialiased;-moz-osx-font-smoothing:grayscale;display:block;border:0;h=
+eight:auto;line-height:100%;outline:none;-webkit-text-decoration:none;text-=
+decoration:none;-ms-interpolation-mode:bicubic;max-width:100%;border:0 none=
+;display:block;border-radius:4px">=E2=80=8B</a><!--[if mso]></td></tr></tab=
+le><![endif]--><p style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font=
+-smoothing:grayscale;margin:1em 0;font-family:-apple-system, BlinkMacSystem=
+Font, sans-serif;font-size:18px;color:#353535;font-weight:400;letter-spacin=
+g:0;line-height:1.5;text-transform:none" class=3D"">The videos above are a =
+full replay of the main track from each day, so you can also find live epis=
+odes of Syntax FM, Changelog, JS Party, and Whiskey Web and Whatnot podcast=
+s as well, which all took place on the main stage.</p>
+<p style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:gray=
+scale;margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, sans-seri=
+f;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-height=
+:1.5;text-transform:none" class=3D""><strong style=3D"-webkit-font-smoothin=
+g:antialiased;-moz-osx-font-smoothing:grayscale">As for my talk</strong>, i=
+t wasn=E2=80=99t recorded. </p>
+<p style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:gray=
+scale;margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, sans-seri=
+f;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-height=
+:1.5;text-transform:none" class=3D"">They only recorded the main stage, and=
+ unlike others who=E2=80=99ve obviously done this before, I didn=E2=80=99t =
+think to record it myself =F0=9F=98=85. Maybe next time!</p>
+<hr style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:gra=
+yscale;margin:36px 0;border:0;height:1px;background:#eee">
+<p style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:gray=
+scale;margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, sans-seri=
+f;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-height=
+:1.5;text-transform:none" class=3D""><strong style=3D"-webkit-font-smoothin=
+g:antialiased;-moz-osx-font-smoothing:grayscale">On the topic of THAT, it w=
+as a </strong><strong style=3D"-webkit-font-smoothing:antialiased;-moz-osx-=
+font-smoothing:grayscale"><em style=3D"-webkit-font-smoothing:antialiased;-=
+moz-osx-font-smoothing:grayscale">blast</em></strong>, and I met a ton of a=
+wesome people!</p>
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" styl=
+e=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;b=
+order-collapse:separate;line-height:1.5;-webkit-text-size-adjust:100%;-ms-t=
+ext-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;text-align:c=
+enter;table-layout:fixed;float:none" class=3D"email-image"><tbody style=3D"=
+-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale"><tr s=
+tyle=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscal=
+e"><td align=3D"center" style=3D"-webkit-font-smoothing:antialiased;-moz-os=
+x-font-smoothing:grayscale;-webkit-text-size-adjust:100%;-ms-text-size-adju=
+st:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;vertical-align:top"><figu=
+re style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:gray=
+scale;margin:1em 0;margin-top:12px;margin-bottom:12px;margin-left:0;margin-=
+right:0;max-width:800px;width:100%"><div style=3D"-webkit-font-smoothing:an=
+tialiased;-moz-osx-font-smoothing:grayscale;display:block"><img src=3D"http=
+s://embed.filekitcdn.com/e/2FGnzMxCkLji5nfXx8Zaar/hvWyMbdcTYa6HgiDzaUqwo" a=
+lt=3D"Me, standing with Dave Gray, Danny Thompson, Jesse Hall (CodeSTACKr),=
+ and Jess Chan (CoderCoder)" width=3D"800" height=3D"auto" style=3D"-webkit=
+-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;border:0 none=
+;display:block;border:0;height:auto;line-height:100%;outline:none;-webkit-t=
+ext-decoration:none;text-decoration:none;-ms-interpolation-mode:bicubic;max=
+-width:100%;border-radius:4px 4px 4px 4px;width:800px;height:auto;object-fi=
+t:contain"></div>
+<figcaption style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoot=
+hing:grayscale;margin-top:0.4em;font-size:0.8em;text-align:center;display:b=
+lock">From left to right: Me, Dave Gray, Danny Thompson, Jesse Hall (CodeST=
+ACKr), and Jess Chan (CoderCoder)</figcaption></figure></td></tr></tbody></=
+table>
+<p style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:gray=
+scale;margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, sans-seri=
+f;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-height=
+:1.5;text-transform:none" class=3D"">While it was awesome meeting some fell=
+ow YouTubers in person, I also met so many other amazing people.</p>
+<p style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:gray=
+scale;margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, sans-seri=
+f;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-height=
+:1.5;text-transform:none" class=3D"">While we weren't there for that long, =
+I made some meaningful connections and had a lot of fun.</p>
+<p style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:gray=
+scale;margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, sans-seri=
+f;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-height=
+:1.5;text-transform:none" class=3D"">While there were a lot of great talks =
+(being multi-track, there were too many good ones, making it hard to pick w=
+hich to go to!), the people side of things was the real highlight of the en=
+tire conference for me.</p>
+<h2 style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:gra=
+yscale;font-weight:bold;font-style:normal;font-size:1em;margin:0;font-size:=
+1.5em;margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, sans-seri=
+f;font-size:24px;color:#353535;font-weight:600;letter-spacing:0;line-height=
+:1.5;text-transform:none" class=3D"">=F0=9F=99=8B=E2=80=8D=E2=99=82=EF=B8=
+=8F What I=E2=80=99ve been up to this week</h2>
+<h3 style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:gra=
+yscale;font-weight:bold;font-style:normal;font-size:1em;margin:0;font-size:=
+1.17em;margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, sans-ser=
+if;font-size:20px;color:#353535;font-weight:600;letter-spacing:0;line-heigh=
+t:1.5;text-transform:none" class=3D"">Learn how to use Media Queries &amp; =
+Container Queries</h3>
+<!--[if mso]><table><tr><td width=3D"800"><![endif]--><a href=3D"https://cl=
+ick.convertkit-mail.com/o8u8g357pwcqhk9nr8ravhpdpw8rr/m2h7h5h8m0knnesl/aHR0=
+cHM6Ly95b3V0dS5iZS8ycmxXQloxN1dlcw=3D=3D" style=3D"-webkit-font-smoothing:a=
+ntialiased;-moz-osx-font-smoothing:grayscale;-webkit-text-size-adjust:100%;=
+-ms-text-size-adjust:100%;display:block;width:100%;max-width:480px;margin:0=
+ auto 0 0;border:0;text-decoration:none" url-id=3D"1609780763"><img alt=3D"=
+video preview" src=3D"https://functions-js.convertkit.com/playbutton?play=
+=3D%23324C85&amp;accent=3D%23ffffff&amp;thumbnailof=3Dhttps%3A%2F%2Fyoutu.b=
+e%2F2rlWBZ17Wes&amp;width=3D480&amp;height=3D270&amp;fit=3Dcontain" width=
+=3D"480" height=3D"270" style=3D"-webkit-font-smoothing:antialiased;-moz-os=
+x-font-smoothing:grayscale;display:block;border:0;height:auto;line-height:1=
+00%;outline:none;-webkit-text-decoration:none;text-decoration:none;-ms-inte=
+rpolation-mode:bicubic;max-width:100%;border:0 none;display:block;border-ra=
+dius:4px">=E2=80=8B</a><!--[if mso]></td></tr></table><![endif]--><p style=
+=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;ma=
+rgin:1em 0;font-family:-apple-system, BlinkMacSystemFont, sans-serif;font-s=
+ize:18px;color:#353535;font-weight:400;letter-spacing:0;line-height:1.5;tex=
+t-transform:none" class=3D"">I wanted to do a new video taking a dive into =
+media queries, and it only made sense to also dive into container queries a=
+s well, as they're going to be a big part of it all going forward, and I th=
+ink a point of confusion for new people who are just learning how it all wo=
+rks right now.</p>
+<p style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:gray=
+scale;margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, sans-seri=
+f;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-height=
+:1.5;text-transform:none" class=3D"">As a little bonus, near the end, I als=
+o look at style queries, which I=E2=80=99m sooo excited for!</p>
+<h3 style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:gra=
+yscale;font-weight:bold;font-style:normal;font-size:1em;margin:0;font-size:=
+1.17em;margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, sans-ser=
+if;font-size:20px;color:#353535;font-weight:600;letter-spacing:0;line-heigh=
+t:1.5;text-transform:none" class=3D"">And they say CSS isn=E2=80=99t a prog=
+ramming language!</h3>
+<!--[if mso]><table><tr><td width=3D"800"><![endif]--><a href=3D"https://cl=
+ick.convertkit-mail.com/o8u8g357pwcqhk9nr8ravhpdpw8rr/dpheh0h08wz77rhl/aHR0=
+cHM6Ly95b3V0dS5iZS9UTDQxTnBZbmhXbw=3D=3D" style=3D"-webkit-font-smoothing:a=
+ntialiased;-moz-osx-font-smoothing:grayscale;-webkit-text-size-adjust:100%;=
+-ms-text-size-adjust:100%;display:block;width:100%;max-width:480px;margin:0=
+ auto 0 0;border:0;text-decoration:none" url-id=3D"1609780764"><img alt=3D"=
+video preview" src=3D"https://functions-js.convertkit.com/playbutton?play=
+=3D%23324C85&amp;accent=3D%23ffffff&amp;thumbnailof=3Dhttps%3A%2F%2Fyoutu.b=
+e%2FTL41NpYnhWo&amp;width=3D480&amp;height=3D270&amp;fit=3Dcontain" width=
+=3D"480" height=3D"270" style=3D"-webkit-font-smoothing:antialiased;-moz-os=
+x-font-smoothing:grayscale;display:block;border:0;height:auto;line-height:1=
+00%;outline:none;-webkit-text-decoration:none;text-decoration:none;-ms-inte=
+rpolation-mode:bicubic;max-width:100%;border:0 none;display:block;border-ra=
+dius:4px">=E2=80=8B</a><!--[if mso]></td></tr></table><![endif]--><p style=
+=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;ma=
+rgin:1em 0;font-family:-apple-system, BlinkMacSystemFont, sans-serif;font-s=
+ize:18px;color:#353535;font-weight:400;letter-spacing:0;line-height:1.5;tex=
+t-transform:none" class=3D"">It=E2=80=99s been a little while since I=E2=80=
+=99ve looked at other people=E2=80=99s amazing CSS-only creations, and this=
+ time, I took a dive into the world of CSS-only games!</p>
+<p style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:gray=
+scale;margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, sans-seri=
+f;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-height=
+:1.5;text-transform:none" class=3D"">From classics like Space Invaders to f=
+ull-on adventure games and even a fully-functional 3D Connect Four and a bu=
+nch more.</p>
+<h2 style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:gra=
+yscale;font-weight:bold;font-style:normal;font-size:1em;margin:0;font-size:=
+1.5em;margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, sans-seri=
+f;font-size:24px;color:#353535;font-weight:600;letter-spacing:0;line-height=
+:1.5;text-transform:none" class=3D"">=F0=9F=93=86 Upcoming stuff</h2>
+<h3 style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:gra=
+yscale;font-weight:bold;font-style:normal;font-size:1em;margin:0;font-size:=
+1.17em;margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, sans-ser=
+if;font-size:20px;color:#353535;font-weight:600;letter-spacing:0;line-heigh=
+t:1.5;text-transform:none" class=3D"">Smashing hour</h3>
+<p style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:gray=
+scale;margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, sans-seri=
+f;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-height=
+:1.5;text-transform:none" class=3D"">A reminder that I=E2=80=99ll be joinin=
+g Vitaly Friedman for a Smashing Hour on February 15th.</p>
+<p style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:gray=
+scale;margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, sans-seri=
+f;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-height=
+:1.5;text-transform:none" class=3D"">There are some <a href=3D"https://clic=
+k.convertkit-mail.com/o8u8g357pwcqhk9nr8ravhpdpw8rr/e0hph7h0qw9nnmu7/aHR0cH=
+M6Ly90aS50by9zbWFzaGluZ21hZ2F6aW5lL3NtYXNoaW5nLWhvdXIta2V2aW4tcG93ZWxs" tar=
+get=3D"_blank" rel=3D"noopener noreferrer" style=3D"-webkit-font-smoothing:=
+antialiased;-moz-osx-font-smoothing:grayscale;-webkit-text-size-adjust:100%=
+;-ms-text-size-adjust:100%;color:#0000ff" url-id=3D"1609780765">more detail=
+s here</a>, and you can book a spot if you=E2=80=99d like to attend live. I=
+f you can make it, we will be taking questions from those in attendance, an=
+d yes, it=E2=80=99s free!</p>
+<p style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:gray=
+scale;margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, sans-seri=
+f;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-height=
+:1.5;text-transform:none" class=3D"">If you=E2=80=99re unable to make it li=
+ve, they do post the replays on their YouTube channel afterwards.</p>
+<h2 style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:gra=
+yscale;font-weight:bold;font-style:normal;font-size:1em;margin:0;font-size:=
+1.5em;margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, sans-seri=
+f;font-size:24px;color:#353535;font-weight:600;letter-spacing:0;line-height=
+:1.5;text-transform:none" class=3D"">=F0=9F=8F=81 &lt;/newsletter&gt;</h2>
+<p style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:gray=
+scale;margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, sans-seri=
+f;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-height=
+:1.5;text-transform:none" class=3D""><strong style=3D"-webkit-font-smoothin=
+g:antialiased;-moz-osx-font-smoothing:grayscale">Quickly circling back to t=
+alking about conferences, if you=E2=80=99ve never been to one, I=E2=80=99d =
+highly recommend it.</strong></p>
+<p style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:gray=
+scale;margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, sans-seri=
+f;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-height=
+:1.5;text-transform:none" class=3D"">I realize that it can be hard, between=
+ the price (they tend to be expensive) and travel that=E2=80=99s often requ=
+ired, but as someone who=E2=80=99s never been to one before, I regret not h=
+aving been to some earlier.</p>
+<p style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:gray=
+scale;margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, sans-seri=
+f;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-height=
+:1.5;text-transform:none" class=3D"">In terms of affordability, many compan=
+ies have training budgets that can go to this type of thing, and I met seve=
+ral students who were attending thanks to their school paying their way!</p=
+>
+<p style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:gray=
+scale;margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, sans-seri=
+f;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-height=
+:1.5;text-transform:none" class=3D"">Even if that isn=E2=80=99t on the tabl=
+e, a lot of conferences offer good student discounts as well.</p>
+<p style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:gray=
+scale;margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, sans-seri=
+f;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-height=
+:1.5;text-transform:none" class=3D"">I know some people dismiss this type o=
+f thing outright, but if you ever have the chance, at least consider it =F0=
+=9F=98=8A.</p>
+<p style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:gray=
+scale;margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, sans-seri=
+f;font-size:18px;color:#353535;font-weight:400;letter-spacing:0;line-height=
+:1.5;text-transform:none" class=3D"">Have a fantastic week! <br style=3D"-w=
+ebkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale">Kevin</=
+p>
+<hr style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:gra=
+yscale;margin:36px 0;border:0;height:1px;background:#eee;margin-top:48px;ma=
+rgin-bottom:48px">
+</div></div></td>
+<td contenteditable=3D"false" style=3D"-webkit-font-smoothing:antialiased;-=
+moz-osx-font-smoothing:grayscale;-webkit-text-size-adjust:100%;-ms-text-siz=
+e-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;vertical-align:top"=
+></td>
+</tr></tbody></table>
+<div style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:gr=
+ayscale"><!--[if mso]><br /><br /><![endif]--></div>
+</center></div>
+<div class=3D"ck-section" style=3D"-webkit-font-smoothing:antialiased;-moz-=
+osx-font-smoothing:grayscale;margin:0px auto 24px auto"><center style=3D"-w=
+ebkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale">
+<table cellpadding=3D"0" cellspacing=3D"0" style=3D"-webkit-font-smoothing:=
+antialiased;-moz-osx-font-smoothing:grayscale;border-collapse:separate;line=
+-height:1.5;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-tab=
+le-lspace:0pt;mso-table-rspace:0pt;width:100%;margin:0 auto;max-width:640px=
+"><tbody style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothin=
+g:grayscale"><tr style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-=
+smoothing:grayscale">
+<td contenteditable=3D"false" style=3D"-webkit-font-smoothing:antialiased;-=
+moz-osx-font-smoothing:grayscale;-webkit-text-size-adjust:100%;-ms-text-siz=
+e-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;vertical-align:top"=
+></td>
+<td width=3D"640" style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font=
+-smoothing:grayscale;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100=
+%;mso-table-lspace:0pt;mso-table-rspace:0pt;vertical-align:top;background-c=
+olor:#f7f7f7;background-size:cover;background-position:center;box-sizing:bo=
+rder-box" bgcolor=3D"#f7f7f7"><div class=3D"ck-inner-section ck-padding-lef=
+t-mobile-friendly ck-padding-right-mobile-friendly" style=3D"-webkit-font-s=
+moothing:antialiased;-moz-osx-font-smoothing:grayscale;padding:18px 18px 18=
+px 18px"><div style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smo=
+othing:grayscale;margin-left:auto;margin-right:auto;max-width:640px"><p sty=
+le=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;=
+margin:1em 0;font-family:-apple-system, BlinkMacSystemFont, sans-serif;font=
+-size:15px;color:#747474;font-weight:400;letter-spacing:0;line-height:1.5;t=
+ext-transform:none" class=3D"">=E2=80=8B<a href=3D"https://unsubscribe.conv=
+ertkit-mail.com/o8u8g357pwcqhk9nr8ravhpdpw8rr" target=3D"_blank" rel=3D"noo=
+pener noreferrer" style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font=
+-smoothing:grayscale;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100=
+%;color:#006df2">Unsubscribe</a> =C2=B7 <a href=3D"https://preferences.conv=
+ertkit-mail.com/o8u8g357pwcqhk9nr8ravhpdpw8rr" target=3D"_blank" rel=3D"noo=
+pener noreferrer" style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font=
+-smoothing:grayscale;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100=
+%;color:#006df2">Preferences</a>=E2=80=8B<br style=3D"-webkit-font-smoothin=
+g:antialiased;-moz-osx-font-smoothing:grayscale">113 Cherry St #92768, Seat=
+tle, WA 98104-2205</p></div></div></td>
+<td contenteditable=3D"false" style=3D"-webkit-font-smoothing:antialiased;-=
+moz-osx-font-smoothing:grayscale;-webkit-text-size-adjust:100%;-ms-text-siz=
+e-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;vertical-align:top"=
+></td>
+</tr></tbody></table>
+<div style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:gr=
+ayscale"><!--[if mso]><br /><br /><![endif]--></div>
+</center></div>
+</div></div></td>
+<td style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:gra=
+yscale;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-ls=
+pace:0pt;mso-table-rspace:0pt;vertical-align:top"></td>
+</tr></tbody></table></div>
+<!-- -->
+<img src=3D"https://open.convertkit-mail.com/o8u8g357pwcqhk9nr8ravhpdpw8rr"=
+ alt=3D"" style=3D"-webkit-font-smoothing:antialiased;-moz-osx-font-smoothi=
+ng:grayscale;border:0 none;display:block;border:0;height:auto;line-height:1=
+00%;outline:none;-webkit-text-decoration:none;text-decoration:none;-ms-inte=
+rpolation-mode:bicubic;max-width:100%">
+</body>
+</html>
+
+--8b39aa520b08589cc2d5316a94248b0ec2db4e7b5b699ff8dbba61b9e731--

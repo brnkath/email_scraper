@@ -1,0 +1,2206 @@
+Delivered-To: brnkath@gmail.com
+Received: by 2002:a8a:e86:0:b0:511:33d7:88bb with SMTP id t6csp4571116ocw;
+        Sat, 30 Dec 2023 01:39:52 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IHgwRV0gMsC0uCzJw26aoZBLUdBPCztItLOMKd7kvhUE0eOFyjIImHG2VE9+DxoiruyeEWc
+X-Received: by 2002:a17:903:2305:b0:1d4:ab0f:c5ba with SMTP id d5-20020a170903230500b001d4ab0fc5bamr524963plh.6.1703929192441;
+        Sat, 30 Dec 2023 01:39:52 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1703929192; cv=none;
+        d=google.com; s=arc-20160816;
+        b=f9A7rOR0lUCk+y5DFp+JWrE6ZjCxlmfSO5MY0bZPyTmDjZpl/MpH2PfhFZyarxvynC
+         pqOSBsfq9tEPh5XYwpJKrz3mEOaIZ5TaHVfS973jWIrPmKT4nvy9anc/nJ3bmVRm7qtv
+         c4Og8nezf5EuzH/8pt2Hr15R0psBaTnuK2747nrI/yaeJxnXFzdyFyPTWxuQXjhEuTON
+         QVoAMKD55ol27k51KB7E/EOt8m/HdXRmLUhQJjlNrG7Jb1hBn9jk0PdbF+/a/OE3RWB+
+         MX7Mug9b2JMBQ044uoExxglX3+vT3ppaw+Kunl3zCtVGeBLJrB8q23vUF8lUma6GVlaf
+         VOlw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=message-id:list-unsubscribe:mime-version:date:reply-to:to:from
+         :subject:dkim-signature:dkim-signature;
+        bh=9LiP+7xWV77B061UNEPfV52BJxxIIEvu+RwzA9LW2zY=;
+        fh=q3wsJwZFp6bhetw6UpJHK1inO8/ugWLBDhVAuJZzoAM=;
+        b=j8/gFG2PrWUBAK00XpuirVjDNc1Ht4glOEyQFkGpG80kDBZ6l7G7U/4jOo1mfCxqKl
+         8vMQAEIsSz3QQZ1hjWAsn7tt9JyzgxeF1fs1ECY5IBYsKpsK1Q2QiNaseyuS34yPVKqJ
+         YyCRqyZdLVr1xBgSFLBXGFoVXjubwZX+jcxtA+pORHQG7HqqcaTNQMBVh3Lk4KFs6/Qn
+         KHmr4iW+5sgqvSpD3qSa5Ba9guXnumHglY2hIcVCdELPsxIZ7ttA+eqOUhqNedW5yShV
+         V3UYpe3zx6o+Kvp+29gt3J91tCRbzF+gOMgXOn1drhlsYfCTTUcxIDUzOuxIVvKcvTe1
+         ZBEw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email.join1440.com header.s=cm header.b=Grq9O9EI;
+       dkim=pass header.i=@cmail2.com header.s=cs2013 header.b="QMpSJ/+h";
+       spf=pass (google.com: domain of dailydigest-sihdtc1djluhhpiy1j@bounce.email.join1440.com designates 203.55.21.40 as permitted sender) smtp.mailfrom=DailyDigest-sihdtc1djluhhpiy1j@bounce.email.join1440.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=email.join1440.com
+Return-Path: <DailyDigest-sihdtc1djluhhpiy1j@bounce.email.join1440.com>
+Received: from mx40.a.outbound.createsend.com (mx40.a.outbound.createsend.com. [203.55.21.40])
+        by mx.google.com with ESMTPS id s19-20020a170902a51300b001d465594d43si8307707plq.87.2023.12.30.01.39.51
+        for <brnkath@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 30 Dec 2023 01:39:52 -0800 (PST)
+Received-SPF: pass (google.com: domain of dailydigest-sihdtc1djluhhpiy1j@bounce.email.join1440.com designates 203.55.21.40 as permitted sender) client-ip=203.55.21.40;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email.join1440.com header.s=cm header.b=Grq9O9EI;
+       dkim=pass header.i=@cmail2.com header.s=cs2013 header.b="QMpSJ/+h";
+       spf=pass (google.com: domain of dailydigest-sihdtc1djluhhpiy1j@bounce.email.join1440.com designates 203.55.21.40 as permitted sender) smtp.mailfrom=DailyDigest-sihdtc1djluhhpiy1j@bounce.email.join1440.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=email.join1440.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=cm; d=email.join1440.com;
+ h=Subject:From:To:Reply-To:Date:MIME-Version:Content-Type:X-Feedback-ID:
+ List-Unsubscribe:Message-ID; i=DailyDigest@email.join1440.com;
+ bh=9LiP+7xWV77B061UNEPfV52BJxxIIEvu+RwzA9LW2zY=;
+ b=Grq9O9EInwEdVwgrxyeCPIF4vbCRODJ3mc236qJOlv01TyWBSyvTwR57E54tloG7yrP/HOzPpelC
+   95Ys/7DBlecwNjG4gih6xOOCkpeRvqv5brniDi8VkhXXwfetFNOaiVI9/BG7ez81PLnpJ4mDO/E+
+   Z2Pr5tHRZGhSnseXbd4=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=cs2013; d=cmail2.com;
+ h=Subject:From:To:Reply-To:Date:MIME-Version:Content-Type:X-Feedback-ID:
+ List-Unsubscribe:Message-ID;
+ bh=9LiP+7xWV77B061UNEPfV52BJxxIIEvu+RwzA9LW2zY=;
+ b=QMpSJ/+h17B1Pbr7mL1skKFCNmViY1HQeiGdpEH+r7qLZNC7+q7ZivyphTNn+ECDMsvsDcpEImkU
+   /dGEF/JY0nO298mjtflzDNckXGJwO/Rr2vTMOGTROSTwzbnuP+p/SrOe0Q/mdpLRtnNSKxKxTZlV
+   hYoGJ24NA2+kXoBtkQs=
+Subject: Mickey Mouse, Russian Barrage, and Life's Big Mistakes
+From: "1440 Daily Digest" <DailyDigest@email.join1440.com> 
+To: "brnkath@gmail.com" <brnkath@gmail.com>
+Reply-To: admin@join1440.com
+Date: Sat, 30 Dec 2023 20:17:45 +1100
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="_17c3913a-669b-4f9a-814a-a3af53803bba_"; charset=utf-8
+X-Mailer: Create Send
+X-Complaints-To: abuse@cmail20.com
+X-Feedback-ID: CA1-j-sihdtc:LI1-j-jriyjhd:CL1-j-ikiudj:createSEND
+List-Unsubscribe: <http://unsub.cmail20.com/t/j-u-sihdtc-djluhhpiy/>,
+ <mailto:unsubscribe-sihdtc2djluhhpiy2j-F33D6939@cmail20.com?subject=Unsubscribe>
+Message-ID: <cm.2017450380603.sihdtc.djluhhpiy.j@cmail20.com>
+
+--_17c3913a-669b-4f9a-814a-a3af53803bba_
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Facts, without motives.                          No images?  Click here htt=
+ps://news.join1440.com/t/j-e-sihdtc-djluhhpiy-dr/                 =
+                                         =
+=
+=
+
+
+In partnership with
+
+=
+=
+=
+
+
+Good morning. It's Saturday, Dec. 30, and in this weekend edition, we're co=
+vering works from 1928 to soon enter the public domain, Russia's largest ae=
+rial attack against Ukraine, and much more. First time reading?  Sign up he=
+re [https://join1440.com/?utm_source=3Djoin1440&utm_medium=3Demail].
+
+You share, we listen. As always, send us feedback at  [hello@join1440.com]=
+=2E
+
+One Big Headline                One Big Headline
+
+Public Domain Day
+
+Every year on Jan. 1, a new batch of copyrighted works and intellectual pro=
+perty enters the public domain. On Monday, the first versions of Mickey and=
+ Minnie Mouse, featured in the 1928 short =E2=80=9CSteamboat Willie=E2=80=9D=
+ ( watch here [https://video.disney.com/watch/steamboat-willie-4ea9de5180b=
+375f7476ada2c?utm_source=3Djoin1440&utm_medium=3Demail]), will become avail=
+able for public use.
+
+The "Steamboat" version of the iconic cartoon couple is nonspeaking and mor=
+e rat-like. Their entrance into the public domain comes after Disney  lobbi=
+ed to extend [https://variety.com/2023/biz/news/mickey-mouse-public-domain=
+-disney-copyright-lawsuits-1235844322/] US copyright laws several times dur=
+ing Mickey 1.0's life. Under current US law, copyright protection on origin=
+al works is generally set to expire 70 years after a creator's death or 95 =
+years after publication. See what you can and can't do with "Steamboat" Mic=
+key and Minnie  here [https://web.law.duke.edu/cspd/mickey/?utm_source=3Dj=
+oin1440&utm_medium=3Demail].
+
+In 2024, all copyrighted works from 1928, as well as sound recordings from =
+1923 ( under a 2018 federal law [https://blogs.loc.gov/now-see-hear/2019/0=
+2/copyright-breakdown-the-music-modernization-act/]), will be available for=
+ public reuse. Among those works include AA Milne's "House at Pooh Corner,"=
+ which introduced the springy-tailed Tigger to the Hundred Acre Wood, and J=
+M Barrie's "Peter Pan; or the Boy Who Wouldn't Grow Up." See all works set =
+to enter the public domain in 2024  here [https://web.law.duke.edu/cspd/pu=
+blicdomainday/2024/?utm_source=3Djoin1440&utm_medium=3Demail].
+
+=
+=
+=
+
+
+Support 1440's Mission
+
+We are able to reach more than 3 million inboxes with fact-focused news bec=
+ause our readers support our mission.  Subscribe to our ad-free newsletter =
+[http://premium.join1440.com/?utm_source=3Dnl_premium_cta_main&utm_medium=3D=
+email] to help us continue spreading the word.
+
+=
+=
+=
+                           Quick Hits                Quick Hits
+
+Russia launches 122 missiles, 36 drones against Ukraine. [https://apnews.c=
+om/article/russia-ukraine-war-aerial-attack-missiles-drones-fe3fb596cdea003=
+5573a6a677f17070c]
+
+At least 30 people were killed and 144 injured across Ukraine Friday from t=
+he attack. The Ukrainian military said it had intercepted most of the missi=
+les and drones. The attack is considered the largest aerial barrage since t=
+he war between Russia and Ukraine began in February 2022. See war updates  =
+here [https://www.understandingwar.org/backgrounder/russian-offensive-camp=
+aign-assessment-december-29-2023].
+
+South Africa accuses Israel of genocide in case brought to top UN court. [=
+https://www.pbs.org/newshour/politics/south-africa-launches-case-at-top-un-=
+court-accusing-israel-of-genocide-in-gaza]
+
+South Africa, which has been a critic of Israel's military campaign in Gaza=
+ and has compared it to South Africa's past apartheid regime, seeks an orde=
+r from the UN's International Court of Justice to halt Israel's attacks and=
+ declare Israel in violation of the Genocide Convention ( see 101 [https:/=
+/www.un.org/en/genocideprevention/genocide-convention.shtml]). Israel maint=
+ains it is abiding by international law. Separately, tens of thousands of P=
+alestinians in Gaza moved south to Rafah, while a delegation met in Egypt F=
+riday for cease-fire talks. See war updates  here [https://www.nbcnews.com=
+/news/world/live-blog/israel-hamas-war-live-updates-idf-fired-gaza-aid-conv=
+oy-unrwa-rcna131564].
+
+World population projected to top 8 billion on New Year's Day. [https://ww=
+w.axios.com/2023/12/29/us-population-decline-down-projections]
+
+The world's population grew by more than 75 million people this year, up 0.=
+95% from New Year's Day 2023, according to the US Census Bureau. On Jan. 1,=
+ the population is expected to reach a little over 8 billion, from 7.9 bill=
+ion a year ago. Next year, 4.3 births and two deaths are expected worldwide=
+ every second. Track the Census Bureau's US and world population clocks  he=
+re [https://www.census.gov/popclock/?intcmp=3Dhome_pop].
+
+California keeps Trump on state's 2024 primary ballot. [https://thehill.co=
+m/homenews/campaign/4381346-california-trump-primary-ballot-2024-election-s=
+ecretary-of-state-declines-to-remove-despite-calls/]
+
+Former President Donald Trump will appear on the Republican ballot in Calif=
+ornia's Super Tuesday (March 5) presidential primary after Secretary of Sta=
+te Shirley Weber (D) published a list of official candidates, including Tru=
+mp, late Thursday. The news came hours after Maine's secretary of state nix=
+ed Trump due to a 14th Amendment clause ( see previous write-up [https://j=
+oin1440.com/newsletter/maine-nixes-trump-markets-rally-and-dancing-lemurs/n=
+eedtoknow1]). See a state-by-state tracker of challenges  here [https://ww=
+w.lawfaremedia.org/current-projects/the-trump-trials/section-3-litigation-t=
+racker].
+
+At least eight people injured after huge wave batters California coast (w/v=
+ideo) [https://www.cbsnews.com/news/rogue-wave-ventura-california-beach/].
+
+The massive 20-foot-plus wave crashed onto Ventura, California, flooding su=
+rrounding areas and sweeping up a truck. California has been experiencing h=
+uge waves this week as a result of low-pressure storm systems in the easter=
+n Pacific Ocean. Coastal flooding and waves in the range of 15 to 20 feet a=
+re expected along California's coast through this evening.
+
+Google settles $5B consumer privacy lawsuit over "Incognito" mode. [https:=
+//www.cnbc.com/2023/12/28/google-settles-5-billion-consumer-privacy-lawsuit=
+=2Ehtml]
+
+The class-action lawsuit was brought by users who accused the tech giant of=
+ tracking their data while using "Incognito" mode, a function of Google's C=
+hrome browser that is supposed to allow users to browse privately. The laws=
+uit originally sought at least $5B; the settlement agreement terms have not=
+ been disclosed.
+
+=
+=
+=
+
+
+In partnership with Pendulum
+
+Pendulum Put the 'Pro' in Probiotics
+
+What do you get when a probiotic company is founded by doctors from Johns H=
+opkins, Harvard, Berkeley, and Stanford, and the Mayo Clinic is one of thei=
+r first investors and continuing research partners? You get Pendulum, the o=
+nly company in the US that manufactures and sells live Akkermansia,  the gu=
+t health game changer [https://pendulumlife.com/products/pendulum-akkerman=
+sia?utm_source=3Dnewsletter&utm_medium=3D1440&utm_content=3Dnewsletter&utm_=
+campaign=3DAcquisition-555962ae3e710241a4a1c08ca36fd982].
+
+Experts know that your gut lining is like a fence that  keeps toxins out of=
+ your bloodstream [https://pendulumlife.com/products/pendulum-akkermansia?=
+utm_source=3Dnewsletter&utm_medium=3D1440&utm_content=3Dnewsletter&utm_camp=
+aign=3DAcquisition-555962ae3e710241a4a1c08ca36fd982] and away from other or=
+gans. Akkermansia helps to strengthen this fence by eating mucin, a gel-lik=
+e substance that acts as the glue that holds the fence together. As Akkerma=
+nsia eats the mucin, it promotes the production of more mucin,  strengtheni=
+ng your gut lining [https://pendulumlife.com/products/pendulum-akkermansia=
+?utm_source=3Dnewsletter&utm_medium=3D1440&utm_content=3Dnewsletter&utm_cam=
+paign=3DAcquisition-555962ae3e710241a4a1c08ca36fd982]. Reinforcing your gut=
+ lining is crucial for overall health, affecting digestion, immune function=
+, and metabolism.
+
+See what the professionals are talking about=E2=80=93 get 20% off your firs=
+t month of Akkermansia or any Pendulum membership with code 1440NEWS. [htt=
+ps://pendulumlife.com/products/pendulum-akkermansia?utm_source=3Dnewsletter=
+&utm_medium=3D1440&utm_content=3Dnewsletter&utm_campaign=3DAcquisition-5559=
+62ae3e710241a4a1c08ca36fd982]
+
+Please support our sponsors!
+
+=
+=
+=
+                     Humankind                Humankind
+
+A compilation of 66 good news stories from around the world in 2023. ( More=
+ [https://futurecrunch.com/goodnews2023/?utm_source=3Djoin1440&utm_medium=3D=
+email&utm_placement=3Dnewsletter])
+
+Mom fulfills her 10-year-old son's dreams of becoming a published author. (=
+ More [https://wehavekids.com/news/10-year-old-published-author-christmas?=
+utm_source=3Djoin1440&utm_medium=3Demail&utm_placement=3Dnewsletter], w/vid=
+eo)
+
+Two strangers met on a Greyhound bus on Christmas Day in 1962; they have no=
+w been married for 60 years. ( More [https://www.cnn.com/travel/christmas-=
+day-greyhound-bus-chance-encounters/index.html?utm_source=3Djoin1440&utm_me=
+dium=3Demail&utm_placement=3Dnewsletter])
+
+University of Iowa student creates Love for Red nonprofit to donate menstru=
+al supplies to schools and organizations in need. ( More [https://cbs2iowa=
+=2Ecom/news/local/nonprofit-tackles-period-poverty-with-menstrual-supplies-in=
+-iowa-schools?utm_source=3Djoin1440&utm_medium=3Demail&utm_placement=3Dnews=
+letter])
+
+Phoenix elementary school students start Secret Santa Club, raise $8K to gi=
+ve away to strangers in need. ( More [https://www.cbsnews.com/news/secret-=
+santa-club-phoenix-students-teacher-derek-brown-fundraising/?utm_source=3Dj=
+oin1440&utm_medium=3Demail&utm_placement=3Dnewsletter])
+
+New Orleans landlord gives tenants one month of free rent for the holidays.=
+ ( More [https://www.cbsnews.com/news/britni-ricard-free-rent-new-orleans/=
+?utm_source=3Djoin1440&utm_medium=3Demail&utm_placement=3Dnewsletter])
+
+=
+=
+=
+
+
+From our partners: It's time to stop overpaying for audiobooks. There's a b=
+etter way to listen more and spend less in the new year. Chirp offers  thou=
+sands of audiobook deals for $5 or less [https://www.chirpbooks.com/unbeat=
+able-audiobook-deals?utm_source=3Dnewsletter&utm_medium=3Dcpc&source=3Dnews=
+-1440_email_unbeatabledeals_12-2023] (no subscription fees or commitments).=
+ Preview today's trending deals: "A Darker Shade of Magic" by VE Schwab for=
+ $2.99, "When the Wind Blows" by James Patterson for $4.99, and "Stiff" by =
+Mary Roach for $2.99. Sign up to find your next favorite audiobook.  To swe=
+eten the deal, use code 1440 for 50% off your first purchase. [https://www=
+=2Echirpbooks.com/unbeatable-audiobook-deals?utm_source=3Dnewsletter&utm_medi=
+um=3Dcpc&source=3Dnews-1440_email_unbeatabledeals_12-2023]
+
+=
+=
+=
+                        Humankind(ness)                Humankind(ness)
+
+Today, we're sharing a story from reader Bob S. in Charlottesville, Virgini=
+a.
+
+"In 1980, I was accompanying my boss on a VIP flight from Brussels to Washi=
+ngton on one of the Air Force=E2=80=99s plushed-out large jets=E2=80=94the =
+ones with 'United States of America' emblazoned along the fuselage. My wife=
+ and I, along with two small sons, were at a round table with four captain'=
+s chairs across from an Army straphanger and his wife at a similar table. H=
+e saw that my wife was exhausted from having handled most of our move while=
+ I had concentrated on my boss and that my boss was buzzing me every few mi=
+nutes with questions about our reception in Washington. An hour or so into =
+the flight, the general motioned for my boys to come to his table. For the =
+next five hours, he and his wife entertained my sons so that my wife could =
+get some rest and I could take care of my boss. Those two life-savers were =
+Colin and Alma Powell."
+
+What act(s) of kindness did you experience this week?  Tell us here [https=
+://docs.google.com/forms/d/e/1FAIpQLScs9eUvgNhSbFlms5a6pKXljt0g7D28yFRnrnGg=
+9IMOWlpUQg/viewform].
+
+Etcetera                Etcetera
+
+Bookkeeping
+
+> L'Or=C3=A9al heiress becomes first woman to amass a $100B  fortune [http=
+s://www.bbc.com/news/business-67838422?utm_source=3Djoin1440&utm_medium=3De=
+mail].
+
+> The world's tallest wooden wind turbine at 492 feet tall  installed in Sw=
+eden [https://interestingengineering.com/innovation/worlds-tallest-wooden-=
+wind-turbine?utm_source=3Djoin1440&utm_medium=3Demail].
+
+> Ghanian media personality sings for nearly 127 hours,  aims to break worl=
+d record [https://www.dw.com/en/guinness-world-record-attempt-ghanaian-sin=
+g-a-thon-ends/a-67842237?utm_source=3Djoin1440&utm_medium=3Demail].
+
+Browse
+
+> Who decided Jan. 1 is  the New Year [https://time.com/6550127/new-year-c=
+elebration-january-calendar-date-history/?utm_source=3Djoin1440&utm_medium=3D=
+email]?
+
+> Test your knowledge of  2023's big moments [https://projects.apnews.com/=
+features/2023/associated-press-year-end-quiz/index.html?utm_source=3Djoin14=
+40&utm_medium=3Demail].
+
+> New iguana species with orange tongue  found in China [https://www.iflsc=
+ience.com/new-iguana-species-with-bright-orange-tongue-discovered-in-china-=
+72217?utm_source=3Djoin1440&utm_medium=3Demail].
+
+> Stunning shots of  California in infrared [https://mossandfog.com/califo=
+rnia-seen-in-stunning-infrared-photography/?utm_source=3Djoin1440&utm_mediu=
+m=3Demail].
+
+> What  causes bruising [https://www.livescience.com/health/what-causes-br=
+uising?utm_source=3Djoin1440&utm_medium=3Demail]?
+
+> When a visit to the dentist's office  goes wrong [https://apnews.com/art=
+icle/dentist-lawsuit-minnesota-ba930fef43d962705a4dc9c1d0b103df?utm_source=3D=
+join1440&utm_medium=3Demail].
+
+Listen
+
+> My Unsung Hero: a collection of stories about  life-changing acts of kind=
+ness [https://hiddenbrain.org/myunsunghero/?utm_source=3Djoin1440&utm_medi=
+um=3Demail].
+
+Watch
+
+> Recapping 2023,  in seven minutes [https://www.youtube.com/watch?v=3DsJs=
+_64OUpEs?utm_source=3Djoin1440&utm_medium=3Demail].
+
+> New York's 80-year-olds share their  biggest life mistakes [https://www.=
+youtube.com/watch?v=3Df6iyKGKcTxE?utm_source=3Djoin1440&utm_medium=3Demail]=
+=2E
+
+> The science  behind laughter [https://www.youtube.com/watch?v=3DXu-QfE_1=
+ksk?utm_source=3Djoin1440&utm_medium=3Demail].
+
+> Meet the brothers who invented  Formula 1 for marbles [https://www.youtu=
+be.com/watch?v=3DXFy3QGFMMSo?utm_source=3Djoin1440&utm_medium=3Demail].
+
+Long Read
+
+> The 40-ounce cup that turned Stanley into a  $750M per year business [ht=
+tps://www.cnbc.com/2023/12/23/how-a-40-ounce-cup-turned-stanley-into-a-750-=
+million-a-year-business.html?utm_source=3Djoin1440&utm_medium=3Demail].
+
+> How the Russian government punishes  wartime dissent [https://www.nytime=
+s.com/interactive/2023/12/29/world/europe/russia-ukraine-war-censorship.htm=
+l?unlocked_article_code=3D1.Jk0.byu7.btH7bbrwVA_a&hpgrp=3Dk-abar&smid=3Durl=
+-share]. (w/interactive)
+
+> Inside a deadly Texas farm fire that led to the deaths of  nearly 18,000 =
+cows [https://www.usatoday.com/story/news/investigations/2023/12/27/18000-=
+cows-dead-fire-south-fork-dairy-dimmitt-texas/72005659007/?utm_source=3Djoi=
+n1440&utm_medium=3Demail].
+
+Best of the Week: What does =E2=80=9CAuld Lang Syne=E2=80=9D  actually mean=
+ [https://www.rd.com/article/what-does-auld-lang-syne-mean/?utm_source=3Dj=
+oin1440&utm_medium=3Demail]?
+
+Historybook: Author Rudyard Kipling born (1865); The Soviet Union formed (1=
+922); Tiger Woods born (1975); LeBron James born (1984); Former Iraqi dicta=
+tor Saddam Hussein executed (2006); Oscar-winning actress Luise Rainer dies=
+ (2014)
+
+"Words are, of course, the most powerful drug used by mankind."
+
+- Rudyard Kipling
+
+Why 1440? The printing press was invented around the year 1440, spreading k=
+nowledge to the masses and changing the course of history. More facts: In e=
+very day, there are 1,440 minutes. We=E2=80=99re here to make each one coun=
+t.
+
+Send us your feedback at  [hello@join1440.com] and help us stay unbiased a=
+s humanly possible. We=E2=80=99re ready to listen.
+
+Interested in reaching smart readers like you? To become a 1440 partner,  a=
+pply here [https://docs.google.com/forms/d/e/1FAIpQLSew3gtG3kLZYHeQK1KPSx-=
+GrsgSOSA-_XgSR8rm8lrZyduqBw/viewform?utm_source=3Djoin1440&utm_medium=3Dema=
+il].
+
+1440 Media 222 W Merchandise Mart Plaza, Suite 1212 Chicago, IL 60654
+
+Copyright =C2=A9 2023, 1440 Media, All rights reserved.
+
+=
+=
+=
+
+
+Unsubscribe https://news.join1440.com/t/j-u-sihdtc-djluhhpiy-dy/ f=
+rom this email.
+
+--_17c3913a-669b-4f9a-814a-a3af53803bba_
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html lang=3D"en" xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:sch=
+emas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office"=
+>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.=
+0">
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+<meta name=3D"x-apple-disable-message-reformatting">
+<meta name=3D"format-detection" content=3D"telephone=3Dno">
+<title>Mickey Mouse, Russian Barrage, and Life's Big Mistakes</title>
+<link href=3D"https://fonts.googleapis.com/css?family=3DRoboto&amp;subset=3D=
+latin-ext" rel=3D"stylesheet" type=3D"text/css">
+<!--[if gte mso 16]>
+<xml>
+<o:OfficeDocumentSettings>
+<o:AllowPNG/>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml>
+<![endif]-->
+<style>
+html,body,table,tbody,tr,td,div,p,ul,ol,li,h1,h2,h3,h4,h5,h6 {
+margin: 0;
+padding: 0;
+}
+body {
+-ms-text-size-adjust: 100%;
+-webkit-text-size-adjust: 100%;
+}
+table {
+border-spacing: 0;
+mso-table-lspace: 0pt;
+mso-table-rspace: 0pt;
+}
+table td {
+border-collapse: collapse;
+}
+h1,h2,h3,h4,h5,h6 {
+font-family: Arial;
+}
+=2EExternalClass {
+width: 100%;
+}
+=2EExternalClass,
+=2EExternalClass p,
+=2EExternalClass span,
+=2EExternalClass font,
+=2EExternalClass td,
+=2EExternalClass div {
+line-height: 100%;
+}
+/* Outermost container in Outlook.com */
+=2EReadMsgBody {
+width: 100%;
+}
+img {
+-ms-interpolation-mode: bicubic;
+}
+</style>
+<style>
+a[x-apple-data-detectors=3Dtrue]{
+color: inherit !important;
+text-decoration: inherit !important;
+}
+u + #body a {
+color: inherit;
+text-decoration: inherit !important;
+font-size: inherit;
+font-family: inherit;
+font-weight: inherit;
+line-height: inherit;
+}
+a, a:link, .no-detect-local a, .appleLinks a {
+color: inherit !important;
+text-decoration: inherit;
+}
+</style>
+<style>
+=2Ewidth600 {
+width: 600px;
+max-width: 100%;
+}
+@media all and (max-width: 599px) {
+=2Ewidth600 {
+width: 100% !important;
+}
+}
+@media screen and (min-width: 600px) {
+=2Ehide-on-desktop {
+display: none !important;
+}
+}
+@media all and (max-width: 599px),
+only screen and (max-device-width: 599px) {
+=2Emain-container {
+width: 100% !important;
+}
+=2Ecol {
+width: 100%;
+}
+=2Efluid-on-mobile {
+width: 100% !important;
+height: auto !important;
+text-align:center;
+}
+=2Efluid-on-mobile img {
+width: 100% !important;
+}
+=2Ehide-on-mobile {
+display:none !important;
+width:0px !important;
+height:0px !important;
+overflow:hidden;
+}
+}
+</style>
+<!--[if gte mso 9]>
+<style>
+=2Ecol {
+width: 100%;
+}
+=2Ewidth600 {
+width: 600px;
+}
+=2Ewidth155 {
+width: 155px;
+height: auto;
+}
+=2Ewidth99 {
+width: 99px;
+height: auto;
+}
+=2Ewidth154 {
+width: 154px;
+height: auto;
+}
+=2Ewidth45 {
+width: 45px;
+height: auto;
+}
+=2Ewidth65 {
+width: 65px;
+height: auto;
+}
+=2Ehide-on-desktop {
+display: none;
+}
+=2Ehide-on-desktop table {
+mso-hide: all;
+}
+=2Ehide-on-desktop div {
+mso-hide: all;
+}
+=2Enounderline { text-decoration: none; }
+=2Emso-font-fix-arial: { font-family: Arial, sans-serif; }
+=2Emso-font-fix-georgia: { font-family: Georgia, serif; }
+</style>
+<![endif]-->
+</head>
+<body id=3D"body" leftmargin=3D"0" marginwidth=3D"0" topmargin=3D"0" margin=
+height=3D"0" offset=3D"0" style=3D"font-family:Arial, sans-serif; font-size=
+:0px;margin:0;padding:0;background-color:#f4f4f4;"><div style=3D"mso-hide:a=
+ll;position:fixed;height:0;max-height:0;overflow:hidden;font-size:0;">Facts=
+, without motives. &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; =
+&#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8=
+204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204=
+; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &=
+#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#82=
+04; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204;=
+ &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#=
+8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#820=
+4; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; =
+&#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8=
+204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204=
+; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &=
+#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#82=
+04; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204;=
+ &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#=
+8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#820=
+4; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; =
+&#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8=
+204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204=
+; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &=
+#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#82=
+04; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204;=
+ &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#=
+8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#820=
+4; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; =
+&#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8=
+204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204; &#8204;</div>
+<span style=3D"display:none;font-size:0px;line-height:0px;max-height:0px;ma=
+x-width:0px;opacity:0;overflow:hidden;">Facts, without motives.</span>
+<style>
+@media screen and (min-width: 600px) {
+=2Ehide-on-desktop {
+display: none;
+}
+}
+@media all and (max-width: 599px) {
+=2Ehide-on-mobile {
+display:none !important;
+width:0px !important;
+height:0px !important;
+overflow:hidden;
+}
+=2Emain-container {
+width: 100% !important;
+}
+=2Ecol {
+width: 100%;
+}
+=2Efluid-on-mobile {
+width: 100% !important;
+height: auto !important;
+text-align:center;
+}
+=2Efluid-on-mobile img {
+width: 100% !important;
+}
+}
+</style>
+<div style=3D"background-color:#f4f4f4;">
+<table height=3D"100%" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" b=
+order=3D"0">
+<tr>
+<td valign=3D"top" align=3D"left">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td width=3D"100%">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td align=3D"center" width=3D"100%">
+<!--[if gte mso 9]><table width=3D"600" cellpadding=3D"0" cellspacing=3D"0=
+"><tr><td><![endif]-->
+<table class=3D"width600 main-container" cellpadding=3D"0" cellspacing=3D"0=
+" border=3D"0" width=3D"100%" style=3D"max-width:600px;">
+<tr>
+<td width=3D"100%">
+<style> @media print{ #_two50 { background-image:url('https://join1440.ever=
+estengagement.com/ea/czipVtFs98/?t=3Dp&e=3D=
+brnkath@gmail.com=
+&c=3Dsihd=
+tc'); } } blockquote #_two50, #mailContainerBody #_two50, div.OutlookMessag=
+eHeader, table.moz-email-headers-table { background-image:url('https://join=
+1440.everestengagement.com/ea/czipVtFs98/?t=3Df&e=3D=
+brnkath@gmail.com=
+=
+&c=3Dsihdtc'); } </style> <div id=3D'_two50'></div> <img id=3D'_two50_img' =
+src=3D'https://join1440.everestengagement.com/ea/czipVtFs98/?e=3D=
+=
+brnkath@gmail.com=
+&c=3Dsihdtc' width=3D'1' height=3D'1' style=3D'margin:0 !impor=
+tant; padding:0 !important; border:0 !important; height:1px !important; wid=
+th:1px !important;' /><table cellpadding=3D"0" cellspacing=3D"0" border=3D"=
+0" width=3D"100%">
+<tr>
+<td align=3D"center" width=3D"100%">
+<!--[if gte mso 9]><table width=3D"600" cellpadding=3D"0" cellspacing=3D"0=
+"><tr><td><![endif]-->
+<table class=3D"width600 main-container" cellpadding=3D"0" cellspacing=3D"0=
+" border=3D"0" width=3D"100%" style=3D"max-width:600px;">
+<tr>
+<td width=3D"100%">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:11px;padding-left:20px;"><div style=
+=3D"font-family:Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;font-s=
+ize:15px;color:#131313;line-height:22px;text-align:left;"><h3 style=3D"font=
+-family:Roboto, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 12=
+px; color: #999999; font-weight: normal; line-height: 18px; mso-line-height=
+: exactly; mso-text-raise: 3px; padding: 0; margin: 0;text-align: right;"><=
+span class=3D"mso-font-fix-arial">No images? <a href=3D"https://news.join14=
+40.com/t/j-e-sihdtc-djluhhpiy-iu/">Click here</a></span></h3>
+</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!--[if gte mso 9]></td></tr></table><![endif]-->
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!--[if gte mso 9]></td></tr></table><![endif]-->
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" styl=
+e=3D"background-color:transparent;">
+<tr>
+<td align=3D"center" width=3D"100%">
+<!--[if gte mso 9]><table width=3D"600" cellpadding=3D"0" cellspacing=3D"0=
+"><tr><td><![endif]-->
+<table class=3D"width600 main-container" cellpadding=3D"0" cellspacing=3D"0=
+" border=3D"0" width=3D"100%" style=3D"max-width:600px;">
+<tr>
+<td width=3D"100%">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:10px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff" style=3D"background-color:#ffffff;">
+<tr>
+<td valign=3D"top" style=3D"padding-top:20px;padding-right:30px;padding-bot=
+tom:10px;padding-left:30px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" align=3D"center"><!--[if gte mso 9]><table width=3D"155=
+" cellpadding=3D"0" cellspacing=3D"0"><tr><td><![endif]-->
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"img-wrap" =
+style=3D"max-width:100%;">
+<tr>
+<td valign=3D"top" align=3D"center" style=3D"padding-bottom:10px;"><a href=3D=
+"https://news.join1440.com/t/j-l-sihdtc-djluhhpiy-r/" class=3D"img=
+link" target=3D"_blank">
+<img src=3D"http://i1.cmail20.com/ei/j/82/48B/C27/131943/csimport/166783256=
+8119_1440_primary_brandmark_darkmode_0.png" width=3D"155" height=3D"71" alt=
+=3D"" border=3D"0" style=3D"display:block;font-size:14px;max-width:100%;hei=
+ght:auto;" class=3D"width155" />
+</a>
+</td>
+</tr>
+</table>
+<!--[if gte mso 9]></td></tr></table><![endif]-->
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td style=3D"padding-top:10px;padding-bottom:10px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" styl=
+e=3D"border-top:2px solid #000000;">
+<tr>
+<td style=3D"font-size:0px;line-height:0;mso-line-height-rule:exactly;">&nb=
+sp;
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+=
+=
+=
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" styl=
+e=3D"background-color:#ffffff;">
+<tr>
+<td valign=3D"top" width=3D"50%">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:8px;padding-right:10px;padding-bott=
+om:5px;padding-left:10px;"><div style=3D"font-family:Roboto, Helvetica Neue=
+, Helvetica, Arial, sans-serif;font-size:12px;color:#000000;line-height:20p=
+x;text-align:left;"><p style=3D"padding: 0; margin: 0;text-align: right;"><=
+span class=3D"mso-font-fix-arial"><strong>In partnership with</strong></spa=
+n></p></div>
+</td>
+</tr>
+</table>
+</td>
+<td valign=3D"top" width=3D"50%">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" align=3D"left"><!--[if gte mso 9]><table width=3D"109" =
+cellpadding=3D"0" cellspacing=3D"0"><tr><td><![endif]-->
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"img-wrap" =
+style=3D"max-width:100%;">
+<tr>
+<td valign=3D"top" align=3D"left" style=3D"padding-top:8px;padding-right:10=
+px;"><a href=3D"https://news.join1440.com/t/j-l-sihdtc-djluhhpiy-y=
+/" class=3D"imglink" target=3D"_blank">
+<img src=3D"http://i2.cmail20.com/ei/j/82/48B/C27/131943/csimport/165508520=
+6609_pendulum_logo_reg_2022_primary_purple_1.png" width=3D"99" height=3D"15=
+" alt=3D"" border=3D"0" style=3D"display:block;font-size:14px;max-width:100=
+%;height:auto;" class=3D"width99" />
+</a>
+</td>
+</tr>
+</table>
+<!--[if gte mso 9]></td></tr></table><![endif]-->
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>=
+=
+=
+
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#fffefe" style=3D"background-color:#fffefe;">
+<tr>
+<td valign=3D"top" style=3D"padding-right:20px;padding-bottom:10px;padding-=
+left:20px;"><div style=3D"font-family:Roboto, Helvetica Neue, Helvetica, Ar=
+ial, sans-serif;font-size:14px;color:#000000;line-height:20px;text-align:le=
+ft;"><p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial"=
+><strong>Good morning.&nbsp;It's Saturday, Dec. 30,</strong>&nbsp;and in th=
+is weekend edition,&nbsp;we're covering works from 1928 to soon enter the p=
+ublic domain, Russia's largest aerial attack against Ukraine, and much more=
+=2E&nbsp;First time reading? <strong><a href=3D"https://news.join1440.com/t/j=
+-l-sihdtc-djluhhpiy-j/" target=3D"_blank"style=3D"color: #0000ee !=
+important;text-decoration: underline !important;" ><font style=3D"color:#00=
+00ee;" >Sign up here</font></a></strong>.</span></p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial">&nbs=
+p;</span></p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial"><str=
+ong>You share, we listen.</strong>&nbsp;As always, send us feedback at&nbsp=
+;<strong><a href=3D"mailto:hello@join1440.com" style=3D"color: #0000ee !imp=
+ortant;text-decoration: underline !important;" ><font style=3D"color:#0000e=
+e;" >hello@join1440.com</font></a></strong>.</span></p></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:10px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff" style=3D"background-color:#ffffff;">
+<tr>
+<td valign=3D"top">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" align=3D"left" style=3D"padding-top:20px;padding-right:3=
+0px;padding-left:20px;">
+<!--[if !mso]><!-- -->
+<a href=3D"" target=3D"_blank" style=3D"display:inline-block; text-decorati=
+on:none;" >
+<span>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" bgcolor=3D"#efef6f"=
+ style=3D"background-color:#efef6f;">
+<tr>
+<td align=3D"center" style=3D"padding-top:2px;padding-right:8px;padding-bot=
+tom:2px;padding-left:8px;">
+<span style=3D"color:#000000 !important;font-family:Georgia, Times, Times N=
+ew Roman, serif;font-size:23px;mso-line-height:exactly;line-height:32px;mso=
+-text-raise:4px;letter-spacing: normal;">
+<font style=3D"color:#000000;" class=3D"button">
+<span><span class=3D"mso-font-fix-georgia">One Big Headline</span></span>
+</font>
+</span>
+</td>
+</tr>
+</table>
+</span>
+</a>
+<!--<![endif]-->
+<div style=3D"display:none; mso-hide: none;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" bgcolor=3D"#efef6f"=
+ style=3D"background-color:#efef6f;">
+<tr>
+<td align=3D"center" style=3D"padding-top:2px;padding-right:8px;padding-bot=
+tom:2px;padding-left:8px;">
+<a href=3D"" target=3D"_blank" style=3D"color:#000000 !important;font-famil=
+y:Georgia, Times, Times New Roman, serif;font-size:23px;mso-line-height:exa=
+ctly;line-height:32px;mso-text-raise:4px;letter-spacing: normal;text-decora=
+tion:none;text-align:center;">
+<span style=3D"color:#000000 !important;font-family:Georgia, Times, Times N=
+ew Roman, serif;font-size:23px;mso-line-height:exactly;line-height:32px;mso=
+-text-raise:4px;letter-spacing: normal;">
+<font style=3D"color:#000000;" class=3D"button">
+<span><span class=3D"mso-font-fix-georgia">One Big Headline</span></span>
+</font>
+</span>
+</a>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td style=3D"padding-top:10px;padding-right:20px;padding-bottom:10px;paddin=
+g-left:20px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" styl=
+e=3D"border-top:2px solid #000000;">
+<tr>
+<td style=3D"font-size:0px;line-height:0;mso-line-height-rule:exactly;">&nb=
+sp;
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:7px;padding-right:20px;padding-bott=
+om:5px;padding-left:20px;"><div style=3D"font-family:Georgia, Times, Times =
+New Roman, serif;font-size:23px;color:#000000;line-height:32px;text-align:l=
+eft;"><p style=3D"padding: 0; margin: 0;">Public Domain Day</p></div>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:12px;padding-right:20px;padding-bot=
+tom:18px;padding-left:20px;"><div style=3D"font-family:Roboto, Helvetica Ne=
+ue, Helvetica, Arial, sans-serif;font-size:15px;color:#000000;line-height:2=
+2px;text-align:left;"><p style=3D"padding: 0; margin: 0;"><span class=3D"ms=
+o-font-fix-arial">Every year on Jan. 1, a new batch of copyrighted works an=
+d intellectual property enters the public domain. On Monday, the first vers=
+ions of Mickey and Minnie Mouse, featured in the 1928 short&nbsp;=E2=80=9CS=
+teamboat Willie=E2=80=9D (<a href=3D"https://news.join1440.com/t/j-l-sihdtc=
+-djluhhpiy-t/" target=3D"_blank"style=3D"color: #0000ee !important=
+;text-decoration: underline !important;" ><font style=3D"color:#0000ee;"
+>watch here</font></a>), will become available for public use.<br>
+<br>
+The "Steamboat" version of the iconic cartoon couple is nonspeaking and mor=
+e rat-like. Their entrance into the public domain comes after Disney <a hre=
+f=3D"https://news.join1440.com/t/j-l-sihdtc-djluhhpiy-i/" target=3D=
+"_blank"style=3D"color: #0000ee !important;text-decoration: underline !impo=
+rtant;" ><font style=3D"color:#0000ee;" >lobbied to extend</font></a> US co=
+pyright laws several times during Mickey 1.0's life.&nbsp;Under current US =
+law, copyright protection on original works is generally set to expire 70 y=
+ears after a creator's death or 95 years after publication. See what you ca=
+n and can't do with "Steamboat" Mickey and Minnie&nbsp;<a href=3D"https://n=
+ews.join1440.com/t/j-l-sihdtc-djluhhpiy-d/"
+target=3D"_blank"style=3D"color: #0000ee !important;text-decoration: underl=
+ine !important;" ><font style=3D"color:#0000ee;" >here</font></a>.&nbsp;<br=
+>
+<br>
+In 2024, all copyrighted works from 1928, as well as sound recordings from =
+1923 (<a href=3D"https://news.join1440.com/t/j-l-sihdtc-djluhhpiy-=
+h/" target=3D"_blank"style=3D"color: #0000ee !important;text-decoration: un=
+derline !important;" ><font style=3D"color:#0000ee;" >under a 2018 federal =
+law</font></a>), will be available for public reuse. Among those works incl=
+ude AA Milne's "House at Pooh Corner," which introduced the springy-tailed =
+Tigger to the Hundred Acre Wood, and&nbsp;JM Barrie's "Peter Pan; or the Bo=
+y Who Wouldn't Grow Up." See all works set to enter the public domain in 20=
+24&nbsp;<a href=3D"https://news.join1440.com/t/j-l-sihdtc-=
+djluhhpiy-k/"
+target=3D"_blank"style=3D"color: #0000ee !important;text-decoration: underl=
+ine !important;" ><font style=3D"color:#0000ee;" >here</font></a>.</span></=
+p></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!--[if gte mso 9]></td></tr></table><![endif]-->
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td align=3D"center" width=3D"100%">
+<!--[if gte mso 9]><table width=3D"600" cellpadding=3D"0" cellspacing=3D"0=
+"><tr><td><![endif]-->
+<table class=3D"width600 main-container" cellpadding=3D"0" cellspacing=3D"0=
+" border=3D"0" width=3D"100%" style=3D"max-width:600px;">
+<tr>
+<td width=3D"100%">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:10px;padding-bottom:10px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top">=
+=
+=
+
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff" style=3D"background-color:#ffffff;">
+<tr>
+<td valign=3D"top" style=3D"padding-top:3px;padding-right:20px;padding-bott=
+om:15px;padding-left:20px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff" style=3D"background-color:#ffffff;">
+<tr>
+<td valign=3D"top" style=3D"padding-top:10px;padding-bottom:3px;"><div styl=
+e=3D"font-family:Georgia, Times, Times New Roman, serif;font-size:23px;colo=
+r:#000000;line-height:32px;text-align:left;"><p style=3D"padding: 0; margin=
+: 0;">Support 1440's Mission</p></div>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff" style=3D"background-color:#ffffff;">
+<tr>
+<td style=3D"padding-top:5px;padding-bottom:10px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" styl=
+e=3D"border-top:2px solid #000000;">
+<tr>
+<td style=3D"font-size:0px;line-height:0;mso-line-height-rule:exactly;">&nb=
+sp;
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:8px;padding-bottom:5px;"><div style=
+=3D"font-family:Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;font-s=
+ize:15px;color:#131313;line-height:22px;text-align:left;"><p style=3D"paddi=
+ng: 0; margin: 0;"><span class=3D"mso-font-fix-arial">We are able to reach =
+more than 3 million inboxes with fact-focused news because our readers supp=
+ort our mission. <a href=3D"https://news.join1440.com/t/j-l-sihdtc-=
+djluhhpiy-u/" target=3D"_blank"style=3D"color: #1634cc !important;text-dec=
+oration: underline !important;" ><font style=3D"color:#1634cc;" ><strong>Su=
+bscribe&nbsp;to our ad-free newsletter</strong></font></a> to help us conti=
+nue spreading the word.</span></p></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+=
+=
+=
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:10px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff" style=3D"background-color:#ffffff;">
+<tr>
+<td valign=3D"top" style=3D"padding-right:20px;padding-left:20px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" align=3D"left" style=3D"padding-top:20px;padding-right:3=
+0px;">
+<!--[if !mso]><!-- -->
+<a href=3D"" target=3D"_blank" style=3D"display:inline-block; text-decorati=
+on:none;" >
+<span>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" bgcolor=3D"#efef6f"=
+ style=3D"background-color:#efef6f;">
+<tr>
+<td align=3D"center" style=3D"padding-top:2px;padding-right:8px;padding-bot=
+tom:2px;padding-left:8px;">
+<span style=3D"color:#000000 !important;font-family:Georgia, Times, Times N=
+ew Roman, serif;font-size:23px;mso-line-height:exactly;line-height:32px;mso=
+-text-raise:4px;letter-spacing: normal;">
+<font style=3D"color:#000000;" class=3D"button">
+<span><span class=3D"mso-font-fix-georgia">Quick Hits</span></span>
+</font>
+</span>
+</td>
+</tr>
+</table>
+</span>
+</a>
+<!--<![endif]-->
+<div style=3D"display:none; mso-hide: none;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" bgcolor=3D"#efef6f"=
+ style=3D"background-color:#efef6f;">
+<tr>
+<td align=3D"center" style=3D"padding-top:2px;padding-right:8px;padding-bot=
+tom:2px;padding-left:8px;">
+<a href=3D"" target=3D"_blank" style=3D"color:#000000 !important;font-famil=
+y:Georgia, Times, Times New Roman, serif;font-size:23px;mso-line-height:exa=
+ctly;line-height:32px;mso-text-raise:4px;letter-spacing: normal;text-decora=
+tion:none;text-align:center;">
+<span style=3D"color:#000000 !important;font-family:Georgia, Times, Times N=
+ew Roman, serif;font-size:23px;mso-line-height:exactly;line-height:32px;mso=
+-text-raise:4px;letter-spacing: normal;">
+<font style=3D"color:#000000;" class=3D"button">
+<span><span class=3D"mso-font-fix-georgia">Quick Hits</span></span>
+</font>
+</span>
+</a>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td style=3D"padding-top:10px;padding-bottom:10px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" styl=
+e=3D"border-top:2px solid #000000;">
+<tr>
+<td style=3D"font-size:0px;line-height:0;mso-line-height-rule:exactly;">&nb=
+sp;
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:10px;padding-bottom:18px;"><div sty=
+le=3D"font-family:Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;font=
+-size:15px;color:#000000;line-height:22px;text-align:left;"><p style=3D"pad=
+ding: 0; margin: 0;"><span class=3D"mso-font-fix-arial"><a href=3D"https://=
+news.join1440.com/t/j-l-sihdtc-djluhhpiy-o/" target=3D"_blank"styl=
+e=3D"color: #0000ee !important;text-decoration: underline !important;" ><fo=
+nt style=3D"color:#0000ee;" ><strong>Russia launches 122 missiles, 36 drone=
+s against Ukraine.</strong></font></a></span></p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial">At l=
+east 30 people were killed and 144 injured across Ukraine Friday from the a=
+ttack. The Ukrainian military said it had intercepted most of the missiles =
+and drones. The attack is considered the largest aerial barrage since the w=
+ar between Russia and Ukraine began in February 2022. See war updates <a hr=
+ef=3D"https://news.join1440.com/t/j-l-sihdtc-djluhhpiy-b/" target=3D=
+"_blank"style=3D"color: #0000ee !important;text-decoration: underline !impo=
+rtant;" ><font style=3D"color:#0000ee;" >here</font></a>.&nbsp;<br>
+<br>
+<strong><a href=3D"https://news.join1440.com/t/j-l-sihdtc-=
+djluhhpiy-n/" target=3D"_blank"style=3D"color: #0000ee !important;text-decoration: =
+underline !important;" ><font style=3D"color:#0000ee;" >South Africa accuse=
+s Israel of genocide in case brought to top UN court.</font></a></strong><b=
+r>
+South Africa, which has been a critic of Israel's military campaign in Gaza=
+ and has compared it to South Africa's past apartheid regime, seeks an orde=
+r from the UN's International Court of Justice to halt Israel's attacks and=
+ declare Israel in violation of the Genocide Convention (<a href=3D"https:/=
+/news.join1440.com/t/j-l-sihdtc-djluhhpiy-p/" target=3D"_blank"sty=
+le=3D"color: #0000ee !important;text-decoration: underline !important;" ><f=
+ont style=3D"color:#0000ee;" >see 101</font></a>). Israel maintains it is a=
+biding by international law. Separately, tens of thousands of Palestinians =
+in Gaza moved south to Rafah, while a delegation met in Egypt Friday for ce=
+ase-fire talks. See war updates <a=20
+href=3D"https://news.join1440.com/t/j-l-sihdtc-djluhhpiy-x/" targe=
+t=3D"_blank"style=3D"color: #0000ee !important;text-decoration: underline !=
+important;" ><font style=3D"color:#0000ee;" >here</font></a>.</span></p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial">&nbs=
+p;</span></p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial"><a h=
+ref=3D"https://news.join1440.com/t/j-l-sihdtc-djluhhpiy-m/" target=
+=3D"_blank"style=3D"color: #0000ee !important;text-decoration: underline !i=
+mportant;" ><font style=3D"color:#0000ee;" ><strong>World population projec=
+ted to top 8 billion on New Year's Day.</strong></font></a></span></p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial">The =
+world's population grew by more than 75 million people this year, up 0.95% =
+from New Year's Day 2023, according to the US Census Bureau. On Jan. 1, the=
+ population is expected to reach a little over 8 billion, from 7.9 billion =
+a year ago. Next year, 4.3 births and two deaths are expected worldwide eve=
+ry second. Track the Census Bureau's US and world population clocks&nbsp;<a=
+ href=3D"https://news.join1440.com/t/j-l-sihdtc-djluhhpiy-c/" targ=
+et=3D"_blank"style=3D"color: #0000ee !important;text-decoration: underline =
+!important;" ><font style=3D"color:#0000ee;" >here</font></a>.</span></p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial">&nbs=
+p;</span></p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial"><a h=
+ref=3D"https://news.join1440.com/t/j-l-sihdtc-djluhhpiy-q/" target=
+=3D"_blank"style=3D"color: #0000ee !important;text-decoration: underline !i=
+mportant;" ><font style=3D"color:#0000ee;" ><strong>California keeps Trump =
+on state's 2024 primary ballot.</strong></font></a></span></p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial">Form=
+er President Donald Trump&nbsp;will appear&nbsp;on the Republican ballot in=
+ California's Super Tuesday (March 5) presidential primary after Secretary =
+of State&nbsp;Shirley Weber (D) published a list of official candidates, in=
+cluding Trump, late Thursday. The news came hours after Maine's secretary o=
+f state nixed Trump due to a 14th Amendment clause (<a href=3D"https://news=
+=2Ejoin1440.com/t/j-l-sihdtc-djluhhpiy-a/" target=3D"_blank"style=3D=
+"color: #0000ee !important;text-decoration: underline !important;" ><font s=
+tyle=3D"color:#0000ee;" >see previous write-up</font></a>). See a state-by-=
+state tracker of challenges&nbsp;<a=20
+href=3D"https://news.join1440.com/t/j-l-sihdtc-djluhhpiy-f/" targe=
+t=3D"_blank"style=3D"color: #0000ee !important;text-decoration: underline !=
+important;" ><font style=3D"color:#0000ee;" >here</font></a>.</span></p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial"><br>
+<a href=3D"https://news.join1440.com/t/j-l-sihdtc-djluhhpiy-z/" ta=
+rget=3D"_blank"style=3D"color: #0000ee !important;text-decoration: underlin=
+e !important;" ><font style=3D"color:#0000ee;" ><strong>At least eight peop=
+le injured after huge wave batters California coast (w/video)</strong></fon=
+t></a>.<br>
+The massive 20-foot-plus wave crashed onto Ventura, California,&nbsp;floodi=
+ng surrounding areas and sweeping up a truck. California has been experienc=
+ing huge waves this week as a result of low-pressure storm systems in the e=
+astern Pacific Ocean. Coastal flooding and waves in the range of 15 to 20 f=
+eet are expected along California's coast through this evening.&nbsp;<br>
+&nbsp;</span></p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial"><a h=
+ref=3D"https://news.join1440.com/t/j-l-sihdtc-djluhhpiy-v/" target=
+=3D"_blank"style=3D"color: #0000ee !important;text-decoration: underline !i=
+mportant;" ><font style=3D"color:#0000ee;" ><strong>Google settles &#36;5B =
+consumer privacy lawsuit over "Incognito" mode.</strong></font></a></span><=
+/p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial">The =
+class-action lawsuit was brought by users who accused the tech giant of tra=
+cking their data while using "Incognito" mode, a function of Google's Chrom=
+e browser that is supposed to allow users to browse privately. The lawsuit =
+originally sought at least &#36;5B; the settlement agreement terms have not=
+ been disclosed.&nbsp;</span></p></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:10px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top">=
+=
+=
+
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff" style=3D"background-color:#ffffff;">
+<tr>
+<td valign=3D"top" style=3D"padding-top:5px;padding-right:20px;padding-left=
+:20px;"><div style=3D"font-family:Roboto, Helvetica Neue, Helvetica, Arial,=
+ sans-serif;font-size:15px;color:#000000;line-height:22px;text-align:left;"=
+><p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial"><sp=
+an style=3D"font-size:10px;"><strong><em>In partnership with Pendulum</em><=
+/strong></span></span></p></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff" style=3D"background-color:#ffffff;">
+<tr>
+<td valign=3D"top" style=3D"padding-top:10px;padding-right:20px;padding-bot=
+tom:3px;padding-left:20px;"><div style=3D"font-family:Georgia, Times, Times=
+ New Roman, serif;font-size:23px;color:#000000;line-height:32px;text-align:=
+left;"><p style=3D"padding: 0; margin: 0;">Pendulum Put the 'Pro' in Probio=
+tics</p></div>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff" style=3D"background-color:#ffffff;">
+<tr>
+<td style=3D"padding-top:5px;padding-right:18px;padding-bottom:10px;padding=
+-left:20px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" styl=
+e=3D"border-top:2px solid #000000;">
+<tr>
+<td style=3D"font-size:0px;line-height:0;mso-line-height-rule:exactly;">&nb=
+sp;
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff" style=3D"background-color:#ffffff;">
+<tr>
+<td valign=3D"top">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" align=3D"center"><!--[if gte mso 9]><table width=3D"154=
+" cellpadding=3D"0" cellspacing=3D"0"><tr><td><![endif]-->
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"img-wrap" =
+style=3D"max-width:100%;">
+<tr>
+<td valign=3D"top" align=3D"center" style=3D"padding-bottom:10px;"><a href=3D=
+"https://news.join1440.com/t/j-l-sihdtc-djluhhpiy-e/" class=3D"img=
+link" target=3D"_blank">
+<img src=3D"http://i2.cmail20.com/ei/j/82/48B/C27/131943/csimport/165508520=
+6609_pendulum_logo_reg_2022_primary_purple_1.png" width=3D"154" height=3D"2=
+4" alt=3D"" border=3D"0" style=3D"display:block;font-size:14px;max-width:10=
+0%;height:auto;" class=3D"width154" />
+</a>
+</td>
+</tr>
+</table>
+<!--[if gte mso 9]></td></tr></table><![endif]-->
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff" style=3D"background-color:#ffffff;">
+<tr>
+<td valign=3D"top" style=3D"padding-right:20px;padding-bottom:10px;padding-=
+left:20px;"><div style=3D"font-family:Roboto, Helvetica Neue, Helvetica, Ar=
+ial, sans-serif;font-size:15px;color:#000000;line-height:22px;text-align:le=
+ft;"><p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial"=
+>What do you get when a probiotic company is founded by doctors from Johns =
+Hopkins, Harvard, Berkeley, and Stanford, and the Mayo Clinic is one of the=
+ir first investors and continuing research partners? You get Pendulum, the =
+only company in the US that manufactures and sells live Akkermansia, <stron=
+g><a href=3D"https://news.join1440.com/t/j-l-sihdtc-djluhhpiy-s/"
+target=3D"_blank"style=3D"color: #0000ee !important;text-decoration: underl=
+ine !important;" ><font style=3D"color:#0000ee;" >the gut health game chang=
+er</font></a></strong>.&nbsp;</span></p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial">&nbs=
+p;</span></p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial">Expe=
+rts know that your gut lining is like a fence that <strong><a href=3D"https=
+://news.join1440.com/t/j-l-sihdtc-djluhhpiy-g/" target=3D"_blank"s=
+tyle=3D"color: #0000ee !important;text-decoration: underline !important;" >=
+<font style=3D"color:#0000ee;" >keeps toxins out of your bloodstream</font>=
+</a></strong> and away from other organs. Akkermansia helps to strengthen t=
+his fence by eating mucin, a gel-like substance that acts as the glue that =
+holds the fence together. As Akkermansia eats the mucin, it promotes the pr=
+oduction of more mucin, <strong><a=20
+href=3D"https://news.join1440.com/t/j-l-sihdtc-djluhhpiy-w/" targe=
+t=3D"_blank"style=3D"color: #0000ee !important;text-decoration: underline !=
+important;" ><font style=3D"color:#0000ee;" >strengthening your gut lining<=
+/font></a></strong>. Reinforcing your gut lining is crucial for overall hea=
+lth, affecting digestion, immune function, and metabolism.&nbsp;</span></p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial">&nbs=
+p;</span></p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial">See =
+what the professionals are talking about=E2=80=93<strong><a href=3D"https:/=
+/news.join1440.com/t/j-l-sihdtc-djluhhpiy-yd/" target=3D"_blank"st=
+yle=3D"color: #0000ee !important;text-decoration: underline !important;" ><=
+font style=3D"color:#0000ee;" >get 20% off your first month of Akkermansia =
+or any Pendulum membership with code&nbsp;1440NEWS.</font></a></strong></sp=
+an></p></div>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff" style=3D"background-color:#ffffff;">
+<tr>
+<td valign=3D"top" style=3D"padding-right:20px;padding-bottom:10px;padding-=
+left:20px;"><div style=3D"font-family:Roboto, Helvetica Neue, Helvetica, Ar=
+ial, sans-serif;font-size:15px;color:#000000;line-height:22px;text-align:le=
+ft;"><p style=3D"padding: 0; margin: 0;text-align: center;"><span class=3D"=
+mso-font-fix-arial"><span style=3D"font-size:10px;"><em>Please support our =
+sponsors!</em></span></span></p></div>
+</td>
+</tr>
+</table>
+=
+=
+=
+
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:10px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff" style=3D"background-color:#ffffff;">
+<tr>
+<td valign=3D"top" style=3D"padding-left:20px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" align=3D"left" style=3D"padding-top:20px;padding-right:3=
+0px;">
+<!--[if !mso]><!-- -->
+<a href=3D"" target=3D"_blank" style=3D"display:inline-block; text-decorati=
+on:none;" >
+<span>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" bgcolor=3D"#7edcf2"=
+ style=3D"background-color:#7edcf2;">
+<tr>
+<td align=3D"center" style=3D"padding-top:2px;padding-right:8px;padding-bot=
+tom:2px;padding-left:8px;">
+<span style=3D"color:#000000 !important;font-family:Georgia, Times, Times N=
+ew Roman, serif;font-size:23px;mso-line-height:exactly;line-height:32px;mso=
+-text-raise:4px;letter-spacing: normal;">
+<font style=3D"color:#000000;" class=3D"button">
+<span><span class=3D"mso-font-fix-georgia">Humankind</span></span>
+</font>
+</span>
+</td>
+</tr>
+</table>
+</span>
+</a>
+<!--<![endif]-->
+<div style=3D"display:none; mso-hide: none;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" bgcolor=3D"#7edcf2"=
+ style=3D"background-color:#7edcf2;">
+<tr>
+<td align=3D"center" style=3D"padding-top:2px;padding-right:8px;padding-bot=
+tom:2px;padding-left:8px;">
+<a href=3D"" target=3D"_blank" style=3D"color:#000000 !important;font-famil=
+y:Georgia, Times, Times New Roman, serif;font-size:23px;mso-line-height:exa=
+ctly;line-height:32px;mso-text-raise:4px;letter-spacing: normal;text-decora=
+tion:none;text-align:center;">
+<span style=3D"color:#000000 !important;font-family:Georgia, Times, Times N=
+ew Roman, serif;font-size:23px;mso-line-height:exactly;line-height:32px;mso=
+-text-raise:4px;letter-spacing: normal;">
+<font style=3D"color:#000000;" class=3D"button">
+<span><span class=3D"mso-font-fix-georgia">Humankind</span></span>
+</font>
+</span>
+</a>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff" style=3D"background-color:#ffffff;">
+<tr>
+<td valign=3D"top" style=3D"padding-right:20px;padding-bottom:10px;padding-=
+left:20px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff" style=3D"background-color:#ffffff;">
+<tr>
+<td style=3D"padding-top:10px;padding-bottom:10px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" styl=
+e=3D"border-top:2px solid #000000;">
+<tr>
+<td style=3D"font-size:0px;line-height:0;mso-line-height-rule:exactly;">&nb=
+sp;
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:10px;padding-bottom:10px;"><div sty=
+le=3D"font-family:Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;font=
+-size:15px;color:#000000;line-height:22px;text-align:left;"><p style=3D"pad=
+ding: 0; margin: 0;"><span class=3D"mso-font-fix-arial"><b>A compilation </=
+b>of 66 good news<b>&nbsp;</b>stories from around the world in 2023.&nbsp;(=
+<a href=3D"https://news.join1440.com/t/j-l-sihdtc-djluhhpiy-yh/" t=
+arget=3D"_blank"style=3D"color: #0000ee !important;text-decoration: underli=
+ne !important;" ><font style=3D"color:#0000ee;" >More</font></a>)<br>
+&nbsp;</span></p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial"><str=
+ong>Mom</strong>&nbsp;<b>fulfills&nbsp;</b>her 10-year-old son's dreams of =
+becoming a published author. (<a href=3D"https://news.join1440.com/t/j-l-si=
+hdtc-djluhhpiy-yk/" target=3D"_blank"style=3D"color: #0000ee !impo=
+rtant;text-decoration: underline !important;" ><font style=3D"color:#0000ee=
+;" >More</font></a>, w/video)&nbsp;</span></p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial">&nbs=
+p;</span></p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial"><str=
+ong>Two strangers</strong> met on a Greyhound bus on Christmas Day in 1962;=
+ they&nbsp;have now been married for 60 years. (<a href=3D"https://news.joi=
+n1440.com/t/j-l-sihdtc-djluhhpiy-yu/" target=3D"_blank"style=3D"co=
+lor: #0000ee !important;text-decoration: underline !important;" ><font styl=
+e=3D"color:#0000ee;" >More</font></a>)&nbsp;</span></p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial">&nbs=
+p;</span></p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial"><str=
+ong>University of Iowa</strong> student creates&nbsp;Love for Red nonprofit=
+ to donate menstrual supplies to schools and organizations in need. (<a hre=
+f=3D"https://news.join1440.com/t/j-l-sihdtc-djluhhpiy-jl/" target=3D=
+"_blank"style=3D"color: #0000ee !important;text-decoration: underline !impo=
+rtant;" ><font style=3D"color:#0000ee;" >More</font></a>)<br>
+<br>
+<strong>Phoenix elementary school</strong> students start Secret Santa Club=
+, raise &#36;8K to give away to strangers in need. (<a href=3D"https://news=
+=2Ejoin1440.com/t/j-l-sihdtc-djluhhpiy-jr/" target=3D"_blank"style=3D=
+"color: #0000ee !important;text-decoration: underline !important;" ><font s=
+tyle=3D"color:#0000ee;" >More</font></a>)<br>
+&nbsp;</span></p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial"><str=
+ong>New Orleans&nbsp;landlord</strong> gives tenants one month of free rent=
+ for the holidays. (<a href=3D"https://news.join1440.com/t/j-l-sihdtc-=
+djluhhpiy-jy/" target=3D"_blank"style=3D"color: #0000ee !important;text=
+-decoration: underline !important;" ><font style=3D"color:#0000ee;" >More</=
+font></a>)</span></p></div>
+</td>
+</tr>
+</table>
+=
+=
+=
+
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:10px;padding-bottom:10px;"><div sty=
+le=3D"font-family:Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;font=
+-size:15px;color:#000000;line-height:22px;text-align:left;"><p style=3D"pad=
+ding: 0; margin: 0;"><span class=3D"mso-font-fix-arial"><em>From our partne=
+rs:</em>&nbsp;<strong>It's time to stop overpaying for audiobooks.</strong>=
+&nbsp;There's a better way to listen more and spend less in the new year.&n=
+bsp;Chirp&nbsp;offers <a href=3D"https://news.join1440.com/t/j-l-sihdtc-=
+djluhhpiy-jj/" target=3D"_blank"style=3D"color: #0000ee !important;te=
+xt-decoration: underline !important;" ><font style=3D"color:#0000ee;"
+><strong>thousands of audiobook deals for &#36;5 or less</strong></font></a=
+> (no subscription fees or commitments). Preview today's trending deals: "A=
+ Darker Shade of Magic" by VE Schwab for &#36;2.99, "When the Wind Blows" b=
+y James Patterson for &#36;4.99, and "Stiff" by Mary Roach for &#36;2.99. S=
+ign up to find your next favorite audiobook. <a href=3D"https://news.join14=
+40.com/t/j-l-sihdtc-djluhhpiy-jt/" target=3D"_blank"style=3D"color=
+: #0000ee !important;text-decoration: underline !important;" ><font style=3D=
+"color:#0000ee;" ><strong>To sweeten the deal, use code 1440 for 50% off yo=
+ur first purchase.</strong></font></a></span></p></div>
+</td>
+</tr>
+</table>
+=
+=
+=
+
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:10px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff" style=3D"background-color:#ffffff;">
+<tr>
+<td valign=3D"top" style=3D"padding-left:20px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" align=3D"left" style=3D"padding-top:20px;padding-right:3=
+0px;">
+<!--[if !mso]><!-- -->
+<a href=3D"" target=3D"_blank" style=3D"display:inline-block; text-decorati=
+on:none;" >
+<span>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" bgcolor=3D"#7edcf2"=
+ style=3D"background-color:#7edcf2;">
+<tr>
+<td align=3D"center" style=3D"padding-top:2px;padding-right:8px;padding-bot=
+tom:2px;padding-left:8px;">
+<span style=3D"color:#000000 !important;font-family:Georgia, Times, Times N=
+ew Roman, serif;font-size:23px;mso-line-height:exactly;line-height:32px;mso=
+-text-raise:4px;letter-spacing: normal;">
+<font style=3D"color:#000000;" class=3D"button">
+<span><span class=3D"mso-font-fix-georgia">Humankind(ness)</span></span>
+</font>
+</span>
+</td>
+</tr>
+</table>
+</span>
+</a>
+<!--<![endif]-->
+<div style=3D"display:none; mso-hide: none;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" bgcolor=3D"#7edcf2"=
+ style=3D"background-color:#7edcf2;">
+<tr>
+<td align=3D"center" style=3D"padding-top:2px;padding-right:8px;padding-bot=
+tom:2px;padding-left:8px;">
+<a href=3D"" target=3D"_blank" style=3D"color:#000000 !important;font-famil=
+y:Georgia, Times, Times New Roman, serif;font-size:23px;mso-line-height:exa=
+ctly;line-height:32px;mso-text-raise:4px;letter-spacing: normal;text-decora=
+tion:none;text-align:center;">
+<span style=3D"color:#000000 !important;font-family:Georgia, Times, Times N=
+ew Roman, serif;font-size:23px;mso-line-height:exactly;line-height:32px;mso=
+-text-raise:4px;letter-spacing: normal;">
+<font style=3D"color:#000000;" class=3D"button">
+<span><span class=3D"mso-font-fix-georgia">Humankind(ness)</span></span>
+</font>
+</span>
+</a>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-bottom:8px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff" style=3D"background-color:#ffffff;">
+<tr>
+<td style=3D"padding-top:10px;padding-right:20px;padding-bottom:10px;paddin=
+g-left:20px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" styl=
+e=3D"border-top:2px solid #000000;">
+<tr>
+<td style=3D"font-size:0px;line-height:0;mso-line-height-rule:exactly;">&nb=
+sp;
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff" style=3D"background-color:#ffffff;">
+<tr>
+<td valign=3D"top" style=3D"padding-top:8px;padding-right:20px;padding-bott=
+om:18px;padding-left:20px;"><div style=3D"font-family:Roboto, Helvetica Neu=
+e, Helvetica, Arial, sans-serif;font-size:15px;color:#131313;line-height:22=
+px;text-align:left;"><p style=3D"padding: 0; margin: 0;"><span class=3D"mso=
+-font-fix-arial">Today, we're sharing a story from reader <strong>Bob S.</s=
+trong>&nbsp;in&nbsp;<strong>Charlottesville, Virginia</strong>.<br>
+<br>
+"In 1980, I was accompanying my boss on a VIP flight from Brussels to Washi=
+ngton on one of the Air Force=E2=80=99s plushed-out large jets=E2=80=94the =
+ones with 'United States of America' emblazoned along the fuselage. My wife=
+ and I, along with two small sons, were at a round table with four captain'=
+s chairs across from an Army straphanger and his wife at a similar table. H=
+e saw that my wife was exhausted from having handled most of our move while=
+ I had concentrated on my boss and that my boss was buzzing me every few mi=
+nutes with questions about our reception in Washington. An hour or so into =
+the flight, the general motioned for my boys to come to his table. For the =
+next five hours, he and his wife entertained my sons so that my wife could =
+get some rest and I could take care of my boss. Those two life-savers were =
+Colin and Alma Powell."</span></p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial">&nbs=
+p;</span></p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial"><str=
+ong>What act(s) of kindness did you experience this week? <a href=3D"https:=
+//news.join1440.com/t/j-l-sihdtc-djluhhpiy-ji/" target=3D"_blank"s=
+tyle=3D"color: #1634cc !important;text-decoration: underline !important;" >=
+<font style=3D"color:#1634cc;" >Tell us here</font></a>.</strong></span></p=
+></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff" style=3D"background-color:#ffffff;">
+<tr>
+<td valign=3D"top">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" align=3D"left" style=3D"padding-top:20px;padding-right:2=
+0px;padding-left:20px;">
+<!--[if !mso]><!-- -->
+<a href=3D"" target=3D"_blank" style=3D"display:inline-block; text-decorati=
+on:none;" >
+<span>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" bgcolor=3D"#f48cd9"=
+ style=3D"background-color:#f48cd9;">
+<tr>
+<td align=3D"center" style=3D"padding-top:2px;padding-right:8px;padding-bot=
+tom:2px;padding-left:8px;">
+<span style=3D"color:#000000 !important;font-family:Georgia, Times, Times N=
+ew Roman, serif;font-size:23px;mso-line-height:exactly;line-height:33px;mso=
+-text-raise:5px;letter-spacing: normal;">
+<font style=3D"color:#000000;" class=3D"button">
+<span><span class=3D"mso-font-fix-georgia">Etcetera</span></span>
+</font>
+</span>
+</td>
+</tr>
+</table>
+</span>
+</a>
+<!--<![endif]-->
+<div style=3D"display:none; mso-hide: none;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" bgcolor=3D"#f48cd9"=
+ style=3D"background-color:#f48cd9;">
+<tr>
+<td align=3D"center" style=3D"padding-top:2px;padding-right:8px;padding-bot=
+tom:2px;padding-left:8px;">
+<a href=3D"" target=3D"_blank" style=3D"color:#000000 !important;font-famil=
+y:Georgia, Times, Times New Roman, serif;font-size:23px;mso-line-height:exa=
+ctly;line-height:33px;mso-text-raise:5px;letter-spacing: normal;text-decora=
+tion:none;text-align:center;">
+<span style=3D"color:#000000 !important;font-family:Georgia, Times, Times N=
+ew Roman, serif;font-size:23px;mso-line-height:exactly;line-height:33px;mso=
+-text-raise:5px;letter-spacing: normal;">
+<font style=3D"color:#000000;" class=3D"button">
+<span><span class=3D"mso-font-fix-georgia">Etcetera</span></span>
+</font>
+</span>
+</a>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td style=3D"padding-top:10px;padding-right:20px;padding-bottom:10px;paddin=
+g-left:20px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" styl=
+e=3D"border-top:2px solid #000000;">
+<tr>
+<td style=3D"font-size:0px;line-height:0;mso-line-height-rule:exactly;">&nb=
+sp;
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:5px;padding-right:20px;padding-bott=
+om:20px;padding-left:20px;"><div style=3D"font-family:Roboto, Helvetica Neu=
+e, Helvetica, Arial, sans-serif;font-size:15px;color:#000000;line-height:22=
+px;text-align:left;"><p style=3D"padding: 0; margin: 0;"><span class=3D"mso=
+-font-fix-arial"><strong>Bookkeeping</strong><br>
+<b style=3D"color: #7edcf9; font-size: 16px;">&gt; </b>L'Or=C3=A9al&nbsp;he=
+iress becomes first woman to amass a <strong>&#36;100B</strong> <a href=3D"=
+https://news.join1440.com/t/j-l-sihdtc-djluhhpiy-jd/" target=3D"_b=
+lank"style=3D"color: #0000ee !important;text-decoration: underline !importa=
+nt;" ><font style=3D"color:#0000ee;" >fortune</font></a>.&nbsp;<br>
+<b style=3D"color: #7edcf9; font-size: 16px;">&gt;&nbsp;</b>The world's tal=
+lest wooden wind turbine at <strong>492 feet</strong> tall&nbsp;<a href=3D"=
+https://news.join1440.com/t/j-l-sihdtc-djluhhpiy-jh/" target=3D"_b=
+lank"style=3D"color: #0000ee !important;text-decoration: underline !importa=
+nt;" ><font style=3D"color:#0000ee;" >installed in Sweden</font></a>.<br>
+<span style=3D"font-size:16px;"><span style=3D"color:#7edcf9;"><strong>&gt;=
+ </strong></span></span>Ghanian media personality sings for nearly <strong>=
+127 hours</strong>, <a href=3D"https://news.join1440.com/t/j-l-sihdtc-=
+djluhhpiy-jk/" target=3D"_blank"style=3D"color: #0000ee !important;text=
+-decoration: underline !important;" ><font style=3D"color:#0000ee;" >aims t=
+o break world record</font></a>.</span></p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial">&nbs=
+p;</span></p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial"><str=
+ong>Browse&nbsp;</strong></span></p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial"><spa=
+n style=3D"color:#7edcf9;"><span style=3D"font-size:16px;"><strong>&gt; </s=
+trong></span></span>Who decided Jan. 1 is <a href=3D"https://news.join1440.=
+com/t/j-l-sihdtc-djluhhpiy-ju/" target=3D"_blank"style=3D"color: #=
+0000ee !important;text-decoration: underline !important;" ><font style=3D"c=
+olor:#0000ee;" >the New Year</font></a>?&nbsp;<br>
+<span style=3D"color:#7edcf9;"><span style=3D"font-size:16px;"><strong>&gt;=
+&nbsp;</strong></span></span>Test your knowledge of&nbsp;<a href=3D"https:/=
+/news.join1440.com/t/j-l-sihdtc-djluhhpiy-tl/" target=3D"_blank"st=
+yle=3D"color: #0000ee !important;text-decoration: underline !important;" ><=
+font style=3D"color:#0000ee;" >2023's big moments</font></a>.</span></p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial"><spa=
+n style=3D"font-size:16px;"><span style=3D"color:#7edcf9;"><strong>&gt; </s=
+trong></span></span>New iguana species with orange tongue <a href=3D"https:=
+//news.join1440.com/t/j-l-sihdtc-djluhhpiy-tr/" target=3D"_blank"s=
+tyle=3D"color: #0000ee !important;text-decoration: underline !important;" >=
+<font style=3D"color:#0000ee;" >found in China</font></a>.</span></p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial"><spa=
+n style=3D"font-size:16px;"><span style=3D"color:#7edcf9;"><strong>&gt;&nbs=
+p;</strong></span></span>Stunning shots of <a href=3D"https://news.join1440=
+=2Ecom/t/j-l-sihdtc-djluhhpiy-ty/" target=3D"_blank"style=3D"color: =
+#0000ee !important;text-decoration: underline !important;" ><font style=3D"=
+color:#0000ee;" >California in infrared</font></a>.&nbsp;<br>
+<span style=3D"font-size:16px;"><span style=3D"color:#7edcf9;"><strong>&gt;=
+&nbsp;</strong></span></span>What <a href=3D"https://news.join1440.com/t/j-=
+l-sihdtc-djluhhpiy-tj/" target=3D"_blank"style=3D"color: #0000ee !=
+important;text-decoration: underline !important;" ><font style=3D"color:#00=
+00ee;" >causes bruising</font></a>?&nbsp;</span></p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial"><spa=
+n style=3D"font-size:16px;"><span style=3D"color:#7edcf9;"><strong>&gt;</st=
+rong></span></span>&nbsp;When a visit to the dentist's office&nbsp;<a href=3D=
+"https://news.join1440.com/t/j-l-sihdtc-djluhhpiy-tt/" target=3D"_=
+blank"style=3D"color: #0000ee !important;text-decoration: underline !import=
+ant;" ><font style=3D"color:#0000ee;" >goes wrong</font></a>.&nbsp;</span><=
+/p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial">&nbs=
+p;</span></p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial"><str=
+ong>Listen&nbsp;</strong></span></p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial"><spa=
+n style=3D"color:#7edcf9;"><span style=3D"font-size:16px;"><strong>&gt;</st=
+rong></span></span>&nbsp;My Unsung Hero: a collection of stories about <a h=
+ref=3D"https://news.join1440.com/t/j-l-sihdtc-djluhhpiy-ti/" targe=
+t=3D"_blank"style=3D"color: #0000ee !important;text-decoration: underline !=
+important;" ><font style=3D"color:#0000ee;" >life-changing acts of kindness=
+</font></a>.&nbsp;</span></p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial"><br>
+<strong>Watch&nbsp;</strong></span></p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial"><spa=
+n style=3D"color:#7edcf9;"><span style=3D"font-size:16px;"><strong>&gt; </s=
+trong></span></span>Recapping 2023,&nbsp;<a href=3D"https://news.join1440.c=
+om/t/j-l-sihdtc-djluhhpiy-td/" target=3D"_blank"style=3D"color: #0=
+000ee !important;text-decoration: underline !important;" ><font style=3D"co=
+lor:#0000ee;" >in seven minutes</font></a>.</span></p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial"><spa=
+n style=3D"color:#7edcf9;"><span style=3D"font-size:16px;"><strong>&gt;&nbs=
+p;</strong></span></span>New York's 80-year-olds share their <a href=3D"htt=
+ps://news.join1440.com/t/j-l-sihdtc-djluhhpiy-th/" target=3D"_blan=
+k"style=3D"color: #0000ee !important;text-decoration: underline !important;=
+" ><font style=3D"color:#0000ee;" >biggest life mistakes</font></a>.</span>=
+</p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial"><spa=
+n style=3D"color:#7edcf9;"><span style=3D"font-size:16px;"><strong>&gt; </s=
+trong></span></span>The science <a href=3D"https://news.join1440.com/t/j-l-=
+sihdtc-djluhhpiy-tk/" target=3D"_blank"style=3D"color: #0000ee !im=
+portant;text-decoration: underline !important;" ><font style=3D"color:#0000=
+ee;" >behind laughter</font></a>.<br>
+<span style=3D"color:#7edcf9;"><span style=3D"font-size:16px;"><strong>&gt;=
+</strong></span></span>&nbsp;Meet the brothers who invented <a href=3D"http=
+s://news.join1440.com/t/j-l-sihdtc-djluhhpiy-tu/" target=3D"_blank=
+"style=3D"color: #0000ee !important;text-decoration: underline !important;"=
+ ><font style=3D"color:#0000ee;" >Formula 1 for marbles</font></a>.&nbsp;</=
+span></p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial">&nbs=
+p;</span></p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial"><str=
+ong>Long Read&nbsp;</strong></span></p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial"><spa=
+n style=3D"color:#7edcf9;"><span style=3D"font-size:16px;"><strong>&gt;&nbs=
+p;</strong></span></span>The 40-ounce cup that turned Stanley into a <a hre=
+f=3D"https://news.join1440.com/t/j-l-sihdtc-djluhhpiy-il/" target=3D=
+"_blank"style=3D"color: #0000ee !important;text-decoration: underline !impo=
+rtant;" ><font style=3D"color:#0000ee;" >&#36;750M per year business</font>=
+</a>.</span></p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial"><spa=
+n style=3D"color:#7edcf9;"><span style=3D"font-size:16px;"><strong>&gt; </s=
+trong></span></span>How the Russian government punishes <a href=3D"https://=
+news.join1440.com/t/j-l-sihdtc-djluhhpiy-ir/" target=3D"_blank"sty=
+le=3D"color: #0000ee !important;text-decoration: underline !important;" ><f=
+ont style=3D"color:#0000ee;" >wartime dissent</font></a>. (w/interactive)&n=
+bsp;<br>
+<span style=3D"color:#7edcf9;"><span style=3D"font-size:16px;"><strong>&gt;=
+</strong></span></span>&nbsp;Inside a deadly Texas farm fire that led to th=
+e deaths of <a href=3D"https://news.join1440.com/t/j-l-sihdtc-=
+djluhhpiy-iy/" target=3D"_blank"style=3D"color: #0000ee !important;text-decorat=
+ion: underline !important;" ><font style=3D"color:#0000ee;" >nearly 18,000 =
+cows</font></a>.</span></p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial">&nbs=
+p;</span></p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial"><str=
+ong>Best of the Week:&nbsp;</strong>What does =E2=80=9CAuld Lang Syne=E2=80=
+=9D <a href=3D"https://news.join1440.com/t/j-l-sihdtc-djluhhpiy-ij=
+/" target=3D"_blank"style=3D"color: #0000ee !important;text-decoration: und=
+erline !important;" ><font style=3D"color:#0000ee;" >actually mean</font></=
+a>?</span></p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial">&nbs=
+p;</span></p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial"><str=
+ong>Historybook:&nbsp;</strong>Author Rudyard Kipling born (1865); The Sovi=
+et Union formed (1922); Tiger Woods born (1975); LeBron James born (1984); =
+Former Iraqi dictator Saddam Hussein executed (2006); Oscar-winning actress=
+ Luise Rainer dies (2014)</span></p></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#000000" style=3D"background-color:#000000;">
+<tr>
+<td valign=3D"top" style=3D"padding-top:30px;padding-bottom:30px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-right:30px;padding-bottom:10px;padding-=
+left:30px;"><div style=3D"font-family:Georgia, Times, Times New Roman, seri=
+f;font-size:23px;color:#ffffff;line-height:32px;text-align:left;"><p style=3D=
+"padding: 0; margin: 0;text-align: center;">"Words are, of course, the most=
+ powerful drug used by mankind."</p></div>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" style=3D"padding-top:5px;padding-right:10px;padding-bott=
+om:5px;padding-left:10px;"><div style=3D"font-family:Roboto, Helvetica Neue=
+, Helvetica, Arial, sans-serif;font-size:14px;color:#ffffff;line-height:20p=
+x;text-align:left;"><p style=3D"padding: 0; margin: 0;text-align: center;">=
+<span class=3D"mso-font-fix-arial">- Rudyard Kipling</span></p></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff" style=3D"background-color:#ffffff;">
+<tr>
+<td valign=3D"top" style=3D"padding-top:30px;padding-right:20px;padding-bot=
+tom:20px;padding-left:20px;"><div style=3D"font-family:Roboto, Helvetica Ne=
+ue, Helvetica, Arial, sans-serif;font-size:12px;color:#000000;line-height:1=
+8px;text-align:left;"><p style=3D"padding: 0; margin: 0;"><span class=3D"ms=
+o-font-fix-arial"><span style=3D"font-size:12px;"><strong>Why 1440? </stron=
+g>The printing press was invented around the year 1440, spreading knowledge=
+ to the masses and changing the course of history. More facts: In every day=
+, there are&nbsp;1,440 minutes. We=E2=80=99re here to make each one count.<=
+/span></span></p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial">&nbs=
+p;</span></p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial"><spa=
+n style=3D"font-size:12px;"><strong>Send us your feedback at</strong> <a hr=
+ef=3D"mailto:hello@join1440.com" style=3D"color: #0000ee !important;text-de=
+coration: underline !important;" ><font style=3D"color:#0000ee;" >hello@joi=
+n1440.com</font></a> and help us stay unbiased as humanly possible. We=E2=80=
+=99re ready to listen.</span></span></p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial">&nbs=
+p;</span></p>
+<p style=3D"padding: 0; margin: 0;"><span class=3D"mso-font-fix-arial"><spa=
+n style=3D"font-size:12px;"><strong>Interested in reaching smart readers li=
+ke you?</strong> To become a 1440 partner, <a href=3D"https://news.join1440=
+=2Ecom/t/j-l-sihdtc-djluhhpiy-it/" target=3D"_blank"style=3D"color: =
+#0000ee !important;text-decoration: underline !important;" ><font style=3D"=
+color:#0000ee;" >apply here</font></a>.</span></span></p></div>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff" style=3D"background-color:#ffffff;">
+<tr>
+<td valign=3D"top"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" =
+width=3D"100%">
+<tr>
+<td valign=3D"top" width=3D"37.5%">
+</td>
+<td valign=3D"top" width=3D"8.333333333333334%">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" align=3D"right"><!--[if gte mso 9]><table width=3D"45" =
+cellpadding=3D"0" cellspacing=3D"0"><tr><td><![endif]-->
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"img-wrap" =
+style=3D"max-width:100%;">
+<tr>
+<td valign=3D"top" align=3D"right"><a href=3D"https://news.join1440.com/t/j=
+-l-sihdtc-djluhhpiy-ii/" title=3D"Facebook" class=3D"imglink" targ=
+et=3D"_blank">
+<img src=3D"http://i3.cmail20.com/ei/j/82/48B/C27/131943/csimport/164929016=
+4413_facebook_2.jpg" width=3D"45" height=3D"45" alt=3D"" border=3D"0" style=
+=3D"display:block;font-size:14px;max-width:100%;height:auto;" class=3D"widt=
+h45" />
+</a>
+</td>
+</tr>
+</table>
+<!--[if gte mso 9]></td></tr></table><![endif]-->
+</td>
+</tr>
+</table>
+</td>
+<td valign=3D"top" width=3D"8.333333333333334%">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" align=3D"center"><!--[if gte mso 9]><table width=3D"45"=
+ cellpadding=3D"0" cellspacing=3D"0"><tr><td><![endif]-->
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"img-wrap" =
+style=3D"max-width:100%;">
+<tr>
+<td valign=3D"top" align=3D"center"><a href=3D"https://news.join1440.com/t/=
+j-l-sihdtc-djluhhpiy-id/" title=3D"Twitter" class=3D"imglink" targ=
+et=3D"_blank">
+<img src=3D"http://i4.cmail20.com/ei/j/82/48B/C27/131943/csimport/164929016=
+4457_twitter_3.jpg" width=3D"45" height=3D"45" alt=3D"" border=3D"0" style=3D=
+"display:block;font-size:14px;max-width:100%;height:auto;" class=3D"width45=
+" />
+</a>
+</td>
+</tr>
+</table>
+<!--[if gte mso 9]></td></tr></table><![endif]-->
+</td>
+</tr>
+</table>
+</td>
+<td valign=3D"top" width=3D"8.333333333333334%">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" align=3D"left"><!--[if gte mso 9]><table width=3D"45" c=
+ellpadding=3D"0" cellspacing=3D"0"><tr><td><![endif]-->
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"img-wrap" =
+style=3D"max-width:100%;">
+<tr>
+<td valign=3D"top" align=3D"left"><a href=3D"https://news.join1440.com/t/j-=
+l-sihdtc-djluhhpiy-ih/" title=3D"Instagram" class=3D"imglink" targ=
+et=3D"_blank">
+<img src=3D"http://i5.cmail20.com/ei/j/82/48B/C27/131943/csimport/164929016=
+4594_instagram_4.jpg" width=3D"45" height=3D"45" alt=3D"" border=3D"0" styl=
+e=3D"display:block;font-size:14px;max-width:100%;height:auto;" class=3D"wid=
+th45" />
+</a>
+</td>
+</tr>
+</table>
+<!--[if gte mso 9]></td></tr></table><![endif]-->
+</td>
+</tr>
+</table>
+</td>
+<td valign=3D"top" width=3D"37.5%">
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#fdfdfd" style=3D"background-color:#fdfdfd;">
+<tr>
+<td valign=3D"top">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#ffffff" style=3D"background-color:#ffffff;">
+<tr>
+<td valign=3D"top" style=3D"padding-top:20px;padding-right:30px;padding-bot=
+tom:20px;padding-left:30px;"><div style=3D"font-family:Roboto, Helvetica Ne=
+ue, Helvetica, Arial, sans-serif;font-size:12px;color:#000000;line-height:1=
+8px;text-align:left;"><p style=3D"padding: 0; margin: 0;text-align: center;=
+"><span class=3D"mso-font-fix-arial">1440 Media 222 W Merchandise Mart Plaz=
+a,&nbsp;Suite 1212 Chicago, IL 60654</span></p>
+<p style=3D"padding: 0; margin: 0;text-align: center;"><span class=3D"mso-f=
+ont-fix-arial">Copyright =C2=A9 2023, 1440 Media, All rights reserved.</spa=
+n></p></div>
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top" align=3D"center"><!--[if gte mso 9]><table width=3D"65"=
+ cellpadding=3D"0" cellspacing=3D"0"><tr><td><![endif]-->
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" bgcolor=3D"#fdfdfd"=
+ class=3D"img-wrap" style=3D"background-color:#fdfdfd;max-width:100%;">
+<tr>
+<td valign=3D"top" align=3D"center" style=3D"padding-bottom:20px;"><img src=
+=3D"http://i6.cmail20.com/ei/j/82/48B/C27/131943/csimport/1662125990165_144=
+0_primary_brandmark_rbg_black_5.png" width=3D"65" height=3D"29" alt=3D"" bo=
+rder=3D"0" style=3D"display:block;font-size:14px;max-width:100%;height:auto=
+;" class=3D"width65" />
+</td>
+</tr>
+</table>
+<!--[if gte mso 9]></td></tr></table><![endif]-->
+</td>
+</tr>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" bgco=
+lor=3D"#f4f4f4" style=3D"background-color:#f4f4f4;">
+<tr>
+<td style=3D"padding:5px;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td style=3D"font-size:0px;line-height:0;mso-line-height-rule:exactly;">&nb=
+sp;
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+=
+=
+=
+<table bgcolor=3D"#f4f4f4" style=3D"background-color:#f4f4f4;" cellpadding=3D=
+"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td align=3D"center" width=3D"100%">
+<!--[if gte mso 9]><table width=3D"600" cellpadding=3D"0" cellspacing=3D"0=
+"><tr><td><![endif]-->
+<table class=3D"width600 main-container" cellpadding=3D"0" cellspacing=3D"0=
+" border=3D"0" width=3D"100%" style=3D"max-width:600px;">
+<tr>
+<td width=3D"100%">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr>
+<td valign=3D"top">
+<table align=3D"left" cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+<tr>
+<td valign=3D"top" style=3D"padding-top:5px;padding-right:10px;padding-bott=
+om:5px;padding-left:10px;"><div style=3D"font-family:Roboto, Helvetica Neue=
+, Helvetica, Arial, sans-serif;font-size:12px;color: #999999;line-height:18=
+px;text-align:left;"><p style=3D"padding: 0; margin: 0;text-align: center;"=
+><span class=3D"mso-font-fix-arial"><u><a href=3D"https://news.join1440.com=
+/t/j-u-sihdtc-djluhhpiy-dl/">Unsubscribe</a></u> from this email.<=
+/span></p></div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!--[if gte mso 9]></td></tr></table><![endif]-->
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!--[if gte mso 9]></td></tr></table><![endif]-->
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+<img src=3D"https://1440.cmail20.com/t/j-o-sihdtc-djluhhpiy/o.gif"=
+ style=3D"visibility: hidden !important; display: block !important; height:=
+1px !important; width:1px !important; border: 0 !important; margin: 0 !impo=
+rtant; padding: 0 !important" width=3D"1" height=3D"1" border=3D"0" alt=3D"=
+" /></body>
+</html>
+
+
+
+--_17c3913a-669b-4f9a-814a-a3af53803bba_--

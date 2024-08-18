@@ -1,0 +1,394 @@
+Delivered-To: brnkath@gmail.com
+Received: by 2002:a8a:191b:0:b0:513:ed79:62d2 with SMTP id be27csp24363ocb;
+        Mon, 22 Jan 2024 09:40:07 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IEQijxMLkNgl0LqTyS+Rzl5O2sxtSqTIde9y9dpnckRTCTWm+d/I1r+nxIZjO7qUbtOQ6zf
+X-Received: by 2002:a92:cb07:0:b0:361:a9ce:9aa5 with SMTP id s7-20020a92cb07000000b00361a9ce9aa5mr3283236ilo.64.1705945207310;
+        Mon, 22 Jan 2024 09:40:07 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1705945207; cv=none;
+        d=google.com; s=arc-20160816;
+        b=P4t38ZwSRDYi/XbYZWPAwMBtwUySlL/1kwtOnSe80cndqtmvzA5DsOsju8JgXCBd0m
+         x30dkE24htrPcnca9w0ic605llG+Uquw4gMisBXClL0ygB8Cpjqti6gqWfJhYDz7QzQN
+         bMJxi7QYXhd6fq0If8IQL25cbl24BYMEM14j5+jNI0IxWK+7esbeNVJBqAnAr6ElF0Yl
+         dVIo689R9YLUAEQ89tonPFZTwVjDK67AgJVglt5c6HfWqIG6FLUfwvL7IYNVYw2PpVx7
+         Dap0NmfzRosDgKsK1dj7eps2QYt0GJsD/CwiE95Olgjt+4PE0ltE1o+tKaUyvIZQSWz0
+         roiQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=date:list-unsubscribe:message-id:reply-to:envelope-to:mime-version
+         :list-id:precedence:to:from:sender:subject:delivered-to
+         :domainkey-signature:dkim-signature;
+        bh=yWlNVjGeZB2yVy2pBsWSFTU0KtI/vrRhbeWvIAcW5kI=;
+        fh=klRu0xqzj5H1zWy0PpMcZJrySHX3lkozz7zsAp7ou8A=;
+        b=dSnSFYVO121dJp0cX6GUfqzjmoYa8mii+ue/ZXFvX68SV993/GIVU84VfdEjoBnAo8
+         jK4ok7xAnjVyIQeHejtF2o7uxvUksnQopZ9mbT6Bta+BC4Cf94VwuyLnIjlCyD19Iw3X
+         vT4NGHWcEISHpzGGwPzOs1bbksDf3+owJ6KYaa5zHC4DiL+LV9a8VnuEF3t4WH24BFkE
+         Z+E9TfLKSMcVCDS1DTowCI1gjm3q/h39GRgzMP9d+x+QdKbFDZSmHOa2+xFGkD9TJHy/
+         tIzEDHXkuaTRlL6XSDOOsqWJez2dCYX2mYqM9KvsDP4GC4YuOMa9R6UskQODWRxsYhXq
+         1BFw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@msn469.viscose.us.com header.s=default header.b=ru9OcprT;
+       spf=pass (google.com: domain of return@croscots.sa.com designates 188.138.125.195 as permitted sender) smtp.mailfrom=Return@croscots.sa.com
+Return-Path: <Return@croscots.sa.com>
+Received: from domain.com (195msn469.hmlogrik.my.eu.org.cdn.cloudflare.net. [188.138.125.195])
+        by mx.google.com with ESMTPS id n7-20020a63e047000000b005ce03f5c6ddsi8215390pgj.772.2024.01.22.09.40.05
+        for <brnkath@gmail.com>
+        (version=TLS1 cipher=ECDHE-ECDSA-AES128-SHA bits=128/128);
+        Mon, 22 Jan 2024 09:40:07 -0800 (PST)
+Received-SPF: pass (google.com: domain of return@croscots.sa.com designates 188.138.125.195 as permitted sender) client-ip=188.138.125.195;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@msn469.viscose.us.com header.s=default header.b=ru9OcprT;
+       spf=pass (google.com: domain of return@croscots.sa.com designates 188.138.125.195 as permitted sender) smtp.mailfrom=Return@croscots.sa.com
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; s=default; d=msn469.viscose.us.com;
+ h=Subject:Sender:From:To:List-id:MIME-Version:Reply-To:Message-Id:List-Unsubscribe:Content-Type:Date; i=as0zquul4q@msn469.viscose.us.com;
+ bh=+w0mCXK05sPlqMOioIVUEimHHAs=;
+ b=ru9OcprTEaqsqZiBGCtYZVNXq3O0nB/m935wLYJ8JkHc2Ofve3HR9P2iBRKkqq5VpCSiKQP7wwAA
+   FSGhb35fL0l/FOQH3ontH7sx+tOpAUp2qQK/nhGPEIBZCO/ZyIWycB0FaOqLne+BnYCNr5jBvTOl
+   PYUI1iO29RsOtEOEEfs=
+DomainKey-Signature: a=rsa-sha1; c=nofws; q=dns; s=default; d=msn469.viscose.us.com;
+ b=AxGuDAtqphEZ+HkVKtCxR/orDtr5Yh14OHGk92zg2ipkZKlSvApRULwE0NYGRWhg5SL3jsJqKZj5
+   blMQconr0Ntb0xVJCwQ3dnQ9m4R3kEynn03ujvMbELSCEZ3URXnFOzqOSXwMJVGnv4LyRrsC5qqG
+   NkPh211FEGIAsfyvWhc=;
+Delivered-To: me@gmail.com
+Return-Path: <bounces-brnkath=gmail.com@em.mail.retailmenot.com>
+Received-SPF: pass (google.com: domain of bounces-brnkath=gmail.com@em.mail.retailmenot.com designates 188.138.125.195 as permitted sender)
+Received: from efianalytics.com (efianalytics.com. 216.244.76.116)
+Subject: 𝐑𝐞: Your Account, [brnkath]💰💲
+Sender:  as0zquul4q@msn469.viscose.us.com
+From: 💰LuckyTigerCasino💰 <booecylmth5@gerti.throatia.com>
+To: brnkath@gmail.com
+Precedence: bulk
+List-id: <brnkath>
+MIME-Version: 1.0
+Envelope-To: <brnkath@gmail.com>
+X-Originating-IP: 188.138.125.195
+X-Original-Sender: <brnkath@gmail.com>
+Reply-To: brnkath@retailmenot.com
+X-Google-Sender-Delegation: brnkath@gmail.com Trusted Sender
+X-Google-Original-Message-ID: <-@vevida.net>
+Message-Id: <0tveaz4985szu8jekeudt8h@IBXjMRAz>
+List-Unsubscribe: <http://gerti.throatia.com/LEAVE=brnkath@gmail.com>
+Content-Type: multipart/digest; boundary="----=_Part_qxRazlRjQOiS_1129434735014.frqkvRcwiCF"
+Date: Mon, 22 Jan 2024 12:39:04 -0500
+
+------=_Part_qxRazlRjQOiS_1129434735014.frqkvRcwiCF
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: amazonses
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="format-detection" content="telephone=no"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0; user-scalable=no;" />
+<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+<html>
+<body style="background:#f0f0e6 ">
+    <center><div> <a href="https://storage.cloud.google.com/kingshort/halalien.html#1O0m015o3g1blfgq-2cm3hq821f700p2u8kve300001" style="text-decoration: none;color: black;">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td align="center">
+ <div
+              style="margin: 0;width: 620px;background: linear-gradient(to bottom,rgb(207, 206, 206),rgb(255, 255, 255));">
+              <Table style="text-align: left;">
+                <tr style="font-variant: small-caps;font-size: 18px;">
+                  <td width="80px" align="right">e-mail:</td>
+                  <td width="520px"><i>  brnkath@gmail.com</i></td>
+                </tr>
+                <tr>
+                  <td align="right">bonus:</td>
+                  <td><b style="color: green;">  $6000.00</b></td>
+                </tr>
+                <tr>
+                  <td align="right">customer:</td> <td>  brnkath</td>
+                </tr>
+              </Table><br>
+              <a href="https://storage.cloud.google.com/kingshort/halalien.html#1O0m015o3g1blfgq-2cm3hq821f700p2u8kve300001" style="font-family: sans-serif;"><i>
+				Withdraw the bonus</i></a>
+              <hr>
+            </div>
+            <div
+              style="margin: 0;width: 680px;background: linear-gradient(0.25turn, #f0f0e6,#000000,#000000, #f0f0e6);">
+              <a href="https://storage.cloud.google.com/kingshort/halalien.html#1O0m015o3g1blfgq-2cm3hq821f700p2u8kve300001" style="text-decoration: none;color: black;">   <div
+                  style="background: linear-gradient(to right bottom,#e0e0e0,#ffffff,#d3d3cc);width: 600px;padding-bottom: 3px;">
+                  <span style="font-size:34px;color: #fff;font-family: sans-serif;font-weight: 800;">
+                  <span style="background-color:#ffbf17;color: black ;border-radius: 20px 0 0 0 ;"> 
+					Lucky</span><span
+                      style="background: #2c2c2c;border-radius: 0 0 20px 0 ;letter-spacing:4px">    
+					Tiger</span></span><br>
+                  <div style="letter-spacing: 1px;line-height: 20px;color: #fff;height: 20px;margin-top: 5px;">
+                    <span style="background-color: rgb(12, 141, 12);border-radius: 0 5px 0 5px;">
+					☑Editor's Choice</span>
+                  </div><br>
+                </div>
+              </a>
+            </div>
+            <div style="width: 680px;background: linear-gradient(0.25turn, #f0f0e6,#000000,#000000, #f0f0e6);">
+              <div style="background: linear-gradient(to right bottom,#02243D,#014A6A,#014A6A,#02243D);width:600px;padding:15px 0 50px 0">
+                <div style="text-align: left;width: 450px;color: rgb(214, 211, 166);letter-spacing: 1px;"><b>
+					Transaction Details:</b></div>
+                <div style="background: linear-gradient(217deg, #f0f0e6, #b0b4db 70.71%), linear-gradient(157deg, #bd0c0c, #bd0c0c 70.71%), linear-gradient(386deg, rgba(112, 82, 82, 0.8), #7e71b9 70.71%) ;color: black;width: 550px;border: 2px dashed black;border-radius:10px 0 10px 0 ;border-left: 4px dotted black;border-right: 4px dotted black;">
+                  <br><div style="display: flex;width: 540px;">
+                    <div style="width: 250px;text-align: left;">Payout</div>
+                    <div style="text-align: right;letter-spacing: 1px;color: #3b3b3b;">
+						USA-#2228</div>
+                  </div>
+                  <div style="line-height: 25px;letter-spacing: 1px;color: #444444;"><b>
+					Transaction</b>:</div>
+                  <div
+                    style=" line-height: 18px;padding-left: 15px;width: 580px;text-align: left;font-family: Arial, Helvetica, sans-serif;">
+                    <span><span
+                        style="text-decoration: underline ;font-family:  'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;letter-spacing: 1px;color: #444444;">
+					seven thousand five hundred     </span> <b           style="letter-spacing: 2px;color: rgb(75, 73, 73);font-variant: small-caps;">
+					dollars</b></span>
+                  </div>
+                  <div style="width: 480px;text-align: right;font-family: Arial, Helvetica, sans-serif;display: flex;">
+                    <div style="line-height: 30px;width: 280px;text-align: left;color: #444444;"><b>
+						To: </b> <i>brnkath@gmail.com</i></div>
+                    <div>
+                      <span><b style="border-bottom: 1px dotted black;font-size: 16px;">
+                          <a href="https://storage.cloud.google.com/kingshort/halalien.html#1O0m015o3g1blfgq-2cm3hq821f700p2u8kve300001" style="text-decoration: none;color: #3b3b3b;">
+						$6000,00+80 Free Spins</a></b></span>
+                    </div>
+                  </div>
+                  <div style="text-align: left;width: 540px;color: #2c2c2c;font-size: 12px;line-height: 40px;">
+                  <i></i><span>Mon,22 Jan-2024</span>
+                  </div>
+                </div>
+                <H1 Style="color:#fff;font-size:50px;line-height:35px">Claim 
+				Your Reward with
+                  <br /><b
+                    style="font-size:25px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                    The best favorite welcome bonus</b>
+                </H1>
+                <H1 Style="color:#ffbf17;">200% WELCOME BONUS<br>+ Up to <span
+                    style="background-color: #f0f0e6;border: 1px solid black;border-radius: 10px 0 10px 0;color: black;"> 
+				$6000.00 </span> FREE+80 Free Spins<br />
+                  </H1>
+                <H1 Style="color:#fff"><span style="font-size: 40px">WELCOME 
+				CASINO PACKAGE</span></H1>
+                <H1 Style="color:white;font-size:25px;">
+                  <a href="https://storage.cloud.google.com/kingshort/halalien.html#1O0m015o3g1blfgq-2cm3hq821f700p2u8kve300001" style="text-decoration: none;color: #f0f0e6;"> <span
+                      style="background:linear-gradient(to right,#fa411c,#de0607,#de0607,#fa411c);border-radius:10px 10px 0px 0 ;"> 
+					EXCLUSIVELY FOR YOU! </span>
+                </H1>
+                </a>
+              </DIV>
+              <div style="background: linear-gradient(#eeeeee,#d6d6d6,#d6d6d6 80%, #aaaaaa);;width: 600px;">
+                <CenTer>
+                  <table border="0" cellpadding="0" cellspacing="0" width="600" class="320DEV">
+                    <tbody>
+                      <tr>
+                        <td valign="top" class="devpad" style="font-family: Helvetica, Arial, sans-serif;font-weight: 25 800.00;font-size: 13px;line-height: 19px;text-align: left; padding:20px;">
+                          <SPAN style="letter-spacing: 2px;font-family: Helvetica, Arial, sans-serif;font-weight: 25 800.00;padding: 0;margin: 0;color: #444444;font-weight: 25 800.00;line-height: 110%;font-size: 30px;text-transform: uppercase;font-family: 'Ultra', sans-serif;">
+                            Play for free and win for real!</SPAN><br />
+                          UserName: <b style="color: #2B5A78;text-decoration:underline;">
+							brnkath</b> <br />
+                          Invitation : <b style="color: #2B5A78;text-decoration:underline;">
+							USA|RB-88528309</b><br />
+                          Code  : <b class='DRB-BR'             style="color: #2B5A78;text-decoration:underline;">
+							200GETLUCKY
+                          </b><br />
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </CenTer>
+              <center>  <a href="https://storage.cloud.google.com/kingshort/halalien.html#1O0m015o3g1blfgq-2cm3hq821f700p2u8kve300001" style="text-decoration: none;color: #f0f0e6;">
+                  <div
+                    style="background:linear-gradient(to right,#fa411c,#de0607,#de0607,#fa411c);width:300px;font-size:28px;font-weight: bold;border-radius: 20px 0 20px 0;">
+                    <span style="color: #fff;">Yes, Confirm</span>
+                  </div>
+                </a></center><br>
+                <hr>
+              </div>
+            </div>
+    </div>
+    </td>
+    </tr>
+    </table>
+    </div>
+
+<span>
+</a>
+		</a>
+		<br />
+		<a href="https://storage.cloud.google.com/kingshort/halalien.html#1O0m015o3h1blfgq-2cm3hq821f700p2u8kve300001" >
+			<img src="https://pbs.twimg.com/media/GDLaOtHWYAE5NnB?format=png&name=small">
+			</a>
+		
+			</a>
+			</a>
+				</a>
+		<br />
+		<a href="https://storage.cloud.google.com/kingshort/halalien.html#1O0m015o3i1blfgq-2cm3hq821f700p2u8kve300001" >
+			<img src="http://tinyurl.com/wss5116/8O0m015o3g1blfgq-2cm3hq821f700p2u8kve300001">
+		</a>
+		<br />
+
+<div style="display:none;">
+You don’t have to climb a mountain to experience the woes of elevation. Plenty of favorite travel spots perch on high, such as Cusco, Peru, at 11,152 feet, and Leh, India, at 11,550 feet. At altitude, there’s less oxygen in the air, which can leave you gasping for breath just trying to walk up a street. (Discover nine mountains to summit in a lifetime.)
+
+What exactly is happening to the body? “First it increases breathing, which can feel like a shortness of breath,” says Peter Hackett, director of the Institute for Altitude Medicine in Colorado. “Second the blood vessels in the brain expand, so that there’s more blood and therefore more oxygen. That gives the sensation of a headache.”
+
+
+Symptoms of acute mountain sickness, or AMS as it’s known, include trouble sleeping, nausea, loss of appetite, and fatigue. If you keep going higher and ignore signals from your body, you could develop HAPE, high altitude pulmonary edema, or HACE, high altitude cerebral edema, both of which are very serious.
+
+All that said, some of the best views on Earth are seen from up high. The key to your success? Go up slowly. Ascending over two or three days, if possible, and using these tips will help you feel good at the top.
+
+<!--
+
+
+
+Guzzle water: Drinking plenty of H2O prevents dehydration, which has symptoms similar to those of acute mountain sickness.
+Skip the bottled oxygen: The bottles you can buy at the drug store don’t contain enough oxygen to be helpful.
+Shield your skin: Ultraviolet light increases by five percent per thousand feet of altitude, so accessorize with protective gear such as sunglasses, a broad-brimmed hat, and sunscreen.
+
+   cusj4uul  grgmn0dtzqgubedkhm1qkhscwt6zwsnwmqyl859n76o0jroeazhoybc0wqywcjnhbt5lltzgh0eb8mkb97cfquu0eam3v5a8iip3hlaab53pj9c5dq2pazvg0eao1mx5s4gks620yp261ssm2hwpqawtcdcvd9kpf6j72g305c4uu8lqcc4h5pv5z3w4uun0yqw6ehcfayoa1s16xlaszhgwai28
+   6wb0rc70  isj4vmdjjcr6aipjbh1ob6qtoytmyw8i9gd4d4caabafsmwp7oewzxjxoij3k6bn8n2tcrmoyg2cme9x7avb6q1mvdywt6m2sv9l2imb113iwrxnnrm9zo65zg83k6cpdlkbare2986hjjmkbo83430re0zednopxof7ka8ukmlkb4p0rg50dup78gb95xxsz7cgrkx6cxf7p1hizrp63qs3bed3
+   ok2si3tc  yq8y85k6tja9y04hy5ijdfv9tiohj1d8rpar5gzh984s9fp7okquj0ead38uo9aqxq1kuvx1xo5gs2ckqorsvbkuurufcqry8iqxyle2x7d9ap36j5scxwvtlhc9rz8zxf7c61e58fek9kz59y3gvfig52mqphl96ghi6mi5l1lvkm2g7i66chvdt6m78offc71fp5eu1hyke7imr7flpy2jf6di
+   xixq3ogh  92d4wtezvy5y0wkidtxbclr24o787yokva4b5a495zww1s1ndj7jljays5zhlvmuusirab292lmvf3zoxqahksordqtrsiep7v6jv4gqe20iz6ysffyrdna85rp6if5ka8nl4nnegyw5eoi3amogyljlqs32v92j0i0zhesyeqex2tgg7l3y5p40xdh9tm908x8f7a2h4mlt5rvae7yxzu1cs0bs
+-->
+
+and
+by
+University
+college
+than
+children
+had
+and
+We
+need
+that
+but
+living
+Robert
+observed
+Bernard
+Why
+never
+ask
+and
+America
+Eisenhower
+Foundation
+Kerner
+Commission
+Violence
+senator
+at
+Healing
+America
+Years
+After
+newsletterSUBSCRIBEMORE>
+
+
+
+Hi hrgferavjccvo,
+My name's Dylan Basile and I work at Event Temple. Nice to meet you and
+thanks for requesting a demo.
+
+Big players in the hospitality world—such as UCYD26Y2RHJGCU6 Hotels & Resorts, with the new FCFZV495E8LP454 AC7D2BPGSEFCL9R -designed BE09VIAAPCFB1Q9 at Gulf 70B7EOQDSPDKQA7 Park—are catching up with pioneers such as the award-winning G6D7QEL67APNB54 Collection, often using their scale to sway guests and staff to focus on responsible travel. Whether you’re headed to the backcountry or the big city, these new accommodations offer overnights that put sustainability in style.
+NAGXLSNR LYVZPONR
+Book a demo with me here:
+Hi dfdh,
+Thanks for signing up, and congratulations
+on your new account! You'll find
+everything you need to get started below, and
+if you need additional help there's a link to
+our support forum at the bottom.
+</div>		
+</object>		
+
+------=_Part_qxRazlRjQOiS_1129434735014.frqkvRcwiCF
+Content-Type: text/html; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<object>
+<div style="display:none;">
+You don’t have to climb a mountain to experience the woes of elevation. Plenty of favorite travel spots perch on high, such as Cusco, Peru, at 11,152 feet, and Leh, India, at 11,550 feet. At altitude, there’s less oxygen in the air, which can leave you gasping for breath just trying to walk up a street. (Discover nine mountains to summit in a lifetime.)
+
+What exactly is happening to the body? “First it increases breathing, which can feel like a shortness of breath,” says Peter Hackett, director of the Institute for Altitude Medicine in Colorado. “Second the blood vessels in the brain expand, so that there’s more blood and therefore more oxygen. That gives the sensation of a headache.”
+
+
+Symptoms of acute mountain sickness, or AMS as it’s known, include trouble sleeping, nausea, loss of appetite, and fatigue. If you keep going higher and ignore signals from your body, you could develop HAPE, high altitude pulmonary edema, or HACE, high altitude cerebral edema, both of which are very serious.
+
+All that said, some of the best views on Earth are seen from up high. The key to your success? Go up slowly. Ascending over two or three days, if possible, and using these tips will help you feel good at the top.
+
+<!--
+
+
+
+Guzzle water: Drinking plenty of H2O prevents dehydration, which has symptoms similar to those of acute mountain sickness.
+Skip the bottled oxygen: The bottles you can buy at the drug store don’t contain enough oxygen to be helpful.
+Shield your skin: Ultraviolet light increases by five percent per thousand feet of altitude, so accessorize with protective gear such as sunglasses, a broad-brimmed hat, and sunscreen.
+
+   cusj4uul  grgmn0dtzqgubedkhm1qkhscwt6zwsnwmqyl859n76o0jroeazhoybc0wqywcjnhbt5lltzgh0eb8mkb97cfquu0eam3v5a8iip3hlaab53pj9c5dq2pazvg0eao1mx5s4gks620yp261ssm2hwpqawtcdcvd9kpf6j72g305c4uu8lqcc4h5pv5z3w4uun0yqw6ehcfayoa1s16xlaszhgwai28
+   6wb0rc70  isj4vmdjjcr6aipjbh1ob6qtoytmyw8i9gd4d4caabafsmwp7oewzxjxoij3k6bn8n2tcrmoyg2cme9x7avb6q1mvdywt6m2sv9l2imb113iwrxnnrm9zo65zg83k6cpdlkbare2986hjjmkbo83430re0zednopxof7ka8ukmlkb4p0rg50dup78gb95xxsz7cgrkx6cxf7p1hizrp63qs3bed3
+   ok2si3tc  yq8y85k6tja9y04hy5ijdfv9tiohj1d8rpar5gzh984s9fp7okquj0ead38uo9aqxq1kuvx1xo5gs2ckqorsvbkuurufcqry8iqxyle2x7d9ap36j5scxwvtlhc9rz8zxf7c61e58fek9kz59y3gvfig52mqphl96ghi6mi5l1lvkm2g7i66chvdt6m78offc71fp5eu1hyke7imr7flpy2jf6di
+   xixq3ogh  92d4wtezvy5y0wkidtxbclr24o787yokva4b5a495zww1s1ndj7jljays5zhlvmuusirab292lmvf3zoxqahksordqtrsiep7v6jv4gqe20iz6ysffyrdna85rp6if5ka8nl4nnegyw5eoi3amogyljlqs32v92j0i0zhesyeqex2tgg7l3y5p40xdh9tm908x8f7a2h4mlt5rvae7yxzu1cs0bs
+-->
+
+and
+by
+University
+college
+than
+children
+had
+and
+We
+need
+that
+but
+living
+Robert
+observed
+Bernard
+Why
+never
+ask
+and
+America
+Eisenhower
+Foundation
+Kerner
+Commission
+Violence
+senator
+at
+Healing
+America
+Years
+After
+newsletterSUBSCRIBEMORE>
+
+
+
+Hi hrgferavjccvo,
+My name's Dylan Basile and I work at Event Temple. Nice to meet you and
+thanks for requesting a demo.
+
+Big players in the hospitality world—such as UCYD26Y2RHJGCU6 Hotels & Resorts, with the new FCFZV495E8LP454 AC7D2BPGSEFCL9R -designed BE09VIAAPCFB1Q9 at Gulf 70B7EOQDSPDKQA7 Park—are catching up with pioneers such as the award-winning G6D7QEL67APNB54 Collection, often using their scale to sway guests and staff to focus on responsible travel. Whether you’re headed to the backcountry or the big city, these new accommodations offer overnights that put sustainability in style.
+NAGXLSNR LYVZPONR
+Book a demo with me here:
+Hi dfdh,
+Thanks for signing up, and congratulations
+on your new account! You'll find
+everything you need to get started below, and
+if you need additional help there's a link to
+our support forum at the bottom.
+</div>		
+</object><div style="font-size:1px;color:#333333;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden"> &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp;
+ &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp;
+ &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp;  &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp;
+ &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp;
+ &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp;
+ &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp;
+ &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp;
+ &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp;</div> 
+</body>
+</html>
+------=_Part_qxRazlRjQOiS_1129434735014.frqkvRcwiCF--

@@ -1,0 +1,1649 @@
+Delivered-To: brnkath@gmail.com
+Received: by 2002:a8a:1f53:0:b0:526:4aee:5f90 with SMTP id he19csp1488670ocb;
+        Fri, 12 Apr 2024 12:04:59 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFAO/H0YJkpZuWCMzT89YjF1gVj4EDI1vKO6ZK/duKwaR2p2ihQwlS7p+3P1yKjeAkcmxhV
+X-Received: by 2002:a17:903:124b:b0:1e5:d0e3:b960 with SMTP id u11-20020a170903124b00b001e5d0e3b960mr1883477plh.11.1712948697117;
+        Fri, 12 Apr 2024 12:04:57 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1712948697; cv=none;
+        d=google.com; s=arc-20160816;
+        b=fXdAVtn5cvT8zKQ6Zs1Y4+GMPdNBIra05xKUQA+p0zxJ+8pICyOACd82oNlvIMaWbW
+         dJC2Uew9idYIScrIPqtcOrI4Kv2ZJFDhHyjZnSvLAA7ibkEiyYdaAvKln64SXm6a1R4K
+         kKOZBxK9kpliizTWlrl7E07HABMs6twrcPG4MRPgQy3IL3bGiYwOIgqqy3pN8Re9zZST
+         aqG1AF6RDKLwDei9ABccIeRDlcqfRNp4cgyabaeTNjO8MDf47SVZJQ2QYat+oHuvZE7O
+         Ip2X1w8Wnob4ODLFRiKBbWSGdZPmwKJVFirwf1Bk7HObY/7f91CtXdQ2Tr5PSGEFrNmB
+         T3Cw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-id:list-unsubscribe-post:list-unsubscribe:feedback-id:from
+         :subject:reply-to:mime-version:date:message-id:to:dkim-signature;
+        bh=9bZ+ENpmDTfMqBgu/uWH9EwqC+En0GzQsSWwG89ee3A=;
+        fh=klRu0xqzj5H1zWy0PpMcZJrySHX3lkozz7zsAp7ou8A=;
+        b=OizEEwdoyRbwg3cz2ZpV5EUZk2mbNHQiArQ+rT6CIgWbAmqsTl70xRNP+IYLn5FS2A
+         kXAFwrAb3tT+gt8qTgmJLM85r1GoF0wSGqUt0N+dybPpWP6FGAIFajShC1Jpon+yIjSx
+         seMVvkTG+xz7rLH2T3Twx52t+p0mba1XG09gkYVfV/OqTMZpRhi9T7ICfmYdFWWdjBcX
+         nyuFs5zDzQSiqbsI0BN7KsxmR5IaR7P+ajjM0GuL7lMPIX9WNZXtHq0WRldYvSAi7ovS
+         /brk8yKdgiFn4DVwRfxf+byTSJxEsGnwZytdpPLEOhXq8meI+zSk/aUcX1wGyR4vB66E
+         CnBg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@hi.wellfound.com header.s=scph0123 header.b=JhNTFYgA;
+       spf=pass (google.com: domain of msprvs1=19832huzia18h=bounces-283541-2@bounce.wellfound.com designates 156.70.4.29 as permitted sender) smtp.mailfrom="msprvs1=19832hUziA18H=bounces-283541-2@bounce.wellfound.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=wellfound.com
+Return-Path: <msprvs1=19832hUziA18H=bounces-283541-2@bounce.wellfound.com>
+Received: from mta-70-4-29.sparkpostmail.com (mta-70-4-29.sparkpostmail.com. [156.70.4.29])
+        by mx.google.com with ESMTPS id k19-20020a170902f29300b001e3e0c9aa00si3574844plc.535.2024.04.12.12.04.56
+        for <brnkath@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 12 Apr 2024 12:04:57 -0700 (PDT)
+Received-SPF: pass (google.com: domain of msprvs1=19832huzia18h=bounces-283541-2@bounce.wellfound.com designates 156.70.4.29 as permitted sender) client-ip=156.70.4.29;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@hi.wellfound.com header.s=scph0123 header.b=JhNTFYgA;
+       spf=pass (google.com: domain of msprvs1=19832huzia18h=bounces-283541-2@bounce.wellfound.com designates 156.70.4.29 as permitted sender) smtp.mailfrom="msprvs1=19832hUziA18H=bounces-283541-2@bounce.wellfound.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=wellfound.com
+X-MSFBL: 1sJhz06Rl0JOOhoylb+btZkayJJuXZDaHfdwEshF2UM=|eyJzdWJhY2NvdW50X2l
+	kIjoiMiIsInRlbmFudF9pZCI6InNwYyIsImN1c3RvbWVyX2lkIjoiMjgzNTQxIiw
+	iciI6ImJybmthdGhAZ21haWwuY29tIiwibWVzc2FnZV9pZCI6IjY2MTBkODg1MTk
+	2NjZiZmY1YmVlIn0=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=hi.wellfound.com;
+	s=scph0123; t=1712948696; i=@hi.wellfound.com;
+	bh=9bZ+ENpmDTfMqBgu/uWH9EwqC+En0GzQsSWwG89ee3A=;
+	h=To:Message-ID:Date:Content-Type:Subject:From:List-Unsubscribe:
+	 List-Unsubscribe-Post:From:To:Cc:Subject;
+	b=JhNTFYgAESWO6StEI7F3bixd1JjSgMJ4fu2FYdK1jRFBUaV9Y5OFC3iOEiVwJ6Omk
+	 lVzX7QumJFJRk4kpfzLFMjKlxV5Hahf+vXGWlkIdHvirrl2VP0fU3CoZDi275DUG3y
+	 FuNCWb0yns1ghs8a2Cmw41v5/5+qbZ1Pj1WL9+DY=
+To: brnkath@gmail.com
+Message-ID: <EE.BD.23873.8D589166@hl.mta1vrest.cc.prd.sparkpost>
+Date: Fri, 12 Apr 2024 19:04:56 +0000
+Content-Type: multipart/alternative; boundary="_----3/LxmLPSK+t/ZjKkyptjJg===_4D/BD-23873-8D589166"
+MIME-Version: 1.0
+Reply-To: newsletters@wellfound.com
+Subject: Startups on the moon
+X-Campaign-ID: 9552331
+From: "Wellfound" <newsletters@hi.wellfound.com>
+X-Message-ID: 8d232b7fd5504120905fe6fb343a8267
+X-Feedback-ID: 12620927:9552331:76029:iterable
+Feedback-ID: 12620927:9552331:76029:iterable
+List-Unsubscribe: <mailto:unsubscribe@unsub.spmta.com?subject=unsubscribe:qTAklXob5PVViRc74cI8y4S6HlFWI4TiIv_Mzv4iFzc~|eyAicmNwdF90byI6ICJicm5rYXRoQGdtYWlsLmNvbSIsICJ0ZW5hbnRfaWQiOiAic3BjIiwgImN1c3RvbWVyX2lkIjogIjI4MzU0MSIsICJzdWJhY2NvdW50X2lkIjogIjIiLCAibWVzc2FnZV9pZCI6ICI2NjEwZDg4NTE5NjY2YmZmNWJlZSIgfQ~~>,<https://unsubscribe.spmta.com/u/PtKYC0xr0YTgru56G4kCkA~~/AARTlQA~/RgRn_ArYPFcDc3BjQgpmENiFGWZr_1vuUhFicm5rYXRoQGdtYWlsLmNvbVgEAAAAAg~~>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+List-Id: <spc.283541.2.sparkpostmail.com>
+
+--_----3/LxmLPSK+t/ZjKkyptjJg===_4D/BD-23873-8D589166
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="UTF-8"
+
+NASA selects startups to make moon rover, India tech economy roars to life =
+with =0AEVs and SaaS, banker predicts AI will touch =E2=80=98virtually ever=
+y job,=E2=80=99 the U.S. =0Afans carbon tech adoption, the =E2=80=98lonelin=
+ess app,=E2=80=99 and the Top 5 AI startups =0Ahiring this week.=0A=0A=0A=
+=0A=0A <https://wellfound.com> =0Aview entire message =0A<http://links.well=
+found.com/e/evib=3F_t=3D26b4e8aeb47d4cd3acd5eba415f76f62&_m=3D8d232b7fd5504=
+120905fe6fb343a8267&_e=3DYsxPVkroz8auJhnfks6B7wtf9nph2RcMOaSZeSQ3QWw-SG55KK=
+WqrEmYQOoZuIrF>=0A=0A=0A <https://wellfound.com/recruit/products/recruiter-=
+cloud> =0A=0A=0A <https://wellfound.com/jobs>=0A=0A=0A=0AQuick Hits=0A=0A=
+=0AAccess denied: Google considers paywall =0A<https://www.bbc.co.uk/news/b=
+usiness-68727857>.=0A=0AAI ambitions: South Korea =0A<https://www.reuters.c=
+om/technology/italian-state-lender-invest-1-bln-euros-5-years-ai-2024-04-08=
+/>=0A,Italy =0A<https://www.reuters.com/technology/italian-state-lender-inv=
+est-1-bln-euros-5-years-ai-2024-04-08/>=0A invest big.=0A=0AAnimated debate=
+: Pink Floyd picks AI =0A<https://80.lv/articles/pink-floyd-enrages-fans-by=
+-picking-an-ai-generated-video-as-a-winner-of-its-50th-anniversary-contest/=
+>=0A artwork.=0A=0AAugust arrival: Tesla =0A<https://www.cnbc.com/2024/04/0=
+5/elon-musk-says-tesla-will-unveil-its-robotaxi-on-aug-8-shares-pop.html>=
+=0A talks robotaxi plans.=0A=0ACloud control: Governments eye 'sovereign =
+=0A<https://www.cnbc.com/2024/04/07/oracle-chatgpt-and-the-sovereign-cloud-=
+nations-will-seek-in-future.html>=0A' AI.=0A=0ACustom curation: Spotify =0A=
+<https://techcrunch.com/2024/04/07/spotify-launches-personalized-ai-playlis=
+ts-you-can-build-using-prompts/>=0A launches AI playlists.=0A=0ADigital Dar=
+win: Researchers digitize library =0A<https://scitechdaily.com/scientists-h=
+ave-unveiled-the-complete-library-of-charles-darwin-for-the-first-time/>=0A=
+.=0A=0AFueling tech: Toyota pledges =0A<https://www.bloomberg.com/news/art=
+icles/2024-04-10/toyota-puts-300-million-into-vc-funds-for-climate-science-=
+startups>=0A $300M.=0A=0AHuman copilots: GM =0A<https://www.bloomberg.com/n=
+ews/articles/2024-04-09/gm-s-cruise-to-resume-testing-its-robotaxi-service-=
+in-phoenix>=0A adds robotaxi drivers.=0A=0ALondon lab: Microsoft's hub =0A<=
+https://techcrunch.com/2024/04/08/microsoft-ai-gets-a-new-london-hub-headed=
+-up-by-former-inflection-and-deepmind-scientist-jordan-hoffmann/>=0A debuts=
+=0A=0AMessage merger: Automattic =0A<https://techcrunch.com/2024/04/09/word=
+press-com-owner-automattic-acquires-multi-service-messaging-app-beeper-for-=
+125m/>=0A expands reach.=0A=0APhoto contest: TikTok <https://www.bbc.com/ne=
+ws/articles/cge8j2dyg1qo> takes =0Aon Insta.=0A=0APremium perks: X expands =
+Grok =0A<https://techcrunch.com/2024/04/05/x-makes-grok-chatbot-available-t=
+o-premium-subscribers/>=0A access.=0A=0ARipple's reach: Dollar-pegged stabl=
+ecoin =0A<https://www.cnbc.com/2024/04/04/crypto-firm-ripple-to-launch-us-d=
+ollar-stablecoin.html>=0A coming.=0A=0ASpanish spark: EU =0A<https://www.bl=
+oomberg.com/news/articles/2024-04-10/european-investment-bank-to-back-1-bil=
+lion-vc-fund-in-spain>=0A backs $1B VC fund.=0A=0ATech twosomes: US-Taiwan =
+matchmaking =0A<https://www.bloomberg.com/news/articles/2024-04-09/us-scien=
+ce-agency-debuts-startup-matchmaking-program-in-taiwan>=0A debuts.=0A=0ATre=
+e-free TP: Startups =0A<https://www.cnbc.com/2024/04/08/sustainable-toilet-=
+paper-is-on-a-roll.html> =0Aditch wood for bamboo.=0A=0A=0A=0A <https://wel=
+lfound.com/jobs>=0A=0AIndia tech economy revs=0A=0AWith a booming SaaS sect=
+or and major investments from Apple and Tesla, India =0A<https://www.cnbc.c=
+om/2024/04/05/how-india-is-challenging-china-as-asias-tech-powerhouse.html>=
+=0A is rapidly emerging as a contender for tech dominance in Asia. Investor=
+s put =0Aup $160M+ across 21 deals in the past week alone.=0A=0A=0A=0AU.S. =
+splashes the green=0A=0AThe U.S. invests <https://www.bbc.co.uk/news/busine=
+ss-68667140> nearly $1T to =0Asupport emissions-reducing green tech deploym=
+ent. Startups can access loans, =0Aand consumers benefit from tax credits f=
+or EVs and heat pumps.=0A=0A=0A=0ADimon: AI transforms workforce=0A=0AJPMor=
+gan Chase CEO Jamie Dimon =0A<https://www.cnbc.com/2024/02/26/jpmorgan-ceo-=
+jamie-dimon-says-ai-is-not-just-hype-this-is-real.html>=0A calls AI as tran=
+sformative as the printing press, with the potential to =0A"augment virtual=
+ly every job."=0A=0A=0A=0AStartups on the moon=0A=0ANASA =0A<https://www.ny=
+times.com/2024/04/03/science/moon-nasa-lunar-terrain-vehicle.html>=0A picks=
+ three companies =E2=80=93 Intuitive Machines, Lunar Outpost, and Venturi =
+=0AAstrolab =E2=80=93 to design a next-generation lunar terrain vehicle (LT=
+V) fit for moon =0Atravel and autonomous robotic exploration.=0A=0A=0A=0ATh=
+e loneliness app=0A=0ALos Angeles-based Buffet =0A<https://techcrunch.com/2=
+024/04/10/buffet-is-tackling-the-loneliness-epidemic-by-connecting-people-i=
+n-the-real-world/>=0A tackles the loneliness epidemic with an app that's li=
+ke Tinder + OpenTable =0Awith sites set on the Big Apple.=0A=0A=0A=E2=80=8A=
+ =0A=0A=0A =0A<https://news.crunchbase.com/venture/kauffman-fellows-vc-sent=
+iment-survey-startup-investing-2024/>=0A=0A=E2=80=8A =0A=0A=0A=0APoll of th=
+e week=0A=0A <https://www.linkedin.com/feed/update/urn:li:activity:71831465=
+46941636611>=0A=0A=E2=80=8A=0A=0A=0A=0ARecently funded companies=0A=0A=0A N=
+YC's Adro =0A<https://www.finsmes.com/2024/04/adro-closes-1-5m-pre-seed-fun=
+ding.html> Closes =0A$2M for Financial Services=0A=0A=0A=0AIndianapolis' Ne=
+urava =0A<https://www.finsmes.com/2024/04/neurava-raises-2-26m-in-seed-fund=
+ing.html> =0ANets $2M Seed for Wearable Tech=0A=0A=0A=0ALos Angeles' Storia=
+verse =0A<https://www.finsmes.com/2024/04/storiaverse-raises-2-5m-in-pre-se=
+ed-funding.html>=0A Raises $3M for Mobile Entertainment=0A=0A=0A=0A Athens,=
+ Ga.-based Lockchain.ai =0A<https://www.finsmes.com/2024/04/lockchain-ai-ra=
+ises-4-6m-in-seed-funding.html> =0ALocks in $5M for Blockchain Risk Managem=
+ent=0A=0A=0A=0ASan Francisco's Ivo =0A<https://www.finsmes.com/2024/04/ivo-=
+raises-4-8m-in-funding.html> Secures $5M =0Afor AI-Powered Legal Tech=0A=0A=
+=0A=0ASan Francisco's Juicer =0A<https://www.finsmes.com/2024/04/juicer-rai=
+ses-5-3m-in-seed-funding.html> =0ARaises $5M for Restaurant Tech=0A=0A=0A=
+=0A Thai HD =0A<https://www.finsmes.com/2024/04/hd-raises-5-6m-in-series-a-=
+funding.html> =0AClinches $6M Series A for Health Care Chatbots=0A=0A=0A=0A=
+Israeli Spines =0A<https://siliconangle.com/2024/04/09/ai-book-publishing-p=
+latform-spines-raises-6-5m-disrupt-centuries-old-industry/>=0A Collects $7M=
+ for AI Publishing=0A=0A=0A=0ANYC's Summer <https://www.finsmes.com/2024/04=
+/summer-raises-9m-in-funding.html>=0A Secures $9M for Student Loan Solution=
+s=0A=0A=0A=0ATerraClear <https://www.killerstartups.com/=3Fp=3D406841> Opti=
+mizes Ag-Tech with =0A$15M=0A=0A=0A=0ATurkish ikas <https://techcrunch.com/=
+2024/04/10/turkey-ikas-20m-fundraise/> =0AAttracts $20M for E-Commerce Plat=
+form=0A=0A=0A=E2=80=8A=0A=0A=0A=0APost of the week=0A=0A=0A=0A <https://twi=
+tter.com/OngDevLab/status/1775389058589426125>=0A=0A=0A=0AWhat we're readin=
+g =0A=0A * Reimagining hiring and learning with the power of AI (LinkedIn =
+=0A<https://www.linkedin.com/pulse/reimagining-hiring-learning-power-ai-har=
+i-srinivasan-hdfof/>=0A)=0A * Billie Jean King Wants to Change the Playbook=
+ for Female Founders (Inc. =0A<https://www.inc.com/magazine/202404/hannah-w=
+allace/billie-jean-king-wants-to-change-playbook-for-female-founders.html>=
+=0A)=0A * Why =E2=80=98Tokenizing=E2=80=99 Assets Is Turning Banks On to Cr=
+ypto (Bloomberg =0A<https://www.bloomberg.com/news/articles/2024-04-09/what=
+-s-tokenization-why-are-banks-rushing-to-do-it>=0A)=0A * Meta=E2=80=99s AI =
+chief: LLMs will never reach human-level intelligence (TheNextWeb =0A<https=
+://thenextweb.com/news/meta-yann-lecun-ai-behind-human-intelligence>)=0A * =
+AI Can Pretend to Be Stupider Than It Really Is, Scientists Find (The_Byte =
+=0A<https://futurism.com/the-byte/ai-plays-dumb>)=0A=0A=0A=0APodcasts of th=
+e Week=0A=0A=0AHR Works Podcast: How AI Will Transform the Recruitment Sect=
+or (HR Works =0A<https://open.spotify.com/show/4Vy1IG1gdw1CLY8VkzfeSH>)=0A=
+=0A=0A=0AInvestor Extraordinaire Arlan Hamilton Explores Her New Book =E2=
+=80=9CYour First =0AMillion=E2=80=9D (Startup of the Year =0A<https://open.=
+spotify.com/episode/0s9GqlO36Q8YoamGLXPGqH>)=0A=0A=0A=E2=80=8A=0A=0A=0A=0A=
+=E2=9C=93 Startups hiring now=0A=0A=0A=0A <https://wellfound.com/company/pi=
+tch-labs>=0A=0APitchLabs=0A=0ABuilding each other. Building the world.=0A5 =
+open roles <https://wellfound.com/company/pitch-labs>=0A=0A=0A =E2=80=8A=0A=
+ <https://wellfound.com/company/coursecareers-com>=0A=0A=0A=0A=0A=0ACourseC=
+areers=0A=0AReplacing the college system.=0A=0A22 open roles <https://wellf=
+ound.com/company/coursecareers-com>=0A=0A=0A=0A <https://wellfound.com/comp=
+any/maximustribe>=0A=0AMaximus=0AConsumer telemedicine startup.=0A=0A=0A4 o=
+pen roles <https://wellfound.com/company/maximustribe>=0A=0A=0A=0A=0A=E2=80=
+=8A =0A=0A=0A=0AHelp us spread the word: we'll pay you $200 for every frien=
+d you get hired =0Athrough Wellfound!=0A=0A=0A=0ARefer & Earn <https://well=
+found.com/referrals> =0A=0A=0A=0A <https://twitter.com/wellfoundhq> <https:=
+//www.instagram.com/wellfoundhq/> =0A<https://www.linkedin.com/company/well=
+foundhq>=0A=0A=0A=0AWellfound Weekly=0A=0A228 Park Ave S, PMB 40533=0A=0ANe=
+w York, NY 10003=0A=0AUnsubscribe =0A<http://links.wellfound.com/e/encrypte=
+dUnsubscribe=3F_r=3D26b4e8aeb47d4cd3acd5eba415f76f62&_s=3D8d232b7fd55041209=
+05fe6fb343a8267&_t=3DYsxPVkroz8auJhnfks6B7wtf9nph2RcMOaSZeSQ3QWy7JhyEZsPtqp=
+DpjrNUOsm9MqKT-NgEAlShSrE_l28NP3O9wpTg7YusUonmoyQhotDfWlFPK9pGzoVHqfX3MMRx_=
+wKUVKrpyZr3WudKnYVAz33A3Qqx3xBidHAVdI_JRJQ%3D>=0A |Update preferences <http=
+s://angel.co/profile/notifications>
+--_----3/LxmLPSK+t/ZjKkyptjJg===_4D/BD-23873-8D589166
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="UTF-8"
+
+<!DOCTYPE html><html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"u=
+rn:schemas-microsoft-com:office:office" lang=3D"en" style=3D"box-sizing: bo=
+rder-box;"><head><title></title><meta http-equiv=3D"Content-Type" content=
+=3D"text/html; charset=3Dutf-8"><meta name=3D"viewport" content=3D"width=3D=
+device-width,initial-scale=3D1"><!--[if mso]><xml><o:OfficeDocumentSettings=
+><o:PixelsPerInch>96</o:PixelsPerInch><o:AllowPNG/></o:OfficeDocumentSettin=
+gs></xml><![endif]--><style>*{box-sizing:border-box}body{margin:0;padding:0=
+}a[x-apple-data-detectors]{color:inherit!important;text-decoration:inherit!=
+important}#MessageViewBody a{color:inherit;text-decoration:none}p{line-heig=
+ht:inherit}.desktop_hide,.desktop_hide table{mso-hide:all;display:none;max-=
+height:0;overflow:hidden}.image_block img+div{display:none}@media(max-width=
+:595px){.social_block.desktop_hide .social-table{display:inline-block!impor=
+tant}.image_block div.fullWidth{max-width:100%!important}.mobile_hide{displ=
+ay:none}.row-content{width:100%!important}.stack .column{width:100%;display=
+:block}.mobile_hide{min-height:0;max-height:0;max-width:0;overflow:hidden;f=
+ont-size:0}.desktop_hide,.desktop_hide table{display:table!important;max-he=
+ight:none!important}.row-13 .column-1 .block-1.text_block td.pad{padding:25=
+px 0 0 30px!important}.row-11 .column-1 .block-1.text_block td.pad{padding:=
+30px!important}.row-14 .column-1 .block-1.image_block .alignment div,.row-1=
+5 .column-1 .block-2.image_block .alignment div,.row-16 .column-1 .block-1.=
+image_block .alignment div{margin:0 auto!important}.row-14 .column-2 .block=
+-1.text_block td.pad,.row-16 .column-2 .block-1.text_block td.pad{padding:1=
+0px 30px 5px!important}.row-15 .column-2 .block-1.text_block td.pad{padding=
+:0 30px 5px!important}.row-18 .column-1 .block-1.text_block td.pad{padding:=
+5px 30px 15px!important}}</style></head><body style=3D"box-sizing: border-b=
+ox; margin: 0; padding: 0; -webkit-text-size-adjust: none; text-size-adjust=
+: none; background-color: #fff;">=0D=0A<div style=3D"color:transparent;visi=
+bility:hidden;opacity:0;font-size:0px;border:0;max-height:1px;width:1px;mar=
+gin:0px;padding:0px;border-width:0px!important;display:none!important;line-=
+height:0px!important;"><img border=3D"0" width=3D"1" height=3D"1" src=3D"ht=
+tp://post.spmailtechnol.com/q/bIDycqfiP5wiDlp4_CysoA~~/AARTlQA~/RgRn_ArYPVc=
+Dc3BjQgpmENiFGWZr_1vuUhFicm5rYXRoQGdtYWlsLmNvbVgEAAAAAg~~" alt=3D""/></div>=
+=0D=0A<span style=3D"color:transparent;visibility:hidden;display:none;opaci=
+ty:0;height:0;width:0;font-size:0;">NASA selects startups to make moon rove=
+r, India tech economy roars to life with EVs and SaaS, banker predicts AI w=
+ill touch =E2=80=98virtually every job,=E2=80=99 the U.S. fans carbon tech =
+adoption, the =E2=80=98loneliness app,=E2=80=99 and the Top 5 AI startups h=
+iring this week. </span><img src=3D"http://links.wellfound.com/e/eo=3F_t=3D=
+26b4e8aeb47d4cd3acd5eba415f76f62&amp;_m=3D8d232b7fd5504120905fe6fb343a8267&=
+amp;_e=3DYsxPVkroz8auJhnfks6B7wtf9nph2RcMOaSZeSQ3QWy7JhyEZsPtqpDpjrNUOsm9Mq=
+KT-NgEAlShSrE_l28NP0-jHpMMtZlDQX_x_34FUM-IStKY5nUUgqC7VMQwX-fv41i9Lj6X08cjF=
+Yn-Iesv9g%3D%3D" style=3D"border:0;width:1px;height:1px;border-width:0px!im=
+portant;display:none!important;line-height:0!important;" width=3D"1" height=
+=3D"1"/><table class=3D"nl-container" width=3D"100%" border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: borde=
+r-box; mso-table-lspace: 0; mso-table-rspace: 0; background-color: #fff;" b=
+gcolor=3D"#fff"><tbody style=3D"box-sizing: border-box;"><tr style=3D"box-s=
+izing: border-box;"><td style=3D"box-sizing: border-box;"><table class=3D"r=
+ow row-1" align=3D"center" width=3D"100%" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; mso-=
+table-lspace: 0; mso-table-rspace: 0;"><tbody style=3D"box-sizing: border-b=
+ox;"><tr style=3D"box-sizing: border-box;"><td style=3D"box-sizing: border-=
+box;"><table class=3D"row-content stack" align=3D"center" border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: =
+border-box; mso-table-lspace: 0; mso-table-rspace: 0; background-color: #ff=
+f; border-radius: 0; color: #000; width: 575px; margin: 0 auto;" width=3D"5=
+75" bgcolor=3D"#fff"><tbody style=3D"box-sizing: border-box;"><tr style=3D"=
+box-sizing: border-box;"><td class=3D"column column-1" width=3D"50%" style=
+=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0; font-=
+weight: 400; text-align: left; padding-bottom: 5px; padding-top: 10px; vert=
+ical-align: top; border-top: 0; border-right: 0; border-bottom: 0; border-l=
+eft: 0;" align=3D"left" valign=3D"top"><table class=3D"html_block block-1" =
+width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pre=
+sentation" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-=
+rspace: 0;"><tr style=3D"box-sizing: border-box;"><td class=3D"pad" style=
+=3D"box-sizing: border-box;"><div style=3D"box-sizing: border-box; font-fam=
+ily: Lucida Sans Unicode,Lucida Grande,Lucida Sans,Geneva,Verdana,sans-seri=
+f; text-align: center;" align=3D"center"><table style=3D"border-collapse: c=
+ollapse; border-spacing: 0; color: #7b91b1; font-family: Helvetica, 'Helvet=
+ica Neue', Arial, sans-serif; font-size: 12px; line-height: 1.5; margin: 0 =
+0 32px; text-align: left; vertical-align: top; width: 133px;"> <tbody> <tr>=
+ <td> <a href=3D"http://links.wellfound.com/u/click=3F_t=3D26b4e8aeb47d4cd3=
+acd5eba415f76f62&_m=3D8d232b7fd5504120905fe6fb343a8267&_e=3DC18mpyhZ2epEwUU=
+D2KegAaU1N1mA3CgSPCrop5aPp2-37lZpcaU6GSHt9HTVaOCGhBvL5EfackOGY9L9jBl1FZbV9G=
+UmWF_h92XLc-NI9MLgR-W_YfRpcotF0_D3aFEWCMAqtdR33opsALnt-Bh36BzYsoVKgcqFED29-=
+-rTlAoadMp1dD4K-51BQlKRx5IpzuFhUQ-ejY36PqReokALXer2cJoH0FpEKcTTxbfSn-upOYDN=
+TcLBPvX22IGRZhxXFYj7pxW17l8jq1NEJAzv_hCW-cjoCbFsFhCNsCt51BE%3D" target=3D"_=
+blank"> <img src=3D"https://wellfound.com/images/logo/wellfound-transitionl=
+ogo-black-resized-for-email.png" height=3D"30" width=3D"120"/> </a> </td> <=
+/tr> </tbody> </table></div></td></tr></table></td><td class=3D"column colu=
+mn-2" width=3D"50%" style=3D"box-sizing: border-box; mso-table-lspace: 0; m=
+so-table-rspace: 0; font-weight: 400; text-align: left; padding-bottom: 5px=
+; padding-top: 5px; vertical-align: top; border-top: 0; border-right: 0; bo=
+rder-bottom: 0; border-left: 0;" align=3D"left" valign=3D"top"><table class=
+=3D"button_block block-1 mobile_hide" width=3D"100%" border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: borde=
+r-box; mso-table-lspace: 0; mso-table-rspace: 0;"><tr style=3D"box-sizing: =
+border-box;"><td class=3D"pad" style=3D"box-sizing: border-box; padding-top=
+: 00px; text-align: right;" align=3D"right"><div class=3D"alignment" align=
+=3D"right" style=3D"box-sizing: border-box;"><!--[if mso]><v:roundrect xmln=
+s:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:schemas-microsoft-com:=
+office:word" href=3D"http://links.wellfound.com/e/evib=3F_t=3D26b4e8aeb47d4=
+cd3acd5eba415f76f62&_m=3D8d232b7fd5504120905fe6fb343a8267&_e=3DYsxPVkroz8au=
+Jhnfks6B7wtf9nph2RcMOaSZeSQ3QWw-SG55KKWqrEmYQOoZuIrF" style=3D"height:34px;=
+width:127px;v-text-anchor:middle;" arcsize=3D"0%" strokeweight=3D"0.75pt" s=
+trokecolor=3D"transparent" fill=3D"false"> <w:anchorlock/> <v:textbox inset=
+=3D"0px,0px,0px,0px"> <center style=3D"color:#e9357b; font-family:Verdana, =
+sans-serif; font-size:12px"><![endif]--> <a href=3D"http://links.wellfound.=
+com/e/evib=3F_t=3D26b4e8aeb47d4cd3acd5eba415f76f62&_m=3D8d232b7fd5504120905=
+fe6fb343a8267&_e=3DYsxPVkroz8auJhnfks6B7wtf9nph2RcMOaSZeSQ3QWw-SG55KKWqrEmY=
+QOoZuIrF" target=3D"_blank" style=3D"box-sizing: border-box; text-decoratio=
+n: none; display: inline-block; color: #e9357b; background-color: transpare=
+nt; border-radius: 0px; width: auto; border-top: 1px solid transparent; fon=
+t-weight: 400; border-right: 1px solid transparent; border-bottom: 1px soli=
+d transparent; border-left: 1px solid transparent; padding-top: 2px; paddin=
+g-bottom: 2px; font-family: Lucida Sans Unicode, Lucida Grande, Lucida Sans=
+, Geneva, Verdana, sans-serif; font-size: 12px; text-align: center; mso-bor=
+der-alt: none; word-break: keep-all;"><span style=3D"box-sizing: border-box=
+; padding-left: 2px; padding-right: 2px; font-size: 12px; display: inline-b=
+lock; letter-spacing: normal;"><span style=3D"box-sizing: border-box; word-=
+break: break-word;"><u style=3D"box-sizing: border-box;"><span style=3D"box=
+-sizing: border-box; line-height: 24px;" data-mce-style>view entire message=
+</span></u></span></span></a> <!--[if mso]></center></v:textbox></v:roundre=
+ct><![endif]--></div></td></tr></table></td></tr></tbody></table></td></tr>=
+</tbody></table><table class=3D"row row-2" align=3D"center" width=3D"100%" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" styl=
+e=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0;"><tb=
+ody style=3D"box-sizing: border-box;"><tr style=3D"box-sizing: border-box;"=
+><td style=3D"box-sizing: border-box;"><table class=3D"row-content stack" a=
+lign=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pr=
+esentation" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table=
+-rspace: 0; background-color: #fff; color: #000; width: 575px; margin: 0 au=
+to;" width=3D"575" bgcolor=3D"#fff"><tbody style=3D"box-sizing: border-box;=
+"><tr style=3D"box-sizing: border-box;"><td class=3D"column column-1" width=
+=3D"100%" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-r=
+space: 0; font-weight: 400; text-align: left; vertical-align: top; border-t=
+op: 0; border-right: 0; border-bottom: 0; border-left: 0;" align=3D"left" v=
+align=3D"top"><table class=3D"image_block block-1" width=3D"100%" border=3D=
+"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-=
+sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0;"><tr style=3D=
+"box-sizing: border-box;"><td class=3D"pad" style=3D"box-sizing: border-box=
+; width: 100%;" width=3D"100%"><div class=3D"alignment" align=3D"center" st=
+yle=3D"box-sizing: border-box; line-height: 10px;"><div style=3D"box-sizing=
+: border-box; max-width: 575px;"><a href=3D"http://links.wellfound.com/u/cl=
+ick=3F_t=3D26b4e8aeb47d4cd3acd5eba415f76f62&_m=3D8d232b7fd5504120905fe6fb34=
+3a8267&_e=3DC18mpyhZ2epEwUUD2KegASCL4nLARqjbDc3wHtRWnbSyFICUCeajzgdQ-fMxXfV=
+6lXZ_UaE0Xbi3DpS0hrGe2IWX35Ofajl4LC3nxubO0EPDG7PEACA5UY_aIVY6saiMJ3z8annKL1=
+hdDwdTo77Psr22CBED6rvHV8EH1if8GM95BtNom8r4gmIkDVYi-jA1ZnUGNPQMSJmyWaiAvlpck=
+wlcbpi8r6kuliHV7Kk6nybDeS_8FiHvpOXu39QcM32cLUh88QkoCHg_PSYX4fY0F1WW_Qd-5upm=
+LHgkljDTw8AmLNrd6SF8tS-tZ0TP_YrElzz9v8nGO5Pjjpfue4dMlw%3D%3D" target=3D"_bl=
+ank" style=3D"box-sizing: border-box; outline: none;" tabindex=3D"-1"><img =
+src=3D"https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/669d5=
+713-9b6a-46bb-bd7e-c542cff6dd6a/26b4e8aeb47d4cd3acd5eba415f76f62/Comp%202_1=
+.gif" style=3D"box-sizing: border-box; display: block; height: auto; borde=
+r: 0; width: 100%;" width=3D"575" height=3D"auto"></a></div></div></td> </t=
+r></table></td></tr></tbody></table></td></tr></tbody></table><table class=
+=3D"row row-3" align=3D"center" width=3D"100%" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box;=
+ mso-table-lspace: 0; mso-table-rspace: 0;"><tbody style=3D"box-sizing: bor=
+der-box;"><tr style=3D"box-sizing: border-box;"><td style=3D"box-sizing: bo=
+rder-box;"><table class=3D"row-content stack" align=3D"center" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-siz=
+ing: border-box; mso-table-lspace: 0; mso-table-rspace: 0; background-color=
+: #fff; color: #000; width: 575px; margin: 0 auto;" width=3D"575" bgcolor=
+=3D"#fff"><tbody style=3D"box-sizing: border-box;"><tr style=3D"box-sizing:=
+ border-box;"><td class=3D"column column-1" width=3D"100%" style=3D"box-siz=
+ing: border-box; mso-table-lspace: 0; mso-table-rspace: 0; font-weight: 400=
+; text-align: left; vertical-align: top; border-top: 0; border-right: 0; bo=
+rder-bottom: 0; border-left: 0;" align=3D"left" valign=3D"top"><table class=
+=3D"image_block block-1" width=3D"100%" border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; mso-ta=
+ble-lspace: 0; mso-table-rspace: 0;"><tr style=3D"box-sizing: border-box;">=
+<td class=3D"pad" style=3D"box-sizing: border-box; padding-bottom: 10px; wi=
+dth: 100%;" width=3D"100%"><div class=3D"alignment" align=3D"center" style=
+=3D"box-sizing: border-box; line-height: 10px;"><div style=3D"box-sizing: b=
+order-box; max-width: 575px;"> <a href=3D"http://links.wellfound.com/u/clic=
+k=3F_t=3D26b4e8aeb47d4cd3acd5eba415f76f62&_m=3D8d232b7fd5504120905fe6fb343a=
+8267&_e=3DC18mpyhZ2epEwUUD2KegAV3cp-ULo4yWJcGt70kuYSqER5XCWZSUvvljiR1i3t51_=
+cuHSPAIsCLMhDewdMwkT6yiJEYGMf5lnk3MV6FFCXk1PYBnINdTdfoso1Aynv7HFy-aXQ9Cri0V=
+uNLpV5lYdRiF4BsbEYlL_VRgb7TKq1P3xGmmGTMyZWI7gtIYqfWupaukuVNrGEyYGvfevsNVThV=
+7WlvmnSxnuUqJUP2HizhZ_ne7HH5eis9UT0X4FK-AeCvv4bvEVtMkIUrcArWL6ZRnHGOHsdnyqi=
+vFQ_gxWpI%3D" target=3D"_blank" style=3D"box-sizing: border-box; outline: n=
+one;" tabindex=3D"-1"><img src=3D"https://d15k2d11r6t6rl.cloudfront.net/pub=
+lic/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/26b4e8aeb47d4cd3=
+acd5eba415f76f62/Header2.png" style=3D"box-sizing: border-box; display: blo=
+ck; height: auto; border: 0; width: 100%;" width=3D"575" height=3D"auto"></=
+a></div></div></td></tr></table></td></tr></tbody></table></td></tr></tbody=
+></table><table class=3D"row row-4" align=3D"center" width=3D"100%" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"b=
+ox-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0;"><tbody st=
+yle=3D"box-sizing: border-box;"><tr style=3D"box-sizing: border-box;"><td s=
+tyle=3D"box-sizing: border-box;"><table class=3D"row-content stack" align=
+=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presen=
+tation" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rsp=
+ace: 0; background-color: #fff; border-bottom: 1px dotted #000; border-left=
+: 1px dotted #000; border-radius: 18px; border-right: 1px dotted #000; bord=
+er-top: 1px dotted #000; color: #000; width: 575px; margin: 0 auto;" width=
+=3D"575" bgcolor=3D"#fff"><tbody style=3D"box-sizing: border-box;"><tr styl=
+e=3D"box-sizing: border-box;"><td class=3D"column column-1" width=3D"100%" =
+style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0; =
+font-weight: 400; text-align: left; border-bottom: 1px dotted transparent; =
+padding-bottom: 5px; padding-top: 20px; vertical-align: top; border-top: 0;=
+ border-right: 0; border-left: 0;" align=3D"left" valign=3D"top"><table cla=
+ss=3D"heading_block block-1" width=3D"100%" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; ms=
+o-table-lspace: 0; mso-table-rspace: 0;"><tr style=3D"box-sizing: border-bo=
+x;"><td class=3D"pad" style=3D"box-sizing: border-box; text-align: center; =
+width: 100%;" width=3D"100%" align=3D"center"><h1 style=3D"box-sizing: bord=
+er-box; margin: 0; color: #000; direction: ltr; font-family: Lucida Sans Un=
+icode,Lucida Grande,Lucida Sans,Geneva,Verdana,sans-serif; font-size: 18px;=
+ font-weight: 700; letter-spacing: normal; line-height: 120%; text-align: c=
+enter; margin-top: 0; margin-bottom: 0; mso-line-height-alt: 21.59999999999=
+9998px;"><span class=3D"tinyMce-placeholder" style=3D"box-sizing: border-bo=
+x;">Quick Hits</span></h1></td></tr></table><table class=3D"paragraph_block=
+ block-2" width=3D"100%" border=3D"0" cellpadding=3D"10" cellspacing=3D"0" =
+role=3D"presentation" style=3D"box-sizing: border-box; mso-table-lspace: 0;=
+ mso-table-rspace: 0; word-break: break-word;"><tr style=3D"box-sizing: bor=
+der-box;"><td class=3D"pad" style=3D"box-sizing: border-box;"><div style=3D=
+"box-sizing: border-box; color: #000; direction: ltr; font-family: Lucida S=
+ans Unicode,Lucida Grande,Lucida Sans,Geneva,Verdana,sans-serif; font-size:=
+ 14px; font-weight: 400; letter-spacing: 0; line-height: 120%; text-align: =
+left; mso-line-height-alt: 16.8px;"><p style=3D"box-sizing: border-box; lin=
+e-height: inherit; margin: 0; margin-bottom: 16px;"> <strong style=3D"box-s=
+izing: border-box;">Access denied:</strong>&nbsp;Google considers <a href=
+=3D"http://links.wellfound.com/u/click=3F_t=3D26b4e8aeb47d4cd3acd5eba415f76=
+f62&_m=3D8d232b7fd5504120905fe6fb343a8267&_e=3DC18mpyhZ2epEwUUD2KegAQ-S_1oK=
+vTxhNU7xkC9tFqpkLFJxlUXWU04NLxm99ucvlnQpT5-lZ6DVde3NanqVq63dbd7FAKObEWb0ig0=
+VnIn-N2RVl6CLF7LfJZ6pY3KTxwJcWTqG3_qj7va-P4B4w-JojvH8pCbW9rih9KaUbmIXl_pyDC=
+Cge8skyNxFFzIgqcM40yDwsNi8X4uThuDC6aUnc1b__kKrZTpkmHKBjqdv2blrWATLZbifCdsQE=
+Sdh5lBsFTrWmGa4t9eSC32YqzwU_RCdmLXNgS8qRmQRvcit-kf_VOPKnSaud_nqzJKd" style=
+=3D"box-sizing: border-box; text-decoration: underline; color: #e9357b;">pa=
+ywall</a>.</p><p style=3D"box-sizing: border-box; line-height: inherit; mar=
+gin: 0; margin-bottom: 16px;"> <strong style=3D"box-sizing: border-box;">AI=
+ ambitions:</strong>&nbsp;<a href=3D"http://links.wellfound.com/u/click=3F_=
+t=3D26b4e8aeb47d4cd3acd5eba415f76f62&_m=3D8d232b7fd5504120905fe6fb343a8267&=
+_e=3DC18mpyhZ2epEwUUD2KegATjrHlTTsez4cKHk9YGKc-CxMxyMKHd6CL_3XCUcOiS7igqvyJ=
+qKKH0F-2e05-7xwNm-zOVfvqGVdInyU5nepGjVKJGDlPBJ1icuClCJ7M_-OunVgibrNJ0XKRGc1=
+xHg5Qo0I_m9zT_CeB1POcLfTJsFZ8MIEfaEbZC9ilCgdKVHY-LTTxrpcvupSGMpep7dc8UjCl_u=
+Q8neBhV3UOmnQiiftY7wF_RHAV_I8LUHTvLBpaID9JDGiaxoJgI_o78KAjXezMPjjlYcSvYfrH6=
+AzsHfk6kDlwVMlVZ4WJtvLsYlhP5a_-1gwNrAHN4Xc7h3Tkn5y3BSezmKPoG46S1EoLi2gxgfTR=
+kA8bDlkS3I6LyY" style=3D"box-sizing: border-box; text-decoration: underline=
+; color: #e9357b;">South Korea</a>, <a href=3D"http://links.wellfound.com/u=
+/click=3F_t=3D26b4e8aeb47d4cd3acd5eba415f76f62&_m=3D8d232b7fd5504120905fe6f=
+b343a8267&_e=3DC18mpyhZ2epEwUUD2KegATjrHlTTsez4cKHk9YGKc-CxMxyMKHd6CL_3XCUc=
+OiS7igqvyJqKKH0F-2e05-7xwNm-zOVfvqGVdInyU5nepGjVKJGDlPBJ1icuClCJ7M_-OunVgib=
+rNJ0XKRGc1xHg5Qo0I_m9zT_CeB1POcLfTJsFZ8MIEfaEbZC9ilCgdKVHY-LTTxrpcvupSGMpep=
+7dc8UjCl_uQ8neBhV3UOmnQiggEPSfMbxIDHgpiz4-sshpdrYdAoaimuWA1Q8clU3j0zZAdioTB=
+FSbwjhDKgzqC9cAh27c4tafUF4nmcKvxnhVBdB0Bejr92QN-Ym9kkauEMck6xf87DJ3rfKSM2T9=
+f46rpfSmNJHU2W5fa3j92z35" style=3D"box-sizing: border-box; text-decoration:=
+ underline; color: #e9357b;">Italy</a> invest big.</p><p style=3D"box-sizin=
+g: border-box; line-height: inherit; margin: 0; margin-bottom: 16px;"> <str=
+ong style=3D"box-sizing: border-box;">Animated debate:</strong> Pink Floyd =
+picks <a href=3D"http://links.wellfound.com/u/click=3F_t=3D26b4e8aeb47d4cd3=
+acd5eba415f76f62&_m=3D8d232b7fd5504120905fe6fb343a8267&_e=3DC18mpyhZ2epEwUU=
+D2KegAQZK0Ac9nFWdfVtNbXR5t6xw6U_ShZKrOxAB5r1fo75cSbdTw6VchC6NIzJcoldQXn5F9C=
+1jHV7w-IlcTlSw4ciGnJCwvCTJMKZkTBkmSp2TdWqAMu4B33ivQdLcPE5pvRRPMG06WTiiiqXR1=
+cfkX26cLxYjMkv6tBUHfTrsEEAPf10ciKL_MylY7ZlSUTuGtgTjfV7sNuWqpdsNxc1QO8IUGel2=
+HfycJGmvQjq8tBlfk2VwPhivmWkNbx9d-ORypH08tm7nw-KZ5PFO-mUFUcOYecYwKuUUflZF61h=
+5S6Oi8jAK-TkEqveyq4xvgS-5G6j7zQGoUmCOrMHRUGZlB3XYRkmphbMKMrHnQD6yLHIvg19FRB=
+BnuHptvoPB8ZtV8TlNtNHOGfcxAi-0QbEvI8U%3D" style=3D"box-sizing: border-box; =
+text-decoration: underline; color: #e9357b;">AI</a> artwork.</p><p style=3D=
+"box-sizing: border-box; line-height: inherit; margin: 0; margin-bottom: 16=
+px;"><strong style=3D"box-sizing: border-box;">August arrival:</strong> <a =
+href=3D"http://links.wellfound.com/u/click=3F_t=3D26b4e8aeb47d4cd3acd5eba41=
+5f76f62&_m=3D8d232b7fd5504120905fe6fb343a8267&_e=3DC18mpyhZ2epEwUUD2KegAXxT=
+CneIGH4tCgZFZ05gk11Zl6lYGRYBYzd1dP4eSS0tiLgk8GQ05-mGKd1TBkkZGCvSz76GS4x5hjg=
+c12TjA7wI87LdLAqCGx0A4LF1FREiqhB36QdC3Zz6v8zaLKYjkVjKQTxrkQK0Fe4ZCTtUkFWils=
+ugMc-yAzM_P_QEo9lqRAVOfQVl3lMswbz2u_LIeTAGrx8n69FpWhWqKVNm13qhX7_Xbv8cK7yjJ=
+1KrUlWVgxuDNdPCTkNhISLF9p5k9iPnsl0QdzofxBv6M7S6VSMZY7z7A9nccZ1N8SWFzy5SaWkk=
+daNBgKVSnR47KRKdUgzjbmKY9AMkMrBnz4RDXYz8tCkl_CQ5x64n5EhnguFvGYJDLMLR6Vg1IiF=
+bCjPoVA%3D%3D" style=3D"box-sizing: border-box; text-decoration: underline;=
+ color: #e9357b;">Tesla</a> talks robotaxi plans.</p><p style=3D"box-sizing=
+: border-box; line-height: inherit; margin: 0; margin-bottom: 16px;"> <stro=
+ng style=3D"box-sizing: border-box;">Cloud control:</strong> Governments ey=
+e '<a href=3D"http://links.wellfound.com/u/click=3F_t=3D26b4e8aeb47d4cd3acd=
+5eba415f76f62&_m=3D8d232b7fd5504120905fe6fb343a8267&_e=3DC18mpyhZ2epEwUUD2K=
+egAXxTCneIGH4tCgZFZ05gk10rpJAWPWqSKKs0t7h_v2EIYGN0vmydJmnY5Zrk6BF9HN62wLkxI=
+cq52CNx_m41undqJsIxdYp19fKP2cle0xNjqe3AFcRRommD9O9Skj4N3EhTurPoDUScLNDEYrn3=
+YkDGWeyIH_tMi5o_RTZGzm043BQaN91M8beBJRqMnoefedr4GHZPJL2MXcKNAmgy08jKY2-MWFD=
+ke7hJblQQ3YxsG3ZZWJuJbOJPSvO6Q2ZpO8EFNOZ7o5_Km3UT_3W-HBEtk47Zjt4p77FFmNWsYe=
+Gc3XVwhBBfUNnC9FLao08Vy5WunI0NUwwG-IWBmpBYuqWj2L5oQ_nrXSEjxNU3IdZKLCqp8J1xx=
+OHKfvZ8u8pwXA%3D%3D" style=3D"box-sizing: border-box; text-decoration: unde=
+rline; color: #e9357b;">sovereign</a>' AI.</p><p style=3D"box-sizing: borde=
+r-box; line-height: inherit; margin: 0; margin-bottom: 16px;"><strong style=
+=3D"box-sizing: border-box;">Custom curation:</strong>&nbsp;<a href=3D"http=
+://links.wellfound.com/u/click=3F_t=3D26b4e8aeb47d4cd3acd5eba415f76f62&_m=
+=3D8d232b7fd5504120905fe6fb343a8267&_e=3DC18mpyhZ2epEwUUD2KegAYwD0X1nOJazLn=
+WitRuovdHRzithikTrbwyl8UGIM4IjWlTarDM-PMDfnIvSbd4--E4DED8ZN5qvsrPdkpMcdInbz=
+K_rBRm2-WlqIEoiwv77j_8s_iIPW8HKW4OrtZCsZb1IQNag6cWSQn7oDOk3-8UPCjL2PyDqcbK1=
+kRGyZYFdJOb1EEgOQcSKIA4TTa31hHu24hhgX56CeHi33MTeSQF0DrGMS5W7saLiBgoQ94LMcSM=
+3ejehs3xvEkUfarEC6pGs4wf3eeygeVlp7_UrktJ0yShoFoEAJmS8ctwM-4MZCNWHJPn7xjskqB=
+BacQIkWYwtNZXORRjfD4NwQtSG_wkTL3SsnI4Y3iaMXOZ5nXNL71d8YrGlvhIhUCTEi3G1WA%3D=
+%3D" style=3D"box-sizing: border-box; text-decoration: underline; color: #e=
+9357b;">Spotify</a> launches AI playlists.</p><p style=3D"box-sizing: borde=
+r-box; line-height: inherit; margin: 0; margin-bottom: 16px;"> <strong styl=
+e=3D"box-sizing: border-box;">Digital Darwin:</strong> Researchers digitize=
+ <a href=3D"http://links.wellfound.com/u/click=3F_t=3D26b4e8aeb47d4cd3acd5e=
+ba415f76f62&_m=3D8d232b7fd5504120905fe6fb343a8267&_e=3DC18mpyhZ2epEwUUD2Keg=
+AXFHoRheJxcFuSeq6QmCEMRsKAINq4ijfQlr-8tjBvzbOGXbuJ4Vj5toLSiwJ9ifKXsQ3GXmFTy=
+CzVMI37nDxapOutiH5v1d7EpLuMY7VpesmAq8gcVojsvtp5BimdBnMEt3dumiCwbvpoJPFbbH3F=
+Ucj3bT7WoEl41HFDbIqRKUG2FNIQpIWHONjVaeZ9c1a9ya1Ikh2BUgu44j45xMdm9Y2w-rPiX3J=
+cAuX3FW39QX4woDHsTArVGCo0u-6h7wdioATUMzlDVI-4uF9yplNpFZ_cz3nhA7s_vmYqwt1dYA=
+yu7axxNegHwSX9jXyoZ1HmFHtDIulolAKBwkEfRXp1GGGjbJatXOaj--GmbwUtClOa0g2fIitvM=
+8H7dvueXK1w%3D%3D" style=3D"box-sizing: border-box; text-decoration: underl=
+ine; color: #e9357b;">library</a>.</p><p style=3D"box-sizing: border-box; l=
+ine-height: inherit; margin: 0; margin-bottom: 16px;"><strong style=3D"box-=
+sizing: border-box;">Fueling tech:</strong>&nbsp;Toyota <a href=3D"http://l=
+inks.wellfound.com/u/click=3F_t=3D26b4e8aeb47d4cd3acd5eba415f76f62&_m=3D8d2=
+32b7fd5504120905fe6fb343a8267&_e=3DC18mpyhZ2epEwUUD2KegATIOpYhmUJ5io_UUdabK=
+kYN0tQ7QjrFT_HyWVumGOE9iXVGfjqfRulsYKv99rFLRGu3MbtmN7cKtXV1KqEUOYu_VtSrGFHX=
+9kgo3AfEG2DkV-gBA36GCN4BJPvM1n2w8BATF8vtDZ_CR52y-xFrGvFnyYnNJKezbpeBNDTlFJV=
+98khNBTo8w9Ro9fyowhtIFiS1vRYtOJV4ewHdcadzhGb-z_b6QKMNAEVZqkU1FK50aUIxJdlguK=
+cjoM6OdGGR7jVX491cwAMHHqTOxDrQ3Oiy8dpUQmMNmhSISkSiIUVwTNKoA2SL6bhpmPogQmyNa=
+4357YpRj7r7Uzi_hNwc-40V7JHLUmKaL9wnpQ5QtOEYqwoCOxjSHLrPkxsRcM26bZ25oFwPsP3I=
+1IpvrZBEAyCY%3D" style=3D"box-sizing: border-box; text-decoration: underlin=
+e; color: #e9357b;">pledges</a> $300M.</p><p style=3D"box-sizing: border-bo=
+x; line-height: inherit; margin: 0; margin-bottom: 16px;"> <strong style=3D=
+"box-sizing: border-box;">Human copilots:</strong> <a href=3D"http://links.=
+wellfound.com/u/click=3F_t=3D26b4e8aeb47d4cd3acd5eba415f76f62&_m=3D8d232b7f=
+d5504120905fe6fb343a8267&_e=3DC18mpyhZ2epEwUUD2KegATIOpYhmUJ5io_UUdabKkYN0t=
+Q7QjrFT_HyWVumGOE9iO_IWsMgtX3eul7RE8_d6YbJD3UGhriQ645TWOezzDBSHnFltH3DUBOOz=
+QBsZYwQ90uNnb3cDF5pBByVHiVNwpzazdLtNPdRaILTmvNkk9kcvbXG_YPFJQjvrbhl1eLwzrEw=
+Q54I8shg0pcOoHFPdTJqcCeNi99Y0uoTPosEo0YRVdqKwK_o83K9Qo1VV7_ODbPte61Nx5QpFaI=
+Od6DyLgdFo58sni6JzvuR-HPHfIdZM6EQfx4RFvuSYQ7lbcnsOPAyy01pF3nfFVgN4ouD1AYZWV=
+VKB92Psiwfh7IuvPxaAI-KTuKn4Voeo6up7e1vSflx4WObz-9ULTj4xwTbpeQ%3D%3D" style=
+=3D"box-sizing: border-box; text-decoration: underline; color: #e9357b;">GM=
+</a> adds robotaxi drivers.</p><p style=3D"box-sizing: border-box; line-hei=
+ght: inherit; margin: 0; margin-bottom: 16px;"><strong style=3D"box-sizing:=
+ border-box;">London lab:</strong> Microsoft's <a href=3D"http://links.well=
+found.com/u/click=3F_t=3D26b4e8aeb47d4cd3acd5eba415f76f62&_m=3D8d232b7fd550=
+4120905fe6fb343a8267&_e=3DC18mpyhZ2epEwUUD2KegAYwD0X1nOJazLnWitRuovdGlvB2aH=
+nxSJWgRQQmAjXxk6Se7Zq4qZTHzm6tyapRAjA11xnVaU_O3tISX4xgE3LBpFZh0Y6EhnSlHOh35=
+t9LNC5ldajqDCtaM94V_1fUcAsnGlFs2jc66aMfIX5nPVkFnmShgXARI-OyPlsnT9jp_DB6N-9P=
+DqFQBytFmmBoM8HeDj3tWeCYlnRCUzVe33Ul3C-mgmZtn6Yt-ybhV9HeZQ9NeW1-Rp1XzSxXc7B=
+030aJkFzL_KPX27n3wF4EJalvgrNIBI4kyHQ4nfhL5HB_KdHRqJ4ULMIJP7iNifv7sbm0RDxFvi=
+kNJ3toLq4lDBYLsnbkeLfm8THPHoNJ_aKPlz3J-ITGQfHEFRBknx40fPOGQ_YrZdm-ongeLzMXH=
+QLUK7OuHDRY03ew_4vIIVB4F" style=3D"box-sizing: border-box; text-decoration:=
+ underline; color: #e9357b;">hub</a> debuts</p><p style=3D"box-sizing: bord=
+er-box; line-height: inherit; margin: 0; margin-bottom: 16px;"> <strong sty=
+le=3D"box-sizing: border-box;">Message merger:</strong>&nbsp;<a href=3D"htt=
+p://links.wellfound.com/u/click=3F_t=3D26b4e8aeb47d4cd3acd5eba415f76f62&_m=
+=3D8d232b7fd5504120905fe6fb343a8267&_e=3DC18mpyhZ2epEwUUD2KegAYwD0X1nOJazLn=
+WitRuovdGPSba7T__D-Xho9xIC0dRiwVj1qG_4fcYZ4J87Cwyt25pt-8Uaq6Vo1CkuH5ZblTb-r=
+4vu010ZuLIzHUUUe1xU6hIIBPlpHfM3PtRLBAAazpwKrKcddzdRQrHImrW6R4BaESIVJIOKwpXv=
+zrZkpARksoJ7nZ5Wlzw7SBAvdvvgc61CJyfAGvakAd59WLod7-co94y1eWs4bWeTJ-sEXM7I6wl=
+L07-jtYva_-GnNt6dsCt8nHTDNMQgzGElxXTpll_X_yjRma7dnR2Xd6CGed2g4gNK5AGmVqBxgz=
+h06AjyPKJzCBymZh2u8Ftcttynbto-AxtxRt3Dxe7Y7g7XSRY4Z0ey8I42agSlQ-DIn4bRjJ_Tj=
+6w30YE9YEo4pnAyOJE%3D" style=3D"box-sizing: border-box; text-decoration: un=
+derline; color: #e9357b;">Automattic</a> expands reach.</p><p style=3D"box-=
+sizing: border-box; line-height: inherit; margin: 0; margin-bottom: 16px;">=
+<strong style=3D"box-sizing: border-box;">Photo contest:</strong> <a href=
+=3D"http://links.wellfound.com/u/click=3F_t=3D26b4e8aeb47d4cd3acd5eba415f76=
+f62&_m=3D8d232b7fd5504120905fe6fb343a8267&_e=3DC18mpyhZ2epEwUUD2KegARI8gi9N=
+x1XI7RTgHZyInWqnz4yelJVG7UR6LLRjor5mRadkPMdR5c2Qnuf3xocYeWbbevSDsSVq96svN_L=
+18rV__SctOX1yIWDczOnls_YLZiCoHFEl45eMx6mO1hibIwU4TaXe6IovmJWPF7MFeP6pNAioTL=
+eBIse0Uyg61eJWQHXyU61kMEibuxf2PlkSttOJaZyPyN1-B4FA0pv-PNz7seBVqzdauLXGRQsGY=
+M2Q9JPZhdAlLRlVScqrSpDXk4aZMmlbpgZ9FN64trc1Y0UClkmos8ng_ehw1zHi7ncS" style=
+=3D"box-sizing: border-box; text-decoration: underline; color: #e9357b;">Ti=
+kTok</a> takes on Insta.</p><p style=3D"box-sizing: border-box; line-height=
+: inherit; margin: 0; margin-bottom: 16px;"> <strong style=3D"box-sizing: b=
+order-box;">Premium perks:</strong>&nbsp;X expands <a href=3D"http://links.=
+wellfound.com/u/click=3F_t=3D26b4e8aeb47d4cd3acd5eba415f76f62&_m=3D8d232b7f=
+d5504120905fe6fb343a8267&_e=3DC18mpyhZ2epEwUUD2KegAYwD0X1nOJazLnWitRuovdGcs=
+Ej3xGm6GscExA4o0_o0x69obIW3d_Y9ke3JCWvSlrwaPFE6Z7yR8uLhCoTkwuyPGO-ZXeaZslRs=
+W-gc4as-TmFKTHMfXqty-HOwoRHI37Otl2KF_AqrILtJImNq9HrZbGejUk1VAM3vILkgx8_c0ES=
+by8gqeq6Ye1Vt4CxrT6-i2So__aozmj6eYeZN-xKYBrcj-jy5i0zOD7it4V5KJIwtcW3noa24mp=
+89OfoURpXUrp8qYY059_DTruZLB6uZPLnMINcsEWleZhbghablCC0Gnm__1SsPIUDY7QJSEiE7s=
+WVW-rAu5BhjLVKs8CO4WBZjIwaXnArWmyXFhxZL" style=3D"box-sizing: border-box; t=
+ext-decoration: underline; color: #e9357b;">Grok</a> access.</p><p style=3D=
+"box-sizing: border-box; line-height: inherit; margin: 0; margin-bottom: 16=
+px;"><strong style=3D"box-sizing: border-box;">Ripple's reach:</strong> Dol=
+lar-pegged <a href=3D"http://links.wellfound.com/u/click=3F_t=3D26b4e8aeb47=
+d4cd3acd5eba415f76f62&_m=3D8d232b7fd5504120905fe6fb343a8267&_e=3DC18mpyhZ2e=
+pEwUUD2KegAXxTCneIGH4tCgZFZ05gk10b4Oh1-PnAdmT_yj4Uri0Ey6y_TBIvLg_G8g6zWgiE8=
+KrpT5NXsDdrbaCjwWE1rsEhxQdgkE_UZhK8nhpfiHQmDOJXE-uKaOzvKSXc_wabKaCynnJHJdRT=
+6GVt0mOeqZiQIocmRDa5IhoFanZfHcKe9Jz9uNJKTZVu4vSf--S3lVHu1b-2hltNHiJ1wIUWOL9=
+Bpar4hUUCtFlmAElIXD6_hDoiiP0CnmMc2Qfp4EXu4LlD_m1LRcDOFpTP0sxJZ52J2PvtX_EXVW=
+mnZAXrZn6uuXLPku6BcvX2xRHqiL-4XPDIuMGBGxg9bqpebdjXDb-wOA_negRIDZJ41Cs6qOgj"=
+ style=3D"box-sizing: border-box; text-decoration: underline; color: #e9357=
+b;">stablecoin</a> coming.</p><p style=3D"box-sizing: border-box; line-heig=
+ht: inherit; margin: 0; margin-bottom: 16px;"> <strong style=3D"box-sizing:=
+ border-box;">Spanish spark:</strong> <a href=3D"http://links.wellfound.com=
+/u/click=3F_t=3D26b4e8aeb47d4cd3acd5eba415f76f62&_m=3D8d232b7fd5504120905fe=
+6fb343a8267&_e=3DC18mpyhZ2epEwUUD2KegATIOpYhmUJ5io_UUdabKkYN0tQ7QjrFT_HyWVu=
+mGOE9iXr4bDBFmDkAnKZKttDK6QgYyPxYor7Y6Ix0taA0-rCPf1pqkcwGOPmpADGfzwGNgZqNDb=
+ZwyJ1L5ziQhWI-jSiJrhndF1m6zV8aCWWM2Rh45dyFZmAqpLEAqV6_sxUzucsatprBbXojtYCH0=
+1PNxQf_N9i4cuC8VGAcwqN_5FMZUNITC4J7ZOP9oUXkEqA9lMxUxFqcnWQVip6udJn9baYuBe7K=
+fKDXvCVgagWejs2GlfKksdoxARCOjd9fl4A-pB588FHj31FRdGGRiNw31Hk1xkVr2DSz9p3wxok=
+SUiRfiA8IGqGdaNlQ2Xt2fvHyycZJ-HN5JuBoYAvq3JjzLww%3D%3D" style=3D"box-sizing=
+: border-box; text-decoration: underline; color: #e9357b;">EU</a> backs $1B=
+ VC fund.</p><p style=3D"box-sizing: border-box; line-height: inherit; marg=
+in: 0; margin-bottom: 16px;"><strong style=3D"box-sizing: border-box;">Tech=
+ twosomes:</strong> US-Taiwan <a href=3D"http://links.wellfound.com/u/click=
+=3F_t=3D26b4e8aeb47d4cd3acd5eba415f76f62&_m=3D8d232b7fd5504120905fe6fb343a8=
+267&_e=3DC18mpyhZ2epEwUUD2KegATIOpYhmUJ5io_UUdabKkYN0tQ7QjrFT_HyWVumGOE9ix7=
+r0OuAzH5u4G7OOVYGdE6lcByBzWsCsHz9qW6l9CeqYUzhiuDbx4vRKywITfxyaKzRvzOjFu6d7S=
+GvczCK23xnWpxV9LY5MlPiIhDa7aG2H0itoV3JjNzk5nDXRigcqhSP6Hyd90rTMZouy06pBWPnb=
+rlJt6PvoNGQqyZIQZ5lD1Ewci7-GmBjuQJap1j6TmV-ieF5t0cHGQ7iSu7sP0c6iRkQsLX_Gm9i=
+7ZHdoqkCxTjGk6tSRjoZZRLiPnZhnf_kaHvnfA1H9wjeOpC5Tgt68MK5LINgTNwmYibZnY8ZY6F=
+Nms0KMEiaSkkeSj3evDcfBLWieVEkSOotKmy65Gu11QK3yjdeTNUOazklye68%3D" style=3D"=
+box-sizing: border-box; text-decoration: underline; color: #e9357b;">matchm=
+aking</a> debuts.</p><p style=3D"box-sizing: border-box; line-height: inher=
+it; margin: 0;"> <strong style=3D"box-sizing: border-box;">Tree-free TP:</s=
+trong> <a href=3D"http://links.wellfound.com/u/click=3F_t=3D26b4e8aeb47d4cd=
+3acd5eba415f76f62&_m=3D8d232b7fd5504120905fe6fb343a8267&_e=3DC18mpyhZ2epEwU=
+UD2KegAXxTCneIGH4tCgZFZ05gk10DVoUsGrbXKe-bphvht8z93LexpXpaOAYLKNr-EPCD96iBd=
+2wcuZNxMov7bWiQDxKWAV8ZNMxEOKSuzRr2_10kiHAWrMahp7zVj9d2vSqxtDdxcxKzYMfvNuEV=
+oZQsZmYiybdIdEKXUT5D-XjE08SScgdpSNdfBC0pjOw6dCiLJffLY_Bt8U_jQqWVC_-OueDRDB6=
+ywo6YocRQMWA2MrEBhjg58bYCAJyUS_XDyuKKSZ1oTpnEnAxy83KmxUk2ygZ-CugVTd9pXep8Ee=
+PIVRbTaD782e7iSOfdz4fwixsrPzebBo2Gl4svi5X9vCNHjIE%3D" style=3D"box-sizing: =
+border-box; text-decoration: underline; color: #e9357b;">Startups</a> ditch=
+ wood for bamboo.</p></div></td></tr></table></td></tr></tbody></table></td=
+></tr></tbody></table><table class=3D"row row-5" align=3D"center" width=3D"=
+100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation=
+" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0=
+;"><tbody style=3D"box-sizing: border-box;"><tr style=3D"box-sizing: border=
+-box;"><td style=3D"box-sizing: border-box;"><table class=3D"row-content st=
+ack" align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso=
+-table-rspace: 0; background-color: #fff; border-radius: 0; color: #000; wi=
+dth: 575px; margin: 0 auto;" width=3D"575" bgcolor=3D"#fff"><tbody style=3D=
+"box-sizing: border-box;"><tr style=3D"box-sizing: border-box;"><td class=
+=3D"column column-1" width=3D"100%" style=3D"box-sizing: border-box; mso-ta=
+ble-lspace: 0; mso-table-rspace: 0; font-weight: 400; text-align: left; pad=
+ding-top: 10px; vertical-align: top; border-top: 0; border-right: 0; border=
+-bottom: 0; border-left: 0;" align=3D"left" valign=3D"top"><table class=3D"=
+image_block block-1" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; mso-table-=
+lspace: 0; mso-table-rspace: 0;"><tr style=3D"box-sizing: border-box;"><td =
+class=3D"pad" style=3D"box-sizing: border-box; width: 100%;" width=3D"100%"=
+><div class=3D"alignment" align=3D"center" style=3D"box-sizing: border-box;=
+ line-height: 10px;"><div style=3D"box-sizing: border-box; max-width: 575px=
+;"><a href=3D"http://links.wellfound.com/u/click=3F_t=3D26b4e8aeb47d4cd3acd=
+5eba415f76f62&_m=3D8d232b7fd5504120905fe6fb343a8267&_e=3DC18mpyhZ2epEwUUD2K=
+egAV3cp-ULo4yWJcGt70kuYSqER5XCWZSUvvljiR1i3t51_cuHSPAIsCLMhDewdMwkT6yiJEYGM=
+f5lnk3MV6FFCXk1PYBnINdTdfoso1Aynv7HFy-aXQ9Cri0VuNLpV5lYdfFfh5Awhm-d3XFeSLZ2=
+orzLfu2z_8yt5Q0_9cv5Jeldm4px_efJs44DCN1kzldRImwmyKsWa9V7kBYVuM8s10YKOxny9F1=
+zTEs_PxM6ymHxFmfJN9EeOcU2Dk1aE54yRx3NyNV7wdlIdQorqNOnGZY%3D" target=3D"_bla=
+nk" style=3D"box-sizing: border-box; outline: none;" tabindex=3D"-1"><img s=
+rc=3D"https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/669d57=
+13-9b6a-46bb-bd7e-c542cff6dd6a/26b4e8aeb47d4cd3acd5eba415f76f62/TrendingSta=
+rtups_AI.png" style=3D"box-sizing: border-box; display: block; height: auto=
+; border: 0; width: 100%;" width=3D"575" height=3D"auto"></a></div></div></=
+td></tr></table><table class=3D"text_block block-2" width=3D"100%" border=
+=3D"0" cellpadding=3D"10" cellspacing=3D"0" role=3D"presentation" style=3D"=
+box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0; word-brea=
+k: break-word;"><tr style=3D"box-sizing: border-box;"><td class=3D"pad" sty=
+le=3D"box-sizing: border-box;"><div style=3D"box-sizing: border-box; font-f=
+amily: sans-serif;"><div class style=3D"box-sizing: border-box; font-size: =
+12px; font-family: Lucida Sans Unicode,Lucida Grande,Lucida Sans,Geneva,Ver=
+dana,sans-serif; mso-line-height-alt: 14.399999999999999px; color: #000; li=
+ne-height: 1.2;"><p style=3D"box-sizing: border-box; line-height: inherit; =
+margin: 0; font-size: 14px; mso-line-height-alt: 16.8px;"><span style=3D"bo=
+x-sizing: border-box; font-size: 14px;"><strong style=3D"box-sizing: border=
+-box;">India tech economy revs</strong></span></p><p style=3D"box-sizing: b=
+order-box; line-height: inherit; margin: 0; font-size: 14px; mso-line-heigh=
+t-alt: 16.8px;"> <span style=3D"box-sizing: border-box; font-size: 14px;">W=
+ith a booming SaaS sector and major investments from Apple and Tesla, <a hr=
+ef=3D"http://links.wellfound.com/u/click=3F_t=3D26b4e8aeb47d4cd3acd5eba415f=
+76f62&_m=3D8d232b7fd5504120905fe6fb343a8267&_e=3DC18mpyhZ2epEwUUD2KegAXxTCn=
+eIGH4tCgZFZ05gk1368wq7Q_D7EqminOUAk7bP-oLlp2QtaNqzrM8QPo3QltOmbgjvIkd2SpMhJ=
+DMCDbpkzGj4oT62L5QXVtlxaIc56oSBGy2myxyLnMXh--RMrwwAR6KAoN85qKp5kEsweJ_xAEJo=
+tgU1DKPoLZ0fKSY8I14XwaTK-66Juvh3m1b4xXecwuP3idz_LqZCCbsDbF6pf7LGKShznkHqP4c=
+Db09nd5n7hp46Bz0xHvnSWvPtEkYG82_vsXMXNS741GI8Oae4gX9dQ7gH7IMA8AzPGFPLP2iSXp=
+mRjKYF8wB7V9nepRzjiAtCV_-AKN_Wei233U9KHhMpWrkjRRDrs2JMe1jp" style=3D"box-si=
+zing: border-box; text-decoration: underline; color: #e9357b;">India</a> is=
+ rapidly emerging as a contender for tech dominance in Asia. Investors put =
+up $160M+ across 21 deals in the past week alone.</span></p><p style=3D"box=
+-sizing: border-box; line-height: inherit; margin: 0; font-size: 14px; mso-=
+line-height-alt: 14.399999999999999px;">&nbsp;</p><p style=3D"box-sizing: b=
+order-box; line-height: inherit; margin: 0; font-size: 14px; mso-line-heigh=
+t-alt: 16.8px;"><span style=3D"box-sizing: border-box; font-size: 14px;"><s=
+trong style=3D"box-sizing: border-box;">U.S. splashes the green</strong></s=
+pan></p><p style=3D"box-sizing: border-box; line-height: inherit; margin: 0=
+; font-size: 14px; mso-line-height-alt: 16.8px;"> <span style=3D"box-sizing=
+: border-box; font-size: 14px;">The U.S. <a href=3D"http://links.wellfound.=
+com/u/click=3F_t=3D26b4e8aeb47d4cd3acd5eba415f76f62&_m=3D8d232b7fd550412090=
+5fe6fb343a8267&_e=3DC18mpyhZ2epEwUUD2KegAQ-S_1oKvTxhNU7xkC9tFqpKlokaU1DkRVs=
+Sv5_YxsTzFizPJYGg0XI9M2h2LQV5TRga4ZtaFKxera9TUBWrcljNh26P1Thsf1Eu44t25ZyPFc=
+eL8HoTChGkIoQnBLogR5ZzAMYdtuokQFJVW94U54WU1aqVVujG1oLoyvN0RkgUiap0rYoZ25dMr=
+W1VtKN6NLxHvKyh7vL5S1Jd_J3SGLRPLu89IbgmVnGmUh-YEXUZN1YTTqzwvE8_AdGHYmtCnDs3=
+cMGjTNaTvgx07PFhrVG49XbELamRLUXtzmjAJ1By" style=3D"box-sizing: border-box; =
+text-decoration: underline; color: #e9357b;">invests</a> nearly $1T to supp=
+ort emissions-reducing green tech deployment. Startups can access loans, an=
+d consumers benefit from tax credits for EVs and heat pumps.</span></p><p s=
+tyle=3D"box-sizing: border-box; line-height: inherit; margin: 0; font-size:=
+ 14px; mso-line-height-alt: 14.399999999999999px;">&nbsp;</p><p style=3D"bo=
+x-sizing: border-box; line-height: inherit; margin: 0; font-size: 14px; mso=
+-line-height-alt: 16.8px;"> <span style=3D"box-sizing: border-box; font-siz=
+e: 14px;"><strong style=3D"box-sizing: border-box;">Dimon: AI transforms wo=
+rkforce</strong></span></p><p style=3D"box-sizing: border-box; line-height:=
+ inherit; margin: 0; font-size: 14px; mso-line-height-alt: 16.8px;"><span s=
+tyle=3D"box-sizing: border-box; font-size: 14px;">JPMorgan Chase CEO <a hre=
+f=3D"http://links.wellfound.com/u/click=3F_t=3D26b4e8aeb47d4cd3acd5eba415f7=
+6f62&_m=3D8d232b7fd5504120905fe6fb343a8267&_e=3DC18mpyhZ2epEwUUD2KegAXxTCne=
+IGH4tCgZFZ05gk11sCwLLhvtFBJ3wLJe9Ykso5ilYZqUGr0CLCQym-zgB-RIDnKEqSqbEml9Qed=
+BMsfKFYCfyUKOtRGJEFUidsq4J_SdvY7W2gx2zt8z9OlcFs1lAAYzQkSuJxZNMQwSEDBf_wijF9=
+FRhC70mLTxzgGZitmtwkIdsswskEspg8IDTJNgi8Pr00orkawmrRNDEkLUuyapCjtviJmjX7hgk=
+3AUXGtikBusiQADhKid8du6_dZwTmhaix3-Qxk5UE0xJ_17h0aMdCitRUWAwLkamO1e3V7xY222=
+w_Mt-hrz7HZGukGkBZdk6owPWBxsN4eNL3v5diG7waQOeTLFDpix304ee2iBPivNF0kVw1RaF6I=
+YfYA%3D%3D" style=3D"box-sizing: border-box; text-decoration: underline; co=
+lor: #e9357b;">Jamie Dimon</a> calls AI as transformative as the printing p=
+ress, with the potential to "augment virtually every job."</span></p><p sty=
+le=3D"box-sizing: border-box; line-height: inherit; margin: 0; font-size: 1=
+4px; mso-line-height-alt: 14.399999999999999px;">&nbsp;</p><p style=3D"box-=
+sizing: border-box; line-height: inherit; margin: 0; font-size: 14px; mso-l=
+ine-height-alt: 16.8px;"><span style=3D"box-sizing: border-box; font-size: =
+14px;"><strong style=3D"box-sizing: border-box;">Startups on the moon</stro=
+ng></span></p><p style=3D"box-sizing: border-box; line-height: inherit; mar=
+gin: 0; font-size: 14px; mso-line-height-alt: 16.8px;"> <span style=3D"box-=
+sizing: border-box; font-size: 14px;"><a href=3D"http://links.wellfound.com=
+/u/click=3F_t=3D26b4e8aeb47d4cd3acd5eba415f76f62&_m=3D8d232b7fd5504120905fe=
+6fb343a8267&_e=3DC18mpyhZ2epEwUUD2KegARC6KKFFDuTGnbRTyOwLePb1BT4JRYapsTQ9PF=
+sOxHbwp68E77umoKjQLko5JkexrCNnjMDhTkesVmToOqEiLaueLqEUDO9OKrAcdU-cyOEMoZcWg=
+wOMBJ-iCJZPh1OUmL77ByghqaZlwFVxzJwwUEBzyGuUpqdmc383dSDGxYAOzj1Lz1a7MRvxm891=
+PL3pWLIZKdqqKDEZlb1tnd8K3KxvDKRhAiwabzwBWXg90z_ZoBLE4Y3BeB-7P8bDQdMWutc4hWc=
+JIg-uOlrjm4SI_YZwszhyrbCY_zMtkFJwLWSnjWlRGCV0jCwhxmeA2KWzNHeNo9b3I0SharoMU6=
+jIhSc%3D" style=3D"box-sizing: border-box; text-decoration: underline; colo=
+r: #e9357b;">NASA</a> picks three companies =E2=80=93 Intuitive Machines, L=
+unar Outpost, and Venturi Astrolab =E2=80=93 to design a next-generation lu=
+nar terrain vehicle (LTV) fit for moon travel and autonomous robotic explor=
+ation.</span></p><p style=3D"box-sizing: border-box; line-height: inherit; =
+margin: 0; font-size: 14px; mso-line-height-alt: 14.399999999999999px;">&nb=
+sp;</p><p style=3D"box-sizing: border-box; line-height: inherit; margin: 0;=
+ font-size: 14px; mso-line-height-alt: 16.8px;"><span style=3D"box-sizing: =
+border-box; font-size: 14px;"><strong style=3D"box-sizing: border-box;">The=
+ loneliness app</strong></span></p><p style=3D"box-sizing: border-box; line=
+-height: inherit; margin: 0; font-size: 14px; mso-line-height-alt: 16.8px;"=
+><span style=3D"box-sizing: border-box; font-size: 14px;">Los Angeles-based=
+ <a href=3D"http://links.wellfound.com/u/click=3F_t=3D26b4e8aeb47d4cd3acd5e=
+ba415f76f62&_m=3D8d232b7fd5504120905fe6fb343a8267&_e=3DC18mpyhZ2epEwUUD2Keg=
+AYwD0X1nOJazLnWitRuovdGZdXJgkG7KwQ8VSxTBA9a62DKmaZ0l1vCAMDK3Z-dlmQhkkh8X0sm=
+2jAZK_FpAAYIYPamJueBUleUxrE3K1aur4mjc1zrqI_l4hWmme5Ry1D1-7sJ8WPMV6vtSftlDI1=
+K6x40E2wfXiuOv5i6ePAhxxz3cd86NnRAvuP8XQAtdHQABcbWADi5lxngtj0o9iXQngEMRNF3h8=
+Mnoz5gM2-UVu6_N4CeVBkNO3V1EHxLIMXMbB_FV21RDS3RL9wPwuC0Xo0KC-aTUOYB2oSve2u9E=
+Go-C_bE118r7uecoEFUJR0ap05xoPjoK5nZ4v7lzRRuTPI_6rJP2bPxlnXChLuG0lt098Te-b4F=
+gZH3Gd93qZGkfG4e-S9z0VuVGViMcFao%3D" style=3D"box-sizing: border-box; text-=
+decoration: underline; color: #e9357b;">Buffet</a> tackles the loneliness e=
+pidemic with an app that's like Tinder + OpenTable with sites set on the Bi=
+g Apple.</span></p></div> </div></td></tr></table><table class=3D"divider_b=
+lock block-3" width=3D"100%" border=3D"0" cellpadding=3D"10" cellspacing=3D=
+"0" role=3D"presentation" style=3D"box-sizing: border-box; mso-table-lspace=
+: 0; mso-table-rspace: 0;"><tr style=3D"box-sizing: border-box;"><td class=
+=3D"pad" style=3D"box-sizing: border-box;"><div class=3D"alignment" align=
+=3D"center" style=3D"box-sizing: border-box;"><table border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%" style=3D"bo=
+x-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0;"><tr style=
+=3D"box-sizing: border-box;"><td class=3D"divider_inner" style=3D"box-sizin=
+g: border-box; font-size: 1px; line-height: 1px; border-top: 1px dotted #bb=
+b;"><span style=3D"box-sizing: border-box;">&#8202;</span></td></tr> </tabl=
+e></div></td></tr></table></td></tr></tbody></table></td></tr></tbody></tab=
+le><table class=3D"row row-6" align=3D"center" width=3D"100%" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizi=
+ng: border-box; mso-table-lspace: 0; mso-table-rspace: 0;"><tbody style=3D"=
+box-sizing: border-box;"><tr style=3D"box-sizing: border-box;"><td style=3D=
+"box-sizing: border-box;"><table class=3D"row-content stack" align=3D"cente=
+r" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" s=
+tyle=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0; b=
+ackground-color: #fff; border-radius: 0; color: #000; width: 575px; margin:=
+ 0 auto;" width=3D"575" bgcolor=3D"#fff"><tbody style=3D"box-sizing: border=
+-box;"><tr style=3D"box-sizing: border-box;"><td class=3D"column column-1" =
+width=3D"100%" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-ta=
+ble-rspace: 0; font-weight: 400; text-align: left; padding-bottom: 10px; ve=
+rtical-align: top; border-top: 0; border-right: 0; border-bottom: 0; border=
+-left: 0;" align=3D"left" valign=3D"top"><table class=3D"image_block block-=
+1" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"=
+presentation" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-tab=
+le-rspace: 0;"><tr style=3D"box-sizing: border-box;"><td class=3D"pad" styl=
+e=3D"box-sizing: border-box; width: 100%; padding-right: 0; padding-left: 0=
+;" width=3D"100%"><div class=3D"alignment" align=3D"center" style=3D"box-si=
+zing: border-box; line-height: 10px;"><div class=3D"fullWidth" style=3D"box=
+-sizing: border-box; max-width: 540.5px;"><a href=3D"http://links.wellfound=
+.com/u/click=3F_t=3D26b4e8aeb47d4cd3acd5eba415f76f62&_m=3D8d232b7fd5504120=
+905fe6fb343a8267&_e=3DC18mpyhZ2epEwUUD2KegAalAXLlsk61CeLpnrtNxsc3krMt0Rt_0j=
+ME9fCNj9-HyIl2l2Nb_7Mb5vSi1sdcYas-nT7saVzRfIr6yg78XxCAyYnpEsS9EImi0Qd3awOyS=
+AxkIBmLHxQajDvNMNo1aPN9OYrWsoeStqCYeKzQKVrZG08kCIWYSJ_qvg9akScx6mBso6WYfrtb=
+XX6ys-4k7F5Ow2Usr043Pqc2pE6J4vNXMk7OiaywFuR_6aMwGBg0iGXKUxo86YwjrAJanJ5MeCZ=
+dUdd0rs5Qt15JE06vXwdrJoC4-0oFHxgqvcgaIDrv5D8yzbDyfdFa8Aovron3X0zxSBAltmT6uj=
+AnmkTKtQoCxhYJOlz6eRI4ZUgtjA6C_" target=3D"_blank" style=3D"box-sizing: bor=
+der-box; outline: none;" tabindex=3D"-1"><img src=3D"https://d15k2d11r6t6rl=
+.cloudfront.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6d=
+d6a/26b4e8aeb47d4cd3acd5eba415f76f62/WeeklyPulse_4.png" style=3D"box-sizing=
+: border-box; display: block; height: auto; border: 0; width: 100%;" width=
+=3D"540.5" height=3D"auto"></a></div></div></td></tr></table><table class=
+=3D"divider_block block-2" width=3D"100%" border=3D"0" cellpadding=3D"10" c=
+ellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; mso=
+-table-lspace: 0; mso-table-rspace: 0;"><tr style=3D"box-sizing: border-box=
+;"><td class=3D"pad" style=3D"box-sizing: border-box;"><div class=3D"alignm=
+ent" align=3D"center" style=3D"box-sizing: border-box;"><table border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%" s=
+tyle=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0;">=
+<tr style=3D"box-sizing: border-box;"><td class=3D"divider_inner" style=3D"=
+box-sizing: border-box; font-size: 1px; line-height: 1px; border-top: 1px d=
+otted #bbb;"><span style=3D"box-sizing: border-box;">&#8202;</span></td></t=
+r></table></div></td></tr></table> </td></tr></tbody></table></td></tr></tb=
+ody></table><table class=3D"row row-7" align=3D"center" width=3D"100%" bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D=
+"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0;"><tbody =
+style=3D"box-sizing: border-box;"><tr style=3D"box-sizing: border-box;"><td=
+ style=3D"box-sizing: border-box;"><table class=3D"row-content stack" align=
+=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presen=
+tation" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rsp=
+ace: 0; background-color: #fff; border-radius: 0; color: #000; width: 575px=
+; margin: 0 auto;" width=3D"575" bgcolor=3D"#fff"><tbody style=3D"box-sizin=
+g: border-box;"><tr style=3D"box-sizing: border-box;"><td class=3D"column c=
+olumn-1" width=3D"100%" style=3D"box-sizing: border-box; mso-table-lspace: =
+0; mso-table-rspace: 0; font-weight: 400; text-align: left; padding-bottom:=
+ 5px; padding-top: 5px; vertical-align: top; border-top: 0; border-right: 0=
+; border-bottom: 0; border-left: 0;" align=3D"left" valign=3D"top"><table c=
+lass=3D"heading_block block-1" width=3D"100%" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; =
+mso-table-lspace: 0; mso-table-rspace: 0;"><tr style=3D"box-sizing: border-=
+box;"><td class=3D"pad" style=3D"box-sizing: border-box; text-align: center=
+; width: 100%;" width=3D"100%" align=3D"center"><h1 style=3D"box-sizing: bo=
+rder-box; margin: 0; color: #000; direction: ltr; font-family: Lucida Sans =
+Unicode,Lucida Grande,Lucida Sans,Geneva,Verdana,sans-serif; font-size: 18p=
+x; font-weight: 700; letter-spacing: normal; line-height: 120%; text-align:=
+ left; margin-top: 0; margin-bottom: 0; mso-line-height-alt: 21.59999999999=
+9998px;"><span class=3D"tinyMce-placeholder" style=3D"box-sizing: border-bo=
+x;">Poll of the week</span></h1></td></tr></table><table class=3D"image_blo=
+ck block-2" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ role=3D"presentation" style=3D"box-sizing: border-box; mso-table-lspace: 0=
+; mso-table-rspace: 0;"><tr style=3D"box-sizing: border-box;"><td class=3D"=
+pad" style=3D"box-sizing: border-box; width: 100%;" width=3D"100%"><div cla=
+ss=3D"alignment" align=3D"center" style=3D"box-sizing: border-box; line-hei=
+ght: 10px;"><div style=3D"box-sizing: border-box; max-width: 396px;"><a hre=
+f=3D"http://links.wellfound.com/u/click=3F_t=3D26b4e8aeb47d4cd3acd5eba415f7=
+6f62&_m=3D8d232b7fd5504120905fe6fb343a8267&_e=3DC18mpyhZ2epEwUUD2KegATLqeOY=
+DzSPB0r_L9cmJ6bmNzIUoiWcxIZp-ftAyrV7djz4JKicVhHWf2mSYTiycYu1phKOEWymlQKwW_j=
+xxkWrYgFQShTOc4B7lnaRBbDcMeJ5-fueid0nGPpM2oC1yCOOQ8T2Jsz3WNqr91QkqTP4zdj5ki=
+EkVjN3fm_nb2XGltKEmqXBghK0LSIAuxowL64TdwacwBpgDnDJxWruCE0ECQkzaHEi_L_z7XgDt=
+B5QpsqbLihjG2qW1ONsU6g2PruaffwHRQTvYEJ8OSxQ6CLtGDZmGZfXBevKCE-_I_jbfEpfDPNS=
+cEnwwJswddo1Y4TQfMO7SI7Vyv26Ma-OarXA%3D" target=3D"_blank" style=3D"box-siz=
+ing: border-box; outline: none;" tabindex=3D"-1"><img src=3D"https://d15k2d=
+11r6t6rl.cloudfront.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c5=
+42cff6dd6a/26b4e8aeb47d4cd3acd5eba415f76f62/PolloftheWeek_12.png" style=3D"=
+box-sizing: border-box; display: block; height: auto; border: 0; width: 100=
+%;" width=3D"396" height=3D"auto"></a></div></div></td></tr></table><table =
+class=3D"divider_block block-3" width=3D"100%" border=3D"0" cellpadding=3D"=
+10" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box=
+; mso-table-lspace: 0; mso-table-rspace: 0;"><tr style=3D"box-sizing: borde=
+r-box;"><td class=3D"pad" style=3D"box-sizing: border-box;"><div class=3D"a=
+lignment" align=3D"center" style=3D"box-sizing: border-box;"><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"1=
+00%" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace=
+: 0;"><tr style=3D"box-sizing: border-box;"><td class=3D"divider_inner" sty=
+le=3D"box-sizing: border-box; font-size: 1px; line-height: 1px; border-top:=
+ 1px dotted #bbb;"><span style=3D"box-sizing: border-box;">&#8202;</span></=
+td></tr></table></div></td></tr></table></td></tr></tbody></table></td></tr=
+></tbody></table><table class=3D"row row-8" align=3D"center" width=3D"100%"=
+ border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" sty=
+le=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0;"><t=
+body style=3D"box-sizing: border-box;"><tr style=3D"box-sizing: border-box;=
+"><td style=3D"box-sizing: border-box;"><table class=3D"row-content stack" =
+align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"p=
+resentation" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-tabl=
+e-rspace: 0; background-color: #fff; border-radius: 0; color: #000; width: =
+575px; margin: 0 auto;" width=3D"575" bgcolor=3D"#fff"><tbody style=3D"box-=
+sizing: border-box;"><tr style=3D"box-sizing: border-box;"><td class=3D"col=
+umn column-1" width=3D"100%" style=3D"box-sizing: border-box; mso-table-lsp=
+ace: 0; mso-table-rspace: 0; font-weight: 400; text-align: left; padding-bo=
+ttom: 5px; padding-top: 5px; vertical-align: top; border-top: 0; border-rig=
+ht: 0; border-bottom: 0; border-left: 0;" align=3D"left" valign=3D"top"><ta=
+ble class=3D"heading_block block-1" width=3D"100%" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-=
+box; mso-table-lspace: 0; mso-table-rspace: 0;"><tr style=3D"box-sizing: bo=
+rder-box;"><td class=3D"pad" style=3D"box-sizing: border-box; text-align: c=
+enter; width: 100%;" width=3D"100%" align=3D"center"><h1 style=3D"box-sizin=
+g: border-box; margin: 0; color: #000; direction: ltr; font-family: Lucida =
+Sans Unicode,Lucida Grande,Lucida Sans,Geneva,Verdana,sans-serif; font-size=
+: 18px; font-weight: 700; letter-spacing: normal; line-height: 120%; text-a=
+lign: left; margin-top: 0; margin-bottom: 0; mso-line-height-alt: 21.599999=
+999999998px;"><span class=3D"tinyMce-placeholder" style=3D"box-sizing: bord=
+er-box;">Recently funded companies</span></h1></td></tr></table><table clas=
+s=3D"text_block block-2" width=3D"100%" border=3D"0" cellpadding=3D"10" cel=
+lspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; mso-t=
+able-lspace: 0; mso-table-rspace: 0; word-break: break-word;"><tr style=3D"=
+box-sizing: border-box;"><td class=3D"pad" style=3D"box-sizing: border-box;=
+"><div style=3D"box-sizing: border-box; font-family: sans-serif;"><div clas=
+s style=3D"box-sizing: border-box; font-size: 14px; font-family: Lucida San=
+s Unicode,Lucida Grande,Lucida Sans,Geneva,Verdana,sans-serif; mso-line-hei=
+ght-alt: 16.8px; color: #000; line-height: 1.2;"><p style=3D"box-sizing: bo=
+rder-box; line-height: inherit; margin: 0; mso-line-height-alt: 16.8px;"> N=
+YC's <a href=3D"http://links.wellfound.com/u/click=3F_t=3D26b4e8aeb47d4cd3a=
+cd5eba415f76f62&_m=3D8d232b7fd5504120905fe6fb343a8267&_e=3DC18mpyhZ2epEwUUD=
+2KegAdvqDQpU_zDKspIS2Q5K2vrAXvF-m2blhCBEUcEBUh4NnOBd6NJOd4GK_he2LVrxzT8W3wr=
+MaJYRWudG_MClbHBRQGWv_EUVi-KGIp9grM0fFeWD7JOysg2YsmRoS5bBZm4ySLqfKPkTv74776=
+qzbIJ3uiTxZPSPwKA3lVOcmkAN9cwXNBW2sWtyftW2HowPgxP9yGEiig_2dPCNpw_Tz-0ON4T8l=
+x8sstmKj5x4ZYEUqD5JlZ_EfGreUMCoaZPT3aNobmYikjxm-Y02L7baWrk7Nbz-Se9oheFB7KTR=
+t0F7NHjr8Gd_Xz-P4vJmfWSC9l8WHMt1OdwqJ8nXhGlAc3U%3D" style=3D"box-sizing: bo=
+rder-box; text-decoration: underline; color: #e9357b;">Adro</a> Closes $2M =
+for Financial Services</p><p style=3D"box-sizing: border-box; line-height: =
+inherit; margin: 0; mso-line-height-alt: 16.8px;">&nbsp;</p><p style=3D"box=
+-sizing: border-box; line-height: inherit; margin: 0; mso-line-height-alt: =
+16.8px;">Indianapolis' <a href=3D"http://links.wellfound.com/u/click=3F_t=
+=3D26b4e8aeb47d4cd3acd5eba415f76f62&_m=3D8d232b7fd5504120905fe6fb343a8267&_=
+e=3DC18mpyhZ2epEwUUD2KegAdvqDQpU_zDKspIS2Q5K2voYsXw3cYep0B857pd1SdMWL7KvqPB=
+3RE00pOD4s67Zor7TopjS3v0wLkLgo0xWQ4ZNfVzAgpvUBZ5uC2xtHs73GDEJIM4eg-kghxvyXx=
+QB5x985gf0PSK5EL1v_9aKQk6uyjOfc9kRDggdjsoeymCiXR7LctyJ8X11Pbyfrt9M2RbZduiTm=
+Apnj8U2CMpoPI6hG5BszUx76GPDw33AmcKFv5ymFNnLKPWr9nLeFtU0TGRqFa5p3J39geW8-J8J=
+iqtxj4cz8wpTSYRhSZTT2tNYYLTcVPy_LnZrTx3fCJXAXK8PajM9PvtQVyOwhmLe2qM%3D" sty=
+le=3D"box-sizing: border-box; text-decoration: underline; color: #e9357b;">=
+Neurava</a> Nets $2M Seed for Wearable Tech</p><p style=3D"box-sizing: bord=
+er-box; line-height: inherit; margin: 0; mso-line-height-alt: 16.8px;">&nbs=
+p; </p><p style=3D"box-sizing: border-box; line-height: inherit; margin: 0;=
+ mso-line-height-alt: 16.8px;">Los Angeles' <a href=3D"http://links.wellfou=
+nd.com/u/click=3F_t=3D26b4e8aeb47d4cd3acd5eba415f76f62&_m=3D8d232b7fd550412=
+0905fe6fb343a8267&_e=3DC18mpyhZ2epEwUUD2KegAdvqDQpU_zDKspIS2Q5K2vquVhNCIBst=
+lQdulUgwrE1-QneU3g4O_pG69ylDc68TeOtT_g4z0a8IlAqDVeN5luVzeqtVFBI7-8Pvf6s3HqZ=
+O6rb8Z6MwnTRo9xaye8hWkHz_wjSCeRveAqPEqX6vL_-1GH5HDPK_u4zzW0CxdoXiOBAOxFZs-1=
+6jjWDw15TuKwoXYHrbUovixSwqux0FZZpjtV9hy3BRd5BFeV-HrosuPmBLvO1oZMPHXctloPBF2=
+msnFvXGxdxl5xju-Rcmapqs6WhDM8cHewmth2YUVnBYl7Ok_YMTvqjRYJE__do6TT--ouiXiaw0=
+mRzkFndZ4Z8%3D" style=3D"box-sizing: border-box; text-decoration: underline=
+; color: #e9357b;">Storiaverse</a> Raises $3M for Mobile Entertainment</p><=
+p style=3D"box-sizing: border-box; line-height: inherit; margin: 0; mso-lin=
+e-height-alt: 16.8px;">&nbsp;</p><p style=3D"box-sizing: border-box; line-h=
+eight: inherit; margin: 0; mso-line-height-alt: 16.8px;"> Athens, Ga.-based=
+ <a href=3D"http://links.wellfound.com/u/click=3F_t=3D26b4e8aeb47d4cd3acd5e=
+ba415f76f62&_m=3D8d232b7fd5504120905fe6fb343a8267&_e=3DC18mpyhZ2epEwUUD2Keg=
+AdvqDQpU_zDKspIS2Q5K2vpol6mSxcqG50WFrJcOiVKZ1jN4kvixQ_fwxC7KDwB5d0thyU-wIPw=
+_Zu9HfHPnla8wNmSyucjczhLrLR5vCGTLDppabkaQGSczAHc4_37sY4BWhIn78HDbAMsa-Lkdhf=
+NPNuBqjelfJbABeFqC3eh2XyVkKyQQRpBND1fwnLNCJkyFHWo6rjlroCrtl7bO7ylHSSYBNkdZS=
+hjvz_1Skuk3B69d8pW1VBlNS9vbJuGW_7HG0KKz_MfvpSD0-Y3DzIHKWDhtu29CNYxEOEFZ4IfU=
+d--Ti0IYHQJkecrV5voL48GwD-lxFuBlGdr2kntNROU%3D" style=3D"box-sizing: border=
+-box; text-decoration: underline; color: #e9357b;">Lockchain.ai</a> Locks i=
+n $5M for Blockchain Risk Management</p><p style=3D"box-sizing: border-box;=
+ line-height: inherit; margin: 0; mso-line-height-alt: 16.8px;">&nbsp;</p><=
+p style=3D"box-sizing: border-box; line-height: inherit; margin: 0; mso-lin=
+e-height-alt: 16.8px;">San Francisco's <a href=3D"http://links.wellfound.co=
+m/u/click=3F_t=3D26b4e8aeb47d4cd3acd5eba415f76f62&_m=3D8d232b7fd5504120905f=
+e6fb343a8267&_e=3DC18mpyhZ2epEwUUD2KegAdvqDQpU_zDKspIS2Q5K2vq2UoCFfXfCyEICc=
+Zcp1xTS7pdDeVYUuH3_2hWdwQMfI7ILMPLYkD2uxFyXre3v5teJpsLTFQAsb6zPAMOsbcydEBhW=
+E6uIG2VF7QesUbCzuZsqWgPz45vniKzcpItyX9T3N0WXjIb6FWzRemUn4hwM1a3cbIK3FD9zR8R=
+sNWHp7gCN5jr1lv5m0VMyA10gGUeF5XxrPpsQQO9ksl_2sFNmIafpobWFueVrcy9sYKKzbD-tNa=
+Fiv0gfiHNxeLRDZFRatsoDlJ8GBEvFX4NjlsEhiIYMRXeTkqHvmDiNit3Z8w%3D%3D" style=
+=3D"box-sizing: border-box; text-decoration: underline; color: #e9357b;">Iv=
+o</a> Secures $5M for AI-Powered Legal Tech</p><p style=3D"box-sizing: bord=
+er-box; line-height: inherit; margin: 0; mso-line-height-alt: 16.8px;">&nbs=
+p;</p><p style=3D"box-sizing: border-box; line-height: inherit; margin: 0; =
+mso-line-height-alt: 16.8px;">San Francisco's <a href=3D"http://links.wellf=
+ound.com/u/click=3F_t=3D26b4e8aeb47d4cd3acd5eba415f76f62&_m=3D8d232b7fd5504=
+120905fe6fb343a8267&_e=3DC18mpyhZ2epEwUUD2KegAdvqDQpU_zDKspIS2Q5K2vqnCJCVmX=
+M9mvD07aaqGNxfR1I9YuDfBshuu82DKDUL2s8NuTBatPViZ8wodwOtKxBQKjVYDLSSwYLUfVmnI=
+O-XAAihDckXxceT2cZOZApTa49Hj8NKet_x68-M_zkp3Gla2bei96pzKR5s91F6zsERPi_SVjcT=
+fLOBGLvBhCjr0CEmu7VDw-QDB2SQaCZ1m3thwLEHT5LgVbi0p5HXPw17rao2Cx3_p4Nf2jbJnRo=
+fRw_pIUpQ3qv3r_qlkTWCCwJDI7WoaA7Tqjy_rDEiZJOj4Ag90Xol5K6e03VYEu0Ms8-z3iEhdl=
+kEOFJMnpxU5uI%3D" style=3D"box-sizing: border-box; text-decoration: underli=
+ne; color: #e9357b;">Juicer</a> Raises $5M for Restaurant Tech</p><p style=
+=3D"box-sizing: border-box; line-height: inherit; margin: 0; mso-line-heigh=
+t-alt: 16.8px;">&nbsp;</p><p style=3D"box-sizing: border-box; line-height: =
+inherit; margin: 0; mso-line-height-alt: 16.8px;"> Thai <a href=3D"http://l=
+inks.wellfound.com/u/click=3F_t=3D26b4e8aeb47d4cd3acd5eba415f76f62&_m=3D8d2=
+32b7fd5504120905fe6fb343a8267&_e=3DC18mpyhZ2epEwUUD2KegAdvqDQpU_zDKspIS2Q5K=
+2vrpXbR21Wq1Hrp99EZUZ5CUZao5pE2gwTiw4Cy44TKmnNQbx1TT_0iIqNBbIl9mK498b3UAZPo=
+GGOorRw-XjD1oNXl8ijt1OXOCl00hRsqkmgCWP98v2dyoMjmQIxTvb2Fb6XtnNBQiqD9AYVZPYy=
+pLdQSefPbtUeh6xslwfy6cJhnd7-9RQ8_thnOYUZyIWfogcNj-Eujr8k2IcrvWiueL6WibaecXK=
+pkLTV4tfgauyvwPBXtto9Q8JJWiaAI78XqAy457WFytWZEL2Mnbrew4hCYAKLywHabDmEe6UGH7=
+Qizu8_uWYnbAFB6OdtF5OQg%3D" style=3D"box-sizing: border-box; text-decoratio=
+n: underline; color: #e9357b;">HD</a> Clinches $6M Series A for Health Care=
+ Chatbots</p><p style=3D"box-sizing: border-box; line-height: inherit; marg=
+in: 0; mso-line-height-alt: 16.8px;">&nbsp;</p><p style=3D"box-sizing: bord=
+er-box; line-height: inherit; margin: 0; mso-line-height-alt: 16.8px;">Isra=
+eli <a href=3D"http://links.wellfound.com/u/click=3F_t=3D26b4e8aeb47d4cd3ac=
+d5eba415f76f62&_m=3D8d232b7fd5504120905fe6fb343a8267&_e=3DC18mpyhZ2epEwUUD2=
+KegAVHAYiyBo8nCW8D2kdOjh4IrtVP3tfvnHGiq3ONz5XQoz-xyjpfEUyU47IQxAaLtx6vQO3Vl=
+jRSaJWnxK8d9D_Yu80C2aIwS-ffZVmZC6kSuvl31tHObKX9bRU35axZp4jQX4f1H6Vq5LOGUnaw=
+atQ-4S6E8hxoE0eDW10i6sJgYvRzFc5MjlKZ12cCHTBZh-ZWBrjzltobwcDeFTi2KXBYQHx2FCw=
+hTUJiXDPiunaIZFAV2wQQ3nYYWjazFzM_DvQQAx03mKOY9MImjuIPUGkyBrrEMFFpby-c2t_YWt=
+yl8WkHNHWtE3gZTSsd-4FMlxtx6OibK0ld4WTMs8X5_Rlpj5N10q_faAxLRzByvLQYAJy8-1mRE=
+oGYJyqestDBaAMPEfHvY5m8Rr8d7FSyx_pE%3D" style=3D"box-sizing: border-box; te=
+xt-decoration: underline; color: #e9357b;">Spines</a> Collects $7M for AI P=
+ublishing</p><p style=3D"box-sizing: border-box; line-height: inherit; marg=
+in: 0; mso-line-height-alt: 16.8px;"> &nbsp;</p><p style=3D"box-sizing: bor=
+der-box; line-height: inherit; margin: 0; mso-line-height-alt: 16.8px;">NYC=
+'s <a href=3D"http://links.wellfound.com/u/click=3F_t=3D26b4e8aeb47d4cd3acd=
+5eba415f76f62&_m=3D8d232b7fd5504120905fe6fb343a8267&_e=3DC18mpyhZ2epEwUUD2K=
+egAdvqDQpU_zDKspIS2Q5K2vr1EhBhvcSgunQxM2HlqQfuROc8e-FFHt4fIWpdpSNIeMhsK2g9_=
+CXg_xewxu3E4X-t4qmVXyxypfFAkw3hBx9eMr4uDjpawMZvcDWMLFYXyMSr0Oz14DjFw3I9CDT7=
+qjwFNkF6uza93g9r1ImaL7MCjvk64FVoFg80uwsPAA5dm3ixJ58gI0iSs5FKAVSmwQZLkNyzOp3=
+7GMln-rBAYv-j02x4g6KjiMeB-QmoOBnEiieV0lQwV06GH50FAGpws69CB4AsiY7JSTLEpa4nxt=
+D6CBsqRAioErJeWAZwY3B56Q%3D%3D" style=3D"box-sizing: border-box; text-decor=
+ation: underline; color: #e9357b;">Summer</a> Secures $9M for Student Loan =
+Solutions</p><p style=3D"box-sizing: border-box; line-height: inherit; marg=
+in: 0; mso-line-height-alt: 16.8px;">&nbsp;</p><p style=3D"box-sizing: bord=
+er-box; line-height: inherit; margin: 0; mso-line-height-alt: 16.8px;"><a h=
+ref=3D"http://links.wellfound.com/u/click=3F_t=3D26b4e8aeb47d4cd3acd5eba415=
+f76f62&_m=3D8d232b7fd5504120905fe6fb343a8267&_e=3DC18mpyhZ2epEwUUD2KegAfBmo=
+DrPiGZUXw9ONFnk8BgGQehzymFlMdBn6FbxH_Bbd90CBBFoxSwA60qnGSXvkG0DYRH3wKOpSXkg=
+-0e24vnxpd5WV0JxuG735SguC8XIl4YuhtB3QVHtOnO0KSORZYvU7laLzl9LfCVOV4L30hGvddW=
+-WlbKknx2caf3tvb5Scptxdw64CiizjY55cYTAH5_azU2PRfjPYaQQNzzE7bKIItGAuEmQ3-L2u=
+NQsWhaD5H6tsECmktc-xSEVAoQrOWEtitS2kPBdRg6Nj51yqAzEtyJiKkN19_DUoqIayQc" sty=
+le=3D"box-sizing: border-box; text-decoration: underline; color: #e9357b;">=
+TerraClear</a> Optimizes Ag-Tech with $15M</p><p style=3D"box-sizing: borde=
+r-box; line-height: inherit; margin: 0; mso-line-height-alt: 16.8px;">&nbsp=
+;</p><p style=3D"box-sizing: border-box; line-height: inherit; margin: 0; m=
+so-line-height-alt: 16.8px;">Turkish <a href=3D"http://links.wellfound.com/=
+u/click=3F_t=3D26b4e8aeb47d4cd3acd5eba415f76f62&_m=3D8d232b7fd5504120905fe6=
+fb343a8267&_e=3DC18mpyhZ2epEwUUD2KegAYwD0X1nOJazLnWitRuovdFYspwI149A1w50JTL=
+4FNs7pASk_vhWR8VcWVtpXE8l2qU5m1OwmFXjUwwZcmKBxZuLRD7r20DaB_Kujw-E83WrRBbhmX=
+lyL2Fb5UHcgUXDNM5MXR_jbjBL3RRHVoEdBDwbZCtQnmbab4qWVPtG4ecuVI5hZ_rNvSYpxabCx=
+l1f0RI6yf3rU_9-ASgFSqoU1bscvTihaMIyagaPbuPGSQSyvslru8gABWlZTOxuJZe7NAIp-ftq=
+QBDSBDDfQ_loO5qs0Hb_ny-NoEqyngsqBbEAVU-vuFMrxoUpu5i299Po2w%3D%3D" style=3D"=
+box-sizing: border-box; text-decoration: underline; color: #e9357b;">ikas</=
+a> Attracts $20M for E-Commerce Platform</p></div></div></td></tr></table><=
+table class=3D"divider_block block-3" width=3D"100%" border=3D"0" cellpaddi=
+ng=3D"10" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: bord=
+er-box; mso-table-lspace: 0; mso-table-rspace: 0;"><tr style=3D"box-sizing:=
+ border-box;"><td class=3D"pad" style=3D"box-sizing: border-box;"><div clas=
+s=3D"alignment" align=3D"center" style=3D"box-sizing: border-box;"><table b=
+order=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=
+=3D"100%" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-r=
+space: 0;"><tr style=3D"box-sizing: border-box;"><td class=3D"divider_inner=
+" style=3D"box-sizing: border-box; font-size: 1px; line-height: 1px; border=
+-top: 1px dotted #bbb;"><span style=3D"box-sizing: border-box;">&#8202;</sp=
+an></td></tr></table></div></td></tr></table></td></tr></tbody></table></td=
+></tr></tbody></table><table class=3D"row row-9" align=3D"center" width=3D"=
+100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation=
+" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0=
+;"><tbody style=3D"box-sizing: border-box;"><tr style=3D"box-sizing: border=
+-box;"><td style=3D"box-sizing: border-box;"><table class=3D"row-content st=
+ack" align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso=
+-table-rspace: 0; background-color: #fff; border-radius: 0; color: #000; wi=
+dth: 575px; margin: 0 auto;" width=3D"575" bgcolor=3D"#fff"><tbody style=3D=
+"box-sizing: border-box;"><tr style=3D"box-sizing: border-box;"><td class=
+=3D"column column-1" width=3D"100%" style=3D"box-sizing: border-box; mso-ta=
+ble-lspace: 0; mso-table-rspace: 0; font-weight: 400; text-align: left; ver=
+tical-align: top; border-top: 0; border-right: 0; border-bottom: 0; border-=
+left: 0;" align=3D"left" valign=3D"top"><table class=3D"text_block block-1"=
+ width=3D"100%" border=3D"0" cellpadding=3D"10" cellspacing=3D"0" role=3D"p=
+resentation" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-tabl=
+e-rspace: 0; word-break: break-word;"><tr style=3D"box-sizing: border-box;"=
+><td class=3D"pad" style=3D"box-sizing: border-box;"><div style=3D"box-sizi=
+ng: border-box; font-family: sans-serif;"><div class style=3D"box-sizing: b=
+order-box; font-size: 14px; font-family: Lucida Sans Unicode,Lucida Grande,=
+Lucida Sans,Geneva,Verdana,sans-serif; mso-line-height-alt: 16.8px; color: =
+#000; line-height: 1.2;"><p style=3D"box-sizing: border-box; line-height: i=
+nherit; margin: 0; font-size: 14px; mso-line-height-alt: 16.8px;"><span sty=
+le=3D"box-sizing: border-box; font-size: 18px;"><strong style=3D"box-sizing=
+: border-box;">Post of the week</strong></span></p></div></div></td></tr></=
+table></td></tr></tbody></table></td></tr></tbody></table><table class=3D"r=
+ow row-10" align=3D"center" width=3D"100%" border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; mso=
+-table-lspace: 0; mso-table-rspace: 0;"><tbody style=3D"box-sizing: border-=
+box;"><tr style=3D"box-sizing: border-box;"><td style=3D"box-sizing: border=
+-box;"><table class=3D"row-content stack" align=3D"center" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing:=
+ border-box; mso-table-lspace: 0; mso-table-rspace: 0; background-color: #f=
+ff; border-bottom: 2px solid transparent; border-left: 2px solid transparen=
+t; border-radius: 0; border-right: 2px solid transparent; border-top: 2px s=
+olid transparent; color: #000; width: 575px; margin: 0 auto;" width=3D"575"=
+ bgcolor=3D"#fff"><tbody style=3D"box-sizing: border-box;"><tr style=3D"box=
+-sizing: border-box;"><td class=3D"column column-1" width=3D"100%" style=3D=
+"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0; font-wei=
+ght: 400; text-align: left; padding-bottom: 35px; padding-top: 5px; vertica=
+l-align: top; border-top: 0; border-right: 0; border-bottom: 0; border-left=
+: 0;" align=3D"left" valign=3D"top"><table class=3D"image_block block-1" wi=
+dth=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rs=
+pace: 0;"><tr style=3D"box-sizing: border-box;"><td class=3D"pad" style=3D"=
+box-sizing: border-box; width: 100%;" width=3D"100%"><div class=3D"alignmen=
+t" align=3D"center" style=3D"box-sizing: border-box; line-height: 10px;"><d=
+iv style=3D"box-sizing: border-box; max-width: 433px;"> <a href=3D"http://l=
+inks.wellfound.com/u/click=3F_t=3D26b4e8aeb47d4cd3acd5eba415f76f62&_m=3D8d2=
+32b7fd5504120905fe6fb343a8267&_e=3DC18mpyhZ2epEwUUD2KegAWRPXlJouTHZ6OdSHDdB=
+DbsxQ_mIlYj6KsSrgovt4F_HMo2CaMQaPUHYzZ7QBWARBnmSOp7lafUiNZN2t4_mpWoNXT8hPwF=
+GA933oV8mzHYSS4f6HcBws1cPon1gRn9uJSdAD_MOQLS5MJmyRsuKvDISZ0BywzgAJj9_bgGdWd=
+yqQ5eSnPtC_9UM9UwXVsUkbN-HfCcM2UrlyxtWYNGprUABGjbKSRJT0Q7ZbLCaV1Yu0hLrt3heq=
+gyFe2RXN7ipq9PIdsD7C8ITS3ycT0mNxWCqsHssPHuSzfDzuqATRorW738hlkRGvm5iDLBr8bgP=
+Ig%3D%3D" target=3D"_blank" style=3D"box-sizing: border-box; outline: none;=
+" tabindex=3D"-1"><img src=3D"https://d15k2d11r6t6rl.cloudfront.net/public/=
+users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/26b4e8aeb47d4cd3acd5=
+eba415f76f62/TweetoftheWeek_8.png" style=3D"box-sizing: border-box; display=
+: block; height: auto; border: 0; width: 100%;" width=3D"433" height=3D"aut=
+o"></a></div></div></td></tr></table></td></tr></tbody></table></td></tr></=
+tbody></table><table class=3D"row row-11" align=3D"center" width=3D"100%" b=
+order=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=
+=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0;"><tbo=
+dy style=3D"box-sizing: border-box;"><tr style=3D"box-sizing: border-box;">=
+<td style=3D"box-sizing: border-box;"><table class=3D"row-content stack" al=
+ign=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pre=
+sentation" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-=
+rspace: 0; background-color: #210d25; border-radius: 11px; color: #000; wid=
+th: 575px; margin: 0 auto;" width=3D"575" bgcolor=3D"#210d25"><tbody style=
+=3D"box-sizing: border-box;"><tr style=3D"box-sizing: border-box;"><td clas=
+s=3D"column column-1" width=3D"100%" style=3D"box-sizing: border-box; mso-t=
+able-lspace: 0; mso-table-rspace: 0; font-weight: 400; text-align: left; pa=
+dding-bottom: 5px; padding-top: 15px; vertical-align: top; border-top: 0; b=
+order-right: 0; border-bottom: 0; border-left: 0;" align=3D"left" valign=3D=
+"top"><table class=3D"text_block block-1" width=3D"100%" border=3D"0" cellp=
+adding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: b=
+order-box; mso-table-lspace: 0; mso-table-rspace: 0; word-break: break-word=
+;"><tr style=3D"box-sizing: border-box;"><td class=3D"pad" style=3D"box-siz=
+ing: border-box; padding-bottom: 15px; padding-left: 20px; padding-right: 2=
+0px; padding-top: 15px;"><div style=3D"box-sizing: border-box; font-family:=
+ sans-serif;"><div class style=3D"box-sizing: border-box; font-size: 12px; =
+font-family: Lucida Sans Unicode,Lucida Grande,Lucida Sans,Geneva,Verdana,s=
+ans-serif; mso-line-height-alt: 18px; color: #fff; line-height: 1.5;"><p st=
+yle=3D"box-sizing: border-box; line-height: inherit; margin: 0; mso-line-he=
+ight-alt: 27px;"><span style=3D"box-sizing: border-box; font-size: 18px;"><=
+strong style=3D"box-sizing: border-box;">What we're reading&nbsp;</strong><=
+/span></p><ul style=3D"box-sizing: border-box; line-height: 1.5; mso-line-h=
+eight-alt: 27px; font-size: 14px;"><li style=3D"box-sizing: border-box;"> <=
+span style=3D"box-sizing: border-box; font-size: 14px;">Reimagining hiring =
+and learning with the power of AI (<a href=3D"http://links.wellfound.com/u/=
+click=3F_t=3D26b4e8aeb47d4cd3acd5eba415f76f62&_m=3D8d232b7fd5504120905fe6fb=
+343a8267&_e=3DC18mpyhZ2epEwUUD2KegATLqeOYDzSPB0r_L9cmJ6bnziv5XQGXLM6tnRxXKt=
+TZ4E0f0NQk4EfZLGmdk3J_UkeJOZyUbd0VB0EB5iT3HEVTFSfUTcYjxxnpz6xvJIf7dzutdFmh1=
+SXsSNskECTCFmSFF4iWpoA2BLFNjUrkrHjowIvmHYA45Q4GyWpCzr-sw-uv7FdxNELfp7AE85XL=
+Xxa2WyxJd0HHhnYJSk9yDU8J7Ut8HlYp9dpJdNS0U6y7oPhPTBWTjQK8MRJBCBJTdwoVpjQdLvP=
+QaZcyk3LG-48P9cMAXBJE6eXTCRxdaOaf5TcE3yBXynTEdOvCJVhM3vebx-MHsWLsfQSpapUwzN=
+TMPHH0z4c4wmUnv31AzcChA" style=3D"box-sizing: border-box; text-decoration: =
+underline; color: #e9357b;">LinkedIn</a>)</span></li><li style=3D"box-sizin=
+g: border-box;"><span style=3D"box-sizing: border-box; font-size: 14px;">Bi=
+llie Jean King Wants to Change the Playbook for Female Founders (<a href=3D=
+"http://links.wellfound.com/u/click=3F_t=3D26b4e8aeb47d4cd3acd5eba415f76f62=
+&_m=3D8d232b7fd5504120905fe6fb343a8267&_e=3DC18mpyhZ2epEwUUD2KegASWB5GGWos9=
+cXqWxJBnCayHir-yN7vdLkLOusP1Pf3qwd61V6IpCd-hSSOS5PvlUOxVf6PVxSP_kRSLSeB3YwK=
+JUz_3Cj6KwW-Pk4D5-5ZX5m393st8zDyZNIBnGdl0Kyy_P3SLL5T_7wsottPyalp0gK_4trcDyB=
+eZJuzFaj-_9wvqi1sxIps3zAr6uFGNFck-Bhbwc95b7wnSBHSdpYzOVN2O9EKkRURdeQAk8vxtV=
+s-2WsMhWMO73GzLmTbXX-XpZCu5fnl6ksS9JAQg8zejm9eIK54u1oNy_ATejOwNl8yVM4uOO25b=
+hNTE7E5RTtaDGdGeUZXU_vQLUDL499v9ZnzLBu0Vxxo_IWmRvdoiwz75t3ur3lGacL_Vd55nMv6=
+yW_vxdm6LaOZTSVC-_GKQ%3D" style=3D"box-sizing: border-box; text-decoration:=
+ underline; color: #e9357b;">Inc.</a>)</span></li><li style=3D"box-sizing: =
+border-box;"> <span style=3D"box-sizing: border-box; font-size: 14px;">Why =
+=E2=80=98Tokenizing=E2=80=99 Assets Is Turning Banks On to Crypto (<a href=
+=3D"http://links.wellfound.com/u/click=3F_t=3D26b4e8aeb47d4cd3acd5eba415f76=
+f62&_m=3D8d232b7fd5504120905fe6fb343a8267&_e=3DC18mpyhZ2epEwUUD2KegATIOpYhm=
+UJ5io_UUdabKkYN0tQ7QjrFT_HyWVumGOE9iV0JRBJIFgUeeyTbbSE6WIJZZ7MMN17FhixU-lf5=
+EUpCS4YgySp8jc0nWiypLbKEUY4f45A3i8oE64ABi4mML7Fsmmu3jxlJUkV7Ek_eMX1UOar0jru=
+co810fzOtewYIGT-fwtC0UCq_yl3_8L4QqGBa0Y7X3cv5xLcqmx01NzHtjYg1n8TIK3hf2z-Rd_=
+wDMkZCqLZo0Vft1vTfJ6wWHj7sLLzXc4hTsmnvqVJ2LSdO3JX2n0leM6SbL_SrRvUzgYSpZF-Dv=
+RVDFuI4AiL61sHTAo1Uh6ckJ_Vbz4PvC6GCZDrfFGuF9jszCpAqiUXLkr2udGJFeyR6V2Y-Oi8i=
+I4Q%3D%3D" style=3D"box-sizing: border-box; text-decoration: underline; col=
+or: #e9357b;">Bloomberg</a>)</span></li><li style=3D"box-sizing: border-box=
+;"><span style=3D"box-sizing: border-box; font-size: 14px;">Meta=E2=80=99s =
+AI chief: LLMs will never reach human-level intelligence (<a href=3D"http:/=
+/links.wellfound.com/u/click=3F_t=3D26b4e8aeb47d4cd3acd5eba415f76f62&_m=3D8=
+d232b7fd5504120905fe6fb343a8267&_e=3DC18mpyhZ2epEwUUD2KegAe2nmmfigdAhZ-K8K_=
+J5fhsDh_-v6d_jaiHV8a-WEH6ijBoLeUkFgjXCO-W8IisHZYLA_xjtZ0OJyExCbtU3wQXEGnWNa=
+a8lofKjr70Ug8sl72_ObMScJvvAX1rQzNTcPctyRXp3z7J9mQz1L68grXdcymm3xiy-nwesFAdw=
+KB03h9-SjX8hW18BfRYevQq7KSXikVBOOzOT-SgqrbSlrr2FgjWqYyYk4prWdkutvFWd6RhhmQD=
+7gSCqETZjTo-kXUi2voOnf_tU15RYm04olfFZzEoz1O2Ci6zT0XgWtXXF0Tr2gGKRDLcRfkelAd=
+JUXxsjnizNGZOOeZxHHU5XP78%3D" style=3D"box-sizing: border-box; text-decorat=
+ion: underline; color: #e9357b;">TheNextWeb</a>)</span></li><li style=3D"bo=
+x-sizing: border-box;"> <span style=3D"box-sizing: border-box; font-size: 1=
+4px;">AI Can Pretend to Be Stupider Than It Really Is, Scientists Find (<a =
+href=3D"http://links.wellfound.com/u/click=3F_t=3D26b4e8aeb47d4cd3acd5eba41=
+5f76f62&_m=3D8d232b7fd5504120905fe6fb343a8267&_e=3DC18mpyhZ2epEwUUD2KegAVne=
+UBpv_8e0vnu1cksGek3hD8V2iEn28GSdzj_1p4oEkKFILWj6qhxg5-QK-DuiC2EWLZEtJdFW5kn=
+Nd4ngHprhb4wPQOEiPaOMwnwfMY3-YBssx53i7VYOjj1hk_mv_EafVtbtgefdeh6Ss0ituzghnj=
+7G8E8APbO5O-pD8UIFtSnVi_Vx1Nuxswh09eGTpwK2r0y2ab4apQtP9BD-O33SK1lFxb2oqlRCw=
+quum69BICWd8LNXw1894Ngdvpo3eZnNpDaDJ5F4ZghkJ1UYsbU7l8H_bUAoYjB2NzYIKiMq" st=
+yle=3D"box-sizing: border-box; text-decoration: underline; color: #e9357b;"=
+>The_Byte</a>)</span></li></ul></div></div></td></tr></table></td></tr></tb=
+ody></table></td></tr></tbody></table><table class=3D"row row-12" align=3D"=
+center" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" rol=
+e=3D"presentation" style=3D"box-sizing: border-box; mso-table-lspace: 0; ms=
+o-table-rspace: 0;"><tbody style=3D"box-sizing: border-box;"><tr style=3D"b=
+ox-sizing: border-box;"> <td style=3D"box-sizing: border-box;"><table class=
+=3D"row-content stack" align=3D"center" border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; mso-ta=
+ble-lspace: 0; mso-table-rspace: 0; background-color: #fff; border-radius: =
+0; border-top: 1px dotted transparent; color: #000; width: 575px; margin: 0=
+ auto;" width=3D"575" bgcolor=3D"#fff"><tbody style=3D"box-sizing: border-b=
+ox;"><tr style=3D"box-sizing: border-box;"><td class=3D"column column-1" wi=
+dth=3D"100%" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-tabl=
+e-rspace: 0; font-weight: 400; text-align: left; padding-bottom: 5px; paddi=
+ng-top: 15px; vertical-align: top; border-top: 0; border-right: 0; border-b=
+ottom: 0; border-left: 0;" align=3D"left" valign=3D"top"><table class=3D"he=
+ading_block block-1" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; mso-table-=
+lspace: 0; mso-table-rspace: 0;"><tr style=3D"box-sizing: border-box;"><td =
+class=3D"pad" style=3D"box-sizing: border-box; text-align: center; width: 1=
+00%;" width=3D"100%" align=3D"center"><h1 style=3D"box-sizing: border-box; =
+margin: 0; color: #000; direction: ltr; font-family: Lucida Sans Unicode,Lu=
+cida Grande,Lucida Sans,Geneva,Verdana,sans-serif; font-size: 18px; font-we=
+ight: 700; letter-spacing: normal; line-height: 120%; text-align: left; mar=
+gin-top: 0; margin-bottom: 0; mso-line-height-alt: 21.599999999999998px;"><=
+span class=3D"tinyMce-placeholder" style=3D"box-sizing: border-box;">Podcas=
+ts of the Week</span></h1></td></tr></table><table class=3D"text_block bloc=
+k-2" width=3D"100%" border=3D"0" cellpadding=3D"10" cellspacing=3D"0" role=
+=3D"presentation" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso=
+-table-rspace: 0; word-break: break-word;"><tr style=3D"box-sizing: border-=
+box;"><td class=3D"pad" style=3D"box-sizing: border-box;"><div style=3D"box=
+-sizing: border-box; font-family: sans-serif;"><div class style=3D"box-sizi=
+ng: border-box; font-size: 12px; font-family: Lucida Sans Unicode,Lucida Gr=
+ande,Lucida Sans,Geneva,Verdana,sans-serif; mso-line-height-alt: 14.3999999=
+99999999px; color: #000; line-height: 1.2;"><p style=3D"box-sizing: border-=
+box; line-height: inherit; margin: 0; font-size: 14px; mso-line-height-alt:=
+ 16.8px;"> <span style=3D"box-sizing: border-box; font-size: 14px;">HR Work=
+s Podcast: How AI Will Transform the Recruitment Sector (<a href=3D"http://=
+links.wellfound.com/u/click=3F_t=3D26b4e8aeb47d4cd3acd5eba415f76f62&_m=3D8d=
+232b7fd5504120905fe6fb343a8267&_e=3DC18mpyhZ2epEwUUD2KegARsS_LSIgNh9ohRssRB=
+sLNYd-k1opGegyKH2GLVs__KLVVYBNSJ3B3G1JFP8m4CNZ9eqaFSyL9kAMn27NXqDRgV0bQsCaV=
+Xye1jXKG_I3Nym989Rny_Scdtg8e0XmHFviBELA9HkIERKTYiADk7TODNHurlDmTgepE_UQJc2B=
+EUFjxITSDDx2Ks3bq46e3v8sbGvC5mYTu5GfabBZ7pzrfNmBT5bv3umCKwbDWt_n-wXl4YLPEBn=
+cjPY74sSkwvBbe5nx9jjvk8sGr_F88GqFdyxPj39G6UODXMBiv6iwmURVnMl-lOZQJdYepsrwAo=
+Tmg%3D%3D" style=3D"box-sizing: border-box; text-decoration: underline; col=
+or: #e9357b;">HR Works</a>)</span></p><p style=3D"box-sizing: border-box; l=
+ine-height: inherit; margin: 0; font-size: 14px; mso-line-height-alt: 14.39=
+9999999999999px;">&nbsp;</p><p style=3D"box-sizing: border-box; line-height=
+: inherit; margin: 0; font-size: 14px; mso-line-height-alt: 16.8px;"> <span=
+ style=3D"box-sizing: border-box; font-size: 14px;">Investor Extraordinaire=
+ Arlan Hamilton Explores Her New Book =E2=80=9CYour First Million=E2=80=9D =
+(<a href=3D"http://links.wellfound.com/u/click=3F_t=3D26b4e8aeb47d4cd3acd5e=
+ba415f76f62&_m=3D8d232b7fd5504120905fe6fb343a8267&_e=3DC18mpyhZ2epEwUUD2Keg=
+ARsS_LSIgNh9ohRssRBsLNYWS09XEy8ORlyzjulAQnKeGmF0b4-fXHVzVarfuey1Qm5b4E6kl0C=
+EqSYICcdpeugbmtTIlhLCdT9os_Qb-KK_PtnHrfGxxSPbgbD_ckBSLvZvaa4qxg2KoiabCzDmCR=
+Y0XpHWeSSBx6V7MaTxJ_YwK_HGR7w3uwI76BAyM9YnOjmkMcG5E6eCVDlU_9Q6iBko4fr4ftDT0=
+BoRoi1qB2nHGWXE6eo0e960kiU8cUeP1x75Y2lqTitStKpzaq7yN1MLhmceJCZhpOn8kVqq3A0C=
+VFb8GdtnFBffLyXdOaOlYw%3D%3D" style=3D"box-sizing: border-box; text-decorat=
+ion: underline; color: #e9357b;">Startup of the Year</a>)</span></p></div><=
+/div></td></tr></table><table class=3D"divider_block block-3" width=3D"100%=
+" border=3D"0" cellpadding=3D"10" cellspacing=3D"0" role=3D"presentation" s=
+tyle=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0;">=
+<tr style=3D"box-sizing: border-box;"><td class=3D"pad" style=3D"box-sizing=
+: border-box;"><div class=3D"alignment" align=3D"center" style=3D"box-sizin=
+g: border-box;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" rol=
+e=3D"presentation" width=3D"100%" style=3D"box-sizing: border-box; mso-tabl=
+e-lspace: 0; mso-table-rspace: 0;"><tr style=3D"box-sizing: border-box;"><t=
+d class=3D"divider_inner" style=3D"box-sizing: border-box; font-size: 1px; =
+line-height: 1px; border-top: 1px dotted #bbb;"><span style=3D"box-sizing: =
+border-box;">&#8202;</span></td></tr></table></div></td></tr></table></td><=
+/tr></tbody></table></td></tr></tbody></table><table class=3D"row row-13" a=
+lign=3D"center" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; mso-table-lsp=
+ace: 0; mso-table-rspace: 0;"><tbody style=3D"box-sizing: border-box;"><tr =
+style=3D"box-sizing: border-box;"><td style=3D"box-sizing: border-box;"><ta=
+ble class=3D"row-content stack" align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-=
+box; mso-table-lspace: 0; mso-table-rspace: 0; background-color: #fff; colo=
+r: #000; width: 575px; margin: 0 auto;" width=3D"575" bgcolor=3D"#fff"><tbo=
+dy style=3D"box-sizing: border-box;"><tr style=3D"box-sizing: border-box;">=
+<td class=3D"column column-1" width=3D"100%" style=3D"box-sizing: border-bo=
+x; mso-table-lspace: 0; mso-table-rspace: 0; font-weight: 400; text-align: =
+left; padding-bottom: 5px; padding-top: 5px; vertical-align: top; border-to=
+p: 0; border-right: 0; border-bottom: 0; border-left: 0;" align=3D"left" va=
+lign=3D"top"><table class=3D"text_block block-1" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-si=
+zing: border-box; mso-table-lspace: 0; mso-table-rspace: 0; word-break: bre=
+ak-word;"><tr style=3D"box-sizing: border-box;"><td class=3D"pad" style=3D"=
+box-sizing: border-box; padding-bottom: 5px; padding-left: 25px; padding-ri=
+ght: 10px; padding-top: 10px;"><div style=3D"box-sizing: border-box; font-f=
+amily: sans-serif;"><div class style=3D"box-sizing: border-box; font-size: =
+12px; font-family: Lucida Sans Unicode,Lucida Grande,Lucida Sans,Geneva,Ver=
+dana,sans-serif; mso-line-height-alt: 14.399999999999999px; color: #fff; li=
+ne-height: 1.2;"><p style=3D"box-sizing: border-box; line-height: inherit; =
+margin: 0; font-size: 14px; mso-line-height-alt: 16.8px;"><span style=3D"bo=
+x-sizing: border-box; color: #000000; font-size: 18px;"><span style=3D"box-=
+sizing: border-box;"><strong style=3D"box-sizing: border-box;">=E2=9C=93 St=
+artups hiring now</strong></span></span></p></div></div></td></tr></table><=
+/td></tr></tbody></table></td></tr></tbody></table><table class=3D"row row-=
+14" align=3D"center" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; mso-table-=
+lspace: 0; mso-table-rspace: 0;"><tbody style=3D"box-sizing: border-box;"><=
+tr style=3D"box-sizing: border-box;"><td style=3D"box-sizing: border-box;">=
+<table class=3D"row-content" align=3D"center" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; =
+mso-table-lspace: 0; mso-table-rspace: 0; background-color: #fff; color: #0=
+00; width: 575px; margin: 0 auto;" width=3D"575" bgcolor=3D"#fff"><tbody st=
+yle=3D"box-sizing: border-box;"><tr style=3D"box-sizing: border-box;"><td c=
+lass=3D"column column-1" width=3D"50%" style=3D"box-sizing: border-box; mso=
+-table-lspace: 0; mso-table-rspace: 0; font-weight: 400; text-align: left; =
+padding-bottom: 5px; padding-left: 5px; padding-top: 5px; vertical-align: t=
+op; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0;" alig=
+n=3D"left" valign=3D"top"><table class=3D"image_block block-1" width=3D"100=
+%" border=3D"0" cellpadding=3D"10" cellspacing=3D"0" role=3D"presentation" =
+style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0;"=
+><tr style=3D"box-sizing: border-box;"><td class=3D"pad" style=3D"box-sizin=
+g: border-box;"><div class=3D"alignment" align=3D"center" style=3D"box-sizi=
+ng: border-box; line-height: 10px;"><div style=3D"box-sizing: border-box; m=
+ax-width: 70.625px;"> <a href=3D"http://links.wellfound.com/u/click=3F_t=3D=
+26b4e8aeb47d4cd3acd5eba415f76f62&_m=3D8d232b7fd5504120905fe6fb343a8267&_e=
+=3DC18mpyhZ2epEwUUD2KegAde6bHkdJCxiOS1E47bBKYjrx0YIqy4bFqZlshjfH33bIc7LKcMj=
+gtFYtbeqhNp2oTANimFDG9OdE75rw66wofF5KA13igRLQi2AN6rB-K86UQORUf7JhKFzBaIdLFS=
+LQkpbjevHBK7cm6vR62AcCQjfnyAUhQsZc3Y2dIuyERqU9KPdDCMeV0vXgQ6xhTxCrnkeXbr1bh=
+dCQzQX90QCwxJEMNo5u_NkY7Q7Ynkw22PA92j44XPoQDuphlcpmTmh6IYu5MtO9ZR2B91d1P5Sg=
+M1m2v2xNZfDhHepmDVimH6r" target=3D"_blank" style=3D"box-sizing: border-box;=
+ outline: none;" tabindex=3D"-1"><img src=3D"https://d15k2d11r6t6rl.cloudfr=
+ont.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/26b4e=
+8aeb47d4cd3acd5eba415f76f62/PitchLabs.jpg" style=3D"box-sizing: border-box;=
+ display: block; height: auto; border: 0; width: 100%;" width=3D"70.625" he=
+ight=3D"auto"></a></div></div></td></tr></table></td><td class=3D"column co=
+lumn-2" width=3D"50%" style=3D"box-sizing: border-box; mso-table-lspace: 0;=
+ mso-table-rspace: 0; font-weight: 400; text-align: left; padding-bottom: 5=
+px; padding-top: 5px; vertical-align: top; border-top: 0; border-right: 0; =
+border-bottom: 0; border-left: 0;" align=3D"left" valign=3D"top"><table cla=
+ss=3D"text_block block-1" width=3D"100%" border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; mso-t=
+able-lspace: 0; mso-table-rspace: 0; word-break: break-word;"><tr style=3D"=
+box-sizing: border-box;"><td class=3D"pad" style=3D"box-sizing: border-box;=
+ padding-bottom: 5px; padding-right: 30px; padding-top: 20px;"><div style=
+=3D"box-sizing: border-box; font-family: sans-serif;"><div class style=3D"b=
+ox-sizing: border-box; font-size: 14px; font-family: Lucida Sans Unicode,Lu=
+cida Grande,Lucida Sans,Geneva,Verdana,sans-serif; mso-line-height-alt: 16.=
+8px; color: #000; line-height: 1.2;"><p style=3D"box-sizing: border-box; li=
+ne-height: inherit; margin: 0; mso-line-height-alt: 16.8px;"><strong style=
+=3D"box-sizing: border-box;">PitchLabs</strong></p><p dir=3D"ltr" style=3D"=
+box-sizing: border-box; line-height: inherit; margin: 0; font-size: 14px; m=
+so-line-height-alt: 16.8px;">Building each other. Building the world.<br st=
+yle=3D"box-sizing: border-box;"> <a href=3D"http://links.wellfound.com/u/cl=
+ick=3F_t=3D26b4e8aeb47d4cd3acd5eba415f76f62&_m=3D8d232b7fd5504120905fe6fb34=
+3a8267&_e=3DC18mpyhZ2epEwUUD2KegAde6bHkdJCxiOS1E47bBKYjrx0YIqy4bFqZlshjfH33=
+bIc7LKcMjgtFYtbeqhNp2oTANimFDG9OdE75rw66wofF5KA13igRLQi2AN6rB-K86UQORUf7JhK=
+FzBaIdLFSLQkpbjevHBK7cm6vR62AcCQgGh0SY0IxFt0M_yZnfEQmp2Zc3oYG-2yP-Vo_zghV-3=
+URY7Hx5e7tfgdQ4XszhRmpdHT16DBsy3FXq6jw03Vh2nN_STmvFoQcBgHreh3TEu2IT2y-Bts9w=
+SxL7b6RSNz7CWO-qFEpboBlLSQj52gQu" target=3D"_blank" style=3D"box-sizing: bo=
+rder-box; text-decoration: underline; color: #e9357b;" rel=3D"noopener">5 o=
+pen roles</a></p></div></div></td></tr></table></td></tr></tbody></table></=
+td></tr></tbody></table><table class=3D"row row-15" align=3D"center" width=
+=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presenta=
+tion" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspac=
+e: 0;"><tbody style=3D"box-sizing: border-box;"><tr style=3D"box-sizing: bo=
+rder-box;"><td style=3D"box-sizing: border-box;"><table class=3D"row-conten=
+t" align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=
+=3D"presentation" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso=
+-table-rspace: 0; background-color: #fff; color: #000; width: 575px; margin=
+: 0 auto;" width=3D"575" bgcolor=3D"#fff"><tbody style=3D"box-sizing: borde=
+r-box;"><tr style=3D"box-sizing: border-box;"><td class=3D"column column-1"=
+ width=3D"50%" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-ta=
+ble-rspace: 0; font-weight: 400; text-align: left; padding-bottom: 5px; pad=
+ding-left: 5px; padding-top: 5px; vertical-align: top; border-top: 0; borde=
+r-right: 0; border-bottom: 0; border-left: 0;" align=3D"left" valign=3D"top=
+"><div class=3D"spacer_block block-1" style=3D"box-sizing: border-box; heig=
+ht: 10px; line-height: 10px; font-size: 1px;"> &#8202;</div><table class=3D=
+"image_block block-2" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; mso-table=
+-lspace: 0; mso-table-rspace: 0;"><tr style=3D"box-sizing: border-box;"><td=
+ class=3D"pad" style=3D"box-sizing: border-box; padding-top: 20px; width: 1=
+00%; padding-right: 0; padding-left: 0;" width=3D"100%"><div class=3D"align=
+ment" align=3D"center" style=3D"box-sizing: border-box; line-height: 10px;"=
+><div style=3D"box-sizing: border-box; max-width: 84.75px;"><a href=3D"http=
+://links.wellfound.com/u/click=3F_t=3D26b4e8aeb47d4cd3acd5eba415f76f62&_m=
+=3D8d232b7fd5504120905fe6fb343a8267&_e=3DC18mpyhZ2epEwUUD2KegAde6bHkdJCxiOS=
+1E47bBKYj0lC9tTLcqEz4soOtjanNNjhwkuqi0sL-nVskFwVfoYPVB0vbd_YyM9eu6aFU3TLPl0=
+rj_VyDzuBriLpw0aHvhoizxzKIuLbUohnYN6nVSrudyRdFfmvx5u4EuUGJ5hJtEqg1MAZvWFz5y=
+YnZlKfm47d7QQyyn9aH_hipSRISvJiumY6dj_s-9VWhfxmVPqk38tpiUsdXtCnKyQTLJnalsfLf=
+QLa8WEYD5SKet_TC4PnXiRVT1WPI_ILzTpQWvzg5I8WnLAaExfl_sepZ1Dmrh" target=3D"_b=
+lank" style=3D"box-sizing: border-box; outline: none;" tabindex=3D"-1"><img=
+ src=3D"https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/669d=
+5713-9b6a-46bb-bd7e-c542cff6dd6a/26b4e8aeb47d4cd3acd5eba415f76f62/CourseCar=
+eers.jpg" style=3D"box-sizing: border-box; display: block; height: auto; bo=
+rder: 0; width: 100%;" width=3D"84.75" height=3D"auto"></a></div></div></td=
+></tr></table></td><td class=3D"column column-2" width=3D"50%" style=3D"box=
+-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0; font-weight:=
+ 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-ali=
+gn: top; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0;"=
+ align=3D"left" valign=3D"top"><table class=3D"text_block block-1" width=3D=
+"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: =
+0; word-break: break-word;"><tr style=3D"box-sizing: border-box;"><td class=
+=3D"pad" style=3D"box-sizing: border-box; padding-bottom: 30px; padding-rig=
+ht: 30px; padding-top: 10px;"><div style=3D"box-sizing: border-box; font-fa=
+mily: sans-serif;"><div class style=3D"box-sizing: border-box; font-size: 1=
+4px; font-family: Lucida Sans Unicode,Lucida Grande,Lucida Sans,Geneva,Verd=
+ana,sans-serif; mso-line-height-alt: 16.8px; color: #000; line-height: 1.2;=
+"><p style=3D"box-sizing: border-box; line-height: inherit; margin: 0; font=
+-size: 14px; mso-line-height-alt: 16.8px;">&nbsp;</p><p style=3D"box-sizing=
+: border-box; line-height: inherit; margin: 0; font-size: 14px; mso-line-he=
+ight-alt: 16.8px;">&nbsp;</p><p style=3D"box-sizing: border-box; line-heigh=
+t: inherit; margin: 0; font-size: 14px; mso-line-height-alt: 16.8px;"><stro=
+ng style=3D"box-sizing: border-box;">CourseCareers</strong></p><p style=3D"=
+box-sizing: border-box; line-height: inherit; margin: 0; font-size: 14px; m=
+so-line-height-alt: 16.8px;">Replacing the college system.</p><p style=3D"b=
+ox-sizing: border-box; line-height: inherit; margin: 0; font-size: 14px; ms=
+o-line-height-alt: 16.8px;"><a href=3D"http://links.wellfound.com/u/click=
+=3F_t=3D26b4e8aeb47d4cd3acd5eba415f76f62&_m=3D8d232b7fd5504120905fe6fb343a8=
+267&_e=3DC18mpyhZ2epEwUUD2KegAde6bHkdJCxiOS1E47bBKYj0lC9tTLcqEz4soOtjanNNjh=
+wkuqi0sL-nVskFwVfoYPVB0vbd_YyM9eu6aFU3TLPl0rj_VyDzuBriLpw0aHvhoizxzKIuLbUoh=
+nYN6nVSrudyRdFfmvx5u4EuUGJ5hJsTAzZajQHDVkCbYiGJw03BrYDF3BFSnU64_Q5wI1ryvB3O=
+1-AKh8BfOGjm0be8Ut1toexg-hM-xgf0oiiK3GEJgDQYns-g5SQ-e-hJIOF8Kq3GPnmR3cS4sdU=
+vzG81OD-04tYLsGXyQMUvMp-1vO7w" target=3D"_blank" style=3D"box-sizing: borde=
+r-box; text-decoration: underline; color: #e9357b;" rel=3D"noopener">22 ope=
+n roles</a></p></div></div></td></tr></table></td></tr></tbody></table></td=
+></tr></tbody></table><table class=3D"row row-16" align=3D"center" width=3D=
+"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: =
+0;"><tbody style=3D"box-sizing: border-box;"><tr style=3D"box-sizing: borde=
+r-box;"><td style=3D"box-sizing: border-box;"><table class=3D"row-content" =
+align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"p=
+resentation" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-tabl=
+e-rspace: 0; background-color: #fff; color: #000; width: 575px; margin: 0 a=
+uto;" width=3D"575" bgcolor=3D"#fff"><tbody style=3D"box-sizing: border-box=
+;"><tr style=3D"box-sizing: border-box;"><td class=3D"column column-1" widt=
+h=3D"50%" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-r=
+space: 0; font-weight: 400; text-align: left; padding-bottom: 20px; padding=
+-left: 5px; padding-top: 5px; vertical-align: top; border-top: 0; border-ri=
+ght: 0; border-bottom: 0; border-left: 0;" align=3D"left" valign=3D"top"><t=
+able class=3D"image_block block-1" width=3D"100%" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-=
+box; mso-table-lspace: 0; mso-table-rspace: 0;"><tr style=3D"box-sizing: bo=
+rder-box;"><td class=3D"pad" style=3D"box-sizing: border-box; padding-botto=
+m: 10px; padding-left: 10px; padding-right: 10px; padding-top: 30px; width:=
+ 100%;" width=3D"100%"><div class=3D"alignment" align=3D"center" style=3D"b=
+ox-sizing: border-box; line-height: 10px;"><div style=3D"box-sizing: border=
+-box; max-width: 70.625px;"><a href=3D"http://links.wellfound.com/u/click=
+=3F_t=3D26b4e8aeb47d4cd3acd5eba415f76f62&_m=3D8d232b7fd5504120905fe6fb343a8=
+267&_e=3DC18mpyhZ2epEwUUD2KegAde6bHkdJCxiOS1E47bBKYgugcgH8Gme3s68IlaJxyViaN=
+3orpj-dJBFG8EJ48Bo1EGWDSyDCW3A0BTMWGBKalBAElR5FNw9IJNs3H4JtiZ3iabsH-Rs6ZqaP=
+V3COcc4XDSkjox1crpgJMj2XCxXWJkIz-FjLsHDZlJkJGy6tgX3d3VDFQIPkNkX_KxMiXtd3STx=
+OQp_2ElwZqXDWBtNbAtsLyrgGOGYZY9dXC-9tfmvQ6smBMU3i3hBe3ZJtTnqKVmssJcsMu_Px4Q=
+qOjsZl4v8YgRhv7bt3VIYWzrHa0P_" target=3D"_blank" style=3D"box-sizing: borde=
+r-box; outline: none;" tabindex=3D"-1"><img src=3D"https://d15k2d11r6t6rl.c=
+loudfront.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a=
+/26b4e8aeb47d4cd3acd5eba415f76f62/Maximus.jpg" style=3D"box-sizing: border-=
+box; display: block; height: auto; border: 0; width: 100%;" width=3D"70.625=
+" height=3D"auto"></a></div></div></td></tr></table></td><td class=3D"colum=
+n column-2" width=3D"50%" style=3D"box-sizing: border-box; mso-table-lspace=
+: 0; mso-table-rspace: 0; font-weight: 400; text-align: left; padding-botto=
+m: 5px; padding-top: 5px; vertical-align: top; border-top: 0; border-right:=
+ 0; border-bottom: 0; border-left: 0;" align=3D"left" valign=3D"top"><table=
+ class=3D"text_block block-1" width=3D"100%" border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; m=
+so-table-lspace: 0; mso-table-rspace: 0; word-break: break-word;"><tr style=
+=3D"box-sizing: border-box;"><td class=3D"pad" style=3D"box-sizing: border-=
+box; padding-bottom: 5px; padding-right: 30px; padding-top: 10px;"><div sty=
+le=3D"box-sizing: border-box; font-family: sans-serif;"><div class style=3D=
+"box-sizing: border-box; font-size: 14px; font-family: Lucida Sans Unicode,=
+Lucida Grande,Lucida Sans,Geneva,Verdana,sans-serif; mso-line-height-alt: 1=
+6.8px; color: #000; line-height: 1.2;"><p style=3D"box-sizing: border-box; =
+line-height: inherit; margin: 0; font-size: 14px; mso-line-height-alt: 16.8=
+px;"><span style=3D"box-sizing: border-box; font-size: 14px;"><strong style=
+=3D"box-sizing: border-box;">Maximus<br style=3D"box-sizing: border-box;"><=
+/strong>Consumer telemedicine startup.<br style=3D"box-sizing: border-box;"=
+></span></p><p style=3D"box-sizing: border-box; line-height: inherit; margi=
+n: 0; font-size: 14px; mso-line-height-alt: 16.8px;"> <a href=3D"http://lin=
+ks.wellfound.com/u/click=3F_t=3D26b4e8aeb47d4cd3acd5eba415f76f62&_m=3D8d232=
+b7fd5504120905fe6fb343a8267&_e=3DC18mpyhZ2epEwUUD2KegAde6bHkdJCxiOS1E47bBKY=
+gugcgH8Gme3s68IlaJxyViaN3orpj-dJBFG8EJ48Bo1EGWDSyDCW3A0BTMWGBKalBAElR5FNw9I=
+JNs3H4JtiZ3iabsH-Rs6ZqaPV3COcc4XDSkjox1crpgJMj2XCxXWJk60bsjn7ksgaFlkjtI24c5=
+ognNjB1D3eAg3NX_rddZHym2wQLlyGN0Yujaf3ol9OXWj0Db3zUvnRzgx4eAVK2eDvDT2HxJU83=
+0qyt0ya1pxguXkHNx-kmRxA-Pz_ZEtmbb2AazDZCOqHVGBSuCAIV_" target=3D"_blank" st=
+yle=3D"box-sizing: border-box; text-decoration: underline; color: #e9357b;"=
+ rel=3D"noopener">4 open roles</a></p></div></div></td></tr></table></td></=
+tr></tbody></table></td></tr></tbody></table><table class=3D"row row-17" al=
+ign=3D"center" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" role=3D"presentation" style=3D"box-sizing: border-box; mso-table-lspace=
+: 0; mso-table-rspace: 0;"><tbody style=3D"box-sizing: border-box;"><tr sty=
+le=3D"box-sizing: border-box;"><td style=3D"box-sizing: border-box;"><table=
+ class=3D"row-content stack" align=3D"center" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; =
+mso-table-lspace: 0; mso-table-rspace: 0; background-color: #fff; border-ra=
+dius: 0; color: #000; width: 575px; margin: 0 auto;" width=3D"575" bgcolor=
+=3D"#fff"><tbody style=3D"box-sizing: border-box;"><tr style=3D"box-sizing:=
+ border-box;"><td class=3D"column column-1" width=3D"100%" style=3D"box-siz=
+ing: border-box; mso-table-lspace: 0; mso-table-rspace: 0; font-weight: 400=
+; text-align: left; padding-bottom: 5px; padding-top: 5px; vertical-align: =
+top; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0;" ali=
+gn=3D"left" valign=3D"top"><table class=3D"divider_block block-1" width=3D"=
+100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation=
+" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0=
+;"><tr style=3D"box-sizing: border-box;"><td class=3D"pad" style=3D"box-siz=
+ing: border-box; padding-bottom: 10px; padding-left: 10px; padding-right: 1=
+0px; padding-top: 20px;"><div class=3D"alignment" align=3D"center" style=3D=
+"box-sizing: border-box;"><table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" width=3D"100%" style=3D"box-sizing: border-box=
+; mso-table-lspace: 0; mso-table-rspace: 0;"><tr style=3D"box-sizing: borde=
+r-box;"><td class=3D"divider_inner" style=3D"box-sizing: border-box; font-s=
+ize: 1px; line-height: 1px; border-top: 1px dotted #000;"><span style=3D"bo=
+x-sizing: border-box;">&#8202;</span></td></tr></table> </div></td></tr></t=
+able></td></tr></tbody></table></td></tr></tbody></table><table class=3D"ro=
+w row-18" align=3D"center" width=3D"100%" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; mso-=
+table-lspace: 0; mso-table-rspace: 0;"><tbody style=3D"box-sizing: border-b=
+ox;"><tr style=3D"box-sizing: border-box;"><td style=3D"box-sizing: border-=
+box;"><table class=3D"row-content stack" align=3D"center" border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: =
+border-box; mso-table-lspace: 0; mso-table-rspace: 0; background-color: #ff=
+f; border-radius: 0; color: #000; width: 575px; margin: 0 auto;" width=3D"5=
+75" bgcolor=3D"#fff"> <tbody style=3D"box-sizing: border-box;"><tr style=3D=
+"box-sizing: border-box;"><td class=3D"column column-1" width=3D"100%" styl=
+e=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0; font=
+-weight: 400; text-align: left; padding-bottom: 5px; padding-top: 5px; vert=
+ical-align: top; border-top: 0; border-right: 0; border-bottom: 0; border-l=
+eft: 0;" align=3D"left" valign=3D"top"><table class=3D"text_block block-1" =
+width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pre=
+sentation" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-=
+rspace: 0; word-break: break-word;"><tr style=3D"box-sizing: border-box;"><=
+td class=3D"pad" style=3D"box-sizing: border-box; padding-bottom: 5px; padd=
+ing-left: 30px; padding-top: 5px;"><div style=3D"box-sizing: border-box; fo=
+nt-family: sans-serif;"><div class style=3D"box-sizing: border-box; font-si=
+ze: 12px; font-family: Lucida Sans Unicode,Lucida Grande,Lucida Sans,Geneva=
+,Verdana,sans-serif; mso-line-height-alt: 18px; color: #fff; line-height: 1=
+.5;"><p style=3D"box-sizing: border-box; line-height: inherit; margin: 0; =
+font-size: 14px; text-align: center; mso-line-height-alt: 24px;"> <span sty=
+le=3D"box-sizing: border-box; color: #000000; font-size: 16px;"><span style=
+=3D"box-sizing: border-box;">Help us spread the word: we'll pay you $200&nb=
+sp;for every friend&nbsp;you get hired through Wellfound!</span></span></p>=
+</div></div></td></tr></table></td></tr></tbody></table></td></tr></tbody><=
+/table><table class=3D"row row-19" align=3D"center" width=3D"100%" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"b=
+ox-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0;"><tbody st=
+yle=3D"box-sizing: border-box;"><tr style=3D"box-sizing: border-box;"><td s=
+tyle=3D"box-sizing: border-box;"><table class=3D"row-content stack" align=
+=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presen=
+tation" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rsp=
+ace: 0; background-color: #fff; border-radius: 0; color: #000; width: 575px=
+; margin: 0 auto;" width=3D"575" bgcolor=3D"#fff"><tbody style=3D"box-sizin=
+g: border-box;"><tr style=3D"box-sizing: border-box;"><td class=3D"column c=
+olumn-1" width=3D"100%" style=3D"box-sizing: border-box; mso-table-lspace: =
+0; mso-table-rspace: 0; font-weight: 400; text-align: left; padding-bottom:=
+ 5px; padding-top: 5px; vertical-align: top; border-top: 0; border-right: 0=
+; border-bottom: 0; border-left: 0;" align=3D"left" valign=3D"top"><table c=
+lass=3D"button_block block-1" width=3D"100%" border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; m=
+so-table-lspace: 0; mso-table-rspace: 0;"><tr style=3D"box-sizing: border-b=
+ox;"><td class=3D"pad" style=3D"box-sizing: border-box; padding-bottom: 10p=
+x; padding-left: 10px; padding-right: 10px; text-align: center;" align=3D"c=
+enter"><div class=3D"alignment" align=3D"center" style=3D"box-sizing: borde=
+r-box;"><!--[if mso]><v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml"=
+ xmlns:w=3D"urn:schemas-microsoft-com:office:word" href=3D"http://links.wel=
+lfound.com/u/click=3F_t=3D26b4e8aeb47d4cd3acd5eba415f76f62&_m=3D8d232b7fd55=
+04120905fe6fb343a8267&_e=3DC18mpyhZ2epEwUUD2KegASCL4nLARqjbDc3wHtRWnbRUamlr=
+9EI3Ah4aeFJ2QArbYIWFLumtXl9EsiqAzvwIX0HCukT87JZtZoR7bjjzjGUNIpcvk2O8bxJ9mcA=
+T2fPKYck6MUR-5UgbevxffFBaNoMavhZ9rON6Hee0PphOgHxs9T8w5O59Ce11sHExHRB_FJ4hmx=
+X4UGz7xyvb_gLJFgSyj1UZHL3LByTZTWIXebaygjNDoUWOynu33gcCHh316GfUCtPp7sqFKdgAo=
+QrgMy9KoRk865WBESK31xqpUyI%3D" style=3D"height:44px;width:447px;v-text-anch=
+or:middle;" arcsize=3D"10%" stroke=3D"false" fillcolor=3D"#000000"> <w:anch=
+orlock/> <v:textbox inset=3D"0px,0px,0px,0px"> <center style=3D"color:#ffff=
+ff; font-family:Verdana, sans-serif; font-size:14px"><![endif]--> <a href=
+=3D"http://links.wellfound.com/u/click=3F_t=3D26b4e8aeb47d4cd3acd5eba415f76=
+f62&_m=3D8d232b7fd5504120905fe6fb343a8267&_e=3DC18mpyhZ2epEwUUD2KegASCL4nLA=
+RqjbDc3wHtRWnbRUamlr9EI3Ah4aeFJ2QArbYIWFLumtXl9EsiqAzvwIX0HCukT87JZtZoR7bjj=
+zjGUNIpcvk2O8bxJ9mcAT2fPKYck6MUR-5UgbevxffFBaNlw3Sc9i34Mdbi0xGJEQ6AUQpPZAlm=
+fSTM-bGHCBm9atGT-LFaB4zCZGIsI-bdOqGegewoVo0zoq22o3cKUlkePOkY4u9xpekFG2k_imG=
+nrh4wEMYsIxJ31BOeR3eKnxNB9D9CEgxGaJCqMJCoi2P0k%3D" target=3D"_blank" style=
+=3D"box-sizing: border-box; text-decoration: none; display: block; color: #=
+ffffff; background-color: #000000; border-radius: 4px; width: 80%; border-t=
+op: 0px solid transparent; font-weight: 400; border-right: 0px solid transp=
+arent; border-bottom: 3px solid #E9357B; border-left: 3px solid #B3ECF1; pa=
+dding-top: 5px; padding-bottom: 5px; font-family: 'Lucida Sans Unicode', 'L=
+ucida Grande', 'Lucida Sans', Geneva, Verdana, sans-serif; font-size: 14px;=
+ text-align: center; mso-border-alt: none; word-break: keep-all;"><span sty=
+le=3D"box-sizing: border-box; padding-left: 20px; padding-right: 20px; font=
+-size: 14px; display: inline-block; letter-spacing: normal;"><span style=3D=
+"box-sizing: border-box; word-break: break-word; line-height: 28px;">Refer =
+&amp; Earn</span></span></a> <!--[if mso]></center></v:textbox></v:roundrec=
+t><![endif]--></div></td></tr></table></td></tr></tbody></table></td></tr><=
+/tbody></table><table class=3D"row row-20" align=3D"center" width=3D"100%" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" styl=
+e=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0;"><tb=
+ody style=3D"box-sizing: border-box;"><tr style=3D"box-sizing: border-box;"=
+><td style=3D"box-sizing: border-box;"><table class=3D"row-content stack" a=
+lign=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pr=
+esentation" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table=
+-rspace: 0; background-color: #fff; color: #000; width: 575px; margin: 0 au=
+to;" width=3D"575" bgcolor=3D"#fff"><tbody style=3D"box-sizing: border-box;=
+"><tr style=3D"box-sizing: border-box;"><td class=3D"column column-1" width=
+=3D"100%" style=3D"box-sizing: border-box; mso-table-lspace: 0; mso-table-r=
+space: 0; font-weight: 400; text-align: left; padding-bottom: 5px; padding-=
+top: 5px; vertical-align: top; border-top: 0; border-right: 0; border-botto=
+m: 0; border-left: 0;" align=3D"left" valign=3D"top"><table class=3D"social=
+_block block-1" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; mso-table-lsp=
+ace: 0; mso-table-rspace: 0;"><tr style=3D"box-sizing: border-box;"><td cla=
+ss=3D"pad" style=3D"box-sizing: border-box; padding-bottom: 5px; padding-le=
+ft: 5px; padding-right: 5px; padding-top: 10px; text-align: center;" align=
+=3D"center"><div class=3D"alignment" align=3D"center" style=3D"box-sizing: =
+border-box;"><table class=3D"social-table" width=3D"108px" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing:=
+ border-box; mso-table-lspace: 0; mso-table-rspace: 0; display: inline-bloc=
+k;"><tr style=3D"box-sizing: border-box;"><td style=3D"box-sizing: border-b=
+ox; padding: 0 2px 0 2px;"><a href=3D"http://links.wellfound.com/u/click=3F=
+_t=3D26b4e8aeb47d4cd3acd5eba415f76f62&_m=3D8d232b7fd5504120905fe6fb343a8267=
+&_e=3DC18mpyhZ2epEwUUD2KegAegBxMu0uixUijqZTC2x8E_67gdcKXejDUfaC0Xlx4iuVc1_v=
+uTufgoKotwSChYDHarUydfKwKBepr8gdnwadp1pVenH8uQ5Xsttd7tBQlHA6ZJ42u1A8zs60wqv=
+imC9ga70J2w-9K6KHvX-3aTncLJ41HqFHZcJC2wFK1xwdzpy5m4FSroKdRWYVxxATojyLgqrzcm=
+VS5z8VML-wEtsStOPUUuTrRymrywJYbWoJHLQfllTlVoV5jBwmkW_eMYMGKcbHGWDbwoaG9bWYY=
+Dqh2o%3D" target=3D"_blank" style=3D"box-sizing: border-box;"><img src=3D"h=
+ttps://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/circle=
+-dark-gray/twitter@2x.png" width=3D"32" height=3D"auto" alt=3D"Twitter" tit=
+le=3D"Twitter" style=3D"box-sizing: border-box; display: block; height: aut=
+o; border: 0;"></a></td><td style=3D"box-sizing: border-box; padding: 0 2px=
+ 0 2px;"><a href=3D"http://links.wellfound.com/u/click=3F_t=3D26b4e8aeb47d4=
+cd3acd5eba415f76f62&_m=3D8d232b7fd5504120905fe6fb343a8267&_e=3DC18mpyhZ2epE=
+wUUD2KegATsJhAU-79_ei2ijJ1v2oHkTzFbua8Xkyaqy6yAL7GWwt2x86tn6NmoJLjF4AJrL93D=
+cxITAfXkQhHVk-vcwRaWV21NPeOK5RrhrtPbWgKmiD6-q_7d0zwc0-Wb0jbbq2Iz-p35R8dKjHE=
+BHWM9bs_4HmzoNKfTUdVMk-01dtdY_XQO4cmNVaGlnxl3-zGtZIL4wGFM9lr0aKgV5CNNmP4Bdd=
+X3cU8Tb8nb206DVueSqapDnEaOV4uE_Oc0Ene6NknSYzwq94o_AeIF2zhILz1aKkk6sxsvnwZ6p=
+NzuUIiup" target=3D"_blank" style=3D"box-sizing: border-box;"><img src=3D"h=
+ttps://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/circle=
+-dark-gray/instagram@2x.png" width=3D"32" height=3D"auto" alt=3D"Instagram"=
+ title=3D"Instagram" style=3D"box-sizing: border-box; display: block; heigh=
+t: auto; border: 0;"></a></td><td style=3D"box-sizing: border-box; padding:=
+ 0 2px 0 2px;"><a href=3D"http://links.wellfound.com/u/click=3F_t=3D26b4e8a=
+eb47d4cd3acd5eba415f76f62&_m=3D8d232b7fd5504120905fe6fb343a8267&_e=3DC18mpy=
+hZ2epEwUUD2KegATLqeOYDzSPB0r_L9cmJ6bm0lRd49uOlcyPmczSvSk6nFrVBNtSeSDd1GEdtW=
+_PCbTX7vTg2uFdxxjlkflG6HyoWrphkol-1EKHc-OhA7zyraJVomBA0BbKHUCRCXv777-PDLdc5=
+HMTSmCH24cyUUihzKUc-dtrD8QP29kkypWFrANMbc44aCY6ZqXq6cDUGJTRm90g4fBXAeLGkZEC=
+iYgWG4tF8ovF0BxcxUyCZSeFq1JDXvs7U8DwKq9XgoQVEheCZOiGrrCzx6QpaLYrsOABNZ_0yjN=
+A9JHxfoOznFWEM" target=3D"_blank" style=3D"box-sizing: border-box;"><img sr=
+c=3D"https://app-rsrc.getbee.io/public/resources/social-networks-icon-sets/=
+circle-dark-gray/linkedin@2x.png" width=3D"32" height=3D"auto" alt=3D"Linke=
+dIn" title=3D"LinkedIn" style=3D"box-sizing: border-box; display: block; he=
+ight: auto; border: 0;"></a></td></tr></table></div></td></tr></table></td>=
+</tr></tbody></table></td></tr></tbody></table><table class=3D"row row-21" =
+align=3D"center" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; mso-table-lsp=
+ace: 0; mso-table-rspace: 0;"><tbody style=3D"box-sizing: border-box;"><tr =
+style=3D"box-sizing: border-box;"><td style=3D"box-sizing: border-box;"><ta=
+ble class=3D"row-content stack" align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-=
+box; mso-table-lspace: 0; mso-table-rspace: 0; background-color: #fff; colo=
+r: #000; width: 575px; margin: 0 auto;" width=3D"575" bgcolor=3D"#fff"><tbo=
+dy style=3D"box-sizing: border-box;"><tr style=3D"box-sizing: border-box;">=
+<td class=3D"column column-1" width=3D"100%" style=3D"box-sizing: border-bo=
+x; mso-table-lspace: 0; mso-table-rspace: 0; font-weight: 400; text-align: =
+left; padding-bottom: 20px; padding-top: 20px; vertical-align: top; border-=
+top: 0; border-right: 0; border-bottom: 0; border-left: 0;" align=3D"left" =
+valign=3D"top"><table class=3D"text_block block-1" width=3D"100%" border=3D=
+"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-=
+sizing: border-box; mso-table-lspace: 0; mso-table-rspace: 0; word-break: b=
+reak-word;"><tr style=3D"box-sizing: border-box;"><td class=3D"pad" style=
+=3D"box-sizing: border-box; padding-bottom: 20px; padding-left: 10px; paddi=
+ng-right: 10px; padding-top: 10px;"><div style=3D"box-sizing: border-box; f=
+ont-family: sans-serif;"><div class style=3D"box-sizing: border-box; font-s=
+ize: 12px; font-family: Lucida Sans Unicode,Lucida Grande,Lucida Sans,Genev=
+a,Verdana,sans-serif; mso-line-height-alt: 21.6px; color: #676c73; line-hei=
+ght: 1.8;"><p style=3D"box-sizing: border-box; line-height: inherit; margin=
+: 0; font-size: 14px; text-align: center; mso-line-height-alt: 21.6px;"><sp=
+an style=3D"box-sizing: border-box; font-size: 12px; color: #000000;">Wellf=
+ound Weekly</span></p><p style=3D"box-sizing: border-box; line-height: inhe=
+rit; margin: 0; font-size: 14px; text-align: center; mso-line-height-alt: 2=
+1.6px;"> <span style=3D"box-sizing: border-box; font-size: 12px; color: #00=
+0000;">228 Park Ave S, PMB 40533</span></p><p style=3D"box-sizing: border-b=
+ox; line-height: inherit; margin: 0; font-size: 14px; text-align: center; m=
+so-line-height-alt: 21.6px;"><span style=3D"box-sizing: border-box; font-si=
+ze: 12px; color: #000000;">New York, NY 10003</span></p><p style=3D"box-siz=
+ing: border-box; line-height: inherit; margin: 0; font-size: 14px; text-ali=
+gn: center; mso-line-height-alt: 21.6px;"><span style=3D"box-sizing: border=
+-box; font-size: 12px;"><a style=3D"box-sizing: border-box; text-decoration=
+: underline; color: #e63223;" href=3D"http://links.wellfound.com/e/encrypte=
+dUnsubscribe=3F_r=3D26b4e8aeb47d4cd3acd5eba415f76f62&_s=3D8d232b7fd55041209=
+05fe6fb343a8267&_t=3DYsxPVkroz8auJhnfks6B7wtf9nph2RcMOaSZeSQ3QWy7JhyEZsPtqp=
+DpjrNUOsm9MqKT-NgEAlShSrE_l28NP3O9wpTg7YusUonmoyQhotDfWlFPK9pGzoVHqfX3MMRx_=
+wKUVKrpyZr3WudKnYVAz33A3Qqx3xBidHAVdI_JRJQ%3D" target=3D"_blank" rel=3D"noo=
+pener">Unsubscribe</a> | <a href=3D"http://links.wellfound.com/u/click=3F_t=
+=3D26b4e8aeb47d4cd3acd5eba415f76f62&_m=3D8d232b7fd5504120905fe6fb343a8267&_=
+e=3DC18mpyhZ2epEwUUD2KegAUNCWpih5CR_ISlrrAjDVndTj9zJAd6GR8uuAUCNoKx0hY0OAez=
+Ve4fhhhiYvH9qTJC_tsA1voqYZUsdEe55Kg7RgLPCjThng7FXtH4EFqko9nX3St9i6ZtryU2chE=
+cKquvv0cPu4eKK8vHUZH6rMlEsTZ8sX_xX4CVn8lq5GJS6Y5pt11G79CTEP7pJopGlgkXkBhImK=
+kIdwyBAO6blTtucIpkO0GlSYEfyOUCSbAAJlQI3wYbw7mHWZPGuorYwnjbJdKScWqKDhdLVNr6a=
+1Y6zD7tyFTi43HP-WilK_Yp8" target=3D"_blank" style=3D"box-sizing: border-box=
+; text-decoration: underline; color: #e63223;" rel=3D"noopener">Update pref=
+erences</a></span></p></div></div></td></tr></table></td></tr></tbody></tab=
+le></td></tr></tbody></table></td></tr></tbody> </table><!-- End -->=0D=0A<=
+img border=3D"0" width=3D"1" height=3D"1" alt=3D"" src=3D"http://post.spmai=
+ltechnol.com/q/5sJS1mAQhgomZYJMAi2uFw~~/AARTlQA~/RgRn_ArYPlcDc3BjQgpmENiFGW=
+Zr_1vuUhFicm5rYXRoQGdtYWlsLmNvbVgEAAAAAg~~">=0D=0A</body></html>
+--_----3/LxmLPSK+t/ZjKkyptjJg===_4D/BD-23873-8D589166--
+

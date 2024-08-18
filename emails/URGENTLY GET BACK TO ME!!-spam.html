@@ -1,0 +1,101 @@
+Delivered-To: brnkath@gmail.com
+Received: by 2002:ac9:7210:0:b0:514:ec54:96c0 with SMTP id v16csp2977639ocr;
+        Wed, 7 Feb 2024 15:36:24 -0800 (PST)
+X-Forwarded-Encrypted: i=2; AJvYcCXh4qBiu6Kykf5acl4SqQwWK93eF1htlJ7hqJ48Nndm6hU147CO3hczsYgE49FfK27QUAyB4ktop3T9lJnb7uAFxg==
+X-Google-Smtp-Source: AGHT+IEekKkgR7bX3DApGyMf465WSe7YRHKZJLjdiMz7Hth+dQJrMHRjZT+bJAFk36OA5LvHFw1o
+X-Received: by 2002:a05:6358:2489:b0:176:302b:addf with SMTP id m9-20020a056358248900b00176302baddfmr4449715rwc.11.1707348983800;
+        Wed, 07 Feb 2024 15:36:23 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1707348983; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Es49PIbwp7Ov+082T1rVbuKCPaLFOKf4ypxGCe/eOdULTiDGVVtfK482K6sSBHNVSx
+         iOhcL6bX5q75kg310kASyhTvEpHAuVBSlETm0m9XwFV/gDJXGhXeatY+p56Q8G20HeCw
+         Hce4zlwc9akSq6li9L0ZKxBuWqVuxDYluEs4Hi2Abw0jLH4se0Aoe+Vt2PJbEwiAyZoy
+         FgOcdRd3ImilY6NlPLqaxvLI37j/1cGHlAWpZ1hhcbct9Tl+WIwAdsqt1tYVrjkjtzQ+
+         8VfjX9kfmVbrU+10PyZaYJ3czPneunnBhitL/egRdB7/PT3kBmcYDvkgdF5bcFrWvUhO
+         OEeQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=sensitivity:content-transfer-encoding:mime-version:subject
+         :message-id:reply-to:from:date:dkim-signature;
+        bh=Ko4QVUwzqVUp+FU9k85nBlRKuXiw3QH5SSidVr77XvM=;
+        fh=pMv8J+/V/aIn/BLRqI1/oIdTCfIpUsMrJImsBHIVAuY=;
+        b=rYOCRcrvUQrYwvMari8DxGdDWobAwp9qzVURUjRxLKXnfHFWjHSTqNAfHyW6XL4giY
+         4oA1VLFbec9smzIVprHFI7Mo00TtGFYHSrktRCzRdhx2vH2LZ8/84uCWFEhIos3k7ccv
+         fMGeGGfTWIiTIzrDATHQm50obhRj/OQJOS0cjivTY/RbGeE16kk+0SsXM+HlcZ8zhXzR
+         Da0omotOa7bHt7pWiT1DpJg0DbqBDJXHretsojFSjsD5rjqlCVEpB6H63V+XehF6C96M
+         PYDnpaXzfbmMx/Ge8lVn1a9HO4qs18idZdLohjH2z0uwiIoA+qSCr9wC1b0qx55S7rPK
+         LHZA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@plala.or.jp header.s=p20240201 header.b="kFsl4QA/";
+       spf=pass (google.com: domain of ez6683k@zpost.plala.or.jp designates 60.36.166.38 as permitted sender) smtp.mailfrom=ez6683k@zpost.plala.or.jp;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=plala.or.jp
+X-Forwarded-Encrypted: i=1; AJvYcCVD8mLB3fSHyT231LAAd79XKvrZQfHTFgv1Wdh8zOdLq9HuZNIhgcizkdQJINvS3OB11iIW/60LH+NHd/2O7IXa9A27buO10PZb07pipNzqgBZvZMuwcp2zQGWcom/uUW53dMaW9lAcoYUOXN6ZgE3wQ4oHhFYja2Nl27Ws66lzYyr0zPhqH9bvt2qb3YZ5wboIsnQcXeL07tbKWF0Mc3pciHi2ku2N5iMjFLuImAXECz1FM8fD/FixZUBR4hB0bi7RXpQJD2XAlNgo9pr7y6CXqbqyv3r+8kClE5jwSzqSJn0/sNqJNu/QyHebDprr59MffjUWM9S6fTQLw92vYrCn9PpXcAsYsRUYO7K68jCzg3g9Z83MqullVzV0UAGXzhTjLBW+5JBdIFFpZdTzgNplgD8OSwrsJnVa6JIZLFY922PxgeEZXyM5RYlcp3IhkpV1ErQARdCY/Z/a7/pRlY4mAaYnC46vfXNG65fTR5Hb7UCoa+7dVUQKYGJKrJ8HRMpLdbleEjua31sRt0XDcENcbS/yF5yHqM/vo4p65r8DC0RKAWu35cDWXZ+kl/+3YSl067W7ANfth0Y0Jvz3
+Return-Path: <ez6683k@zpost.plala.or.jp>
+Received: from msc116.plala.or.jp (msc116.plala.or.jp. [60.36.166.38])
+        by mx.google.com with ESMTPS id dq16-20020a056a020f9000b005dc4202b401si448057pgb.85.2024.02.07.15.36.17
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 07 Feb 2024 15:36:23 -0800 (PST)
+Received-SPF: pass (google.com: domain of ez6683k@zpost.plala.or.jp designates 60.36.166.38 as permitted sender) client-ip=60.36.166.38;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@plala.or.jp header.s=p20240201 header.b="kFsl4QA/";
+       spf=pass (google.com: domain of ez6683k@zpost.plala.or.jp designates 60.36.166.38 as permitted sender) smtp.mailfrom=ez6683k@zpost.plala.or.jp;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=plala.or.jp
+Received: from mdkim-o02.ake-mailbk.plala.or.jp ([172.23.12.51])
+          by msc116.plala.or.jp with ESMTP
+          id <20240207142053.YJVG17304.msc116.plala.or.jp@mdkim-o02.ake-mailbk.plala.or.jp>;
+          Wed, 7 Feb 2024 23:20:53 +0900
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+  d=plala.or.jp; q=dns/txt; s=p20240201; t=1707315653;
+  x=1738851653;
+  h=date:from:reply-to:message-id:subject:mime-version:
+   content-transfer-encoding;
+  bh=Ko4QVUwzqVUp+FU9k85nBlRKuXiw3QH5SSidVr77XvM=;
+  b=kFsl4QA/6LKcO+/GG99KqXpPkMiH4PBgn0MZD2GzTg5/65+3WHFOAAgJ
+   kJKVgLYmJrPnd+Ez0Bh0PFplvZrLEKSrrLnMIBjCYUnklqGyhr4SSEuuD
+   1ZNAlW2/52/LI9CuJJYb1+PiAu6auj+rDoJLrrQgsIc0QhGYwt0bh1O01
+   Www7ePGOt1NyDuSRogjFOrCNoGn8Cet7RluAJs5g4lK07SFw1kZajldz6
+   ycTJr9s/IcCHp5MXYSHtylzoZEG0N3bbny5VlYS0O+NS4E0nEPHk9kusH
+   BDB96HedJvVW8ACO0pxt28bB7//fJjAXh/rPSKtuDRz5w7O3UPXIBIdgO
+   Q==;
+X-CSE-ConnectionGUID: 2wgirJYxSc6ZsmkIOszf0g==
+X-CSE-MsgGUID: AyJGB7MER/Kk4XKzVvMOnA==
+Received: from msa12.ake-mailbk.plala.or.jp (HELO msa12.plala.or.jp) ([172.23.12.92])
+  by mdkim-o.ake-mailbk.plala.or.jp with ESMTP; 07 Feb 2024 23:20:53 +0900
+Received: from mwebp13 ([172.23.13.133]) by msa12.plala.or.jp with ESMTP
+          id <20240207142052.TUVJ11010.msa12.plala.or.jp@mwebp13>;
+          Wed, 7 Feb 2024 23:20:52 +0900
+Date: Wed, 7 Feb 2024 23:20:52 +0900
+From: CAROLYN MAC <ez6683k@zpost.plala.or.jp>
+Reply-To: carolynmacdhl75@gmail.com
+Message-ID: <20240207232053.85RHE.15260.root@mwebp13>
+Subject: URGENTLY GET BACK TO ME!!
+MIME-Version: 1.0
+Content-Type: text/plain; charset=iso-2022-jp
+Content-Transfer-Encoding: 7bit
+X-Priority: 3 (Normal)
+Sensitivity: Normal
+X-VirusScan: Outbound; mvir-ac12; Wed, 7 Feb 2024 23:20:53 +0900
+
+
+--
+This is Carolyn Mac
+
+I want to Inform you that your ATM card worth $5,000,000.00(Five Million United States Dollars)
+has been signed today by DHL, International Monetary Fund(IMF)And Chase Bank because your email address was found in the scam victims list in the process of
+receiving your fund and other unpaid salaries.
+Your details was submitted so you are receiving this email in order to
+be fully compensated for scam victims.
+ 
+All you have to do now is to send the following information of yours for the delivery of your ATM card to you.
+
+Your Full Name-------------------
+Your Phone Number----------------
+Your Home Address----------------
+Your Nearest Airport-------------
+Your State-----------------------
+You can contact me with your full information on
+
+carolynmac111@gmail.com
+
+Best regard
+Carolyn Mac, Thanks and god bless you.

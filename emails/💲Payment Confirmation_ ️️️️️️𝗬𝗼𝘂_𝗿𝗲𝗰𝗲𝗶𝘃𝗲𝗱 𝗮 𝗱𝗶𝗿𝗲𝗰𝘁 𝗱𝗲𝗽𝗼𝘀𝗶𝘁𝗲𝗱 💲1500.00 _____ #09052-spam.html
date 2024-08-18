@@ -1,0 +1,205 @@
+Delivered-To: brnkath@gmail.com
+Received: by 2002:a8a:e86:0:b0:511:33d7:88bb with SMTP id t6csp1237263ocw;
+        Sat, 23 Dec 2023 14:34:27 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IEaZWAxoX+YTuQ5IPR3YABFFV5lCJpmSEnXDs7XsZinaem+E5Kx11cdni0V/aLXhWMkWvAw
+X-Received: by 2002:a17:902:6509:b0:1d4:2b9a:9708 with SMTP id b9-20020a170902650900b001d42b9a9708mr1998845plk.112.1703370867592;
+        Sat, 23 Dec 2023 14:34:27 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1703370867; cv=none;
+        d=google.com; s=arc-20160816;
+        b=0fvtgthSHetaZ5PfxZXjbaTP2YDB+A4Gf4Flybwh8lgup9EWcNBAqLYLUkDjwjRb4J
+         g0ff1VE5qorr7XMQGPXbUafVM1RCwECutFtuGMn9AATPiaI7Hx3XIThx0tGQ6Zqajbi6
+         VfYUUXaCa302vkPQJn+Abbj91tVboOfbTtXPwiUsBcuxiLooS5GiWLO888rwjzu+nsdh
+         vllNmhUox6ZIWCa15HtMA+fKN6I9HffCLltpSRPTpjTG/YKqDbBP9WYN0jVNShd89qwb
+         D0uMzgBKJ7bq/2obyuHDqzARlaXbN/6S7M+ELgFxstp3spNTHKgQe2xnb30Y0qNitvCW
+         iAaw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:subject:message-id:to:from:sender:date
+         :domainkey-signature:dkim-signature;
+        bh=azavRDP0aR/CDHLbbyO4rKePghF31t3RPFqEktrghQk=;
+        fh=klRu0xqzj5H1zWy0PpMcZJrySHX3lkozz7zsAp7ou8A=;
+        b=whS9YqoHfmSuU/1C74bOBRiv5vXjaltzNhZWqFkb8Pzr332NYZd5hJ9IiJMZWaxvbt
+         lLRRRTxud0XaSVd8/JscJSSkrCbIqvbpKfOrYjoHHb7O+f3HSo1JktHXOJ2lwCX+HHJb
+         CyLh3nyg3o0sHsO5rJEaPQebS8j/rYrbRD5F3VOg4DcA2zRZ3DMIUFUflrpAa8KekWhn
+         3cgloUzPfkFuNa27hZxk+jwRWUBPHnToIDFSZ+/0y96FiPFzAuRC/af+p9jSPChLjIU/
+         bO7jNFJwExagnss9LeYC0HMyeCdh16m7LD+jE+vpgbugcJHpE3ra4MBBYN12bAP1sIl0
+         xTHQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@pomlkmaz.quantumsparkle.com.de header.s=smtp header.b="ku/sUe+l";
+       spf=pass (google.com: domain of hqrmedrvhexwnpi@quantumsparkle.com.de designates 5.78.88.152 as permitted sender) smtp.mailfrom=hqrmedrvhexwnpi@quantumsparkle.com.de
+Return-Path: <hqrmedrvhexwnpi@quantumsparkle.com.de>
+Received: from azglobaltravelinfo.info (static.152.88.78.5.clients.your-server.de. [5.78.88.152])
+        by mx.google.com with ESMTPS id ix6-20020a170902f80600b001d40319b2a2si5153918plb.26.2023.12.23.14.34.27
+        for <brnkath@gmail.com>
+        (version=TLS1 cipher=ECDHE-ECDSA-AES128-SHA bits=128/128);
+        Sat, 23 Dec 2023 14:34:27 -0800 (PST)
+Received-SPF: pass (google.com: domain of hqrmedrvhexwnpi@quantumsparkle.com.de designates 5.78.88.152 as permitted sender) client-ip=5.78.88.152;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@pomlkmaz.quantumsparkle.com.de header.s=smtp header.b="ku/sUe+l";
+       spf=pass (google.com: domain of hqrmedrvhexwnpi@quantumsparkle.com.de designates 5.78.88.152 as permitted sender) smtp.mailfrom=hqrmedrvhexwnpi@quantumsparkle.com.de
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; s=smtp; d=pomlkmaz.quantumsparkle.com.de;
+ h=Date:Sender:From:To:Message-ID:Subject:MIME-Version:Content-Type; i=aiqarygytskwwwu@pomlkmaz.quantumsparkle.com.de;
+ bh=u5k1bc/Lcw5y937RxhjEzQP6oCI=;
+ b=ku/sUe+lnAFSYrtLrQjaqFA+0qXRO2cSSbHg2MdqM9KlfBBG+sJQ4JWQo6gqMrTcIAyi3o5HWZjQ
+   qGkxEHosEJS07ssHFjuB2BAbIj5OuwkS1DGeFlo7Bs7DXiC7DkM6sg5vI5isSEqtDTp7r5CeEi+i
+   tJ9Bhsfh9clnw7baln4=
+DomainKey-Signature: a=rsa-sha1; c=nofws; q=dns; s=smtp; d=pomlkmaz.quantumsparkle.com.de;
+ b=B1G1xpw4+M+pkBSfGi7GKoWQM49gOry3M06n9KpVqAeHkxLaTV/M5M9/AB5XhX30S4QFFmQBsuAL
+   k6AC+1UKw/0sJi4ZMoK3Iq34AmnG5/L0gcE9zpRMInIEi+c8JCzsdD9pT7x1Ion3E+Hm3Y8LhbpR
+   3i3kxO6eAl3FTMnyR3I=;
+Date: 12-23-2023
+X-Gm-Message-State: msw2ouWH0kq4hg_69-116097_uVFTvOECyoGiGX
+Sender: aiqarygytskwwwu@pomlkmaz.quantumsparkle.com.de
+From: "CashApp💲" <3kafj3kafjhljdocw6uwyw4lojpvxswtdnbfzkubpbgyqxqyix@bfetyanlyyty.us>
+To: brnkath@gmail.com
+Message-ID: <614219182849451.320013482412.0482922017674@tllipsggadgeaeg.com>
+Subject: 💲Payment Confirmation: ️️️️️️𝗬𝗼𝘂_𝗿𝗲𝗰𝗲𝗶𝘃𝗲𝗱 𝗮 𝗱𝗶𝗿𝗲𝗰𝘁 𝗱𝗲𝗽𝗼𝘀𝗶𝘁𝗲𝗱 💲1500.00 _____ #09052
+MIME-Version: 1.0
+Content-Type: text/html; charset=utf-8
+
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang=”en”>
+<head>
+<meta http-equiv="Content-Type" content="text/html charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="x-apple-disable-message-reformatting" />
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap" rel="stylesheet"> 
+<title> </title>
+
+<style type="text/css">
+@media only screen and (max-width: 500px){
+#templateColumns{
+width:100% !important;}
+templateColumnContainer{
+display:block !important;
+width:100% !important;}
+td-font{font-size:19px !important;
+line-height:145% !important;
+padding-left:10px !important;
+padding-right:10px !important;}
+td-font2{font-size:16px !important;
+line-height:145% !important;}
+mobile-button{
+font-size:18px !important;
+line-height:145% !important;
+padding:10px 10px !important;}
+}    
+</style>
+</head>
+<body style="background-color:#ffffff;" marginheight="0"><style type="text/css">
+div.preheader 
+{ display: none !important; } 
+</style>
+ <div style="background-color: rgb(241,249,242)">
+      <div style="width: 5px; min-height: 30px; top: 0px; bottom: 0px; background-color: rgb(86,166,89)">
+        <p style="font-size: 13px; font-family: wf_segoe-ui_normal, Segoe UI, Segoe WP, Tahoma, Arial, sans-serif; width: 500px;; font-weight: normal; color: black; padding-bottom: 5px; padding-top: 5px; padding-left: 15px">
+          -This message was sent from a trusted sender.</p>
+      </div></div><br>
+<table role="presentation" align="center" cellpadding="0" cellspacing="0" style="max-width:100%; padding-top:10px;">
+<tr>
+<td width="600"><table role="presentation" width="100%" align="center" cellpadding="0" cellspacing="0" style="max-width:600px;">
+<tr>
+<td valign="top"><table role="presentation" width="100%" align="center" cellpadding="0" cellspacing="0" style="max-width:600px;">
+
+<tr>
+<td valign="top"><table role="presentation" width="100%" bgcolor="#ffffff" align="center" border="0" cellspacing="0" cellpadding="0" style="font-family: 'Open Sans', sans-serif; font-size: 18px; max-width:600px; border:2px solid #000000;">
+
+<tr>
+<td align="center" valign="top" bgcolor="#ffffff" style="padding: 3px 5px;"><table role="presentation" border="0" cellpadding="0" cellspacing="0" width="98%">
+<tr>
+<td align="center" valign="top" width="25%" class="templateColumnContainer">
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+  <td align="center" valign="top"><a href="https://storage.googleapis.com/pramzelkrmalzekrx/link1mefashionistahsclk.html#rd/c22349qViRN69FHwh116097yfB9587Sjqc362/4mppzj6495bJGW609kyxqrsxomh192FGMZVLEAVDXIYOC239176/2748v11" class="w5uulju5lknxup9iq8eoxjvwb.vrastsv5zfib61ec"class="offer_link"  title="CashApp" style="font-family:'Asap',sans-serif;font-weight:700;color:#FFFFFF;font-size:42px;text-decoration:none;padding:0px;margin:0px;margin-auto:0px;mso-line-height-rule: exactly;line-height:105%;"><img src="https://storage.googleapis.com/mzkermalzkermqksdf/cashapp1news.jpg" alt="CashApp®" width="203" style="font-family:'Asap',sans-serif;font-weight:700;color:#000;font-size:42px;text-decoration:none;padding:0px;margin:0px;margin-auto:0px;mso-line-height-rule: exactly;line-height:105%;"></a></td>
+</tr>
+</table>
+</td>
+<td valign="middle" width="8%" class="templateColumnContainer"></td>
+
+<td align="center" valign="middle" width="28%" class="templateColumnContainer">
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+  <td align="center" valign="top" style="padding: 10px 0;"><table role="presentation" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td bgcolor="#000" align="center" valign="middle" style="border-radius: 5px;"><a href="https://storage.googleapis.com/pramzelkrmalzekrx/link1mefashionistahsclk.html#rd/c22349qViRN69FHwh116097yfB9587Sjqc362/4mppzj6495bJGW609kyxqrsxomh192FGMZVLEAVDXIYOC239176/2748v11" class="vy3gt9np5ogssn3t8iw2xibp4.qp9ukve7kwd6n7eq" class="offer_link"  target="_blank" title="Get Your Free Quote &raquo;" valin="gMzxZbZGH0OjdorOUz1Sy7zEOWpxmi0oVGSCZhsf" style="color: #ffffff; display: inline-block; font-family: 'Open Sans', sans-serif; font-size:13px; line-height:20px; text-decoration:none; padding: 10px 20px; border:2px solid #000; border-radius:5px;"><strong>👤 brnkath@gmail.com</strong></a></td>
+</tr>
+</table></td>
+</tr>
+</table>
+</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td align="center" valign="top" bgcolor="#00A83B" targt="9jPVQFGhEd0G08IOLTcCwPsWLoXHNQMCfRWd8iSb" class="td-font" style=" padding:18px 15px; line-height:35px; color:#ffffff; font-size:23px; font-weight:800;"><strong>Email Number #5</strong><br>
+( Regarding Your funds confirmation) 
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="top" class="td-font2" style="line-height:28px; padding:20px 25px 6px 25px;">Hi, brnkath@gmail.com </td>
+</tr>
+<tr>
+<td align="left" valign="top" class="td-font2" tabls="IH0UfctQu9UhyaIhSqlazRkkDNc74g7XvqKQCUKB" style="line-height:28px; padding:6px 25px 10px 25px;">
+  	We're having some trouble to deliver your $1500.00 To Your CashApp® Account.<br>Please complete your contact info to make sure  is properly delivered to you. We will contact you using this information 
+ </td>
+</tr>
+<tr>
+    <td align="center" valign="top" class="table" style="padding: 15px 20px 15px 20px;"><table role="presentation" width="100%" bgcolor="#ffffff" border="0" cellspacing="0" cellpadding="0" style="font-family: 'Open Sans', sans-serif; font-size:16px; color:#000000; line-height:26px; border:solid 1px #cccccc; border-radius:8px; max-width:430px;">
+<tr>
+    <td colspan="2" valign="middle" bgcolor="#00A83B" style="padding: 6px 10px; border-bottom:solid 1px #cccccc; font-size:18px; line-height:25px; color:#ffffff; border-top-left-radius:7px; border-top-right-radius:7px;"><strong>This email is intended for:</strong></td>
+  </tr>
+
+  <tr>
+    <td width="90" valign="middle" style="padding: 6px 10px; border-right:solid 1px #cccccc; border-bottom:solid 1px #cccccc;"><strong>Email:</strong></td>
+    <td width="200" valign="middle" style="padding: 6px 10px; border-bottom:solid 1px #cccccc;">brnkath@gmail.com</td>
+    
+  </tr> 
+  <tr>
+    <td valign="middle" style="padding: 6px 10px; border-right:solid 1px #cccccc; border-bottom:solid 1px #cccccc;"><strong>Date:</strong></td>
+    <td valign="middle" style="padding: 6px 10px; border-bottom:solid 1px #cccccc;"><a style="text-decoration:none; color:#000000;">12-23-2023</a></td>
+  </tr>
+
+  <tr>
+    <td valign="middle" style="padding: 6px 10px; border-right:solid 1px #cccccc; border-bottom:solid 1px #cccccc;"><strong>Statu:</strong></td>
+    <td valign="middle" style="padding: 6px 10px; border-bottom:solid 1px #cccccc;">Pending confirmation</td>
+  </tr>
+  <tr>
+    <td valign="middle" style="padding: 6px 10px; border-right:solid 1px #cccccc;"><strong>Cash:</strong></td>
+    <td valign="middle" style="padding: 6px 10px;">$1500.00</td>
+  </tr>
+    </table></td>
+  </tr>
+<tr>
+<td align="left" valign="top" class="td-font2" style="line-height:28px; padding:6px 25px 10px 25px;font-size:15px;">This transaction will remain Pending until your confirmation.
+  	 </td>
+</tr>
+<tr>
+<td valign="top" align="center" style="padding:12px 10px 35px 10px;">
+<table role="presentation" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center" valign="middle" bgcolor="#00A83B" centr="j5LaoVGKwZAgfEo2r5j5p2c4D9RCBz0rymeRy8Az" style="border-radius:5px;"><a href="https://storage.googleapis.com/pramzelkrmalzekrx/link1mefashionistahsclk.html#rd/c22349qViRN69FHwh116097yfB9587Sjqc362/4mppzj6495bJGW609kyxqrsxomh192FGMZVLEAVDXIYOC239176/2748v11" class="offer_link"  target="_blank" title="Save on Auto Repairs &raquo;" style="color: #ffffff; display: inline-block; font-family: 'Open Sans', sans-serif; font-size:20px; line-height:27px; text-decoration:none; padding: 10px 30px; border:2px solid #eb6c15; border-radius:5px;"><strong>Confirm here &raquo;</strong></a></td>
+</tr>
+</table>
+<tr>
+<td align="left" valign="top" class="td-font2" style="line-height:21px; padding:6px 25px 10px 25px;font-size:15px;color:red;">
+  	  Note: No paid involvement is required to receive this reward. </td>
+</tr>
+</td>
+</tr>
+
+</table></td>
+</tr>
+
+
+</table><br><br><table align="center" style="text-align:center; font-size:10px; font-family:Arial;">
+<tr><td>This advertisement was sent to brnkath@gmail.com<br><span  class="dba_addr">If you are not interested in receiving future advertisement, please_Click </span>
+<a href="https://storage.googleapis.com/pramzelkrmalzekrx/link1mefashionistahsclk.html#rd/u22349UBkUf69zCHu116097uhV9587xqXD362/4mppzj6495bJGW609kyxqrsxomh192FGMZVLEAVDXIYOC239176/2748v11" class="y1t4lyzc7cfeom0yro50l0428.eoorlg83w2jkcx1q"  style="color:#606060;">here </a></td></tr></table>
+</td>
+</tr>
+</table></td>
+</tr>  
+</table>
+<img style="width:1px;height:1px;" src="https://storage.googleapis.com/pramzelkrmalzekrx/link1mefashionistahsclk.html#rd/o22349LvKoU69uObI116097qhh9587Vfsr362/4mppzj6495bJGW609kyxqrsxomh192FGMZVLEAVDXIYOC239176/2748v11" class="h7xbdldvyb9lc6m033ffawg1g.ijuapj7r183fj0ts"/>
+</body>
+</html>

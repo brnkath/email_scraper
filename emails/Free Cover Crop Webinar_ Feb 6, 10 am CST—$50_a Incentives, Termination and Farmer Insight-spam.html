@@ -1,0 +1,742 @@
+Delivered-To: brnkath@gmail.com
+Received: by 2002:ac9:7210:0:b0:514:ec54:96c0 with SMTP id v16csp1302337ocr;
+        Mon, 5 Feb 2024 05:01:44 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IG3wc8XeCRcp5Q+Wud93qm03QhUg64nymKhK4MGjjg1/MXCz5vbUK4Qw8j70wCJs3mtK0Oc
+X-Received: by 2002:a05:6a20:c887:b0:19e:5512:dda1 with SMTP id hb7-20020a056a20c88700b0019e5512dda1mr6382016pzb.6.1707138103908;
+        Mon, 05 Feb 2024 05:01:43 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1707138103; cv=none;
+        d=google.com; s=arc-20160816;
+        b=g663Z317XkYXJn/R5Yv+d5MVKJORCws6RFIgMGcqHAf1XL3V5+5fF6dr6WzneVllnz
+         /mws8q6rTZp/SGZQ3VxRg6ZspMIyULEtEcJDg2zFGFfW2XZNI4Y3AKd2VqQvDgmayHss
+         kijI0BHgWehlV5aDz4F7pG0gQAkJ3LqmafJ8FXE/1BKVpHHmn0jT+6GAbaYkDwNtCJkx
+         X+QCQKKlk/Q5JxtweoiRExlmMYmn8A65xdUkvAEb8ble1A3hgWrXhontf7XnXPrE7n86
+         JKqYdq8gZDnuACEw3hUdGcCuBL3e/0gY9PyOAzYbZtezycGX1/fmDVOMQB56K4bYL1XN
+         ulzg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:mime-version:list-unsubscribe-post
+         :list-unsubscribe:feedback-id:message-id:subject:from:to:date
+         :dkim-signature:dkim-signature;
+        bh=53hlrpl1aguMc6bYFsa91w0jp0jyPneYj1sIHVDYBns=;
+        fh=klRu0xqzj5H1zWy0PpMcZJrySHX3lkozz7zsAp7ou8A=;
+        b=FW+Cdd9kHxyfe3mzKVDwIzs9764q26ufjECFiEGzV3ttjpmcuK7DwE00lJtX3v+UQP
+         SOEQM2mq+74TAt2LyVFC15/c/hNtj7bbgIm8JpUVL6LN8wJoHhN2baebkee0liYvTodk
+         xNpnNdF+qp6jY6onGWsqYgJHhqGE4giAzUlvXFqhFIZSqGbRTWmEcnSPhFl6E9oJEBnZ
+         X5KnKyHAXd7k7V/2DeuQtjUjAYRX7WWFansupfRQ57IK6GwOIBXnhjmneaJ3MSnerMEP
+         86UplaRdHs+n+zpgH8c1rfLFcC4+GKEzQKirSvCMSZEb5nM91qr+COVhr/gM4hPKfssh
+         qHQw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@farmupdates.com header.s=pinpointe header.b=V76HQzkj;
+       dkim=pass header.i=@bisque.mypinpointe.com header.s=key1 header.b=tYrM7v1D;
+       spf=pass (google.com: domain of bounce-farmupdates-info=farmupdates.com@gold.mypinpointe.com designates 199.127.240.2 as permitted sender) smtp.mailfrom="bounce-farmupdates-info=farmupdates.com@gold.mypinpointe.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=farmupdates.com
+Return-Path: <bounce-farmupdates-info=farmupdates.com@gold.mypinpointe.com>
+Received: from bisque.mypinpointe.com (bisque.mypinpointe.com. [199.127.240.2])
+        by mx.google.com with ESMTPS id s12-20020a056a00194c00b006de3eda1a4dsi6209473pfk.221.2024.02.05.05.01.42
+        for <brnkath@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 05 Feb 2024 05:01:43 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounce-farmupdates-info=farmupdates.com@gold.mypinpointe.com designates 199.127.240.2 as permitted sender) client-ip=199.127.240.2;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@farmupdates.com header.s=pinpointe header.b=V76HQzkj;
+       dkim=pass header.i=@bisque.mypinpointe.com header.s=key1 header.b=tYrM7v1D;
+       spf=pass (google.com: domain of bounce-farmupdates-info=farmupdates.com@gold.mypinpointe.com designates 199.127.240.2 as permitted sender) smtp.mailfrom="bounce-farmupdates-info=farmupdates.com@gold.mypinpointe.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=farmupdates.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=pinpointe; d=farmupdates.com;
+ h=Date:To:From:Subject:Message-ID:Feedback-ID:List-Unsubscribe:MIME-Version:Content-Type:Content-Transfer-Encoding; i=info@farmupdates.com;
+ bh=53hlrpl1aguMc6bYFsa91w0jp0jyPneYj1sIHVDYBns=;
+ b=V76HQzkjRX7K6DxuxeoaAVxStata3SjzQIPGsO0CSNR0LOrQUF1+4z+n5tTa5VMGP+UNHByPPm/p
+   s/NUNRnSxwJFSvfrBI4KeV4gLxuTQ7VZUOGS6rH2TabCeC3z20gSGXq2m6pHKAsDK+/+yvQs4RXv
+   LDOWyswtzsY74ZKrPFo=
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; s=key1; d=bisque.mypinpointe.com;
+ h=Date:To:From:Subject:Message-ID:List-Unsubscribe:MIME-Version:Content-Type:Content-Transfer-Encoding;
+ bh=PlkSVTjcaaz9yuXDZIjMi3qujZA=;
+ b=tYrM7v1DC5bnj/qdecC8IKRDs7E61mfwJZmnTDXthwGHEXukjeft72PfFSrX/JUTYb9vWYr0a9ZR
+   2hmLu9AH70d2ujFluP04wDpKjxPhKjZqk/PlmBQR9WLQtmMMTWLlKtxrjC/DxQ4zrq7BtmJB0So7
+   dxQHvBpTUF4E3jrb1w4=
+Received: by bisque.mypinpointe.com id ho3e3e1dhqgu for <brnkath@gmail.com>; Mon, 5 Feb 2024 05:01:10 -0800 (envelope-from <bounce-farmupdates-info=farmupdates.com@gold.mypinpointe.com>)
+Date: Mon, 5 Feb 2024 05:01:10 -0800
+To: brnkath@gmail.com
+From: Farmers For Soil Health in Partnership with DTN/Progressive Farmer <info@farmupdates.com>
+Subject: =?UTF-8?Q?Free_Cover_Crop_Webinar|_Feb_6,_10_am_CST=E2=80=94$50/a_Incentives,_Termination_and_Farmer_Insight?=
+Message-ID: <Ub2YC5HSrRX7PtvjRpDow0eKHOypdJvVRpSTgRZlag@adm61v.ppt001.com>
+Feedback-ID: 5657:3:news.farmupdates.com:pinpointe
+X-Feedback-ID: 2:5657:2132507:news.farmupdates.com-3
+List-Unsubscribe: <https://news.farmupdates.com/u/sBWMjGI3-fh6-TnVrL8pvMStDoFzIRKlU0i0wk4O9NDeMVfsBghDCenuh2ddmSjDEf6WhFCFnkzO7IYKXiQS4w>, <mailto:leave+?M=2132507&C=778a8e4910c02aafe2937b2ee88dbb01&L=2&N=5657@pptsend.com>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-Sent-Via: ppt-smtp-platinum
+X-Instance: idx65c0dc159da37.bmV3cy5mYXJtdXBkYXRlcy5jb20=
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="b1_Ub2YC5HSrRX7PtvjRpDow0eKHOypdJvVRpSTgRZlag"
+Content-Transfer-Encoding: 8bit
+
+This is a multi-part message in MIME format.
+
+--b1_Ub2YC5HSrRX7PtvjRpDow0eKHOypdJvVRpSTgRZlag
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Can’t View this email? View it Online (https://news.farmupdates.com/d/sBWMjGI3-fh6-TnVrL8pvMStDoFzIRKlU0i0wk4O9NDV8xZGmfAYkp8mdyhmXzwwB078alsWP5I6dZeOlFFhlg)
+
+(https://us02web.zoom.us/webinar/register/WN_Ucde67sRRRyYfJIgHfb8XQ#/registration)
+
+Join the Conservation Technology Information Center (CTIC) and Farmers for Soil
+Health on Tuesday, February 6 at 10:00 am CST for a free webinar on cover
+cropping in Wisconsin, Minnesota and South Dakota...and $50/acre Farmers for
+Soil Health incentives to help you along!
+
+The webinar will feature insight from:
+
+    - Colin Geppert, a farmer in South Dakota
+    - Myron Sylling, a Minnesota farmer
+    - Dr. Erin Silva of University of Wisconsin
+
+Learn tips from farmers who use cover crops in northern climates, as well as
+pointers on terminating covers. You'll also learn about CTIC's new Cover Crop
+Coach program and sign-up details for Farmers for Soil Health and its great
+cover crop incentives.
+
+More details on Farmers for Soil Health here (https://news.farmupdates.com/l/JO4ABvqbpeSk7IE9DNw36scRztgTWNvFto9af0zVgtg)
+.
+
+(https://us02web.zoom.us/webinar/register/WN_Ucde67sRRRyYfJIgHfb8XQ#/registration)
+
+_________________________________________________________________
+
+You received this email because brnkath@gmail.com
+(mailto:%25%25emailaddress%25%25)
+is currently subscribed to receive promotions from DTN/The Progressive Farmer.
+
+If you no longer wish to receive these emails, Click here to safely unsubscribe
+(https://news.farmupdates.com/u/sBWMjGI3-fh6-TnVrL8pvMStDoFzIRKlU0i0wk4O9NDeMVfsBghDCenuh2ddmSjDEf6WhFCFnkzO7IYKXiQS4w)
+.
+
+DTN/The Progressive Farmer | 2204 Lakeshore Drive, Suite 415 | Birmingham, AL
+35209
+
+--b1_Ub2YC5HSrRX7PtvjRpDow0eKHOypdJvVRpSTgRZlag
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html><html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:=
+schemas-microsoft-com:vml"=0A=09=09=09=09=09=09=09=09=09=09=09xmlns:o=3D"ur=
+n:schemas-microsoft-com:office:office"><head><!-- Yahoo App Android will st=
+rip this --></head><head><meta charset=3D"utf-8" /><!-- utf-8 works for mos=
+t cases --><meta http-equiv=3D"Content-Type" content=3D"text/html;charset=
+=3Dutf-8" /><meta name=3D"viewport" content=3D"width=3Ddevice-width, initia=
+l-scale=3D1.0" /><meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge"=
+ /><meta name=3D"x-apple-disable-message-reformatting" /><title>text test</=
+title><!--[if gte mso 9]><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:Pix=
+elsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml><![endif]--=
+><!--[if mso]><style>* {font-family: sans-serif !important;</style><![endif=
+]--><!--[if (gte mso 9)|(IE)]><style type=3D"text/css" media=3D"all">=0A=09=
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09/* Out=
+look 2016 Height Fix */=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=
+=09=09=09=09=09=09=09=09table, tr, td {border-collapse: collapse;}=0A=09=09=
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09tr { font=
+-size:0px; line-height:0px; border-collapse: collapse; }=0A=09=09=09=09=09=
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09</style><![endif]-=
+-><style type=3D"text/css">=0A=09=09=09=09=09=09=09=09=09=09=09=09@import u=
+rl('https://fonts.googleapis.com/css2?family=3DLibre+Franklin:ital,wght@0,4=
+00;0,500;0,700;1,400;1,500;1,600&display=3Dswap');=0A=09=09=09=09=09=09=09=
+=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09=09@media only screen and (max=
+-width: 480px) {=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=
+=09=09=09=09=09=09.g-hide {=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09dis=
+play: none !important;=0A=09=09=09=09=09=09=09=09=09=09=09=09=09}=0A=09=09=
+=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09=09=09img {=0A=
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09width: 100% !important;=0A=09=09=
+=09=09=09=09=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=0A=09=
+=09=09=09=09=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=0A=09=
+=09=09=09=09=09=09=09=09=09=09=09@media screen and (device-width: 360px) an=
+d (device-height: 640px) and (-webkit-device-pixel-ratio: 3) {=0A=09=09=09=
+=09=09=09=09=09=09=09=09=09=09.fullwidth {=0A=09=09=09=09=09=09=09=09=09=09=
+=09=09=09=09width: 100% !important;=0A=09=09=09=09=09=09=09=09=09=09=09=09=
+=09=09max-width: 100% !important;=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=
+}=0A=09=09=09=09=09=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=
+=0A=09=09=09=09=09=09=09=09=09=09=09=09@media (max-width: 375px) {=0A=09=09=
+=09=09=09=09=09=09=09=09=09=09=09.btn-link {=0A=09=09=09=09=09=09=09=09=09=
+=09=09=09=09=09max-width: 275px=0A=09=09=09=09=09=09=09=09=09=09=09=09=09}=
+=0A=09=09=09=09=09=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=
+=0A=09=09=09=09=09=09=09=09=09=09=09=09@media (max-width: 375px) not (-webk=
+it-min-device-pixel-ratio: 2) {=0A=09=09=09=09=09=09=09=09=09=09=09=09=09td=
+ {=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09display: inline=0A=09=09=09=
+=09=09=09=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=09=09}=0A=
+=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09=09@media=
+ (max-width: 665px) {=0A=09=09=09=09=09=09=09=09=09=09=09=09=09.btn-link {=
+=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09max-width: 550px=0A=09=09=09=
+=09=09=09=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=09=09}=0A=
+=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09=09@media=
+ only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 320px)=
+,=0A=09=09=09=09=09=09=09=09=09=09=09=09only screen and (min--moz-device-pi=
+xel-ratio: 2) and (min-width: 320px),=0A=09=09=09=09=09=09=09=09=09=09=09=
+=09only screen and (-o-min-device-pixel-ratio: 2/1) and (min-width: 320px),=
+=0A=09=09=09=09=09=09=09=09=09=09=09=09only screen and (min-device-pixel-ra=
+tio: 2) and (min-width: 320px),=0A=09=09=09=09=09=09=09=09=09=09=09=09only =
+screen and (min-resolution: 192dpi) and (min-width: 320px),=0A=09=09=09=09=
+=09=09=09=09=09=09=09=09only screen and (min-resolution: 2dppx) and (min-wi=
+dth: 320px) {=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=
+=09=09=09=09=09.btn-link {=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09max-=
+width: 235px=0A=09=09=09=09=09=09=09=09=09=09=09=09=09}=0A=09=09=09=09=09=
+=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09=09=09tr.btn-cells {=0A=
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09display: inline-grid=0A=09=09=09=
+=09=09=09=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=
+=09=09=09=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=
+=09=09=09=09=09=09=09=09=09=09.gmailfix {=0A=09=09=09=09=09=09=09=09=09=09=
+=09=09=09display: none;=0A=09=09=09=09=09=09=09=09=09=09=09=09=09display: n=
+one !important=0A=09=09=09=09=09=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=
+=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09=09* {=0A=09=09=09=09=09=09=
+=09=09=09=09=09=09=09-webkit-font-smoothing: antialiased=0A=09=09=09=09=09=
+=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=
+=09=09=09=09=09=09=09.ExternalClass * {=0A=09=09=09=09=09=09=09=09=09=09=09=
+=09=09line-height: 100%=0A=09=09=09=09=09=09=09=09=09=09=09=09}=0A=09=09=09=
+=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09=09td:after,=0A=09=
+=09=09=09=09=09=09=09=09=09=09=09td:before {=0A=09=09=09=09=09=09=09=09=09=
+=09=09=09=09content: " ";=0A=09=09=09=09=09=09=09=09=09=09=09=09=09display:=
+ table=0A=09=09=09=09=09=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=
+=09=09=0A=09=09=09=09=09=09=09=09=09=09=09=09.ExternalClass {=0A=09=09=09=
+=09=09=09=09=09=09=09=09=09=09width: 100%=0A=09=09=09=09=09=09=09=09=09=09=
+=09=09}=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=
+=09=09.ExternalClass,=0A=09=09=09=09=09=09=09=09=09=09=09=09.ExternalClass =
+div,=0A=09=09=09=09=09=09=09=09=09=09=09=09.ExternalClass font,=0A=09=09=09=
+=09=09=09=09=09=09=09=09=09.ExternalClass p,=0A=09=09=09=09=09=09=09=09=09=
+=09=09=09.ExternalClass span,=0A=09=09=09=09=09=09=09=09=09=09=09=09.Extern=
+alClass td {=0A=09=09=09=09=09=09=09=09=09=09=09=09=09line-height: 100%=0A=
+=09=09=09=09=09=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=0A=
+=09=09=09=09=09=09=09=09=09=09=09=09.backgroundTable {=0A=09=09=09=09=09=09=
+=09=09=09=09=09=09=09margin: 0;=0A=09=09=09=09=09=09=09=09=09=09=09=09=09pa=
+dding: 0;=0A=09=09=09=09=09=09=09=09=09=09=09=09=09width: 100% !important;=
+=0A=09=09=09=09=09=09=09=09=09=09=09=09=09line-height: 100% !important=0A=
+=09=09=09=09=09=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=0A=
+=09=09=09=09=09=09=09=09=09=09=09=09p {=0A=09=09=09=09=09=09=09=09=09=09=09=
+=09=09margin: 1em 0=0A=09=09=09=09=09=09=09=09=09=09=09=09}=0A=09=09=09=09=
+=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09=09table td {=0A=09=
+=09=09=09=09=09=09=09=09=09=09=09=09border-collapse: collapse=0A=09=09=09=
+=09=09=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=
+=09=09=09=09=09=09=09=09=09body {=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=
+Margin: 0;=0A=09=09=09=09=09=09=09=09=09=09=09=09=09padding: 0;=0A=09=09=09=
+=09=09=09=09=09=09=09=09=09=09min-width: 100%;=0A=09=09=09=09=09=09=09=09=
+=09=09=09=09=09background-color: #ffffff;=0A=09=09=09=09=09=09=09=09=09=09=
+=09=09=09font-family: Arial, sans-serif;=0A=09=09=09=09=09=09=09=09=09=09=
+=09=09=09-webkit-font-smoothing: antialiased=0A=09=09=09=09=09=09=09=09=09=
+=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=
+=09=09=09table {=0A=09=09=09=09=09=09=09=09=09=09=09=09=09border-spacing: 0=
+ !important;=0A=09=09=09=09=09=09=09=09=09=09=09=09=09color: #333333;=0A=09=
+=09=09=09=09=09=09=09=09=09=09=09=09font-family: Arial, sans-serif;=0A=09=
+=09=09=09=09=09=09=09=09=09=09=09=09border-spacing: 0 !important;=0A=09=09=
+=09=09=09=09=09=09=09=09=09=09=09border-collapse: collapse !important;=0A=
+=09=09=09=09=09=09=09=09=09=09=09=09=09table-layout: fixed !important;=0A=
+=09=09=09=09=09=09=09=09=09=09=09=09=09Margin: 0 auto !important=0A=09=09=
+=09=09=09=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=
+=09=09=09=09=09=09=09=09=09=09img {=0A=09=09=09=09=09=09=09=09=09=09=09=09=
+=09border: 0=0A=09=09=09=09=09=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=
+=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09=09ol {=0A=09=09=09=09=09=
+=09=09=09=09=09=09=09=09padding-left: 20px !important=0A=09=09=09=09=09=09=
+=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=
+=09=09=09=09=09=09.wrapper {=0A=09=09=09=09=09=09=09=09=09=09=09=09=09width=
+: 100%;=0A=09=09=09=09=09=09=09=09=09=09=09=09=09table-layout: fixed;=0A=09=
+=09=09=09=09=09=09=09=09=09=09=09=09-webkit-text-size-adjust: 100%;=0A=09=
+=09=09=09=09=09=09=09=09=09=09=09=09-ms-text-size-adjust: 100%=0A=09=09=09=
+=09=09=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=
+=09=09=09=09=09=09=09=09=09.webkit {=0A=09=09=09=09=09=09=09=09=09=09=09=09=
+=09max-width: 640px=0A=09=09=09=09=09=09=09=09=09=09=09=09}=0A=09=09=09=09=
+=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09=09.outer {=0A=09=09=
+=09=09=09=09=09=09=09=09=09=09=09Margin: 0 auto;=0A=09=09=09=09=09=09=09=09=
+=09=09=09=09=09width: 100% !important;=0A=09=09=09=09=09=09=09=09=09=09=09=
+=09=09min-width: 100% !important=0A=09=09=09=09=09=09=09=09=09=09=09=09}=0A=
+=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09=09.full-=
+width-image img {=0A=09=09=09=09=09=09=09=09=09=09=09=09=09width: 100%;=0A=
+=09=09=09=09=09=09=09=09=09=09=09=09=09height: auto=0A=09=09=09=09=09=09=09=
+=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=
+=09=09=09=09=09p {=0A=09=09=09=09=09=09=09=09=09=09=09=09=09Margin: 0;=0A=
+=09=09=09=09=09=09=09=09=09=09=09=09=09padding-bottom: 0=0A=09=09=09=09=09=
+=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=
+=09=09=09=09=09=09=09.one-column .contents {=0A=09=09=09=09=09=09=09=09=09=
+=09=09=09=09-webkit-font-smoothing: antialiased=0A=09=09=09=09=09=09=09=09=
+=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=
+=09=09=09=09.one-column p {=0A=09=09=09=09=09=09=09=09=09=09=09=09=09Margin=
+-bottom: 0;=0A=09=09=09=09=09=09=09=09=09=09=09=09=09-webkit-font-smoothing=
+: antialiased=0A=09=09=09=09=09=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=
+=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09=09.two-column {=0A=09=09=
+=09=09=09=09=09=09=09=09=09=09=09text-align: center;=0A=09=09=09=09=09=09=
+=09=09=09=09=09=09=09font-size: 0=0A=09=09=09=09=09=09=09=09=09=09=09=09}=
+=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09=09.co=
+ntents {=0A=09=09=09=09=09=09=09=09=09=09=09=09=09width: 100%=0A=09=09=09=
+=09=09=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=
+=09=09=09=09=09=09=09=09=09.two-column .contents {=0A=09=09=09=09=09=09=09=
+=09=09=09=09=09=09font-size: 14px;=0A=09=09=09=09=09=09=09=09=09=09=09=09=
+=09text-align: left=0A=09=09=09=09=09=09=09=09=09=09=09=09}=0A=09=09=09=09=
+=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09=09.three-column {=0A=
+=09=09=09=09=09=09=09=09=09=09=09=09=09text-align: center;=0A=09=09=09=09=
+=09=09=09=09=09=09=09=09=09font-size: 0=0A=09=09=09=09=09=09=09=09=09=09=09=
+=09}=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09=
+=09.three-column .column {=0A=09=09=09=09=09=09=09=09=09=09=09=09=09width: =
+100%;=0A=09=09=09=09=09=09=09=09=09=09=09=09=09display: inline-block;=0A=09=
+=09=09=09=09=09=09=09=09=09=09=09=09vertical-align: top=0A=09=09=09=09=09=
+=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=
+=09=09=09=09=09=09=09.three-column .contents {=0A=09=09=09=09=09=09=09=09=
+=09=09=09=09=09font-size: 14px;=0A=09=09=09=09=09=09=09=09=09=09=09=09=09te=
+xt-align: center=0A=09=09=09=09=09=09=09=09=09=09=09=09}=0A=09=09=09=09=09=
+=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09=09.img-align-vertical i=
+mg {=0A=09=09=09=09=09=09=09=09=09=09=09=09=09display: inline-block;=0A=09=
+=09=09=09=09=09=09=09=09=09=09=09=09vertical-align: middle=0A=09=09=09=09=
+=09=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=
+=09=09=09=09=09=09=09=09@media only screen and (max-width:640px) {=0A=09=09=
+=09=09=09=09=09=09=09=09=09=09=09.blockbuttonseparator {=0A=09=09=09=09=09=
+=09=09=09=09=09=09=09=09=09width: 100% !important;=0A=09=09=09=09=09=09=09=
+=09=09=09=09=09=09=09display: block !important;=0A=09=09=09=09=09=09=09=09=
+=09=09=09=09=09=09height: 12px;=0A=09=09=09=09=09=09=09=09=09=09=09=09=09}=
+=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=
+.blockbutton {=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09width: 100% !imp=
+ortant;=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09display: block !importa=
+nt;=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09box-sizing: border-box !imp=
+ortant;=0A=09=09=09=09=09=09=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=
+=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09=09=09.fullwidth {=0A=09=09=09=
+=09=09=09=09=09=09=09=09=09=09=09width: 100% !important;=0A=09=09=09=09=09=
+=09=09=09=09=09=09=09=09=09max-width: 100% !important=0A=09=09=09=09=09=09=
+=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=
+=09=09=09=09=09=09=09=09.androidspacing {=0A=09=09=09=09=09=09=09=09=09=09=
+=09=09=09=09display: none !important=0A=09=09=09=09=09=09=09=09=09=09=09=09=
+=09}=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09=
+=09=09.androidspacing {=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09display=
+: none !important=0A=09=09=09=09=09=09=09=09=09=09=09=09=09}=0A=09=09=09=09=
+=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09=09=09.column {=0A=09=
+=09=09=09=09=09=09=09=09=09=09=09=09=09width: 100%;=0A=09=09=09=09=09=09=09=
+=09=09=09=09=09=09=09max-width: 100% !important=0A=09=09=09=09=09=09=09=09=
+=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=
+=09=09=09=09=09=09td.aligncenter {=0A=09=09=09=09=09=09=09=09=09=09=09=09=
+=09=09width: 100% !important;=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09t=
+ext-align: center !important=0A=09=09=09=09=09=09=09=09=09=09=09=09=09}=0A=
+=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09=09=09td.=
+aligncenter p {=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09width: 100% !im=
+portant;=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09text-align: center !im=
+portant=0A=09=09=09=09=09=09=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=
+=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09=09=09p.aligncenter {=0A=09=09=
+=09=09=09=09=09=09=09=09=09=09=09=09width: 100% !important;=0A=09=09=09=09=
+=09=09=09=09=09=09=09=09=09=09text-align: center !important=0A=09=09=09=09=
+=09=09=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=
+=09=09=09=09=09=09=09=09=09=09.buttoncenter {=0A=09=09=09=09=09=09=09=09=09=
+=09=09=09=09=09margin: auto !important;=0A=09=09=09=09=09=09=09=09=09=09=09=
+=09=09=09float: none !important=0A=09=09=09=09=09=09=09=09=09=09=09=09=09}=
+=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=
+img.fullwidth {=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09width: 100% !im=
+portant;=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09max-width: 100% !impor=
+tant=0A=09=09=09=09=09=09=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=
+=09=09=0A=09=09=09=09=09=09=09=09=09=09=09=09=09.inner {=0A=09=09=09=09=09=
+=09=09=09=09=09=09=09=09=09padding-left: 0 !important;=0A=09=09=09=09=09=09=
+=09=09=09=09=09=09=09=09padding-right: 0 !important=0A=09=09=09=09=09=09=09=
+=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=
+=09=09=09=09=09=09=09.showonmobile {=0A=09=09=09=09=09=09=09=09=09=09=09=09=
+=09=09display: block !important;=0A=09=09=09=09=09=09=09=09=09=09=09=09=09}=
+=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=
+.showonmobile {=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09display: block =
+!important;=0A=09=09=09=09=09=09=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=
+=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09=09=09.two-column .inner {=
+=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09padding-left: 10px !important;=
+=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09padding-right: 10px !important=
+;=0A=09=09=09=09=09=09=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=
+=09=0A=09=09=09=09=09=09=09=09=09=09=09=09=09.three-column .inner {=0A=09=
+=09=09=09=09=09=09=09=09=09=09=09=09=09padding-left: 10px !important;=0A=09=
+=09=09=09=09=09=09=09=09=09=09=09=09=09padding-right: 10px !important;=0A=
+=09=09=09=09=09=09=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=
+=0A=09=09=09=09=09=09=09=09=09=09=09=09=09.webkit {=0A=09=09=09=09=09=09=09=
+=09=09=09=09=09=09=09padding-left: 10px !important;=0A=09=09=09=09=09=09=09=
+=09=09=09=09=09=09=09padding-right: 10px !important=0A=09=09=09=09=09=09=09=
+=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=
+=09=09=09=09=09=09=09.one-col-inner {=0A=09=09=09=09=09=09=09=09=09=09=09=
+=09=09=09padding-left: 10px !important;=0A=09=09=09=09=09=09=09=09=09=09=09=
+=09=09=09padding-right: 10px !important=0A=09=09=09=09=09=09=09=09=09=09=09=
+=09=09}=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=
+=09=09=09img {=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09max-width: 100% =
+!important;=0A=09=09=09=09=09=09=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=
+=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=
+=09=09=09=09=09=09@media only screen and (max-width:480px) {=0A=09=09=09=09=
+=09=09=09=09=09=09=09=09=09.blockbuttonseparator {=0A=09=09=09=09=09=09=09=
+=09=09=09=09=09=09=09width: 100% !important;=0A=09=09=09=09=09=09=09=09=09=
+=09=09=09=09=09display: block !important;=0A=09=09=09=09=09=09=09=09=09=09=
+=09=09=09=09height: 12px;=0A=09=09=09=09=09=09=09=09=09=09=09=09=09}=0A=09=
+=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09=09=09.block=
+button {=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09width: 100% !important=
+;=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09display: block !important;=0A=
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09box-sizing: border-box !important=
+;=0A=09=09=09=09=09=09=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=
+=09=0A=09=09=09=09=09=09=09=09=09=09=09=09=09.fullwidth {=0A=09=09=09=09=09=
+=09=09=09=09=09=09=09=09=09max-width: 100% !important;=0A=09=09=09=09=09=09=
+=09=09=09=09=09=09=09=09width: 100% !important=0A=09=09=09=09=09=09=09=09=
+=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=
+=09=09=09=09=09=09.androidspacing {=0A=09=09=09=09=09=09=09=09=09=09=09=09=
+=09=09display: none !important=0A=09=09=09=09=09=09=09=09=09=09=09=09=09}=
+=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=
+.column {=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09width: 100%;=0A=09=09=
+=09=09=09=09=09=09=09=09=09=09=09=09max-width: 100% !important=0A=09=09=09=
+=09=09=09=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=
+=09=09=09=09=09=09=09=09=09=09=09td.aligncenter {=0A=09=09=09=09=09=09=09=
+=09=09=09=09=09=09=09width: 100% !important;=0A=09=09=09=09=09=09=09=09=09=
+=09=09=09=09=09text-align: center !important=0A=09=09=09=09=09=09=09=09=09=
+=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=
+=09=09=09=09=09td.aligncenter p {=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=
+=09width: 100% !important;=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09text=
+-align: center !important=0A=09=09=09=09=09=09=09=09=09=09=09=09=09}=0A=09=
+=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09=09=09p.alig=
+ncenter {=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09width: 100% !importan=
+t;=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09text-align: center !importan=
+t=0A=09=09=09=09=09=09=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=
+=09=0A=09=09=09=09=09=09=09=09=09=09=09=09=09.buttoncenter {=0A=09=09=09=09=
+=09=09=09=09=09=09=09=09=09=09margin: auto !important;=0A=09=09=09=09=09=09=
+=09=09=09=09=09=09=09=09float: none !important=0A=09=09=09=09=09=09=09=09=
+=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=
+=09=09=09=09=09=09img.fullwidth {=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=
+=09width: 100% !important;=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09max-=
+width: 100% !important=0A=09=09=09=09=09=09=09=09=09=09=09=09=09}=0A=09=09=
+=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09=09=09.inner {=
+=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09padding-left: 0 !important;=0A=
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09padding-right: 0 !important=0A=09=
+=09=09=09=09=09=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=0A=
+=09=09=09=09=09=09=09=09=09=09=09=09=09.showonmobile {=0A=09=09=09=09=09=09=
+=09=09=09=09=09=09=09=09display: block !important;=0A=09=09=09=09=09=09=09=
+=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=
+=09=09=09=09=09=09=09.two-column .inner {=0A=09=09=09=09=09=09=09=09=09=09=
+=09=09=09=09padding-left: 10px !important;=0A=09=09=09=09=09=09=09=09=09=09=
+=09=09=09=09padding-right: 10px !important;=0A=09=09=09=09=09=09=09=09=09=
+=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=
+=09=09=09=09=09.three-column .inner {=0A=09=09=09=09=09=09=09=09=09=09=09=
+=09=09=09padding-left: 10px !important;=0A=09=09=09=09=09=09=09=09=09=09=09=
+=09=09=09padding-right: 10px !important;=0A=09=09=09=09=09=09=09=09=09=09=
+=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=
+=09=09=09=09.webkit {=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09padding-l=
+eft: 10px !important;=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09padding-r=
+ight: 10px !important=0A=09=09=09=09=09=09=09=09=09=09=09=09=09}=0A=09=09=
+=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09=09=09.one-col-=
+inner {=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09padding-left: 10px !imp=
+ortant;=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09padding-right: 10px !im=
+portant=0A=09=09=09=09=09=09=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=
+=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09=09=09img {=0A=09=09=09=09=09=
+=09=09=09=09=09=09=09=09=09max-width: 100% !important;=0A=09=09=09=09=09=09=
+=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=09=09}=0A=09=09=09=
+=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09=09@media only scr=
+een and (device-width:360px) {=0A=09=09=09=09=09=09=09=09=09=09=09=09=09.bl=
+ockbuttonseparator {=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09width: 100=
+%;=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09display: block;=0A=09=09=09=
+=09=09=09=09=09=09=09=09=09=09=09height: 12px;=0A=09=09=09=09=09=09=09=09=
+=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=
+=09=09=09=09=09=09.blockbutton {=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=
+=09width: 100%;=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09display: block;=
+=0A=09=09=09=09=09=09=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=
+=09=0A=09=09=09=09=09=09=09=09=09=09=09=09=09.fullwidth {=0A=09=09=09=09=09=
+=09=09=09=09=09=09=09=09=09max-width: 100% !important;=0A=09=09=09=09=09=09=
+=09=09=09=09=09=09=09=09width: 100% !important=0A=09=09=09=09=09=09=09=09=
+=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=
+=09=09=09=09=09=09.androidspacing {=0A=09=09=09=09=09=09=09=09=09=09=09=09=
+=09=09display: none !important=0A=09=09=09=09=09=09=09=09=09=09=09=09=09}=
+=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=
+.column {=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09width: 100%;=0A=09=09=
+=09=09=09=09=09=09=09=09=09=09=09=09max-width: 100% !important=0A=09=09=09=
+=09=09=09=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=
+=09=09=09=09=09=09=09=09=09=09=09td.aligncenter {=0A=09=09=09=09=09=09=09=
+=09=09=09=09=09=09=09width: 100% !important;=0A=09=09=09=09=09=09=09=09=09=
+=09=09=09=09=09text-align: center !important=0A=09=09=09=09=09=09=09=09=09=
+=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=
+=09=09=09=09=09td.aligncenter p {=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=
+=09width: 100% !important;=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09text=
+-align: center !important=0A=09=09=09=09=09=09=09=09=09=09=09=09=09}=0A=09=
+=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09=09=09p.alig=
+ncenter {=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09width: 100% !importan=
+t;=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09text-align: center !importan=
+t=0A=09=09=09=09=09=09=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=
+=09=0A=09=09=09=09=09=09=09=09=09=09=09=09=09.buttoncenter {=0A=09=09=09=09=
+=09=09=09=09=09=09=09=09=09=09margin: auto !important;=0A=09=09=09=09=09=09=
+=09=09=09=09=09=09=09=09float: none !important=0A=09=09=09=09=09=09=09=09=
+=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=
+=09=09=09=09=09=09img.fullwidth {=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=
+=09width: 100% !important;=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09max-=
+width: 100% !important=0A=09=09=09=09=09=09=09=09=09=09=09=09=09}=0A=09=09=
+=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09=09=09.inner {=
+=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09padding-left: 0 !important;=0A=
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09padding-right: 0 !important=0A=09=
+=09=09=09=09=09=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=0A=
+=09=09=09=09=09=09=09=09=09=09=09=09=09.showonmobile {=0A=09=09=09=09=09=09=
+=09=09=09=09=09=09=09=09display: block !important;=0A=09=09=09=09=09=09=09=
+=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=
+=09=09=09=09=09=09=09.two-column .inner {=0A=09=09=09=09=09=09=09=09=09=09=
+=09=09=09=09padding-left: 10px !important;=0A=09=09=09=09=09=09=09=09=09=09=
+=09=09=09=09padding-right: 10px !important;=0A=09=09=09=09=09=09=09=09=09=
+=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=
+=09=09=09=09=09.three-column .inner {=0A=09=09=09=09=09=09=09=09=09=09=09=
+=09=09=09padding-left: 10px !important;=0A=09=09=09=09=09=09=09=09=09=09=09=
+=09=09=09padding-right: 10px !important;=0A=09=09=09=09=09=09=09=09=09=09=
+=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=
+=09=09=09=09.webkit {=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09padding-l=
+eft: 10px !important;=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09padding-r=
+ight: 10px !important=0A=09=09=09=09=09=09=09=09=09=09=09=09=09}=0A=09=09=
+=09=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09=09=09.one-col-=
+inner {=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09padding-left: 10px !imp=
+ortant;=0A=09=09=09=09=09=09=09=09=09=09=09=09=09=09padding-right: 10px !im=
+portant=0A=09=09=09=09=09=09=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=
+=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09=09=09img {=0A=09=09=09=09=09=
+=09=09=09=09=09=09=09=09=09max-width: 100% !important;=0A=09=09=09=09=09=09=
+=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=09=09}=0A=09=09=09=
+=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=09=09=09=09=09table table tab=
+le {=0A=09=09=09=09=09=09=09=09=09=09=09=09=09table-layout: auto=0A=09=09=
+=09=09=09=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=09=09=09=0A=09=09=
+=09=09=09=09=09=09=09=09=09=09[owa] .pgbr {=0A=09=09=09=09=09=09=09=09=09=
+=09=09=09=09display: none=0A=09=09=09=09=09=09=09=09=09=09=09=09}=0A=09=09=
+=09=09=09=09=09=09=09=09=09</style><!--[if (gte mso 9)|(IE)]><style type=3D=
+"text/css">table {border-collapse: collapse !important;mso-line-height-rule=
+: exactly; mso-margin-bottom-alt: 0; mso-margin-top-alt: 0; mso-table-lspac=
+e: 0pt; mso-table-rspace: 0pt;} tr{font-size: 0pt; line-height: 0pt; border=
+-collapse: collapse;}</style><![endif]--></head><body style=3D"width: 100%;=
+ height: 100%; margin: 0;padding: 0;-ms-text-size-adjust: 100%;-webkit-text=
+-size-adjust: 100%;"><center class=3D"wrapper" style=3D"width:100%;table-la=
+yout:fixed;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;"><table=
+ width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"b=
+order-collapse: collapse; border: none;"><tbody><tr><td width=3D"100%" vali=
+gn=3D"middle" style=3D"vertical-align: middle;background-color:#eaeaea;back=
+ground-position: center; background-size: cover;" bgcolor=3D"#eaeaea;"><div=
+ class=3D"webkit" style=3D"max-width:640px;Margin:0 auto;"><!--[if (gte mso=
+ 9)|(IE)]><table width=3D"640" align=3D"center" cellpadding=3D"0" cellspaci=
+ng=3D"0" border=3D"0" style=3D"border-spacing:0;font-family: Calibri, sans-=
+serif;mso-line-height-rule: exactly; mso-margin-bottom-alt: 0; mso-margin-t=
+op-alt: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"><tr><td style=3D"=
+padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><![endif]-=
+-><table class=3D"outer" align=3D"center" cellpadding=3D"0" cellspacing=3D"=
+0" border=3D"0" style=3D"border-spacing: 0px; font-family: Arial, sans-seri=
+f; margin: 0px auto; width: 100%; min-width: 640px; max-width: 640px; borde=
+r-collapse: collapse; border: none;"><tbody><tr><td style=3D"padding-top:25=
+px;padding-bottom:10px;padding-right:0;padding-left:0; background-position:=
+ center; background-size: cover;" bgcolor=3D"#ffffff"><table border=3D"0" w=
+idth=3D"100%" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-collapse:=
+ collapse; border: none;"><tbody><tr><td><table style=3D"width: 100%; borde=
+r-collapse: collapse; border: none;" cellpadding=3D"0" cellspacing=3D"0" bo=
+rder=3D"0"><tbody><tr><td class=3D"fullwidth" align=3D"center" style=3D"pad=
+ding-left:20px; padding-right:20px;"><center><table border=3D"0" align=3D"c=
+enter" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" style=3D"margin: =
+0px auto; border-collapse: collapse; border: none;"><tbody><tr><td class=3D=
+"fullwidth"><table border=3D"0" align=3D"center" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"margin: 0px auto; border-collapse: collap=
+se; border: none;"><tbody><tr><td bgcolor=3D"" style=3D"padding-top:0;paddi=
+ng-bottom:0px;padding-right:0;padding-left:0; background-color: "><table wi=
+dth=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" align=3D"cent=
+er" style=3D"border-collapse: collapse; text-align: center; border: none;" =
+class=3D"fullwidth"><tbody><tr><td valign=3D"middle" width=3D"100%" style=
+=3D"text-align: left; font-family: arial, helvetica, sans-serif; font-size:=
+ 14px !important; font-size: 14px; color: rgb(0, 0, 0); line-height: 24px; =
+position: relative; padding-left: 0px; padding-right: 0px;" class=3D"alignc=
+enter"><p style=3D"text-align: center; padding-top: 0px; padding-bottom: 0p=
+x; margin: 0px;" data-mce-style=3D"text-align: center;">Can=E2=80=99t View =
+this email? View it <a href=3D"https://news.farmupdates.com/d/sBWMjGI3-fh6-=
+TnVrL8pvMStDoFzIRKlU0i0wk4O9NDV8xZGmfAYkp8mdyhmXzwwB078alsWP5I6dZeOlFFhlg" =
+style=3D"color: rgb(241, 124, 114); text-decoration: none;" data-mce-style=
+=3D"color: #f17c72; text-decoration: none;">Online</a></p></td></tr></tbody=
+></table></td></tr></tbody></table></td></tr></tbody></table></center></td>=
+</tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table><!=
+--[if (gte mso 9)|(IE)]></td></tr></table><![endif]--></div></td></tr></tbo=
+dy></table></center><center class=3D"wrapper" style=3D"width:100%;table-lay=
+out:fixed;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;"><table =
+width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"bo=
+rder-collapse: collapse; border: none;"><tbody><tr><td width=3D"100%" valig=
+n=3D"middle" style=3D"vertical-align: middle;background-color:#eaeaea;backg=
+round-position: center; background-size: cover;" bgcolor=3D"#eaeaea;"><div =
+class=3D"webkit" style=3D"max-width:640px;Margin:0 auto;"><!--[if (gte mso =
+9)|(IE)]><table width=3D"640" align=3D"center" cellpadding=3D"0" cellspacin=
+g=3D"0" border=3D"0" style=3D"border-spacing:0;font-family: Calibri, sans-s=
+erif;mso-line-height-rule: exactly; mso-margin-bottom-alt: 0; mso-margin-to=
+p-alt: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"><tr><td style=3D"p=
+adding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><![endif]--=
+><table class=3D"outer" align=3D"center" cellpadding=3D"0" cellspacing=3D"0=
+" border=3D"0" style=3D"border-spacing: 0px; font-family: Arial, sans-serif=
+; margin: 0px auto; width: 100%; min-width: 640px; max-width: 640px; border=
+-collapse: collapse; border: none;"><tbody><tr><td style=3D"padding-top:10p=
+x;padding-bottom:10px;padding-right:0;padding-left:0; background-position: =
+center; background-size: cover;" bgcolor=3D"#ffffff"><table border=3D"0" wi=
+dth=3D"100%" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-collapse: =
+collapse; border: none;"><tbody><tr><td><table style=3D"width: 100%; border=
+-collapse: collapse; border: none;" cellpadding=3D"0" cellspacing=3D"0" bor=
+der=3D"0"><tbody><tr><td class=3D"fullwidth" align=3D"center" style=3D"padd=
+ing-left:20px; padding-right:20px;"><center><table border=3D"0" align=3D"ce=
+nter" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" style=3D"margin: 0=
+px auto; border-collapse: collapse; border: none;"><tbody><tr><td class=3D"=
+fullwidth"><table border=3D"0" align=3D"center" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"margin: 0px auto; border-collapse: collap=
+se; border: none;"><tbody><tr><td bgcolor=3D"" style=3D"padding-top:0;paddi=
+ng-bottom:0px;padding-right:0;padding-left:0; background-color: "><table wi=
+dth=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" align=3D"cent=
+er" style=3D"border-collapse: collapse; text-align: center; border: none;" =
+class=3D"fullwidth"><tbody><tr><td align=3D"center" class=3D"aligncenter" s=
+tyle=3D"padding-left: 0px; padding-right: 0px;">=0A=09=09=09=09=09=09=09=09=
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<a href=3D"https://ne=
+ws.farmupdates.com/l/JO4ABvqbpeSk7IE9DNw36rY7irPDmOr3C4I08rh4Z5Y" target=3D=
+""><img src=3D"https://news.farmupdates.com/admin/temp/user/3/2624_fsh_webi=
+nar2.jpeg" width=3D"600" alt=3D"" border=3D"0" class=3D"fullwidth" style=3D=
+"max-width: 100%; width: 600px; border: none; height: auto; border-collapse=
+: collapse; vertical-align: middle;"></a></td></tr></tbody></table></td></t=
+r></tbody></table></td></tr></tbody></table></center></td></tr></tbody></ta=
+ble></td></tr></tbody></table></td></tr></tbody></table><!--[if (gte mso 9)=
+|(IE)]></td></tr></table><![endif]--></div></td></tr></tbody></table></cent=
+er><center class=3D"wrapper" style=3D"width:100%;table-layout:fixed;-webkit=
+-text-size-adjust:100%;-ms-text-size-adjust:100%;"><table width=3D"100%" ce=
+llpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"border-collapse: co=
+llapse; border: none;"><tbody><tr><td width=3D"100%" valign=3D"middle" styl=
+e=3D"vertical-align: middle;background-color:#eaeaea;background-position: c=
+enter; background-size: cover;" bgcolor=3D"#eaeaea;"><div class=3D"webkit" =
+style=3D"max-width:640px;Margin:0 auto;"><!--[if (gte mso 9)|(IE)]><table w=
+idth=3D"640" align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D=
+"0" style=3D"border-spacing:0;font-family: Calibri, sans-serif;mso-line-hei=
+ght-rule: exactly; mso-margin-bottom-alt: 0; mso-margin-top-alt: 0; mso-tab=
+le-lspace: 0pt; mso-table-rspace: 0pt;"><tr><td style=3D"padding-top:0;padd=
+ing-bottom:0;padding-right:0;padding-left:0;" ><![endif]--><table class=3D"=
+outer" align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" st=
+yle=3D"border-spacing: 0px; font-family: Arial, sans-serif; margin: 0px aut=
+o; width: 100%; min-width: 640px; max-width: 640px; border-collapse: collap=
+se; border: none;"><tbody><tr><td style=3D"padding-top:10px;padding-bottom:=
+10px;padding-right:0;padding-left:0; background-position: center; backgroun=
+d-size: cover;" bgcolor=3D"#ffffff"><table border=3D"0" width=3D"100%" cell=
+padding=3D"0" cellspacing=3D"0" style=3D"border-collapse: collapse; border:=
+ none;"><tbody><tr><td><table style=3D"width: 100%; border-collapse: collap=
+se; border: none;" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tbody>=
+<tr><td class=3D"fullwidth" align=3D"center" style=3D"padding-left:20px; pa=
+dding-right:20px;"><center><table border=3D"0" align=3D"center" width=3D"10=
+0%" cellpadding=3D"0" cellspacing=3D"0" style=3D"margin: 0px auto; border-c=
+ollapse: collapse; border: none;"><tbody><tr><td class=3D"fullwidth"><table=
+ border=3D"0" align=3D"center" width=3D"100%" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"margin: 0px auto; border-collapse: collapse; border: none;"=
+><tbody><tr><td bgcolor=3D"" style=3D"padding-top:0;padding-bottom:0px;padd=
+ing-right:0;padding-left:0; background-color: "><table width=3D"100%" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" align=3D"center" style=3D"borde=
+r-collapse: collapse; text-align: center; border: none;" class=3D"fullwidth=
+"><tbody><tr><td valign=3D"middle" width=3D"100%" style=3D"text-align: left=
+; font-family: arial, helvetica, sans-serif; font-size: 14px !important; fo=
+nt-size: 14px; color: rgb(0, 0, 0); line-height: 24px; position: relative; =
+padding-left: 0px; padding-right: 0px;" class=3D"aligncenter"><p style=3D"p=
+adding-top: 0px; padding-bottom: 0px; margin: 0px;">Join the Conservation T=
+echnology Information Center (CTIC) and Farmers for Soil Health on <strong>=
+Tuesday, February 6 at 10:00 am CST</strong> for a free webinar on cover cr=
+opping in Wisconsin, Minnesota and South Dakota...and $50/acre Farmers for =
+Soil Health incentives to help you along!</p><p style=3D"padding-top: 0px; =
+padding-bottom: 0px; margin: 0px;">&nbsp;</p><p style=3D"padding-top: 0px; =
+padding-bottom: 0px; margin: 0px;">The webinar will feature insight from:</=
+p><ul><li>Colin Geppert, a farmer in South Dakota</li><li>Myron Sylling, a =
+Minnesota farmer</li><li>Dr. Erin Silva of University of Wisconsin&nbsp;</l=
+i></ul><div style=3D'display:none;'>&nbsp;</div><p style=3D"padding-top: 0p=
+x; padding-bottom: 0px; margin: 0px;">Learn tips from farmers who use cover=
+ crops in northern climates, as well as pointers on terminating covers. You=
+'ll also learn about CTIC's new Cover Crop Coach program and sign-up detail=
+s for Farmers for Soil Health and its great cover crop incentives.</p><p st=
+yle=3D"padding-top: 0px; padding-bottom: 0px; margin: 0px;">&nbsp;</p><p st=
+yle=3D"padding-top: 0px; padding-bottom: 0px; margin: 0px;">More details on=
+ Farmers for Soil Health<span>&nbsp;</span><a href=3D"https://news.farmupda=
+tes.com/l/JO4ABvqbpeSk7IE9DNw36scRztgTWNvFto9af0zVgtg">here</a>.</p></td></=
+tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></ce=
+nter></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody>=
+</table><!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]--></div></td>=
+</tr></tbody></table></center><center class=3D"wrapper" style=3D"width:100%=
+;table-layout:fixed;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%=
+;"><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" s=
+tyle=3D"border-collapse: collapse; border: none;"><tbody><tr><td width=3D"1=
+00%" valign=3D"middle" style=3D"vertical-align: middle;background-color:#ea=
+eaea;background-position: center; background-size: cover;" bgcolor=3D"#eaea=
+ea;"><div class=3D"webkit" style=3D"max-width:640px;Margin:0 auto;"><!--[if=
+ (gte mso 9)|(IE)]><table width=3D"640" align=3D"center" cellpadding=3D"0" =
+cellspacing=3D"0" border=3D"0" style=3D"border-spacing:0;font-family: Calib=
+ri, sans-serif;mso-line-height-rule: exactly; mso-margin-bottom-alt: 0; mso=
+-margin-top-alt: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"><tr><td =
+style=3D"padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" ><=
+![endif]--><table class=3D"outer" align=3D"center" cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0" style=3D"border-spacing: 0px; font-family: Arial, =
+sans-serif; margin: 0px auto; width: 100%; min-width: 640px; max-width: 640=
+px; border-collapse: collapse; border: none;"><tbody><tr><td style=3D"paddi=
+ng-top:10px;padding-bottom:10px;padding-right:0;padding-left:0; background-=
+position: center; background-size: cover;" bgcolor=3D"#ffffff"><table borde=
+r=3D"0" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-=
+collapse: collapse; border: none;"><tbody><tr><td><table style=3D"width: 10=
+0%; border-collapse: collapse; border: none;" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0"><tbody><tr><td class=3D"fullwidth" align=3D"center" sty=
+le=3D"padding-left:20px; padding-right:20px;"><center><table border=3D"0" a=
+lign=3D"center" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" style=3D=
+"margin: 0px auto; border-collapse: collapse; border: none;"><tbody><tr><td=
+ class=3D"fullwidth"><table border=3D"0" align=3D"center" width=3D"100%" ce=
+llpadding=3D"0" cellspacing=3D"0" style=3D"margin: 0px auto; border-collaps=
+e: collapse; border: none;"><tbody><tr><td bgcolor=3D"" style=3D"padding-to=
+p:0;padding-bottom:0px;padding-right:0;padding-left:0; background-color: ">=
+<table width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" alig=
+n=3D"center" style=3D"border-collapse: collapse; text-align: center; border=
+: none;" class=3D"fullwidth"><tbody><tr><td align=3D"center" class=3D"align=
+center" style=3D"padding-left: 0px; padding-right: 0px;">=0A=09=09=09=09=09=
+=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09=09<a href=3D"h=
+ttps://news.farmupdates.com/l/JO4ABvqbpeSk7IE9DNw36rY7irPDmOr3C4I08rh4Z5Y" =
+target=3D""><img src=3D"https://news.farmupdates.com/admin/temp/user/3/2624=
+_button.png" width=3D"250" alt=3D"" border=3D"0" class=3D"fullwidth" style=
+=3D"max-width: 100%; width: 250px; border: none; height: auto; border-colla=
+pse: collapse; vertical-align: middle;"></a></td></tr></tbody></table></td>=
+</tr></tbody></table></td></tr></tbody></table></center></td></tr></tbody><=
+/table></td></tr></tbody></table></td></tr></tbody></table><!--[if (gte mso=
+ 9)|(IE)]></td></tr></table><![endif]--></div></td></tr></tbody></table></c=
+enter><center class=3D"wrapper" style=3D"width:100%;table-layout:fixed;-web=
+kit-text-size-adjust:100%;-ms-text-size-adjust:100%;"><table width=3D"100%"=
+ cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"border-collapse:=
+ collapse; border: none;"><tbody><tr><td width=3D"100%" valign=3D"middle" s=
+tyle=3D"vertical-align: middle;background-color:#eaeaea;background-position=
+: center; background-size: cover;" bgcolor=3D"#eaeaea;"><div class=3D"webki=
+t" style=3D"max-width:640px;Margin:0 auto;"><!--[if (gte mso 9)|(IE)]><tabl=
+e width=3D"640" align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=
+=3D"0" style=3D"border-spacing:0;font-family: Calibri, sans-serif;mso-line-=
+height-rule: exactly; mso-margin-bottom-alt: 0; mso-margin-top-alt: 0; mso-=
+table-lspace: 0pt; mso-table-rspace: 0pt;"><tr><td style=3D"padding-top:0;p=
+adding-bottom:0;padding-right:0;padding-left:0;" ><![endif]--><table class=
+=3D"outer" align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0=
+" style=3D"border-spacing: 0px; font-family: Arial, sans-serif; margin: 0px=
+ auto; width: 100%; min-width: 640px; max-width: 640px; border-collapse: co=
+llapse; border: none;"><tbody><tr><td style=3D"padding-top:10px;padding-bot=
+tom:25px;padding-right:0;padding-left:0; background-position: center; backg=
+round-size: cover;" bgcolor=3D"#ffffff"><table border=3D"0" width=3D"100%" =
+cellpadding=3D"0" cellspacing=3D"0" style=3D"border-collapse: collapse; bor=
+der: none;"><tbody><tr><td><table style=3D"width: 100%; border-collapse: co=
+llapse; border: none;" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tb=
+ody><tr><td class=3D"fullwidth" align=3D"center" style=3D"padding-left:20px=
+; padding-right:20px;"><center><table border=3D"0" align=3D"center" width=
+=3D"100%" cellpadding=3D"0" cellspacing=3D"0" style=3D"margin: 0px auto; bo=
+rder-collapse: collapse; border: none;"><tbody><tr><td class=3D"fullwidth">=
+<table border=3D"0" align=3D"center" width=3D"100%" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"margin: 0px auto; border-collapse: collapse; border: =
+none;"><tbody><tr><td bgcolor=3D"" style=3D"padding-top:0;padding-bottom:0p=
+x;padding-right:0;padding-left:0; background-color: "><table width=3D"100%"=
+ border=3D"0" cellpadding=3D"0" cellspacing=3D"0" align=3D"center" style=3D=
+"border-collapse: collapse; text-align: center; border: none;" class=3D"ful=
+lwidth"><tbody><tr><td valign=3D"middle" width=3D"100%" style=3D"text-align=
+: left; font-family: arial, helvetica, sans-serif; font-size: 14px !importa=
+nt; font-size: 14px; color: rgb(0, 0, 0); line-height: 24px; position: rela=
+tive; padding-left: 0px; padding-right: 0px;" class=3D"aligncenter"><p styl=
+e=3D"padding-top: 0px; padding-bottom: 0px; margin: 0px;">_________________=
+________________________________________________</p><p style=3D"text-align:=
+ center; padding-top: 0px; padding-bottom: 0px; margin: 0px;" data-mce-styl=
+e=3D"text-align: center;"><span style=3D"font-size: 8pt;" data-mce-style=3D=
+"font-size: 8pt;">You received this email because&nbsp; <a href=3D"mailto:%=
+25%25emailaddress%25%25" data-cke-saved-href=3D"mailto:%25%25emailaddress%2=
+5%25">brnkath@gmail.com</a> is currently subscribed to receive promotions f=
+rom DTN/The Progressive Farmer.</span></p><p style=3D"text-align: center; p=
+adding-top: 0px; padding-bottom: 0px; margin: 0px;" data-mce-style=3D"text-=
+align: center;"><span style=3D"font-size: 8pt;" data-mce-style=3D"font-size=
+: 8pt;">If you no longer wish to receive these emails,&nbsp; <a href=3D"htt=
+ps://news.farmupdates.com/u/sBWMjGI3-fh6-TnVrL8pvMStDoFzIRKlU0i0wk4O9NDeMVf=
+sBghDCenuh2ddmSjDEf6WhFCFnkzO7IYKXiQS4w" data-cke-saved-href=3D"https://new=
+s.farmupdates.com/u/sBWMjGI3-fh6-TnVrL8pvMStDoFzIRKlU0i0wk4O9NDeMVfsBghDCen=
+uh2ddmSjDEf6WhFCFnkzO7IYKXiQS4w">Click here to safely unsubscribe</a> .</sp=
+an></p><p style=3D"text-align: center; padding-top: 0px; padding-bottom: 0p=
+x; margin: 0px;" data-mce-style=3D"text-align: center;"><span style=3D"font=
+-size: 8pt;" data-mce-style=3D"font-size: 8pt;">DTN/The Progressive Farmer =
+| 2204 Lakeshore Drive, Suite 415 | Birmingham, AL 35209</span></p></td></t=
+r></tbody></table></td></tr></tbody></table></td></tr></tbody></table></cen=
+ter></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody><=
+/table><!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]--></div></td><=
+/tr></tbody></table></center><div class=3D"gmailfix" style=3D"white-space:n=
+owrap; font:15px courier; line-height:0;">=0A&nbsp; &nbsp; &nbsp; &nbsp; &n=
+bsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=0A&nbsp; &nbsp; &nbsp; &nbsp=
+; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=0A&nbsp; &nbsp; &nbsp; &=
+nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=0A</div><img src=3D"https://news.farmupda=
+tes.com/o/qUtvei5ZK5awYsYfDcLoAswl3alNNI84Y3xZn-xXmRo?image=3D.gif" height=
+=3D"1" width=3D"10" alt=3D" "/>=0A</body><!--[if gte mso 9]><xml><o:OfficeD=
+ocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch></o:Offic=
+eDocumentSettings></xml><![endif]--></html>
+
+--b1_Ub2YC5HSrRX7PtvjRpDow0eKHOypdJvVRpSTgRZlag--
+
+

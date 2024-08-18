@@ -1,0 +1,942 @@
+Delivered-To: brnkath@gmail.com
+Received: by 2002:a8a:e86:0:b0:511:33d7:88bb with SMTP id t6csp3081686ocw;
+        Wed, 27 Dec 2023 08:36:56 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGVA9c5nYTZXqVlrzcFic+uFH/m1XM4QQKcwAT/2t16FojkbhLt24zn7T/9+9ehIN84mB+A
+X-Received: by 2002:ad4:5dc6:0:b0:67f:4305:d826 with SMTP id m6-20020ad45dc6000000b0067f4305d826mr15367473qvh.33.1703695016145;
+        Wed, 27 Dec 2023 08:36:56 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1703695016; cv=none;
+        d=google.com; s=arc-20160816;
+        b=LaMsdVhM9hk7s6RLiKc6Xnb+57oJgU89vnbn/nc5IwH9lRmcSj6eStQJA0HU9TjHKB
+         JNC8wNqsuhAJFCGIYH62zoEm0ffyqS/LowWwaIQu4Q1Akv5G65rbPWMEqJ34/uF5IfxE
+         A3MKTJvYdg0NkrcQ3NKsDm1rMiOoFHDEO7rLMa0+tCKh0fdG96rEtST3W2BK8NU9DAlD
+         7V3R7fIlCqTEttu7YRzbazgxtNmkLpFpg12jxeuy3vNSbP1E1Tzvdlnyg+kBQkRTmnZp
+         Zv8TbEQeNZarLSyZ2ywHiS9ypB28bpNi234gzSypWl+aUe4Cxr8QksCM1QOk3rNcsqg4
+         7oRw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:message-id:list-unsubscribe-post:list-unsubscribe
+         :list-id:mime-version:list-help:date:subject:to:from:dkim-signature;
+        bh=zkr7wQ0FzdMkidWtZw9mxN223TdNoCOnu6AhUXXMsEY=;
+        fh=h8fhLntCqZqpGGoIKwT3QX9qaqz6XXlumbVoY4KJp1U=;
+        b=Qnf1M5Z6rvlOhSli3kaE3lhKqVxpEeavEZO1J8Q0xTvPPkgKcCfDP4LOyDuWy6Dp06
+         x7qxBFvGOFbYz3ngCxPRToHP3CDq1/uR1mo6brXatjOaJm7ddTn2OTHUcYIyzeKtfl9I
+         WH1hB28/BTfAPBXXLyIsh+bdMVwASnJrcYc2Pe4ONZ48Si8OIIVeeDXlMiiIV9yUR0p1
+         QnmnA29FeGujl18NuXAd/cTiBmzrtMfAWN0gRz4Occ1ksbV+H3uEMWgSz+XzcYd6oGlU
+         sPl3SBNJYKW6JvDXcdUkormpVyio7fh/Lq4x9bqtSWmXmR6pv+vjFLlrmyajlxKOSnc4
+         W0Ug==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@heroku.com header.s=200608 header.b=KiQ9X1TD;
+       spf=pass (google.com: domain of bounce-1209_html-366539040-5121-7327546-465798@bounce.s7.exacttarget.com designates 136.147.176.128 as permitted sender) smtp.mailfrom=bounce-1209_HTML-366539040-5121-7327546-465798@bounce.s7.exacttarget.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=heroku.com
+Return-Path: <bounce-1209_HTML-366539040-5121-7327546-465798@bounce.s7.exacttarget.com>
+Received: from cr128.mta.exacttarget.com (cr128.mta.exacttarget.com. [136.147.176.128])
+        by mx.google.com with ESMTPS id jf11-20020a0562142a4b00b006805f61541csi1462779qvb.177.2023.12.27.08.36.55
+        for <brnkath@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 27 Dec 2023 08:36:56 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounce-1209_html-366539040-5121-7327546-465798@bounce.s7.exacttarget.com designates 136.147.176.128 as permitted sender) client-ip=136.147.176.128;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@heroku.com header.s=200608 header.b=KiQ9X1TD;
+       spf=pass (google.com: domain of bounce-1209_html-366539040-5121-7327546-465798@bounce.s7.exacttarget.com designates 136.147.176.128 as permitted sender) smtp.mailfrom=bounce-1209_HTML-366539040-5121-7327546-465798@bounce.s7.exacttarget.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=heroku.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=200608; d=heroku.com;
+ h=From:To:Subject:Date:List-Help:MIME-Version:List-ID:X-CSA-Complaints:
+ List-Unsubscribe:List-Unsubscribe-Post:Message-ID:Content-Type;
+ i=no-reply@heroku.com;
+ bh=zkr7wQ0FzdMkidWtZw9mxN223TdNoCOnu6AhUXXMsEY=;
+ b=KiQ9X1TDDfDKUXF3aQam59Hg0hjIhl9D40/B3wuRdkgkf84D0oyIdaxYHt4ioJdCIM8ypgiZIns9
+   n+5X+WKsn/P2PON4AfH7r3n6xwS8rqOAI9Pq71AQ+5aKGBW0/+op53+K7AmZU7jcJ3NiFjXpTy7A
+   nNNoN8ovjBQaTjRCNj0=
+Received: by cr128.mta.exacttarget.com id hhh9ag2fmd4g for <brnkath@gmail.com>; Wed, 27 Dec 2023 15:26:58 +0000 (envelope-from <bounce-1209_HTML-366539040-5121-7327546-465798@bounce.s7.exacttarget.com>)
+From: "Heroku" <no-reply@heroku.com>
+To: <brnkath@gmail.com>
+Subject: December Newsletter: Helping Customers Build at Scale
+Date: Wed, 27 Dec 2023 09:26:57 -0600
+List-Help: <https://cl.S7.exct.net/subscription_center.aspx?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtaWQiOiI3MzI3NTQ2IiwicyI6IjM2NjUzOTA0MCIsImxpZCI6IjEyMDkiLCJqIjoiNTEyMSIsImpiIjoiNDY1Nzk4IiwiZCI6IjcwMjE3In0.fzv1PoZsouVjFb4xb_rfujUbPfnVDezY_pE-FnSfUuI>
+x-CSA-Compliance-Source: SFMC
+MIME-Version: 1.0
+List-ID: <7327546.xt.local>
+X-CSA-Complaints: csa-complaints@eco.de
+x-messageKey: 36622-1181639863-92074993
+X-Delivery: Transactional
+X-SFMC-Stack: 7
+x-job: 7327546_5121
+List-Unsubscribe: <https://hello.heroku.com/listUnsubscribeHeader/u/36622/e4c45dc91a112d50397a967b5090eb81b294ea83af16b729e1e5c84e54e8634a/1182533803>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-Report-Abuse-To: abuse@pd25.com
+Message-ID: <fed35b3a-059e-42a0-bf29-d9dd058d3750@atl1s07mta2987.xt.local>
+Feedback-ID: 7327546:5121:136.147.176.128:sfmktgcld
+Content-Type: multipart/alternative;
+	boundary="iy9LVOvCqchT=_?:"
+
+This is a multi-part message in MIME format.
+
+--iy9LVOvCqchT=_?:
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+Heroku News: Expanded AWS partnership, events, product news and more!
+View in Browser: https://hello.heroku.com/webmail/36622/1182533803/e4c45dc91a112d50397a967b5090eb81b294ea83af16b729e1e5c84e54e8634a
+December 2023 Newsletter
+Newsletter feedback: feedback@heroku.com
+
+This month Heroku announced our expanded partnership with AWS. Now our customers can strategically scale by leveraging AWS EDP commitment for the purchase of Heroku products. We also announced our transition to Aurora as our backing infrastructure, and additional AI product partnerships to come in 2024. Read about this and more in the December issue.
+
+															HEROKU NEWS
+
+															Heroku Blog https://hello.heroku.com/e/36622/2023-12-27/m671dy/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls
+															Public Roadmap https://hello.heroku.com/e/36622/heroku-roadmap/m671f2/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls
+
+re:Invent: Heroku and AWS Expand Partnership
+Day two at AWS re:Invent featured an exciting announcement about the expanded partnership with Salesforce and AWS
+https://hello.heroku.com/e/36622/xNjIuMC4xNzAxNDg0MzEyLjAuMC4w-/m671f5/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls This announcement makes a range of Heroku and Salesforce products available for purchase through the AWS Marketplace Private Offers program https://hello.heroku.com/e/36622/heroku-in-aws-marketplace/m671f8/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls, giving our shared customers new ways to manage their cloud investments. You can also look forward to future innovations as we partner to leverage AWS Graviton, AWS Trainium, AWS Inferentia, AWS Aurora, and developer services like Amazon CodeWhisperer to deliver AI assistants to your developers and operators. Day three brought even more excitement as Heroku CTO, Gail Frederick took the stage with AWS leaders for a special session on Future-proofing your applications
+ https://hello.heroku.com/e/36622/watch-v-fZLcv7rwj7Y-t-1960s-/m671fc/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls
+
+Enhancing Heroku Postgres with pgvector: Generating AI Insights
+In November, Heroku delivered the highly-requested https://hello.heroku.com/e/36622/heroku-roadmap-issues-156/m671fg/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls, pgvector extension https://hello.heroku.com/e/36622/pgvector-launch/m671fk/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls on Heroku Postgres. In an era where large language models (LLMs) and AI applications are paramount, pgvector can perform high-dimensional vector similarity searches. Read this in depth blog https://hello.heroku.com/e/36622/rity-search-on-heroku-postgres/m671fn/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls from Heroku engineer Valerie Woolard as she walks through how to work with vector data and covers important optimization and performance considerations.
+
+The Future of Multi-Architecture Cloud Native Buildpacks
+One aspect of Heroku’s expanded partnership with AWS is our goal to incorporate tools like AWS Graviton that offer the best price-performance compute. ARM processing provides great efficiency, but it will require buildpack developers to prepare for multi-architecture development. Check out this KubeCon talk https://hello.heroku.com/e/36622/watch-v-v1R-5LMdDq8/m671fr/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls with Terence Lee and Joe Kutner. They discuss the challenges of supporting multi-architecture application images, Salesforce's journey with Hyperforce, and how Buildpacks resolve them.
+
+Events
+
+															Heroku Events Page https://hello.heroku.com/e/36622/events/m671fv/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls
+Building AI Applications on Heroku - Watch On Demand → https://hello.heroku.com/e/36622/watch-v-jEEiCtPTn8c/m671fy/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls
+
+Watch as Julían Duque builds an AI application using LangChain and Node.js and then deploys it to Heroku. This step-by-step Live Code session was initially broadcast in November and is available on the Salesforce Developers YouTube channel.
+
+Future-proofing your applications - Watch On Demand →https://hello.heroku.com/e/36622/watch-v-fZLcv7rwj7Y-t-1960s/m671g2/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls
+While at AWS re:Invent Heroku CTO, Gail Frederick joined Jeff Carter, Vice President of Databases and Migrations, and Rahul Pathak, Vice President of Relational Databases, along with Minaz Merali, Vice President, Product Management - IBM Data &amp; AI, on stage to talk about modernizing Heroku data offerings in the age of AI. Watch this Innovation Talk for strategies to safeguard your data from disruptions that might interfere with your ability to adopt new technologies. 
+
+TrailblazerDX →  https://hello.heroku.com/e/36622/trailblazerdx-/m671g5/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls
+March 6-7, 2024 | San Francisco, CA
+Are you ready to learn directly from product owners and engineers how to build the next generation of apps on Heroku and the Einstein 1 Platform? Registration opens soon for the AI developer conference of the year.
+
+Salesforce + Heroku
+
+Publish and Subscribe to Salesforce Platform Events → https://hello.heroku.com/e/36622/-to-salesforce-platform-events/m671g8/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls
+Architect apps using an event-driven approach with the Salesforce enterprise messaging platform. Platform Events provides an event-driven messaging architecture for integrating business processes in Salesforce, or for integrating such processes with external systems, such as Heroku apps. Learn more online.
+
+Heroku DevCenter Article: Publish and Subscribe to Salesforce Platform Events
+https://hello.heroku.com/e/36622/-to-salesforce-platform-events/m671g8/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls
+
+Salesforce Dev Article: Platform Events Developer Guide
+https://hello.heroku.com/e/36622/ents-platform-events-intro-htm/m671gc/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls
+
+ 
+The Heroku Connect Dashboard →
+https://hello.heroku.com/e/36622/icles-heroku-connect-dashboard/m671gg/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls
+
+Did you know that the Heroku Connect Dashboard allows you to configure, monitor, and troubleshoot your connection? Use the above link to explore the various features of the dashboard. The dashboard is available at connect.heroku.com
+
+.
+
+Salesforce Starter Suite →https://hello.heroku.com/e/36622/-starter--d-7013y000002KeV4AAK/m671gk/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls
+Heroku is used by many smaller customers who depend on Heroku to run their business. If this is your company, then Salesforce has a new offering you might be interested in. It's the fastest and easiest way to get started with the world’s #1 CRM. It brings together sales, service, and email outreach tools in one easy-to-use suite to help you grow. What’s more exciting? Starter is just $25 per user per month. Take Starter Suite for a free spin for 30 days, no credit card or obligation required.
+
+Heroku Marketplace: Add-ons, buttons, and buildpacks for your Heroku app.
+https://hello.heroku.com/e/36622/2023-12-27/m671gn/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls
+Judoscale → https://hello.heroku.com/e/36622/addons-judoscale/m671gr/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls
+Judoscale works on ALL dyno types and autoscales your worker dynos, ensuring that job queues never back up. The autoscaling algorithm responds in seconds, not minutes and includes the ability to set a custom scaling schedule.
+
+Stackhero for MySQL (Beta) → https://hello.heroku.com/e/36622/addons-butter/m671gv/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls
+Powered by high-performance CPUs and SSD disks, Stackhero is a ready-to-use MySQL cloud solution. This highly secure solution includes a dedicated instance and IP, one-click updates for easy maintenance, and PhpMyAdmin, a performant web UI.
+
+We're Hiring → https://hello.heroku.com/e/36622/careers/m671gy/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls
+Join a team that's transforming how apps are built. Come work with us. → https://hello.heroku.com/e/36622/careers/m671gy/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls
+
+Heroku a Salesforce company
+415 Mission Street, 3rd Floor
+​​​​​​​San Francisco, CA 94105
+
+Update your email preferences
+https://hello.heroku.com/KeepMeuptoDate?ehash=e4c45dc91a112d50397a967b5090eb81b294ea83af16b729e1e5c84e54e8634a&email_id=1182533803&epc_hash=91ZF5StcacL9VcuwliwOEkKbVu2M1_BryRQUFNmdMYY
+Privacy
+
+https://hello.heroku.com/e/36622/company-privacy-/m671h2/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls
+
+--iy9LVOvCqchT=_?:
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--[if gte mso 9]>
+      <style type="text/css">
+        h1, h2, h3, h4, h5, h6 p, td, span, div, li, ol, ul, a, div {
+          font-family: Arial, sans-serif !important;
+        }
+      </style>
+    <![endif]-->
+    <!--[if gte mso 9]>
+      <xml>
+        <o:OfficeDocumentSettings>
+          <o:AllowPNG />
+          <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+      </xml>
+    <![endif]-->
+    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="x-apple-disable-message-reformatting" />
+    <meta name="color-scheme" content="dark light">
+    <meta name="supported-color-schemes" content="dark light">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+    </style>
+    <style type="text/css">
+        *[pardot-region]:empty {
+            padding: 0px;
+        }
+        
+        body {
+            margin: 0 !important;
+            padding: 0 !important;
+            -webkit-text-size-adjust: 100% !important;
+            -ms-text-size-adjust: 100% !important;
+            -webkit-font-smoothing: antialiased !important;
+        }
+        
+        img {
+            border: 0 !important;
+            outline: none !important;
+        }
+        
+        p {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        table {
+            border-collapse: collapse;
+            mso-table-lspace: 0px;
+            mso-table-rspace: 0px;
+        }
+        
+        td {
+            border-collapse: collapse;
+            mso-line-height-rule: exactly;
+        }
+        
+        a {
+            border-collapse: collapse;
+            mso-line-height-rule: exactly;
+        }
+        
+        a[x-apple-data-detectors] {
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+        
+        img {
+            -ms-interpolation-mode: bicubic;
+        }
+        
+        #outlook a {
+            padding: 0;
+        }
+        
+        table {
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+        
+        span {
+            border-collapse: collapse;
+            mso-line-height-rule: exactly;
+        }
+        
+        .ExternalClass * {
+            line-height: 100%;
+        }
+        
+        .white_link a {
+            color: #ffffff;
+        }
+        
+        .primary_link a {
+            color: #408FEC;
+        }
+        
+        .footer-link a {
+            text-decoration: underline;
+            color: #8a7ecb;
+        }
+        
+        .em_br1 {
+            display: none;
+        }
+        
+        @media only screen and (max-width:579px) {
+            td.em_main_table {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            table.em_wrapper {
+                width: 100% !important;
+            }
+            td.em_hide {
+                display: none !important;
+            }
+            br.em_hide {
+                display: none !important;
+            }
+            td.em_align_center {
+                text-align: center !important;
+            }
+            td.em_pad_top {
+                padding-top: 20px !important;
+            }
+            td.em_side_space {
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+            }
+            td.em_bg_center {
+                background-position: center !important;
+            }
+            td.em_height_20 {
+                height: 20px !important;
+            }
+            img.em_full_width {
+                width: 100% !important;
+                height: auto !important;
+                max-width: 100% !important;
+            }
+            td.em_pad_btm {
+                padding-bottom: 20px !important;
+            }
+            td.em_event {
+                width: 100% !important;
+                display: block !important;
+                border-right: none !important;
+            }
+        }
+        
+        @media only screen and (max-width:580px) {
+            td[class=em_hide_small] {
+                text-align: center !important;
+            }
+            .mw100p {
+                max-width: 100% !important;
+            }
+            .mbl-rm {
+                display: none;
+            }
+            .mbl-cntr {
+                float: none !important;
+                margin: 0 auto !important;
+            }
+            .mbl-pd-tp-rm {
+                padding-top: 0 !important;
+            }
+            .mbl-show {
+                display: block !important;
+            }
+            .mbl-50 {
+                width: 50% !important;
+            }
+        }
+        
+        @media (max-width: 414px) {
+            td[class=em_hide_small] {
+                display: none !important;
+            }
+        }
+        
+        @media screen and (min-width: 600px) {
+            #emailContents .preview {
+                display: block !important;
+                padding: 10px;
+                margin: 10px;
+                background: #8a7ecb;
+            }
+            #emailContents .preview::before {
+                content: 'Preview Text';
+                font-weight: bold;
+                background-color: #473A8F;
+                color: #ffffff;
+                border-radius: 3px;
+                font-size: 14px;
+                display: inline-block;
+                padding: 6px 12px;
+                margin-right: 12px;
+            }
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            .em_main_table>table {
+                background-color: #1F1F1F !important;
+            }
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                color: #675ba8 !important;
+            }
+            td,
+            p,
+            span,
+            li,
+            b {
+                color: #ffffff !important;
+            }
+            a {
+                color: #408FEC !important;
+            }
+        }
+    </style>
+</head>
+
+<body style="margin:0px;padding:0px;background-color:#473A8F;">
+<div class="preview" pardot-region="" pardot-region-type="simple" style="display: none; mso-hide: all">Heroku News: Expanded AWS partnership, events, product news and more!</div>
+
+<div style="display: none; font-family: Arial, sans-serif; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide:
+all">‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌
+&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;</div>
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" style="background-color:#473A8F;" width="100%">
+	<tbody>
+		<tr>
+			<td align="center" valign="top">
+			<table align="center" border="0" cellpadding="0" cellspacing="0" class="em_wrapper" width="580">
+				<tbody><!-- View Online Row -->
+					<tr>
+						<td class="em_side_space">
+						<table border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tbody>
+								<tr>
+									<td style="color: #ffffff; font-size: 11.2px; line-height:1.5; font-family: Helvetica, Arial, sans-serif; text-align: right;">
+									<div pardot-region="">
+									<p style="margin: 0; padding: 10px 10px 15px 0;"><a href="https://hello.heroku.com/webmail/36622/1182533803/e4c45dc91a112d50397a967b5090eb81b294ea83af16b729e1e5c84e54e8634a" style="color:#ffffff; text-decoration: none;" target="_blank">View in Browser</a></p>
+									</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</td>
+					</tr>
+					<!--Header Logo Row-->
+					<tr pardot-repeatable="" style="">
+						<td>
+						<table border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tbody>
+								<tr>
+									<td class="em_hide" width="35">&nbsp;</td>
+									<td class="em_side_space">
+									<table border="0" cellpadding="0" cellspacing="0" width="100%">
+										<tbody>
+											<tr>
+												<td align="center"><a href="https://hello.heroku.com/e/36622/home/m671h5/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls" target="_blank"><img alt="logo" border="0" pardot-height="auto" pardot-region="pardot-region" src="https://hello.heroku.com/newsletter-header-logo" style="display: block; max-width:59px; width: 59px; border-width: 0px;" width="59"></a></td>
+											</tr>
+											<tr>
+												<td height="20">&nbsp;</td>
+											</tr>
+											<tr>
+												<td class="primary_link" style="color: #ffffff; font-size: 16px; line-height:24px; font-family: Helvetica, Arial, sans-serif; text-align: center;">
+												<h1 pardot-data="" pardot-region="" style="font-family: Helvetica, Arial, sans-serif; color: rgb(170, 163, 217); font-size: 16px; line-height: 1.5; margin: 0px; padding: 0px; letter-spacing: 6px; text-transform: uppercase; font-weight: 700;">December 2023 Newsletter</h1>
+
+												<p><span style="font-family:Arial,sans-serif;font-size: 12px;"><span style="color:#ffffff"><span style="font-style:normal"><span style="text-decoration:none">Newsletter feedback: feedback@heroku.com</span></span></span></span></p>
+												</td>
+											</tr>
+											<tr>
+												<td height="30">&nbsp;</td>
+											</tr>
+										</tbody>
+									</table>
+									</td>
+									<td class="em_hide" width="35">&nbsp;</td>
+								</tr>
+							</tbody>
+						</table>
+						</td>
+					</tr>
+					<tr>
+						<td class="em_main_table" style="color:#3F3F44; font-family: Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.5; text-align: left; background-color:#473A8F;">
+						<table border="0" cellpadding="0" cellspacing="0" style="border-collapse:separate;-moz-border-radius:6px;-webkit-border-radius:6px;border-radius:6px;background-color:#ffffff;" width="100%">
+							<tbody>
+								<tr pardot-repeatable="" style="">
+									<td style="">
+									<table border="0" cellpadding="0" cellspacing="0" width="100%">
+										<tbody>
+											<tr>
+												<td class="em_hide" width="35">&nbsp;</td>
+												<td class="em_side_space">
+												<table border="0" cellpadding="0" cellspacing="0" width="100%">
+													<tbody>
+														<tr>
+															<td height="35">&nbsp;</td>
+														</tr>
+														<tr>
+															<td class="primary_link" style="color: #473B8C; font-size: 16px; line-height:24px; font-family: Helvetica, Arial, sans-serif; text-align: center;">
+															<p style="margin: 0; padding: 0; padding-bottom: 15px;"><span style="font-family: Helvetica, Arial, sans-serif; color:#3F3F44; font-size: 14px; line-height: 1.2; margin: 0; padding: 0; letter-spacing: 0px; text-transform: none;font-weight: 300;">This month Heroku announced our expanded partnership with AWS. Now our customers can strategically scale by leveraging AWS EDP commitment for the purchase of Heroku products. We also announced our transition to Aurora as our backing infrastructure, and additional AI product partnerships to come in 2024. Read about this and more in the December issue.</span></p>
+															</td>
+														</tr>
+														<tr>
+															<td class="primary_link" style="color: #473B8C; font-size: 16px; line-height:24px; font-family: Helvetica, Arial, sans-serif; text-align: center;">
+															<h1 pardot-region="" style="font-family: Helvetica, Arial, sans-serif; color:#473B8C; font-size: 15px; line-height: 1.4; margin: 0; padding: 0; letter-spacing: 5px; text-transform: uppercase; font-weight: 700; padding-bottom: 17.5px; margin-bottom: 15px; border-bottom: 1px solid #DBD9E5;"><br>
+															HEROKU NEWS<br>
+															<span style="font-family: Helvetica, Arial, sans-serif; color:#473B8C; font-size: 10px; line-height: 1.2; margin: 0; padding: 0; letter-spacing: 0px; text-transform: none;font-weight: 300;"><a href="https://hello.heroku.com/e/36622/2023-12-27/m671dy/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls">Heroku Blog</a> | <a href="https://hello.heroku.com/e/36622/heroku-roadmap/m671f2/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls">Public Roadmap</a></span></h1>
+															</td>
+														</tr>
+														<tr pardot-repeatable="" style="">
+															<td class="primary_link" style="color: #3F3F44; font-size: 14px; line-height: 1.5; font-family: Helvetica, Arial, sans-serif; text-align: left;">
+															<div pardot-region="">
+															<h2 pardot-region="" style="font-family: Helvetica, Arial, sans-serif; color:#79589F; font-size: 16px; line-height: 1.3; font-weight: 400; margin: 0; padding: 0;"><strong>re:Invent: Heroku and AWS Expand Partnership</strong></h2>
+
+															<p style="margin: 0; padding: 0; padding-bottom: 15px;">Day two at AWS re:Invent featured an exciting announcement about the <a href="https://hello.heroku.com/e/36622/4xNjIuMC4xNzAxNDg0MzEyLjAuMC4w/m671h8/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls">expanded partnership with Salesforce and AWS</a>. This announcement makes a range of Heroku and Salesforce products&nbsp;available for purchase through the <a href="https://hello.heroku.com/e/36622/heroku-in-aws-marketplace/m671f8/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls">AWS Marketplace Private Offers program</a>, giving our shared customers new ways to manage their cloud investments. You can also look forward to future innovations as we partner to leverage AWS Graviton, AWS Trainium, AWS Inferentia, AWS Aurora, and developer services like Amazon CodeWhisperer to deliver AI assistants to your
+developers and operators. Day three brought even more excitement as Heroku CTO, Gail Frederick took the stage with AWS leaders for a special session on <a href="https://hello.heroku.com/e/36622/watch-v-fZLcv7rwj7Y-t-1960s/m671g2/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls">Future-proofing your applications</a>.</p>
+															</div>
+															</td>
+														</tr>
+														<tr pardot-repeatable="" style="">
+															<td class="primary_link" style="color: #3F3F44; font-size: 14px; line-height: 1.5; font-family: Helvetica, Arial, sans-serif; text-align: left;">
+															<div pardot-region="">&nbsp;
+															<table border="0" cellpadding="1" cellspacing="1" class="pd-table" style="width:100%;">
+																<tbody>
+																	<tr>
+																		<td style="text-align: center;"><img alt="" border="0" height="191" src="https://hello.heroku.com/l/36622/2023-12-14/m66ydt/36622/170258069339DwyH7D/jkb_reinvent_2023.png" style="width: 255px; height: 191px; border-width: 0px; border-style: solid;" width="255"></td>
+																		<td style="text-align: center;">&nbsp;</td>
+																		<td style="text-align: center;"><img alt="" border="0" height="191" src="https://hello.heroku.com/l/36622/2023-12-14/m66ydx/36622/1702580755kh2QqYc9/gail_reinvent.png" style="width: 255px; height: 191px; border-width: 0px; border-style: solid;" width="255"></td>
+																	</tr>
+																</tbody>
+															</table>
+
+															<h4 pardot-region="" style="font-family: Helvetica, Arial, sans-serif; color:#408FEC; font-size: 16px; line-height: 1.3; font-weight: 400; margin: 0; padding: 0; padding-bottom: 5px;">&nbsp;</h4>
+
+															<hr></div>
+															</td>
+														</tr>
+														<tr pardot-repeatable="" style="">
+															<td class="primary_link" style="color: #3F3F44; font-size: 14px; line-height: 1.5; font-family: Helvetica, Arial, sans-serif; text-align: left;">
+															<div pardot-region="">
+															<h2 pardot-region="" style="font-family: Helvetica, Arial, sans-serif; color:#79589F; font-size: 16px; line-height: 1.3; font-weight: 400; margin: 0; padding: 0;"><strong>Enhancing Heroku Postgres with pgvector: Generating AI Insights</strong></h2>
+
+															<p style="margin: 0; padding: 0; padding-bottom: 15px;">In November, Heroku delivered the <a href="https://hello.heroku.com/e/36622/heroku-roadmap-issues-156/m671fg/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls">highly-requested</a>, <a href="https://hello.heroku.com/e/36622/pgvector-launch/m671fk/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls">pgvector extension</a> on Heroku Postgres. In an era where large language models (LLMs) and AI applications are paramount, pgvector can perform high-dimensional vector similarity searches. <a href="https://hello.heroku.com/e/36622/rity-search-on-heroku-postgres/m671fn/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls">Read this in depth blog</a> from Heroku engineer Valerie Woolard as she walks through how to work with vector data and covers important optimization and performance considerations.</p>
+															</div>
+															</td>
+														</tr>
+														<tr pardot-repeatable="" style="">
+															<td class="primary_link" style="color: #3F3F44; font-size: 14px; line-height: 1.5; font-family: Helvetica, Arial, sans-serif; text-align: left;">
+															<div pardot-region="">
+															<h2 pardot-region="" style="font-family: Helvetica, Arial, sans-serif; color:#79589F; font-size: 16px; line-height: 1.3; font-weight: 400; margin: 0; padding: 0;"><strong>The Future of Multi-Architecture Cloud Native Buildpacks</strong></h2>
+
+															<p style="margin: 0; padding: 0; padding-bottom: 15px;">One aspect of Heroku’s expanded partnership with AWS is our goal to incorporate tools like AWS Graviton that offer the best price-performance compute. ARM processing provides great efficiency, but it will require buildpack developers to prepare for multi-architecture development. Check out this <a href="https://hello.heroku.com/e/36622/watch-v-v1R-5LMdDq8/m671fr/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls">KubeCon talk</a> with Terence Lee and Joe Kutner. They discuss the challenges of supporting multi-architecture application images, Salesforce's journey with Hyperforce, and how Buildpacks resolve them.</p>
+															</div>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+												</td>
+												<td class="em_hide" width="35">&nbsp;</td>
+											</tr>
+										</tbody>
+									</table>
+									</td>
+								</tr>
+								<tr pardot-repeatable="" style="">
+									<td style="">
+									<table border="0" cellpadding="0" cellspacing="0" width="100%">
+										<tbody>
+											<tr>
+												<td class="em_hide" width="35">&nbsp;</td>
+												<td class="em_side_space">
+												<table border="0" cellpadding="0" cellspacing="0" width="100%">
+													<tbody>
+														<tr>
+															<td height="35">&nbsp;</td>
+														</tr>
+														<tr>
+															<td class="primary_link" style="color: #473B8C; font-size: 16px; line-height:24px; font-family: Helvetica, Arial, sans-serif; text-align: center;">
+															<h1 pardot-region="" style="font-family: Helvetica, Arial, sans-serif; color:#473B8C; font-size: 15px; line-height: 1.4; margin: 0; padding: 0; letter-spacing: 5px; text-transform: uppercase; font-weight: 700; padding-bottom: 17.5px; margin-bottom: 15px; border-bottom: 1px solid #DBD9E5;">Events<br>
+															<span style="font-family: Helvetica, Arial, sans-serif; color:#473B8C; font-size: 10px; line-height: 1.2; margin: 0; padding: 0; letter-spacing: 0px; text-transform: none;font-weight: 300;"><a href="https://hello.heroku.com/e/36622/events/m671fv/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls">Heroku Events Page</a></span></h1>
+															</td>
+														</tr>
+														<tr pardot-repeatable="" style="">
+															<td class="primary_link" style="color: #3F3F44; font-size: 14px; line-height: 1.5; font-family: Helvetica, Arial, sans-serif; text-align: left;">
+															<div pardot-region="">
+															<h4 pardot-region="" style="font-family: Helvetica, Arial, sans-serif; color:#408FEC; font-size: 16px; line-height: 1.3; font-weight: 400; margin: 0; padding: 0; padding-bottom: 5px;"><a href="https://hello.heroku.com/e/36622/watch-v-jEEiCtPTn8c/m671fy/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls"><u>Building AI Applications on Heroku - Watch On Demand&nbsp;→</u></a></h4>
+
+															<p style="margin: 0; padding: 0;">Watch as Julían Duque builds an AI application using LangChain and Node.js and then deploys it to Heroku. This step-by-step Live Code session was initially broadcast in November and is available <a href="https://hello.heroku.com/e/36622/watch-v-jEEiCtPTn8c/m671fy/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls">on the Salesforce Developers YouTube channel.</a><br>
+															&nbsp;</p>
+															</div>
+															</td>
+														</tr>
+														<tr pardot-repeatable="" style="">
+															<td class="primary_link" style="color: #3F3F44; font-size: 14px; line-height: 1.5; font-family: Helvetica, Arial, sans-serif; text-align: left;">
+															<div pardot-region="">
+															<h4 pardot-region="" style="font-family: Helvetica, Arial, sans-serif; color:#408FEC; font-size: 16px; line-height: 1.3; font-weight: 400; margin: 0; padding: 0; padding-bottom: 5px;"><a href="https://hello.heroku.com/e/36622/watch-v-fZLcv7rwj7Y-ampt-1960s/m671hc/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls">Future-proofing your applications - Watch On Demand&nbsp;→</a></h4>
+
+															<p style="margin: 0; padding: 0;">While at AWS re:Invent Heroku CTO, Gail Frederick joined Jeff Carter, Vice President of Databases and Migrations, and Rahul Pathak, Vice President of Relational Databases, along with Minaz Merali, Vice President, Product Management - IBM Data &amp; AI, on stage to talk about modernizing Heroku data offerings in the age of AI. <a href="https://hello.heroku.com/e/36622/watch-v-fZLcv7rwj7Y-ampt-1960s/m671hc/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls">Watch this Innovation Talk</a> for strategies to safeguard your data from disruptions that might interfere with your ability to adopt new technologies.&nbsp;<br>
+															&nbsp;</p>
+															</div>
+															</td>
+														</tr>
+														<tr pardot-repeatable="" style="">
+															<td class="primary_link" style="color: #3F3F44; font-size: 14px; line-height: 1.5; font-family: Helvetica, Arial, sans-serif; text-align: left;">
+															<div pardot-region="">
+															<h4 pardot-region="" style="font-family: Helvetica, Arial, sans-serif; color:#408FEC; font-size: 16px; line-height: 1.3; font-weight: 400; margin: 0; padding: 0; padding-bottom: 5px;"><a href="https://hello.heroku.com/e/36622/trailblazerdx-/m671g5/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls" style=" color: #408FEC;" target="_blank">TrailblazerDX</a></h4>
+
+															<p style="margin: 0; padding: 0; font-weight: 700;">March 6-7, 2024 | San Francisco, CA</p>
+
+															<p style="margin: 0; padding: 0; padding-bottom: 15px;">Are you ready to learn directly from product owners and engineers how to build the next generation of apps on Heroku and the Einstein 1 Platform? Registration opens soon for the AI developer conference of the year.</p>
+															</div>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+												</td>
+												<td class="em_hide" width="35">&nbsp;</td>
+											</tr>
+										</tbody>
+									</table>
+									</td>
+								</tr>
+								<tr pardot-repeatable="" style="">
+									<td style="">
+									<table border="0" cellpadding="0" cellspacing="0" width="100%">
+										<tbody>
+											<tr>
+												<td class="em_hide" width="35">&nbsp;</td>
+												<td class="em_side_space">
+												<table border="0" cellpadding="0" cellspacing="0" width="100%">
+													<tbody>
+														<tr>
+															<td height="35">&nbsp;</td>
+														</tr>
+														<tr>
+															<td class="primary_link" style="color: #473B8C; font-size: 16px; line-height:24px; font-family: Helvetica, Arial, sans-serif; text-align: center;">
+															<h1 pardot-region="" style="font-family: Helvetica, Arial, sans-serif; color:#473B8C; font-size: 15px; line-height: 1.4; margin: 0; padding: 0; letter-spacing: 5px; text-transform: uppercase; font-weight: 700; padding-bottom: 17.5px; margin-bottom: 15px; border-bottom: 1px solid #DBD9E5;">Salesforce + Heroku</h1>
+															</td>
+														</tr>
+														<tr pardot-repeatable="" style="">
+															<td class="primary_link" style="color: #3F3F44; font-size: 14px; line-height: 1.5; font-family: Helvetica, Arial, sans-serif; text-align: left;">
+															<div pardot-region="">
+															<h4 pardot-region="" style="font-family: Helvetica, Arial, sans-serif; color:#408FEC; font-size: 16px; line-height: 1.3; font-weight: 400; margin: 0; padding: 0; padding-bottom: 5px;"><a href="https://hello.heroku.com/e/36622/-to-salesforce-platform-events/m671g8/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls" style=" color: #408FEC;" target="_blank">Publish and Subscribe to Salesforce Platform Events&nbsp;→</a></h4>
+
+															<p style="margin: 0; padding: 0; padding-bottom: 15px;">Architect apps using an event-driven approach with the Salesforce enterprise messaging platform. Platform Events provides an event-driven messaging architecture for integrating business processes in Salesforce, or for integrating such processes with external systems, such as Heroku apps. Learn more online.</p>
+															Heroku DevCenter Article: <a href="https://hello.heroku.com/e/36622/-to-salesforce-platform-events/m671g8/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls">Publish and Subscribe to Salesforce Platform Events</a> Salesforce Dev Article: <a href="https://hello.heroku.com/e/36622/ents-platform-events-intro-htm/m671gc/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls">Platform Events Developer Guide</a>
+
+															<p>&nbsp;</p>
+															</div>
+															</td>
+														</tr>
+														<tr pardot-repeatable="" style="">
+															<td class="primary_link" style="color: #3F3F44; font-size: 14px; line-height: 1.5; font-family: Helvetica, Arial, sans-serif; text-align: left;">
+															<div pardot-region="">
+															<h4 pardot-region="" style="font-family: Helvetica, Arial, sans-serif; color:#408FEC; font-size: 16px; line-height: 1.3; font-weight: 400; margin: 0; padding: 0; padding-bottom: 5px;"><a href="https://hello.heroku.com/e/36622/icles-heroku-connect-dashboard/m671gg/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls">The Heroku Connect Dashboard&nbsp;→</a></h4>
+
+															<p style="margin: 0; padding: 0; padding-bottom: 15px;">Did you know that the Heroku Connect Dashboard allows you to configure, monitor, and troubleshoot your connection? Use the above link to explore the various features of the dashboard. The dashboard is available at <a href="https://hello.heroku.com/e/36622/2023-12-27/m671hg/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls">connect.heroku.com</a>.</p>
+															</div>
+															</td>
+														</tr>
+														<tr pardot-repeatable="" style="">
+															<td class="primary_link" style="color: #3F3F44; font-size: 14px; line-height: 1.5; font-family: Helvetica, Arial, sans-serif; text-align: left;">
+															<div pardot-region="">
+															<h4 pardot-region="" style="font-family: Helvetica, Arial, sans-serif; color:#408FEC; font-size: 16px; line-height: 1.3; font-weight: 400; margin: 0; padding: 0; padding-bottom: 5px;"><a href="https://hello.heroku.com/e/36622/-starter--d-7013y000002KeV4AAK/m671gk/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls">Salesforce Starter Suite →</a></h4>
+
+															<p style="margin: 0; padding: 0; padding-bottom: 15px;">Heroku is used by many smaller customers who depend on Heroku to run their business. If this is your company, then Salesforce has a new offering you might be interested in. It's the fastest and easiest way to get started with the world’s #1 CRM. It brings together sales, service, and email outreach tools in one easy-to-use suite to help you grow. What’s more exciting? Starter is just $25 per user per month. <a href="https://hello.heroku.com/e/36622/-starter--d-7013y000002KeV4AAK/m671gk/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls">Take Starter Suite for a free spin</a> for 30 days, no credit card or obligation required.</p>
+															</div>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+												</td>
+												<td class="em_hide" width="35">&nbsp;</td>
+											</tr>
+										</tbody>
+									</table>
+									</td>
+								</tr>
+								<tr pardot-repeatable="" style="">
+									<td style="">
+									<table border="0" cellpadding="0" cellspacing="0" width="100%">
+										<tbody>
+											<tr>
+												<td class="em_hide" width="35">&nbsp;</td>
+												<td class="em_side_space">
+												<table border="0" cellpadding="0" cellspacing="0" width="100%">
+													<tbody>
+														<tr>
+															<td height="35">&nbsp;</td>
+														</tr>
+														<tr>
+															<td class="primary_link" style="color: #473B8C; font-size: 16px; line-height:24px; font-family: Helvetica, Arial, sans-serif; text-align: center;">
+															<h1 pardot-region="" style="font-family: Helvetica, Arial, sans-serif; color:#473B8C; font-size: 15px; line-height: 1.4; margin: 0; padding: 0; letter-spacing: 5px; text-transform: uppercase; font-weight: 700; padding-bottom: 17.5px; margin-bottom: 15px; border-bottom: 1px solid #DBD9E5;">Heroku Marketplace<br>
+															<span style="font-family: Helvetica, Arial, sans-serif; color:#473B8C; font-size: 10px; line-height: 1.2; margin: 0; padding: 0; letter-spacing: 0px; text-transform: none;font-weight: 300;"><a href="https://hello.heroku.com/e/36622/2023-12-27/m671gn/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls">Heroku Marketplace</a>: Add-ons, buttons, and buildpacks for your Heroku app.</span></h1>
+															</td>
+														</tr>
+														<tr pardot-repeatable="" style="">
+															<td class="primary_link" style="color: #3F3F44; font-size: 14px; line-height: 1.5; font-family: Helvetica, Arial, sans-serif; text-align: left;">
+															<div pardot-region="">
+															<h4 pardot-region="" style="font-family: Helvetica, Arial, sans-serif; color:#408FEC; font-size: 16px; line-height: 1.3; font-weight: 400; margin: 0; padding: 0; padding-bottom: 5px;"><a href="https://hello.heroku.com/e/36622/addons-judoscale/m671gr/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls">Judoscale&nbsp;→</a></h4>
+
+															<p style="margin: 0; padding: 0; padding-bottom: 15px;">Judoscale works on ALL dyno types and autoscales your worker dynos, ensuring that job queues never back up. The autoscaling algorithm responds in seconds, not minutes and includes the ability to set a custom scaling schedule.</p>
+															</div>
+															</td>
+														</tr>
+														<tr pardot-repeatable="" style="">
+															<td class="primary_link" style="color: #3F3F44; font-size: 14px; line-height: 1.5; font-family: Helvetica, Arial, sans-serif; text-align: left;">
+															<div pardot-region="">
+															<h4 pardot-region="" style="font-family: Helvetica, Arial, sans-serif; color:#408FEC; font-size: 16px; line-height: 1.3; font-weight: 400; margin: 0; padding: 0; padding-bottom: 5px;"><a href="https://hello.heroku.com/e/36622/addons-butter/m671gv/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls">Stackhero for MySQL (Beta) →</a></h4>
+
+															<p style="margin: 0; padding: 0; padding-bottom: 15px;">Powered by high-performance CPUs and SSD disks, Stackhero is a ready-to-use MySQL cloud solution. This highly secure solution includes a dedicated instance and IP, one-click updates for easy maintenance, and PhpMyAdmin, a performant web UI.</p>
+															</div>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+												</td>
+												<td class="em_hide" width="35">&nbsp;</td>
+											</tr>
+										</tbody>
+									</table>
+									</td>
+								</tr>
+								<!--Divider Line-->
+								<tr pardot-repeatable="" style="">
+									<td style="">
+									<table border="0" cellpadding="0" cellspacing="0" width="100%">
+										<tbody>
+											<tr>
+												<td class="em_hide" width="32">&nbsp;</td>
+												<td class="em_side_space">
+												<table border="0" cellpadding="0" cellspacing="0" width="100%">
+													<tbody>
+														<tr>
+															<td height="7" style="font-size: 1px; line-height: 1px;">&nbsp;</td>
+														</tr>
+														<tr>
+															<td height="7" style="border-top: 1px solid #DBD9E5; font-size: 1px; line-height: 1px;">&nbsp;</td>
+														</tr>
+													</tbody>
+												</table>
+												</td>
+												<td class="em_hide" width="32">&nbsp;</td>
+											</tr>
+										</tbody>
+									</table>
+									</td>
+								</tr>
+								<tr pardot-repeatable="" style="">
+									<td style="">
+									<table border="0" cellpadding="0" cellspacing="0" width="100%">
+										<tbody>
+											<tr>
+												<td class="em_hide" width="35">&nbsp;</td>
+												<td class="em_side_space">
+												<table border="0" cellpadding="0" cellspacing="0" width="100%">
+													<tbody>
+														<tr>
+															<td height="10" style="font-size: 1px; line-height: 1px;">&nbsp;</td>
+														</tr>
+														<tr pardot-repeatable="" style="">
+															<td class="primary_link" style="color: #3F3F44; font-size: 14px; line-height: 1.5; font-family: Helvetica, Arial, sans-serif; text-align: left;">
+															<div pardot-region="">
+															<h4 pardot-region="" style="font-family: Helvetica, Arial, sans-serif; color:#408FEC; font-size: 16px; line-height: 1.3; font-weight: 400; margin: 0; padding: 0; padding-bottom: 5px;"><a href="https://hello.heroku.com/e/36622/careers/m671gy/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls" style=" color: #408FEC;" target="_blank">We're Hiring&nbsp;→</a></h4>
+
+															<p style="margin: 0; padding: 0;">Join a team that's transforming how apps are built. <a href="https://hello.heroku.com/e/36622/careers/m671gy/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls" style=" color: #408FEC;" target="_blank">Come work with us.&nbsp;→</a></p>
+															</div>
+															</td>
+														</tr>
+														<tr>
+															<td height="10" style="font-size: 1px; line-height: 1px;">&nbsp;</td>
+														</tr>
+													</tbody>
+												</table>
+												</td>
+												<td class="em_hide" width="35">&nbsp;</td>
+											</tr>
+										</tbody>
+									</table>
+									</td>
+								</tr>
+								<!--Divider Line-->
+								<tr pardot-repeatable="" style="">
+									<td style="">
+									<table border="0" cellpadding="0" cellspacing="0" width="100%">
+										<tbody>
+											<tr>
+												<td class="em_hide" width="35">&nbsp;</td>
+												<td class="em_side_space">
+												<table border="0" cellpadding="0" cellspacing="0" width="100%">
+													<tbody>
+														<tr>
+															<td height="10" style="font-size: 1px; line-height: 1px;">&nbsp;</td>
+														</tr>
+														<tr>
+															<td height="10" style="font-size: 1px; line-height: 1px;">&nbsp;</td>
+														</tr>
+													</tbody>
+												</table>
+												</td>
+												<td class="em_hide" width="35">&nbsp;</td>
+											</tr>
+										</tbody>
+									</table>
+									</td>
+								</tr>
+								<!--Smaller Spacer Row-->
+							</tbody>
+						</table>
+						</td>
+					</tr>
+					<!--Footer-->
+					<tr pardot-repeatable="" style="">
+						<td>
+						<table border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tbody>
+								<tr>
+									<td height="90">&nbsp;</td>
+								</tr>
+								<tr>
+									<td class="em_side_space">
+									<table border="0" cellpadding="0" cellspacing="0" width="100%">
+										<tbody>
+											<tr>
+												<td><!--[if (gte mso 9)|(IE)]>
+<table width="580" align="center" style="width:580px;">
+<tr>
+<td width="153" style="width:153px;">
+<![endif]-->
+												<table align="left" border="0" cellpadding="0" cellspacing="0" class="em_wrapper" style="border-collapse:separate; width: 153px;float:left;" width="153">
+													<tbody>
+														<tr>
+															<td>
+															<table border="0" cellpadding="0" cellspacing="0" width="100%">
+																<tbody>
+																	<tr>
+																		<td align="center"><a href="https://hello.heroku.com/e/36622/home/m671h5/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls" target="_blank"><img alt="Heroku is a Salesforce company" border="0" height="auto" pardot-height="auto" pardot-region="" src="https://hello.heroku.com/l/36622/2023-10-06/m66cpm/36622/1696601784kIf8iERU/Heroku_is_a_Salesforce_Company.png" style="display:block;max-width:150px;" width="150"></a></td>
+																	</tr>
+																</tbody>
+															</table>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+												<!--[if (gte mso 9)|(IE)]>
+</td>
+<td width="10" style="width:10px;">
+<![endif]-->
+
+												<table align="left" border="0" cellpadding="0" cellspacing="0" class="em_hide" style="float: left;" width="10">
+													<tbody>
+														<tr>
+															<td height="20">&nbsp;</td>
+														</tr>
+													</tbody>
+												</table>
+												<!--[if (gte mso 9)|(IE)]>
+</td>
+<td width="274" style="width:274px;">
+<![endif]-->
+
+												<table align="left" border="0" cellpadding="0" cellspacing="0" class="em_wrapper" style="border-collapse:separate; width: 274px;float:left;" width="274">
+													<tbody>
+														<tr>
+															<td>
+															<table border="0" cellpadding="0" cellspacing="0" width="100%">
+																<tbody>
+																	<tr>
+																		<td class="primary_link" style="color: #8a7ecb; font-size: 11.2px; line-height:1.5; font-family: Helvetica, Arial, sans-serif; text-align: center;">
+																		<div pardot-region="">
+																		<p style="margin: 0; padding: 0;"><br>
+																		Heroku a Salesforce company<br>
+																		415 Mission Street, 3rd Floor<br>
+																		San Francisco, CA 94105</p>
+
+																		<p style="margin: 0; padding: 0;"><a href="https://hello.heroku.com/KeepMeuptoDate?ehash=e4c45dc91a112d50397a967b5090eb81b294ea83af16b729e1e5c84e54e8634a&email_id=1182533803&epc_hash=91ZF5StcacL9VcuwliwOEkKbVu2M1_BryRQUFNmdMYY" style="text-decoration: underline; color: #8a7ecb;" target="_blank">Update your email preferences</a></p>
+
+																		<p style="margin: 0; padding: 0;"><a href="https://hello.heroku.com/e/36622/company-privacy-/m671h2/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls" style="text-decoration: underline; color: #8a7ecb;" target="_blank">Privacy</a></p>
+																		</div>
+																		</td>
+																	</tr>
+																</tbody>
+															</table>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+												<!--[if (gte mso 9)|(IE)]>
+</td>
+<td width="10" style="width:10px;">
+<![endif]-->
+
+												<table align="left" border="0" cellpadding="0" cellspacing="0" class="em_hide" style="float:left;" width="10">
+													<tbody>
+														<tr>
+															<td height="20">&nbsp;</td>
+														</tr>
+													</tbody>
+												</table>
+												<!--[if (gte mso 9)|(IE)]>
+</td>
+<td width="133" style="width:133px;">
+<![endif]-->
+
+												<table align="left" border="0" cellpadding="0" cellspacing="0" class="em_wrapper" style="border-collapse:separate; width: 133px;float:left;" width="133">
+													<tbody>
+														<tr>
+															<td>
+															<table border="0" cellpadding="0" cellspacing="0" width="100%">
+																<tbody>
+																	<tr pardot-removable="" style="">
+																		<td align="center">
+																		<table border="0" cellpadding="3" cellspacing="0" role="presentation">
+																			<tbody>
+																				<tr>
+																					<td><a href="https://hello.heroku.com/e/36622/heroku/m671hk/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls" target="_blank"><img alt="Twitter" border="0" height="16" pardot-height="16" pardot-region="" pardot-region-type="image" pardot-width="auto" src="http://hello.heroku.com/l/36622/2019-03-29/ld3vn4/36622/164937/footer_icon_twitter_purple.png" style="display: inline; padding: 0; outline: 0; border: 0; height: 16px; width: auto;" width="auto"></a></td>
+																					<td><a href="https://hello.heroku.com/e/36622/heroku/m671hn/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls" target="_blank"><img alt="GitHub" border="0" height="16" pardot-height="16" pardot-region="" pardot-region-type="image" pardot-width="auto" src="http://hello.heroku.com/l/36622/2019-03-29/ld3vmg/36622/164917/footer_icon_github_purple.png" style="display: inline; padding: 0; outline: 0; border: 0; height: 16px; width: auto;" width="auto"></a></td>
+																					<td><a href="https://hello.heroku.com/e/36622/company-heroku/m671hr/1182533803/h/wTHE-9wn601kX_LPaCB-esVXnT9mweem_ipo6vnYMls" target="_blank"><img alt="Linkedin" border="0" height="16" pardot-height="16" pardot-region="" pardot-region-type="image" pardot-width="auto" src="http://hello.heroku.com/l/36622/2019-03-29/ld3vmn/36622/164925/footer_icon_linkedin_purple.png" style="display: inline; padding: 0; outline: 0; border: 0; height: 16px; width: auto;" width="auto"></a></td>
+																				</tr>
+																			</tbody>
+																		</table>
+																		</td>
+																	</tr>
+																</tbody>
+															</table>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+												<!--[if (gte mso 9)|(IE)]>
+</td>
+</tr>
+</table>
+<![endif]--></td>
+											</tr>
+										</tbody>
+									</table>
+									</td>
+								</tr>
+								<tr>
+									<td height="35">&nbsp;</td>
+								</tr>
+							</tbody>
+						</table>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<img alt="" src="https://hello.heroku.com/r/36622/1/1182533803/open/1" /><style data-ignore-inlining>@media (prefers-color-scheme: dark) { #_t::before {content:url('https://c6judedt.emltrk.com/v2/c6judedt?rd&d=[UNIQUE]');}} @media (prefers-color-scheme: light) { #_t::before {content:url('https://c6judedt.emltrk.com/v2/c6judedt?rl&d=[UNIQUE]');}} @media print{ #_t {background-image:url('https://c6judedt.emltrk.com/v2/c6judedt?p&d=[UNIQUE]');}} div.OutlookMessageHeader {background-image:url('https://c6judedt.emltrk.com/v2/c6judedt?f&d=[UNIQUE]')} table.moz-email-headers-table {background-image:url('https://c6judedt.emltrk.com/v2/c6judedt?f&d=[UNIQUE]')} blockquote #_t {background-image:url('https://c6judedt.emltrk.com/v2/c6judedt?f&d=[UNIQUE]')} #MailContainerBody #_t {background-image:url('https://c6judedt.emltrk.com/v2/c6judedt?f&d=[UNIQUE]')}</style><div id="_t"></div>
+<img src="https://c6judedt.emltrk.com/v2/c6judedt?d=[UNIQUE]" width="1" height="1" border="0" alt="" /></body>
+
+</html>
+
+--iy9LVOvCqchT=_?:--
+

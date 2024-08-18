@@ -1,0 +1,252 @@
+Delivered-To: brnkath@gmail.com
+Received: by 2002:a8a:e86:0:b0:511:33d7:88bb with SMTP id t6csp4779624ocw;
+        Sat, 30 Dec 2023 10:42:35 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IEdWQzBoxhOL1vWP2on+QfBUMYE4PwsICo7ZMARtA0nOHaolEaHJUNTr8gOa7FP2pBm+d3g
+X-Received: by 2002:a5d:5411:0:b0:333:4913:c465 with SMTP id g17-20020a5d5411000000b003334913c465mr6000257wrv.102.1703961755728;
+        Sat, 30 Dec 2023 10:42:35 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1703961755; cv=none;
+        d=google.com; s=arc-20160816;
+        b=QIVwP3NOuFFI3GnG3Qgs1F6wNoA1uZ+E73VH4RIezx2KXm82UsIoPN6NB0U+5MruUy
+         2sxGQpi/WAZQyoa7XjAsequEXyQWpKvRIBxWjLHBlMjqbzrxWrXSgDxVBSH32VkBG+I4
+         RCKGBjrrsjiniGSRrso1UVYNHR1jtO0FvscK19rczuWm0VLINAEEM0khRg1LZy9hwUTg
+         1yj6mSDuCQBla1diXk3C8AIo0xlYK0V3khe287y2FtwcBzq03XEXT4alihthHDlaUD2U
+         PheTJncbn0K7xZbYL2kEntt9wvLTDEAs5aB2H9Fgegy6n9Ge9892UpF4xUe3EAFqInZa
+         lXRA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=date:list-unsubscribe:message-id:list-id:envelope-to:precedence
+         :mime-version:to:from:sender:subject:delivered-to
+         :domainkey-signature:dkim-signature;
+        bh=1R9p0XrOFe40bSX9/Ir5Vq/qqY0fDcIHatN3pkNH7fI=;
+        fh=n+q9pMbhM0eZjOdD0WWZpyNO946HUHl9hAOLrrMGfog=;
+        b=UkX9BuK9EUUWk1gZaEOPqlpIdBxttsH/YWqxsHhhhys+FomZEYmgPIbWae3aYJXruP
+         no3SKhy1dk9pA0QV3ERC2bycmO0vd7uW6EVhIPjn3Gpx8vVhdEHObOnBicKkAGy1fgWG
+         tl3l4VpbJesEZTmQ2kiHY3kwf+rIMqjprf2YmOZnpDpuOKOehVNvlz3GF6Kl80rFr+Fe
+         7AFufDXhijTMmuTSFanHnr72aYBBaBbDQ3Fx8jBAnUPf7TB/I0MisvwOjN1TES5Z4+Mc
+         8T6J70mGNHWJB3iqvNGNtPUIhxNUaJdBB51I1q4idE8d2jGHiL7+/m2WQLmhACPlMex0
+         vB2A==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@bb-wss5217.viscose.us.com header.s=default header.b=M3IFF1Gx;
+       spf=pass (google.com: domain of return.vjr9cbn2vh@wss5217.hmlogrik.no.eu.org designates 188.138.25.26 as permitted sender) smtp.mailfrom=Return.vjr9cbn2vh@wss5217.hmlogrik.no.eu.org
+Return-Path: <Return.vjr9cbn2vh@wss5217.hmlogrik.no.eu.org>
+Received: from cisco.com (188-138-25-26.hmlogrik.my.eu.org.cdn.cloudflare.net. [188.138.25.26])
+        by mx.google.com with ESMTPS id f16-20020adfe910000000b003366c43af0asi9679768wrm.438.2023.12.30.10.42.35
+        for <brnkath@gmail.com>
+        (version=TLS1 cipher=ECDHE-ECDSA-AES128-SHA bits=128/128);
+        Sat, 30 Dec 2023 10:42:35 -0800 (PST)
+Received-SPF: pass (google.com: domain of return.vjr9cbn2vh@wss5217.hmlogrik.no.eu.org designates 188.138.25.26 as permitted sender) client-ip=188.138.25.26;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@bb-wss5217.viscose.us.com header.s=default header.b=M3IFF1Gx;
+       spf=pass (google.com: domain of return.vjr9cbn2vh@wss5217.hmlogrik.no.eu.org designates 188.138.25.26 as permitted sender) smtp.mailfrom=Return.vjr9cbn2vh@wss5217.hmlogrik.no.eu.org
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; s=default; d=bb-wss5217.viscose.us.com;
+ h=Subject:Sender:From:To:MIME-Version:List-id:Message-Id:List-Unsubscribe:Content-Type:Date; i=uaadnapbbw@bb-wss5217.viscose.us.com;
+ bh=/UJJLWgDyKJeQKfU9iQp7DA0o1o=;
+ b=M3IFF1Gx9m57vkHSq4r4keYWE8CyccfZCLbYqLTGOh6T03Y4VYLEgGzbGkp3eWrpYm0idaQJx3L9
+   PMPFlKEpe5dAROwA7UHv8RFxi0NOORGS7WaiR4xhKletm/DRZYXFgLvR5EEzfKz8DcScjzul7onP
+   c908Heqkt+ZmeEqYA/s=
+DomainKey-Signature: a=rsa-sha1; c=nofws; q=dns; s=default; d=bb-wss5217.viscose.us.com;
+ b=qFhbfmKZadILB/zeU9IQjTi2AtNN+2rpuMwThCun2sfva9C4eLv5drdZ8u8m2LlS0WdXtQlv7L2V
+   N5rFUFoJYg2aPNDNWxEE0RkY6q2DFa/mQoVvpuQVqn4BLsfdgFPmTOinJOIRqN+fMlezc3TlGgLG
+   FgrSrA/IH7f5R1JeuRM=;
+Delivered-To: me@gmail.com
+Received: from efianalytics.com (efianalytics.com. 216.244.76.116)
+Subject: brnkath ,✔️Someone May have Run a Background-check on You ⭐️View-Rresults!⭐️ ID:546157
+Sender:   uaadnapbbw@bb-wss5217.viscose.us.com
+From: 🌐PublicRecords🌐 <bos8ya80bms@jupda.jupieces.com>
+To: me@aol.com
+MIME-Version: 1.0
+Precedence: bulk
+Envelope-To: <brnkath@gmail.com>
+X-Originating-IP: 188.138.25.26
+X-Original-Sender: <brnkath@gmail.com>
+List-id: <brnkath>
+X-Google-Sender-Delegation: brnkath@gmail.com Trusted Sender
+X-Google-Original-Message-ID: <-@vevida.net>
+Message-Id: <thia6muvbfwci9cxbekot2nh2l8@IyykJKlEc>
+List-Unsubscribe: <http://jupda.jupieces.com/LEAVE=brnkath@gmail.com>
+Content-Type: multipart/digest; boundary="----=_Part_qxRazlRjQOiS_1129434735014.frqkvRcwiCF"
+Date: Sat, 30 Dec 2023 12:52:12 -0500
+
+------=_Part_qxRazlRjQOiS_1129434735014.frqkvRcwiCF
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: amazonses
+
+
+<html>
+<head>
+	
+</head>
+<body>
+<center>
+<div style="font-family: &quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, &quot;Lucida Sans&quot;, &quot;DejaVu Sans&quot;, Verdana, sans-serif; width: 800px; font-size: 18px; letter-spacing: 1px; text-align: start;">
+<h3 align="center" style="border: 5px solid #01A9DB; border-radius: 3px; padding: 10px; --darkreader-inline-border-top:#b30000; --darkreader-inline-border-right:#b30000; --darkreader-inline-border-bottom:#b30000; --darkreader-inline-border-left:#b30000;"><a href="https://storage.googleapis.com/letshort/hmz_albamo_eu_org.html#1O0u0c4nbb1blfgq-2cm3hq822x900q2u8k68q00001" style="color: black; font-family: Arial, Helvetica, sans-serif; text-align: -webkit-center; background-color: rgb(255, 255, 255); text-decoration-line: none; " target="_blank">(2) Negative items may have been Added</a></h3>
+</div>
+
+<table align="center" border="0" cellpadding="4" cellspacing="4" style="font-family: &quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, &quot;Lucida Sans&quot;, &quot;DejaVu Sans&quot;, Verdana, sans-serif; font-size: 18px; letter-spacing: 1px; text-align: start; text-indent: 0px;" width="655">
+	<tbody>
+		<tr>
+			<td style="font-family: &quot;Google Sans&quot;, Roboto, RobotoDraft, Helvetica, Arial, sans-serif; margin: 0px;" width="4">&nbsp;</td>
+			<td style="font-family: &quot;Google Sans&quot;, Roboto, RobotoDraft, Helvetica, Arial, sans-serif; margin: 0px; font-weight: bold;" width="545">
+			<div  style="color: rgb(45, 155, 0); --darkreader-inline-color:#8eff60;"><a href="https://storage.googleapis.com/letshort/hmz_albamo_eu_org.html#1O0u0c4nbb1blfgq-2cm3hq822x900q2u8k68q00001" style="color: #2d9b00; font-family: Arial, Helvetica, sans-serif; text-align: -webkit-center; background-color: rgb(255, 255, 255); text-decoration-line: none; --darkreader-inline-color:#e8e6e3; --darkreader-inline-bgcolor:#181a1b;" target="_blank">Your public Record Update: 7253594</a></div>
+			</td>
+			<td style="font-family: &quot;Google Sans&quot;, Roboto, RobotoDraft, Helvetica, Arial, sans-serif; margin: 0px;" width="5">&nbsp;</td>
+		</tr>
+		<tr>
+			<td style="font-family: &quot;Google Sans&quot;, Roboto, RobotoDraft, Helvetica, Arial, sans-serif; margin: 0px;" width="5">&nbsp;</td>
+			<td style="font-family: &quot;Google Sans&quot;, Roboto, RobotoDraft, Helvetica, Arial, sans-serif; margin: 0px;" width="545"><a href="https://storage.googleapis.com/letshort/hmz_albamo_eu_org.html#1O0u0c4nbb1blfgq-2cm3hq822x900q2u8k68q00001" style="color: black; font-family: Arial, Helvetica, sans-serif; text-align: -webkit-center; background-color: rgb(255, 255, 255); text-decoration-line: none; --darkreader-inline-color:#e8e6e3; --darkreader-inline-bgcolor:#181a1b;" target="_blank">New items in the last forty-eight (48) hours may have been added that everyone can now see. This could effect future and current jobs, relationships, and more.</a></td>
+			<td style="font-family: &quot;Google Sans&quot;, Roboto, RobotoDraft, Helvetica, Arial, sans-serif; margin: 0px;" width="5">&nbsp;</td>
+		</tr>
+		<tr>
+			<td style="font-family: &quot;Google Sans&quot;, Roboto, RobotoDraft, Helvetica, Arial, sans-serif; margin: 0px;" width="5">&nbsp;</td>
+			<td style="font-family: &quot;Google Sans&quot;, Roboto, RobotoDraft, Helvetica, Arial, sans-serif; margin: 0px;" width="545"><br />
+			<a href="https://storage.googleapis.com/letshort/hmz_albamo_eu_org.html#1O0u0c4nbb1blfgq-2cm3hq822x900q2u8k68q00001" style="color: black; font-family: Arial, Helvetica, sans-serif; text-align: -webkit-center; background-color: rgb(255, 255, 255); text-decoration-line: none; --darkreader-inline-color:#e8e6e3; --darkreader-inline-bgcolor:#181a1b;" target="_blank"><span data-darkreader-inline-color="" style="color: blue; text-decoration-line: underline; --darkreader-inline-color:#337dff;">See what everyone else</span>&nbsp;now has access to</a></td>
+			<td style="font-family: &quot;Google Sans&quot;, Roboto, RobotoDraft, Helvetica, Arial, sans-serif; margin: 0px;" width="5">&nbsp;</td>
+		</tr>
+		<tr>
+			<td style="font-family: &quot;Google Sans&quot;, Roboto, RobotoDraft, Helvetica, Arial, sans-serif; margin: 0px;" width="5">&nbsp;</td>
+			<td style="font-family: &quot;Google Sans&quot;, Roboto, RobotoDraft, Helvetica, Arial, sans-serif; margin: 0px;" width="545">
+			<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tbody>
+					<tr>
+						<td style="font-family: &quot;PT Sans&quot;, Arial, sans-serif; margin: 0px; background-clip: border-box; background-color: #01A9DB; background-origin: padding-box; background-size: auto; border: 0px none rgb(255, 255, 255); border-bottom-right-radius: 6px; border-top-right-radius: 6px; box-sizing: border-box; color: rgb(255, 255, 255); display: block; float: left; font-size: 20px; font-variant-numeric: normal; line-height: 26px; overflow: visible; padding: 8px 6px; text-align: center; text-transform: uppercase; width: 650px; letter-spacing: 5px; background-position: 0% 0%; --darkreader-inline-bgcolor:#aa0005; --darkreader-inline-border-top:#303436; --darkreader-inline-border-right:#303436; --darkreader-inline-border-bottom:#303436; --darkreader-inline-border-left:#303436; --darkreader-inline-color:#e8e6e3;"><a  href="https://storage.googleapis.com/letshort/hmz_albamo_eu_org.html#1O0u0c4nbb1blfgq-2cm3hq822x900q2u8k68q00001" style="color: #fff; font-family: Arial, Helvetica, sans-serif; text-decoration-line: none; " target="_blank"><strong>SEE NOW &gt;&gt;</strong></a></td>
+					</tr>
+				</tbody>
+			</table>
+			<br />
+			<a href="https://storage.googleapis.com/letshort/hmz_albamo_eu_org.html#1O0u0c4nbb1blfgq-2cm3hq822x900q2u8k68q00001" style="color: black; font-family: Arial, Helvetica, sans-serif; text-align: -webkit-center; background-color: rgb(255, 255, 255); text-decoration-line: none; --darkreader-inline-color:#e8e6e3; --darkreader-inline-bgcolor:#181a1b;" target="_blank"><font color="red" data-darkreader-inline-color="" style="--darkreader-inline-color:#ff1a1a;"><b>NB:</b></font>&nbsp;This site contains REAL records including felonies, misdemeanors, DUIs, speeding tickets, mugshots and MORE. Any and all incriminating photos, court documents, aliases, and/or court records are pulled from legitimate 3rd party sources and are HIGHLY accurate.</a></td>
+			<td style="font-family: &quot;Google Sans&quot;, Roboto, RobotoDraft, Helvetica, Arial, sans-serif; margin: 0px;" width="5">&nbsp;</td>
+		</tr>
+		<tr>
+			<td style="font-family: &quot;Google Sans&quot;, Roboto, RobotoDraft, Helvetica, Arial, sans-serif; margin: 0px;" width="5">&nbsp;</td>
+			
+			
+			
+			
+			
+			
+			
+
+
+
+
+			
+			
+			<td style="font-family: &quot;Google Sans&quot;, Roboto, RobotoDraft, Helvetica, Arial, sans-serif; margin: 0px;" width="545">&nbsp;</td>
+			<td style="font-family: &quot;Google Sans&quot;, Roboto, RobotoDraft, Helvetica, Arial, sans-serif; margin: 0px;" width="5">&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+		<br />
+		</a>
+		<br />
+		<a href="https://storage.googleapis.com/letshort/hmz_albamo_eu_org.html#1O0u0c4nbc1blfgq-2cm3hq822x900q2u8k68q00001" >
+			<img src="https://i.imgur.com/0JpPkV7.png#M7qwgafkykN7Zhcz5vQJUQkeQpNo">
+				</a>
+		<br />
+		<a href="https://storage.googleapis.com/letshort/hmz_albamo_eu_org.html#1O0u0c4nbd1blfgq-2cm3hq822x900q2u8k68q00001" >
+			<img src="http://tinyurl.com/wss5116/8O0u0c4nbb1blfgq-2cm3hq822x900q2u8k68q00001">
+		</a>
+		<br />
+	</center>
+</body>
+</html>
+
+</body>
+</html>
+
+	<div style="display:none;">
+You don’t have to climb a mountain to experience the woes of elevation. Plenty of favorite travel spots perch on high, such as Cusco, Peru, at 11,152 feet, and Leh, India, at 11,550 feet. At altitude, there’s less oxygen in the air, which can leave you gasping for breath just trying to walk up a street. (Discover nine mountains to summit in a lifetime.)
+
+What exactly is happening to the body? “First it increases breathing, which can feel like a shortness of breath,” says Peter Hackett, director of the Institute for Altitude Medicine in Colorado. “Second the blood vessels in the brain expand, so that there’s more blood and therefore more oxygen. That gives the sensation of a headache.”
+
+
+Symptoms of acute mountain sickness, or AMS as it’s known, include trouble sleeping, nausea, loss of appetite, and fatigue. If you keep going higher and ignore signals from your body, you could develop HAPE, high altitude pulmonary edema, or HACE, high altitude cerebral edema, both of which are very serious.
+
+All that said, some of the best views on Earth are seen from up high. The key to your success? Go up slowly. Ascending over two or three days, if possible, and using these tips will help you feel good at the top.
+
+<!--
+
+
+
+Guzzle water: Drinking plenty of H2O prevents dehydration, which has symptoms similar to those of acute mountain sickness.
+Skip the bottled oxygen: The bottles you can buy at the drug store don’t contain enough oxygen to be helpful.
+Shield your skin: Ultraviolet light increases by five percent per thousand feet of altitude, so accessorize with protective gear such as sunglasses, a broad-brimmed hat, and sunscreen.
+
+   cusj4uul  grgmn0dtzqgubedkhm1qkhscwt6zwsnwmqyl859n76o0jroeazhoybc0wqywcjnhbt5lltzgh0eb8mkb97cfquu0eam3v5a8iip3hlaab53pj9c5dq2pazvg0eao1mx5s4gks620yp261ssm2hwpqawtcdcvd9kpf6j72g305c4uu8lqcc4h5pv5z3w4uun0yqw6ehcfayoa1s16xlaszhgwai28
+   6wb0rc70  isj4vmdjjcr6aipjbh1ob6qtoytmyw8i9gd4d4caabafsmwp7oewzxjxoij3k6bn8n2tcrmoyg2cme9x7avb6q1mvdywt6m2sv9l2imb113iwrxnnrm9zo65zg83k6cpdlkbare2986hjjmkbo83430re0zednopxof7ka8ukmlkb4p0rg50dup78gb95xxsz7cgrkx6cxf7p1hizrp63qs3bed3
+   ok2si3tc  yq8y85k6tja9y04hy5ijdfv9tiohj1d8rpar5gzh984s9fp7okquj0ead38uo9aqxq1kuvx1xo5gs2ckqorsvbkuurufcqry8iqxyle2x7d9ap36j5scxwvtlhc9rz8zxf7c61e58fek9kz59y3gvfig52mqphl96ghi6mi5l1lvkm2g7i66chvdt6m78offc71fp5eu1hyke7imr7flpy2jf6di
+   xixq3ogh  92d4wtezvy5y0wkidtxbclr24o787yokva4b5a495zww1s1ndj7jljays5zhlvmuusirab292lmvf3zoxqahksordqtrsiep7v6jv4gqe20iz6ysffyrdna85rp6if5ka8nl4nnegyw5eoi3amogyljlqs32v92j0i0zhesyeqex2tgg7l3y5p40xdh9tm908x8f7a2h4mlt5rvae7yxzu1cs0bs
+-->
+
+and
+by
+University
+college
+than
+children
+had
+and
+We
+need
+that
+but
+living
+Robert
+observed
+Bernard
+Why
+never
+ask
+and
+America
+Eisenhower
+Foundation
+Kerner
+Commission
+Violence
+senator
+at
+Healing
+America
+Years
+After
+newsletterSUBSCRIBEMORE>
+
+
+
+Hi hrgferavjccvo,
+My name's Dylan Basile and I work at Event Temple. Nice to meet you and
+thanks for requesting a demo.
+
+Big players in the hospitality world—such as UCYD26Y2RHJGCU6 Hotels & Resorts, with the new FCFZV495E8LP454 AC7D2BPGSEFCL9R -designed BE09VIAAPCFB1Q9 at Gulf 70B7EOQDSPDKQA7 Park—are catching up with pioneers such as the award-winning G6D7QEL67APNB54 Collection, often using their scale to sway guests and staff to focus on responsible travel. Whether you’re headed to the backcountry or the big city, these new accommodations offer overnights that put sustainability in style.
+NAGXLSNR LYVZPONR
+Book a demo with me here:
+Hi dfdh,
+Thanks for signing up, and congratulations
+on your new account! You'll find
+everything you need to get started below, and
+if you need additional help there's a link to
+our support forum at the bottom.
+</div>
+</object>
+
+------=_Part_qxRazlRjQOiS_1129434735014.frqkvRcwiCF
+Content-Type: text/html; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<object>
+<div style="display:none;">
+You don’t have to climb a mountain to experience the woes of elevation. Plenty of favorite travel spots perch on high, such as Cusco, Peru, at 11,152 feet, and Leh, India, at 11,550 feet. At altitude, there’s less oxygen in the air, which can leave you gasping for breath just trying to walk up a street. (Discover nine mountains to summit in a lifetime.)
+
+What exactly is happening to the body? “First it increases breathing, which can feel like a shortness of breath,” says Peter Hackett, director of the Institute for Altitude Medicine in Colorado. “Second the blood vessels in the brain expand, so that there’s more blood and therefore more oxygen. That gives the sensation of a headache.”
+
+
+Symptoms of acute mountain sickness, or AMS as it’s known, include trouble sleeping, nausea, loss of appetite, and fatigue. If you keep going higher and ignore signals from your body, you could develop HAPE, high altitude pulmonary edema, or HACE, high altitude cerebral edema, both of which are very serious.
+
+All that said, some of the best views on Earth are seen from up high. The key to your success? Go up slowly. Ascending over two or three days, if possible, and using these tips will help you feel good at the top.
+
+</div>
+</object><div style="font-size:1px;color:#333333;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden"> &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp;
+</div>
+</body>
+</html>
+------=_Part_qxRazlRjQOiS_1129434735014.frqkvRcwiCF--
